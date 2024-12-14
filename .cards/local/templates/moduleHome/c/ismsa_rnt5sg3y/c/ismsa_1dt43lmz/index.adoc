@@ -1,0 +1,8 @@
+## Company process register
+
+Process register contains process descriptions for the key processes used in Company Information Security Management System (CISMS).
+
+{{{createCards '{
+    "template": "base/templates/processDescription",
+    "buttonLabel": "Create new process document"
+}'}}}
