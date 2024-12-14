@@ -2,7 +2,17 @@
 
 Process register contains process descriptions for the key processes used in Company Information Security Management System (CISMS).
 
+Currently following processes have been defined:
+
+{{{report '{
+    "name": "base/reports/childrenTable"
+}'}}}
+
+New processes should be added as needed:
+
 {{{createCards '{
     "template": "base/templates/processDescription",
     "buttonLabel": "Create new process document"
 }'}}}
+
+

@@ -8,7 +8,9 @@ consists of the following registers:
     "name": "base/reports/childrenTable"
 }'}}}
 
+New registers should be added as needed:
+
 {{{createCards '{
-    "template": "isms/templates/register",
+    "template": "ismsa/templates/register",
     "buttonLabel": "Add new register"
 }'}}}
