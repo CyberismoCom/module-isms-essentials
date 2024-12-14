@@ -1,0 +1,11 @@
+{
+    "title": "Asset register",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "",
+    "rank": "0|b",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "links": [],
+    "lastUpdated": "2024-12-14T09:54:50.843Z"
+}

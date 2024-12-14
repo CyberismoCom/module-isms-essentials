@@ -1,0 +1,14 @@
+
+== Information security management system (ISMS)
+
+Information security management systems (ISMS) for #TODO <add scope># 
+consists of the following registers:
+
+{{{report '{
+    "name": "base/reports/childrenTable"
+}'}}}
+
+{{{createCards '{
+    "template": "isms/templates/register",
+    "buttonLabel": "Add new register"
+}'}}}
