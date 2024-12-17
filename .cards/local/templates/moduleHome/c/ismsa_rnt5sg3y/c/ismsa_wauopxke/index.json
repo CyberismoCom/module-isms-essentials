@@ -6,6 +6,9 @@
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/adoptionStep": "step1",
+    "labels": [
+        "incident-progress"
+    ],
     "links": [],
     "lastUpdated": "2024-12-14T09:53:54.049Z"
 }

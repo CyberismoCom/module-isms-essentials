@@ -14,3 +14,9 @@ New registers should be added as needed:
     "template": "ismsa/templates/register",
     "buttonLabel": "Add new register"
 }'}}}
+
+== Status for current registers
+
+{{{report '{
+    "name": "ismsa/reports/dashboard"
+}'}}}
