@@ -12,20 +12,32 @@ result(Card) :-
 
 orderBy("rank", "ASC").
 
-field(Register, "ismsa/fieldTypes/failureCount", Count) :-
+field(Register, "ismsa/fieldTypes/failureCount", Count + Count2) :-
     field(Register, "cardType", "ismsa/cardTypes/register"),
     Count = #count {
         card(Card) :
         policyCheckFailure(Card, Category, Title, Message),
         ancestor(Card, Register),
         not hiddenInTreeView(Card)
+    },
+    Count2 = #count {
+        (Card, Category, Title, Message) :
+        policyCheckFailure(Card, Category, Title, Message),
+        Card = Register,
+        not hiddenInTreeView(Card)
     }.
 
-field(Register, "ismsa/fieldTypes/failureCount", Count) :-
+field(Register, "ismsa/fieldTypes/failureCount", Count + Count2) :-
     field(Register, "cardType", "ismsa/cardTypes/riskRegister"),
     Count = #count {
         (Card, Category, Title, Message) :
         policyCheckFailure(Card, Category, Title, Message),
         ancestor(Card, Register),
+        not hiddenInTreeView(Card)
+    },
+    Count2 = #count {
+        (Card, Category, Title, Message) :
+        policyCheckFailure(Card, Category, Title, Message),
+        Card = Register,
         not hiddenInTreeView(Card)
     }.
