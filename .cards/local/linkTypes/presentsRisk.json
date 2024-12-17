@@ -1,0 +1,14 @@
+{
+    "name": "ismsa/linkTypes/presentsRisk",
+    "outboundDisplayName": "presents risk",
+    "inboundDisplayName": "affects asset",
+    "sourceCardTypes": [
+        "ismsa/cardTypes/asset",
+        "ismsa/cardTypes/dataAsset",
+        "ismsa/cardTypes/device",
+        "ismsa/cardTypes/isAsset",
+        "ismsa/cardTypes/supplier"
+    ],
+    "destinationCardTypes": ["ismsa/cardTypes/risk"],
+    "enableLinkDescription": false
+}

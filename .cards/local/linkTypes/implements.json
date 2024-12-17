@@ -1,0 +1,14 @@
+{
+    "name": "ismsa/linkTypes/implements",
+    "outboundDisplayName": "implements",
+    "inboundDisplayName": "is implemented by",
+    "sourceCardTypes": [
+        "base/cardTypes/task",
+        "base/cardTypes/controlledDocument",
+        "ismsa/cardTypes/register",
+        "ismsa/cardTypes/riskRegister",
+        "ismsa/cardTypes/soaControl"
+    ],
+    "destinationCardTypes": ["ismsa/cardTypes/soaControl"],
+    "enableLinkDescription": false
+}
