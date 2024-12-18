@@ -1,0 +1,19 @@
+{
+    "name": "ismsa/fieldTypes/assetCriticalityForOperations",
+    "displayName": "Criticality for operations",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "high",
+            "enumDisplayValue": "High"
+        },
+        {
+            "enumValue": "medium",
+            "enumDisplayValue": "Medium"
+        },
+        {
+            "enumValue": "low",
+            "enumDisplayValue": "Low"
+        }
+    ]
+}

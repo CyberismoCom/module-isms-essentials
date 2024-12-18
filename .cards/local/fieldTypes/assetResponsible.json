@@ -1,0 +1,5 @@
+{
+    "name": "ismsa/fieldTypes/assetResponsible",
+    "displayName": "Responsible",
+    "dataType": "shortText"
+}

@@ -1,0 +1,5 @@
+{
+    "name": "ismsa/fieldTypes/assetLocation",
+    "displayName": "Location",
+    "dataType": "shortText"
+}

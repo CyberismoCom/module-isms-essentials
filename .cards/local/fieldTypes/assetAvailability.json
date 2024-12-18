@@ -1,0 +1,23 @@
+{
+    "name": "ismsa/fieldTypes/assetAvailability",
+    "displayName": "Availability",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "high",
+            "enumDisplayValue": "High"
+        },
+        {
+            "enumValue": "medium",
+            "enumDisplayValue": "Medium"
+        },
+        {
+            "enumValue": "low",
+            "enumDisplayValue": "Low"
+        },
+        {
+            "enumValue": "N/A",
+            "enumDisplayValue": "Not Applicable"
+        }
+    ]
+}
