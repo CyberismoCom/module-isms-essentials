@@ -1,5 +1,5 @@
-transitionDenied(Card, "Approve", "Fix policy failures before approving" ):-
-    card(Card),
+transitionDenied(Card, "Review as OK", "Fix policy failures before reviewing as OK" ):-
+    field(Card, "cardType", "base/cardTypes/controlledDocument"),
     policyCheckFailure(Card, _, _, _).
 
 transitionDenied(Card, "Approve", "Fill in approver before approving" ):-
