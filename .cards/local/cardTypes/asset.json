@@ -37,17 +37,18 @@
         }
     ],
     "alwaysVisibleFields": [
-        "ismsa/fieldTypes/assetType",
         "base/fieldTypes/owner",
-        "ismsa/fieldTypes/assetResponsible",
-        "ismsa/fieldTypes/assetLocation",
-        "ismsa/fieldTypes/assetBackups",
         "base/fieldTypes/informationClassification",
-        "ismsa/fieldTypes/assetPersonalInformation",
-        "ismsa/fieldTypes/assetIntegrity",
-        "ismsa/fieldTypes/assetAvailability",
         "ismsa/fieldTypes/assetCriticalityForOperations",
         "ismsa/fieldTypes/assetRiskEvaluationNeeded"
     ],
-    "optionallyVisibleFields": []
+    "optionallyVisibleFields": [
+        "ismsa/fieldTypes/assetType",
+        "ismsa/fieldTypes/assetResponsible",
+        "ismsa/fieldTypes/assetPersonalInformation",
+        "ismsa/fieldTypes/assetIntegrity",
+        "ismsa/fieldTypes/assetAvailability",
+        "ismsa/fieldTypes/assetLocation",
+        "ismsa/fieldTypes/assetBackups"
+    ]
 }
