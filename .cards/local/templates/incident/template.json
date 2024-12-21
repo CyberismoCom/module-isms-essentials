@@ -1,0 +1,5 @@
+{
+    "displayName": "Incident",
+    "description": "A cybersecurity event that has an impact on the organization and requires response and recovery.",
+    "category": "Cybersecurity management"
+}
