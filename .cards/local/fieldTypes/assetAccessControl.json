@@ -1,5 +1,5 @@
 {
     "name": "ismsa/fieldTypes/assetAccessControl",
-    "displayName": "Access Control",
+    "displayName": "Access control",
     "dataType": "shortText"
 }

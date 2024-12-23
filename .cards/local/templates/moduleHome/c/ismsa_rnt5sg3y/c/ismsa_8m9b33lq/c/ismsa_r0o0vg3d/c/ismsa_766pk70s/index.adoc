@@ -10,9 +10,7 @@ information systems:
 
 * Backups
 
-* Level of logging
-
-* Level of monitoring
+* Level of logging and monitoring
 
 {{{createCards '{
     "template": "ismsa/templates/assetInformationSystem",
