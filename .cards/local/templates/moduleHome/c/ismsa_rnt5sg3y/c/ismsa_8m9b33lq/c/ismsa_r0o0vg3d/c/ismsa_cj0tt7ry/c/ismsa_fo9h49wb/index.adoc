@@ -1,0 +1,3 @@
+== List of devices
+
+#TODO# Add link to asset registry that contains all employee devices

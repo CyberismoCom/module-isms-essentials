@@ -1,0 +1,17 @@
+## Devices
+
+Devices that support primary assets. In additions to fields (such as owner or criticality) that are mandatory for all assets, following characteristics need to be defined for devices:
+
+* Access Control
+
+* Vulnerability and patch management
+
+* Backups
+
+{{{createCards '{
+    "template": "ismsa/templates/assetDevice",
+    "buttonLabel": "Add new device"
+}'}}}
+
+**Note**: If devices systems are already listed in some other asset register, add new category and
+add there a link to the original asset register containing needed information.

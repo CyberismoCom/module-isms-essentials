@@ -1,0 +1,16 @@
+## Suppliers
+
+Suppliers that support Company Oy and its primary assets. In additions to fields (such as owner or criticality) that are mandatory for all assets, following characteristics need to be defined for suppliers:
+
+* Provided services, systems or products
+* Contact details
+
+Actual agreements with suppliers are available in #TODO <add link>#.
+
+{{{createCards '{
+    "template": "ismsa/templates/assetSupplier",
+    "buttonLabel": "Add new supplier"
+}'}}}
+
+**Note**: If suppliers are already listed in some other asset register, just add link here and ensure original 
+asset register contains needed information.

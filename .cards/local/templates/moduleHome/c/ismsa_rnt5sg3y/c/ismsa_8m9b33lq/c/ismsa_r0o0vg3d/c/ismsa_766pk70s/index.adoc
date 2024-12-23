@@ -19,5 +19,5 @@ information systems:
     "buttonLabel": "Add new information system"
 }'}}}
 
-**Note**: If information systems are already stored in some other asset register, just add link here and ensure original 
+**Note**: If information systems are already listed in some other asset register, just add link here and ensure original 
 asset register contains needed information.
