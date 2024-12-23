@@ -1,0 +1,9 @@
+## Company task register
+
+ISMS tasks are divided into three registers
+
+* Security targets
+* Security reviews
+* Other tasks
+
+Add new tasks under suitable sub register. New sub registers can be added using register-template, if needed.
