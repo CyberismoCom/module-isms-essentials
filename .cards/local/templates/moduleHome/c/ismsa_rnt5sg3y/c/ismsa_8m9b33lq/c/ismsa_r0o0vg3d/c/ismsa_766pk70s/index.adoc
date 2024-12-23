@@ -1,6 +1,8 @@
 ## Information systems
 
-Information systems support primary assets. In additions to fields (such as owner or criticality) that are mandatory for all assets, following characteristics need to be defined for information systems:
+Information systems support primary assets. In additions to fields (such as owner or criticality) 
+that are mandatory for all assets, following characteristics need to be defined for 
+information systems:
 
 * Access controls attributes (AD/local accounts, accessibility from public networks, MFA)
 
