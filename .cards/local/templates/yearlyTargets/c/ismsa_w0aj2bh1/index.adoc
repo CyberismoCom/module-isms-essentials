@@ -1,0 +1,13 @@
+## Subpage for security targets in #<add year>#
+
+
+{{{createCards '{
+    "template": "ismsa/templates/securityTarget",
+    "buttonLabel": "Create new security target"
+}'}}}
+
+== Security targets
+
+{{{report '{
+    "name": "base/reports/childrenTable"
+}'}}}

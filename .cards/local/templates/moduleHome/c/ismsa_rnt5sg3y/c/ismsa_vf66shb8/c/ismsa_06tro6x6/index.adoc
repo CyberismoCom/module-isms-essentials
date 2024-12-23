@@ -1,0 +1,14 @@
+## Company security targets
+
+Security targets are defined yearly. Create separate subpage for each yearly targets.
+
+{{{createCards '{
+    "template": "ismsa/templates/yearlyTargets",
+    "buttonLabel": "Create page for yearly targets"
+}'}}}
+
+== Yearly targets
+
+{{{report '{
+    "name": "base/reports/childrenList"
+}'}}}
