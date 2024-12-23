@@ -1,0 +1,24 @@
+{{#if results}}
+
+== Failed policy checks
+
+[cols="3,3,2,5"]
+|===
+| Policy check  {set:cellbgcolor:#F4F4F4} | Card | Owner | Error
+
+{{#each results}}
+{{#each this.policyChecks.failures}}
+| {{this.title}} {set:cellbgcolor:white}
+| xref:{{../key}}.adoc[{{../title}}]
+| {{../[base/fieldTypes/owner]}}
+| {{this.errorMessage}}
+{{/each}}
+{{/each}}
+
+|===
+
+{{/if}}
+
+{{#unless results}}
+NOTE: The status of risks looks good! There are no policy check failures.
+{{/unless}}

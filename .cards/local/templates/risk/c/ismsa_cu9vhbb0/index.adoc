@@ -32,9 +32,9 @@ See linked assets.
 
 #TODO# Describe possible existing controls. Add links if applicable.
 
-=== Justification for current risk level
+=== Justification for initial risk level
 
-#TODO# Add justifications for the current likelihood and the residual impact.
+#TODO# Add justifications for the initial likelihood and the initial impact.
 
 == Risk treatment
 

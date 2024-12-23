@@ -1,6 +1,6 @@
 {
-    "name": "ismsa/fieldTypes/riskCurrentRisk",
-    "displayName": "Current risk level",
+    "name": "ismsa/fieldTypes/riskInitialImpact",
+    "displayName": "Initial impact",
     "dataType": "enum",
     "enumValues": [
         {

@@ -69,7 +69,8 @@
         {
             "name": "Close as accepted",
             "fromState": [
-                "Analysed"
+                "Analysed",
+                "Needs monitoring"
             ],
             "toState": "Closed as accepted"
         },
@@ -123,14 +124,7 @@
             "toState": "Needs monitoring"
         },
         {
-            "name": "Review risk",
-            "fromState": [
-                "Needs monitoring"
-            ],
-            "toState": "Needs monitoring"
-        },
-        {
-            "name": "Review risk",
+            "name": "Review progress",
             "fromState": [
                 "Treatment in progress"
             ],
@@ -144,6 +138,13 @@
                 "Needs monitoring"
             ],
             "toState": "Analysed"
+        },
+        {
+            "name": "Review risk",
+            "fromState": [
+                "Needs monitoring"
+            ],
+            "toState": "Needs monitoring"
         },
         {
             "name": "Accept residual risk",

@@ -1,5 +1,5 @@
 {
-  "displayName": "Example report",
-  "description": "A description of the example report",
-  "category": "Uncategorised report"
+  "displayName": "Risks by owner",
+  "description": "A table showing risks by owner",
+  "category": "ISMS report"
 }

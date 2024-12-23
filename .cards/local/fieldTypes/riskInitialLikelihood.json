@@ -1,6 +1,6 @@
 {
-    "name": "ismsa/fieldTypes/riskCurrentLikelihood",
-    "displayName": "Current likelihood",
+    "name": "ismsa/fieldTypes/riskInitialLikelihood",
+    "displayName": "Initial likelihood",
     "dataType": "enum",
     "enumValues": [
         {

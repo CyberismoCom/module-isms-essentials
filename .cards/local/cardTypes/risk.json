@@ -9,13 +9,13 @@
             "name": "base/fieldTypes/informationClassification"
         },
         {
-            "name": "ismsa/fieldTypes/riskCurrentLikelihood"
+            "name": "ismsa/fieldTypes/riskInitialLikelihood"
         },
         {
-            "name": "ismsa/fieldTypes/riskCurrentImpact"
+            "name": "ismsa/fieldTypes/riskInitialImpact"
         },
         {
-            "name": "ismsa/fieldTypes/riskCurrentRisk"
+            "name": "ismsa/fieldTypes/riskInitialRisk"
         },
         {
             "name": "ismsa/fieldTypes/riskMitigationStrategy"
@@ -33,9 +33,9 @@
     "alwaysVisibleFields": [
         "base/fieldTypes/owner",
         "base/fieldTypes/informationClassification",
-        "ismsa/fieldTypes/riskCurrentLikelihood",
-        "ismsa/fieldTypes/riskCurrentImpact",
-        "ismsa/fieldTypes/riskCurrentRisk",
+        "ismsa/fieldTypes/riskInitialLikelihood",
+        "ismsa/fieldTypes/riskInitialImpact",
+        "ismsa/fieldTypes/riskInitialRisk",
         "ismsa/fieldTypes/riskMitigationStrategy",
         "ismsa/fieldTypes/riskResidualLikelihood",
         "ismsa/fieldTypes/riskResidualImpact",
