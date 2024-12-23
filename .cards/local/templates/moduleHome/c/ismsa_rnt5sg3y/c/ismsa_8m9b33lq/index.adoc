@@ -19,3 +19,7 @@ Currently following sub registers have been defined for assets:
 {{{report '{
     "name": "ismsa/reports/subregisters"
 }'}}}
+
+{{{report '{
+    "name": "ismsa/reports/assetsByOwner"
+}'}}}
