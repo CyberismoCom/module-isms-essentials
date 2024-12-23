@@ -3,6 +3,6 @@
 The information security controls beyond Annex A of ISO27001:2022 are added under this sub register.
 
 {{{createCards '{
-    "template": "isms/templates/control",
+    "template": "ismsa/templates/control",
     "buttonLabel": "Create new control"
 }'}}}
