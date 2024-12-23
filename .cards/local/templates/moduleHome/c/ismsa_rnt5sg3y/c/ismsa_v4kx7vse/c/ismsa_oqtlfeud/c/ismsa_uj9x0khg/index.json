@@ -1,9 +1,0 @@
-{
-    "title": "Respond",
-    "cardType": "ismsa/cardTypes/register",
-    "workflowState": "",
-    "rank": "0|e",
-    "base/fieldTypes/owner": null,
-    "base/fieldTypes/informationClassification": "internal",
-    "ismsa/fieldTypes/adoptionStep": "step1"
-}

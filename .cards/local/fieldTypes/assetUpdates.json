@@ -1,0 +1,5 @@
+{
+    "name": "ismsa/fieldTypes/assetUpdates",
+    "displayName": "Security updates",
+    "dataType": "shortText"
+}

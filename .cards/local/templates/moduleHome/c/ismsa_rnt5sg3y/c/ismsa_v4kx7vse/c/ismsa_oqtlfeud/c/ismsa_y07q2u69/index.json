@@ -1,9 +1,0 @@
-{
-    "title": "Recover",
-    "cardType": "ismsa/cardTypes/register",
-    "workflowState": "",
-    "rank": "0|f",
-    "base/fieldTypes/owner": null,
-    "base/fieldTypes/informationClassification": "internal",
-    "ismsa/fieldTypes/adoptionStep": "step1"
-}

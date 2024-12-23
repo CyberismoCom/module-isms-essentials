@@ -1,4 +1,4 @@
-## Company asset inventory
+## Company asset register
 
 An asset in anything that has value to the organisation and therefore requires protection.
 
