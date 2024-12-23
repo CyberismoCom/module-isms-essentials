@@ -1,0 +1,8 @@
+## Sub register for risks related to information systems
+
+Add new risks related to information systems using risk-template.
+
+{{{createCards '{
+    "template": "ismsa/templates/risk",
+    "buttonLabel": "Add new risk"
+}'}}}

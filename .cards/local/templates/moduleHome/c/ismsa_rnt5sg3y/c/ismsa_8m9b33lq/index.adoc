@@ -14,7 +14,7 @@ Asset registry is divided into three sub registers:
 
 These can contain additional sub registers, if needed.
 
-Currently following sub registers have been defined:
+Currently following sub registers have been defined for assets:
 
 {{{report '{
     "name": "ismsa/reports/subregisters"

@@ -1,0 +1,6 @@
+selectAll.
+result(Card) :-
+   ancestor(Card, {{cardKey}}),
+   field(Card, "cardType", "ismsa/cardTypes/risk").
+
+orderBy("base/fieldTypes/owner", "ASC").

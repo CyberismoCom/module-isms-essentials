@@ -1,8 +1,8 @@
 {
-    "title": "Supplier risks",
+    "title": "Risks related to information systems",
     "cardType": "ismsa/cardTypes/register",
     "workflowState": "",
-    "rank": "0|cc",
+    "rank": "0|cba",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/adoptionStep": "step1"

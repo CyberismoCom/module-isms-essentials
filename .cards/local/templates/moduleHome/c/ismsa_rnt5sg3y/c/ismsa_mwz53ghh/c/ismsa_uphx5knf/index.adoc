@@ -1,0 +1,8 @@
+## Sub register for risks related to suppliers
+
+Add new risks related to suppliers using risk-template.
+
+{{{createCards '{
+    "template": "ismsa/templates/risk",
+    "buttonLabel": "Add new risk"
+}'}}}

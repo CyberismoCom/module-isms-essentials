@@ -1,0 +1,8 @@
+## Sub register for risks related to devices
+
+Add new risks related to devices using risk-template.
+
+{{{createCards '{
+    "template": "ismsa/templates/risk",
+    "buttonLabel": "Add new risk"
+}'}}}

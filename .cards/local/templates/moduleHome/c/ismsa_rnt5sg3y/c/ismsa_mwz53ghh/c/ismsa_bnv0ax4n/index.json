@@ -2,7 +2,7 @@
     "title": "Primary asset risks",
     "cardType": "ismsa/cardTypes/register",
     "workflowState": "",
-    "rank": "0|a",
+    "rank": "0|ca",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/adoptionStep": "step1"
