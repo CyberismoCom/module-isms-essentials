@@ -1,0 +1,13 @@
+## Sub page for quarterly security reviews in #<add year>#
+
+
+{{{createCards '{
+    "template": "ismsa/templates/securityReview",
+    "buttonLabel": "Create new security review"
+}'}}}
+
+== Yearly reviews
+
+{{{report '{
+    "name": "base/reports/childrenList"
+}'}}}

@@ -1,0 +1,14 @@
+## Company security targets
+
+Security reviews are held at least quarterly. Create separate sub page for each yearly reviews.
+
+{{{createCards '{
+    "template": "ismsa/templates/yearlyReviews",
+    "buttonLabel": "Create page for security reviews"
+}'}}}
+
+== Yearly targets
+
+{{{report '{
+    "name": "base/reports/childrenList"
+}'}}}
