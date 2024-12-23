@@ -1,0 +1,5 @@
+{
+    "name": "ismsa/fieldTypes/controlJustification",
+    "displayName": "Justification",
+    "dataType": "shortText"
+}

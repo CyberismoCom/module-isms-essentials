@@ -1,0 +1,3 @@
+## Sub register for organisational controls
+
+Organisational controls of ISO27001:2022 are listed under this sub register.

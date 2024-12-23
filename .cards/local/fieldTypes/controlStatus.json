@@ -1,0 +1,23 @@
+{
+    "name": "ismsa/fieldTypes/controlStatus",
+    "displayName": "Implemented",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "implemented",
+            "enumDisplayValue": "Yes"
+        },
+        {
+            "enumValue": "partiallyImplemented",
+            "enumDisplayValue": "Partially"
+        },
+        {
+            "enumValue": "notImplemented",
+            "enumDisplayValue": "No"
+        },
+        {
+            "enumValue": "notApplicable",
+            "enumDisplayValue": "N/A"
+        }
+    ]
+}

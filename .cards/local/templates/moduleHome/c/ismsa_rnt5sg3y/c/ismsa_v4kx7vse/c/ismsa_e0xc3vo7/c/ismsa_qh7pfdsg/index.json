@@ -2,7 +2,7 @@
     "title": "Physical controls",
     "cardType": "ismsa/cardTypes/register",
     "workflowState": "",
-    "rank": "0|c",
+    "rank": "0|ac",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/adoptionStep": "step1"
