@@ -11,6 +11,6 @@ field(X, "base/fieldTypes/progress", 100 * Ok / Total) :-
         card(Register):
         field(Register, "cardType", "ismsa/cardTypes/register"),
         ancestor(Register, X),
-        field(Register, "workflowState", "Approved"),
+        field(Register, "workflowState", "Ready"),
         not hiddenInTreeView(Register)
     }.
