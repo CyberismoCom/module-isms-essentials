@@ -18,6 +18,10 @@ editingContentDenied(Card, "You can't edit approved documents" ):-
     field(Card, "cardType", "base/cardTypes/controlledDocument"),
     field(Card, "workflowState", "Approved").
 
+editingContentDenied(Card, "You can't edit archived documents" ):-
+    field(Card, "cardType", "base/cardTypes/controlledDocument"),
+    field(Card, "workflowState", "Archived").
+
 policyCheckFailure(Card, "ISMS", "Approver cannot be the same as owner", "Approver equals owner for this document Change the owner or approver field.") :-
     field(Card, "cardType", "base/cardTypes/controlledDocument"),
     field(Card, "base/fieldTypes/owner", Owner),
