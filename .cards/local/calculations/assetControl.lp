@@ -78,3 +78,13 @@ policyCheckFailure(Asset, "ISMS", "'Provided services' is a required field", "'P
 policyCheckFailure(Asset, "ISMS", "'Contact details' is a required field", "'Contact details' has not been defined for this asset. Set this field.") :-
     field(Asset, "cardType", "ismsa/cardTypes/assetSupplier"),
     not field(Asset, "ismsa/fieldTypes/assetContactDetails", _).
+
+transitionDenied(Asset, "Activate", "Nominate owner before activating" ):-
+    cismsAsset(Asset),
+    not field(Asset, "base/fieldTypes/owner", _).
+
+% At least one risk needs to be linked, if risk evaluation is needed
+policyCheckFailure(Asset, "ISMS", "Risks must be reported if risk evaluation is needed", "Risk evaluation is needed for this asset, but no risks have been reported. Link this asset to one or more risks.") :-
+    cismsAsset(Asset),
+    field(Asset, "ismsa/fieldTypes/assetRiskEvaluationNeeded", "yes"),
+    not link(Asset, _, "ismsa/linkTypes/presentsRisk").
