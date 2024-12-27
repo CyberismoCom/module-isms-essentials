@@ -5,5 +5,8 @@
     "rank": "0|ad",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
-    "ismsa/fieldTypes/adoptionStep": "step1"
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "labels": [
+        "control-progress"
+    ]
 }
