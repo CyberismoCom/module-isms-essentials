@@ -1,4 +1,4 @@
-## Sub register for own controls
+## Own controls
 
 The information security controls beyond Annex A of ISO27001:2022 are added under this sub register.
 

@@ -1,13 +1,13 @@
-## Company security targets
+## Company security reviews
 
-Security reviews are held at least quarterly. Create separate sub page for each yearly reviews.
+Security reviews are held at least quarterly. Create separate sub register for each yearly reviews.
 
 {{{createCards '{
     "template": "ismsa/templates/yearlyReviews",
-    "buttonLabel": "Create page for security reviews"
+    "buttonLabel": "Create register for security reviews"
 }'}}}
 
-== Yearly targets
+== Yearly reviews
 
 {{{report '{
     "name": "base/reports/childrenList"

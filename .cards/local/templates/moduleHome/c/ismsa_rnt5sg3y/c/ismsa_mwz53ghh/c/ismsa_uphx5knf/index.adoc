@@ -1,4 +1,4 @@
-## Sub register for risks related to suppliers
+## Risks related to suppliers
 
 Add new risks related to suppliers using risk-template.
 

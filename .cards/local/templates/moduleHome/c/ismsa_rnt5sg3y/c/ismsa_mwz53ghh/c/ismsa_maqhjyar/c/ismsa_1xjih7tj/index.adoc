@@ -1,4 +1,4 @@
-## Sub register for risks related to information systems
+## Risks related to information systems
 
 Add new risks related to information systems using risk-template.
 

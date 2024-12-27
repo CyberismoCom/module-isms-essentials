@@ -1,10 +1,10 @@
 ## Company security targets
 
-Security targets are defined yearly. Create separate sub page for each yearly targets.
+Security targets are defined yearly. Create separate sub register for each yearly targets.
 
 {{{createCards '{
     "template": "ismsa/templates/yearlyTargets",
-    "buttonLabel": "Create page for yearly targets"
+    "buttonLabel": "Create register for yearly targets"
 }'}}}
 
 == Yearly targets

@@ -1,4 +1,4 @@
-## Sub register for risks related to devices
+## Risks related to devices
 
 Add new risks related to devices using risk-template.
 

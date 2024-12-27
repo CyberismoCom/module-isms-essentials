@@ -1,4 +1,4 @@
-## Sub register for risks related to primary assets
+## Risks related to primary assets
 
 Add new risks related to primary assets using risk-template.
 

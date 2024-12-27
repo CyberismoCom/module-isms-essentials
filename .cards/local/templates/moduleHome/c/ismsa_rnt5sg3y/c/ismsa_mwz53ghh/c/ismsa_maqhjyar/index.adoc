@@ -1,4 +1,4 @@
-## Sub register for risks related to supporting assets
+## Risks related to supporting assets
 
 Risks related to supporting assets are recorded under sub registers using risk-template.
 

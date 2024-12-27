@@ -1,4 +1,4 @@
-## Sub register for risks related to data assets
+## Risks related to data assets
 
 Add new risks related to data assets using risk-template.
 
