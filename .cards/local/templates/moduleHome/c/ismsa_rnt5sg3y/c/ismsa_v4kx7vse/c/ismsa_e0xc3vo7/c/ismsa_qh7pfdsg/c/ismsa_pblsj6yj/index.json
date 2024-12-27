@@ -2,7 +2,7 @@
     "title": "7.3 Securing offices, rooms and facilities",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|d",
+    "rank": "0|acd",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

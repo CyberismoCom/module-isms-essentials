@@ -2,7 +2,7 @@
     "title": "8.31 Separation of development, test and production environments",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|zs",
+    "rank": "0|adzs",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

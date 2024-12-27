@@ -1,0 +1,18 @@
+{{#if results}}
+
+== Statement of applicability
+
+[cols="5,3,5,7"]
+|===
+| Title {set:cellbgcolor:#F4F4F4} | Status | Justification | Implementation summary
+
+{{#each results}}
+|xref:{{this.key}}.adoc[{{this.title}}] {set:cellbgcolor:white}
+|{{this.workflowState}}
+|{{this.[ismsa/fieldTypes/controlJustification]}}
+|{{this.[ismsa/fieldTypes/controlSummary]}}
+{{/each}}
+
+|===
+
+{{/if}}

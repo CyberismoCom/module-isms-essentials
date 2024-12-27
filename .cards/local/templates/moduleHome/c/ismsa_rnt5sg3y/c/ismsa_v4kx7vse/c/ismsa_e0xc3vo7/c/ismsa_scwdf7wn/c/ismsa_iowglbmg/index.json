@@ -2,7 +2,7 @@
     "title": "8.10 Information deletion",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|k",
+    "rank": "0|adk",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

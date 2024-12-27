@@ -2,7 +2,7 @@
     "title": "8.21 Security of network services",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|v",
+    "rank": "0|adv",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

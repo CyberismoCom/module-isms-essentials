@@ -2,7 +2,7 @@
     "title": "8.13 Information backup",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|n",
+    "rank": "0|adn",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

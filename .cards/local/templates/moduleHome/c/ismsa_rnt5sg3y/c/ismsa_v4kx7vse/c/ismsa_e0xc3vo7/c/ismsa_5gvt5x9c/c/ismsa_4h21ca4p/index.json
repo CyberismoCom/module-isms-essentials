@@ -2,7 +2,7 @@
     "title": "6.1 Screening",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|b",
+    "rank": "0|abb",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

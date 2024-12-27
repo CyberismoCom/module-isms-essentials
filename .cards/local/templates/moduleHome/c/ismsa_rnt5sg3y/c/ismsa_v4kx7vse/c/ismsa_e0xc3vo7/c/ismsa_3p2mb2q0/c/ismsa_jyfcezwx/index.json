@@ -2,7 +2,7 @@
     "title": "5.16 Identity management",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|q",
+    "rank": "0|aaq",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

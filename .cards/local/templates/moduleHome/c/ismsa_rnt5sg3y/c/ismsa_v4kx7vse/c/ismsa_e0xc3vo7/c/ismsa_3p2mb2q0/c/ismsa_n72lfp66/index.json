@@ -2,7 +2,7 @@
     "title": "5.15 Access control",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|p",
+    "rank": "0|aap",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

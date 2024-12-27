@@ -1,0 +1,6 @@
+selectAll.
+result(Card) :-
+   field(Card, "cardType", "ismsa/cardTypes/control"),
+   ancestor(Card, {{cardKey}}).
+
+orderBy("rank", "ASC").

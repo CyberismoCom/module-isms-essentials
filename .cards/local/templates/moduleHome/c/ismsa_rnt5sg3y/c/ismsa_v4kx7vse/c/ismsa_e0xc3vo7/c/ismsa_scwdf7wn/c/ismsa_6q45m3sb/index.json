@@ -2,7 +2,7 @@
     "title": "8.7 Protection against malware",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|h",
+    "rank": "0|adh",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

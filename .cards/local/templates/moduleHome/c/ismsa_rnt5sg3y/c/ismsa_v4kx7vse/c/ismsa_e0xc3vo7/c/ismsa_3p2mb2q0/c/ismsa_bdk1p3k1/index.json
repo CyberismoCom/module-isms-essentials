@@ -2,7 +2,7 @@
     "title": "5.18 Access rights",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|s",
+    "rank": "0|aas",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

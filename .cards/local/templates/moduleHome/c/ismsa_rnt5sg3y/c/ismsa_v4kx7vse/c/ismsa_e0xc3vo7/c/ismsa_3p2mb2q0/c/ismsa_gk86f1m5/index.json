@@ -2,7 +2,7 @@
     "title": "5.14 Information transfer",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|o",
+    "rank": "0|aao",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

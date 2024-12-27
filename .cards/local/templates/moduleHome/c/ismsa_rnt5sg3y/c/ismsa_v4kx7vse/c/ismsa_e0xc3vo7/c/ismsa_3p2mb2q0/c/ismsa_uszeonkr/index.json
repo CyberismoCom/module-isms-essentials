@@ -2,7 +2,7 @@
     "title": "5.1 Policies for information security",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|b",
+    "rank": "0|aab",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

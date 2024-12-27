@@ -2,7 +2,7 @@
     "title": "8.22 Segregation of networks",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|w",
+    "rank": "0|adw",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

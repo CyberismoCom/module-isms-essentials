@@ -2,7 +2,7 @@
     "title": "7.7 Clear desk and clear screen",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|h",
+    "rank": "0|ach",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

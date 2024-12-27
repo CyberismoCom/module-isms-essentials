@@ -2,7 +2,7 @@
     "title": "8.20 Networks security",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|u",
+    "rank": "0|adu",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

@@ -2,7 +2,7 @@
     "title": "8.2 Privileged access rights",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|c",
+    "rank": "0|adc",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

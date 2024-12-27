@@ -2,7 +2,7 @@
     "title": "8.3 Information access restriction",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|d",
+    "rank": "0|add",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

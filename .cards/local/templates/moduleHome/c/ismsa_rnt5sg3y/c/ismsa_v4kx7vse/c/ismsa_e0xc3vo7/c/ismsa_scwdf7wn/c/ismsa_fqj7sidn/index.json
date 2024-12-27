@@ -2,7 +2,7 @@
     "title": "8.9 Configuration management",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|j",
+    "rank": "0|adj",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

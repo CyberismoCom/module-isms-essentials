@@ -2,7 +2,7 @@
     "title": "5.3 Segregation of duties",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|d",
+    "rank": "0|aad",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

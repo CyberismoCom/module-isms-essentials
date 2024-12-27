@@ -2,7 +2,7 @@
     "title": "7.12 Cabling security",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|m",
+    "rank": "0|acm",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

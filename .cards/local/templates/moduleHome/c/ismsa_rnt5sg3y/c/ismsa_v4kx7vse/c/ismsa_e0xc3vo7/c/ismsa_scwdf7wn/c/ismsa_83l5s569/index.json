@@ -2,7 +2,7 @@
     "title": "8.23 Web filtering",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|x",
+    "rank": "0|adx",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,

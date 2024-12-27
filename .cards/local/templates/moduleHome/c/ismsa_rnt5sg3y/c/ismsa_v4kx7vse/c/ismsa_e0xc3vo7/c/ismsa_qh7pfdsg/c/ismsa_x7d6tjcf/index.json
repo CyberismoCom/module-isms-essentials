@@ -2,7 +2,7 @@
     "title": "7.10 Storage media",
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "Open",
-    "rank": "0|k",
+    "rank": "0|ack",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/controlStatus": null,
