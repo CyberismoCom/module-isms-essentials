@@ -84,14 +84,26 @@ policyCheckFailure(Card, "ISMS", "Risks can only be accepted if the risk level i
     field(Card, "ismsa/fieldTypes/riskResidualRisk", ResidualRisk),
     cismsRiskLessThan(AcceptableRiskLevel, ResidualRisk).
 
-transitionDenied(Card, "Complete treatment", "Fill Residual likelihood, impact and risk level for this risk before completing analysis" ):-
+transitionDenied(Card, "Complete treatment", "Fill Residual likelihood, impact and risk level for this risk before completing treatment" ):-
     field(Card, "cardType", "ismsa/cardTypes/risk"),
     not field(Card, "ismsa/fieldTypes/riskResidualLikelihood", _).
 
-transitionDenied(Card, "Complete treatment", "Fill Residual likelihood, impact and risk level for this risk before completing analysis" ):-
+transitionDenied(Card, "Complete treatment", "Fill Residual likelihood, impact and risk level for this risk before completing treatment" ):-
     field(Card, "cardType", "ismsa/cardTypes/risk"),
     not field(Card, "ismsa/fieldTypes/riskResidualImpact", _).
 
-transitionDenied(Card, "Complete treatment", "Fill Residual likelihood, impact and risk level for this risk before completing analysis" ):-
+transitionDenied(Card, "Complete treatment", "Fill Residual likelihood, impact and risk level for this risk before completing treatment" ):-
+    field(Card, "cardType", "ismsa/cardTypes/risk"),
+    not field(Card, "ismsa/fieldTypes/riskResidualRisk", _).
+
+transitionDenied(Card, "Accept residual risk", "Fill Residual likelihood, impact and risk level for this risk before accepting residual risk" ):-
+    field(Card, "cardType", "ismsa/cardTypes/risk"),
+    not field(Card, "ismsa/fieldTypes/riskResidualLikelihood", _).
+
+transitionDenied(Card, "Accept residual risk", "Fill Residual likelihood, impact and risk level for this risk before accepting residual risk" ):-
+    field(Card, "cardType", "ismsa/cardTypes/risk"),
+    not field(Card, "ismsa/fieldTypes/riskResidualImpact", _).
+
+transitionDenied(Card, "Accept residual risk", "Fill Residual likelihood, impact and risk level for this risk before accepting residual risk" ):-
     field(Card, "cardType", "ismsa/cardTypes/risk"),
     not field(Card, "ismsa/fieldTypes/riskResidualRisk", _).

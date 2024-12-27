@@ -60,11 +60,11 @@
             "toState": "Analysed"
         },
         {
-            "name": "Close as duplicate",
+            "name": "Complete treatment planning",
             "fromState": [
                 "Analysed"
             ],
-            "toState": "Closed as duplicate"
+            "toState": "Treatment planned"
         },
         {
             "name": "Close as accepted",
@@ -73,6 +73,13 @@
                 "Needs monitoring"
             ],
             "toState": "Closed as accepted"
+        },
+        {
+            "name": "Close as not applicable",
+            "fromState": [
+                "Analysed"
+            ],
+            "toState": "Closed as not applicable"
         },
         {
             "name": "Close as transferred",
@@ -89,18 +96,11 @@
             "toState": "Closed as avoided"
         },
         {
-            "name": "Close as not applicable",
+            "name": "Close as duplicate",
             "fromState": [
                 "Analysed"
             ],
-            "toState": "Closed as not applicable"
-        },
-        {
-            "name": "Complete treatment planning",
-            "fromState": [
-                "Analysed"
-            ],
-            "toState": "Treatment planned"
+            "toState": "Closed as duplicate"
         },
         {
             "name": "Approve treatment plan",
