@@ -39,13 +39,6 @@
             "toState": "Open"
         },
         {
-            "name": "Reopen",
-            "fromState": [
-                "*"
-            ],
-            "toState": "Open"
-        },
-        {
             "name": "Start planning",
             "fromState": [
                 "Open"
@@ -93,6 +86,13 @@
                 "*"
             ],
             "toState": "Closed as not applicable"
+        },
+        {
+            "name": "Reverify control",
+            "fromState": [
+                "Closed as verified"
+            ],
+            "toState": "Closed as verified"
         },
         {
             "name": "Reopen",
