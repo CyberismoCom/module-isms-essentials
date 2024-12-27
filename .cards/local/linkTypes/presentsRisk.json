@@ -4,10 +4,10 @@
     "inboundDisplayName": "affects asset",
     "sourceCardTypes": [
         "ismsa/cardTypes/asset",
-        "ismsa/cardTypes/dataAsset",
-        "ismsa/cardTypes/device",
-        "ismsa/cardTypes/isAsset",
-        "ismsa/cardTypes/supplier"
+        "ismsa/cardTypes/assetData",
+        "ismsa/cardTypes/assetDevice",
+        "ismsa/cardTypes/assetInformationSystem",
+        "ismsa/cardTypes/assetSupplier"
     ],
     "destinationCardTypes": ["ismsa/cardTypes/risk"],
     "enableLinkDescription": false

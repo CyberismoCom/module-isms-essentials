@@ -18,6 +18,10 @@ editingContentDenied(Card, "You can't edit approved documents" ):-
     field(Card, "cardType", "base/cardTypes/controlledDocument"),
     field(Card, "workflowState", "Approved").
 
+editingContentDenied(Card, "You can't edit reviewed documents" ):-
+    field(Card, "cardType", "base/cardTypes/controlledDocument"),
+    field(Card, "workflowState", "Reviewed").
+
 editingContentDenied(Card, "You can't edit archived documents" ):-
     field(Card, "cardType", "base/cardTypes/controlledDocument"),
     field(Card, "workflowState", "Archived").
