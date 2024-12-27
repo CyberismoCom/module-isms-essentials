@@ -3,7 +3,7 @@
     "outboundDisplayName": "mitigates",
     "inboundDisplayName": "is mitigated by",
     "sourceCardTypes": [
-        "ismsa/cardTypes/soaControl", 
+        "ismsa/cardTypes/control", 
         "base/cardTypes/task"
     ],
     "destinationCardTypes": ["ismsa/cardTypes/risk"],
