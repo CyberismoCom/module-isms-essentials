@@ -1,6 +1,6 @@
 {
     "title": "Security targets for <year>",
-    "cardType": "base/cardTypes/page",
+    "cardType": "ismsa/cardTypes/register",
     "workflowState": "",
     "rank": "0|b",
     "base/fieldTypes/owner": null,
