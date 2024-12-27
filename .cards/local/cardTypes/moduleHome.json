@@ -8,15 +8,14 @@
             "isEditable": true
         },
         {
-            "name": "base/fieldTypes/informationClassification"
+            "name": "base/fieldTypes/owner"
         },
         {
-            "name": "base/fieldTypes/owner"
+            "name": "base/fieldTypes/informationClassification"
         }
     ],
     "alwaysVisibleFields": [
         "base/fieldTypes/owner",
         "base/fieldTypes/informationClassification"
-
     ]
 }
