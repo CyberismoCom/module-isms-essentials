@@ -1,6 +1,7 @@
 selectAll.
 result(Card) :-
-   field(Card, "cardType", "ismsa/cardTypes/control"),
-   ancestor(Card, {{cardKey}}).
+   ancestor({{cardKey}},Ancestor),
+   ancestor(Card,Ancestor),
+   field(Card, "cardType", "ismsa/cardTypes/control").
 
 orderBy("rank", "ASC").
