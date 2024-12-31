@@ -1,5 +1,5 @@
 {
-    "displayName": "Register",
+    "displayName": "Generic register",
     "description": "A basic register",
-    "category": "Cybersecurity management"
+    "category": "Register management"
 }

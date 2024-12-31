@@ -1,5 +1,5 @@
 {
     "displayName": "Yearly targets",
-    "description": "A page that contains a button for adding security targets",
-    "category": "Cybersecurity management"
+    "description": "A register that contains a button for adding security targets",
+    "category": "Register management"
 }

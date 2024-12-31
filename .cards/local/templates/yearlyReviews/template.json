@@ -1,5 +1,5 @@
 {
     "displayName": "Yearly reviews",
-    "description": "A page that contains buttons for security reviews",
-    "category": "Cybersecurity management"
+    "description": "A register that contains a button for adding security reviews",
+    "category": "Register management"
 }
