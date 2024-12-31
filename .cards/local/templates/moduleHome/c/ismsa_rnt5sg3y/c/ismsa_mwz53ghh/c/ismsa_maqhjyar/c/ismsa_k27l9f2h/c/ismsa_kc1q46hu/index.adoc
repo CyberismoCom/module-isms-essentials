@@ -50,7 +50,7 @@ See linked assets.
 }'}}}
 
 {{{createCards '{
-    "template": "ismsa/templates/soaControl",
+    "template": "ismsa/templates/control",
     "buttonLabel": "Add new controls to treatment plan"
 }'}}}
 

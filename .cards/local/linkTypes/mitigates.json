@@ -3,8 +3,7 @@
     "outboundDisplayName": "mitigates",
     "inboundDisplayName": "is mitigated by",
     "sourceCardTypes": [
-        "ismsa/cardTypes/control", 
-        "base/cardTypes/task"
+        "ismsa/cardTypes/control"
     ],
     "destinationCardTypes": ["ismsa/cardTypes/risk"],
     "enableLinkDescription": false

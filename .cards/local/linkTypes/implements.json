@@ -4,11 +4,11 @@
     "inboundDisplayName": "is implemented by",
     "sourceCardTypes": [
         "base/cardTypes/task",
+        "base/cardTypes/recurringTask",
         "base/cardTypes/controlledDocument",
         "ismsa/cardTypes/register",
-        "ismsa/cardTypes/riskRegister",
-        "ismsa/cardTypes/soaControl"
+        "ismsa/cardTypes/riskRegister"
     ],
-    "destinationCardTypes": ["ismsa/cardTypes/soaControl"],
+    "destinationCardTypes": ["ismsa/cardTypes/control"],
     "enableLinkDescription": false
 }
