@@ -2,13 +2,17 @@
 
 == Statement of applicability
 
-[cols="5,3,5,7"]
+[cols="6,4,6,8"]
 |===
 | Title {set:cellbgcolor:#F4F4F4} | Status | Justification | Implementation summary
 
 {{#each results}}
 |xref:{{this.key}}.adoc[{{this.title}}] {set:cellbgcolor:white}
-|{{this.workflowState}}
+{{#if this.[ismsa/fieldTypes/controlStatus]}}
+|{{this.[ismsa/fieldTypes/controlStatus].displayValue}}
+{{else}}
+|In evaluation
+{{/if}}
 |{{this.[ismsa/fieldTypes/controlJustification]}}
 |{{this.[ismsa/fieldTypes/controlSummary]}}
 {{/each}}
