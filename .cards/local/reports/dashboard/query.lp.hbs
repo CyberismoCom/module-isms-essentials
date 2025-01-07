@@ -15,7 +15,7 @@ orderBy("rank", "ASC").
 field(Register, "ismsa/fieldTypes/failureCount", Count + Count2) :-
     field(Register, "cardType", "ismsa/cardTypes/register"),
     Count = #count {
-        card(Card) :
+        (Card, Category, Title, Message) :
         policyCheckFailure(Card, Category, Title, Message),
         ancestor(Card, Register),
         not hiddenInTreeView(Card)
