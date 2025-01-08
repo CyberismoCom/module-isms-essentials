@@ -1,4 +1,5 @@
 graph(toplevelGraph).
+attr(graph, toplevelGraph, rankdir, "LR").
 
 ismsa_asset(X, "Asset") :- field(X, "cardType", "ismsa/cardTypes/asset").
 ismsa_asset(X, "Data") :- field(X, "cardType", "ismsa/cardTypes/assetData").
@@ -34,11 +35,11 @@ attr(edge, (Asset, Risk, 1), label, "<<font point-size='24'>Presents risk</font>
     visible(Asset),
     visible(Risk).
 
-edge((Control, Risk, 1), toplevelGraph) :-
+edge((Risk, Control, 1), toplevelGraph) :-
     link(Control, Risk, "ismsa/linkTypes/mitigates"),
     visible(Control),
     visible(Risk).
-attr(edge, (Control, Risk, 1), label, "<<font point-size='24'>Mitigates</font>>") :-
+attr(edge, (Risk, Control, 1), label, "<<font point-size='24'>Mitigated by</font>>") :-
     link(Control, Risk, "ismsa/linkTypes/mitigates"),
     visible(Control),
     visible(Risk).
