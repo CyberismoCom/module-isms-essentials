@@ -1,0 +1,10 @@
+visible({{cardKey}}).
+
+visible(Risk) :-
+    field(Risk, "cardType", "ismsa/cardTypes/risk"),
+    link({{cardKey}}, Risk, "ismsa/linkTypes/presentsRisk").
+
+visible(Control) :-
+    field(Control, "cardType", "ismsa/cardTypes/control"),
+    visible(Risk),
+    link(Control, Risk, "ismsa/linkTypes/mitigates").

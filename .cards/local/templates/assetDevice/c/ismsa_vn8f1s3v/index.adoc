@@ -1,3 +1,8 @@
+{{{graph '{
+  "model": "ismsa/graphModels/assetsRisksControls",
+  "view": "ismsa/graphViews/asset"
+}'}}}
+
 == Asset description
 
 #TODO add asset description and/or link#

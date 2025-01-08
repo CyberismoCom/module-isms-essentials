@@ -1,14 +1,19 @@
+{{{graph '{
+  "model": "ismsa/graphModels/assetsRisksControls",
+  "view": "ismsa/graphViews/control"
+}'}}}
+
 == Control implementation plan
 
-=== Implementation strategy 
+=== Implementation strategy
 
 #TODO#: Add implementation strategy
 
-=== Responsible(s) 
+=== Responsible(s)
 
 #TODO#: Add implementation responsible(s)
 
-=== Target date 
+=== Target date
 
 #TODO#: Add implementation target date
 
