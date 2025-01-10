@@ -20,7 +20,16 @@ See separate file CONTRIBUTING.
 
 == About the Cyberismo ISMS essentials module
 
-#TODO: add a description#
+The Cyberismo ISMS essentials module contains the basic building blocks for establishing information security management system. 
+This includes example processes for
+
+* asset management
+
+* risk management
+
+* incident management
+
+along with the needed field types, link types, templates, workflows, policy checks and progress metrics.
 
 == Using the Cyberismo ISMS essentials module
 
@@ -33,5 +42,13 @@ In order to use the base module content in your Cyberismo project, take the foll
 
     cyberismo import module ../module-base
     cyberismo import module ../module-isms-essentials
+
+* Start Cyberismo app on http://localhost:3000/
+
+    cyberismo app
+
+* Create start page for your ISMS using moduleHome template 
+
+    Select "ISMS home" under Start in Cyberismo app
 
 For more details, see https://docs.cyberismo.com[Cyberismo documentation].
