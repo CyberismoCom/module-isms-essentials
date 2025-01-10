@@ -29,7 +29,7 @@ This includes example processes for
 
 * incident management
 
-along with the needed field types, link types, templates, workflows, policy checks and progress metrics.
+along with the needed field types, link types, templates, workflows, registers, policy checks and progress metrics.
 
 == Using the Cyberismo ISMS essentials module
 
