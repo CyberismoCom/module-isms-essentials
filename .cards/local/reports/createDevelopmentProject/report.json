@@ -1,5 +1,5 @@
 {
-  "displayName": "Example report",
-  "description": "A description of the example report",
-  "category": "Uncategorised report"
+  "displayName": "Create a development project",
+  "description": "A helper report that is used in the development project register",
+  "category": "ISMS report"
 }

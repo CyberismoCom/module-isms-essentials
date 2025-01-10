@@ -2,8 +2,6 @@
 
 This registers includes development projects that develop custom software and/or hardware.
 
-== Related items
-
 {{{report '{
     "name": "ismsa/reports/createDevelopmentProject"
 }'}}}
