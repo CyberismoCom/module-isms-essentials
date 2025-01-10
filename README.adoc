@@ -49,6 +49,6 @@ In order to use the base module content in your Cyberismo project, take the foll
 
 * Create start page for your ISMS using moduleHome template 
 
-    Select "ISMS home" under Start in Cyberismo app
+    CREATE NEW CARD -> ISMS home -> Create
 
 For more details, see https://docs.cyberismo.com[Cyberismo documentation].
