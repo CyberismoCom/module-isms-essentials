@@ -4,9 +4,9 @@ ismsTask(Task) :-
 ismsTask(Task) :-
     field(Task, "cardType", "base/cardTypes/recurringTask").
 
-field(X, "base/fieldTypes/progress", ((100 * (Ok + NotRequired) + 20 * InProgress) + (100 * OkTargets + 20 * InProgressTargets)) / (Total + TotalTargets)) :-
+field(X, "base/fieldTypes/progress", ((100 * (Ok + NotRequired) + 20 * InProgress) + (100 * OkTargets + 20 * InProgressTargets)) / (TotalTasks + TotalTargets)) :-
     label(X, "task-progress"),
-    Total = #count {
+    TotalTasks = #count {
         card(Task):
         ismsTask(Task),
         ancestor(Task, X),
@@ -18,7 +18,7 @@ field(X, "base/fieldTypes/progress", ((100 * (Ok + NotRequired) + 20 * InProgres
         ancestor(Target, X),
         not hiddenInTreeView(Target)
     },
-    Total + TotalTargets > 0,
+    TotalTasks + TotalTargets > 0,
     Ok = #count {
         card(Task):
         ismsTask(Task),
@@ -57,7 +57,7 @@ field(X, "base/fieldTypes/progress", ((100 * (Ok + NotRequired) + 20 * InProgres
 
 field(X, "base/fieldTypes/progress", 0) :-
     label(X, "task-progress"),
-    Total = #count {
+    TotalTasks = #count {
         card(Task):
         ismsTask(Task),
         ancestor(Task, X),
@@ -69,4 +69,4 @@ field(X, "base/fieldTypes/progress", 0) :-
         ancestor(Target, X),
         not hiddenInTreeView(Target)
     },
-    Total + TotalTargets = 0.
+    TotalTasks + TotalTargets = 0.
