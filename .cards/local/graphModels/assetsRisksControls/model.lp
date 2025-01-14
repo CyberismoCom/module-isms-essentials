@@ -30,8 +30,16 @@ edge((Asset, Risk, 1), toplevelGraph) :-
     link(Asset, Risk, "ismsa/linkTypes/presentsRisk"),
     visible(Asset),
     visible(Risk).
+edge((Asset, Risk, 1), toplevelGraph) :-
+    ismsa_asset(Asset, _),
+    field(Risk, "cardType", "ismsa/cardTypes/risk"),
+    parent(Risk, Asset),
+    visible(Asset),
+    visible(Risk).
 attr(edge, (Asset, Risk, 1), label, "<<font point-size='24'>Presents risk</font>>") :-
-    link(Asset, Risk, "ismsa/linkTypes/presentsRisk"),
+    edge((Asset, Risk, 1), toplevelGraph),
+    cismsAsset(Asset),
+    field(Risk, "cardType", "ismsa/cardTypes/risk"),
     visible(Asset),
     visible(Risk).
 
@@ -39,8 +47,16 @@ edge((Risk, Control, 1), toplevelGraph) :-
     link(Control, Risk, "ismsa/linkTypes/mitigates"),
     visible(Control),
     visible(Risk).
+edge((Risk, Control, 1), toplevelGraph) :-
+    field(Risk, "cardType", "ismsa/cardTypes/risk"),
+    field(Control, "cardType", "ismsa/cardTypes/control"),
+    parent(Control, Risk),
+    visible(Control),
+    visible(Risk).
 attr(edge, (Risk, Control, 1), label, "<<font point-size='24'>Mitigated by</font>>") :-
-    link(Control, Risk, "ismsa/linkTypes/mitigates"),
+    edge((Risk, Control, 1), toplevelGraph),
+    field(Risk, "cardType", "ismsa/cardTypes/risk"),
+    field(Control, "cardType", "ismsa/cardTypes/control"),
     visible(Control),
     visible(Risk).
 
