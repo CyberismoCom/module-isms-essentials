@@ -1,10 +1,6 @@
 selectAll.
 
-result(Card) :- 
-    card(Card), 
-    parent(Card, {{cardKey}}).
-
-result(Card) :- 
+result(Card) :-
     card(Card),
     link({{cardKey}},Card,"ismsa/linkTypes/presentsRisk").
 

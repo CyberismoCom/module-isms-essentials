@@ -6,3 +6,8 @@ Add new risks related to suppliers using risk-template.
     "template": "ismsa/templates/risk",
     "buttonLabel": "Add new risk"
 }'}}}
+
+{{{report '{
+    "name": "ismsa/reports/risksByAssetType",
+    "assetType": "ismsa/cardTypes/assetSupplier"
+}'}}}
