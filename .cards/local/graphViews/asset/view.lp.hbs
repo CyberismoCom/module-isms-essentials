@@ -4,19 +4,8 @@ visible(Risk) :-
     field(Risk, "cardType", "ismsa/cardTypes/risk"),
     link({{cardKey}}, Risk, "ismsa/linkTypes/presentsRisk").
 
-visible(Risk) :-
-    field(Risk, "cardType", "ismsa/cardTypes/risk"),
-    cismsAsset({{cardKey}}),
-    parent(Risk, {{cardKey}}).
-
 visible(Control) :-
     field(Control, "cardType", "ismsa/cardTypes/control"),
     field(Risk, "cardType", "ismsa/cardTypes/risk"),
     visible(Risk),
     link(Control, Risk, "ismsa/linkTypes/mitigates").
-
-visible(Control) :-
-    field(Control, "cardType", "ismsa/cardTypes/control"),
-    field(Risk, "cardType", "ismsa/cardTypes/risk"),
-    visible(Risk),
-    parent(Control, Risk).

@@ -1,4 +1,3 @@
-
 policyCheckFailure(Card, "ISMS", "Owner is a required field", "Owner has not been defined for this card. Set the owner field.") :-
     card(Card),
     not field(Card, "base/fieldTypes/owner", _).

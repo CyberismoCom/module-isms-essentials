@@ -1,12 +1,6 @@
 graph(toplevelGraph).
 attr(graph, toplevelGraph, rankdir, "LR").
 
-ismsa_asset(X, "Asset") :- field(X, "cardType", "ismsa/cardTypes/asset").
-ismsa_asset(X, "Data") :- field(X, "cardType", "ismsa/cardTypes/assetData").
-ismsa_asset(X, "Device") :- field(X, "cardType", "ismsa/cardTypes/assetDevice").
-ismsa_asset(X, "Information system") :- field(X, "cardType", "ismsa/cardTypes/assetInformationSystem").
-ismsa_asset(X, "Supplier") :- field(X, "cardType", "ismsa/cardTypes/assetSupplier").
-
 node(X, toplevelGraph) :- ismsa_asset(X, _), visible(X).
 node(X, toplevelGraph) :- field(X, "cardType", "ismsa/cardTypes/risk"), visible(X).
 node(X, toplevelGraph) :- field(X, "cardType", "ismsa/cardTypes/control"), visible(X).
@@ -30,16 +24,8 @@ edge((Asset, Risk, 1), toplevelGraph) :-
     link(Asset, Risk, "ismsa/linkTypes/presentsRisk"),
     visible(Asset),
     visible(Risk).
-edge((Asset, Risk, 1), toplevelGraph) :-
-    ismsa_asset(Asset, _),
-    field(Risk, "cardType", "ismsa/cardTypes/risk"),
-    parent(Risk, Asset),
-    visible(Asset),
-    visible(Risk).
 attr(edge, (Asset, Risk, 1), label, "<<font point-size='24'>Presents risk</font>>") :-
-    edge((Asset, Risk, 1), toplevelGraph),
-    cismsAsset(Asset),
-    field(Risk, "cardType", "ismsa/cardTypes/risk"),
+    link(Asset, Risk, "ismsa/linkTypes/presentsRisk"),
     visible(Asset),
     visible(Risk).
 
@@ -47,16 +33,8 @@ edge((Risk, Control, 1), toplevelGraph) :-
     link(Control, Risk, "ismsa/linkTypes/mitigates"),
     visible(Control),
     visible(Risk).
-edge((Risk, Control, 1), toplevelGraph) :-
-    field(Risk, "cardType", "ismsa/cardTypes/risk"),
-    field(Control, "cardType", "ismsa/cardTypes/control"),
-    parent(Control, Risk),
-    visible(Control),
-    visible(Risk).
 attr(edge, (Risk, Control, 1), label, "<<font point-size='24'>Mitigated by</font>>") :-
-    edge((Risk, Control, 1), toplevelGraph),
-    field(Risk, "cardType", "ismsa/cardTypes/risk"),
-    field(Control, "cardType", "ismsa/cardTypes/control"),
+    link(Control, Risk, "ismsa/linkTypes/mitigates"),
     visible(Control),
     visible(Risk).
 

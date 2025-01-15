@@ -1,16 +1,18 @@
-cismsAsset(Card) :-
+ismsa_asset(Card) :- ismsa_asset(Card, _).
+
+ismsa_asset(Card, "Asset") :-
     field(Card, "cardType", "ismsa/cardTypes/asset").
 
-cismsAsset(Card) :-
+ismsa_asset(Card, "Information system") :-
     field(Card, "cardType", "ismsa/cardTypes/assetInformationSystem").
 
-cismsAsset(Card) :-
+ismsa_asset(Card, "Data asset") :-
     field(Card, "cardType", "ismsa/cardTypes/assetData").
 
-cismsAsset(Card) :-
+ismsa_asset(Card, "Device") :-
     field(Card, "cardType", "ismsa/cardTypes/assetDevice").
 
-cismsAsset(Card) :-
+ismsa_asset(Card, "Supplier") :-
     field(Card, "cardType", "ismsa/cardTypes/assetSupplier").
 
 % Criticality and risk evaluation need are mandatory for all assets
