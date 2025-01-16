@@ -1,5 +1,6 @@
 {
     "displayName": "Device",
     "description": "Valuable device or device collection that needs to be protected",
-    "category": "Asset management"
+    "category": "Asset management",
+    "name": "ismsa/templates/assetDevice"
 }
