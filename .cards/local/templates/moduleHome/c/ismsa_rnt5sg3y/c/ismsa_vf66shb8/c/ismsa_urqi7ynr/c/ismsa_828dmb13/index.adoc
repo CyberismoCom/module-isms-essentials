@@ -2,7 +2,7 @@ One time tasks needed for establishment and operations of #Company# Information 
 
 New tasks can be created by pressing
 
-{{{createCards '{
-    "template": "base/templates/oneTimeTask",
-    "buttonLabel": "Add new task"
-}'}}}
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add new task"
+{{/createCards}}

@@ -9,11 +9,11 @@
 
 == Related risks
 
-{{{createCards '{
-    "template": "ismsa/templates/risk",
-    "buttonLabel": "Add new risk"
-}'}}}
+{{#createCards}}
+  "template": "ismsa/templates/risk",
+  "buttonLabel": "Add new risk"
+{{/createCards}}
 
-{{{report '{
-    "name": "ismsa/reports/relatedRisks"
-}'}}}
+{{#report}}
+  "name": "ismsa/reports/relatedRisks"
+{{/report}}

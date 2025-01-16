@@ -7,10 +7,10 @@ This register contains an up-to-date registry of #Company Oy# cybersecurity cont
 
 Currently following subregisters have been defined for controls:
 
-{{{report '{
-    "name": "ismsa/reports/subregisters"
-}'}}}
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
 
-{{{report '{
-    "name": "ismsa/reports/statementOfApplicability"
-}'}}}
+{{#report}}
+  "name": "ismsa/reports/statementOfApplicability"
+{{/report}}

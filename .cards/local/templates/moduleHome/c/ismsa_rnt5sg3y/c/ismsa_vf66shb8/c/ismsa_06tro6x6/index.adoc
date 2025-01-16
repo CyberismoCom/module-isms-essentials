@@ -2,13 +2,13 @@
 
 Security targets are defined yearly. Create a separate subregister for each set of yearly targets.
 
-{{{createCards '{
-    "template": "ismsa/templates/yearlyTargets",
-    "buttonLabel": "Create register for yearly targets"
-}'}}}
+{{#createCards}}
+  "template": "ismsa/templates/yearlyTargets",
+  "buttonLabel": "Create register for yearly targets"
+{{/createCards}}
 
 == Yearly targets
 
-{{{report '{
-    "name": "base/reports/childrenList"
-}'}}}
+{{#report}}
+  "name": "base/reports/childrenList"
+{{/report}}

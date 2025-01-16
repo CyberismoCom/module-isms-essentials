@@ -4,7 +4,7 @@ Supporting Assets include hardware, devices and equipment, software and applicat
 
 Sufficient protection level for supporting assets is proportionate to their importance for the primary assets.
 
-{{{createCards '{
-    "template": "ismsa/templates/register",
-    "buttonLabel": "Add new register"
-}'}}}
+{{#createCards}}
+  "template": "ismsa/templates/register",
+  "buttonLabel": "Add new register"
+{{/createCards}}
