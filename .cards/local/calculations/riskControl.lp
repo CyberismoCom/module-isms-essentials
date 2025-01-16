@@ -1,13 +1,13 @@
-cismsRiskLessThan("veryLow", "low").
-cismsRiskLessThan("veryLow", "moderate").
-cismsRiskLessThan("veryLow", "high").
-cismsRiskLessThan("veryLow", "veryHigh").
-cismsRiskLessThan("low", "moderate").
-cismsRiskLessThan("low", "high").
-cismsRiskLessThan("low", "veryHigh").
-cismsRiskLessThan("moderate", "high").
-cismsRiskLessThan("moderate", "veryHigh").
-cismsRiskLessThan("high", "veryHigh").
+ismsa_riskLessThan("veryLow", "low").
+ismsa_riskLessThan("veryLow", "moderate").
+ismsa_riskLessThan("veryLow", "high").
+ismsa_riskLessThan("veryLow", "veryHigh").
+ismsa_riskLessThan("low", "moderate").
+ismsa_riskLessThan("low", "high").
+ismsa_riskLessThan("low", "veryHigh").
+ismsa_riskLessThan("moderate", "high").
+ismsa_riskLessThan("moderate", "veryHigh").
+ismsa_riskLessThan("high", "veryHigh").
 
 transitionDenied(Card, "Complete analysis", "Fill needed metadata fields for this risk before completing analysis" ):-
     field(Card, "cardType", "ismsa/cardTypes/risk"),
@@ -63,7 +63,7 @@ policyCheckFailure(Card, "ISMS", "Controls must be identified unless risk level 
     field(RiskRegister, "ismsa/fieldTypes/acceptableRiskLevel", AcceptableRiskLevel),
     field(Card, "cardType", "ismsa/cardTypes/risk"),
     field(Card, "ismsa/fieldTypes/riskInitialRisk", InitialRisk),
-    cismsRiskLessThan(AcceptableRiskLevel, InitialRisk),
+    ismsa_riskLessThan(AcceptableRiskLevel, InitialRisk),
     not link(_, Card, "ismsa/linkTypes/mitigates").
 
 policyCheckFailure(Card, "ISMS", "Lowering residual risk requires that controls have been identified",
@@ -71,7 +71,7 @@ policyCheckFailure(Card, "ISMS", "Lowering residual risk requires that controls 
     field(Card, "cardType", "ismsa/cardTypes/risk"),
     field(Card, "ismsa/fieldTypes/riskInitialRisk", InitialRisk),
     field(Card, "ismsa/fieldTypes/riskResidualRisk", ResidualRisk),
-    cismsRiskLessThan(ResidualRisk, InitialRisk),
+    ismsa_riskLessThan(ResidualRisk, InitialRisk),
     not link(_, Card, "ismsa/linkTypes/mitigates").
 
 policyCheckFailure(Card, "ISMS", "Risks can only be accepted if the risk level is acceptable",
@@ -82,7 +82,7 @@ policyCheckFailure(Card, "ISMS", "Risks can only be accepted if the risk level i
     field(RiskRegister, "ismsa/fieldTypes/acceptableRiskLevel", AcceptableRiskLevel),
     field(Card, "cardType", "ismsa/cardTypes/risk"),
     field(Card, "ismsa/fieldTypes/riskResidualRisk", ResidualRisk),
-    cismsRiskLessThan(AcceptableRiskLevel, ResidualRisk).
+    ismsa_riskLessThan(AcceptableRiskLevel, ResidualRisk).
 
 transitionDenied(Card, "Complete treatment", "Fill Residual likelihood, impact and risk level for this risk before completing treatment" ):-
     field(Card, "cardType", "ismsa/cardTypes/risk"),

@@ -1,10 +1,15 @@
+{{{graph '{
+  "model": "ismsa/graphModels/assetsRisksControls",
+  "view": "ismsa/graphViews/risk"
+}'}}}
+
 == Risk description
 
 === Related assets
 
 See linked assets.
 
-#TODO# Add links to related assets in external asset registers or link related assets using link type: affects asset. 
+#TODO# Add links to related assets in external asset registers or link related assets using link type: affects asset.
 
 === Threat
 
@@ -61,5 +66,5 @@ See linked assets.
 
 == Risk monitoring
 
-When reviewing a risk that needs monitoring, evaluate the effectiveness of current controls. 
+When reviewing a risk that needs monitoring, evaluate the effectiveness of current controls.
 Consider the impacts of any significant incidents or other significant changes, and update this section accordingly.

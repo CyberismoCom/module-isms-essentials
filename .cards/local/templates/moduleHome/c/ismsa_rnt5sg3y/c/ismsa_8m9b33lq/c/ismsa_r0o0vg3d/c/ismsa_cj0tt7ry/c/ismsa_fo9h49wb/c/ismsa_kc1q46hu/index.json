@@ -1,8 +1,8 @@
 {
-    "title": "Leaking confidential information from device",
+    "title": "Device lost or stolen",
     "cardType": "ismsa/cardTypes/risk",
     "workflowState": "",
-    "rank": "0|cbca",
+    "rank": "0|b",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/riskInitialLikelihood": null,
@@ -11,5 +11,7 @@
     "ismsa/fieldTypes/riskMitigationStrategy": null,
     "ismsa/fieldTypes/riskResidualLikelihood": null,
     "ismsa/fieldTypes/riskResidualImpact": null,
-    "ismsa/fieldTypes/riskResidualRisk": null
+    "ismsa/fieldTypes/riskResidualRisk": null,
+    "links": [],
+    "lastUpdated": "2025-01-15T14:43:13.645Z"
 }
