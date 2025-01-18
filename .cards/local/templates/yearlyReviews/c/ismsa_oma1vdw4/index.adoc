@@ -1,4 +1,4 @@
-## Sub register for quarterly security reviews in #<add year>#
+## Subregister for quarterly security reviews in #<add year>#
 
 {{{createCards '{
     "template": "ismsa/templates/securityReview",

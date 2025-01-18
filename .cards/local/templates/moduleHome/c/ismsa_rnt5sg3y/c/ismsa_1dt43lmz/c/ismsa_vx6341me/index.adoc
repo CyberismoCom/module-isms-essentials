@@ -2,19 +2,19 @@ This document describes how risks and opportunities are managed at #Company#.
 
 == Introduction
 
-Risk management is the core of information security management systems. 
-Its purpose is to prevent or minimize the effect of incidents on operations, 
-business continuity, recipients of services, and other services. 
-It support business continuity by identifying the key risks and prioritizing 
-the mitigation efforts by starting with the controls the matter the most.  
+Risk management is the core of an information security management system.
+Its purpose is to prevent or minimise the effect of incidents on operations,
+business continuity, recipients of services, and other services.
+It supports business continuity by identifying the key risks and prioritising
+the mitigation efforts by starting with the controls the matter the most.
 
 == Roles and responsibilities
 
 [width="100%",cols="5,7,15",options="header"]
 |=========================================================
-|Role {set:cellbgcolor:lightblue} |Person(s) |Responsibilities
+|Role |Person(s) |Responsibilities
 
-|Top management{set:cellbgcolor:white}
+|Top management
 | Board of directors + CEO
 a|
 * Approves risk management approach and risk management measures
@@ -54,11 +54,11 @@ Risks and treatment plans are recorded to Risk Register in accordance to followi
 
 === STEP 1: Identify risks
 
-Basic risk identification method is to organize a workshop or series of workshops, where asset owners (together with security specialists) consider risks related to their assets. Workshops shall be based on all-hazards approach that aims to protect assets, networks, information systems and their physical environment from the loss of confidentiality, authenticity, integrity, and availability.
+A basic risk identification method is to organise a workshop or a series of workshops, where asset owners (together with security specialists) consider risks related to their assets. These workshops shall be based on an all-hazards approach that aims to protect assets, networks, information systems and their physical environment from the loss of confidentiality, authenticity, integrity, and availability.
 
 Usage of existing threat taxonomies, checklists and/or formal threat modelling can support risk identification, if needed.
 
-Each risk has a designates risk owner.
+Each risk has a designated risk owner.
 
 === STEP 2: Assess risks
 
@@ -66,10 +66,10 @@ Risks are analysed using the following scales adopted from Interoperable EU Risk
 
 [width="100%",cols="5,20",options="header"]
 |=========================================================
-|Impact level {set:cellbgcolor:lightblue} |Description
+|Impact level |Description
 
 
-|Very High {set:cellbgcolor:white}|
+|Very High |
 - A threat event leads to disastrous business impacts.
 
 - A threat event leads to financial loss that is bigger than the 5% of the organization's annual turnover/budget.
@@ -162,22 +162,22 @@ Risks are analysed using the following scales adopted from Interoperable EU Risk
 
 [width="100%",cols="5,20",options="header"]
 |=========================================================
-|Likelihood {set:cellbgcolor:lightblue} |Description
+|Likelihood |Description
 
-|Very High {set:cellbgcolor:white}|
-- A threat event is highly likely to be materialized in the short term and associated with vulnerabilities because there are no adequate security measures to defend them.
+|Very High |
+- A threat event is highly likely to be materialised in the short term and associated with vulnerabilities because there are no adequate security measures to defend them.
 
 |High |
-- A threat event is highly likely to be materialized and associated with vulnerabilities because there are ineffective or obsolete security measures to defend them.
+- A threat event is highly likely to be materialised and associated with vulnerabilities because there are ineffective or obsolete security measures to defend them.
 
 |Moderate |
-- A threat event is likely to be materialized and associated with vulnerabilities because there are security measures to defend them, but, better security measures could have been implemented.
+- A threat event is likely to be materialised and associated with vulnerabilities because there are security measures to defend them, but, better security measures could have been implemented.
 
 |Low |
-- A threat event is possible, but not likely to be materialized and associated with vulnerabilities because there are good security measures to defend them.
+- A threat event is possible, but not likely to be materialised and associated with vulnerabilities because there are good security measures to defend them.
 
 |Very Low |
-- A threat event is highly unlikely to be materialized and associated with vulnerabilities because there are effective security measures to defend them.
+- A threat event is highly unlikely to be materialised and associated with vulnerabilities because there are effective security measures to defend them.
 
 |=========================================================
 
@@ -259,7 +259,7 @@ Risk owner approves treatment plans and residual risks.
 
 === STEP 4: Create statement of applicability
 
-Security program lead produces Statement of Applicability that contain:
+Security program lead produces a Statement of Applicability that contains:
 
 * needed controls (both own controls and relevant ISO27001 reference controls),
 
@@ -269,17 +269,17 @@ Security program lead produces Statement of Applicability that contain:
 
 * justification for excluding any of the ISO27001 reference controls, if applicable.
 
-First version of Statement of Applicability shall be created within one year of approving this process. After that Statement of Applicability is reviewed at least once a year and updated as needed.
+The first version of Statement of Applicability shall be created within one year of approving this process. After that, the Statement of Applicability is reviewed at least once a year and updated as needed.
 
 === STEP 5: Monitor risks and controls
 
-Risk register and treatment plans are reviewed at least quarterly by risk owners during quartal security reviews. Top management participates to these reviews. Effectiveness of risk-management measures/controls is evaluated as part of these reviews. Additional reviews shall be arranged, if there are significant incidents or other significant changes that might affect information security.
+The risk register and treatment plans are reviewed at least quarterly by risk owners during quartal security reviews. Top management participates to these reviews. Effectiveness of risk-management measures/controls is evaluated as part of these reviews. Additional reviews shall be arranged, if there are significant incidents or other significant changes that might affect information security.
 
-Risk and control effectiveness are also evaluated independently as part of internal and external audits, when those are organized. Additional security testing can be arranged as needed and when applicable.
+The effectiveness of controls to mitigate risks should also be evaluated independently as part of internal and external audits. Additional security testing can be arranged as needed and when applicable.
 
 == Process Maintenance
 
-Risk management process is reviewed at least yearly and updated as needed by the document owner. If there are major changes, document owner communicates them to the affected parties.
+The risk management process is reviewed at least yearly and updated as needed by the document owner. If there are major changes, the document owner communicates them to the affected parties.
 
 == Related documents/processes
 
@@ -287,13 +287,13 @@ Risk management process is reviewed at least yearly and updated as needed by the
 
 * Incident management process
 
-== Relevant requirements 
+== Relevant requirements
 
-DIRECTIVE (EU) 2022/2555 on measures for a high common level of cybersecurity across 
+DIRECTIVE (EU) 2022/2555 on measures for a high common level of cybersecurity across
 the Union (NIS 2 Directive) – Article 21: Cybersecurity risk-management measures and related
 local transposition laws in #TODO <add locations>#
 
-Most relevant ISO27001 requirements are:  
+Most relevant ISO27001 requirements are:
 
 * ISO27001:2022 – 6.1: Actions to address risks and opportunities
 
@@ -316,7 +316,7 @@ Most relevant ISO27001 requirements are:  
 
 [cols="1,1,3"]
 |===============
-|Version {set:cellbgcolor:lightblue} | Date | Changes/Author
+|Version {set:cellbgcolor:F4F4F4} | Date | Changes/Author
 
 | 1.0 {set:cellbgcolor:white}
 | #TODO <add date>#

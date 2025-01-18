@@ -1,6 +1,6 @@
 ## Own controls
 
-The information security controls beyond Annex A of ISO27001:2022 are added under this sub register.
+The information security controls beyond Annex A of ISO27001:2022 are added under this subregister.
 
 {{{createCards '{
     "template": "ismsa/templates/control",

@@ -2,29 +2,29 @@ This document describes how assets are managed at #Company#.
 
 == Introduction
 
-An asset in anything that has value to the organisation and therefore requires protection. 
+An asset in anything that has value to the organisation and therefore requires protection.
 Asset can be divided into two categories:
 
-* *Primary Assets*: Core business processes, functions and services; 
+* *Primary Assets*: Core business processes, functions and services;
 Information and Data servicing business processes and/or activities of the organisation
 
-* *Supporting Assets*: Hardware, devices and equipment, software and applications, roles, 
+* *Supporting Assets*: Hardware, devices and equipment, software and applications, roles,
 locations and utilities, organisational infrastructure (e.g. policies, procedures and supporting ICT services)
 
 == Roles and responsibilities
 
 [width="100%",cols="5,7,15",options="header"]
 |=========================================================
-|Role {set:cellbgcolor:lightblue}|Person |Responsibilities
+|Role |Person |Responsibilities
 
-|Business Process Owner  {set:cellbgcolor:white}
-|Defined in Roles and Responsibilities document 
+|Business Process Owner
+|Defined in Roles and Responsibilities document
 a|
 * Ensures critical assets with their dependencies are identified and recorded to Asset Inventory
 
-|Asset Owner  |Defined per asset in Asset Inventory  
+|Asset Owner  |Defined per asset in Asset Inventory
 a|
-* Determines asset’s value to the organization.
+* Determines the value of an asset to the organization.
 
 * Ensures assets are sufficiently protected regardless of their location by identifying and mitigating information security risks related to asset
 
@@ -44,7 +44,6 @@ Asset are recorded to Asset Register. If assets (with relevant details) for some
 
 === STEP 2: Identify supporting assets, asset owners and locations
 
-
 . Information systems
 
 . Suppliers
@@ -53,9 +52,7 @@ Asset are recorded to Asset Register. If assets (with relevant details) for some
 
 . Hardware, devices and equipment
 
-
 === STEP 3: Classify assets
-
 
 Each asset category has their own classification/valuation scheme. All assets are classified at least from the following perspectives:
 
@@ -65,12 +62,11 @@ Each asset category has their own classification/valuation scheme. All assets ar
 
 Risk evaluation is mandatory for assets that are critical for operations (Criticality for operations: High), but can also been conducted for non-critical assets, if justifiable (e.g. from brand-protection perspective).
 
-
 Additionally, information/Data and Information systems are classified at least against the following aspects:
 
 * *Confidentiality*: High (Confidential), Medium (Internal), Low (Public)
 
-* *Integrity*: High (unauthorize changes have significant business impacts), Medium (some changes are tolerable), Low (integrity not relevant for decisions/business)
+* *Integrity*: High (unauthorised changes have significant business impacts), Medium (some changes are tolerable), Low (integrity not relevant for decisions/business)
 
 * *Availability*: High (days), Medium (weeks), Low (months)
 
@@ -80,20 +76,15 @@ Additional attributes can be specified in Asset Inventory per asset type as need
 
 *Note*: If personal data is involved, related processing activities shall be documented into Records of Processing Activities (ROPA).
 
-
 === STEP 4: Protect and maintain assets
-
 
 Asset owner is responsible for ensuring that risks related to their asset are identified as needed and their assets are sufficiently protected and maintained.
 
 Risks related to most important assets are managed in accordance with the Risk Management process.
 
-
 === STEP 5: Asset disposal
 
-
 When assets are no longer needed, they are disposed-off in a secure manner. More detailed device asset disposal principles are covered in IT documentation.
-
 
 == Document/Process Maintenance and enforcement
 
@@ -154,9 +145,9 @@ Other controls related to asset management, but not directly covered in this doc
 
 [cols="1,1,3"]
 |===============
-|Version {set:cellbgcolor:lightblue} | Date | Changes/Author
+|Version | Date | Changes/Author
 
-| 1.0 {set:cellbgcolor:white}
+| 1.0
 | #TODO <add date>#
 | First version created by #N.N#
 

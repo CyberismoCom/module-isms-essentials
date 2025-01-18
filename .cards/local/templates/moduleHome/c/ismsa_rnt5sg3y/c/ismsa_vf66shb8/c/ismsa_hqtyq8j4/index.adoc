@@ -1,6 +1,6 @@
 ## Company security reviews
 
-Security reviews are held at least quarterly. Create separate sub register for each yearly reviews.
+Security reviews are held at least quarterly. Create a separate subregister for each yearly review.
 
 {{{createCards '{
     "template": "ismsa/templates/yearlyReviews",

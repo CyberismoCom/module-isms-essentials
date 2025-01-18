@@ -2,16 +2,16 @@ This document describes how incidents are managed at #Company#.
 
 == Introduction
 
-Well-practised incident management process is essential in ensuring 
-that regular security events do not turn into disaster that could endanger business continuity.
+A well-practised incident management process is essential in ensuring
+that a regular security event does not turn into a disaster that could endanger business continuity.
 
 == Roles and responsibilities
 
 [cols="1,1,3"]
 |===============
-| Role {set:cellbgcolor:lightblue} | Person | Responsibilities
+| Role | Person | Responsibilities
 
-| Cybersecurity Incident Response Team (CSIRT) Lead {set:cellbgcolor:white}
+| Cybersecurity Incident Response Team (CSIRT) Lead
 |  #TODO <add responsible>#
 a|
 * Analyses reported cybersecurity events
@@ -41,7 +41,7 @@ a|
 
 |===============
 
-== Definitions 
+== Definitions
 
 NIS2 definitions from article 6:
 
@@ -62,7 +62,7 @@ By NIS2 directive, Article 23 paragraph 3, an incident shall be considered to be
 
 == Process description
 
-Following steps describes how incidents are detected, analysed, addressed, communicated and closed.
+The following steps describe how incidents are detected, analysed, addressed, communicated and closed.
 
 === STEP 1: Detect security events
 
@@ -74,9 +74,9 @@ Incident are recorded to Company Incident Register using incident-template.
 
 === STEP 2: Analyse potential incidents
 
-Security events classified as incidents, if they are compromising the availability, authenticity, integrity or confidentiality of stored, transmitted or processed data or of the services offered by, or accessible via, network and information systems. Security events that are not incidents, are handled as part of normal operations in accordance with the relevant processes (e.g. vulnerability management process).
+Security events are classified as incidents, if they are compromising the availability, authenticity, integrity or confidentiality of stored, transmitted or processed data or of the services offered by, or accessible via, network and information systems. Security events that are not incidents, are handled as part of normal operations in accordance with the relevant processes (e.g. vulnerability management process).
 
-In order to determine the significance of the impact of an incident, the following parameters in particular shall be taken into account [4]:
+In order to determine the significance of the impact of an incident, the following parameters shall be taken into account [4]:
 
 (a) the number of users affected by the disruption of the essential service;
 
@@ -84,7 +84,7 @@ In order to determine the significance of the impact of an incident, the followi
 
 (c) the geographical spread with regard to the area affected by the incident;
 
-Cybersecurity Incident Response Team Lead prioritizes incidents using the following categories:
+Cybersecurity Incident Response Team Lead prioritises incidents using the following categories:
 
 * Information Impact: Confidentiality loss, Integrity loss, Availability loss, Privacy Breach
 
@@ -98,19 +98,19 @@ Cybersecurity Incident Response Team Lead prioritizes incidents using the follow
 
 * Recoverability effort: Regular, Supplemented, Extended, Not Recoverable
 
-Analysis is documented at Company ISMS. In tool the above analysis is summarised into Incident Severity, which determines the needed approach:
+The analysis is documented at Company ISMS. In tool the above analysis is summarised into Incident Severity, which determines the needed approach:
 
 [cols="1,2,3"]
 |===
-| Severity {set:cellbgcolor:lightblue} | Criteria | Needed actions
+| Severity  | Criteria | Needed actions
 
-| High {set:cellbgcolor:whitee}
+| High
 
 | At least ome of the impacts is high or recoverability effort is at least extended
 
 a|
 
-* Cybersecurity Incident Response Team Lead establishes Cybersecurity Incident Management Team with relevant members
+* Cybersecurity Incident Response Team Lead establishes a Cybersecurity Incident Management Team with relevant members
 
 * Incident is escalated to Board of directors
 
@@ -120,7 +120,7 @@ a|
 
 a|
 
-* Cybersecurity Incident Response Team Lead establishes Cybersecurity Incident Management Team with relevant members
+* Cybersecurity Incident Response Team Lead establishes a Cybersecurity Incident Management Team with relevant members
 
 | Low
 
@@ -138,7 +138,7 @@ Board of directors or Cybersecurity Incident Response Team Lead initiates releva
 
 === STEP 3.1: Address incidents
 
-Addressing security incident is coordinated by Cybersecurity Incident Management team and should include the following aspects as applicable:
+Addressing security incidents is coordinated by the Cybersecurity Incident Management team and it should include the following aspects, if applicable:
 
 * **Containment**: try to limit potential damages
 
@@ -146,13 +146,13 @@ Addressing security incident is coordinated by Cybersecurity Incident Management
 
 * **Recovery**: restore to normal operations
 
-If there are multiple simultaneous incident, eradication and recovery actions are prioritised based on the incident severity. Containment actions should be completed as soon as possible in order to avoid additional damages.
+If there are multiple simultaneous incidents, eradication and recovery actions are prioritised based on the incident severity. Containment actions should be completed as soon as possible in order to avoid additional damages.
 
-Completed steps are documented in "Incident Response"-task that is created under incident-ticket in Company Incident Register. If there is reason to suspect a crime, contact relevant authorities and remember to ensure chain-of-custody for the collected evidence.
+Completed steps are documented in the "Incident Response" task that is created under the incident ticket in the #Company# Incident Register. If there is reason to suspect a crime, contact relevant authorities and remember to ensure chain-of-custody for the collected evidence.
 
 === STEP 3.2: Communicate incidents
 
-Significant incidents are reported by Board of Directors without undue delay to relevant authorities as follows:
+Significant incidents are reported by #Board of Directors# without undue delay to relevant authorities as follows:
 
 * Early warning: within 24 hours of becoming aware of significant incident
 
@@ -162,15 +162,15 @@ Significant incidents are reported by Board of Directors without undue delay to 
 
 Privacy breaches are reported by Board of Directors without undue delay to relevant authorities.
 
-Needed internal and external communication is planned by Board of Directors. Security (confidentiality, integrity and availability) of communication channels, including back-up communication systems, is ensured by following best practises.  Only nominated person(s) are allowed to give public statements to media.
+Needed internal and external communication is planned by #Board of Directors#. Security (confidentiality, integrity and availability) of communication channels, including back-up communication systems, is ensured by following best practises.  Only nominated person(s) are allowed to give public statements to media.
 
-Completed steps are documented in he "Incident Communication" task under the incident ticket in Company Incident Register.
+Completed steps are documented in the "Incident Communication" task under the incident ticket in Company Incident Register.
 
 === STEP 4: Complete post-incident actions
 
 After incident has been resolved, evidence is stored in Company ISMS (if possible) and retention period is defined by Cybersecurity Incident Management Team Lead. If additional storage for evidence is needed, it is linked to the incident ticket.
 
-a lessons learned session and other information sharing is organised at least in case of bigger incidents.
+A lessons learned session and other information sharing is organised at least in case of bigger incidents.
 
 Completed steps are documented in "Post-incident Actions"-task under the incident ticket in Company Incident Register.
 
@@ -178,15 +178,13 @@ Completed steps are documented in "Post-incident Actions"-task under the inciden
 
 Incident rehearsals are organised at least yearly and Incident management process is reviewed during the rehearsals.
 
-
-
 == Related documents/processes
 
 == Relevant requirements/controls
 
-DIRECTIVE (EU) 2022/2555 [1] on measures for a high common level of cybersecurity across the Union 
+DIRECTIVE (EU) 2022/2555 [1] on measures for a high common level of cybersecurity across the Union
 (NIS 2 Directive) – Article 21: Cybersecurity risk-management measures and related
-local transposition laws in #TODO <add locations># require incident handling minimize the impact of incident on recipients of 
+local transposition laws in #TODO <add locations># require incident handling minimise the impact of incident on recipients of
 their services and on other services. #Company is not currently in scope of NIS2, but is committed to following the same principles.#
 
 NIS2 Directive Article 23 requires that significant incidents are reported without undue delay to relevant authorities as follows:
@@ -235,10 +233,10 @@ Most relevant ISO27001 requirements and controls [2] are:  
 
 [cols="1,1,3"]
 |===============
-|Version {set:cellbgcolor:lightblue} | Date | Changes/Author
+|Version | Date | Changes/Author
 
 
-| 1.0 {set:cellbgcolor:white}
+| 1.0
 | #TODO <add date>#
 | First version created by #N.N#
 

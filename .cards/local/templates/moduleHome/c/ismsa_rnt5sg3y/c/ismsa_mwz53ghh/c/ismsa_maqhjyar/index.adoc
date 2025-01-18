@@ -1,8 +1,8 @@
 ## Risks related to supporting assets
 
-Risks related to supporting assets are recorded under sub registers using risk-template.
+Risks related to supporting assets are recorded under subregisters using the risk template.
 
-Currently following sub registers have been defined
+Currently, the following subregisters have been defined:
 
 {{{report '{
     "name": "base/reports/childrenList"

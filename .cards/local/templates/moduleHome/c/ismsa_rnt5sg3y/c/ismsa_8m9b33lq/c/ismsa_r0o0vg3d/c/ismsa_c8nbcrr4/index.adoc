@@ -20,5 +20,4 @@ data asset:
     "buttonLabel": "Add new data asset"
 }'}}}
 
-**Note**: If data asset are already listed in some other asset register, just add link here and ensure original
-asset register contains needed information.
+**Note**: If data assets are already listed in some other asset register, just add a link here and ensure that the original asset register contains the needed information.

@@ -4,10 +4,10 @@
 
 [cols="5,5,2"]
 |===
-| Title {set:cellbgcolor:#F4F4F4} | Owner | State
+| Title | Owner | State
 
 {{#each results}}
-|xref:{{this.key}}.adoc[{{this.title}}] {set:cellbgcolor:white}
+|xref:{{this.key}}.adoc[{{this.title}}]
 |{{this.[base/fieldTypes/owner]}}
 |{{this.workflowState}}
 {{/each}}
