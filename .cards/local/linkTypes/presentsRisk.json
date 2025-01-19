@@ -7,7 +7,8 @@
         "ismsa/cardTypes/assetData",
         "ismsa/cardTypes/assetDevice",
         "ismsa/cardTypes/assetInformationSystem",
-        "ismsa/cardTypes/assetSupplier"
+        "ismsa/cardTypes/assetSupplier",
+        "secdeva/cardTypes/project"
     ],
     "destinationCardTypes": ["ismsa/cardTypes/risk"],
     "enableLinkDescription": false
