@@ -4,7 +4,9 @@
     "inboundDisplayName": "is implemented by",
     "sourceCardTypes": [
         "base/cardTypes/task",
-        "base/cardTypes/recurringTask",
+        "base/cardTypes/annualTask",
+        "base/cardTypes/quarterlyTask",
+        "base/cardTypes/monthlyTask",
         "base/cardTypes/controlledDocument",
         "ismsa/cardTypes/register",
         "ismsa/cardTypes/riskRegister"
