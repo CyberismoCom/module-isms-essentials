@@ -1,4 +1,4 @@
-One time tasks needed for establishment and operations of Company Information Security Management System (CISMS).
+One time tasks needed for establishment and operations of #Company# Information Security Management System (CISMS).
 
 New tasks can be created by pressing
 

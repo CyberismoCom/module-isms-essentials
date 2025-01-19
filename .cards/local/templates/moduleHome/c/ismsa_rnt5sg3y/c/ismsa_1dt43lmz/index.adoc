@@ -1,6 +1,6 @@
 ## Company process register
 
-Process register contains process descriptions for the key processes used in Company Information Security Management System (CISMS).
+Process register contains process descriptions for the key processes used in #Company# Information Security Management System (CISMS).
 
 Currently following processes have been defined:
 

@@ -17,11 +17,11 @@ ismsa_asset(Card, "Supplier") :-
 
 % Criticality and risk evaluation need are mandatory for all assets
 policyCheckFailure(Asset, "ISMS", "'Criticality for operations' is a required field", "'Criticality for operations' has not been defined for this asset. Set this field.") :-
-    cismsAsset(Asset),
+    ismsa_asset(Asset),
     not field(Asset, "ismsa/fieldTypes/assetCriticalityForOperations", _).
 
 policyCheckFailure(Asset, "ISMS", "'Risk evaluation needed' is a required field", "'Risk evaluation needed' has not been defined for this asset. Set this field.") :-
-    cismsAsset(Asset),
+    ismsa_asset(Asset),
     not field(Asset, "ismsa/fieldTypes/assetRiskEvaluationNeeded", _).
 
 
@@ -82,11 +82,11 @@ policyCheckFailure(Asset, "ISMS", "'Contact details' is a required field", "'Con
     not field(Asset, "ismsa/fieldTypes/assetContactDetails", _).
 
 transitionDenied(Asset, "Activate", "Nominate owner before activating" ):-
-    cismsAsset(Asset),
+    ismsa_asset(Asset),
     not field(Asset, "base/fieldTypes/owner", _).
 
 % At least one risk needs to be linked, if risk evaluation is needed
 policyCheckFailure(Asset, "ISMS", "Risks must be reported if risk evaluation is needed", "Risk evaluation is needed for this asset, but no risks have been reported. Link this asset to one or more risks.") :-
-    cismsAsset(Asset),
+    ismsa_asset(Asset),
     field(Asset, "ismsa/fieldTypes/assetRiskEvaluationNeeded", "yes"),
     not link(Asset, _, "ismsa/linkTypes/presentsRisk").
