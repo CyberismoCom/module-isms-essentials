@@ -1,5 +1,5 @@
 {
     "name": "ismsa/fieldTypes/assetAdmins",
     "displayName": "Admins",
-    "dataType": "list"
+    "dataType": "longText"
 }

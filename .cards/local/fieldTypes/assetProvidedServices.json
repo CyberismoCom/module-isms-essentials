@@ -1,5 +1,5 @@
 {
     "name": "ismsa/fieldTypes/assetProvidedServices",
     "displayName": "Provided services",
-    "dataType": "shortText"
+    "dataType": "longText"
 }

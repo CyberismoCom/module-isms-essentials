@@ -11,8 +11,6 @@
     "ismsa/fieldTypes/assetUpdates": null,
     "ismsa/fieldTypes/assetLocation": null,
     "ismsa/fieldTypes/assetBackups": null,
-    "ismsa/fieldTypes/assetType": null,
-    "ismsa/fieldTypes/assetResponsible": null,
     "ismsa/fieldTypes/assetPersonalInformation": null,
     "ismsa/fieldTypes/assetIntegrity": null,
     "ismsa/fieldTypes/assetAvailability": null

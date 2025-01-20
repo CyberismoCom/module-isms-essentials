@@ -1,5 +1,5 @@
 {
     "name": "ismsa/fieldTypes/assetType",
-    "displayName": "Asset Type",
+    "displayName": "Asset type",
     "dataType": "shortText"
 }

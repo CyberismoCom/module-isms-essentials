@@ -9,7 +9,6 @@
     "ismsa/fieldTypes/assetContactDetails": null,
     "ismsa/fieldTypes/assetCriticalityForOperations": null,
     "ismsa/fieldTypes/assetRiskEvaluationNeeded": null,
-    "ismsa/fieldTypes/assetResponsible": null,
     "ismsa/fieldTypes/assetPersonalInformation": null,
     "ismsa/fieldTypes/assetLocation": null,
     "ismsa/fieldTypes/assetBackups": null

@@ -1,5 +1,6 @@
 {
     "name": "ismsa/fieldTypes/assetLocation",
     "displayName": "Location",
-    "dataType": "shortText"
+    "fieldDescription": "Where the asset resides or is stored",
+    "dataType": "longText"
 }

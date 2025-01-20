@@ -30,13 +30,7 @@
             "name": "ismsa/fieldTypes/assetPersonalInformation"
         },
         {
-            "name": "ismsa/fieldTypes/assetResponsible"
-        },
-        {
             "name": "ismsa/fieldTypes/assetRiskEvaluationNeeded"
-        },
-        {
-            "name": "ismsa/fieldTypes/assetType"
         },
         {
             "name": "ismsa/fieldTypes/assetUpdates"
@@ -52,8 +46,6 @@
         "ismsa/fieldTypes/assetBackups"
     ],
     "optionallyVisibleFields": [
-        "ismsa/fieldTypes/assetType",
-        "ismsa/fieldTypes/assetResponsible",
         "ismsa/fieldTypes/assetLocation",
         "ismsa/fieldTypes/assetPersonalInformation",
         "ismsa/fieldTypes/assetIntegrity",

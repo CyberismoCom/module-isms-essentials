@@ -15,8 +15,6 @@
     "ismsa/fieldTypes/assetLoggingAndMonitoring": null,
     "ismsa/fieldTypes/assetPersonalInformation": null,
     "ismsa/fieldTypes/assetPublisher": null,
-    "ismsa/fieldTypes/assetResponsible": null,
     "ismsa/fieldTypes/assetRiskEvaluationNeeded": null,
-    "ismsa/fieldTypes/assetType": "Information system",
     "ismsa/fieldTypes/assetUpdates": null
 }

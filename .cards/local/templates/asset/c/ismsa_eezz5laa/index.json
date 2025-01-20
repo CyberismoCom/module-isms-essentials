@@ -12,6 +12,5 @@
     "ismsa/fieldTypes/assetLocation": null,
     "base/fieldTypes/owner": null,
     "ismsa/fieldTypes/assetPersonalInformation": null,
-    "ismsa/fieldTypes/assetRiskEvaluationNeeded": null,
-    "ismsa/fieldTypes/assetResponsible": null
+    "ismsa/fieldTypes/assetRiskEvaluationNeeded": null
 }
