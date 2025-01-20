@@ -1,10 +1,10 @@
 ## Company incident register
 
-Incident are managed according to Incident Management Process. #TODO add link to relevant process#
+Incidents are managed according to Incident Management Process. #TODO add link to relevant process#
 
-New incidents are recorded using incident-template that contains four cards:
+New incidents are recorded using the incident template that contains four cards:
 
-* Incident - This is for incident description and analysis.
+* Incident - This card is for incident description and analysis.
 
 * Incident Response - This is a subtask for documenting containment, eradication and recovery actions.
 
@@ -12,7 +12,7 @@ New incidents are recorded using incident-template that contains four cards:
 
 * Post-incident actions: This is a subtask for documenting lessons learned and other post-incident activities.
 
-*Note*: If incident contains CONFIDENTIAL information, it can be stored at separately selected location (e.g. Teams) with limited access. Link to material is added to incidents that are recorded here.
+*Note*: If an incident contains CONFIDENTIAL information, it can be stored at separately selected location with limited access. A link to material is added to incidents that are recorded here.
 
 {{{createCards '{
     "template": "ismsa/templates/incident",

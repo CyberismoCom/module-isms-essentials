@@ -4,11 +4,11 @@
 
 [cols="3,3,2,5"]
 |===
-| Policy check  {set:cellbgcolor:#F4F4F4} | Card | Owner | Error
+| Policy check | Card | Owner | Error
 
 {{#each results}}
 {{#each this.policyChecks.failures}}
-| {{this.title}} {set:cellbgcolor:white}
+| {{this.title}}
 | xref:{{../key}}.adoc[{{../title}}]
 | {{../[base/fieldTypes/owner]}}
 | {{this.errorMessage}}

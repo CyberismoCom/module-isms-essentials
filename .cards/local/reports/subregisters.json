@@ -1,6 +1,6 @@
 {
-    "displayName": "Sub registers",
-    "description": "Table showing all sub registers.",
+    "displayName": "Subregisters",
+    "description": "Table showing all subregisters.",
     "category": "ISMS report",
     "name": "ismsa/reports/subregisters"
 }

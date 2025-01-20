@@ -1,4 +1,4 @@
-## Sub register for security targets in #<add year>#
+## Subregister for security targets in #<add year>#
 
 
 {{{createCards '{

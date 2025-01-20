@@ -4,10 +4,10 @@
 
 [cols="6,4,6,8"]
 |===
-| Title {set:cellbgcolor:#F4F4F4} | Status | Justification | Implementation summary
+| Title | Status | Justification | Implementation summary
 
 {{#each results}}
-|xref:{{this.key}}.adoc[{{this.title}}] {set:cellbgcolor:white}
+|xref:{{this.key}}.adoc[{{this.title}}]
 {{#if this.[ismsa/fieldTypes/controlStatus]}}
 |{{this.[ismsa/fieldTypes/controlStatus].displayValue}}
 {{else}}

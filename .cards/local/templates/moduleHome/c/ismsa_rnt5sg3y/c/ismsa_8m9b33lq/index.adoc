@@ -2,9 +2,9 @@
 
 An asset in anything that has value to the organisation and therefore requires protection.
 
-This register contains an up-to-date registry of Company Oy assets.
+This register contains an up-to-date registry of #Company Oy# assets.
 
-Asset registry is divided into four sub registers:
+Asset registry is divided into four subregisters:
 
 * *Primary Assets*: Core business processes, functions and services; Information and Data servicing business processes and/or activities of the organisation
 
@@ -14,9 +14,9 @@ Asset registry is divided into four sub registers:
 
 * *Development projects*: Projects that develop custom software and/or hardware
 
-These can contain additional sub registers, if needed.
+These can contain additional subregisters, if needed.
 
-Currently following sub registers have been defined for assets:
+Currently, the following subregisters have been defined for assets:
 
 {{{report '{
     "name": "ismsa/reports/subregisters"
