@@ -14,7 +14,7 @@ New incidents are recorded using the incident template that contains four cards:
 
 *Note*: If an incident contains CONFIDENTIAL information, it can be stored at separately selected location with limited access. A link to material is added to incidents that are recorded here.
 
-{{{createCards '{
-    "template": "ismsa/templates/incident",
-    "buttonLabel": "Add new incident"
-}'}}}
+{{#createCards}}
+  "template": "ismsa/templates/incident",
+  "buttonLabel": "Add new incident"
+{{/createCards}}

@@ -18,10 +18,10 @@ These can contain additional subregisters, if needed.
 
 Currently, the following subregisters have been defined for assets:
 
-{{{report '{
-    "name": "ismsa/reports/subregisters"
-}'}}}
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
 
-{{{report '{
-    "name": "ismsa/reports/assetsByOwner"
-}'}}}
+{{#report}}
+  "name": "ismsa/reports/assetsByOwner"
+{{/report}}

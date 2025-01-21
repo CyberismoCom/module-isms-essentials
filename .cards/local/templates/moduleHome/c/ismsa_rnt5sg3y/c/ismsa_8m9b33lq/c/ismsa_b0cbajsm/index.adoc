@@ -8,7 +8,7 @@ Primary Assets include
 
 Ensuring sufficient protection level for primary assets is the main purpose for asset management.
 
-{{{createCards '{
-    "template": "ismsa/templates/asset",
-    "buttonLabel": "Add new primary asset"
-}'}}}
+{{#createCards}}
+  "template": "ismsa/templates/asset",
+  "buttonLabel": "Add new primary asset"
+{{/createCards}}

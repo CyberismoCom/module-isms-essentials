@@ -8,6 +8,6 @@ ISMS tasks are divided into three registers
 
 Add new tasks under suitable subregister. New subregisters can be added using the register template, if needed.
 
-{{{report '{
-    "name": "ismsa/reports/tasksByOwner"
-}'}}}
+{{#report}}
+  "name": "ismsa/reports/tasksByOwner"
+{{/report}}

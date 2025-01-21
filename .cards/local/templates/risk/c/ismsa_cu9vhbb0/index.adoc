@@ -1,7 +1,7 @@
-{{{graph '{
+{{#graph}}
   "model": "ismsa/graphModels/assetsRisksControls",
   "view": "ismsa/graphViews/risk"
-}'}}}
+{{/graph}}
 
 == Risk description
 
@@ -45,19 +45,19 @@ See linked assets.
 
 === Risk treatment plan
 
-{{{report '{
-    "name": "base/reports/childrenTable"
-}'}}}
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
 
-{{{createCards '{
-    "template": "base/templates/oneTimeTask",
-    "buttonLabel": "Add new tasks to treatment plan"
-}'}}}
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add new tasks to treatment plan"
+{{/createCards}}
 
-{{{createCards '{
-    "template": "ismsa/templates/control",
-    "buttonLabel": "Add new controls to treatment plan"
-}'}}}
+{{#createCards}}
+  "template": "ismsa/templates/control",
+  "buttonLabel": "Add new controls to treatment plan"
+{{/createCards}}
 
 
 === Justification for the residual risk
