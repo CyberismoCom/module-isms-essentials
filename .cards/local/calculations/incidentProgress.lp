@@ -1,5 +1,5 @@
 field(X, "base/fieldTypes/progress", ((50 * (OkTasks + NotRequiredTasks) + 20 * InProgressTasks)/ TotalTasks) + ((50 * Ok + 40 * PartlyOk + 20 * InProgress + 10 * Analysed) / Total)) :-
-    label(X, "incident-progress"),
+    field(X, "ismsa/fieldTypes/progress", "incident-progress"),
     Total = #count {
         card(Incident):
         field(Incident, "cardType", "ismsa/cardTypes/incident"),

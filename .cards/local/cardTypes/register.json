@@ -11,6 +11,12 @@
         {
             "name": "ismsa/fieldTypes/adoptionStep",
             "isEditable": true
+        },
+        {
+            "name": "ismsa/fieldTypes/progress"
+        },
+        {
+            "name": "base/fieldTypes/identifier"
         }
     ],
     "alwaysVisibleFields": [

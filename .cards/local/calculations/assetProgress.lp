@@ -1,5 +1,5 @@
 field(X, "base/fieldTypes/progress", 100 * Ok / Total) :-
-    label(X, "asset-progress"),
+    field(X, "ismsa/fieldTypes/progress", "asset-progress"),
     Total = #count {
         card(Register):
         field(Register, "cardType", "ismsa/cardTypes/register"),

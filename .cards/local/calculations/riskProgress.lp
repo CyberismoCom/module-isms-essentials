@@ -1,5 +1,5 @@
 field(X, "base/fieldTypes/progress", (100 * (ClosedAsAccepted + ClosedAsTransferred + ClosedAsNotApplicable + ClosedAsAvoided) + 95 * (TreatmentComplete + NeedsMonitoring) + 60 * TreatmentInProgress + 40 * TreatmentPlanned + 20 * Analysed )/ (Total-ClosedAsDuplicate)) :-
-    label(X, "risk-progress"),
+    field(X, "ismsa/fieldTypes/progress", "risk-progress"),
     Total = #count {
         card(Risk):
         field(Risk, "cardType", "ismsa/cardTypes/risk"),
@@ -79,7 +79,7 @@ field(X, "base/fieldTypes/progress", (100 * (ClosedAsAccepted + ClosedAsTransfer
     }.
 
 field(X, "base/fieldTypes/progress", 0) :-
-    label(X, "risk-progress"),
+    field(X, "ismsa/fieldTypes/progress", "risk-progress"),
     Total = #count {
         card(Risk):
         field(Risk, "cardType", "ismsa/cardTypes/risk"),

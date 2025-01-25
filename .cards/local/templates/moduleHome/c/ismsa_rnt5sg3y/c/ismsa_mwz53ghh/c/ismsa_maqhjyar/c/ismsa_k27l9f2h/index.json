@@ -5,5 +5,7 @@
     "rank": "0|cbc",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
-    "ismsa/fieldTypes/adoptionStep": "step1"
+    "base/fieldTypes/identifier": null,
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/progress": null
 }
