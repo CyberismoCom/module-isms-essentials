@@ -324,11 +324,11 @@ Most relevant ISO27001 requirements are:
 
 |===============
 
-== Reviews and approvals
+== Reviews
 
 {{#createCards}}
-  "template": "base/templates/oneTimeTask",
-  "buttonLabel": "Add new task"
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add new review task"
 {{/createCards}}
 
 {{#report}}

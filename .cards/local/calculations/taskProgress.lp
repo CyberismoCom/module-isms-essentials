@@ -5,7 +5,7 @@ ismsa_task(Task) :-
     field(Task, "cardType", "base/cardTypes/recurringTask").
 
 field(X, "base/fieldTypes/progress", ((100 * (Ok + NotRequired) + 20 * InProgress) + (100 * OkTargets + 20 * InProgressTargets)) / (TotalTasks + TotalTargets)) :-
-    label(X, "task-progress"),
+    field(X, "ismsa/fieldTypes/progress", "task-progress"),
     TotalTasks = #count {
         card(Task):
         ismsa_task(Task),
@@ -56,7 +56,7 @@ field(X, "base/fieldTypes/progress", ((100 * (Ok + NotRequired) + 20 * InProgres
     }.
 
 field(X, "base/fieldTypes/progress", 0) :-
-    label(X, "task-progress"),
+    field(X, "ismsa/fieldTypes/progress", "task-progress"),
     TotalTasks = #count {
         card(Task):
         ismsa_task(Task),
