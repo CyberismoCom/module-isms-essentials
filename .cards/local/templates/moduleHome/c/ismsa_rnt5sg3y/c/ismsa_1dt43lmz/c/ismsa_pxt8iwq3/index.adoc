@@ -153,11 +153,11 @@ Other controls related to asset management, but not directly covered in this doc
 
 |===============
 
-== Reviews and approvals
+== Reviews
 
 {{#createCards}}
-  "template": "base/templates/oneTimeTask",
-  "buttonLabel": "Add new task"
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add new review task"
 {{/createCards}}
 
 {{#report}}

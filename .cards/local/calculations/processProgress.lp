@@ -1,5 +1,5 @@
 field(X, "base/fieldTypes/progress", (100 * Ok + 60 * Reviewed) / (Total-Archived)) :-
-    label(X, "process-progress"),
+    field(X, "ismsa/fieldTypes/progress", "process-progress"),
     Total = #count {
         card(Process):
         field(Process, "cardType", "base/cardTypes/controlledDocument"),
@@ -30,7 +30,7 @@ field(X, "base/fieldTypes/progress", (100 * Ok + 60 * Reviewed) / (Total-Archive
     }.
 
     field(X, "base/fieldTypes/progress", 0) :-
-    label(X, "process-progress"),
+    field(X, "ismsa/fieldTypes/progress", "process-progress"),
     Total = #count {
         card(Process):
         field(Process, "cardType", "base/cardTypes/controlledDocument"),

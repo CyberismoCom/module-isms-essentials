@@ -5,5 +5,7 @@
     "rank": "0|bb",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
-    "ismsa/fieldTypes/adoptionStep": "step1"
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/progress": null,
+    "base/fieldTypes/identifier": null
 }

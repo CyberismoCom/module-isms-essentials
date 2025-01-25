@@ -2,7 +2,7 @@ transitionDenied(Card, "Not applicable", "Fill justification for not applying th
     field(Card, "cardType", "ismsa/cardTypes/control"),
     not field(Card, "ismsa/fieldTypes/controlJustification", _).
 
-transitionDenied(Card, "Not applicable", "Set Implemented field to N/A" ):-
+transitionDenied(Card, "Not applicable", "Set Status field to N/A" ):-
     field(Card, "cardType", "ismsa/cardTypes/control"),
     not field(Card, "ismsa/fieldTypes/controlStatus","notApplicable").
 
@@ -18,7 +18,7 @@ transitionDenied(Card, "Not applicable", "Fill justification for not applying th
     field(Card, "cardType", "ismsa/cardTypes/control"),
     not field(Card, "ismsa/fieldTypes/controlJustification", _).
 
-transitionDenied(Card, "Ready for verification", "Set Implemented field to Yes" ):-
+transitionDenied(Card, "Ready for verification", "Set Status field to Implemented" ):-
     field(Card, "cardType", "ismsa/cardTypes/control"),
     not field(Card, "ismsa/fieldTypes/controlStatus","implemented").
 
