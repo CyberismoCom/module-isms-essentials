@@ -1,18 +1,15 @@
 {{#if results}}
 
-== Failed policy checks
+== Cards with failed policy checks
 
-[cols="3,3,2,5"]
+[cols="3,3,2"]
 |===
-| Policy check | Card | Owner | Error
+| Card | Owner | Count
 
 {{#each results}}
-{{#each this.policyChecks.failures}}
-| {{this.title}}
-| xref:{{../key}}.adoc[{{../title}}]
-| {{../[base/fieldTypes/owner]}}
-| {{this.errorMessage}}
-{{/each}}
+| xref:{{this.key}}.adoc[{{this.title}}]
+| {{this.[base/fieldTypes/owner]}}
+| {{this.[ismsa/fieldTypes/failureCount]}}
 {{/each}}
 
 |===
