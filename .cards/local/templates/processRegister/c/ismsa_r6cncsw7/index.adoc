@@ -14,5 +14,3 @@ New processes should be added as needed:
   "template": "base/templates/processDescription",
   "buttonLabel": "Create new process document"
 {{/createCards}}
-
-

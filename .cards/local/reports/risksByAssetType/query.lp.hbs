@@ -1,12 +1,5 @@
 selectAll.
 
-ismsa_closestHome(Card, Ancestor) :-
-    field(Ancestor, "cardType", "ismsa/cardTypes/moduleHome"),
-    ancestor(Card, Ancestor),
-    not field(MiddleAncestor, "cardType", "ismsa/cardTypes/moduleHome") :
-    ancestor(MiddleAncestor, Ancestor),
-    ancestor(Card, MiddleAncestor).
-
 result(Risk) :-
     ismsa_closestHome(Risk, Home),
     ismsa_closestHome({{cardKey}}, Home),
