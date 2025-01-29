@@ -15,7 +15,6 @@ Currently following subregisters have been defined for controls:
   "name": "ismsa/reports/statementOfApplicability"
 {{/report}}
 
-{{#createCards}}
-    "template": "ismsa/templates/controlRegisterISO",
-    "buttonLabel": "Add ISO27001 controls"
-{{/createCards}}
+{{#report}}
+  "name": "ismsa/reports/addControlRegisterISO"
+{{/report}}

@@ -17,7 +17,7 @@ New registers should be added as needed:
 
 {{#createCards}}
   "template": "ismsa/templates/register",
-  "buttonLabel": "Add other register"
+  "buttonLabel": "Add another register"
 {{/createCards}}
 
 == Status for current registers
