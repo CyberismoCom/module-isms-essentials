@@ -1,4 +1,14 @@
-visible({{cardKey}}).
+ismsa_firstAssetAncestor(Card, Card) :- ismsa_asset(Card).
+
+ismsa_firstAssetAncestor(Card, Asset) :-
+    not ismsa_asset(Card),
+    ancestor(Card, Asset),
+    ismsa_asset(Asset),
+    not ismsa_asset(MiddleAncestor) :
+    ancestor(Card, MiddleAncestor),
+    ancestor(MiddleAncestor, Asset).
+
+visible(Asset) :- ismsa_firstAssetAncestor({{cardKey}}, Asset).
 
 visible(Risk) :-
     field(Risk, "cardType", "ismsa/cardTypes/risk"),
