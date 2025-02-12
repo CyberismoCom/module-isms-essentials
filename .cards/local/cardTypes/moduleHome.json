@@ -5,7 +5,7 @@
         {
             "name": "ismsa/fieldTypes/adoptionStep",
             "displayName": "Target adoption step",
-            "isEditable": true
+            "isCalculated": false
         },
         {
             "name": "base/fieldTypes/owner"

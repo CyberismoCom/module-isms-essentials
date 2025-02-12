@@ -13,7 +13,7 @@
         },
         {
             "name": "ismsa/fieldTypes/adoptionStep",
-            "isEditable": true
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [

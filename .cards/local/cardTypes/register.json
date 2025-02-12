@@ -10,7 +10,7 @@
         },
         {
             "name": "ismsa/fieldTypes/adoptionStep",
-            "isEditable": true
+            "isCalculated": false
         },
         {
             "name": "ismsa/fieldTypes/progress"
