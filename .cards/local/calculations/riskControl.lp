@@ -57,7 +57,7 @@ notification(Card, "ISMS", "Progress mismatch", "You have analysed the risk, but
     field(Card, "workflowState", "Open").
 
 policyCheckFailure(Card, "ISMS", "Controls must be identified unless risk level is acceptable",
-    "Controls have not been identified, even though the initial risk level is not acceptable. Link this risk to control(s)/task(s) using 'is mitigated by'-link type.") :-
+    "Controls have not been identified, even though the initial risk level is not acceptable. Link this risk to control(s)/task(s) using the 'is mitigated by'-link type.") :-
     ismsa_closestHome(Card, Home),
     ismsa_closestHome(RiskRegister,Home),
     field(RiskRegister, "cardType", "ismsa/cardTypes/riskRegister"),
@@ -68,7 +68,7 @@ policyCheckFailure(Card, "ISMS", "Controls must be identified unless risk level 
     not link(_, Card, "ismsa/linkTypes/mitigates").
 
 policyCheckFailure(Card, "ISMS", "Lowering residual risk requires that controls have been identified",
-    "Residual risk is lower than inherent risk, even though controls have not been identified. Link this risk to control(s)/task(s) using 'is mitigated by'-link type.") :-
+    "Residual risk is lower than inherent risk, even though controls have not been identified. Link this risk to control(s)/task(s) using the 'is mitigated by'-link type.") :-
     field(Card, "cardType", "ismsa/cardTypes/risk"),
     field(Card, "ismsa/fieldTypes/riskInitialRisk", InitialRisk),
     field(Card, "ismsa/fieldTypes/riskResidualRisk", ResidualRisk),
