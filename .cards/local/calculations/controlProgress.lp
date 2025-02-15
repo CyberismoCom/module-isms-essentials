@@ -42,3 +42,13 @@ field(X, "base/fieldTypes/progress", (100 * (Ok + NotRequired) + 95 * ToBeVerifi
         field(Control, "workflowState", "Closed as not applicable"),
         not hiddenInTreeView(Control)
     }.
+
+    field(X, "base/fieldTypes/progress", 0) :-
+    field(X, "ismsa/fieldTypes/progress", "control-progress"),
+    Total = #count {
+        card(Control):
+        field(Control, "cardType", "ismsa/cardTypes/control"),
+        ancestor(Control, X),
+        not hiddenInTreeView(Control)
+    },
+    Total = 0.
