@@ -7,29 +7,29 @@
 
 === Related assets
 
-See linked assets.
-
-#TODO# Add links to related assets in external asset registers or link related assets using link type: affects asset.
+Company laptops and mobile phones
 
 === Threat
 
-#TODO# Describe the threat
+Leaking confidential information from a phone or laptop
 
 === Potential vulnerabilities
 
-#TODO# Describe potential vulnerabilities
-
-. #Vulnerability 1#
-. #Vulnerability 2#
-. #Vulnerability 3#
+. Device is stolen or lost
+. Malicious code installed on the device
+. Tiktok or another questionable application leaks business information
+. Malicious web site exploits device vulnerabilities
+. Malious email or message attachment
+. Device is misplaced for a while, and confidential information is shown on the home screen, or device is not locked, or a weak passcode is in use
+. Reading over the shoulder in a public place
+. #TODO: Add more vulnerabilities#
 
 === Consequences
 
-#TODO# Describe potential consequences.
-
-* #Consequence 1#
-* #Consequence 2#
-* #Consequence 3#
+* Information disclosure
+* Brand damage
+* Breach of customer NDAs/contracts
+* #TODO: Add more consequences#
 
 == Risk analysis
 
