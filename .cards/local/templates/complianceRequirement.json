@@ -1,3 +1,6 @@
 {
+    "displayName": "Cybersecurity requirement",
+    "description": "A cybersecurity requirement",
+    "category": "Cybersecurity management",
     "name": "ismsa/templates/complianceRequirement"
 }
