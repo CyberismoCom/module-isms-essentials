@@ -15,6 +15,9 @@
             "name": "base/fieldTypes/identifier"
         },
         {
+            "name": "ismsa/fieldTypes/requirementImplementationStrategy"
+        },
+        {
             "name": "ismsa/fieldTypes/requirementOrigin"
         }
     ],
@@ -23,6 +26,7 @@
         "base/fieldTypes/informationClassification"
     ],
     "optionallyVisibleFields": [
+        "ismsa/fieldTypes/requirementImplementationStrategy",
         "ismsa/fieldTypes/requirementOrigin"
     ]
 }

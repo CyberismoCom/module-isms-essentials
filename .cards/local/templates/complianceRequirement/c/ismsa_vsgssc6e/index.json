@@ -7,5 +7,6 @@
     "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/adoptionStep": null,
     "base/fieldTypes/identifier": null,
+    "ismsa/fieldTypes/requirementImplementationStrategy": null,
     "ismsa/fieldTypes/requirementOrigin": null
 }
