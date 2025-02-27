@@ -1,0 +1,31 @@
+{
+    "name": "ismsa/fieldTypes/requirementOrigin",
+    "displayName": "Requirement origin",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "customerRequirement",
+            "enumDisplayValue": "Customer requirement"
+        },
+        {
+            "enumValue": "iso27001y2022Requirement",
+            "enumDisplayValue": "ISO27001:2022 requirement"
+        },
+        {
+            "enumValue": "nis2Requirement",
+            "enumDisplayValue": "NIS2 requirement"
+        },
+        {
+            "enumValue": "craRequirement",
+            "enumDisplayValue": "CRA requirement"
+        },
+        {
+            "enumValue": "iec62443Requirement",
+            "enumDisplayValue": "IEC 62443 requirement"
+        },
+        {
+            "enumValue": "otherRequirement",
+            "enumDisplayValue": "Other requirement"
+        }
+    ]
+}

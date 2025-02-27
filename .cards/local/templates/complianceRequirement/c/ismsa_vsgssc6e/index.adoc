@@ -1,0 +1,21 @@
+== Description
+
+#TODO: Add description, if copy right allows it#
+
+== Requirement Implementation
+
+=== Implementation Strategy
+
+#TODO: Add implementation strategy, if needed#
+
+=== Responsible(s)
+
+#TODO: Add implementation responsible(s), if needed#
+
+=== Target date
+
+#TODO: Add target date, if needed#
+
+== Relevant evidence
+
+#TODO: Add relevant evidence#
