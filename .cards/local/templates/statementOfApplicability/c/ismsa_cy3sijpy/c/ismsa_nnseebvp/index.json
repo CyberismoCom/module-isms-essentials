@@ -1,0 +1,13 @@
+{
+    "title": "Untitled",
+    "cardType": "base/cardTypes/reviewTask",
+    "workflowState": "",
+    "rank": "0|b",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": null,
+    "base/fieldTypes/reviewPeriod": null,
+    "base/fieldTypes/lastReviewed": null,
+    "base/fieldTypes/justification": null,
+    "base/fieldTypes/adoptionStep": null,
+    "base/fieldTypes/identifier": null
+}
