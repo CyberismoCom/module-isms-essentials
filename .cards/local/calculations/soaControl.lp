@@ -8,14 +8,6 @@ transitionDenied(Document, "Approve", "Fix policy failures in at least one of th
     field(ReviewTask, "cardType", "base/cardTypes/reviewTask"),
     parent(ReviewTask, Document).
 
-transitionDenied(Document, "Approve", "Fill in the scope statement field before approving" ):-
-    field(Document, "cardType", "ismsa/cardTypes/statementOfApplicability"),
-    not field(Document, "ismsa/fieldTypes/soaScopeStatement", _).
-
-transitionDenied(Document, "Approve", "Fill in the version field before approving" ):-
-    field(Document, "cardType", "ismsa/cardTypes/statementOfApplicability"),
-    not field(Document, "ismsa/fieldTypes/soaVersion", _).
-
 transitionDenied(Document, "Approve", "Fill in the owner field before approving" ):-
     field(Document, "cardType", "ismsa/cardTypes/statementOfApplicability"),
     not field(Document, "base/fieldTypes/owner", _).
@@ -55,12 +47,10 @@ editingContentDenied(Document, "You cannot edit archived documents" ):-
 
 policyCheckFailure(Document, "Document control", "Scope statement is a required field", "Fill in the scope statement field." ):-
     field(Document, "cardType", "ismsa/cardTypes/statementOfApplicability"),
-    not field(Document, "workflowStateCategory", "initial"),
     not field(Document, "ismsa/fieldTypes/soaScopeStatement", _).
 
 policyCheckFailure(Document, "Document control", "Version is a required field", "Fill in the version field." ):-
     field(Document, "cardType", "ismsa/cardTypes/statementOfApplicability"),
-    not field(Document, "workflowStateCategory", "initial"),
     not field(Document, "ismsa/fieldTypes/soaVersion", _).
 
 policyCheckFailure(Document, "Document control", "Owner is a required field", "Fill in the owner field." ):-
