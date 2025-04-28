@@ -1,3 +1,11 @@
+% Copyright © Cyberismo Ltd and contributors 2025
+%
+% License: https://github.com/CyberismoCom/module-isms-essentials/blob/main/LICENSE
+% The use of the Cyberismo trademark: https://cyberismo.com/trademark-policy/
+% This content is distributed in the hope that it will be useful, but
+% WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+% FITNESS FOR A PARTICULAR PURPOSE.
+
 field(X, "base/fieldTypes/progress", ((50 * (OkTasks + NotRequiredTasks) + 20 * InProgressTasks)/ TotalTasks) + ((50 * Ok + 40 * PartlyOk + 20 * InProgress + 10 * Analysed) / Total)) :-
     field(X, "ismsa/fieldTypes/progress", "incident-progress"),
     Total = #count {

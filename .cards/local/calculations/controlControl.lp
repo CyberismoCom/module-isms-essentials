@@ -1,3 +1,11 @@
+% Copyright © Cyberismo Ltd and contributors 2025
+%
+% License: https://github.com/CyberismoCom/module-isms-essentials/blob/main/LICENSE
+% The use of the Cyberismo trademark: https://cyberismo.com/trademark-policy/
+% This content is distributed in the hope that it will be useful, but
+% WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+% FITNESS FOR A PARTICULAR PURPOSE.
+
 transitionDenied(Card, "Not applicable", "Fill justification for not applying the control" ):-
     field(Card, "cardType", "ismsa/cardTypes/control"),
     not field(Card, "ismsa/fieldTypes/controlJustification", _).

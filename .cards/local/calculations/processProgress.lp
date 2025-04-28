@@ -1,3 +1,11 @@
+% Copyright © Cyberismo Ltd and contributors 2025
+%
+% License: https://github.com/CyberismoCom/module-isms-essentials/blob/main/LICENSE
+% The use of the Cyberismo trademark: https://cyberismo.com/trademark-policy/
+% This content is distributed in the hope that it will be useful, but
+% WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+% FITNESS FOR A PARTICULAR PURPOSE.
+
 field(X, "base/fieldTypes/progress", (100 * Ok + 60 * Reviewed) / (Total-Archived)) :-
     field(X, "ismsa/fieldTypes/progress", "process-progress"),
     Total = #count {
@@ -20,7 +28,7 @@ field(X, "base/fieldTypes/progress", (100 * Ok + 60 * Reviewed) / (Total-Archive
         ancestor(Process, X),
         field(Process, "workflowState", "Reviewed"),
         not hiddenInTreeView(Process)
-    }, 
+    },
     Archived = #count {
         card(Process):
         field(Process, "cardType", "base/cardTypes/controlledDocument"),
