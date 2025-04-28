@@ -1,3 +1,11 @@
+% Copyright © Cyberismo Ltd and contributors 2025
+%
+% License: https://github.com/CyberismoCom/module-isms-essentials/blob/main/LICENSE
+% The use of the Cyberismo trademark: https://cyberismo.com/trademark-policy/
+% This content is distributed in the hope that it will be useful, but
+% WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+% FITNESS FOR A PARTICULAR PURPOSE.
+
 field(X, "base/fieldTypes/progress", (100 * (ClosedAsAccepted + ClosedAsTransferred + ClosedAsNotApplicable + ClosedAsAvoided) + 95 * (TreatmentComplete + NeedsMonitoring) + 60 * TreatmentInProgress + 40 * TreatmentPlanned + 20 * Analysed )/ (Total-ClosedAsDuplicate)) :-
     field(X, "ismsa/fieldTypes/progress", "risk-progress"),
     Total = #count {
