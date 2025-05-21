@@ -12,6 +12,9 @@
         "secdeva/cardTypes/process",
         "secdeva/cardTypes/dataStore"
     ],
-    "destinationCardTypes": ["ismsa/cardTypes/risk"],
+    "destinationCardTypes": [
+        "ismsa/cardTypes/risk",
+        "secdeva/cardTypes/securityIssue"
+    ],
     "enableLinkDescription": false
 }
