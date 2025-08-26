@@ -7,6 +7,6 @@
     "base/fieldTypes/informationClassification": null,
     "ismsa/fieldTypes/adoptionStep": null,
     "ismsa/fieldTypes/progress": "compliance-progress",
-    "base/fieldTypes/identifier": null,
+    "base/fieldTypes/identifier": "NIS2_basic_hygiene_practices_all",
     "lastUpdated": "2025-08-26T08:16:59.375Z"
 }
