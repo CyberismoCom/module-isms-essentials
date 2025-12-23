@@ -1,0 +1,5 @@
+{"timestamp":"2025-12-23T08:37:36.695Z","operation":"resource_create","target":"ismsa/reports/installExtension","parameters":{"type":"reports"}}
+{"timestamp":"2025-12-23T08:37:43.591Z","operation":"resource_update","target":"ismsa/reports/installExtension","parameters":{"type":"reports","operation":"change","key":"displayName"}}
+{"timestamp":"2025-12-23T08:38:01.817Z","operation":"resource_update","target":"ismsa/reports/installExtension","parameters":{"type":"reports","operation":"change","key":"description"}}
+{"timestamp":"2025-12-23T08:38:13.858Z","operation":"resource_update","target":"ismsa/reports/installExtension","parameters":{"type":"reports","operation":"change","key":"displayName"}}
+{"timestamp":"2025-12-23T08:40:49.650Z","operation":"resource_create","target":"ismsa/calculations/extensions","parameters":{"type":"calculations"}}
