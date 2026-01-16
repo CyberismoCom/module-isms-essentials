@@ -1,10 +1,10 @@
 == Task description
 
-* Document finalise, review and approve Risk management process under Process register.
+* Finalise, review and approve Risk management process under Process register
 
-* Document key risks into Risk register and link these to relevant assets using the "affects asset"/"presents risk" link type. 
+* Document key risks into Risk register and link these to relevant assets using the "affects asset"/"presents risk" link type
 
-* Ensure you have filled risk description, risk analysis, risk treatment plans and all needed metadata,  for each risk.
+* Ensure you have filled risk description, risk analysis, risk treatment plans and all needed metadata,  for each risk
 
 == Records of completion
 
