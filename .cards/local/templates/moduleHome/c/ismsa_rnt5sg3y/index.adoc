@@ -11,11 +11,6 @@ consists of the following registers:
 New registers should be added as needed:
 
 {{#createCards}}
-  "template": "ismsa/templates/processRegister",
-  "buttonLabel": "Add process register"
-{{/createCards}}
-
-{{#createCards}}
   "template": "ismsa/templates/register",
   "buttonLabel": "Add another register"
 {{/createCards}}
