@@ -1,0 +1,26 @@
+{
+    "name": "ismsa/cardTypes/nearMiss",
+    "displayName": "Near miss",
+    "workflow": "ismsa/workflows/nearMiss",
+    "customFields": [
+        {
+            "name": "base/fieldTypes/owner"
+        },
+        {
+            "name": "base/fieldTypes/informationClassification"
+        },
+        {
+            "name": "ismsa/fieldTypes/incidentStartDateTime"
+        },
+        {
+            "name": "ismsa/fieldTypes/incidentEndDateTime"
+        }
+    ],
+    "alwaysVisibleFields": [
+        "base/fieldTypes/owner",
+        "base/fieldTypes/informationClassification",
+        "ismsa/fieldTypes/incidentStartDateTime",
+        "ismsa/fieldTypes/incidentEndDateTime"
+    ],
+    "optionallyVisibleFields": []
+}
