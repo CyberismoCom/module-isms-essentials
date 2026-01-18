@@ -1,0 +1,9 @@
+== Task description
+
+* Create register for yearly targets under Security targets register
+
+* Add first security targets and create high-level plans for achieving those
+
+== Records of completion
+
+#TODO# Add record of completion

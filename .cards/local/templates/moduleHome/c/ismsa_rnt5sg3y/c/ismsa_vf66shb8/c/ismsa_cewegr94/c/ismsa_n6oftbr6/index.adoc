@@ -1,0 +1,12 @@
+== Task description
+
+* Finalize, review and approve Incident management process under Process register
+
+* Create needed business continuity and disaster recovery plans
+
+* Organize first table-top exercise to test the incident management process and 
+business continuity and disaster recovery plans
+
+== Records of completion
+
+#TODO# Add record of completion

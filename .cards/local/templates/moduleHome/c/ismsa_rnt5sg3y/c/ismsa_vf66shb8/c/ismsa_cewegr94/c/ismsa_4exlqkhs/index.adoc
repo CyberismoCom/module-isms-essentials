@@ -1,0 +1,11 @@
+== Task description
+
+* Finalise, review and approve Asset management process under Process register
+
+* Document key assets into Asset register using suitable asset templates
+
+* Ensure you have filled all needed metadata for each asset
+
+== Records of completion
+
+#TODO# Add record of completion
