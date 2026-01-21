@@ -1,23 +1,5 @@
-== Task description
+Complete the following subtasks and then mark this task completed (Status: Closed as done).
 
-* Plan monitoring and measurement intervals
-
-* Create annual wheel that contains:
-
-** Security reviews
-
-** Training and awareness topics
-
-** BCP & DRP testing
-
-** Internal audits
-
-** Management reviews
-
-** Compliance reviews
-
-** Documentation reviews
-
-== Records of completion
-
-#TODO# Add record of completion
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

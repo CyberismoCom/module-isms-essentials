@@ -1,12 +1,5 @@
-== Task description
+Complete the following subtasks and then mark this task completed (Status: Closed as done).
 
-* Document business context and scope under Process register using 
-"Business context analysis"-template
-
-* Document management commitment and direction into Information Security Policy or Cybersecurity policy and store reviewed and approved version (or link)
-under Process register
-
-* Define needed security roles and responsibilities and document these under Process register
-== Records of completion
-
-#TODO# Add record of completion
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

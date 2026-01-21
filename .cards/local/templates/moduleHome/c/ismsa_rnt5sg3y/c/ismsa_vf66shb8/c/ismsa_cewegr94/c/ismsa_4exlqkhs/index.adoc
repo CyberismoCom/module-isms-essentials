@@ -1,11 +1,5 @@
-== Task description
+Complete the following subtasks and then mark this task completed (Status: Closed as done).
 
-* Finalise, review and approve Asset management process under Process register
-
-* Document key assets into Asset register using suitable asset templates
-
-* Ensure you have filled all needed metadata for each asset
-
-== Records of completion
-
-#TODO# Add record of completion
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
