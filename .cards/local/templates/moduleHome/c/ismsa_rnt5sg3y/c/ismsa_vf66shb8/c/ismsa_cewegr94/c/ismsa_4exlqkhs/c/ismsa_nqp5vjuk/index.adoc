@@ -1,6 +1,6 @@
 == Task description
 
-* Ensure you have filled all needed metadata for each asset
+* Ensure you have filled in all needed metadata fields for each asset
 
 == Records of completion
 

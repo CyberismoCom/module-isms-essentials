@@ -1,10 +1,10 @@
 == Task description
 
-* Create training and awareness plan that contains 
+* Create a training and awareness plan that contains 
 
 ** mandatory information security training
 
-** role based trainings for targeted groups
+** role-based trainings for targeted groups
 
 ** awareness topics and other methods to improve awareness
 

@@ -1,8 +1,8 @@
 == Task description
 
-* Create register for yearly targets under Security targets register
+* Create a register for yearly targets under the Security targets register
 
-* Add first security targets and create high-level plans for achieving those
+* Add first security targets and create high-level plans for achieving the targets
 
 == Records of completion
 

@@ -1,6 +1,6 @@
 == Task description
 
-* Document key assets into Asset register using suitable asset templates
+* Document key assets into the Asset register using suitable asset templates
 
 == Records of completion
 

@@ -1,8 +1,8 @@
 == Task description
 
-* Press "Add ISO27001 controls"-button in Control register
+* Press the "Add ISO 27001 controls" button in Control register
 
-* Press "Add Statement of Applicability"-button in Control register
+* Press the "Add Statement of Applicability" button in Control register
 
 == Records of completion
 

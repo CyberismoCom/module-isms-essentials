@@ -1,6 +1,6 @@
 == Task description
 
-* Document key risks into Risk register and link these to relevant assets using the "affects asset"/"presents risk" link type
+* Document key risks into the Risk register and link them to relevant assets using the "affects asset"/"presents risk" link type
 
 * Consider also opportunities
 

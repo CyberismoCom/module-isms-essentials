@@ -1,8 +1,8 @@
 == Task description
 
-* Add Implementation summary or create Implementation plan for each of the Physical controls
+* Add an Implementation summary or create an Implementation plan for each Physical control
 
-* Add Justification for applying or not applying the control
+* Add a Justification for applying or not applying the control
 
 * Link each control to relevant risks using the "mitigates" link type
 

@@ -2,7 +2,7 @@
 
 * Plan monitoring and measurement intervals
 
-* Create annual wheel that contains:
+* Create an annual wheel that contains:
 
 ** Security reviews
 

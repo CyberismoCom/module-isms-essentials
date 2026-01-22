@@ -1,6 +1,6 @@
 == Task description
 
-* Document business context and scope under Process register using "Business context analysis"-template
+* Document business context and scope under Process register using the "Business context analysis" template
 
 == Records of completion
 
