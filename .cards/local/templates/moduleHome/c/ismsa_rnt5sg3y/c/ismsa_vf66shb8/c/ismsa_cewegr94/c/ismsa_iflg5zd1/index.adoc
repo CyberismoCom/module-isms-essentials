@@ -1,13 +1,5 @@
-== Task description
+Complete the following subtasks and then mark this task as complete (Status: Closed as done).
 
-* Add ISO27001 controls and needed own controls into Control register
-
-* Add Statement of Applicability
-
-* Add Implementation summary or create Implementation plan for each of the controls
-
-* Link each control to relevant risks using the "mitigates" link type
-
-== Records of completion
-
-#TODO# Add record of completion
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

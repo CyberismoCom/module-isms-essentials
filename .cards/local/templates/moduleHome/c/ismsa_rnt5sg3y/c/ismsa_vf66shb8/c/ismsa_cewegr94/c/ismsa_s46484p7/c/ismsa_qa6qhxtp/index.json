@@ -1,13 +1,14 @@
 {
-    "title": "Set yearly targets",
+    "title": "Create training and awareness plan",
     "cardType": "base/cardTypes/task",
     "workflowState": "",
-    "rank": "0|d",
+    "rank": "0|a",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": null,
     "base/fieldTypes/justification": null,
     "base/fieldTypes/dueDate": null,
     "base/fieldTypes/adoptionStep": null,
     "base/fieldTypes/identifier": null,
-    "lastUpdated": "2026-01-16T12:10:18.711Z"
+    "lastUpdated": "2026-01-22T16:19:02.154Z",
+    "links": []
 }

@@ -1,5 +1,5 @@
 {
-    "title": "Document security context",
+    "title": "Getting started",
     "cardType": "base/cardTypes/task",
     "workflowState": "",
     "rank": "0|a",
@@ -9,5 +9,6 @@
     "base/fieldTypes/dueDate": null,
     "base/fieldTypes/adoptionStep": null,
     "base/fieldTypes/identifier": null,
-    "lastUpdated": "2026-01-16T12:10:18.710Z"
+    "lastUpdated": "2026-01-22T16:02:29.218Z",
+    "links": []
 }

@@ -2,12 +2,13 @@
     "title": "Business continuity planning",
     "cardType": "base/cardTypes/task",
     "workflowState": "",
-    "rank": "0|e",
+    "rank": "0|f",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": null,
     "base/fieldTypes/justification": null,
     "base/fieldTypes/dueDate": null,
     "base/fieldTypes/adoptionStep": null,
     "base/fieldTypes/identifier": null,
-    "lastUpdated": "2026-01-16T12:10:18.711Z"
+    "lastUpdated": "2026-01-22T16:17:20.184Z",
+    "links": []
 }
