@@ -1,6 +1,6 @@
 {
     "name": "ismsa/workflows/nearMiss",
-    "displayName": "",
+    "displayName": "Near miss",
     "states": [
         {
             "name": "Open",
@@ -43,5 +43,5 @@
             "toState": "Open"
         }
     ],
-    "displayName": "Near miss"
+    "description": "Open → Analysed → Closed lifecycle for near misses"
 }

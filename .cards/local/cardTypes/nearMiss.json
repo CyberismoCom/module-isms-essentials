@@ -4,16 +4,20 @@
     "workflow": "ismsa/workflows/nearMiss",
     "customFields": [
         {
-            "name": "base/fieldTypes/owner"
+            "name": "base/fieldTypes/owner",
+            "isCalculated": false
         },
         {
-            "name": "base/fieldTypes/informationClassification"
+            "name": "base/fieldTypes/informationClassification",
+            "isCalculated": false
         },
         {
-            "name": "ismsa/fieldTypes/incidentStartDateTime"
+            "name": "ismsa/fieldTypes/incidentStartDateTime",
+            "isCalculated": false
         },
         {
-            "name": "ismsa/fieldTypes/incidentEndDateTime"
+            "name": "ismsa/fieldTypes/incidentEndDateTime",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [
@@ -22,5 +26,6 @@
         "ismsa/fieldTypes/incidentStartDateTime",
         "ismsa/fieldTypes/incidentEndDateTime"
     ],
-    "optionallyVisibleFields": []
+    "optionallyVisibleFields": [],
+    "description": "A cybersecurity event that did not cause impact but warrants analysis"
 }
