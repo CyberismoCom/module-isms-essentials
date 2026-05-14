@@ -1,0 +1,14 @@
+{
+    "title": "Review 5",
+    "cardType": "base/cardTypes/review",
+    "workflowState": "Passed",
+    "rank": "0|c",
+    "base/fieldTypes/owner": "a@example.com",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/lastReviewed": "2026-05-14",
+    "base/fieldTypes/reviewPeriod": null,
+    "lastUpdated": "2026-05-14T18:40:16.841Z",
+    "templateCardKey": "ismsa_hxt7il95",
+    "createdAt": "2026-05-14T18:39:12.347Z",
+    "lastTransitioned": "2026-05-14T18:39:15.948Z"
+}

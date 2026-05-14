@@ -1,6 +1,0 @@
-{
-    "name": "ismsa/fieldTypes/assessmentExplanation",
-    "displayName": "Assessment explanation",
-    "dataType": "longText",
-    "description": "Reason for the current automatic assessment"
-}

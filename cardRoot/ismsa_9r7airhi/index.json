@@ -1,0 +1,12 @@
+{
+    "title": "Test content",
+    "cardType": "base/cardTypes/page",
+    "workflowState": "Draft",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": "internal",
+    "rank": "0|f",
+    "lastUpdated": "2026-05-14T18:33:07.660Z",
+    "links": [],
+    "templateCardKey": "base_2",
+    "createdAt": "2026-05-14T18:32:42.816Z"
+}

@@ -29,11 +29,11 @@
             "isCalculated": false
         },
         {
-            "name": "ismsa/fieldTypes/assessment",
+            "name": "base/fieldTypes/assessment",
             "isCalculated": true
         },
         {
-            "name": "ismsa/fieldTypes/assessmentExplanation",
+            "name": "base/fieldTypes/assessmentExplanation",
             "isCalculated": true
         },
         {
@@ -43,8 +43,8 @@
     ],
     "alwaysVisibleFields": [
         "base/fieldTypes/owner",
-        "ismsa/fieldTypes/assessment",
-        "ismsa/fieldTypes/assessmentExplanation"
+        "base/fieldTypes/assessment",
+        "base/fieldTypes/assessmentExplanation"
     ],
     "optionallyVisibleFields": [
         "base/fieldTypes/informationClassification",
