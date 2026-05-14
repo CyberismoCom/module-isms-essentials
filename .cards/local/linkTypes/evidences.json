@@ -12,8 +12,7 @@
         "base/cardTypes/annualTask",
         "base/cardTypes/quarterlyTask",
         "base/cardTypes/task",
-        "base/cardTypes/monthlyTask",
-        "base/cardTypes/reviewTask"
+        "base/cardTypes/monthlyTask"
     ],
     "enableLinkDescription": false,
     "category": "Cybersecurity management",

@@ -8,3 +8,4 @@
 {"timestamp":"2026-05-14T16:48:39.223Z","operation":"resource_update","target":"ismsa/linkTypes/evidences","parameters":{"type":"linkTypes","operation":{"name":"remove","target":"base/cardTypes/reviewTask"},"key":"sourceCardTypes"}}
 {"timestamp":"2026-05-14T19:10:32.161Z","operation":"resource_delete","target":"ismsa/fieldTypes/assessment","parameters":{"type":"fieldTypes"}}
 {"timestamp":"2026-05-14T19:10:37.566Z","operation":"resource_delete","target":"ismsa/fieldTypes/assessmentExplanation","parameters":{"type":"fieldTypes"}}
+{"timestamp":"2026-05-14T19:16:59.026Z","operation":"resource_update","target":"ismsa/linkTypes/evidences","parameters":{"type":"linkTypes","operation":{"name":"remove","target":"base/cardTypes/reviewTask"},"key":"destinationCardTypes"}}
