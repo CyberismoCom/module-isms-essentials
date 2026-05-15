@@ -7,8 +7,14 @@
     "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/lastReviewed": "2026-05-14",
     "base/fieldTypes/reviewPeriod": null,
-    "lastUpdated": "2026-05-14T18:40:16.841Z",
+    "lastUpdated": "2026-05-15T12:50:13.502Z",
     "templateCardKey": "ismsa_hxt7il95",
     "createdAt": "2026-05-14T18:39:12.347Z",
-    "lastTransitioned": "2026-05-14T18:39:15.948Z"
+    "lastTransitioned": "2026-05-14T18:39:15.948Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/evidences",
+            "cardKey": "ismsa_lfm7hasm"
+        }
+    ]
 }
