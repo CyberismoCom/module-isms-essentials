@@ -1,0 +1,21 @@
+{
+    "title": "Doc 7",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "Approved",
+    "base/fieldTypes/owner": "b@example.com",
+    "base/fieldTypes/informationClassification": null,
+    "base/fieldTypes/approver": "c@example.com",
+    "base/fieldTypes/approvalDate": "2026-05-14",
+    "base/fieldTypes/reviewPeriod": 365,
+    "rank": "0|b",
+    "lastUpdated": "2026-05-14T19:08:15.796Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/evidences",
+            "cardKey": "ismsa_picig1jx"
+        }
+    ],
+    "templateCardKey": "base_5",
+    "createdAt": "2026-05-14T19:06:06.250Z",
+    "lastTransitioned": "2026-05-14T19:07:03.108Z"
+}

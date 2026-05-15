@@ -1,0 +1,1 @@
+This control has two pieces of evidence, one valid and another in Draft state.

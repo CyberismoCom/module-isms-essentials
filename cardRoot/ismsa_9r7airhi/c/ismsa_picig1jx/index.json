@@ -1,0 +1,18 @@
+{
+    "title": "Internal control 7: One valid piece of evidence and another with failed checks",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "In scope",
+    "rank": "0|e",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": null,
+    "base/fieldTypes/identifier": null,
+    "base/fieldTypes/justification": null,
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "lastUpdated": "2026-05-15T11:58:56.575Z",
+    "links": [],
+    "base/fieldTypes/reviewMonth": "january",
+    "templateCardKey": "ismsa_eqroywxj",
+    "createdAt": "2026-05-14T19:05:40.538Z",
+    "lastTransitioned": "2026-05-14T19:08:04.551Z"
+}

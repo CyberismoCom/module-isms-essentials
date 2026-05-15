@@ -1,0 +1,18 @@
+{
+    "title": "Internal control 5: Both valid and draft evidence",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "In scope",
+    "rank": "0|c",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": null,
+    "base/fieldTypes/identifier": null,
+    "base/fieldTypes/justification": null,
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "lastUpdated": "2026-05-15T11:57:42.167Z",
+    "links": [],
+    "base/fieldTypes/reviewMonth": "january",
+    "templateCardKey": "ismsa_eqroywxj",
+    "createdAt": "2026-05-14T18:34:31.169Z",
+    "lastTransitioned": "2026-05-14T18:39:55.843Z"
+}

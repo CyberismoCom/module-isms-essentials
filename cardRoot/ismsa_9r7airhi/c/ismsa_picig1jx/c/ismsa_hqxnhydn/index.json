@@ -1,0 +1,20 @@
+{
+    "title": "Review 7",
+    "cardType": "base/cardTypes/review",
+    "workflowState": "Passed",
+    "rank": "0|c",
+    "base/fieldTypes/owner": "a@example.com",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/lastReviewed": "2026-05-14",
+    "base/fieldTypes/reviewPeriod": null,
+    "lastUpdated": "2026-05-14T19:08:37.344Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/evidences",
+            "cardKey": "ismsa_picig1jx"
+        }
+    ],
+    "templateCardKey": "ismsa_hxt7il95",
+    "createdAt": "2026-05-14T19:07:40.642Z",
+    "lastTransitioned": "2026-05-14T19:07:49.855Z"
+}

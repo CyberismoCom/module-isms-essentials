@@ -1,0 +1,18 @@
+{
+    "title": "Internal control 1: Draft document evidence",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "In scope",
+    "rank": "0|a",
+    "base/fieldTypes/owner": "a@example.com",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": null,
+    "base/fieldTypes/identifier": null,
+    "base/fieldTypes/justification": null,
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "lastUpdated": "2026-05-15T11:56:23.119Z",
+    "links": [],
+    "base/fieldTypes/reviewMonth": "january",
+    "templateCardKey": "ismsa_eqroywxj",
+    "createdAt": "2026-05-14T16:45:44.998Z",
+    "lastTransitioned": "2026-05-14T16:48:52.787Z"
+}

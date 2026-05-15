@@ -1,0 +1,21 @@
+{
+    "title": "Untitled document",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "Approved",
+    "base/fieldTypes/owner": "c@example.com",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/approver": "c@example.com",
+    "base/fieldTypes/approvalDate": "2022-02-14",
+    "base/fieldTypes/reviewPeriod": 365,
+    "rank": "0|b",
+    "lastUpdated": "2026-05-14T17:15:35.220Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/evidences",
+            "cardKey": "ismsa_5t6d2t4c"
+        }
+    ],
+    "templateCardKey": "base_5",
+    "createdAt": "2026-05-14T17:13:54.345Z",
+    "lastTransitioned": "2026-05-14T17:14:40.688Z"
+}

@@ -1,0 +1,1 @@
+This control has both a valid piece of evidence and a piece of evidence that is ready but has policy check failures.
