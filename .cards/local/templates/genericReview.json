@@ -1,6 +1,6 @@
 {
     "name": "ismsa/templates/genericReview",
     "displayName": "Generic review",
-    "category": "Cybersecurity management",
+    "category": "General",
     "description": "A generic review that can fail or pass."
 }

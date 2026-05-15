@@ -93,3 +93,26 @@ field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope
   link(_, Control, "ismsa/linkTypes/evidences"),
   ismsa_evidenceOk(Evidence) :
   link(Evidence, Control, "ismsa/linkTypes/evidences").
+
+%
+% Justification is required if the control is out of scope
+%
+
+transitionDenied(
+  Control,
+  "Mark out of scope",
+  "To mark this control as out of scope, you must first provide a justification. Fill in the scoping justification field."
+) :-
+    field(Control, "cardType", "ismsa/cardTypes/internalControl"),
+    not field(Control, "base/fieldTypes/justification", _).
+
+policyCheckFailure(
+  Control,
+  "Internal control",
+  "Justification missing",
+  "A scoping justification is mandatory for controls that have been marked out of scope. Set this field",
+  "base/fieldTypes/justification"
+) :-
+    field(Control, "cardType", "ismsa/cardTypes/internalControl"),
+    not field(Task, "base/fieldTypes/justification", _),
+    field(Task, "workflowState", "Out of scope").

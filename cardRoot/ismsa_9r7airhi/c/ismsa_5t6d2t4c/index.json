@@ -1,5 +1,5 @@
 {
-    "title": "Internal control 4 evidence has policy failures",
+    "title": "Internal control 4: Evidence has policy failures",
     "cardType": "ismsa/cardTypes/internalControl",
     "workflowState": "In scope",
     "rank": "0|ab",
@@ -9,7 +9,7 @@
     "base/fieldTypes/identifier": null,
     "base/fieldTypes/justification": null,
     "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
-    "lastUpdated": "2026-05-14T18:33:29.213Z",
+    "lastUpdated": "2026-05-15T11:57:11.270Z",
     "links": [],
     "base/fieldTypes/reviewMonth": "january",
     "templateCardKey": "ismsa_eqroywxj",

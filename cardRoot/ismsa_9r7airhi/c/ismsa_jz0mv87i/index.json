@@ -1,18 +1,18 @@
 {
-    "title": "Internal control 5: Both valid and draft evidence",
+    "title": "Internal control 8: Out of scope",
     "cardType": "ismsa/cardTypes/internalControl",
-    "workflowState": "In scope",
-    "rank": "0|c",
-    "base/fieldTypes/owner": null,
+    "workflowState": "Out of scope",
+    "rank": "0|f",
+    "base/fieldTypes/owner": "a@example.com",
     "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/adoptionStep": null,
     "base/fieldTypes/identifier": null,
-    "base/fieldTypes/justification": null,
+    "base/fieldTypes/justification": "Some justification",
     "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
-    "lastUpdated": "2026-05-15T11:57:42.167Z",
+    "lastUpdated": "2026-05-15T12:11:40.576Z",
     "links": [],
     "base/fieldTypes/reviewMonth": "january",
     "templateCardKey": "ismsa_eqroywxj",
-    "createdAt": "2026-05-14T18:34:31.169Z",
-    "lastTransitioned": "2026-05-14T18:39:55.843Z"
+    "createdAt": "2026-05-15T12:08:01.943Z",
+    "lastTransitioned": "2026-05-15T12:11:18.396Z"
 }

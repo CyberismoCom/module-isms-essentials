@@ -1,5 +1,5 @@
 {
-    "title": "Internal control 2 without evidence",
+    "title": "Internal control 2: No evidence",
     "cardType": "ismsa/cardTypes/internalControl",
     "workflowState": "In scope",
     "rank": "0|aab",
@@ -9,7 +9,7 @@
     "base/fieldTypes/identifier": null,
     "base/fieldTypes/justification": null,
     "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
-    "lastUpdated": "2026-05-14T18:34:05.844Z",
+    "lastUpdated": "2026-05-15T11:56:41.386Z",
     "links": [],
     "base/fieldTypes/reviewMonth": "january",
     "templateCardKey": "ismsa_eqroywxj",

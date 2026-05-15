@@ -1,1 +1,1 @@
-The child cards of this card are test content for ISMS essentials.
+The child cards of this card are test content for the development of the ISMS essentials module.

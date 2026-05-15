@@ -1,13 +1,1 @@
-#TODO: add an introduction to this control#
-
-== How to decide if this control is applicable
-
-#TODO: describe applicability criteria#
-
-== How to implement this control
-
-#TODO: add instructions#
-
-== How to review this control
-
-#TODO: add instructions#
+This control does not have any linked evidence

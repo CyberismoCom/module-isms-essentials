@@ -1,13 +1,1 @@
-#TODO: add an introduction to this control#
-
-== How to decide if this control is applicable
-
-#TODO: describe applicability criteria#
-
-== How to implement this control
-
-#TODO: add instructions#
-
-== How to review this control
-
-#TODO: add instructions#
+Two pieces of evidence, both in a valid state and without policy check failures.
