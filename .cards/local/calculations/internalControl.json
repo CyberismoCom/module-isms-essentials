@@ -1,6 +1,6 @@
 {
     "name": "ismsa/calculations/internalControl",
     "displayName": "Internal control",
-    "description": "Basic enforcements and automation for internal controls",
+    "description": "Basic enforcement and automation for internal controls",
     "calculation": "calculation.lp"
 }
