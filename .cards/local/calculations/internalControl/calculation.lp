@@ -114,5 +114,5 @@ policyCheckFailure(
   "base/fieldTypes/justification"
 ) :-
     field(Control, "cardType", "ismsa/cardTypes/internalControl"),
-    not field(Task, "base/fieldTypes/justification", _),
-    field(Task, "workflowState", "Out of scope").
+    field(Control, "workflowState", "Out of scope"),
+    not field(Control, "base/fieldTypes/justification", _).
