@@ -7,7 +7,7 @@
         "base/cardTypes/monthlyTask",
         "base/cardTypes/quarterlyTask",
         "base/cardTypes/annualTask",
-        "secdeva/cardTypes/requirement"
+        "base/cardTypes/task"
     ],
     "destinationCardTypes": [
         "ismsa/cardTypes/risk",
