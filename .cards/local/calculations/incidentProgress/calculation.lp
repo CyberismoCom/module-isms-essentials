@@ -46,13 +46,15 @@ field(X, "base/fieldTypes/progress", ((50 * (OkTasks + NotRequiredTasks) + 20 * 
         card(Task):
         field(Task, "cardType", "base/cardTypes/task"),
         ancestor(Task, X),
-        field(Task, "workflowState", "Closed as done")
+        field(Task, "workflowState", "Closed as done"),
+        not hiddenInTreeView(Task)
     },
     InProgressTasks = #count {
         card(Task):
         field(Task, "cardType", "base/cardTypes/task"),
         ancestor(Task, X),
-        field(Task, "workflowState", "In progress")
+        field(Task, "workflowState", "In progress"),
+        not hiddenInTreeView(Task)
     },
     NotRequiredTasks = #count {
         card(Task):
