@@ -18,3 +18,8 @@ New incidents are recorded using the incident template that contains four cards:
   "template": "ismsa/templates/incident",
   "buttonLabel": "Add new incident"
 {{/createCards}}
+
+{{#createCards}}
+  "template": "ismsa/templates/nearMiss",
+  "buttonLabel": "Add new near miss"
+{{/createCards}}
