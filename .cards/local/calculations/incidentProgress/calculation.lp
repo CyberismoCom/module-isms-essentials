@@ -117,13 +117,15 @@ field(X, "base/fieldTypes/progress", ((40 * (OkTasks + NotRequiredTasks) + 16 * 
         card(Task):
         field(Task, "cardType", "base/cardTypes/task"),
         ancestor(Task, X),
-        field(Task, "workflowState", "Closed as done")
+        field(Task, "workflowState", "Closed as done"),
+        not hiddenInTreeView(Task)
     },
     InProgressTasks = #count {
         card(Task):
         field(Task, "cardType", "base/cardTypes/task"),
         ancestor(Task, X),
-        field(Task, "workflowState", "In progress")
+        field(Task, "workflowState", "In progress"),
+        not hiddenInTreeView(Task)
     },
     NotRequiredTasks = #count {
         card(Task):
@@ -170,3 +172,20 @@ field(X, "base/fieldTypes/progress", ((100 * OkNearMiss) / TotalNearMiss)) :-
         field(NearMiss, "workflowState", "Closed"),
         not hiddenInTreeView(NearMiss)
     }.
+
+ field(X, "base/fieldTypes/progress", 0) :-
+     field(X, "ismsa/fieldTypes/progress", "incident-progress"),
+     Total = #count {
+         card(Incident):
+         field(Incident, "cardType", "ismsa/cardTypes/incident"),
+         ancestor(Incident, X),
+         not hiddenInTreeView(Incident)
+     },
+     Total = 0,
+     TotalNearMiss = #count {
+         card(NearMiss):
+         field(NearMiss, "cardType", "ismsa/cardTypes/nearMiss"),
+         ancestor(NearMiss, X),
+         not hiddenInTreeView(NearMiss)
+     },
+     TotalNearMiss = 0.
