@@ -58,7 +58,7 @@ field(Control, "base/fieldTypes/assessment", "notOk") :-
   link(Evidence, Control, "ismsa/linkTypes/evidences"),
   not field(Evidence, "base/fieldTypes/assessment", "ok").
 
-field(Control, "base/fieldTypes/assessmentExplanation", "The  control is in scope but the linked evidence is not ready") :-
+field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope but the linked evidence is not ready") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
