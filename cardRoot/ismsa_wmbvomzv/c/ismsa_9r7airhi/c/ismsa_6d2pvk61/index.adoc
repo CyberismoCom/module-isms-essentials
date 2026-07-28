@@ -1,0 +1,7 @@
+The evidence for this control is Approved and there are no policy check failures.
+
+NOTE: this test case assumes that the document review has not expired
+
+{{#report}}
+  "name": "ismsa/reports/evidenceAssessments"
+{{/report}}

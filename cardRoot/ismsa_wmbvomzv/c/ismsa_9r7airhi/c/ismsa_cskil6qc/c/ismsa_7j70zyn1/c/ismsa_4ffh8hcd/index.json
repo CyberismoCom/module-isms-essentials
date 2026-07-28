@@ -1,0 +1,18 @@
+{
+    "title": "Controlled document review",
+    "cardType": "base/cardTypes/reviewTask",
+    "workflowState": "Closed as done",
+    "rank": "0|b",
+    "base/fieldTypes/owner": "reviewer@example.com",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/lastReviewed": "2015-07-28",
+    "base/fieldTypes/justification": null,
+    "base/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": null,
+    "links": [],
+    "lastUpdated": "2026-07-28T10:14:29.017Z",
+    "templateCardKey": "base_z5xfuc3n",
+    "createdAt": "2026-07-28T10:12:32.312Z",
+    "lastTransitioned": "2026-07-28T10:13:42.808Z"
+}
