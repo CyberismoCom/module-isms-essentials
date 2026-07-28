@@ -48,27 +48,22 @@ field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope
   not base_policyCheckFailure(Control, _, _, _),
   not link(_, Control, "ismsa/linkTypes/evidences").
 
-% Not OK because there is evidence that is not Approved or Passed
+% Not OK because there is evidence that has not been assessed as OK
 
-ismsa_evidenceStateReady("Approved").
-ismsa_evidenceStateReady("Passed").
-ismsa_evidenceStateReady("Ready").
 
 field(Control, "base/fieldTypes/assessment", "notOk") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
   link(Evidence, Control, "ismsa/linkTypes/evidences"),
-  field(Evidence, "workflowState", EvidenceState),
-  not ismsa_evidenceStateReady(EvidenceState).
+  not field(Evidence, "base/fieldTypes/assessment", "ok").
 
-field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope but the linked evidence is not ready") :-
+field(Control, "base/fieldTypes/assessmentExplanation", "The  control is in scope but the linked evidence is not ready") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
   link(Evidence, Control, "ismsa/linkTypes/evidences"),
-  field(Evidence, "workflowState", EvidenceState),
-  not ismsa_evidenceStateReady(EvidenceState).
+  not field(Evidence, "base/fieldTypes/assessment", "ok").
 
 % Not OK because there is evidence and all evidence is ready, but there are policy check failures
 
@@ -78,9 +73,8 @@ field(Control, "base/fieldTypes/assessment", "notOk") :-
   not base_policyCheckFailure(Control, _, _, _),
   link(Evidence, Control, "ismsa/linkTypes/evidences"),
   base_policyCheckFailure(Evidence, _, _, _),
-  ismsa_evidenceStateReady(EvidenceState) :
-  link(Evidence2, Control, "ismsa/linkTypes/evidences"),
-  field(Evidence2, "workflowState", EvidenceState).
+  field(Evidence2, "base/fieldTypes/assessment", "ok") :
+  link(Evidence2, Control, "ismsa/linkTypes/evidences").
 
 field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope but the linked evidence has failed policy checks") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
@@ -88,23 +82,17 @@ field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope
   not base_policyCheckFailure(Control, _, _, _),
   link(Evidence, Control, "ismsa/linkTypes/evidences"),
   base_policyCheckFailure(Evidence, _, _, _),
-  ismsa_evidenceStateReady(EvidenceState) :
-  link(Evidence2, Control, "ismsa/linkTypes/evidences"),
-  field(Evidence2, "workflowState", EvidenceState).
+  not field(Evidence2, "base/fieldTypes/assessment", "ok") :
+  link(Evidence2, Control, "ismsa/linkTypes/evidences").
 
 % OK because there is evidence and all linked evidence is Approved or Passed and have no policy check failures
-
-ismsa_evidenceOk(Evidence) :-
-  field(Evidence, "workflowState", EvidenceState),
-  ismsa_evidenceStateReady(EvidenceState),
-  not base_policyCheckFailure(Evidence, _, _, _).
 
 field(Control, "base/fieldTypes/assessment", "ok") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
   link(_, Control, "ismsa/linkTypes/evidences"),
-  ismsa_evidenceOk(Evidence) :
+  field(Evidence, "base/fieldTypes/assessment", "ok"):
   link(Evidence, Control, "ismsa/linkTypes/evidences").
 
 field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope and there is valid evidence") :-
@@ -112,7 +100,7 @@ field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
   link(_, Control, "ismsa/linkTypes/evidences"),
-  ismsa_evidenceOk(Evidence) :
+  field(Evidence, "base/fieldTypes/assessment", "ok") :
   link(Evidence, Control, "ismsa/linkTypes/evidences").
 
 policyCheckSuccess(Control, "Internal control assessment", @concatenate("Control is acceptable: ", Explanation)) :-
@@ -124,7 +112,6 @@ policyCheckSuccess(Control, "Internal control assessment", @concatenate("Control
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "base/fieldTypes/assessment", "notApplicable"),
   field(Control, "base/fieldTypes/assessmentExplanation", Explanation).
-
 
 %
 % Justification is required if the control is out of scope
@@ -165,6 +152,9 @@ policyCheckFailure(
     field(Control, "workflowState", "In scope"),
     link(SomeReview, Control, "ismsa/linkTypes/evidences"),
     field(SomeReview, "cardType", "base/cardTypes/review"),
+    field(SomeReview, "base/fieldTypes/lastReviewed", SomeLastReviewed),
+    field(SomeReview, "base/fieldTypes/reviewPeriod", SomeReviewPeriod),
+    @daysSince(SomeLastReviewed) > SomeReviewPeriod,
     @daysSince(LastReviewed) > ReviewPeriod :
     link(Review, Control, "ismsa/linkTypes/evidences"),
     field(Review, "cardType", "base/cardTypes/review"),

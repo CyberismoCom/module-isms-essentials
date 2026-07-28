@@ -6,8 +6,8 @@
     "base/fieldTypes/owner": "a@example.com",
     "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/lastReviewed": "2026-05-14",
-    "base/fieldTypes/reviewPeriod": null,
-    "lastUpdated": "2026-05-14T19:08:37.344Z",
+    "base/fieldTypes/reviewPeriod": 365,
+    "lastUpdated": "2026-07-28T11:12:09.712Z",
     "links": [
         {
             "linkType": "ismsa/linkTypes/evidences",
