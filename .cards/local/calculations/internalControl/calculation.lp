@@ -36,25 +36,29 @@ field(Control, "base/fieldTypes/assessmentExplanation", "The control has failed 
 
 % Not OK because of no evidence
 
+ismsa_internalControlMissingEvidence(Control) :-
+  field(Control, "cardType", "ismsa/cardTypes/internalControl"),
+  not link(_, Control, "ismsa/linkTypes/evidences").
+
 field(Control, "base/fieldTypes/assessment", "notOk") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
-  not link(_, Control, "ismsa/linkTypes/evidences").
+  ismsa_internalControlMissingEvidence(Control).
 
-field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope but evidence has not been linked") :-
+field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope but required evidence has not been linked") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
-  not link(_, Control, "ismsa/linkTypes/evidences").
+  ismsa_internalControlMissingEvidence(Control).
 
 % Not OK because there is evidence that has not been assessed as OK
 
-
 field(Control, "base/fieldTypes/assessment", "notOk") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
+  not ismsa_internalControlMissingEvidence(Control),
   link(Evidence, Control, "ismsa/linkTypes/evidences"),
   not field(Evidence, "base/fieldTypes/assessment", "ok").
 
@@ -62,6 +66,7 @@ field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
+  not ismsa_internalControlMissingEvidence(Control),
   link(Evidence, Control, "ismsa/linkTypes/evidences"),
   not field(Evidence, "base/fieldTypes/assessment", "ok").
 
@@ -71,6 +76,7 @@ field(Control, "base/fieldTypes/assessment", "notOk") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
+  not ismsa_internalControlMissingEvidence(Control),
   link(Evidence, Control, "ismsa/linkTypes/evidences"),
   base_policyCheckFailure(Evidence, _, _, _),
   field(Evidence2, "base/fieldTypes/assessment", "ok") :
@@ -80,17 +86,19 @@ field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
+  not ismsa_internalControlMissingEvidence(Control),
   link(Evidence, Control, "ismsa/linkTypes/evidences"),
   base_policyCheckFailure(Evidence, _, _, _),
   not field(Evidence2, "base/fieldTypes/assessment", "ok") :
   link(Evidence2, Control, "ismsa/linkTypes/evidences").
 
-% OK because there is evidence and all linked evidence is Approved or Passed and have no policy check failures
+% OK because there is evidence and all linked evidence is ok
 
 field(Control, "base/fieldTypes/assessment", "ok") :-
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
+  not ismsa_internalControlMissingEvidence(Control),
   link(_, Control, "ismsa/linkTypes/evidences"),
   field(Evidence, "base/fieldTypes/assessment", "ok"):
   link(Evidence, Control, "ismsa/linkTypes/evidences").
@@ -99,6 +107,7 @@ field(Control, "base/fieldTypes/assessmentExplanation", "The control is in scope
   field(Control, "cardType", "ismsa/cardTypes/internalControl"),
   field(Control, "workflowState", "In scope"),
   not base_policyCheckFailure(Control, _, _, _),
+  not ismsa_internalControlMissingEvidence(Control),
   link(_, Control, "ismsa/linkTypes/evidences"),
   field(Evidence, "base/fieldTypes/assessment", "ok") :
   link(Evidence, Control, "ismsa/linkTypes/evidences").

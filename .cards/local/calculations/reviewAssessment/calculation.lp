@@ -4,7 +4,7 @@ field(Review, "base/fieldTypes/assessment", "open") :-
     field(Review, "cardType", "base/cardTypes/review"),
     field(Review, "workflowState", "Draft").
 
-field(Review, "base/fieldTypes/assessmentExplanation", "The reivew has not yet been conducted") :-
+field(Review, "base/fieldTypes/assessmentExplanation", "The review has not yet been conducted") :-
     field(Review, "cardType", "base/cardTypes/review"),
     field(Review, "workflowState", "Draft").
 
