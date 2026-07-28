@@ -1,0 +1,5 @@
+This control does not have any linked evidence
+
+{{#report}}
+  "name": "ismsa/reports/evidenceAssessments"
+{{/report}}

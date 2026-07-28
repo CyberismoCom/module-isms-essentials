@@ -1,0 +1,18 @@
+{
+    "title": "Internal control 4: Evidence has policy failures",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "In scope",
+    "rank": "0|ab",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": null,
+    "base/fieldTypes/identifier": null,
+    "base/fieldTypes/justification": null,
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "lastUpdated": "2026-07-28T10:09:55.907Z",
+    "links": [],
+    "base/fieldTypes/reviewMonth": "january",
+    "templateCardKey": "ismsa_eqroywxj",
+    "createdAt": "2026-05-14T17:13:29.909Z",
+    "lastTransitioned": "2026-05-14T17:18:43.676Z"
+}

@@ -1,0 +1,5 @@
+Two pieces of evidence, both in a valid state and without policy check failures.
+
+{{#report}}
+  "name": "ismsa/reports/evidenceAssessments"
+{{/report}}

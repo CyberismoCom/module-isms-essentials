@@ -1,0 +1,5 @@
+The evidence for this control is in Draft state.
+
+{{#report}}
+  "name": "ismsa/reports/evidenceAssessments"
+{{/report}}

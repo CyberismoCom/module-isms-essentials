@@ -1,0 +1,5 @@
+This control is out of scope
+
+{{#report}}
+  "name": "ismsa/reports/evidenceAssessments"
+{{/report}}

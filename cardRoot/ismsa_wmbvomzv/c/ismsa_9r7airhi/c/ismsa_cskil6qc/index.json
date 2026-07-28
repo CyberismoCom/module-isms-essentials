@@ -1,0 +1,18 @@
+{
+    "title": "Internal control 10: Expired document",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "In scope",
+    "rank": "0|h",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": null,
+    "base/fieldTypes/identifier": null,
+    "base/fieldTypes/justification": null,
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "lastUpdated": "2026-07-28T10:17:05.894Z",
+    "links": [],
+    "base/fieldTypes/reviewMonth": "january",
+    "templateCardKey": "ismsa_eqroywxj",
+    "createdAt": "2026-07-28T10:11:34.424Z",
+    "lastTransitioned": "2026-07-28T10:14:03.410Z"
+}
