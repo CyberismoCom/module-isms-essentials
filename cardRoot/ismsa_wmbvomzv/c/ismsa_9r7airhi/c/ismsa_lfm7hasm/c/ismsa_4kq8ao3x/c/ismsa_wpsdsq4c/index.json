@@ -3,15 +3,11 @@
     "cardType": "base/cardTypes/reviewTask",
     "workflowState": "Open",
     "rank": "0|b",
-    "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/reviewPeriod": 365,
-    "base/fieldTypes/lastReviewed": null,
-    "base/fieldTypes/justification": null,
     "base/fieldTypes/adoptionStep": "step1",
-    "base/fieldTypes/identifier": null,
     "links": [],
-    "lastUpdated": "2026-05-14T18:35:33.152Z",
+    "lastUpdated": "2026-08-16T20:13:38.642Z",
     "templateCardKey": "base_z5xfuc3n",
     "createdAt": "2026-05-14T18:35:33.151Z"
 }

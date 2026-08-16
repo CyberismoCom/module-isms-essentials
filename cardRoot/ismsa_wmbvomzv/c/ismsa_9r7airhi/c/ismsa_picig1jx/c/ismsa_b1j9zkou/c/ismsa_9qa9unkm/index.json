@@ -7,11 +7,9 @@
     "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/reviewPeriod": 365,
     "base/fieldTypes/lastReviewed": "2026-05-14",
-    "base/fieldTypes/justification": null,
     "base/fieldTypes/adoptionStep": "step1",
-    "base/fieldTypes/identifier": null,
     "links": [],
-    "lastUpdated": "2026-05-14T19:06:26.182Z",
+    "lastUpdated": "2026-08-16T20:13:38.642Z",
     "templateCardKey": "base_z5xfuc3n",
     "createdAt": "2026-05-14T19:06:06.250Z",
     "lastTransitioned": "2026-05-14T19:06:26.117Z"

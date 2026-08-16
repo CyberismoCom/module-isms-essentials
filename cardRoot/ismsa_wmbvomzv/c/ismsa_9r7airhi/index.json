@@ -2,10 +2,9 @@
     "title": "Internal control assessment tests",
     "cardType": "base/cardTypes/page",
     "workflowState": "Draft",
-    "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "rank": "0|a",
-    "lastUpdated": "2026-07-28T08:28:44.010Z",
+    "lastUpdated": "2026-08-16T20:13:38.638Z",
     "links": [],
     "templateCardKey": "base_2",
     "createdAt": "2026-05-14T18:32:42.816Z"
