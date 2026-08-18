@@ -3,7 +3,7 @@
     "cardKeyPrefix": "ismsa",
     "name": "ISMS essentials",
     "description": "",
-    "version": "1.4.2",
+    "version": "1.4.3",
     "modules": [
         {
             "name": "base",
