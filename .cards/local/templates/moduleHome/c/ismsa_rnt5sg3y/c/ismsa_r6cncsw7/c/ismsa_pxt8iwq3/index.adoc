@@ -70,7 +70,7 @@ Each asset category has their own classification/valuation scheme. All assets ar
 
 Overall asset criticality summarises the four criticality dimensions above, and it should usually be at least as high as the highest of them.
 
-Risk evaluation is mandatory for assets that are critical for operations (Overall asset criticality: High), but can also been conducted for non-critical assets, if justifiable (e.g. from brand-protection perspective).
+Risk evaluation is mandatory for assets that are critical for operations (Overall asset criticality: High), but can also be conducted for non-critical assets, if justifiable (e.g. from brand-protection perspective).
 
 [NOTE]
 ====
