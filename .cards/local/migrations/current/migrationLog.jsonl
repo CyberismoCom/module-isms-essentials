@@ -1,0 +1,4 @@
+{"timestamp":"2026-08-24T12:03:18.128Z","operation":"resource_update","target":"ismsa/fieldTypes/assetConfidentiality","parameters":{"type":"fieldTypes","operation":{"name":"remove","target":{"enumValue":"value1"}},"key":"enumValues"}}
+{"timestamp":"2026-08-24T12:03:18.819Z","operation":"resource_update","target":"ismsa/fieldTypes/assetConfidentiality","parameters":{"type":"fieldTypes","operation":{"name":"remove","target":{"enumValue":"value2"}},"key":"enumValues"}}
+{"timestamp":"2026-08-24T12:03:22.312Z","operation":"resource_update","target":"ismsa/fieldTypes/assetHse","parameters":{"type":"fieldTypes","operation":{"name":"remove","target":{"enumValue":"value1"}},"key":"enumValues"}}
+{"timestamp":"2026-08-24T12:03:23.017Z","operation":"resource_update","target":"ismsa/fieldTypes/assetHse","parameters":{"type":"fieldTypes","operation":{"name":"remove","target":{"enumValue":"value2"}},"key":"enumValues"}}

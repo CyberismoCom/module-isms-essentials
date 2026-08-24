@@ -1,6 +1,6 @@
 {
-    "name": "ismsa/fieldTypes/assetAvailability",
-    "displayName": "Criticality of availability",
+    "name": "ismsa/fieldTypes/assetHse",
+    "displayName": "Criticality for health, safety and environment (HSE)",
     "dataType": "enum",
     "enumValues": [
         {
@@ -20,5 +20,5 @@
             "enumDisplayValue": "Not Applicable"
         }
     ],
-    "description": "The impact if this asset is not available when it is needed."
+    "description": "The impact on health, safety and the environment if this asset fails or is compromised. Set to Not Applicable if this asset has no health, safety or environmental relevance."
 }
