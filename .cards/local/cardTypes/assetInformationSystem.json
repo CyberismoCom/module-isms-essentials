@@ -70,6 +70,11 @@
         {
             "name": "ismsa/fieldTypes/assetHse",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/dataCategories",
+            "displayName": "",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [
@@ -89,8 +94,9 @@
     "optionallyVisibleFields": [
         "ismsa/fieldTypes/assetPublisher",
         "ismsa/fieldTypes/assetAdmins",
-        "ismsa/fieldTypes/assetPersonalInformation",
-        "ismsa/fieldTypes/assetLocation"
+        "ismsa/fieldTypes/dataCategories",
+        "ismsa/fieldTypes/assetLocation",
+        "ismsa/fieldTypes/assetPersonalInformation"
     ],
     "displayName": "Information system asset",
     "description": "An information system asset that needs protection"

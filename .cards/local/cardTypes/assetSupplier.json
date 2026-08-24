@@ -50,6 +50,11 @@
         {
             "name": "ismsa/fieldTypes/assetHse",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/dataCategories",
+            "displayName": "",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [
@@ -65,9 +70,10 @@
         "ismsa/fieldTypes/assetRiskEvaluationNeeded"
     ],
     "optionallyVisibleFields": [
-        "ismsa/fieldTypes/assetPersonalInformation",
         "ismsa/fieldTypes/assetLocation",
-        "ismsa/fieldTypes/assetBackups"
+        "ismsa/fieldTypes/assetBackups",
+        "ismsa/fieldTypes/dataCategories",
+        "ismsa/fieldTypes/assetPersonalInformation"
     ],
     "displayName": "Supplier asset",
     "description": "A supplier relationship that needs security management"

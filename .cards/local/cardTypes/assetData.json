@@ -50,6 +50,11 @@
         {
             "name": "ismsa/fieldTypes/assetHse",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/dataCategories",
+            "displayName": "",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [
@@ -61,11 +66,13 @@
         "ismsa/fieldTypes/assetAvailability",
         "ismsa/fieldTypes/assetHse",
         "ismsa/fieldTypes/assetRiskEvaluationNeeded",
-        "ismsa/fieldTypes/assetPersonalInformation",
+        "ismsa/fieldTypes/dataCategories",
         "ismsa/fieldTypes/assetLocation",
         "ismsa/fieldTypes/assetBackups"
     ],
-    "optionallyVisibleFields": [],
+    "optionallyVisibleFields": [
+        "ismsa/fieldTypes/assetPersonalInformation"
+    ],
     "displayName": "Data asset",
     "description": "A data collection asset that needs protection"
 }

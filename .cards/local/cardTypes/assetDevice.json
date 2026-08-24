@@ -58,6 +58,11 @@
         {
             "name": "ismsa/fieldTypes/assetHse",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/dataCategories",
+            "displayName": "",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [
@@ -75,6 +80,7 @@
     ],
     "optionallyVisibleFields": [
         "ismsa/fieldTypes/assetLocation",
+        "ismsa/fieldTypes/dataCategories",
         "ismsa/fieldTypes/assetPersonalInformation"
     ],
     "displayName": "Device asset",

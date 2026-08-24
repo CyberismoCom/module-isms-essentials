@@ -54,6 +54,11 @@
         {
             "name": "ismsa/fieldTypes/assetHse",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/dataCategories",
+            "displayName": "",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [
@@ -67,10 +72,11 @@
         "ismsa/fieldTypes/assetRiskEvaluationNeeded"
     ],
     "optionallyVisibleFields": [
+        "ismsa/fieldTypes/dataCategories",
         "ismsa/fieldTypes/assetType",
-        "ismsa/fieldTypes/assetPersonalInformation",
         "ismsa/fieldTypes/assetLocation",
-        "ismsa/fieldTypes/assetBackups"
+        "ismsa/fieldTypes/assetBackups",
+        "ismsa/fieldTypes/assetPersonalInformation"
     ],
     "displayName": "Asset",
     "description": "A generic asset that needs protection"

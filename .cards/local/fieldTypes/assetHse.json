@@ -17,7 +17,8 @@
         },
         {
             "enumValue": "N/A",
-            "enumDisplayValue": "Not Applicable"
+            "enumDisplayValue": "Not applicable",
+            "enumDescription": ""
         }
     ],
     "description": "The impact on health, safety and the environment if this asset fails or is compromised. Set to Not Applicable if this asset has no health, safety or environmental relevance."
