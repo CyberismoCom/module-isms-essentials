@@ -55,6 +55,12 @@
             "name": "ismsa/fieldTypes/dataCategories",
             "displayName": "",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetCompliance",
+            "displayName": "",
+            "isCalculated": false,
+            "enableOverride": false
         }
     ],
     "alwaysVisibleFields": [
@@ -67,6 +73,7 @@
         "ismsa/fieldTypes/assetIntegrity",
         "ismsa/fieldTypes/assetAvailability",
         "ismsa/fieldTypes/assetHse",
+        "ismsa/fieldTypes/assetCompliance",
         "ismsa/fieldTypes/assetRiskEvaluationNeeded"
     ],
     "optionallyVisibleFields": [
