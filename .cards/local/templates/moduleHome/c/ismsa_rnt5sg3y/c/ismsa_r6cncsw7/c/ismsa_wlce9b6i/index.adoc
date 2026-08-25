@@ -75,7 +75,7 @@ Security events are detected based on internal user reporting, external party re
 
 Security events are reported to Cybersecurity Incident Response Team (CSIRT) Lead by email, Teams, Signal or in urgent cases by a phone call.
 
-Incident are recorded to Company Incident Register using _Cybersecurity incident_-template. Near misses can be recorded to Company Incident Register using _Cybersecurity near miss_-template.
+Incidents are recorded in the Company Incident Register using the _Cybersecurity incident_ template. Near misses can be recorded in the Company Incident Register using the _Cybersecurity near miss_ template.
 
 === STEP 2: Analyse potential incidents
 
