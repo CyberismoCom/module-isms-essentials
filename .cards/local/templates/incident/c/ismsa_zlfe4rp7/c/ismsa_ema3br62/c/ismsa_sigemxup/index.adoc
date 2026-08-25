@@ -1,10 +1,10 @@
-CRA requires that manufacturer shall notify
+CRA requires that the manufacturer shall notify the relevant authorities of:
 
 * any severe incident having an impact on the security of the product with digital elements
 
-* any actively exploited vulnerability contained in the product with digital elements 
+* any actively exploited vulnerability contained in the product with digital elements
 
-that it becomes aware to relevant authorities.
+without undue delay after becoming aware of it.
 
 Incident having an impact on the security of the product with digital elements shall be considered to be severe where:
 
