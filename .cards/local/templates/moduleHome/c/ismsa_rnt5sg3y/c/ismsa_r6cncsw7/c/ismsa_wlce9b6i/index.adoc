@@ -167,7 +167,7 @@ Significant incidents, severe incidents and actively exploited vulnerabilities i
 
 * Final or progress report: according to CRA/NIS2 guidance.
 
-Also incidents that are not significant/severe and vulnerabilities that are not actively exploited can be reported to authorities, if it benefits the community.
+Also incidents that are not significant/severe and vulnerabilities that are not actively exploited can be reported to authorities if it benefits the community.
 
 Privacy breaches are reported by Board of Directors without undue delay to relevant authorities.
 
