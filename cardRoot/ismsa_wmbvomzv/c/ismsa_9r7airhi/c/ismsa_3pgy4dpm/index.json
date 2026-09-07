@@ -6,8 +6,13 @@
     "base/fieldTypes/owner": "owner@example.com",
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
-    "lastUpdated": "2026-08-16T20:13:38.638Z",
-    "links": [],
+    "lastUpdated": "2026-09-04T19:18:01.731Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/implements",
+            "cardKey": "ismsa_blze8iwy"
+        }
+    ],
     "base/fieldTypes/reviewMonth": "january",
     "templateCardKey": "ismsa_eqroywxj",
     "createdAt": "2026-05-14T16:53:13.812Z",

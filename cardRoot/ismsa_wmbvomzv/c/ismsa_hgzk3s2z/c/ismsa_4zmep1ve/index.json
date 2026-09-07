@@ -1,0 +1,11 @@
+{
+    "title": "Requirement 5: Implemented by a control that is out of scope",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "In scope",
+    "links": [],
+    "rank": "0|f",
+    "lastUpdated": "2026-09-04T19:16:15.058Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:15:32.043Z",
+    "base/fieldTypes/informationClassification": "internal"
+}

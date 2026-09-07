@@ -1,0 +1,3 @@
+This requirement has been marked out of scope without a scoping justification. The transition itself is denied when the justification is missing, so this state can only be reached by clearing the justification afterwards.
+
+Expected assessment: *Not applicable*, and a policy check failure about the missing justification.

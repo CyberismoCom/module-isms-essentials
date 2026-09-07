@@ -1,0 +1,11 @@
+== Register description
+
+Test cases for the assessment of assessed compliance requirements. Each requirement
+below covers one branch of `ismsa/calculations/assessedComplianceRequirement`.
+
+This register carries the progress label `compliance-score`, so it shows the compliance
+score of the requirements below it: the share of the in-scope requirements that have been
+assessed as OK. Requirements that have been marked out of scope are left out of the
+calculation altogether.
+
+Expected score: 44 (four of the nine in-scope requirements are OK).

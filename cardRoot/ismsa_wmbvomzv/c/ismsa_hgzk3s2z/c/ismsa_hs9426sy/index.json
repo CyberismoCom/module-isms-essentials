@@ -1,0 +1,12 @@
+{
+    "title": "Requirement 10: Assessment overridden without an explanation",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "In scope",
+    "rank": "0|k",
+    "base/fieldTypes/informationClassification": "internal",
+    "links": [],
+    "lastUpdated": "2026-09-04T19:20:17.727Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:20:17.724Z",
+    "base/fieldTypes/assessment": "ok"
+}

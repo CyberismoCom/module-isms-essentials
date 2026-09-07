@@ -7,8 +7,13 @@
     "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/justification": "Some justification",
     "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
-    "lastUpdated": "2026-08-16T20:13:38.640Z",
-    "links": [],
+    "lastUpdated": "2026-09-04T19:18:02.925Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/implements",
+            "cardKey": "ismsa_4zmep1ve"
+        }
+    ],
     "base/fieldTypes/reviewMonth": "january",
     "templateCardKey": "ismsa_eqroywxj",
     "createdAt": "2026-05-15T12:08:01.943Z",

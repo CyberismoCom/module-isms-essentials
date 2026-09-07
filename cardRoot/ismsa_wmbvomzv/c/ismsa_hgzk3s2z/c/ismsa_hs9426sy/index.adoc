@@ -1,0 +1,5 @@
+The assessment has been overridden, but the assessment explanation has not, so the attestation is not auditable.
+
+Expected assessment: *OK* from the override, and a policy check failure about the missing explanation.
+
+NOTE: the assessment explanation still shows the calculated value, because only the assessment field has been overridden.

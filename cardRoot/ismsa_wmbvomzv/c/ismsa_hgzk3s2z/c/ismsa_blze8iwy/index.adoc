@@ -1,0 +1,3 @@
+This requirement is implemented by an internal control that has no evidence, so the control itself has been assessed as Not OK.
+
+Expected assessment: *Not OK*

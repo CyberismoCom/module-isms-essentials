@@ -1,0 +1,13 @@
+{
+    "title": "Requirement 9: Manually attested with an explanation",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "In scope",
+    "rank": "0|j",
+    "base/fieldTypes/informationClassification": "internal",
+    "links": [],
+    "lastUpdated": "2026-09-04T19:20:17.091Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:20:17.089Z",
+    "base/fieldTypes/assessment": "ok",
+    "base/fieldTypes/assessmentExplanation": "The product markings were checked during the release review on 1 September 2026."
+}

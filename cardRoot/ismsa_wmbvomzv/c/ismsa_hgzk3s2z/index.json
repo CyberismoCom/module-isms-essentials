@@ -1,0 +1,13 @@
+{
+    "title": "Compliance requirement assessment tests",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "Draft",
+    "rank": "0|b",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "links": [],
+    "lastUpdated": "2026-09-04T19:15:10.570Z",
+    "templateCardKey": "ismsa_cd388icw",
+    "createdAt": "2026-09-04T19:15:02.028Z",
+    "ismsa/fieldTypes/progress": "compliance-score"
+}

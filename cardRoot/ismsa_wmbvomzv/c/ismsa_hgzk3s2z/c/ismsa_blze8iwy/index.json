@@ -1,0 +1,11 @@
+{
+    "title": "Requirement 3: Implemented by a control that has no evidence",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "In scope",
+    "links": [],
+    "rank": "0|d",
+    "lastUpdated": "2026-09-04T19:16:06.894Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:15:23.864Z",
+    "base/fieldTypes/informationClassification": "internal"
+}

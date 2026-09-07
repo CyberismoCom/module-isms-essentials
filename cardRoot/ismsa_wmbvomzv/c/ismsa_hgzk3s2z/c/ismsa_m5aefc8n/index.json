@@ -1,0 +1,11 @@
+{
+    "title": "Requirement 4: Implemented by a control that has a policy check failure",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "In scope",
+    "links": [],
+    "rank": "0|e",
+    "lastUpdated": "2026-09-04T19:16:08.364Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:15:27.764Z",
+    "base/fieldTypes/informationClassification": "internal"
+}

@@ -1,0 +1,11 @@
+{
+    "title": "Requirement 1: Nothing has been linked",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "In scope",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-09-04T19:16:03.523Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:15:14.794Z",
+    "base/fieldTypes/informationClassification": "internal"
+}

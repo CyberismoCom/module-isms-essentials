@@ -1,0 +1,11 @@
+{
+    "title": "Requirement 6: Implemented by a control that has not been scoped",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "In scope",
+    "links": [],
+    "rank": "0|g",
+    "lastUpdated": "2026-09-04T19:16:16.595Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:15:36.398Z",
+    "base/fieldTypes/informationClassification": "internal"
+}

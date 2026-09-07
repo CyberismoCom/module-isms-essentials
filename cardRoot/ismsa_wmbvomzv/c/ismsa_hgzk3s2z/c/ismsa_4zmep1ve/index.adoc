@@ -1,0 +1,3 @@
+This requirement is in scope, but the only internal control that implements it has been marked out of scope. An out-of-scope implementation neither raises nor lowers the assessment, and nothing else is left to demonstrate the requirement.
+
+Expected assessment: *Open*
