@@ -1,0 +1,11 @@
+{
+    "title": "Requirement 2: Implemented by a control with valid evidence",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "In scope",
+    "links": [],
+    "rank": "0|c",
+    "lastUpdated": "2026-09-04T19:16:05.292Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:15:19.754Z",
+    "base/fieldTypes/informationClassification": "internal"
+}

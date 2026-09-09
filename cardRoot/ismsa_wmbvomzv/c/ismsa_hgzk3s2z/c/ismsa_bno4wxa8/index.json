@@ -1,0 +1,12 @@
+{
+    "title": "Requirement 11: Out of scope without a justification",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "Out of scope",
+    "rank": "0|l",
+    "base/fieldTypes/informationClassification": "internal",
+    "links": [],
+    "lastUpdated": "2026-09-04T19:20:18.359Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:20:18.356Z",
+    "base/fieldTypes/owner": "a@example.com"
+}

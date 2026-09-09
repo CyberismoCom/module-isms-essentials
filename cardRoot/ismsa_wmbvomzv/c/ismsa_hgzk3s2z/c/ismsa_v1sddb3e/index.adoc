@@ -1,0 +1,3 @@
+A review has been linked directly to this requirement with the evidences link type, without an internal control in between.
+
+Expected assessment: *OK*

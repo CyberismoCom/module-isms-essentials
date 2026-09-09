@@ -1,0 +1,3 @@
+Nothing has been linked to this requirement, but both the assessment and the assessment explanation have been overridden. This is how a requirement that cannot be evidenced automatically is attested manually.
+
+Expected assessment: *OK*, with the overridden explanation, and no policy check failures.

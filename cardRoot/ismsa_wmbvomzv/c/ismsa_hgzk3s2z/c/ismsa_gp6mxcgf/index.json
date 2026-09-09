@@ -1,0 +1,14 @@
+{
+    "title": "Requirement 8: Out of scope with a justification",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "Out of scope",
+    "links": [],
+    "rank": "0|i",
+    "lastUpdated": "2026-09-04T19:18:31.756Z",
+    "templateCardKey": "ismsa_q7ilpcij",
+    "createdAt": "2026-09-04T19:15:44.741Z",
+    "base/fieldTypes/justification": "This regulation does not apply to the product, because it is not made available on the Union market.",
+    "lastTransitioned": "2026-09-04T19:18:31.756Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/owner": "a@example.com"
+}
