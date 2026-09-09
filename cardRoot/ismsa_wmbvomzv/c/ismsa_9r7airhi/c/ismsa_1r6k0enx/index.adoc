@@ -1,0 +1,3 @@
+This control is in scope and has no evidence, but both the assessment and the assessment explanation have been overridden. This is how a control that is satisfied outside the project is recorded.
+
+Expected assessment: *OK*, with the overridden explanation instead of the calculated one, and no policy check failures.

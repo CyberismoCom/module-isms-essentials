@@ -1,0 +1,16 @@
+{
+    "title": "Internal control 16: Assessment overridden without an explanation",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "In scope",
+    "rank": "0|n",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "lastUpdated": "2026-09-07T08:31:30.409Z",
+    "links": [],
+    "base/fieldTypes/reviewMonth": "january",
+    "templateCardKey": "ismsa_eqroywxj",
+    "createdAt": "2026-09-07T08:30:42.793Z",
+    "base/fieldTypes/owner": "owner@example.com",
+    "lastTransitioned": "2026-09-07T08:31:08.136Z",
+    "base/fieldTypes/assessment": "ok"
+}

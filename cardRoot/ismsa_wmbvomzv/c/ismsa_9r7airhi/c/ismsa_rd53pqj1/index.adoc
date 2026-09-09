@@ -1,0 +1,5 @@
+The assessment has been overridden, but the assessment explanation has not.
+
+Expected assessment: *OK* from the override, an *empty* assessment explanation, and a policy check failure about the missing explanation.
+
+NOTE: no calculated explanation applies once the assessment has been overridden. Without that rule this card would show OK next to "The control is in scope but required evidence has not been linked", which explains an assessment the card does not have.
