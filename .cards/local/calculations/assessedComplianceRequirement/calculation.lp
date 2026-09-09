@@ -7,6 +7,12 @@
 % compliance score can be calculated as soon as the requirements have been created.
 % Marking a requirement out of scope is the exception, and it requires a justification.
 %
+% ismsa_assessedRequirementAssessment(Requirement, Assessment, Explanation) pairs an
+% assessment value with the explanation that belongs to it, so that the two can never
+% drift apart. The bodies of these rules are mutually exclusive, so that each
+% requirement gets exactly one assessment. The two fields are derived from this
+% predicate at the end of this section.
+%
 
 ismsa_assessedRequirement(Requirement) :-
   base_projectCardType(Requirement, "ismsa/cardTypes/assessedComplianceRequirement").
@@ -70,77 +76,42 @@ ismsa_requirementImplementationPending(Requirement, Card) :-
   not ismsa_requirementImplementationExcluded(Requirement, Card),
   not ismsa_requirementImplementationFailing(Requirement, Card).
 
-%
 % Not applicable, because the requirement has been marked out of scope
-%
 
-fieldCalculated(Requirement, "base/fieldTypes/assessment", "notApplicable") :-
+ismsa_assessedRequirementAssessment(Requirement, "notApplicable", "The requirement has been marked out of scope") :-
   ismsa_assessedRequirementOutOfScope(Requirement).
 
-fieldCalculated(Requirement, "base/fieldTypes/assessmentExplanation", "The requirement has been marked out of scope") :-
-  ismsa_assessedRequirementOutOfScope(Requirement).
-
-%
 % Not OK, because the requirement itself has failed policy checks
-%
 
-fieldCalculated(Requirement, "base/fieldTypes/assessment", "notOk") :-
+ismsa_assessedRequirementAssessment(Requirement, "notOk", "The requirement has failed policy checks") :-
   ismsa_assessedRequirementInScope(Requirement),
   base_policyCheckFailure(Requirement, _, _, _).
 
-fieldCalculated(Requirement, "base/fieldTypes/assessmentExplanation", "The requirement has failed policy checks") :-
-  ismsa_assessedRequirementInScope(Requirement),
-  base_policyCheckFailure(Requirement, _, _, _).
-
-%
 % Not OK, because something that implements the requirement is failing
-%
 
-fieldCalculated(Requirement, "base/fieldTypes/assessment", "notOk") :-
+ismsa_assessedRequirementAssessment(Requirement, "notOk", "The requirement is in scope but the linked implementation is not acceptable") :-
   ismsa_assessedRequirementInScope(Requirement),
   not base_policyCheckFailure(Requirement, _, _, _),
   ismsa_requirementImplementationFailing(Requirement, _).
 
-fieldCalculated(Requirement, "base/fieldTypes/assessmentExplanation", "The requirement is in scope but the linked implementation is not acceptable") :-
-  ismsa_assessedRequirementInScope(Requirement),
-  not base_policyCheckFailure(Requirement, _, _, _),
-  ismsa_requirementImplementationFailing(Requirement, _).
-
-%
 % Open, because nothing has been linked to the requirement yet
-%
 
-fieldCalculated(Requirement, "base/fieldTypes/assessment", "open") :-
+ismsa_assessedRequirementAssessment(Requirement, "open", "The requirement is in scope but nothing has been linked to implement it") :-
   ismsa_assessedRequirementInScope(Requirement),
   not base_policyCheckFailure(Requirement, _, _, _),
   not ismsa_requirementImplementation(Requirement, _).
 
-fieldCalculated(Requirement, "base/fieldTypes/assessmentExplanation", "The requirement is in scope but nothing has been linked to implement it") :-
-  ismsa_assessedRequirementInScope(Requirement),
-  not base_policyCheckFailure(Requirement, _, _, _),
-  not ismsa_requirementImplementation(Requirement, _).
-
-%
 % Open, because the linked implementation is still in progress
-%
 
-fieldCalculated(Requirement, "base/fieldTypes/assessment", "open") :-
+ismsa_assessedRequirementAssessment(Requirement, "open", "The requirement is in scope but the linked implementation is not ready") :-
   ismsa_assessedRequirementInScope(Requirement),
   not base_policyCheckFailure(Requirement, _, _, _),
   not ismsa_requirementImplementationFailing(Requirement, _),
   ismsa_requirementImplementationPending(Requirement, _).
 
-fieldCalculated(Requirement, "base/fieldTypes/assessmentExplanation", "The requirement is in scope but the linked implementation is not ready") :-
-  ismsa_assessedRequirementInScope(Requirement),
-  not base_policyCheckFailure(Requirement, _, _, _),
-  not ismsa_requirementImplementationFailing(Requirement, _),
-  ismsa_requirementImplementationPending(Requirement, _).
-
-%
 % Open, because everything that was linked to the requirement is out of scope itself
-%
 
-fieldCalculated(Requirement, "base/fieldTypes/assessment", "open") :-
+ismsa_assessedRequirementAssessment(Requirement, "open", "The requirement is in scope but everything that was linked to it is out of scope") :-
   ismsa_assessedRequirementInScope(Requirement),
   not base_policyCheckFailure(Requirement, _, _, _),
   not ismsa_requirementImplementationFailing(Requirement, _),
@@ -148,31 +119,32 @@ fieldCalculated(Requirement, "base/fieldTypes/assessment", "open") :-
   not ismsa_requirementImplementationComplete(Requirement, _),
   ismsa_requirementImplementation(Requirement, _).
 
-fieldCalculated(Requirement, "base/fieldTypes/assessmentExplanation", "The requirement is in scope but everything that was linked to it is out of scope") :-
-  ismsa_assessedRequirementInScope(Requirement),
-  not base_policyCheckFailure(Requirement, _, _, _),
-  not ismsa_requirementImplementationFailing(Requirement, _),
-  not ismsa_requirementImplementationPending(Requirement, _),
-  not ismsa_requirementImplementationComplete(Requirement, _),
-  ismsa_requirementImplementation(Requirement, _).
-
-%
 % OK, because the requirement is in scope and everything that implements it is ready
+
+ismsa_assessedRequirementAssessment(Requirement, "ok", "The requirement is in scope and the linked implementation is acceptable") :-
+  ismsa_assessedRequirementInScope(Requirement),
+  not base_policyCheckFailure(Requirement, _, _, _),
+  not ismsa_requirementImplementationFailing(Requirement, _),
+  not ismsa_requirementImplementationPending(Requirement, _),
+  ismsa_requirementImplementationComplete(Requirement, _).
+
+%
+% The calculated fields
 %
 
-fieldCalculated(Requirement, "base/fieldTypes/assessment", "ok") :-
-  ismsa_assessedRequirementInScope(Requirement),
-  not base_policyCheckFailure(Requirement, _, _, _),
-  not ismsa_requirementImplementationFailing(Requirement, _),
-  not ismsa_requirementImplementationPending(Requirement, _),
-  ismsa_requirementImplementationComplete(Requirement, _).
+fieldCalculated(Requirement, "base/fieldTypes/assessment", Assessment) :-
+  ismsa_assessedRequirementAssessment(Requirement, Assessment, _).
 
-fieldCalculated(Requirement, "base/fieldTypes/assessmentExplanation", "The requirement is in scope and the linked implementation is acceptable") :-
-  ismsa_assessedRequirementInScope(Requirement),
-  not base_policyCheckFailure(Requirement, _, _, _),
-  not ismsa_requirementImplementationFailing(Requirement, _),
-  not ismsa_requirementImplementationPending(Requirement, _),
-  ismsa_requirementImplementationComplete(Requirement, _).
+% The calculated explanation explains the calculated assessment. Once the assessment has
+% been overridden, no calculated explanation applies: explaining an overridden assessment
+% is the author's job, and the policy check below asks for it. This matters here because
+% overriding the assessment is how a requirement that cannot be evidenced automatically
+% is attested manually. Without this condition the card would show the overridden
+% assessment next to an explanation of a different one.
+
+fieldCalculated(Requirement, "base/fieldTypes/assessmentExplanation", Explanation) :-
+  ismsa_assessedRequirementAssessment(Requirement, _, Explanation),
+  not fieldOverride(Requirement, "base/fieldTypes/assessment", _).
 
 policyCheckSuccess(Requirement, "Compliance requirement assessment", @concatenate("Requirement is acceptable: ", Explanation)) :-
   ismsa_assessedRequirement(Requirement),
