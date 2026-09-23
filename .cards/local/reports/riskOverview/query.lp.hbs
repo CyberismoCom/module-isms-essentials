@@ -47,7 +47,9 @@ residualPosition(Risk, L, I) :-
     riskLevel(Likelihood, L, _),
     riskLevel(Impact, I, _).
 
-% The current position is the residual one once it has been assessed
+% The current position is the residual one once it has been assessed. Like the
+% residual risk level calculation, a residual assessment needs both likelihood and
+% impact, so a partial one leaves the risk at its initial position.
 currentPosition(Risk, L, I) :- residualPosition(Risk, L, I).
 currentPosition(Risk, L, I) :-
     initialPosition(Risk, L, I),
