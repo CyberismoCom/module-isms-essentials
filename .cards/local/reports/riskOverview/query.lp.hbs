@@ -94,6 +94,24 @@ resultField(("current", L, I), "count", N, "integer") :-
     currentPosition(_, L, I),
     N = #count { Risk : currentPosition(Risk, L, I) }.
 
+% Risk level of every matrix cell, from the risk level calculation, so that the
+% matrix colours follow it: one row per likelihood level, one entry per impact level
+childResult({{cardKey}}, ("gridRow", L), "levelGrid") :- riskLevel(_, L, _).
+resultField(("gridRow", L), "likelihood", L, "integer") :- riskLevel(_, L, _).
+childResult(("gridRow", L), ("gridEntry", L, I), "entries") :-
+    ismsa_riskLevel(Impact, Likelihood, _),
+    riskLevel(Likelihood, L, _),
+    riskLevel(Impact, I, _).
+resultField(("gridEntry", L, I), "impact", I, "integer") :-
+    ismsa_riskLevel(Impact, Likelihood, _),
+    riskLevel(Likelihood, L, _),
+    riskLevel(Impact, I, _).
+resultField(("gridEntry", L, I), "level", Index, "integer") :-
+    ismsa_riskLevel(Impact, Likelihood, Level),
+    riskLevel(Likelihood, L, _),
+    riskLevel(Impact, I, _),
+    riskLevel(Level, Index, _).
+
 % Risks by workflow state
 childResult({{cardKey}}, ("state", Index), "states") :- shownState(_, Index).
 resultField(("state", Index), "label", State, "shortText") :- shownState(State, Index).
@@ -129,6 +147,8 @@ childResultCollection({{cardKey}}, "currentCells").
 childResultCollection({{cardKey}}, "highestRisks").
 
 order(2, "states", 1, "index", "ASC").
+order(2, "levelGrid", 1, "likelihood", "ASC").
+order(3, "entries", 1, "impact", "ASC").
 order(2, "highestRisks", 1, "currentRiskIndex", "DESC").
 order(2, "highestRisks", 2, "initialRiskIndex", "DESC").
 order(2, "highestRisks", 3, "title", "ASC").

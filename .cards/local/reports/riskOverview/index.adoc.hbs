@@ -16,6 +16,18 @@ a|
   "legend": "Before risk treatment",
   "likelihood": ["Very Low", "Low", "Moderate", "High", "Very High"],
   "impact": ["Very Low", "Low", "Moderate", "High", "Very High"],
+  "levels": [
+    {"name": "Very Low", "colour": 1},
+    {"name": "Low", "colour": 2},
+    {"name": "Moderate", "colour": 3},
+    {"name": "High", "colour": 4},
+    {"name": "Very High", "colour": 5}
+  ],
+  "levelGrid": [
+    {{#each this.levelGrid}}
+    [{{#each this.entries}}{{this.level}}{{#unless @last}}, {{/unless}}{{/each}}]{{#unless @last}},{{/unless}}
+    {{/each}}
+  ],
   "cells": [
     {{#each this.initialCells}}
     {"likelihood": {{this.likelihood}}, "impact": {{this.impact}}, "count": {{this.count}} }{{#unless @last}},{{/unless}}
@@ -29,6 +41,18 @@ a|
   "legend": "Residual, or initial if not yet assessed",
   "likelihood": ["Very Low", "Low", "Moderate", "High", "Very High"],
   "impact": ["Very Low", "Low", "Moderate", "High", "Very High"],
+  "levels": [
+    {"name": "Very Low", "colour": 1},
+    {"name": "Low", "colour": 2},
+    {"name": "Moderate", "colour": 3},
+    {"name": "High", "colour": 4},
+    {"name": "Very High", "colour": 5}
+  ],
+  "levelGrid": [
+    {{#each this.levelGrid}}
+    [{{#each this.entries}}{{this.level}}{{#unless @last}}, {{/unless}}{{/each}}]{{#unless @last}},{{/unless}}
+    {{/each}}
+  ],
   "cells": [
     {{#each this.currentCells}}
     {"likelihood": {{this.likelihood}}, "impact": {{this.impact}}, "count": {{this.count}} }{{#unless @last}},{{/unless}}
