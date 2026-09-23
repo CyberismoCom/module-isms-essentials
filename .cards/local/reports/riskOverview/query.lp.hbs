@@ -76,26 +76,27 @@ resultField({{cardKey}}, "acceptableRiskLevel", Display, "shortText") :-
     acceptableRiskLevel(Level),
     riskLevel(Level, _, Display).
 
-% Matrix cells for initial and current risk levels
-childResult({{cardKey}}, initialCell(L, I), "initialCells") :- initialPosition(_, L, I).
-resultField(initialCell(L, I), "likelihood", L, "integer") :- initialPosition(_, L, I).
-resultField(initialCell(L, I), "impact", I, "integer") :- initialPosition(_, L, I).
-resultField(initialCell(L, I), "count", N, "integer") :-
+% Matrix cells for initial and current risk levels. Result keys are serialised
+% without a function name, so each collection needs a distinct tag in its keys.
+childResult({{cardKey}}, ("initial", L, I), "initialCells") :- initialPosition(_, L, I).
+resultField(("initial", L, I), "likelihood", L, "integer") :- initialPosition(_, L, I).
+resultField(("initial", L, I), "impact", I, "integer") :- initialPosition(_, L, I).
+resultField(("initial", L, I), "count", N, "integer") :-
     initialPosition(_, L, I),
     N = #count { Risk : initialPosition(Risk, L, I) }.
 
-childResult({{cardKey}}, currentCell(L, I), "currentCells") :- currentPosition(_, L, I).
-resultField(currentCell(L, I), "likelihood", L, "integer") :- currentPosition(_, L, I).
-resultField(currentCell(L, I), "impact", I, "integer") :- currentPosition(_, L, I).
-resultField(currentCell(L, I), "count", N, "integer") :-
+childResult({{cardKey}}, ("current", L, I), "currentCells") :- currentPosition(_, L, I).
+resultField(("current", L, I), "likelihood", L, "integer") :- currentPosition(_, L, I).
+resultField(("current", L, I), "impact", I, "integer") :- currentPosition(_, L, I).
+resultField(("current", L, I), "count", N, "integer") :-
     currentPosition(_, L, I),
     N = #count { Risk : currentPosition(Risk, L, I) }.
 
 % Risks by workflow state
-childResult({{cardKey}}, state(Index), "states") :- shownState(_, Index).
-resultField(state(Index), "label", State, "shortText") :- shownState(State, Index).
-resultField(state(Index), "index", Index, "integer") :- shownState(_, Index).
-resultField(state(Index), "count", N, "integer") :-
+childResult({{cardKey}}, ("state", Index), "states") :- shownState(_, Index).
+resultField(("state", Index), "label", State, "shortText") :- shownState(State, Index).
+resultField(("state", Index), "index", Index, "integer") :- shownState(_, Index).
+resultField(("state", Index), "count", N, "integer") :-
     shownState(State, Index),
     N = #count { Risk : inScope(Risk), field(Risk, "workflowState", State) }.
 
