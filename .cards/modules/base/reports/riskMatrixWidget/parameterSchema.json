@@ -1,0 +1,72 @@
+{
+  "$id": "riskMatrixWidgetReportSchema",
+  "additionalProperties": false,
+  "description": "A risk matrix showing how many risks fall into each likelihood and impact combination",
+  "properties": {
+    "name": {
+      "description": "The name of the report",
+      "type": "string"
+    },
+    "title": {
+      "description": "Title text on top of the matrix",
+      "type": "string"
+    },
+    "legend": {
+      "description": "Description text shown below the matrix (optional)",
+      "type": "string"
+    },
+    "likelihood": {
+      "description": "Names of the likelihood levels, lowest first. Three to five levels are supported; the number given sets the height of the matrix.",
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {"type": "string"}
+    },
+    "impact": {
+      "description": "Names of the impact levels, lowest first. Three to five levels are supported; the number given sets the width of the matrix.",
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {"type": "string"}
+    },
+    "likelihoodTitle": {
+      "description": "Axis title for the likelihood scale (optional, defaults to 'Likelihood')",
+      "type": "string"
+    },
+    "impactTitle": {
+      "description": "Axis title for the impact scale (optional, defaults to 'Impact')",
+      "type": "string"
+    },
+    "cells": {
+      "description": "How many risks sit in each cell. Likelihood and impact are 1-based positions in the scales above. Cells you leave out are drawn in their risk colour with no count.",
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "likelihood": {
+            "description": "Likelihood level, 1 is the lowest",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "impact": {
+            "description": "Impact level, 1 is the lowest",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "count": {
+            "description": "Number of risks in this cell",
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": ["likelihood", "impact", "count"]
+      }
+    }
+  },
+  "required": ["name", "title", "likelihood", "impact"],
+  "title": "Report",
+  "type": "object"
+}
