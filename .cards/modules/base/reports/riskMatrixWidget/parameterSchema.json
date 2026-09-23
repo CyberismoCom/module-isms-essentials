@@ -37,6 +37,41 @@
       "description": "Axis title for the impact scale (optional, defaults to 'Impact')",
       "type": "string"
     },
+    "levels": {
+      "description": "Risk levels of your risk method, lowest first (optional, give together with 'levelGrid'). Each level names a step of a fixed five-step colour scale, so the matrix colours follow your method instead of the position of each cell. The levels are listed in a legend beside the matrix.",
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 5,
+      "items": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of this risk level, shown in the legend",
+            "type": "string"
+          },
+          "colour": {
+            "description": "Step of the colour scale: 1 green, 2 light green, 3 amber, 4 red, 5 dark red",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          }
+        },
+        "required": ["name", "colour"]
+      }
+    },
+    "levelGrid": {
+      "description": "The risk level of every cell (optional, give together with 'levels'). One row per likelihood level, lowest first; each row has one entry per impact level, lowest first. Each entry is a 1-based position in 'levels'.",
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 5,
+        "items": {"type": "integer", "minimum": 1, "maximum": 5}
+      }
+    },
     "cells": {
       "description": "How many risks sit in each cell. Likelihood and impact are 1-based positions in the scales above. Cells you leave out are drawn in their risk colour with no count.",
       "type": "array",
@@ -67,6 +102,10 @@
     }
   },
   "required": ["name", "title", "likelihood", "impact"],
+  "dependencies": {
+    "levels": ["levelGrid"],
+    "levelGrid": ["levels"]
+  },
   "title": "Report",
   "type": "object"
 }
