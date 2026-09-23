@@ -7,6 +7,9 @@ Risks closed as duplicate, avoided, transferred or not applicable are not includ
 Risks that have not been assessed yet ({{this.unassessedCount}}) are not shown in the risk matrices.
 {{/if}}
 
+// The matrices sit side by side when there is room and wrap when there is not;
+// the open block keeps the next widget from joining them.
+--
 {{#report}}
   "name": "base/reports/riskMatrixWidget",
   "title": "Initial risk levels",
@@ -56,6 +59,7 @@ Risks that have not been assessed yet ({{this.unassessedCount}}) are not shown i
     {{/each}}
   ]
 {{/report}}
+--
 
 {{#report}}
   "name": "base/reports/barWidget",
