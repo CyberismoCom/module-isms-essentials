@@ -9,7 +9,8 @@
         },
         {
             "name": "base/fieldTypes/informationClassification",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "ismsa/fieldTypes/incidentStartDateTime",
