@@ -3,7 +3,6 @@
     "cardType": "ismsa/cardTypes/register",
     "workflowState": "",
     "rank": "0|cc",
-    "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/adoptionStep": "step1",
     "links": [],
     "lastUpdated": "2026-08-16T20:13:38.673Z"

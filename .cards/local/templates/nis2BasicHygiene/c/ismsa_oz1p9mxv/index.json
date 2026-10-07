@@ -4,6 +4,7 @@
     "workflowState": "",
     "rank": "0|b",
     "ismsa/fieldTypes/progress": "compliance-progress",
+    "base/fieldTypes/informationClassification": "public",
     "base/fieldTypes/identifier": "NIS2_basic_hygiene_practices_all",
     "lastUpdated": "2026-08-16T20:13:38.675Z",
     "links": []
