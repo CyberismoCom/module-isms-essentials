@@ -28,7 +28,8 @@
         },
         {
             "name": "ismsa/fieldTypes/riskMitigationStrategy",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "ismsa/fieldTypes/riskResidualLikelihood",
