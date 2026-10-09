@@ -14,11 +14,13 @@
         },
         {
             "name": "ismsa/fieldTypes/riskInitialLikelihood",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "ismsa/fieldTypes/riskInitialImpact",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "ismsa/fieldTypes/riskInitialRisk",
@@ -26,7 +28,8 @@
         },
         {
             "name": "ismsa/fieldTypes/riskMitigationStrategy",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "ismsa/fieldTypes/riskResidualLikelihood",
