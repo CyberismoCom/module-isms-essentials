@@ -9,6 +9,10 @@
             "enableOverride": true
         },
         {
+            "name": "base/fieldTypes/identifier",
+            "isCalculated": false
+        },
+        {
             "name": "base/fieldTypes/informationClassification",
             "isCalculated": false
         },
@@ -55,7 +59,9 @@
         "ismsa/fieldTypes/riskResidualImpact",
         "ismsa/fieldTypes/riskResidualRisk"
     ],
-    "optionallyVisibleFields": [],
+    "optionallyVisibleFields": [
+        "base/fieldTypes/identifier"
+    ],
     "displayName": "Risk",
     "description": "A cybersecurity risk with impact, likelihood, and treatment tracking"
 }
