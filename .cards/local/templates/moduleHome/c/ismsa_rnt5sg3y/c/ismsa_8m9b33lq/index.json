@@ -3,7 +3,6 @@
     "cardType": "ismsa/cardTypes/register",
     "workflowState": "",
     "rank": "0|b",
-    "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/identifier": "ismsa_register_assets",
     "ismsa/fieldTypes/adoptionStep": "step1",
     "ismsa/fieldTypes/progress": "asset-progress",

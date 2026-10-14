@@ -3,7 +3,6 @@
     "cardType": "base/cardTypes/controlledDocument",
     "workflowState": "",
     "rank": "0|a",
-    "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/reviewPeriod": 365,
     "links": [],
     "lastUpdated": "2026-08-24T13:36:31.993Z"

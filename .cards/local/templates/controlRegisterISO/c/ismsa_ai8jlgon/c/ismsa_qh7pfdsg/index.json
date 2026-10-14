@@ -3,7 +3,6 @@
     "cardType": "ismsa/cardTypes/register",
     "workflowState": "",
     "rank": "0|c",
-    "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/adoptionStep": "step1",
     "ismsa/fieldTypes/progress": "control-progress",
     "labels": [],

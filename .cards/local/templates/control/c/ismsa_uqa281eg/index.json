@@ -3,7 +3,6 @@
     "cardType": "ismsa/cardTypes/control",
     "workflowState": "",
     "rank": "0|b",
-    "base/fieldTypes/informationClassification": "internal",
     "links": [],
     "lastUpdated": "2026-08-16T20:13:38.646Z"
 }
