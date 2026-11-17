@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/moduleHome2",
+    "displayName": "ISMS home (core)",
+    "description": "Start page for the central security work of an organisation: the central controls, the incidents, and the compliance requirements. Libraries add more content when it is needed",
+    "category": "Start"
+}

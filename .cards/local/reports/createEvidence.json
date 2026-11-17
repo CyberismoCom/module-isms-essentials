@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/createEvidence",
+    "displayName": "Create evidence",
+    "description": "Lists the planned evidence of a central control that exists in the same ISMS home, and shows a button that creates more",
+    "category": "Central controls"
+}

@@ -1,0 +1,11 @@
+{
+    "title": "A1: Receive notifications, valid evidence",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "In scope",
+    "rank": "0|b",
+    "links": [],
+    "lastUpdated": "2026-11-17T12:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_control_receive-security-issue-notifications",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months"
+}

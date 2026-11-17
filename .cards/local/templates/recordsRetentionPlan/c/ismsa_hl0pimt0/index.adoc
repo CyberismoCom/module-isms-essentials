@@ -1,0 +1,57 @@
+== Introduction
+
+This plan lists the records that the organisation keeps, why it keeps them, for how long, and how it protects them.
+
+== Records
+
+[width="100%",cols="18%,18%,14%,14%,18%,18%",options="header"]
+|===
+|Type of record |Reason |Retention period |Owner |Storage location |Protection
+
+|Incident records and notifications to authorities
+|#TODO#
+|#TODO#
+|#TODO#
+|The incident register of the ISMS home
+|#TODO#
+
+|Approved documents and reviews of the ISMS home
+|#TODO#
+|#TODO#
+|#TODO#
+|The ISMS home
+|#TODO#
+
+|Technical documentation of the products
+|#TODO: Delete this row if the organisation does not make products#
+|#TODO#
+|#TODO#
+|#TODO#
+|#TODO#
+
+|#TODO: Add other types of records, for example contracts, personal data, and logs#
+|
+|
+|
+|
+|
+|===
+
+== Deletion and archiving
+
+#TODO: Describe how the records are deleted or archived when the retention period ends, and who decides about a legal hold.#
+
+== Checks
+
+#TODO: Describe how the organisation checks, at least once a year, that the records exist and that they can be read.#
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

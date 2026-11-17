@@ -1,0 +1,1 @@
+Expected progress: *33*. One of three controls is OK.

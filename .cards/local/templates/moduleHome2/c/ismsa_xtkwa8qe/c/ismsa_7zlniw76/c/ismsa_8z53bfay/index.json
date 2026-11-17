@@ -1,0 +1,11 @@
+{
+    "title": "Incident management process",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-17T20:32:26.301Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_document_incident-management-process"
+}

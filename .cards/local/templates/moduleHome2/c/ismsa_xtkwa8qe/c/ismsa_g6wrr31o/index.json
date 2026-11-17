@@ -1,0 +1,12 @@
+{
+    "title": "Central control register",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-17T20:32:19.992Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/progress": "internal-control-progress",
+    "base/fieldTypes/identifier": "ismsa_register_central-controls"
+}

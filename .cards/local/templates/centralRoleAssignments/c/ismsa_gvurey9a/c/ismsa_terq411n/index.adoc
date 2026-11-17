@@ -1,0 +1,3 @@
+Leads the incident management process: analyses the reported security events, records the incidents, and organises the response.
+
+This card assigns a person to a role. Add the assignee in the *Owner* field.

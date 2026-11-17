@@ -1,0 +1,3 @@
+Follows the changes in regulation, and keeps the compliance register, the authority contacts, and the records retention plan up to date.
+
+This card assigns a person to a role. Add the assignee in the *Owner* field.

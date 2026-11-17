@@ -1,0 +1,16 @@
+select("title";"workflowState";"base/fieldTypes/assessment").
+
+result(result).
+
+childResult(result, Evidence, "evidence") :-
+    ismsa_closestHome({{cardKey}}, Home),
+    ismsa_closestHome(Evidence, Home),
+    field(Evidence, "base/fieldTypes/identifier", "{{identifier}}").
+
+ismsa_reportInHome :-
+    ismsa_closestHome({{cardKey}}, _).
+
+resultField(result, "notInHome", "yes", "shortText") :-
+    not ismsa_reportInHome.
+
+order(2, "evidence", 1, "title", "ASC").

@@ -1,0 +1,13 @@
+{
+    "title": "A4 review of changes in regulation (expired)",
+    "cardType": "base/cardTypes/review",
+    "workflowState": "Passed",
+    "rank": "0|b",
+    "links": [],
+    "lastUpdated": "2026-11-17T12:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/owner": "reviewer@example.com",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/lastReviewed": "2020-01-01",
+    "base/fieldTypes/identifier": "ismsa_review_regulation-changes"
+}

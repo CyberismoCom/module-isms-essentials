@@ -1,0 +1,1 @@
+Expected progress: *50*. Three of six controls are OK or not applicable.

@@ -1,0 +1,52 @@
+{{#each results}}
+The organisation receives reports about security issues from internal and external reporters. A coordinated vulnerability disclosure policy sets the rules for this.
+
+== How to decide if this control is required
+
+This control is required when other people use the products or services of the organisation. They can find vulnerabilities, and they need a way to report them. The policy and the reporting channels are maintained centrally, because a public channel serves all products.
+
+== How to implement
+
+. Make reporting channels available for each group of reporters: internal security testers, external security researchers and other reporters that you do not know yet, suppliers of third-party components, developers and testers, and customers, including integrators, asset owners, end users, and maintenance personnel.
+. Publish a way to report security issues on the public website of the organisation, for example a `security.txt` file (RFC 9116) and a web page.
+. Publish a channel for the internal developers and testers. For example, they can report directly into the issue tracker.
+. Make sure that the product documentation templates and their review checklists tell customers how to report security issues.
+. Depending on the risks of the products and services, consider a bug bounty programme or another way to give recognition or compensation to the reporters.
+. A public channel is shared by many products. Decide who monitors it, and how each report gets to the team that can act on it, in time.
+
+Record these decisions in the coordinated vulnerability disclosure policy.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_cvd-policy",
+  "template": "ismsa/templates/coordinatedVulnerabilityDisclosurePolicy",
+  "buttonLabel": "Create a coordinated vulnerability disclosure policy"
+{{/report}}
+
+Check that the public reporting channel is published, that the product documentation tells customers how to report security issues, and that the internal channel is published. Also check that people are named to monitor the shared channels and to route the reports, and that each report from a shared channel has been given to a team.
+
+{{#if this.craGuidance}}
+== EU Cyber Resilience Act
+
+The CRA (Regulation (EU) 2024/2847) requires that the manufacturer of a product with digital elements:
+
+* puts in place and enforces a policy on coordinated vulnerability disclosure (Annex I, Part II, point 5)
+* makes it easier to share information about potential vulnerabilities, and gives a contact address for reporting vulnerabilities (Annex I, Part II, point 6)
+* designates a single point of contact, so that users can communicate with the manufacturer directly and rapidly, also to report vulnerabilities (Article 13(17)).
+
+Give the contact address and the single point of contact in the user information of each product.
+{{/if}}
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* IEC 62443-4-1 DM-1 and DM-2
+* ISO/IEC 27001:2022 Annex A 5.7 and 6.8
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(e)
+
+{{/each}}

@@ -1,0 +1,19 @@
+select("title";"base/fieldTypes/owner";"base/fieldTypes/assessment";"base/fieldTypes/assessmentExplanation").
+
+% On the home card, show the controls of the central control register of the home.
+
+result(Control) :-
+    base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome"),
+    field(Register, "base/fieldTypes/identifier", "ismsa_register_central-controls"),
+    ismsa_closestHome(Register, {{cardKey}}),
+    ancestor(Control, Register),
+    base_projectCardType(Control, "ismsa/cardTypes/internalControl").
+
+% On any other card, show the internal controls under the card.
+
+result(Control) :-
+    not base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome"),
+    ancestor(Control, {{cardKey}}),
+    base_projectCardType(Control, "ismsa/cardTypes/internalControl").
+
+orderBy("rank", "ASC").

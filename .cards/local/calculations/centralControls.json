@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/calculations/centralControls",
+    "displayName": "Central controls",
+    "description": "Planned evidence, default scoping, register progress, and CRA guidance for the central controls of the ISMS home",
+    "calculation": "calculation.lp"
+}

@@ -1,0 +1,43 @@
+{{#each results}}
+
+{{#if this.notInHome}}
+NOTE: This control is not in an ISMS home. The evidence is linked to the control automatically only when both are in the same ISMS home.
+{{/if}}
+
+{{#if this.evidence}}
+
+[caption=]
+[cols="5,2,2"]
+|===
+| Evidence | Workflow state | Assessment
+
+{{#each this.evidence}}
+|xref:{{this.key}}.adoc[{{this.title}}]
+|{{this.workflowState}}
+|{{this.[base/fieldTypes/assessment].displayValue}}
+{{/each}}
+
+|===
+
+{{#if ../template}}
+Create another one, if needed:
+{{/if}}
+
+{{else}}
+
+{{#if ../template}}
+This evidence has not been created yet.
+{{else}}
+This evidence does not exist in this home. {{../hint}}
+{{/if}}
+
+{{/if}}
+
+{{#if ../template}}
+{{#createCards}}
+  "template": "{{../template}}",
+  "buttonLabel": "{{../buttonLabel}}"
+{{/createCards}}
+{{/if}}
+
+{{/each}}

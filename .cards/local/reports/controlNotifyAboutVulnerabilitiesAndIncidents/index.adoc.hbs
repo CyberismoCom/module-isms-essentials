@@ -1,0 +1,75 @@
+{{#each results}}
+The organisation notifies authorities, users, and other stakeholders about vulnerabilities and incidents in time. The coordinated vulnerability disclosure policy and the incident management process set the rules for this.
+
+== How to decide if this control is required
+
+This control is required when the organisation must report incidents or vulnerabilities to authorities, or when the users of its products or services must know about them. External communication about security issues is coordinated centrally.
+
+== How to implement
+
+Prepare and maintain the capability to notify:
+
+* authorities, about reportable incidents and vulnerabilities, within the deadlines of the applicable regulation
+* users, about incidents and vulnerabilities that affect them, and about the measures that they can take to reduce the impact
+* the persons or organisations that maintain the third-party components of the products, including open source components, about vulnerabilities in their components.
+
+For example, NIS2 (Directive (EU) 2022/2555, Article 23) requires an early warning within 24 hours, an incident notification within 72 hours, and a final report within one month after the incident notification of a significant incident.
+
+Record the notification types, the responsibilities, and the internal deadlines in the coordinated vulnerability disclosure policy.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_cvd-policy",
+  "template": "ismsa/templates/coordinatedVulnerabilityDisclosurePolicy",
+  "buttonLabel": "Create a coordinated vulnerability disclosure policy"
+{{/report}}
+
+Record the steps for incident reporting in the incident management process. The incident management process is in the incident register of this home.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_incident-management-process",
+  "hint": "The incident management process is in the incident register of the ISMS home template. Add it to the incident register and give it the identifier ismsa_document_incident-management-process."
+{{/report}}
+
+NOTE: A security advisory about one product is a document of that product. Write it in the development project of the product.
+
+Check that the notification procedures are defined and communicated, and that people are assigned to the responsibilities. Check that there is a record of each notification, and that all reportable vulnerabilities and incidents have been reported.
+
+{{#if this.craGuidance}}
+== EU Cyber Resilience Act
+
+The reporting obligations of the CRA (Regulation (EU) 2024/2847, Article 14) apply from 11 September 2026. The manufacturer of a product with digital elements notifies an actively exploited vulnerability in the product, and a severe incident that has an impact on the security of the product. The notifications go at the same time to the CSIRT designated as coordinator and to ENISA, through the single reporting platform (Article 16).
+
+For an actively exploited vulnerability (Article 14(2)), send:
+
+* an early warning within 24 hours of becoming aware of it
+* a vulnerability notification within 72 hours of becoming aware of it
+* a final report no later than 14 days after a corrective or mitigating measure is available.
+
+For a severe incident (Article 14(4)), send:
+
+* an early warning within 24 hours of becoming aware of it
+* an incident notification within 72 hours of becoming aware of it
+* a final report within one month after the incident notification.
+
+After becoming aware of the vulnerability or the incident, inform the impacted users, and where appropriate all users, about it and about the measures that they can take (Article 14(8)).
+
+When the manufacturer finds a vulnerability in a component of the product, including an open source component, it reports the vulnerability to the person or organisation that maintains the component (Article 13(6)).
+
+Write the security advisories of a product with the security advisory template of the EU CRA module, in the development project of the product.
+{{/if}}
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* IEC 62443-4-1 DM-5 and SUM-4
+* ISO/IEC 27001:2022 Annex A 5.5 and 5.26
+* NIS2 (Directive (EU) 2022/2555) Article 23
+
+{{/each}}

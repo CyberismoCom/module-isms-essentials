@@ -32,3 +32,28 @@ This includes example processes for
 along with the needed field types, link types, templates, workflows, registers, policy checks and progress metrics.
 
 For a tutorial on how to get started with the Cyberismo ISMS essentials module, see the https://docs.cyberismo.com/cards/docs_y9v6f19e.html[ISMS essentials tutorial in Cyberismo documentation].
+
+== The ISMS home
+
+The template "ISMS home (core)" (`ismsa/templates/moduleHome2`) creates a home for the security work that a central team does once for the whole organisation. It has the core of the home:
+
+* the central control register, with six central internal controls: assign the central security roles, receive notifications of security issues, notify about vulnerabilities and incidents, contact with authorities, protect records, and follow changes in regulation
+* the incident register, with the incident management process
+* the compliance register.
+
+Each central control has planned evidence. The assessment of a control is calculated from its evidence in the same home. When the EU CRA module is installed, the controls also show guidance for the Cyber Resilience Act.
+
+Libraries add more content to the home. A module registers a library with an `ismsa_installableExtension` fact. The extension points are listed in `ismsa/calculations/extensions`.
+
+The older template "ISMS home" (`ismsa/templates/moduleHome`) is still available, and existing homes continue to work.
+
+== Tests
+
+The test content is in `cardRoot`, under the page "Test content". To run the executable assertions of the central controls, run these commands in the root of this repository:
+
+----
+cyberismo calc run tests/central-controls.lp
+cyberismo calc run tests/cra-guidance.lp
+----
+
+The tests pass when `results` is empty and `error` is `null`. The page "Central control assessment tests" shows the same assertions in the app.

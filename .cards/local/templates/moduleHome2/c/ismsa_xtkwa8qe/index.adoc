@@ -1,0 +1,23 @@
+== Security work for #TODO: add the scope, for example the name of the organisation#
+
+This home holds the security work that a central team does once for the whole organisation. The development projects and the other teams rely on it.
+
+The core of the home has these registers:
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+== Central controls
+
+{{#report}}
+  "name": "ismsa/reports/centralControls"
+{{/report}}
+
+== Libraries
+
+Libraries add content to the home, for example the controls of a full information security management system. Install only the libraries that the organisation needs. When a library is available for this home, a button to install it is shown here.
+
+{{#report}}
+  "name": "ismsa/reports/installExtension"
+{{/report}}

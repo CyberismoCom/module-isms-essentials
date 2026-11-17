@@ -1,0 +1,12 @@
+{
+    "title": "Incident register",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|c",
+    "lastUpdated": "2026-11-17T20:32:25.529Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/progress": "incident-progress",
+    "base/fieldTypes/identifier": "ismsa_register_incidents"
+}

@@ -1,0 +1,3 @@
+Owns the coordinated vulnerability disclosure policy and the reporting channels. Makes sure that each report gets to the right team, and prepares the notifications about vulnerabilities.
+
+This card assigns a person to a role. Add the assignee in the *Owner* field.

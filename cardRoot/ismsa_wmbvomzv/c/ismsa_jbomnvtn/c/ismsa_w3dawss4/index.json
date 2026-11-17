@@ -1,0 +1,11 @@
+{
+    "title": "Test home A",
+    "cardType": "ismsa/cardTypes/moduleHome",
+    "workflowState": "Draft",
+    "rank": "0|b",
+    "links": [],
+    "lastUpdated": "2026-11-17T12:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/owner": "home-a@example.com",
+    "base/fieldTypes/identifier": "ismsa_test_cc_home-a"
+}
