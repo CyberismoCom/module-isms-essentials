@@ -1,0 +1,13 @@
+{
+    "title": "Manage the assets of the organisation",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-19T19:24:16.391Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "april",
+    "base/fieldTypes/identifier": "ismsa_control_manage-assets"
+}

@@ -31,12 +31,13 @@
 % Use a card type as the ExtensibleCard only if the library also fits the old home template
 % (ismsa/templates/moduleHome), because both templates use the same card types.
 %
-% Example:
+% The four libraries of this module are registered in ismsa/calculations/homeLibraries. For
+% example:
 %
 % ismsa_installableExtension(
 %     "ismsa_register_central-controls",
-%     "Cyberismo ISMS essentials: security operations",
+%     "the security operations library",
 %     "ismsa/templates/securityOperations",
-%     "Add the security operations controls",
+%     "Add the security operations library",
 %     "ismsa_control_operate-security-monitoring"
 % ).

@@ -1,0 +1,10 @@
+{
+    "title": "Document review - Security monitoring plan",
+    "cardType": "base/cardTypes/reviewTask",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-19T19:25:21.381Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365
+}

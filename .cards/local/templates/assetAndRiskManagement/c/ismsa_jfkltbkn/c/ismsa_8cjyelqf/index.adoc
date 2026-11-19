@@ -1,0 +1,12 @@
+Record the risks of the supporting assets in the subregisters.
+
+{{#report}}
+  "name": "base/reports/childrenList"
+{{/report}}
+
+Add a register, if needed.
+
+{{#createCards}}
+  "template": "ismsa/templates/register",
+  "buttonLabel": "Add a register"
+{{/createCards}}

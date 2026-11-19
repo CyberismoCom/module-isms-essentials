@@ -6,6 +6,13 @@ Each control has planned evidence. The assessment of a control is calculated fro
   "name": "ismsa/reports/centralControls"
 {{/report}}
 
+Add an internal control of your own, if needed. Link its evidence to it with the link type "is evidenced by".
+
+{{#createCards}}
+  "template": "ismsa/templates/internalControl",
+  "buttonLabel": "Add an internal control"
+{{/createCards}}
+
 {{#report}}
   "name": "ismsa/reports/installExtension"
 {{/report}}

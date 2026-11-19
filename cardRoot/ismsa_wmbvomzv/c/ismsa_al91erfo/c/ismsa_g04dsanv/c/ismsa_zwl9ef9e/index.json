@@ -1,0 +1,14 @@
+{
+    "rank": "0|e",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-19T19:28:22.132Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Information security management",
+    "templateCardKey": "ismsa_pacbwb5t",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/progress": "internal-control-progress",
+    "base/fieldTypes/identifier": "ismsa_register_information-security-management",
+    "lastUpdated": "2026-11-19T19:28:22.134Z"
+}

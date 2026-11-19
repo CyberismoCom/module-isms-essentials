@@ -26,6 +26,34 @@ ismsa_assessedRequirementOutOfScope(Requirement) :-
   field(Requirement, "workflowState", "Out of scope").
 
 %
+% Planned implementation
+%
+% ismsa_plannedImplementation(RequirementIdentifier, ControlIdentifier) declares that the
+% internal control implements the requirement (see ismsa/calculations/homeLibraries). When both
+% are in the same ISMS home, the control is linked to the requirement automatically. While a
+% planned control is not in the home of the requirement, the requirement stays open, so that a
+% partial implementation is not assessed as OK.
+%
+
+ismsa_plannedControlInHome(Requirement, ControlIdentifier, Control) :-
+  ismsa_assessedRequirement(Requirement),
+  field(Requirement, "base/fieldTypes/identifier", RequirementIdentifier),
+  ismsa_plannedImplementation(RequirementIdentifier, ControlIdentifier),
+  ismsa_closestHome(Requirement, Home),
+  field(Control, "base/fieldTypes/identifier", ControlIdentifier),
+  base_projectCardType(Control, "ismsa/cardTypes/internalControl"),
+  ismsa_closestHome(Control, Home).
+
+link(Control, Requirement, "ismsa/linkTypes/implements") :-
+  ismsa_plannedControlInHome(Requirement, _, Control).
+
+ismsa_assessedRequirementMissingPlannedControl(Requirement) :-
+  ismsa_assessedRequirement(Requirement),
+  field(Requirement, "base/fieldTypes/identifier", RequirementIdentifier),
+  ismsa_plannedImplementation(RequirementIdentifier, ControlIdentifier),
+  not ismsa_plannedControlInHome(Requirement, ControlIdentifier, _).
+
+%
 % The cards that a requirement is assessed against: the cards that implement it and
 % the evidence that has been linked to it directly.
 %
@@ -94,12 +122,21 @@ ismsa_assessedRequirementAssessment(Requirement, "notOk", "The requirement is in
   not base_policyCheckFailure(Requirement, _, _, _),
   ismsa_requirementImplementationFailing(Requirement, _).
 
+% Open, because a planned control is not in the home of the requirement
+
+ismsa_assessedRequirementAssessment(Requirement, "open", "The requirement is in scope but a planned control is not in this home") :-
+  ismsa_assessedRequirementInScope(Requirement),
+  not base_policyCheckFailure(Requirement, _, _, _),
+  not ismsa_requirementImplementationFailing(Requirement, _),
+  ismsa_assessedRequirementMissingPlannedControl(Requirement).
+
 % Open, because nothing has been linked to the requirement yet
 
 ismsa_assessedRequirementAssessment(Requirement, "open", "The requirement is in scope but nothing has been linked to implement it") :-
   ismsa_assessedRequirementInScope(Requirement),
   not base_policyCheckFailure(Requirement, _, _, _),
-  not ismsa_requirementImplementation(Requirement, _).
+  not ismsa_requirementImplementation(Requirement, _),
+  not ismsa_assessedRequirementMissingPlannedControl(Requirement).
 
 % Open, because the linked implementation is still in progress
 
@@ -107,7 +144,8 @@ ismsa_assessedRequirementAssessment(Requirement, "open", "The requirement is in 
   ismsa_assessedRequirementInScope(Requirement),
   not base_policyCheckFailure(Requirement, _, _, _),
   not ismsa_requirementImplementationFailing(Requirement, _),
-  ismsa_requirementImplementationPending(Requirement, _).
+  ismsa_requirementImplementationPending(Requirement, _),
+  not ismsa_assessedRequirementMissingPlannedControl(Requirement).
 
 % Open, because everything that was linked to the requirement is out of scope itself
 
@@ -117,7 +155,8 @@ ismsa_assessedRequirementAssessment(Requirement, "open", "The requirement is in 
   not ismsa_requirementImplementationFailing(Requirement, _),
   not ismsa_requirementImplementationPending(Requirement, _),
   not ismsa_requirementImplementationComplete(Requirement, _),
-  ismsa_requirementImplementation(Requirement, _).
+  ismsa_requirementImplementation(Requirement, _),
+  not ismsa_assessedRequirementMissingPlannedControl(Requirement).
 
 % OK, because the requirement is in scope and everything that implements it is ready
 
@@ -126,7 +165,8 @@ ismsa_assessedRequirementAssessment(Requirement, "ok", "The requirement is in sc
   not base_policyCheckFailure(Requirement, _, _, _),
   not ismsa_requirementImplementationFailing(Requirement, _),
   not ismsa_requirementImplementationPending(Requirement, _),
-  ismsa_requirementImplementationComplete(Requirement, _).
+  ismsa_requirementImplementationComplete(Requirement, _),
+  not ismsa_assessedRequirementMissingPlannedControl(Requirement).
 
 %
 % The calculated fields

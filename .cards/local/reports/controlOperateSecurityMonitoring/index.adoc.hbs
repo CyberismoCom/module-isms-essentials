@@ -1,0 +1,32 @@
+{{#each results}}
+The organisation logs and monitors the services and the IT that it runs, so that it detects security events in time and can investigate them.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs IT or cloud services itself. If a supplier runs them, check that the agreement covers monitoring and the reporting of security events.
+
+== How to implement
+
+Define what is logged and monitored, who handles the alerts, and how long the logs are kept. Monitor the critical systems in the asset register. Protect the logs against change.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_security-monitoring-plan",
+  "template": "ismsa/templates/securityMonitoringPlan",
+  "buttonLabel": "Create the security monitoring plan"
+{{/report}}
+
+Check that the plan is approved, and that the alerts are handled.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 Annex A 8.15 and 8.16
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(b)
+
+{{/each}}

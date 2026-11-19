@@ -13,4 +13,14 @@ ismsa_reportInHome :-
 resultField(result, "notInHome", "yes", "shortText") :-
     not ismsa_reportInHome.
 
+% The card under which the button creates the evidence: the register that owns the evidence
+% in the same home (see ismsa/calculations/centralControls).
+
+resultField(result, "target", Target, "shortText") :-
+    ismsa_evidenceTarget({{cardKey}}, "{{identifier}}", Target).
+
+resultField(result, "targetTitle", Title, "shortText") :-
+    ismsa_evidenceTarget({{cardKey}}, "{{identifier}}", Target),
+    field(Target, "title", Title).
+
 order(2, "evidence", 1, "title", "ASC").

@@ -72,7 +72,7 @@ ismsa_testProgressPass(HomeId) :-
     field(Home, "base/fieldTypes/identifier", HomeId),
     field(Register, "base/fieldTypes/identifier", "ismsa_register_central-controls"),
     ismsa_closestHome(Register, Home),
-    field(Register, "base/fieldTypes/progress", Progress).
+    field(Register, "progress", Progress).
 
 ismsa_testOwnerPass(HomeId, ControlId) :-
     ismsa_expectOwner(HomeId, ControlId, Owner),

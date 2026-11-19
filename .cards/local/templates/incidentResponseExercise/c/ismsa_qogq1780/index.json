@@ -1,0 +1,11 @@
+{
+    "title": "Incident response exercise (date)",
+    "cardType": "base/cardTypes/review",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-19T19:25:25.794Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_review_incident-response-exercise"
+}

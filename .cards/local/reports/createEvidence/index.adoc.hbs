@@ -20,13 +20,17 @@ NOTE: This control is not in an ISMS home. The evidence is linked to the control
 |===
 
 {{#if ../template}}
-Create another one, if needed:
+{{#if this.target}}
+Create another one, if needed. It is created in xref:{{this.target}}.adoc[{{this.targetTitle}}]:
+{{/if}}
 {{/if}}
 
 {{else}}
 
 {{#if ../template}}
-This evidence has not been created yet.
+{{#if this.target}}
+This evidence has not been created yet. The button creates it in xref:{{this.target}}.adoc[{{this.targetTitle}}].
+{{/if}}
 {{else}}
 This evidence does not exist in this home. {{../hint}}
 {{/if}}
@@ -34,10 +38,13 @@ This evidence does not exist in this home. {{../hint}}
 {{/if}}
 
 {{#if ../template}}
+{{#if this.target}}
 {{#createCards}}
   "template": "{{../template}}",
-  "buttonLabel": "{{../buttonLabel}}"
+  "buttonLabel": "{{../buttonLabel}}",
+  "cardKey": "{{this.target}}"
 {{/createCards}}
+{{/if}}
 {{/if}}
 
 {{/each}}

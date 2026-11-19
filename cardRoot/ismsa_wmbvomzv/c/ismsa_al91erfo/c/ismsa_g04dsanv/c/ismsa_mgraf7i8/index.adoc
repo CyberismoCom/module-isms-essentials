@@ -1,0 +1,23 @@
+This register holds the documented information of the home: the policies, processes, and plans of the organisation, and the reviews and other records that show that the controls work.
+
+The planned evidence of the controls is created here, unless another register of the home owns its topic. For example, the incident management process is in the incident register. Use the buttons in the controls to create the planned evidence. The evidence is then linked to its control automatically.
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Add other documents, as needed:
+
+{{#createCards}}
+  "template": "base/templates/processDescription",
+  "buttonLabel": "Create a process document"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "base/templates/controlledDocument",
+  "buttonLabel": "Create another controlled document"
+{{/createCards}}
+
+{{#report}}
+  "name": "ismsa/reports/installExtension"
+{{/report}}

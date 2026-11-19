@@ -1,0 +1,17 @@
+{{#each results}}
+{{#if this.months}}
+[cols="2,6"]
+|===
+| Month | Internal controls to review
+
+{{#each this.months}}
+|{{this.monthName}}
+a|{{#each this.controls}}
+* xref:{{this.key}}.adoc[{{this.title}}] ({{this.[base/fieldTypes/assessment].displayValue}})
+{{/each}}
+{{/each}}
+|===
+{{else}}
+There are no internal controls with a review month in this home.
+{{/if}}
+{{/each}}

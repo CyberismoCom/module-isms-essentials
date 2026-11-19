@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/assetAndRiskManagement",
+    "displayName": "Asset and risk management library",
+    "description": "A library of the ISMS home: the asset register and the risk register, with their processes and controls",
+    "category": "ISMS home libraries"
+}

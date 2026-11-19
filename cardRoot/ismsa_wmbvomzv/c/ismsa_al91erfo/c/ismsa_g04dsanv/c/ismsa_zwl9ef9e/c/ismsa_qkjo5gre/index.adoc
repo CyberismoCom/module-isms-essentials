@@ -1,0 +1,10 @@
+The security targets are set once a year. Create a register for the targets of each year.
+
+{{#createCards}}
+  "template": "ismsa/templates/yearlyTargets",
+  "buttonLabel": "Create a register for the targets of a year"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenList"
+{{/report}}

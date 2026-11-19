@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/securityOperations",
+    "displayName": "Security operations library",
+    "description": "A library of the ISMS home: central controls for organisations that run IT or services themselves (security monitoring, incident response exercises, business continuity and recovery, and access rights reviews)",
+    "category": "ISMS home libraries"
+}

@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/assetRegisterReview",
+    "displayName": "Review of the asset register",
+    "description": "A periodic review of the asset register of the ISMS home",
+    "category": "ISMS home libraries"
+}

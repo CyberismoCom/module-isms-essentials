@@ -1,19 +1,28 @@
-select("title";"base/fieldTypes/owner";"base/fieldTypes/assessment";"base/fieldTypes/assessmentExplanation").
+select("title";"rank";"base/fieldTypes/owner";"base/fieldTypes/assessment";"base/fieldTypes/assessmentExplanation").
 
-% On the home card, show the controls of the central control register of the home.
+% On the home card, show all the internal controls of the home: the central controls and the
+% controls of the installed libraries. On any other card, show the internal controls under the
+% card. The controls are grouped by the register that holds them.
 
-result(Control) :-
+ismsa_ccControl(Control) :-
     base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome"),
-    field(Register, "base/fieldTypes/identifier", "ismsa_register_central-controls"),
-    ismsa_closestHome(Register, {{cardKey}}),
-    ancestor(Control, Register),
+    ismsa_closestHome(Control, {{cardKey}}),
     base_projectCardType(Control, "ismsa/cardTypes/internalControl").
 
-% On any other card, show the internal controls under the card.
-
-result(Control) :-
+ismsa_ccControl(Control) :-
     not base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome"),
     ancestor(Control, {{cardKey}}),
     base_projectCardType(Control, "ismsa/cardTypes/internalControl").
 
-orderBy("rank", "ASC").
+result(result).
+
+childResult(result, Register, "registers") :-
+    ismsa_ccControl(Control),
+    parent(Control, Register).
+
+childResult(Register, Control, "controls") :-
+    ismsa_ccControl(Control),
+    parent(Control, Register).
+
+order(2, "registers", 1, "rank", "ASC").
+order(3, "controls", 1, "rank", "ASC").

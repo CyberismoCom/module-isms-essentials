@@ -1,0 +1,45 @@
+select("title";"base/fieldTypes/assessment";"monthName";"monthNumber").
+
+ismsa_wheelMonth("january", "January", 1).
+ismsa_wheelMonth("february", "February", 2).
+ismsa_wheelMonth("march", "March", 3).
+ismsa_wheelMonth("april", "April", 4).
+ismsa_wheelMonth("may", "May", 5).
+ismsa_wheelMonth("june", "June", 6).
+ismsa_wheelMonth("july", "July", 7).
+ismsa_wheelMonth("august", "August", 8).
+ismsa_wheelMonth("september", "September", 9).
+ismsa_wheelMonth("october", "October", 10).
+ismsa_wheelMonth("november", "November", 11).
+ismsa_wheelMonth("december", "December", 12).
+
+% The internal controls of the closest home of the card, or under the card if it is not in a home
+
+ismsa_wheelHome(Home) :- ismsa_closestHome({{cardKey}}, Home).
+ismsa_wheelHome({{cardKey}}) :- base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome").
+
+ismsa_wheelControl(Control, Month) :-
+    ismsa_wheelHome(Home),
+    ismsa_closestHome(Control, Home),
+    base_projectCardType(Control, "ismsa/cardTypes/internalControl"),
+    not field(Control, "workflowState", "Out of scope"),
+    field(Control, "base/fieldTypes/reviewMonth", Month).
+
+result(result).
+
+childResult(result, ("month", Month), "months") :-
+    ismsa_wheelControl(_, Month).
+
+resultField(("month", Month), "monthName", Name, "shortText") :-
+    ismsa_wheelControl(_, Month),
+    ismsa_wheelMonth(Month, Name, _).
+
+resultField(("month", Month), "monthNumber", Number, "integer") :-
+    ismsa_wheelControl(_, Month),
+    ismsa_wheelMonth(Month, _, Number).
+
+childResult(("month", Month), Control, "controls") :-
+    ismsa_wheelControl(Control, Month).
+
+order(2, "months", 1, "monthNumber", "ASC").
+order(3, "controls", 1, "title", "ASC").

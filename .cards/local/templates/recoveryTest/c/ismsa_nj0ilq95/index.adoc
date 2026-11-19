@@ -1,0 +1,33 @@
+== Scope
+
+#TODO: List the systems and the data that were restored in this test.#
+
+== Results
+
+[width="100%",cols="30%,25%,25%,20%",options="header"]
+|===
+|System or data |Time to restore |Data loss |Result
+
+|#TODO#
+|#TODO#
+|#TODO#
+|#TODO#
+|===
+
+* Check that the restored systems and data work.
+* Check that the times agree with the recovery targets of the business continuity and recovery plan.
+
+== Actions
+
+Create a task for each improvement.
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Set the date of the test in the *Last reviewed* field. Mark the review as *Passed* when the recovery targets were met or the deviations have actions. Otherwise, mark it as *Failed*.

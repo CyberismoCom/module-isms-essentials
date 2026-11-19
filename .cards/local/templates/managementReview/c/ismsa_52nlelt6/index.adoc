@@ -1,0 +1,36 @@
+== Participants
+
+#TODO: List the participants. At least one member of the management takes part.#
+
+== Inputs
+
+Review these inputs:
+
+* the status of the actions from the previous management review
+* the changes in the context, the scope, and the requirements of the interested parties (see the compliance register)
+* the assessments of the internal controls of the home, and the annual wheel
+* the incidents and the near misses of the year (see the incident register)
+* the results of the risk assessment, and the status of the risk treatment
+* the security targets of the year, and how well they were met
+* the opportunities for improvement
+
+== Decisions
+
+#TODO: Record the decisions, and the security targets for the next year.#
+
+== Actions
+
+Create a task for each action.
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+== Review
+
+Set the date of the review in the *Last reviewed* field. Mark the review as *Passed* when the management has reviewed the inputs and the decisions are recorded. Otherwise, mark it as *Failed*.

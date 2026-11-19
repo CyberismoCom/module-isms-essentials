@@ -1,0 +1,26 @@
+This register holds the information security risks of the organisation. Risk management finds the most important risks, so that the organisation can treat them first. Set the acceptable risk level of the organisation in the *Acceptable risk level* field.
+
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
+
+== Control and process
+
+{{#report}}
+  "name": "ismsa/reports/centralControls"
+{{/report}}
+
+{{#report}}
+  "name": "base/reports/childrenTable",
+  "cardType": "base/cardTypes/controlledDocument"
+{{/report}}
+
+== Overview
+
+{{#report}}
+  "name": "ismsa/reports/riskOverview"
+{{/report}}
+
+{{#report}}
+  "name": "ismsa/reports/risksByOwner"
+{{/report}}

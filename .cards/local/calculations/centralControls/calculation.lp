@@ -79,6 +79,64 @@ ismsa_internalControlMissingEvidence(Control) :-
         link(Evidence, Control, "ismsa/linkTypes/evidences").
 
 %
+% Where planned evidence is created
+%
+% Planned evidence is not created under its control. It is created in the register of the
+% same home that owns its topic, for example the incident register or the asset register.
+% ismsa_evidenceLocation(EvidenceIdentifier, RegisterIdentifier) names that register. Evidence
+% without this fact is created in the policies and records register of the home.
+%
+% ismsa_evidenceTarget(Control, EvidenceIdentifier, Card) gives the card under which the
+% button of ismsa/reports/createEvidence creates the evidence of the control:
+%
+% 1. the register that owns the evidence, in the same home as the control
+% 2. if the home does not have that register, the policies and records register of the home
+% 3. if the home does not have that register either (for example an old home), the home card
+%
+% A control that is not in a home has no target, and the report shows no button.
+%
+
+ismsa_evidenceLocation("ismsa_document_incident-management-process", "ismsa_register_incidents").
+ismsa_evidenceLocation("ismsa_review_regulation-changes", "ismsa_register_compliance").
+
+ismsa_evidenceRegister(EvidenceIdentifier, RegisterIdentifier) :-
+    ismsa_evidenceLocation(EvidenceIdentifier, RegisterIdentifier).
+
+ismsa_evidenceRegister(EvidenceIdentifier, "ismsa_register_policies-and-records") :-
+    ismsa_centralEvidence(_, EvidenceIdentifier, _),
+    not ismsa_evidenceLocation(EvidenceIdentifier, _).
+
+ismsa_plannedEvidenceInHome(Control, EvidenceIdentifier, Home) :-
+    ismsa_centralEvidence(ControlIdentifier, EvidenceIdentifier, _),
+    field(Control, "base/fieldTypes/identifier", ControlIdentifier),
+    base_projectCardType(Control, "ismsa/cardTypes/internalControl"),
+    ismsa_closestHome(Control, Home).
+
+ismsa_evidenceTargetCandidate(Control, EvidenceIdentifier, 1, Register) :-
+    ismsa_plannedEvidenceInHome(Control, EvidenceIdentifier, Home),
+    ismsa_evidenceRegister(EvidenceIdentifier, RegisterIdentifier),
+    field(Register, "base/fieldTypes/identifier", RegisterIdentifier),
+    ismsa_closestHome(Register, Home).
+
+ismsa_evidenceTargetCandidate(Control, EvidenceIdentifier, 2, Register) :-
+    ismsa_plannedEvidenceInHome(Control, EvidenceIdentifier, Home),
+    field(Register, "base/fieldTypes/identifier", "ismsa_register_policies-and-records"),
+    ismsa_closestHome(Register, Home).
+
+ismsa_evidenceTargetCandidate(Control, EvidenceIdentifier, 3, Home) :-
+    ismsa_plannedEvidenceInHome(Control, EvidenceIdentifier, Home).
+
+ismsa_evidenceTargetLevel(Control, EvidenceIdentifier, Level) :-
+    ismsa_plannedEvidenceInHome(Control, EvidenceIdentifier, _),
+    Level = #min { L : ismsa_evidenceTargetCandidate(Control, EvidenceIdentifier, L, _) }.
+
+% If a home has two registers with the same identifier, the first card key is used.
+
+ismsa_evidenceTarget(Control, EvidenceIdentifier, Card) :-
+    ismsa_evidenceTargetLevel(Control, EvidenceIdentifier, Level),
+    Card = #min { C : ismsa_evidenceTargetCandidate(Control, EvidenceIdentifier, Level, C) }.
+
+%
 % Scoping
 %
 % The core central controls are in scope when they are created. A home that does not need
@@ -132,7 +190,7 @@ ismsa_internalControlInRegister(Register, Control) :-
     base_projectCardType(Control, "ismsa/cardTypes/internalControl"),
     not hiddenInTreeView(Control).
 
-field(Register, "base/fieldTypes/progress", (100 * Done) / Total) :-
+field(Register, "progress", (100 * Done) / Total) :-
     field(Register, "ismsa/fieldTypes/progress", "internal-control-progress"),
     Total = #count { Control : ismsa_internalControlInRegister(Register, Control) },
     Total > 0,

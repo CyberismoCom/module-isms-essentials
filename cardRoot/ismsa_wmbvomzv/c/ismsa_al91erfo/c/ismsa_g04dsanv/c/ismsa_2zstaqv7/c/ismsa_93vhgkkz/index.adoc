@@ -1,0 +1,26 @@
+== Scope
+
+This review covers the risk register of the home, and the risk treatment.
+
+== Review
+
+* Check that the risks of new and changed assets have been identified and analysed.
+* Check that each risk has an owner, a treatment decision, and a residual risk.
+* Check that the risk treatment plans are on schedule.
+* Check that the accepted risks are at or below the acceptable risk level, or that the management has accepted them.
+* Check that the threats and the incidents since the last review are reflected in the risks.
+
+== Findings
+
+#TODO: Record the findings, and create a task for each action.#
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Set the date of the review in the *Last reviewed* field. Mark the review as *Passed* when the risk register is up to date and the actions are recorded. Otherwise, mark it as *Failed*.

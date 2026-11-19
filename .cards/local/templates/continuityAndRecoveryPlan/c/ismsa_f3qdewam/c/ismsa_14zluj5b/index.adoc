@@ -1,0 +1,19 @@
+== Task description
+
+Review the business continuity and recovery plan.
+
+[NOTE]
+.Review instructions
+====
+* Check that the critical operations agree with the asset register and the risk assessment.
+* Check that each critical system has a backup and a recovery procedure.
+* Check that the findings of the latest recovery test have been addressed.
+====
+
+To review the document, set the reviewer in the *Owner* field of this card. If the document is ready to be approved, transition this task to *Closed as done*. If the document needs changes, transition this task to *Changes required*.
+
+NOTE: The reviewer cannot be the same person as the owner or the approver of the document.
+
+== Review notes
+
+#TODO: Add the review notes here.#

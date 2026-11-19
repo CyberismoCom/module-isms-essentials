@@ -1,0 +1,6 @@
+Data assets are the sets of information that the organisation must protect, for example customer data, personal data, and source code.
+
+{{#createCards}}
+  "template": "ismsa/templates/assetData",
+  "buttonLabel": "Add a data asset"
+{{/createCards}}

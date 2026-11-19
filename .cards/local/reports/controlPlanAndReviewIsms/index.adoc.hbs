@@ -1,0 +1,38 @@
+{{#each results}}
+The organisation sets security targets each year, follows the controls through the year, and the management reviews the ISMS at least once a year.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs an ISMS. NIS2 requires policies and procedures to assess the effectiveness of the cybersecurity risk-management measures.
+
+== How to implement
+
+Set the security targets of the year in the security targets register. Follow the annual wheel: each internal control has a review month, and the owner reviews the control in that month. Hold a management review at least once a year.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_management-review",
+  "template": "ismsa/templates/managementReview",
+  "buttonLabel": "Create a management review"
+{{/report}}
+
+The annual wheel of this home:
+
+{{#report}}
+  "name": "ismsa/reports/annualWheel"
+{{/report}}
+
+Check that the management review of the year has passed, and that its actions are followed up.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 clauses 6.2, 9.1, 9.3, and 10
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(f)
+
+{{/each}}

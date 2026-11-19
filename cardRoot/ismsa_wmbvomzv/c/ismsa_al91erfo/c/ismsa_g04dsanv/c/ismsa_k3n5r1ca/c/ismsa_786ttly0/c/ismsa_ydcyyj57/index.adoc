@@ -1,0 +1,11 @@
+== Requirement
+
+The entity notifies the CSIRT or the competent authority of each significant incident without undue delay: an early warning within 24 hours, an incident notification within 72 hours, and a final report within one month after the incident notification. Where appropriate, it also informs the recipients of its services.
+
+This is a summary. See the directive and the national law for the exact text.
+
+== Implementation
+
+{{#report}}
+  "name": "ismsa/reports/plannedImplementation"
+{{/report}}

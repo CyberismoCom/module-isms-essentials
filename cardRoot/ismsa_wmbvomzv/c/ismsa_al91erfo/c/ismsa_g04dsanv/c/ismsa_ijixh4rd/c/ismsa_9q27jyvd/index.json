@@ -1,0 +1,17 @@
+{
+    "rank": "0|j",
+    "workflowState": "Out of scope",
+    "createdAt": "2026-11-19T19:28:24.360Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Plan business continuity and recovery",
+    "templateCardKey": "ismsa_28j0nsou",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "september",
+    "base/fieldTypes/identifier": "ismsa_control_continuity-and-recovery",
+    "lastUpdated": "2026-11-19T19:28:50.296Z",
+    "lastTransitioned": "2026-11-19T19:28:50.296Z",
+    "base/fieldTypes/justification": "The test organisation runs no IT of its own."
+}

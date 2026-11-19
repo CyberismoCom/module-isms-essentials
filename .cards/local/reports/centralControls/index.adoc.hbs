@@ -1,20 +1,25 @@
-{{#if results}}
-
-[cols="4,3,2,5"]
-|===
-| Control | Owner | Assessment | Assessment explanation
-
 {{#each results}}
+{{#if this.registers}}
+
+[cols="4,3,3,2,5"]
+|===
+| Control | Register | Owner | Assessment | Assessment explanation
+
+{{#each this.registers}}
+{{#each this.controls}}
 |xref:{{this.key}}.adoc[{{this.title}}]
+|xref:{{../key}}.adoc[{{../title}}]
 |{{this.[base/fieldTypes/owner]}}
 |{{this.[base/fieldTypes/assessment].displayValue}}
 |{{this.[base/fieldTypes/assessmentExplanation]}}
+{{/each}}
 {{/each}}
 
 |===
 
 {{else}}
 
-There are no central controls yet.
+There are no internal controls yet.
 
 {{/if}}
+{{/each}}

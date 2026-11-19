@@ -1,0 +1,19 @@
+== Task description
+
+Review the information security policy.
+
+[NOTE]
+.Review instructions
+====
+* Check that the management has approved the policy.
+* Check that the objectives agree with the security targets of the year.
+* Check that the policy has been communicated to the employees and the relevant contractors.
+====
+
+To review the document, set the reviewer in the *Owner* field of this card. If the document is ready to be approved, transition this task to *Closed as done*. If the document needs changes, transition this task to *Changes required*.
+
+NOTE: The reviewer cannot be the same person as the owner or the approver of the document.
+
+== Review notes
+
+#TODO: Add the review notes here.#

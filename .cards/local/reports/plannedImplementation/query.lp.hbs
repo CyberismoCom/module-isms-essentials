@@ -1,0 +1,48 @@
+select("title").
+
+result(result).
+
+ismsa_piRequirement(Identifier) :-
+    field({{cardKey}}, "base/fieldTypes/identifier", Identifier).
+
+ismsa_piControlInHome(ControlIdentifier, Control) :-
+    ismsa_closestHome({{cardKey}}, Home),
+    field(Control, "base/fieldTypes/identifier", ControlIdentifier),
+    base_projectCardType(Control, "ismsa/cardTypes/internalControl"),
+    ismsa_closestHome(Control, Home).
+
+childResult(result, ("planned", ControlIdentifier), "planned") :-
+    ismsa_piRequirement(Requirement),
+    ismsa_plannedImplementation(Requirement, ControlIdentifier).
+
+resultField(("planned", ControlIdentifier), "controlTitle", Title, "shortText") :-
+    ismsa_piRequirement(Requirement),
+    ismsa_plannedImplementation(Requirement, ControlIdentifier),
+    ismsa_libraryControl(ControlIdentifier, Title, _).
+
+resultField(("planned", ControlIdentifier), "library", Library, "shortText") :-
+    ismsa_piRequirement(Requirement),
+    ismsa_plannedImplementation(Requirement, ControlIdentifier),
+    ismsa_libraryControl(ControlIdentifier, _, Library).
+
+resultField(("planned", ControlIdentifier), "controlKey", Control, "shortText") :-
+    ismsa_piRequirement(Requirement),
+    ismsa_plannedImplementation(Requirement, ControlIdentifier),
+    ismsa_piControlInHome(ControlIdentifier, Control).
+
+ismsa_piAssessmentName("open", "Open").
+ismsa_piAssessmentName("ok", "OK").
+ismsa_piAssessmentName("notOk", "Not OK").
+ismsa_piAssessmentName("notApplicable", "Not applicable").
+
+resultField(("planned", ControlIdentifier), "assessment", Name, "shortText") :-
+    ismsa_piRequirement(Requirement),
+    ismsa_plannedImplementation(Requirement, ControlIdentifier),
+    ismsa_piControlInHome(ControlIdentifier, Control),
+    field(Control, "base/fieldTypes/assessment", Assessment),
+    ismsa_piAssessmentName(Assessment, Name).
+
+resultField(result, "missing", "yes", "shortText") :-
+    ismsa_assessedRequirementMissingPlannedControl({{cardKey}}).
+
+order(2, "planned", 1, "controlTitle", "ASC").

@@ -25,6 +25,9 @@
             "displayName": "",
             "isCalculated": false,
             "enableOverride": false
+        },
+        {
+            "name": "base/fieldTypes/identifier"
         }
     ],
     "alwaysVisibleFields": [

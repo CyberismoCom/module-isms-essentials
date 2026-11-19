@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlSetInformationSecurityPolicy",
+    "displayName": "Control - Set the information security policy",
+    "description": "The content of the internal control 'Set the information security policy'",
+    "category": "ISMS home libraries"
+}

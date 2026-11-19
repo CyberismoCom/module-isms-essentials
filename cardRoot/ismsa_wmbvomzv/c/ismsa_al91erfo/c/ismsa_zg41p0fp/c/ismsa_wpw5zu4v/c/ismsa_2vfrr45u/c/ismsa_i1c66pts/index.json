@@ -1,0 +1,14 @@
+{
+    "rank": "0|f",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-19T19:28:26.488Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "title": "Article 21(2)(c): Business continuity and crisis management",
+    "templateCardKey": "ismsa_w6r09xep",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_nis2_art-21-2-c",
+    "ismsa/fieldTypes/requirementOrigin": "NIS2 (Directive (EU) 2022/2555)",
+    "base/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-19T19:28:26.499Z"
+}

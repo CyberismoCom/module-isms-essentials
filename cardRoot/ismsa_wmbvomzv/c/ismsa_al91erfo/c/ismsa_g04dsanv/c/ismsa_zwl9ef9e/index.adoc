@@ -1,0 +1,14 @@
+This register holds the controls of the information security management system (ISMS): the scope and context, the information security policy, training and awareness, and the yearly planning and review. It also holds the security targets, the security reviews, and the tasks of the ISMS.
+
+The planned evidence of these controls is created in the policies and records register of the home, and the management review in the security reviews register.
+
+{{#report}}
+  "name": "ismsa/reports/centralControls"
+{{/report}}
+
+The other registers of the library:
+
+{{#report}}
+  "name": "base/reports/childrenTable",
+  "cardType": "ismsa/cardTypes/register"
+{{/report}}

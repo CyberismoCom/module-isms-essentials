@@ -38,12 +38,36 @@ For a tutorial on how to get started with the Cyberismo ISMS essentials module, 
 The template "ISMS home (core)" (`ismsa/templates/moduleHome2`) creates a home for the security work that a central team does once for the whole organisation. It has the core of the home:
 
 * the central control register, with six central internal controls: assign the central security roles, receive notifications of security issues, notify about vulnerabilities and incidents, contact with authorities, protect records, and follow changes in regulation
+* the policies and records register, for the policies, processes, plans, and records of the home
 * the incident register, with the incident management process
 * the compliance register.
 
-Each central control has planned evidence. The assessment of a control is calculated from its evidence in the same home. When the EU CRA module is installed, the controls also show guidance for the Cyber Resilience Act.
+Each control has planned evidence. The button in the control creates the evidence in the register that owns its topic, by default the policies and records register. The evidence is linked to its control by identifier, only inside the same home. The assessment of a control is calculated from its evidence. When the EU CRA module is installed, the controls also show guidance for the Cyber Resilience Act.
 
-Libraries add more content to the home. A module registers a library with an `ismsa_installableExtension` fact. The extension points are listed in `ismsa/calculations/extensions`.
+Libraries add more content to the home. This module has four libraries:
+
+[cols="2,3,4"]
+|===
+| Library | Installed in | Content
+
+| Information security management
+| The home card
+| Controls for the scope and context, the information security policy, training and awareness, and the planning and review of the ISMS. Registers for the security targets, the security reviews, and the tasks
+
+| Asset and risk management
+| The home card
+| The asset register and the risk register, each with its control and process
+
+| Security operations
+| The central control register
+| Controls for security monitoring, incident response exercises, business continuity and recovery, and access rights reviews
+
+| NIS2
+| The compliance register
+| The requirements of NIS2 Articles 20, 21, and 23 as assessed compliance requirements. The planned controls of the home are linked to them automatically
+|===
+
+A module registers a library with an `ismsa_installableExtension` fact. The extension points are listed in `ismsa/calculations/extensions`. The facts of the four libraries are in `ismsa/calculations/homeLibraries`.
 
 The older template "ISMS home" (`ismsa/templates/moduleHome`) is still available, and existing homes continue to work.
 
@@ -54,6 +78,7 @@ The test content is in `cardRoot`, under the page "Test content". To run the exe
 ----
 cyberismo calc run tests/central-controls.lp
 cyberismo calc run tests/cra-guidance.lp
+cyberismo calc run tests/home-libraries.lp
 ----
 
-The tests pass when `results` is empty and `error` is `null`. The page "Central control assessment tests" shows the same assertions in the app.
+The tests pass when `results` is empty and `error` is `null`. The page "Central control assessment tests" shows the assertions of the central controls in the app. The page "ISMS home library tests" describes the fixtures of the libraries.
