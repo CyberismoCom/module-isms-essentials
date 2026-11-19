@@ -10,6 +10,5 @@
     "ismsa/fieldTypes/soaVersion": 1,
     "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/owner": "owner@example.com",
-    "base/fieldTypes/approver": "approver@example.com",
-    "base/fieldTypes/approvalDate": "2026-11-02"
+    "base/fieldTypes/approver": "approver@example.com"
 }

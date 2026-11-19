@@ -30,8 +30,11 @@ ismsa_test_expectNoPolicy("SoA approved with a current review").
 % the message says why.
 ismsa_test_expectDenied("SoA draft without review tasks", "Approve", "Add a review task before approving").
 ismsa_test_expectNotDenied("SoA draft without review tasks", "Approve", "Fix policy failures in at least one of the review subtask(s) before approving").
-% ismsa asks for the approval date before approval, so this fixture has one.
+% The fixture has no approval date. Approval sets it, as in base.
 ismsa_test_expectAllowed("SoA draft with a closed review", "Approve").
+
+% Fields set on a transition: ismsa_test_expectSetField(Title, Transition, Field).
+ismsa_test_expectSetField("SoA draft with a closed review", "Approve", "base/fieldTypes/approvalDate").
 
 % Bind the expectations to the fixture cards
 
@@ -50,6 +53,7 @@ ismsa_test_expected(Id) :- ismsa_test_expectNoPolicy(Id).
 ismsa_test_expected(Id) :- ismsa_test_expectDenied(Id, _, _).
 ismsa_test_expected(Id) :- ismsa_test_expectNotDenied(Id, _, _).
 ismsa_test_expected(Id) :- ismsa_test_expectAllowed(Id, _).
+ismsa_test_expected(Id) :- ismsa_test_expectSetField(Id, _, _).
 
 % Assertions
 
@@ -85,5 +89,10 @@ ismsa_test_failure(Id, @concatenate("denied: ", Message)) :-
     ismsa_test_expectAllowed(Id, Transition),
     ismsa_test_soaFixture(Id, Card),
     transitionDenied(Card, Transition, Message).
+
+ismsa_test_failure(Id, @concatenate("not set on transition: ", Field)) :-
+    ismsa_test_expectSetField(Id, Transition, Field),
+    ismsa_test_soaFixture(Id, Card),
+    not onTransitionSetField(Card, Transition, Card, Field, _).
 
 result((Subject, Reason)) :- ismsa_test_failure(Subject, Reason).

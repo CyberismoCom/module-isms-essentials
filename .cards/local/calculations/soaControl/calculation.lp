@@ -36,9 +36,9 @@ transitionDenied(Document, "Approve", "Fill in the information classification fi
     base_projectCardType(Document, "ismsa/cardTypes/statementOfApplicability"),
     not field(Document, "base/fieldTypes/informationClassification", _).
 
-transitionDenied(Document, "Approve", "Fill in the approval date field before approving" ):-
-    base_projectCardType(Document, "ismsa/cardTypes/statementOfApplicability"),
-    not field(Document, "base/fieldTypes/approvalDate", _).
+% Approval sets the approval date, as for controlled documents in base.
+onTransitionSetField(Document, "Approve", Document, "base/fieldTypes/approvalDate", @today) :-
+    base_projectCardType(Document, "ismsa/cardTypes/statementOfApplicability").
 
 transitionDenied(Document, "Approve", "Complete the review task(s) before approving" ):-
     base_projectCardType(Document, "ismsa/cardTypes/statementOfApplicability"),
