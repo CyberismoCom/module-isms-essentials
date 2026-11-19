@@ -1,0 +1,16 @@
+{
+    "rank": "0|c",
+    "workflowState": "Approved",
+    "createdAt": "2026-11-19T20:00:00.000Z",
+    "links": [],
+    "lastUpdated": "2026-11-19T20:00:00.000Z",
+    "cardType": "ismsa/cardTypes/statementOfApplicability",
+    "title": "SoA approved without review tasks",
+    "ismsa/fieldTypes/soaScopeStatement": "Test scope",
+    "ismsa/fieldTypes/soaVersion": 1,
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "base/fieldTypes/approvalDate": "2026-11-02",
+    "lastTransitioned": "2026-11-19T20:00:00.000Z"
+}
