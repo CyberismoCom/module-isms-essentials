@@ -1,0 +1,1 @@
+Fixtures for `tests/soa-review.lp`. The statement of applicability has no identifier field, so the tests find each fixture by its title. Do not change the titles without changing the tests.
