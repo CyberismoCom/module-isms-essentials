@@ -3,7 +3,6 @@
     "cardType": "ismsa/cardTypes/complianceRequirement",
     "workflowState": "Open",
     "rank": "0|j",
-    "base/fieldTypes/informationClassification": "public",
     "ismsa/fieldTypes/requirementOrigin": "Directive (EU) 2022/2555 NIS 2 Directive",
     "links": [],
     "lastUpdated": "2026-08-16T20:13:38.676Z",
