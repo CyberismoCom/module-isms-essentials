@@ -1,6 +1,6 @@
-== Security work for #TODO: add the scope, for example the name of the organisation#
+== Security work for #TODO: add the scope, for example the organisation, a business unit, or a team#
 
-This home holds the security work that a central team does once for the whole organisation. The development projects and the other teams rely on it.
+This home holds the security work that is done once for its scope, for example for the whole organisation, a business unit, or one team. The development projects in the scope rely on this work, and they do not repeat it. The libraries decide what work is done here. A team under an existing ISMS adds only the libraries for the work that the team does itself.
 
 The home has these registers:
 

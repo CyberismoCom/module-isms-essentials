@@ -35,7 +35,7 @@ For a tutorial on how to get started with the Cyberismo ISMS essentials module, 
 
 == The ISMS home
 
-The template "ISMS home (core)" (`ismsa/templates/moduleHome2`) creates a home for the security work that a central team does once for the whole organisation. The core of the home has no controls. It has four registers:
+The template "ISMS home (core)" (`ismsa/templates/moduleHome2`) creates a home for the security work that is done once for a scope: the whole organisation, a business unit, or one team. The core of the home has no controls. It has four registers:
 
 * the central control register, for the internal controls of the home
 * the process register, for the processes, policies, and plans of the home
