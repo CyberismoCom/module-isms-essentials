@@ -13,14 +13,33 @@
 %
 % Installation
 %
-% A library is a template. Its button is shown on the extension point of the core home, until
-% a card with the example identifier exists under that extension point.
+% Each part of a library is a template. Its button is shown on the home card of the new home,
+% and the part is ticked when a card with the example identifier is in the home.
 %
 
 % A library brings its controls to the central control register, its registers to the home
 % card, and its processes to the process register. Until one button can create cards in several
 % places, a library has one button for each part. The report ismsa/reports/installLibraries shows
 % all the buttons on the home card, grouped by library.
+
+% The security response and compliance basics library has the six basic central controls. A
+% team under an existing ISMS that already does them can leave this library out.
+
+ismsa_installableExtension(
+    "ismsa_register_central-controls",
+    "the security response and compliance basics library",
+    "ismsa/templates/securityResponseAndComplianceControls",
+    "Add the security response and compliance basics controls",
+    "ismsa_control_receive-security-issue-notifications"
+).
+
+ismsa_installableExtension(
+    "ismsa_register_processes",
+    "the security response and compliance basics library",
+    "ismsa/templates/incidentManagementProcess",
+    "Add the incident management process",
+    "ismsa_document_incident-management-process"
+).
 
 ismsa_installableExtension(
     "ismsa_register_central-controls",
@@ -91,10 +110,11 @@ ismsa_installableExtension(
 
 % The order of the libraries on the home card. A library without this fact comes after them.
 
-ismsa_libraryRank("the information security management library", 1).
-ismsa_libraryRank("the asset and risk management library", 2).
-ismsa_libraryRank("the security operations library", 3).
-ismsa_libraryRank("the NIS2 library", 4).
+ismsa_libraryRank("the security response and compliance basics library", 1).
+ismsa_libraryRank("the information security management library", 2).
+ismsa_libraryRank("the asset and risk management library", 3).
+ismsa_libraryRank("the security operations library", 4).
+ismsa_libraryRank("the NIS2 library", 5).
 
 % The compliance register of the old home template has the same identifier as in the new home.
 % A library that needs the controls of the new home is offered only in a home that has a
@@ -105,6 +125,7 @@ ismsa_libraryForNewHomes("ismsa/templates/nis2Requirements").
 % The old home template has a process register with the same identifier, and it renders
 % ismsa/reports/installExtension. The process parts are offered only in new homes.
 
+ismsa_libraryForNewHomes("ismsa/templates/incidentManagementProcess").
 ismsa_libraryForNewHomes("ismsa/templates/assetManagementProcess").
 ismsa_libraryForNewHomes("ismsa/templates/riskManagementProcess").
 
@@ -120,17 +141,17 @@ ismsa_libraryOfferedInHome(Template, Home) :-
 %
 % The internal controls of the home
 %
-% ismsa_libraryControl(ControlIdentifier, Title, Library) names each control of the core and
-% the libraries, and the library that brings it. The report ismsa/reports/plannedImplementation
+% ismsa_libraryControl(ControlIdentifier, Title, Library) names each control of the libraries,
+% and the library that brings it. The report ismsa/reports/plannedImplementation
 % uses these facts to tell which library is missing from a home.
 %
 
-ismsa_libraryControl("ismsa_control_assign-central-security-roles", "Assign the central security roles", "the core of the home").
-ismsa_libraryControl("ismsa_control_receive-security-issue-notifications", "Receive notifications of security issues", "the core of the home").
-ismsa_libraryControl("ismsa_control_notify-about-vulnerabilities-and-incidents", "Notify about vulnerabilities and incidents", "the core of the home").
-ismsa_libraryControl("ismsa_control_contact-with-authorities", "Contact with authorities", "the core of the home").
-ismsa_libraryControl("ismsa_control_protect-records", "Protect records", "the core of the home").
-ismsa_libraryControl("ismsa_control_follow-changes-in-regulation", "Follow changes in regulation", "the core of the home").
+ismsa_libraryControl("ismsa_control_assign-central-security-roles", "Assign the central security roles", "the security response and compliance basics library").
+ismsa_libraryControl("ismsa_control_receive-security-issue-notifications", "Receive notifications of security issues", "the security response and compliance basics library").
+ismsa_libraryControl("ismsa_control_notify-about-vulnerabilities-and-incidents", "Notify about vulnerabilities and incidents", "the security response and compliance basics library").
+ismsa_libraryControl("ismsa_control_contact-with-authorities", "Contact with authorities", "the security response and compliance basics library").
+ismsa_libraryControl("ismsa_control_protect-records", "Protect records", "the security response and compliance basics library").
+ismsa_libraryControl("ismsa_control_follow-changes-in-regulation", "Follow changes in regulation", "the security response and compliance basics library").
 
 ismsa_libraryControl("ismsa_control_isms-scope-and-context", "Define the scope and context of the ISMS", "the information security management library").
 ismsa_libraryControl("ismsa_control_information-security-policy", "Set the information security policy", "the information security management library").
@@ -149,8 +170,7 @@ ismsa_libraryControl("ismsa_control_review-access-rights", "Review access rights
 % created. A home that does not need one of them marks it out of scope, with a justification.
 
 ismsa_controlInScopeByDefault(Control) :-
-    ismsa_libraryControl(Control, _, Library),
-    Library != "the core of the home".
+    ismsa_libraryControl(Control, _, _).
 
 %
 % Planned evidence of the library controls, and where it is created

@@ -1,5 +1,7 @@
 % The steps of the checklist, in the order of the set-up tasks of the old home template
-% (ismsa/templates/moduleHome). Each step is done with an internal control of the home.
+% (ismsa/templates/moduleHome). Each step is done with an internal control of the home. The
+% checklist shows only the steps whose control is in the home, so the steps of libraries that
+% are not installed are left out.
 %
 % ismsa_gsStep(Group, Ordinal, ControlIdentifier, StepText)
 
@@ -64,46 +66,68 @@ ismsa_gsStepDone(Group, Ordinal) :-
 
 result(result).
 
+% A step is shown when its control is in the home.
+
+ismsa_gsShown(Group, Ordinal) :-
+    ismsa_gsStep(Group, Ordinal, Identifier, _),
+    ismsa_gsControl(Identifier, _).
+
 childResultCollection(result, Group) :-
     ismsa_gsGroup(Group).
 
 % The key of a step is tagged with its group, so that the keys of different groups never collide.
 
 childResult(result, (Group, Ordinal), Group) :-
-    ismsa_gsStep(Group, Ordinal, _, _).
+    ismsa_gsShown(Group, Ordinal).
 
 resultField((Group, Ordinal), "ordinal", Ordinal, "integer") :-
-    ismsa_gsStep(Group, Ordinal, _, _).
+    ismsa_gsShown(Group, Ordinal).
 
 resultField((Group, Ordinal), "step", Text, "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
     ismsa_gsStep(Group, Ordinal, _, Text).
 
 resultField((Group, Ordinal), "checkbox", "[x]", "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
     ismsa_gsStepDone(Group, Ordinal).
 
 resultField((Group, Ordinal), "checkbox", "[ ]", "shortText") :-
-    ismsa_gsStep(Group, Ordinal, _, _),
+    ismsa_gsShown(Group, Ordinal),
     not ismsa_gsStepDone(Group, Ordinal).
 
 resultField((Group, Ordinal), "controlKey", Control, "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
     ismsa_gsStep(Group, Ordinal, Identifier, _),
     ismsa_gsControl(Identifier, Control).
 
 resultField((Group, Ordinal), "controlTitle", Title, "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
     ismsa_gsStep(Group, Ordinal, Identifier, _),
     ismsa_gsControl(Identifier, Control),
     field(Control, "title", Title).
 
 resultField((Group, Ordinal), "status", Status, "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
     ismsa_gsStep(Group, Ordinal, Identifier, _),
     ismsa_gsControl(Identifier, Control),
     field(Control, "base/fieldTypes/assessment", Assessment),
     ismsa_gsStatus(Assessment, Status).
 
-resultField((Group, Ordinal), "library", Library, "shortText") :-
-    ismsa_gsStep(Group, Ordinal, Identifier, _),
-    not ismsa_gsControl(Identifier, _),
-    ismsa_libraryControl(Identifier, _, Library).
+% A group heading is shown when the group has a step.
+
+ismsa_gsGroupFlag("start", "showStart").
+ismsa_gsGroupFlag("central", "showCentral").
+ismsa_gsGroupFlag("assets", "showAssets").
+ismsa_gsGroupFlag("risks", "showRisks").
+ismsa_gsGroupFlag("operations", "showOperations").
+ismsa_gsGroupFlag("improvement", "showImprovement").
+
+resultField(result, Flag, "yes", "shortText") :-
+    ismsa_gsGroupFlag(Group, Flag),
+    ismsa_gsShown(Group, _).
+
+resultField(result, "anyStep", "yes", "shortText") :-
+    ismsa_gsShown(_, _).
 
 % The checklist is for the homes made from ismsa/templates/moduleHome2, which have a central
 % control register.

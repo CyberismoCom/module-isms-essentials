@@ -35,12 +35,14 @@ For a tutorial on how to get started with the Cyberismo ISMS essentials module, 
 
 == The ISMS home
 
-The template "ISMS home (core)" (`ismsa/templates/moduleHome2`) creates a home for the security work that a central team does once for the whole organisation. It has the core of the home:
+The template "ISMS home (core)" (`ismsa/templates/moduleHome2`) creates a home for the security work that a central team does once for the whole organisation. The core of the home has no controls. It has four registers:
 
-* the central control register, with six central internal controls: assign the central security roles, receive notifications of security issues, notify about vulnerabilities and incidents, contact with authorities, protect records, and follow changes in regulation
-* the process register, with the incident management process, for the processes, policies, and plans of the home
+* the central control register, for the internal controls of the home
+* the process register, for the processes, policies, and plans of the home
 * the incident register, for the incidents and near misses
 * the compliance register.
+
+The libraries add the controls, registers, and processes. So the first step in a new home is to choose its libraries. A team under an existing ISMS that already does the central controls leaves out the libraries that it does not need.
 
 The home keeps one rule: all controls are in the central control register, the processes, policies, and plans are in the process register, and the other registers hold the records of the work. The process register has the same identifier as in the old home template (`ismsa_register_processes`).
 
@@ -48,13 +50,17 @@ Each control has planned evidence. The button in the control creates the evidenc
 
 The asset and risk management controls also check their registers. They are not OK while the register is empty, while an asset is not evaluated, or while a risk is not analysed or has no treatment plan. These checks replace the set-up tasks of the old home template.
 
-The home card shows a "Getting started" checklist (`ismsa/reports/gettingStarted`). It lists the set-up steps in the order of the old set-up tasks, and ticks each step when its control is OK or out of scope.
+The home card shows a "Getting started" checklist (`ismsa/reports/gettingStarted`). It lists the set-up steps of the libraries that have been added, in the order of the old set-up tasks, and ticks each step when its control is OK or out of scope. Before any library is added, it asks the user to choose the libraries first.
 
-Libraries add more content to the home. This module has four libraries:
+This module has five libraries:
 
 [cols="2,3,4"]
 |===
 | Library | Installed in | Content
+
+| Security response and compliance basics
+| The central control register and the process register
+| Six central controls: assign the central security roles, receive notifications of security issues, notify about vulnerabilities and incidents, contact with authorities, protect records, and follow changes in regulation. The incident management process
 
 | Information security management
 | The central control register and the home card
@@ -73,7 +79,7 @@ Libraries add more content to the home. This module has four libraries:
 | The requirements of NIS2 Articles 20, 21, and 23 as assessed compliance requirements. The planned controls of the home are linked to them automatically
 |===
 
-A library has a template for each of its parts: its controls go to the central control register, its registers to the home card, and its processes to the process register. The section "Libraries" of the home card shows a button for each part, grouped by library, and ticks the parts that have been added. The whole section is the report `ismsa/reports/homeLibrarySection`, and the buttons are the report `ismsa/reports/installLibraries`. So a new version of the module changes the section also in existing homes. A future version of Cyberismo can create cards in several places with one button, and then each library needs only one button.
+A library has a template for each of its parts: its controls go to the central control register, its registers to the home card, and its processes to the process register. The section "Libraries" of the home card shows a button for each part, grouped by library, and ticks the parts that have been added. The section is open until the first part is added, and then it is closed to one line. The whole section is the report `ismsa/reports/homeLibrarySection`, and the buttons are the report `ismsa/reports/installLibraries`. So a new version of the module changes the section also in existing homes. A future version of Cyberismo can create cards in several places with one button, and then each library needs only one button.
 
 A module registers a library with an `ismsa_installableExtension` fact. The extension points are listed in `ismsa/calculations/extensions`. The facts of the libraries of this module are in `ismsa/calculations/homeLibraries`.
 

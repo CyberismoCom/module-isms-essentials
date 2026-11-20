@@ -19,6 +19,12 @@
 %   evaluated.
 % - Test home L5 (ismsa_test_lib_home-5) has the core and the asset and risk management
 %   controls, without the asset and risk registers.
+% - Test home L6 (ismsa_test_lib_home-6) was created from the core of this version, without
+%   libraries. It has no internal controls.
+%
+% Homes L1 to L5 were made before the six central controls became the security response and
+% compliance basics library. They have those controls and the incident management process, so
+% that library counts as added.
 %
 % The fallback to the home card is checked with Test home A of the central control tests,
 % which has no process register.
@@ -116,6 +122,18 @@ ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetAndRiskRegi
 ismsa_expectInstalled("ismsa_test_lib_home-5", "ismsa/templates/assetAndRiskManagementControls").
 ismsa_expectNotInstalled("ismsa_test_lib_home-5", "ismsa/templates/assetAndRiskRegisters").
 ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetManagementProcess").
+ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/securityResponseAndComplianceControls").
+ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/incidentManagementProcess").
+
+% ismsa_expectParts(HomeId, Total, Added): the number of library parts offered in the home, and
+% how many of them have been added. The section "Libraries" of the home card shows these.
+ismsa_expectParts("ismsa_test_lib_home-1", 10, 10).
+ismsa_expectParts("ismsa_test_lib_home-4", 10, 8).
+ismsa_expectParts("ismsa_test_lib_home-5", 10, 3).
+ismsa_expectParts("ismsa_test_lib_home-6", 10, 0).
+
+% ismsa_expectNoControls(HomeId): the home has no internal controls.
+ismsa_expectNoControls("ismsa_test_lib_home-6").
 ismsa_expectNotInstalled("ismsa_test_lib_home-4", "ismsa/templates/riskManagementProcess").
 
 %
@@ -126,6 +144,7 @@ ismsa_testHomeKey("ismsa_test_lib_home-1", ismsa_g04dsanv).
 ismsa_testHomeKey("ismsa_test_lib_home-2", ismsa_zg41p0fp).
 ismsa_testHomeKey("ismsa_test_lib_home-4", ismsa_l866q2o1).
 ismsa_testHomeKey("ismsa_test_lib_home-5", ismsa_qu1v00mj).
+ismsa_testHomeKey("ismsa_test_lib_home-6", ismsa_ny30dov7).
 
 ismsa_testHome(HomeId, Home) :-
     ismsa_testHomeKey(HomeId, Home),
@@ -206,6 +225,30 @@ result(("FAIL check on a control that is not in a home", Control, Title)) :-
 result(("MISSING control without checks", HomeId, ControlId)) :-
     ismsa_expectNoCheck(HomeId, ControlId),
     not ismsa_testCard(HomeId, ControlId, _).
+
+% Library parts
+
+ismsa_testPartsPass(HomeId) :-
+    ismsa_expectParts(HomeId, Total, Added),
+    ismsa_testHome(HomeId, Home),
+    Total = #count { T : ismsa_libraryPart(Home, _, T, _, _) },
+    Added = #count { T : ismsa_libraryPartInstalled(Home, T) }.
+
+result(("FAIL library parts", HomeId)) :-
+    ismsa_expectParts(HomeId, _, _),
+    not ismsa_testPartsPass(HomeId).
+
+% Each part of a home has exactly one target card.
+
+result(("FAIL library part target count", Home, Template)) :-
+    ismsa_libraryPart(Home, _, Template, _, _),
+    not 1 = #count { T : ismsa_libraryPart(Home, _, Template, _, T) }.
+
+result(("FAIL controls in a home without libraries", HomeId, Control)) :-
+    ismsa_expectNoControls(HomeId),
+    ismsa_testHome(HomeId, Home),
+    ismsa_closestHome(Control, Home),
+    base_projectCardType(Control, "ismsa/cardTypes/internalControl").
 
 % Requirements
 

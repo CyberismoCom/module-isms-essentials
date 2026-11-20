@@ -1,49 +1,12 @@
-% The buttons of all libraries of a home, on the home card. A library is a set of
-% ismsa_installableExtension facts with the same module description. Each fact is one part of
-% the library: a template and the extension point where it is created. The button creates the
-% template under the extension point, which can be the home card or a register of the home.
-
-ismsa_ilHome({{cardKey}}) :-
-    base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome").
-
-% An extension point in the home: the home card itself (by identifier or card type), or a card
-% of the home with the identifier.
-
-ismsa_ilPoint(Point, Home) :-
-    ismsa_ilHome(Home),
-    ismsa_installableExtension(Point, _, _, _, _),
-    field(Home, "base/fieldTypes/identifier", Point).
-
-ismsa_ilPoint(Point, Home) :-
-    ismsa_ilHome(Home),
-    ismsa_installableExtension(Point, _, _, _, _),
-    base_projectCardType(Home, Point).
-
-ismsa_ilPoint(Point, Card) :-
-    ismsa_ilHome(Home),
-    ismsa_installableExtension(Point, _, _, _, _),
-    ismsa_closestHome(Card, Home),
-    field(Card, "base/fieldTypes/identifier", Point).
-
-% If the home has two cards with the identifier, the first card key is used.
-
-ismsa_ilTarget(Point, Card) :-
-    ismsa_ilPoint(Point, _),
-    Card = #min { C : ismsa_ilPoint(Point, C) }.
-
-% A part is installed when a card with its example identifier is in the home.
-
-ismsa_ilInstalled(Template) :-
-    ismsa_ilHome(Home),
-    ismsa_installableExtension(_, _, Template, _, ExampleIdentifier),
-    field(Example, "base/fieldTypes/identifier", ExampleIdentifier),
-    ismsa_closestHome(Example, Home).
+% The buttons of all libraries of a home, on the home card, grouped by library. The parts of the
+% libraries come from ismsa/calculations/extensions.
 
 ismsa_ilPart(Library, Template, Label, Target) :-
-    ismsa_ilHome(Home),
-    ismsa_installableExtension(Point, Library, Template, Label, _),
-    ismsa_libraryOfferedInHome(Template, Home),
-    ismsa_ilTarget(Point, Target).
+    base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome"),
+    ismsa_libraryPart({{cardKey}}, Library, Template, Label, Target).
+
+ismsa_ilInstalled(Template) :-
+    ismsa_libraryPartInstalled({{cardKey}}, Template).
 
 result(result).
 
@@ -79,10 +42,25 @@ resultField(Template, "targetTitle", Title, "shortText") :-
     ismsa_ilPart(_, Template, _, Target),
     field(Target, "title", Title).
 
+% The controls come first, then the registers on the home card, then the other parts.
+
+resultField(Template, "kind", 1, "integer") :-
+    ismsa_ilPart(_, Template, _, Target),
+    field(Target, "base/fieldTypes/identifier", "ismsa_register_central-controls").
+
+resultField(Template, "kind", 2, "integer") :-
+    ismsa_ilPart(_, Template, _, {{cardKey}}).
+
+resultField(Template, "kind", 3, "integer") :-
+    ismsa_ilPart(_, Template, _, Target),
+    Target != {{cardKey}},
+    not field(Target, "base/fieldTypes/identifier", "ismsa_register_central-controls").
+
 resultField(Template, "installed", "yes", "shortText") :-
     ismsa_ilPart(_, Template, _, _),
     ismsa_ilInstalled(Template).
 
 order(2, "libraries", 1, "rank", "ASC").
 order(2, "libraries", 2, "name", "ASC").
-order(3, "parts", 1, "buttonLabel", "ASC").
+order(3, "parts", 1, "kind", "ASC").
+order(3, "parts", 2, "buttonLabel", "ASC").

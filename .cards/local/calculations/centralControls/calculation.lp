@@ -133,16 +133,12 @@ ismsa_evidenceTarget(Control, EvidenceIdentifier, Card) :-
 %
 % Scoping
 %
-% The core central controls are in scope when they are created. A home that does not need
-% a control marks it out of scope, with a justification.
+% The controls of the libraries are in scope when they are created, because installing a library
+% is the decision to use its controls. A home that does not need a control marks it out of
+% scope, with a justification.
 %
 
-ismsa_controlInScopeByDefault("ismsa_control_receive-security-issue-notifications").
-ismsa_controlInScopeByDefault("ismsa_control_notify-about-vulnerabilities-and-incidents").
-ismsa_controlInScopeByDefault("ismsa_control_contact-with-authorities").
-ismsa_controlInScopeByDefault("ismsa_control_follow-changes-in-regulation").
-ismsa_controlInScopeByDefault("ismsa_control_protect-records").
-ismsa_controlInScopeByDefault("ismsa_control_assign-central-security-roles").
+% The facts ismsa_controlInScopeByDefault are in ismsa/calculations/homeLibraries.
 
 onTransitionExecuteTransition(Control, "Create", Control, "Mark in scope") :-
     base_projectCardType(Control, "ismsa/cardTypes/internalControl"),

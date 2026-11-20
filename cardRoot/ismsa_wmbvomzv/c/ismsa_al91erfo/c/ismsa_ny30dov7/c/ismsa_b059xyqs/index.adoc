@@ -1,0 +1,10 @@
+This register holds the compliance requirements of the organisation: the requirements of the regulations, standards, and contracts that apply to it. An assessed compliance requirement gets its assessment from the internal controls that implement it.
+
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
+
+{{#createCards}}
+  "template": "ismsa/templates/assessedComplianceRequirement",
+  "buttonLabel": "Add a compliance requirement"
+{{/createCards}}

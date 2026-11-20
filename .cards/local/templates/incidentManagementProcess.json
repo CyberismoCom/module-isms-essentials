@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/incidentManagementProcess",
+    "displayName": "Incident management process",
+    "description": "Planned evidence of the control \"Notify about vulnerabilities and incidents\": the incident management process, with its review task",
+    "category": "Central controls"
+}

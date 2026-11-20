@@ -10,6 +10,12 @@ The home has these registers:
 
 The controls are in the central control register, and the processes, policies, and plans are in the process register. The other registers hold the records of the work, for example the incidents, the assets, and the risks.
 
+== Libraries
+
+{{#report}}
+  "name": "ismsa/reports/homeLibrarySection"
+{{/report}}
+
 == Getting started
 
 {{#report}}
@@ -28,10 +34,4 @@ These are the internal controls of the home. The assessment of each control is c
 
 {{#report}}
   "name": "ismsa/reports/centralControls"
-{{/report}}
-
-== Libraries
-
-{{#report}}
-  "name": "ismsa/reports/homeLibrarySection"
 {{/report}}

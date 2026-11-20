@@ -5,6 +5,9 @@ These fixtures test the libraries of the ISMS home (ismsa/templates/moduleHome2)
 * Test home L3 is an old-style home with a compliance register and no central control register. The NIS2 library must not be offered there.
 * Test home L4 was created from the templates of this version, with all libraries. Its open risk, its analysed risk without a treatment plan, and its asset that is not evaluated make the checks of the asset and risk controls fail.
 * Test home L5 has the asset and risk management controls without the asset and risk registers. The checks find no assets and no risks.
+* Test home L6 was created from the core without libraries. It has no internal controls, and none of the library parts has been added.
+
+Homes L1 to L5 were made before the six central controls became the security response and compliance basics library. They already have those controls and the incident management process.
 
 The executable assertions are in tests/home-libraries.lp. Run this command in the root of the repository:
 

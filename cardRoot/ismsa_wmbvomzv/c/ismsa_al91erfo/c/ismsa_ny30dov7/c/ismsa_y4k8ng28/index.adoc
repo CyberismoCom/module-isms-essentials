@@ -1,0 +1,22 @@
+This register holds the security incidents and near misses of the organisation. The incident management process in the process register describes how they are handled.
+
+Record a new incident with the incident template. It creates four cards:
+
+* Incident: the description and the analysis of the incident
+* Incident response: the containment, eradication, and recovery actions
+* Incident communication: the communication to authorities, customers, other external parties, and inside the organisation
+* Post-incident actions: the lessons learned and the other actions after the incident.
+
+NOTE: If an incident has confidential information, store that information in a separate location with limited access, and add a link to it in the incident.
+
+Record a security event that is not an incident as a near miss.
+
+{{#createCards}}
+  "template": "ismsa/templates/incident",
+  "buttonLabel": "Add new incident"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "ismsa/templates/nearMiss",
+  "buttonLabel": "Add new near miss"
+{{/createCards}}

@@ -1,0 +1,37 @@
+== Security work for #TODO: add the scope, for example the name of the organisation#
+
+This home holds the security work that a central team does once for the whole organisation. The development projects and the other teams rely on it.
+
+The home has these registers:
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+The controls are in the central control register, and the processes, policies, and plans are in the process register. The other registers hold the records of the work, for example the incidents, the assets, and the risks.
+
+== Libraries
+
+{{#report}}
+  "name": "ismsa/reports/homeLibrarySection"
+{{/report}}
+
+== Getting started
+
+{{#report}}
+  "name": "ismsa/reports/gettingStarted"
+{{/report}}
+
+== Status
+
+{{#report}}
+  "name": "ismsa/reports/dashboard"
+{{/report}}
+
+== Controls
+
+These are the internal controls of the home. The assessment of each control is calculated from its planned evidence.
+
+{{#report}}
+  "name": "ismsa/reports/centralControls"
+{{/report}}

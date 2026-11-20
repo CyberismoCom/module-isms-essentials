@@ -51,3 +51,48 @@
 %     "Add the security operations library",
 %     "ismsa_control_operate-security-monitoring"
 % ).
+
+%
+% Library parts of a home
+%
+% These rules are used by the reports ismsa/reports/installLibraries and
+% ismsa/reports/homeLibrarySection on the home card.
+%
+% ismsa_libraryPart(Home, Library, Template, ButtonLabel, Target): a part of a library that can
+% be installed in the home. Target is the card under which the button creates the template: the
+% home card, or the card of the home with the identifier of the extension point. Library is the
+% module description of the ismsa_installableExtension fact.
+% ismsa_libraryPartInstalled(Home, Template): a card with the example identifier of the part is
+% in the home.
+%
+
+ismsa_libraryPointInHome(Point, Home, Home) :-
+    ismsa_installableExtension(Point, _, _, _, _),
+    base_projectCardType(Home, "ismsa/cardTypes/moduleHome"),
+    field(Home, "base/fieldTypes/identifier", Point).
+
+ismsa_libraryPointInHome(Point, Home, Home) :-
+    ismsa_installableExtension(Point, _, _, _, _),
+    base_projectCardType(Home, Point).
+
+ismsa_libraryPointInHome(Point, Home, Card) :-
+    ismsa_installableExtension(Point, _, _, _, _),
+    ismsa_closestHome(Card, Home),
+    field(Card, "base/fieldTypes/identifier", Point).
+
+% If the home has two cards with the identifier, the first card key is used.
+
+ismsa_libraryPointTarget(Point, Home, Card) :-
+    ismsa_libraryPointInHome(Point, Home, _),
+    Card = #min { C : ismsa_libraryPointInHome(Point, Home, C) }.
+
+ismsa_libraryPart(Home, Library, Template, Label, Target) :-
+    ismsa_installableExtension(Point, Library, Template, Label, _),
+    ismsa_libraryOfferedInHome(Template, Home),
+    ismsa_libraryPointTarget(Point, Home, Target).
+
+ismsa_libraryPartInstalled(Home, Template) :-
+    ismsa_libraryPart(Home, _, Template, _, _),
+    ismsa_installableExtension(_, _, Template, _, ExampleIdentifier),
+    field(Example, "base/fieldTypes/identifier", ExampleIdentifier),
+    ismsa_closestHome(Example, Home).
