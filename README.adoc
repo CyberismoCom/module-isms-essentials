@@ -73,7 +73,7 @@ Libraries add more content to the home. This module has four libraries:
 | The requirements of NIS2 Articles 20, 21, and 23 as assessed compliance requirements. The planned controls of the home are linked to them automatically
 |===
 
-A library has a template for each of its parts: its controls go to the central control register, its registers to the home card, and its processes to the process register. The section "Libraries" of the home card (`ismsa/reports/installLibraries`) shows a button for each part, grouped by library, and ticks the parts that have been added. A future version of Cyberismo can create cards in several places with one button, and then each library needs only one button.
+A library has a template for each of its parts: its controls go to the central control register, its registers to the home card, and its processes to the process register. The section "Libraries" of the home card shows a button for each part, grouped by library, and ticks the parts that have been added. The whole section is the report `ismsa/reports/homeLibrarySection`, and the buttons are the report `ismsa/reports/installLibraries`. So a new version of the module changes the section also in existing homes. A future version of Cyberismo can create cards in several places with one button, and then each library needs only one button.
 
 A module registers a library with an `ismsa_installableExtension` fact. The extension points are listed in `ismsa/calculations/extensions`. The facts of the libraries of this module are in `ismsa/calculations/homeLibraries`.
 
