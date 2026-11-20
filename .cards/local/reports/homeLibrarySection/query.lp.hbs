@@ -1,0 +1,13 @@
+% How many library parts the home has, so that the section can be open until the first part is
+% added, and closed after that. The parts come from ismsa/calculations/extensions.
+
+result(result).
+
+resultField(result, "total", N, "integer") :-
+    N = #count { Template : ismsa_libraryPart({{cardKey}}, _, Template, _, _) }.
+
+resultField(result, "added", N, "integer") :-
+    N = #count { Template : ismsa_libraryPartInstalled({{cardKey}}, Template) }.
+
+resultField(result, "noneAdded", "yes", "shortText") :-
+    not ismsa_libraryPartInstalled({{cardKey}}, _).

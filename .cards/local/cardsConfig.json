@@ -1,9 +1,9 @@
 {
-    "schemaVersion": 5,
+    "schemaVersion": 7,
     "cardKeyPrefix": "ismsa",
     "name": "ISMS essentials",
     "description": "",
-    "version": "1.9.0",
+    "version": "1.10.0",
     "modules": [
         {
             "name": "base",

@@ -1,0 +1,45 @@
+== Scope
+
+{{#field}}
+  "field": "ismsa/fieldTypes/homeScope"
+{{/field}}
+
+{{#field}}
+  "field": "ismsa/fieldTypes/homeScopeDescription"
+{{/field}}
+
+This home holds the security work that is done once for its scope, for example for the whole organisation, a business unit, or one team. The development projects in the scope rely on this work, and they do not repeat it. The libraries decide what work is done here. A team under an existing ISMS adds only the libraries for the work that the team does itself.
+
+The home has these registers:
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+The controls are in the central control register, and the processes, policies, and plans are in the process register. The other registers hold the records of the work, for example the incidents, the assets, and the risks.
+
+== Libraries
+
+{{#report}}
+  "name": "ismsa/reports/homeLibrarySection"
+{{/report}}
+
+== Getting started
+
+{{#report}}
+  "name": "ismsa/reports/gettingStarted"
+{{/report}}
+
+== Status
+
+{{#report}}
+  "name": "ismsa/reports/dashboard"
+{{/report}}
+
+== Controls
+
+These are the internal controls of the home. The assessment of each control is calculated from its planned evidence.
+
+{{#report}}
+  "name": "ismsa/reports/centralControls"
+{{/report}}

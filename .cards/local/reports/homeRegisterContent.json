@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/homeRegisterContent",
+    "displayName": "Content of the home registers",
+    "description": "The content of the registers of the ISMS home and its libraries: the four core registers, the security targets, security reviews, and tasks, and the NIS2 register. The parameter \"register\" selects the register",
+    "category": "Central controls"
+}

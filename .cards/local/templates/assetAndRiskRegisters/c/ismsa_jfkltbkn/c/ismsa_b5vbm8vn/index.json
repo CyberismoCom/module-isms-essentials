@@ -1,0 +1,10 @@
+{
+    "title": "Supplier risks",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|f",
+    "lastUpdated": "2026-11-19T19:24:32.987Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2"
+}

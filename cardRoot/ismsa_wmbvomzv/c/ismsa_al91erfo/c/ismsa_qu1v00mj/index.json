@@ -1,0 +1,14 @@
+{
+    "rank": "0|f",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T07:42:44.929Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/moduleHome",
+    "title": "Test home L5: asset and risk controls without their registers",
+    "templateCardKey": "ismsa_xtkwa8qe",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": "ismsa_home",
+    "lastUpdated": "2026-11-20T07:42:44.931Z",
+    "base/fieldTypes/owner": "home-l5@example.com"
+}

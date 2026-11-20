@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/ismsScopeAndContext",
+    "displayName": "Scope and context of the ISMS",
+    "description": "The scope of the information security management system, and the context and interested parties of the organisation",
+    "category": "ISMS home libraries"
+}

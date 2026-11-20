@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlAssignCentralSecurityRoles",
+    "displayName": "Control - Assign the central security roles",
+    "description": "The content of the internal control 'Assign the central security roles'",
+    "category": "Central controls"
+}

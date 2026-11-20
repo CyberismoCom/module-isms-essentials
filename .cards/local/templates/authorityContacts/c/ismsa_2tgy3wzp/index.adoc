@@ -1,0 +1,66 @@
+== Introduction
+
+This document lists the authorities that the organisation must or can contact, when to contact them, and how. Keep a copy where the people in the incident management process can find it, also when the normal systems are not available.
+
+== Authorities
+
+[width="100%",cols="20%,30%,30%,20%",options="header"]
+|===
+|Authority |When to contact |Reporting channel or contact details |Who contacts
+
+|National CSIRT
+|#TODO: For example, significant incidents and actively exploited vulnerabilities#
+|#TODO#
+|#TODO#
+
+|Competent authority for NIS2
+|#TODO: Delete this row if NIS2 does not apply#
+|#TODO#
+|#TODO#
+
+|Data protection authority
+|A personal data breach
+|#TODO#
+|#TODO#
+
+|Market surveillance authorities
+|#TODO: Requests about the conformity of the products#
+|#TODO#
+|#TODO#
+
+|Police
+|A suspected crime
+|#TODO#
+|#TODO#
+
+|#TODO: Add other authorities, as needed#
+|
+|
+|
+|===
+
+== Reporting deadlines
+
+[width="100%",cols="30%,40%,30%",options="header"]
+|===
+|Regulation |Event |Deadline
+
+|GDPR (Regulation (EU) 2016/679), Article 33
+|A personal data breach
+|Without undue delay and, where feasible, within 72 hours
+
+|#TODO: Add the other regulations in the compliance register#
+|
+|
+|===
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

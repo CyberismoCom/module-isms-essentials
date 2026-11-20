@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlProtectRecords",
+    "displayName": "Control - Protect records",
+    "description": "The content of the internal control 'Protect records'",
+    "category": "Central controls"
+}

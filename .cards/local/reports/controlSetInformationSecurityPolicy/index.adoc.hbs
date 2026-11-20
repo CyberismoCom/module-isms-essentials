@@ -1,0 +1,32 @@
+{{#each results}}
+The management has approved an information security policy, and the people in the organisation know it.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs an ISMS. NIS2 requires policies on risk analysis and information system security from essential and important entities.
+
+== How to implement
+
+Write the information security policy, and get the approval of the management. Communicate the policy to the employees and to the relevant contractors. Topic-specific policies, for example for access control or for the use of cloud services, can be other documents in the process register.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_information-security-policy",
+  "template": "ismsa/templates/informationSecurityPolicy",
+  "buttonLabel": "Create the information security policy"
+{{/report}}
+
+Check that the policy is approved, up to date, and communicated.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 clause 5.2 and Annex A 5.1
+* NIS2 (Directive (EU) 2022/2555) Articles 20(1) and 21(2)(a)
+
+{{/each}}

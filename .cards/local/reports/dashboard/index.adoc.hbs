@@ -5,8 +5,8 @@
 {{#each results}}
 
 ^.^a| {{#xref}} "cardKey": "{{this.key}}" {{/xref}}
-{{#if this.[base/fieldTypes/progress]}}
-^.^a| {{#percentage}} "value":{{this.[base/fieldTypes/progress]}}, "legend": "Completed", "title": "" {{/percentage}}
+{{#if this.[progress]}}
+^.^a| {{#percentage}} "value":{{this.[progress]}}, "legend": "Completed", "title": "" {{/percentage}}
 {{else}}
 ^.^a| {{#percentage}} "value":0, "legend": "Completed", "title": "" {{/percentage}}
 {{/if}}

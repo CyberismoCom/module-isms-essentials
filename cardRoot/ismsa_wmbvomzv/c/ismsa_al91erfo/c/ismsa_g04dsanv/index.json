@@ -1,0 +1,16 @@
+{
+    "rank": "0|b",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-19T19:28:08.251Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/moduleHome",
+    "title": "Test home L1: core and all libraries",
+    "templateCardKey": "ismsa_xtkwa8qe",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": "ismsa_home",
+    "lastUpdated": "2026-11-19T19:28:08.253Z",
+    "base/fieldTypes/owner": "home-l1@example.com",
+    "ismsa/fieldTypes/homeScope": "Test organisation L1",
+    "ismsa/fieldTypes/homeScopeDescription": "All products and services of the test organisation."
+}

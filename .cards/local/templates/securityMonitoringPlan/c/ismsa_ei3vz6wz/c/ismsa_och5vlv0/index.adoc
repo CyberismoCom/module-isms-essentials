@@ -1,0 +1,19 @@
+== Task description
+
+Review the security monitoring plan.
+
+[NOTE]
+.Review instructions
+====
+* Check that the critical systems in the asset register are monitored.
+* Check that each alert has a handler, also outside office hours when needed.
+* Check that the log retention meets the legal and contractual requirements.
+====
+
+To review the document, set the reviewer in the *Owner* field of this card. If the document is ready to be approved, transition this task to *Closed as done*. If the document needs changes, transition this task to *Changes required*.
+
+NOTE: The reviewer cannot be the same person as the owner or the approver of the document.
+
+== Review notes
+
+#TODO: Add the review notes here.#

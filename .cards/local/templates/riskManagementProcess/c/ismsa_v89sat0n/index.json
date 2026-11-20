@@ -1,0 +1,11 @@
+{
+    "title": "Risk management process",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-19T19:24:26.893Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_document_risk-management-process"
+}

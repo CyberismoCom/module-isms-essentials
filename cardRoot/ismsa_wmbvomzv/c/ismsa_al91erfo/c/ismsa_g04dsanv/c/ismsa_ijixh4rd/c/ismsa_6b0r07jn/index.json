@@ -1,0 +1,16 @@
+{
+    "rank": "0|d",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-19T19:28:08.252Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Notify about vulnerabilities and incidents",
+    "templateCardKey": "ismsa_6m02kf8b",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "june",
+    "base/fieldTypes/identifier": "ismsa_control_notify-about-vulnerabilities-and-incidents",
+    "lastUpdated": "2026-11-19T19:28:08.496Z",
+    "lastTransitioned": "2026-11-19T19:28:08.496Z"
+}

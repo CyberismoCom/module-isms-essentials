@@ -1,0 +1,19 @@
+== Task description
+
+Review the training and awareness plan.
+
+[NOTE]
+.Review instructions
+====
+* Check that each target group has training.
+* Check that the management training is planned, if NIS2 applies.
+* Check that the participation in the training of last year has been followed up.
+====
+
+To review the document, set the reviewer in the *Owner* field of this card. If the document is ready to be approved, transition this task to *Closed as done*. If the document needs changes, transition this task to *Changes required*.
+
+NOTE: The reviewer cannot be the same person as the owner or the approver of the document.
+
+== Review notes
+
+#TODO: Add the review notes here.#

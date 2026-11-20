@@ -1,0 +1,178 @@
+% An executable assertion report for the central controls of the ISMS home.
+% Keep the expectations and the checks the same as in tests/central-controls.lp.
+
+% ismsa_expectCentral(Scope, ControlIdentifier, Assessment, Explanation, EvidenceLinks)
+% Scope is the identifier of the test home, or of the register for controls outside a home.
+
+ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_receive-security-issue-notifications", "ok", "The control is in scope and there is valid evidence", 1).
+ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_notify-about-vulnerabilities-and-incidents", "ok", "The control is in scope and there is valid evidence", 2).
+ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_contact-with-authorities", "notOk", "The control is in scope but the linked evidence is not ready", 1).
+ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_follow-changes-in-regulation", "notOk", "The control has failed policy checks", 1).
+ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_protect-records", "notApplicable", "The control has been marked out of scope", 0).
+ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_assign-central-security-roles", "open", "The control has not been scoped yet", 0).
+ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_receive-security-issue-notifications", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_notify-about-vulnerabilities-and-incidents", "notOk", "The control is in scope but required evidence has not been linked", 1).
+ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_assign-central-security-roles", "ok", "The control is in scope and there is valid evidence", 1).
+ismsa_expectCentral("ismsa_test_cc_no-home", "ismsa_control_receive-security-issue-notifications", "notOk", "The control is in scope but required evidence has not been linked", 0).
+
+% ismsa_expectProgress(HomeIdentifier, Progress) for the central control register of the home
+ismsa_expectProgress("ismsa_test_cc_home-a", 50).
+ismsa_expectProgress("ismsa_test_cc_home-b", 33).
+
+% ismsa_expectOwner(HomeIdentifier, ControlIdentifier, Owner): the owner is inherited from the home
+ismsa_expectOwner("ismsa_test_cc_home-a", "ismsa_control_receive-security-issue-notifications", "home-a@example.com").
+ismsa_expectOwner("ismsa_test_cc_home-b", "ismsa_control_assign-central-security-roles", "home-b@example.com").
+
+
+ismsa_testScope(ScopeId, Scope) :-
+    ismsa_expectCentral(ScopeId, _, _, _, _),
+    field(Scope, "base/fieldTypes/identifier", ScopeId).
+
+% A control in a test home
+ismsa_testControl(ScopeId, ControlId, Control) :-
+    ismsa_expectCentral(ScopeId, ControlId, _, _, _),
+    ismsa_testScope(ScopeId, Scope),
+    base_projectCardType(Scope, "ismsa/cardTypes/moduleHome"),
+    ismsa_closestHome(Control, Scope),
+    field(Control, "base/fieldTypes/identifier", ControlId),
+    base_projectCardType(Control, "ismsa/cardTypes/internalControl").
+
+% A control under a test register that is not in a home
+ismsa_testControl(ScopeId, ControlId, Control) :-
+    ismsa_expectCentral(ScopeId, ControlId, _, _, _),
+    ismsa_testScope(ScopeId, Scope),
+    not base_projectCardType(Scope, "ismsa/cardTypes/moduleHome"),
+    ancestor(Control, Scope),
+    field(Control, "base/fieldTypes/identifier", ControlId),
+    base_projectCardType(Control, "ismsa/cardTypes/internalControl").
+
+ismsa_testControlCount(ScopeId, ControlId, N) :-
+    ismsa_expectCentral(ScopeId, ControlId, _, _, _),
+    N = #count { Control : ismsa_testControl(ScopeId, ControlId, Control) }.
+
+ismsa_testLinkCount(Control, N) :-
+    ismsa_testControl(_, _, Control),
+    N = #count { Evidence : link(Evidence, Control, "ismsa/linkTypes/evidences") }.
+
+ismsa_testAssessmentCount(Control, N) :-
+    ismsa_testControl(_, _, Control),
+    N = #count { Assessment : field(Control, "base/fieldTypes/assessment", Assessment) }.
+
+ismsa_testPass(Control) :-
+    ismsa_testControl(ScopeId, ControlId, Control),
+    ismsa_expectCentral(ScopeId, ControlId, Assessment, Explanation, Links),
+    ismsa_testControlCount(ScopeId, ControlId, 1),
+    ismsa_testAssessmentCount(Control, 1),
+    field(Control, "base/fieldTypes/assessment", Assessment),
+    field(Control, "base/fieldTypes/assessmentExplanation", Explanation),
+    ismsa_testLinkCount(Control, Links).
+
+ismsa_testProgressPass(HomeId) :-
+    ismsa_expectProgress(HomeId, Progress),
+    field(Home, "base/fieldTypes/identifier", HomeId),
+    field(Register, "base/fieldTypes/identifier", "ismsa_register_central-controls"),
+    ismsa_closestHome(Register, Home),
+    field(Register, "progress", Progress).
+
+ismsa_testOwnerPass(HomeId, ControlId) :-
+    ismsa_expectOwner(HomeId, ControlId, Owner),
+    ismsa_testControl(HomeId, ControlId, Control),
+    field(Control, "base/fieldTypes/owner", Owner).
+
+select("title").
+
+result(result).
+
+childResult(result, Control, "tests") :-
+    ismsa_testControl(_, _, Control).
+
+resultFields(Control,
+    "expectedAssessment", Assessment, "shortText",
+    "expectedLinks", Links, "integer") :-
+    ismsa_testControl(ScopeId, ControlId, Control),
+    ismsa_expectCentral(ScopeId, ControlId, Assessment, _, Links).
+
+resultField(Control, "actualAssessment", Assessment, "shortText") :-
+    ismsa_testControl(_, _, Control),
+    field(Control, "base/fieldTypes/assessment", Assessment).
+
+resultField(Control, "actualLinks", Links, "integer") :-
+    ismsa_testLinkCount(Control, Links).
+
+resultField(Control, "verdict", "PASS", "shortText") :-
+    ismsa_testPass(Control).
+
+resultField(Control, "verdict", "FAIL", "shortText") :-
+    ismsa_testControl(_, _, Control),
+    not ismsa_testPass(Control).
+
+childResult(result, ("missing", ScopeId, ControlId), "missing") :-
+    ismsa_expectCentral(ScopeId, ControlId, _, _, _),
+    not ismsa_testControl(ScopeId, ControlId, _).
+
+resultField(("missing", ScopeId, ControlId), "scope", ScopeId, "shortText") :-
+    childResult(result, ("missing", ScopeId, ControlId), "missing").
+
+resultField(("missing", ScopeId, ControlId), "control", ControlId, "shortText") :-
+    childResult(result, ("missing", ScopeId, ControlId), "missing").
+
+childResult(result, ("other", "progress", HomeId), "otherChecks") :-
+    ismsa_expectProgress(HomeId, _).
+
+resultField(("other", "progress", HomeId), "check", @concatenate("Progress of the central control register in ", HomeId), "shortText") :-
+    ismsa_expectProgress(HomeId, _).
+
+resultField(("other", "progress", HomeId), "verdict", "PASS", "shortText") :-
+    ismsa_testProgressPass(HomeId).
+
+resultField(("other", "progress", HomeId), "verdict", "FAIL", "shortText") :-
+    ismsa_expectProgress(HomeId, _),
+    not ismsa_testProgressPass(HomeId).
+
+childResult(result, ("other", "owner", HomeId, ControlId), "otherChecks") :-
+    ismsa_expectOwner(HomeId, ControlId, _).
+
+resultField(("other", "owner", HomeId, ControlId), "check", @concatenate("Owner of ", ControlId, " is inherited in ", HomeId), "shortText") :-
+    ismsa_expectOwner(HomeId, ControlId, _).
+
+resultField(("other", "owner", HomeId, ControlId), "verdict", "PASS", "shortText") :-
+    ismsa_testOwnerPass(HomeId, ControlId).
+
+resultField(("other", "owner", HomeId, ControlId), "verdict", "FAIL", "shortText") :-
+    ismsa_expectOwner(HomeId, ControlId, _),
+    not ismsa_testOwnerPass(HomeId, ControlId).
+
+childResult(result, ("other", "cra"), "otherChecks").
+
+resultField(("other", "cra"), "check", "The CRA guidance is off when no eucra template is installed", "shortText") :-
+    childResult(result, ("other", "cra"), "otherChecks").
+
+resultField(("other", "cra"), "verdict", "PASS", "shortText") :-
+    not ismsa_craGuidance.
+
+resultField(("other", "cra"), "verdict", "FAIL", "shortText") :-
+    ismsa_craGuidance.
+
+ismsa_testFailure(Control) :-
+    ismsa_testControl(_, _, Control),
+    not ismsa_testPass(Control).
+
+ismsa_testFailure(Check) :-
+    resultField(Check, "verdict", "FAIL", _),
+    childResult(result, Check, "otherChecks").
+
+resultField(result, "total", Total, "integer") :-
+    Total = #count { Control : ismsa_testControl(_, _, Control) }.
+
+resultField(result, "passed", Passed, "integer") :-
+    Passed = #count { Control : ismsa_testPass(Control) }.
+
+resultField(result, "failed", Failed, "integer") :-
+    Failed = #count { Check : ismsa_testFailure(Check) }.
+
+resultField(result, "missingCount", Missing, "integer") :-
+    Missing = #count { ScopeId, ControlId : ismsa_expectCentral(ScopeId, ControlId, _, _, _), not ismsa_testControl(ScopeId, ControlId, _) }.
+
+childResultCollection(result, "tests").
+childResultCollection(result, "missing").
+childResultCollection(result, "otherChecks").

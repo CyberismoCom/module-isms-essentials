@@ -1,0 +1,40 @@
+{
+  "$id": "reportMacroDefaultSchema",
+  "additionalProperties": false,
+  "description": "A report object provides supplemental information about a report",
+  "properties": {
+    "name": {
+      "description": "The name of the report",
+      "type": "string"
+    },
+    "cardKey": {
+      "description": "Used to override the default cardKey, which is the cardKey of the card, in which the report macro is used",
+      "type": "string"
+    },
+    "requirement": {
+      "description": "The requirement whose content is shown",
+      "type": "string",
+      "enum": [
+        "art-20-1",
+        "art-20-2",
+        "art-21-2-a",
+        "art-21-2-b",
+        "art-21-2-c",
+        "art-21-2-d",
+        "art-21-2-e",
+        "art-21-2-f",
+        "art-21-2-g",
+        "art-21-2-h",
+        "art-21-2-i",
+        "art-21-2-j",
+        "art-23"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "requirement"
+  ],
+  "title": "Report",
+  "type": "object"
+}

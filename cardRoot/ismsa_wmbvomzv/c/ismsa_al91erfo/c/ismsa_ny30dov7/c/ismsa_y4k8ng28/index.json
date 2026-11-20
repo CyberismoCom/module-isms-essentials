@@ -1,0 +1,14 @@
+{
+    "rank": "0|c",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T09:40:30.333Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Incident register",
+    "templateCardKey": "ismsa_7zlniw76",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/progress": "incident-progress",
+    "base/fieldTypes/identifier": "ismsa_register_incidents",
+    "lastUpdated": "2026-11-20T09:40:30.335Z"
+}

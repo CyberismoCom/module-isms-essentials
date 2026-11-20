@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/securityMonitoringPlan",
+    "displayName": "Security monitoring plan",
+    "description": "What the organisation logs and monitors to detect security events, who monitors it, and how alerts are handled",
+    "category": "ISMS home libraries"
+}

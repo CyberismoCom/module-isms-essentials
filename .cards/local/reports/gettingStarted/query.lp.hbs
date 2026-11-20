@@ -1,0 +1,144 @@
+% The steps of the checklist, in the order of the set-up tasks of the old home template
+% (ismsa/templates/moduleHome). Each step is done with an internal control of the home. The
+% checklist shows only the steps whose control is in the home, so the steps of libraries that
+% are not installed are left out.
+%
+% ismsa_gsStep(Group, Ordinal, ControlIdentifier, StepText)
+
+ismsa_gsStep("start", 1, "ismsa_control_assign-central-security-roles", "Assign the security roles and responsibilities").
+ismsa_gsStep("start", 2, "ismsa_control_isms-scope-and-context", "Analyse the business context, and define the scope of the ISMS").
+ismsa_gsStep("start", 3, "ismsa_control_information-security-policy", "Create the information security policy").
+
+ismsa_gsStep("central", 1, "ismsa_control_receive-security-issue-notifications", "Publish how to report security issues to the organisation").
+ismsa_gsStep("central", 2, "ismsa_control_notify-about-vulnerabilities-and-incidents", "Document the incident management process, and how to notify about vulnerabilities and incidents").
+ismsa_gsStep("central", 3, "ismsa_control_contact-with-authorities", "List the authorities and how to contact them").
+ismsa_gsStep("central", 4, "ismsa_control_protect-records", "Plan how long records are kept, and how they are protected").
+ismsa_gsStep("central", 5, "ismsa_control_follow-changes-in-regulation", "Review the changes in regulation").
+
+ismsa_gsStep("assets", 1, "ismsa_control_manage-assets", "Document the asset management process, and identify and evaluate the assets").
+
+ismsa_gsStep("risks", 1, "ismsa_control_manage-risks", "Document the risk management process, and identify, analyse, and treat the risks").
+
+ismsa_gsStep("operations", 1, "ismsa_control_continuity-and-recovery", "Plan business continuity and recovery, and test the recovery").
+ismsa_gsStep("operations", 2, "ismsa_control_exercise-incident-response", "Exercise incident response").
+ismsa_gsStep("operations", 3, "ismsa_control_operate-security-monitoring", "Plan and operate security monitoring").
+ismsa_gsStep("operations", 4, "ismsa_control_review-access-rights", "Review the access rights").
+
+ismsa_gsStep("improvement", 1, "ismsa_control_training-and-awareness", "Create the training and awareness plan").
+ismsa_gsStep("improvement", 2, "ismsa_control_plan-and-review-isms", "Set the yearly targets, plan the annual wheel, and hold the management review").
+
+ismsa_gsGroup(Group) :- ismsa_gsStep(Group, _, _, _).
+
+% The home is the card itself on a home card, or the closest home on any other card.
+
+ismsa_gsHome({{cardKey}}) :-
+    base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome").
+
+ismsa_gsHome(Home) :-
+    ismsa_closestHome({{cardKey}}, Home).
+
+ismsa_gsCandidate(Identifier, Control) :-
+    ismsa_gsStep(_, _, Identifier, _),
+    ismsa_gsHome(Home),
+    ismsa_closestHome(Control, Home),
+    base_projectCardType(Control, "ismsa/cardTypes/internalControl"),
+    field(Control, "base/fieldTypes/identifier", Identifier).
+
+% If a home has two controls with the same identifier, the first card key is used.
+
+ismsa_gsControl(Identifier, Control) :-
+    ismsa_gsCandidate(Identifier, _),
+    Control = #min { C : ismsa_gsCandidate(Identifier, C) }.
+
+ismsa_gsDone("ok").
+ismsa_gsDone("notApplicable").
+
+ismsa_gsStatus("ok", "OK").
+ismsa_gsStatus("notOk", "not OK").
+ismsa_gsStatus("open", "not scoped yet").
+ismsa_gsStatus("notApplicable", "out of scope").
+
+ismsa_gsStepDone(Group, Ordinal) :-
+    ismsa_gsStep(Group, Ordinal, Identifier, _),
+    ismsa_gsControl(Identifier, Control),
+    field(Control, "base/fieldTypes/assessment", Assessment),
+    ismsa_gsDone(Assessment).
+
+result(result).
+
+% A step is shown when its control is in the home.
+
+ismsa_gsShown(Group, Ordinal) :-
+    ismsa_gsStep(Group, Ordinal, Identifier, _),
+    ismsa_gsControl(Identifier, _).
+
+childResultCollection(result, Group) :-
+    ismsa_gsGroup(Group).
+
+% The key of a step is tagged with its group, so that the keys of different groups never collide.
+
+childResult(result, (Group, Ordinal), Group) :-
+    ismsa_gsShown(Group, Ordinal).
+
+resultField((Group, Ordinal), "ordinal", Ordinal, "integer") :-
+    ismsa_gsShown(Group, Ordinal).
+
+resultField((Group, Ordinal), "step", Text, "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
+    ismsa_gsStep(Group, Ordinal, _, Text).
+
+resultField((Group, Ordinal), "checkbox", "[x]", "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
+    ismsa_gsStepDone(Group, Ordinal).
+
+resultField((Group, Ordinal), "checkbox", "[ ]", "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
+    not ismsa_gsStepDone(Group, Ordinal).
+
+resultField((Group, Ordinal), "controlKey", Control, "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
+    ismsa_gsStep(Group, Ordinal, Identifier, _),
+    ismsa_gsControl(Identifier, Control).
+
+resultField((Group, Ordinal), "controlTitle", Title, "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
+    ismsa_gsStep(Group, Ordinal, Identifier, _),
+    ismsa_gsControl(Identifier, Control),
+    field(Control, "title", Title).
+
+resultField((Group, Ordinal), "status", Status, "shortText") :-
+    ismsa_gsShown(Group, Ordinal),
+    ismsa_gsStep(Group, Ordinal, Identifier, _),
+    ismsa_gsControl(Identifier, Control),
+    field(Control, "base/fieldTypes/assessment", Assessment),
+    ismsa_gsStatus(Assessment, Status).
+
+% A group heading is shown when the group has a step.
+
+ismsa_gsGroupFlag("start", "showStart").
+ismsa_gsGroupFlag("central", "showCentral").
+ismsa_gsGroupFlag("assets", "showAssets").
+ismsa_gsGroupFlag("risks", "showRisks").
+ismsa_gsGroupFlag("operations", "showOperations").
+ismsa_gsGroupFlag("improvement", "showImprovement").
+
+resultField(result, Flag, "yes", "shortText") :-
+    ismsa_gsGroupFlag(Group, Flag),
+    ismsa_gsShown(Group, _).
+
+resultField(result, "anyStep", "yes", "shortText") :-
+    ismsa_gsShown(_, _).
+
+% The checklist is for the homes made from ismsa/templates/moduleHome2, which have a central
+% control register.
+
+resultField(result, "inHome", "yes", "shortText") :-
+    ismsa_gsHome(Home),
+    ismsa_homeWithCentralControls(Home).
+
+order(2, "start", 1, "ordinal", "ASC").
+order(2, "central", 1, "ordinal", "ASC").
+order(2, "assets", 1, "ordinal", "ASC").
+order(2, "risks", 1, "ordinal", "ASC").
+order(2, "operations", 1, "ordinal", "ASC").
+order(2, "improvement", 1, "ordinal", "ASC").

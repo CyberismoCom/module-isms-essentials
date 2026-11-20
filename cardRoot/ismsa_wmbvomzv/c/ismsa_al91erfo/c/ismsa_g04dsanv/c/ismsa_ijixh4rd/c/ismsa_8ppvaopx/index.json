@@ -1,0 +1,16 @@
+{
+    "rank": "0|g",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-19T19:28:08.252Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Follow changes in regulation",
+    "templateCardKey": "ismsa_pyyr1tdm",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "november",
+    "base/fieldTypes/identifier": "ismsa_control_follow-changes-in-regulation",
+    "lastUpdated": "2026-11-19T19:28:08.441Z",
+    "lastTransitioned": "2026-11-19T19:28:08.441Z"
+}

@@ -1,0 +1,16 @@
+{
+    "rank": "0|h",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-19T19:28:24.361Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Operate security monitoring",
+    "templateCardKey": "ismsa_xvd1kzy7",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "october",
+    "base/fieldTypes/identifier": "ismsa_control_operate-security-monitoring",
+    "lastUpdated": "2026-11-19T19:28:24.549Z",
+    "lastTransitioned": "2026-11-19T19:28:24.549Z"
+}

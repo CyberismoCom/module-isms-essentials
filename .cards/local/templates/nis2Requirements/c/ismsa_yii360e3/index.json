@@ -1,0 +1,12 @@
+{
+    "title": "NIS2 requirements",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-19T19:26:27.547Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/progress": "compliance-score",
+    "base/fieldTypes/identifier": "ismsa_register_nis2"
+}

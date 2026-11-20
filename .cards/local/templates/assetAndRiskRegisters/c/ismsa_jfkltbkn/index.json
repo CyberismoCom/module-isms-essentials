@@ -1,0 +1,13 @@
+{
+    "title": "Risk register",
+    "cardType": "ismsa/cardTypes/riskRegister",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|c",
+    "lastUpdated": "2026-11-19T19:24:25.169Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/acceptableRiskLevel": "low",
+    "ismsa/fieldTypes/progress": "risk-progress",
+    "base/fieldTypes/identifier": "ismsa_register_risks"
+}

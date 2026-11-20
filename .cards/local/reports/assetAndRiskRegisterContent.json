@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/assetAndRiskRegisterContent",
+    "displayName": "Content of the asset and risk registers",
+    "description": "The content of the asset register, the risk register, and their subregisters. The parameter \"register\" selects the register",
+    "category": "Central controls"
+}

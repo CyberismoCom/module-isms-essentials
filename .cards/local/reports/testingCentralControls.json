@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/testingCentralControls",
+    "displayName": "Testing central controls",
+    "description": "Executable assertions for the assessment, evidence links, progress, and owners of the central controls of the ISMS home",
+    "category": "Testing"
+}

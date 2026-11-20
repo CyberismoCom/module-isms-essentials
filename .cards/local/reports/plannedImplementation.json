@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/plannedImplementation",
+    "displayName": "Planned implementation",
+    "description": "The internal controls that are planned to implement a compliance requirement, and whether they are in the home",
+    "category": "ISMS home libraries"
+}

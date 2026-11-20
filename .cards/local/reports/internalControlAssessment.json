@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/internalControlAssessment",
+    "displayName": "Internal control assessment",
+    "description": "The automated and manual checks of an internal control, with the assessment of its evidence",
+    "category": "Central controls"
+}

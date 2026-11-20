@@ -1,0 +1,3 @@
+Gives the public statements about incidents, communicates with customers, and reports incidents to authorities when the incident management process requires it.
+
+This card assigns a person to a role. Add the assignee in the *Owner* field.

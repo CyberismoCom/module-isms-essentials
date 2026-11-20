@@ -1,0 +1,39 @@
+{{#each results}}
+The organisation can continue its critical operations during a disruption, and it can restore its systems and data from backups.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs IT or services that its business or its customers depend on. NIS2 requires business continuity, backup management, disaster recovery, and crisis management.
+
+== How to implement
+
+Make a business continuity and recovery plan. Set recovery targets for the critical operations, and define the backups and the crisis management. Test the recovery at least once a year.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_continuity-and-recovery-plan",
+  "template": "ismsa/templates/continuityAndRecoveryPlan",
+  "buttonLabel": "Create the business continuity and recovery plan"
+{{/report}}
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_recovery-test",
+  "template": "ismsa/templates/recoveryTest",
+  "buttonLabel": "Create a recovery test"
+{{/report}}
+
+Check that the plan is approved, and that the recovery test of the year has passed.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 Annex A 5.29, 5.30, and 8.13
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(c)
+
+{{/each}}

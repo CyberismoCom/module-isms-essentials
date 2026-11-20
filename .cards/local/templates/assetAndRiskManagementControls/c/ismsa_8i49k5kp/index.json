@@ -1,0 +1,13 @@
+{
+    "title": "Manage information security risks",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|c",
+    "lastUpdated": "2026-11-19T19:24:26.048Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "may",
+    "base/fieldTypes/identifier": "ismsa_control_manage-risks"
+}

@@ -1,0 +1,11 @@
+{
+    "title": "Supporting assets",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|e",
+    "lastUpdated": "2026-11-19T19:24:19.823Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "base/fieldTypes/identifier": "ismsa_register_supporting-assets"
+}

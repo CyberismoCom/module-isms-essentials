@@ -1,0 +1,16 @@
+{
+    "rank": "0|j",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-20T07:42:01.779Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Define the scope and context of the ISMS",
+    "templateCardKey": "ismsa_513uriqw",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "february",
+    "base/fieldTypes/identifier": "ismsa_control_isms-scope-and-context",
+    "lastUpdated": "2026-11-20T07:42:01.933Z",
+    "lastTransitioned": "2026-11-20T07:42:01.933Z"
+}

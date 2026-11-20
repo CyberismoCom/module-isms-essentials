@@ -1,0 +1,11 @@
+{
+    "title": "B2: Notify, only part of the planned evidence",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "In scope",
+    "rank": "0|c",
+    "links": [],
+    "lastUpdated": "2026-11-17T12:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_control_notify-about-vulnerabilities-and-incidents",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months"
+}

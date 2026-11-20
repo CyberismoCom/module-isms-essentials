@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/gettingStarted",
+    "displayName": "Getting started",
+    "description": "A checklist of the steps to set up an ISMS home, in the order of the set-up tasks of the old home template. Each step ticks itself when its internal control is assessed as OK or not applicable",
+    "category": "Central controls"
+}

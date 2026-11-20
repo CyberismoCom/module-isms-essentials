@@ -1,0 +1,13 @@
+{
+    "title": "Plan and review the ISMS",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|e",
+    "lastUpdated": "2026-11-19T19:23:10.185Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "december",
+    "base/fieldTypes/identifier": "ismsa_control_plan-and-review-isms"
+}

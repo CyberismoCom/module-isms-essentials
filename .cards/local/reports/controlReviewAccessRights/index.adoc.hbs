@@ -1,0 +1,32 @@
+{{#each results}}
+Only the people who need access to the critical systems have it, and privileged access is protected with multi-factor authentication.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs IT or cloud services itself, or administers the accounts of the services that it uses.
+
+== How to implement
+
+Review the user accounts and the access rights of the critical systems at least once a year, and the privileged rights more often. Remove the access of people who have left. Make sure that multi-factor authentication is on for remote and privileged access.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_access-rights",
+  "template": "ismsa/templates/accessRightsReview",
+  "buttonLabel": "Create an access rights review"
+{{/report}}
+
+Check that the access rights review of the year has passed.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 Annex A 5.15, 5.18, and 8.2
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(i) and (j)
+
+{{/each}}

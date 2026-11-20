@@ -1,0 +1,44 @@
+{{#each results}}
+The organisation keeps the records that laws, contracts, and its own processes require. It protects the records against loss, unauthorised access, and unauthorised change, and it deletes them when the retention period ends.
+
+== How to decide if this control is required
+
+This control is always required. Every organisation must keep some records, for example contracts, incident records, and the notifications to authorities.
+
+== How to implement
+
+. List the types of records that the organisation must keep. Include the records of this ISMS home, for example the incident records, the notifications to authorities, the reviews, and the approved documents.
+. For each type of record, record why it is kept, the retention period, the owner, the storage location, and the protection.
+. Protect the records against loss with backups, against unauthorised access with access control, and against unauthorised change, for example with version control.
+. Delete or archive the records when the retention period ends, unless a legal hold applies.
+. Check at least once a year that the records exist and that they can be read.
+
+NOTE: A Cyberismo project is a git repository. Its version history shows each change to the cards. The repository still needs backups and access control.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_records-retention-plan",
+  "template": "ismsa/templates/recordsRetentionPlan",
+  "buttonLabel": "Create a records retention plan"
+{{/report}}
+
+Check that the plan covers the regulations in the compliance register, that each type of record has an owner, and that a sample of the records exists and can be read.
+
+{{#if this.craGuidance}}
+== EU Cyber Resilience Act
+
+The manufacturer of a product with digital elements keeps the technical documentation and the EU declaration of conformity at the disposal of the market surveillance authorities for at least ten years after the product has been placed on the market, or for the support period, whichever is longer (Regulation (EU) 2024/2847, Article 13(13)). Add these records of each product to the plan. Also keep the records of the notifications under Article 14.
+{{/if}}
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 Annex A 5.33
+* GDPR (Regulation (EU) 2016/679) Article 5(1)(e)
+
+{{/each}}

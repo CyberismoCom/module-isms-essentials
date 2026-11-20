@@ -1,0 +1,32 @@
+{{#each results}}
+The organisation knows its business context and the requirements of its interested parties, and it has defined what its information security management system (ISMS) covers.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs an ISMS, for example to meet NIS2 or to get an ISO/IEC 27001 certificate. A team that only needs the central controls for its products does not need it.
+
+== How to implement
+
+Describe the context of the organisation, the internal and external issues, and the interested parties and their requirements. Then define the scope of the ISMS: the organisational units, the locations, the services, and the information systems. Give a reason for each exclusion.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_isms-scope-and-context",
+  "template": "ismsa/templates/ismsScopeAndContext",
+  "buttonLabel": "Create the scope and context of the ISMS"
+{{/report}}
+
+Check that the scope document is approved, and that it is reviewed when the business or the requirements change.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 clauses 4.1, 4.2, and 4.3
+* NIS2 (Directive (EU) 2022/2555) Article 21(1)
+
+{{/each}}

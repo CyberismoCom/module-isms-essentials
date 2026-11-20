@@ -1,0 +1,27 @@
+== Purpose
+
+This policy states the commitment of the management to information security, and the principles that everyone in the organisation follows.
+
+== Objectives
+
+#TODO: State the information security objectives of the organisation, or refer to the security targets of the year.#
+
+== Principles
+
+* Information is classified, and it is protected according to its classification.
+* Access to information and systems is given only when the work needs it.
+* Risks are assessed and treated according to the risk management process.
+* Incidents and weaknesses are reported at once, according to the incident management process.
+* #TODO: Add the other principles of the organisation.#
+
+== Responsibilities
+
+The management approves this policy and gives the resources for information security. The central security roles are listed in the central security role assignments. Each employee and contractor follows this policy.
+
+== Compliance
+
+#TODO: Describe how compliance with this policy is checked, and what happens when someone does not follow it.#
+
+== Review
+
+The policy is reviewed at least once a year, and when the business, the threats, or the regulation change significantly.

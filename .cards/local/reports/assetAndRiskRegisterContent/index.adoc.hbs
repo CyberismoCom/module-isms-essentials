@@ -1,0 +1,198 @@
+{{#each results}}
+{{#if (eq ../register "assets")}}
+An asset is anything that has value to the organisation and needs protection. This register holds the assets of the organisation in four subregisters:
+
+* Primary assets: the business processes, functions, and services, and the information that they use.
+* Supporting assets: the hardware, devices, software, roles, locations, and the organisational infrastructure, such as policies, procedures, and supporting ICT services.
+* Suppliers: the external providers of products, processes, or services.
+* Development projects: the projects that develop custom software or hardware.
+
+The subregisters can have more subregisters, if needed.
+
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
+
+== Control and process
+
+The control "Manage the assets of the organisation" is in the central control register. The asset management process is in the process register. Create the process with the button in the control.
+
+== Assets by owner
+
+{{#report}}
+  "name": "ismsa/reports/assetsByOwner"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "dataAssetRisks")}}
+Record the risks of the data assets here.
+
+{{#createCards}}
+  "template": "ismsa/templates/risk",
+  "buttonLabel": "Add a risk"
+{{/createCards}}
+
+{{#report}}
+    "name": "ismsa/reports/risksByAssetType",
+    "assetType": "ismsa/cardTypes/assetData"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "dataAssets")}}
+Data assets are the sets of information that the organisation must protect, for example customer data, personal data, and source code.
+
+{{#createCards}}
+  "template": "ismsa/templates/assetData",
+  "buttonLabel": "Add a data asset"
+{{/createCards}}
+{{/if}}
+{{#if (eq ../register "developmentProjects")}}
+This register holds the projects that develop custom software or hardware.
+
+{{#report}}
+  "name": "ismsa/reports/createDevelopmentProject"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "deviceRisks")}}
+Record the risks of the devices here.
+
+{{#createCards}}
+  "template": "ismsa/templates/risk",
+  "buttonLabel": "Add a risk"
+{{/createCards}}
+
+{{#report}}
+    "name": "ismsa/reports/risksByAssetType",
+    "assetType": "ismsa/cardTypes/assetDevice"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "devices")}}
+Devices are the computers, phones, network devices, and other equipment of the organisation.
+
+{{#createCards}}
+  "template": "ismsa/templates/assetDevice",
+  "buttonLabel": "Add a device"
+{{/createCards}}
+{{/if}}
+{{#if (eq ../register "informationSystemRisks")}}
+Record the risks of the information systems here.
+
+{{#createCards}}
+  "template": "ismsa/templates/risk",
+  "buttonLabel": "Add a risk"
+{{/createCards}}
+
+{{#report}}
+    "name": "ismsa/reports/risksByAssetType",
+    "assetType": "ismsa/cardTypes/assetInformationSystem"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "informationSystems")}}
+Information systems support the primary assets. In addition to the fields that all assets have, such as the owner and the criticality, define these properties for each information system:
+
+* the access control, for example the accounts, the access from public networks, and multi-factor authentication
+* the responsibility for security updates
+* the backups
+* the level of logging and monitoring.
+
+{{#createCards}}
+  "template": "ismsa/templates/assetInformationSystem",
+  "buttonLabel": "Add an information system"
+{{/createCards}}
+
+NOTE: If an information system is already in another asset register, add a link to it here, and make sure that the other register has the necessary information.
+{{/if}}
+{{#if (eq ../register "primaryAssetRisks")}}
+Record the risks of the primary assets here.
+
+{{#createCards}}
+  "template": "ismsa/templates/risk",
+  "buttonLabel": "Add a risk"
+{{/createCards}}
+{{/if}}
+{{#if (eq ../register "primaryAssets")}}
+Primary assets are the core business processes, functions, and services, and the information that the business processes and activities of the organisation use.
+
+The main purpose of asset management is to give the primary assets enough protection.
+
+{{#createCards}}
+  "template": "ismsa/templates/asset",
+  "buttonLabel": "Add a primary asset"
+{{/createCards}}
+{{/if}}
+{{#if (eq ../register "risks")}}
+This register holds the information security risks of the organisation. Risk management finds the most important risks, so that the organisation can treat them first. Set the acceptable risk level of the organisation in the *Acceptable risk level* field.
+
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
+
+== Control and process
+
+The control "Manage information security risks" is in the central control register. The risk management process is in the process register. Create the process with the button in the control.
+
+== Overview
+
+{{#report}}
+  "name": "ismsa/reports/riskOverview"
+{{/report}}
+
+{{#report}}
+  "name": "ismsa/reports/risksByOwner"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "supplierRisks")}}
+Record the risks of the suppliers here.
+
+{{#createCards}}
+  "template": "ismsa/templates/risk",
+  "buttonLabel": "Add a risk"
+{{/createCards}}
+
+{{#report}}
+    "name": "ismsa/reports/risksByAssetType",
+    "assetType": "ismsa/cardTypes/assetSupplier"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "suppliers")}}
+Suppliers support the organisation and its primary assets. In addition to the fields that all assets have, such as the owner and the criticality, define these properties for each supplier:
+
+* the services, systems, or products that the supplier provides
+* the contact details.
+
+{{#field}}
+  "field": "ismsa/fieldTypes/supplierAgreements"
+{{/field}}
+
+Write in the field above where the agreements with the suppliers are kept.
+
+{{#createCards}}
+  "template": "ismsa/templates/assetSupplier",
+  "buttonLabel": "Add a supplier"
+{{/createCards}}
+
+NOTE: If a supplier is already in another asset register, add a link to it here, and make sure that the other register has the necessary information.
+{{/if}}
+{{#if (eq ../register "supportingAssetRisks")}}
+Record the risks of the supporting assets in the subregisters.
+
+{{#report}}
+  "name": "base/reports/childrenList"
+{{/report}}
+
+Add a register, if needed.
+
+{{#createCards}}
+  "template": "ismsa/templates/register",
+  "buttonLabel": "Add a register"
+{{/createCards}}
+{{/if}}
+{{#if (eq ../register "supportingAssets")}}
+Supporting assets are the hardware, devices, and equipment, the software and applications, the roles, the locations and utilities, and the organisational infrastructure, for example policies, procedures, and supporting ICT services. They are grouped into subregisters.
+
+The protection of a supporting asset is proportionate to its importance for the primary assets.
+
+{{#createCards}}
+  "template": "ismsa/templates/register",
+  "buttonLabel": "Add a register"
+{{/createCards}}
+{{/if}}
+{{/each}}

@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/recordsRetentionPlan",
+    "displayName": "Records retention plan",
+    "description": "The records that the organisation keeps, why, for how long, and how they are protected",
+    "category": "Central controls"
+}

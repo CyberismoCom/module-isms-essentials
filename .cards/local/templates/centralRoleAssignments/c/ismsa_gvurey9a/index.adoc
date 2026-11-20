@@ -1,0 +1,20 @@
+== Role assignments
+
+Assign people to the central security roles by editing the child cards. Add new role assignments, as needed. The roles of a single development project are assigned in that project.
+
+{{#createCards}}
+  "template": "base/templates/roleAssignment",
+  "buttonLabel": "Add a role assignment"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/roleAssignments"
+{{/report}}
+
+== Review of the role assignments
+
+* Check that each role has an assignee.
+* Check that the assignments are up to date.
+* If needed, confirm with the assignee that they know about the role.
+
+Set the date of the review in the *Last reviewed* field. Mark this card as *Passed* if the role assignments are complete and up to date. Otherwise, mark it as *Failed*.

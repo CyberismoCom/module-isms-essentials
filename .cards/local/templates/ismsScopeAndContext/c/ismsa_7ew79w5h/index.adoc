@@ -1,0 +1,34 @@
+== Purpose
+
+This document defines what the information security management system (ISMS) covers, and why. It is the base for the risk assessment, the policy, and the targets.
+
+== Context of the organisation
+
+#TODO: Describe the business of the organisation, its main products and services, and the locations and the IT that support them.#
+
+Internal and external issues that affect information security:
+
+[width="100%",cols="40%,60%",options="header"]
+|===
+|Issue |Effect on information security
+
+|#TODO: For example, growth through acquisitions#
+|#TODO#
+|===
+
+== Interested parties
+
+[width="100%",cols="30%,70%",options="header"]
+|===
+|Interested party |Requirements that are relevant to information security
+
+|Customers
+|#TODO: For example, security requirements in contracts#
+
+|Authorities
+|#TODO: For example, NIS2 and the EU Cyber Resilience Act. Keep the compliance register up to date with these requirements#
+|===
+
+== Scope
+
+#TODO: List the organisational units, the locations, the services, and the information systems that are in the scope of the ISMS. List the exclusions and give a reason for each.#

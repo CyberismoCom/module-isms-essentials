@@ -1,0 +1,32 @@
+{{#each results}}
+The organisation exercises its incident management process, so that the people know what to do and the notifications can be made within the deadlines.
+
+== How to decide if this control is required
+
+This control is required when the organisation must report incidents or vulnerabilities to authorities, or when it runs services that are critical to its customers.
+
+== How to implement
+
+Hold an incident response exercise at least once a year. Use a realistic scenario, for example a ransomware attack or an actively exploited vulnerability in a product. Record the lessons learned, and update the incident management process. The exercise record is created in the incident register.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_incident-response-exercise",
+  "template": "ismsa/templates/incidentResponseExercise",
+  "buttonLabel": "Create an incident response exercise"
+{{/report}}
+
+Check that the exercise of the year has passed, and that its improvements are followed up.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 Annex A 5.24 and 5.27
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(b) and (c)
+
+{{/each}}

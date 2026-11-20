@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/fieldTypes/homeScopeDescription",
+    "displayName": "Scope description",
+    "dataType": "longText",
+    "description": "What the home covers and what it leaves out, for example the products, services, and locations. A team under an existing ISMS also names that ISMS here"
+}

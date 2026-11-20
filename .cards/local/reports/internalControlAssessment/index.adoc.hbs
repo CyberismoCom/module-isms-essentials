@@ -1,0 +1,37 @@
+{{#each results}}
+=== Automated checks
+
+{{#if (eq this.workflowState "Open")}}
+
+* [ ] Scoping: The workflow state of this control is *Open*. The control has not been scoped yet.
+* [ ] Assessment: This is checked after the control has been scoped.
+
+Decide whether the control is in scope. Then select *Mark in scope* or *Mark out of scope*.
+
+{{else}}
+
+{{#if (eq this.workflowState "Out of scope")}}
+
+* [x] Scoping: This control is out of scope.
+* [x] Assessment: There is no need to check evidence.
+
+{{else}}
+
+* [x] Scoping: This control is in scope.
+{{#if (eq this.[base/fieldTypes/assessment].value "ok")}}
+* [x] Assessment: *{{this.[base/fieldTypes/assessment].displayValue}}*: {{this.[base/fieldTypes/assessmentExplanation]}}
+{{else}}
+* [ ] Assessment: *{{this.[base/fieldTypes/assessment].displayValue}}*: {{this.[base/fieldTypes/assessmentExplanation]}}
+{{/if}}
+
+{{#report}}
+  "name": "ismsa/reports/evidenceAssessments"
+{{/report}}
+
+=== Manual checks
+
+* Check if recent changes in the organisation, its products, or the regulation make it necessary to update the evidence.
+
+{{/if}}
+{{/if}}
+{{/each}}

@@ -1,0 +1,36 @@
+{{#each results}}
+*{{this.total}}* test controls, *{{this.passed}}* passed. Failed checks: *{{this.failed}}*. Expected test controls not found: *{{this.missingCount}}*.
+
+All tests pass when both numbers are 0.
+
+[cols="5,2,2,1,1,1"]
+|===
+| Test control | Expected assessment | Actual assessment | Expected links | Actual links | Verdict
+
+{{#each this.tests}}
+|xref:{{this.key}}.adoc[{{this.title}}]
+|{{this.expectedAssessment}}
+|{{this.actualAssessment}}
+|{{this.expectedLinks}}
+|{{this.actualLinks}}
+|*{{this.verdict}}*
+{{/each}}
+|===
+
+[cols="10,1"]
+|===
+| Other check | Verdict
+
+{{#each this.otherChecks}}
+|{{this.check}}
+|*{{this.verdict}}*
+{{/each}}
+|===
+
+{{#if this.missing}}
+.Expected test controls that were not found
+{{#each this.missing}}
+* {{this.control}} in {{this.scope}}
+{{/each}}
+{{/if}}
+{{/each}}

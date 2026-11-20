@@ -1,0 +1,14 @@
+{
+    "rank": "0|g",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T09:40:30.332Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/moduleHome",
+    "title": "Test home L6: the core without libraries",
+    "templateCardKey": "ismsa_xtkwa8qe",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": "ismsa_home",
+    "lastUpdated": "2026-11-20T09:40:30.334Z",
+    "base/fieldTypes/owner": "home-l6@example.com"
+}

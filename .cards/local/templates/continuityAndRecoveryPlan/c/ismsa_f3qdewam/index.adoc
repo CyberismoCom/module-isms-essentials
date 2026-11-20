@@ -1,0 +1,27 @@
+== Purpose
+
+This plan defines how the organisation continues its critical operations during a disruption, and how it recovers its services, systems, and data.
+
+== Critical operations and recovery targets
+
+[width="100%",cols="30%,20%,20%,30%",options="header"]
+|===
+|Operation, service, or system |Maximum outage |Maximum data loss |Recovery responsible
+
+|#TODO#
+|#TODO: For example, 8 hours#
+|#TODO: For example, 24 hours#
+|#TODO#
+|===
+
+== Backups
+
+#TODO: Describe what is backed up, how often, where the copies are, and how they are protected. Keep at least one copy that an attacker cannot change or delete.#
+
+== Crisis management
+
+#TODO: Describe who leads during a crisis, how the crisis team meets, and how it communicates when the normal systems are not available. Refer to the authority contacts and the incident management process.#
+
+== Recovery procedures
+
+#TODO: List the recovery procedures, or link to them.#

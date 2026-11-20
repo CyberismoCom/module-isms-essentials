@@ -1,0 +1,3 @@
+Owns the ISMS home and the central controls, and reports about them to the management.
+
+This card assigns a person to a role. Add the assignee in the *Owner* field.

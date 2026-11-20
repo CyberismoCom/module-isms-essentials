@@ -1,0 +1,13 @@
+{
+    "title": "Protect records",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|f",
+    "lastUpdated": "2026-11-17T20:32:23.920Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "september",
+    "base/fieldTypes/identifier": "ismsa_control_protect-records"
+}

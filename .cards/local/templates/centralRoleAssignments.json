@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/centralRoleAssignments",
+    "displayName": "Central security role assignments",
+    "description": "A review of the assignments of the central security roles. Includes the role assignments as child cards",
+    "category": "Central controls"
+}

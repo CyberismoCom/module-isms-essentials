@@ -1,0 +1,30 @@
+== Scenario
+
+#TODO: Describe the scenario. For example, ransomware in a central system, or an actively exploited vulnerability in a product that must be reported under the EU Cyber Resilience Act.#
+
+== Participants
+
+#TODO: List the participants and their roles in the incident management process.#
+
+== Results
+
+* Check that the incident was detected, classified, and escalated according to the incident management process.
+* Check that the notifications to authorities and users could be made within the deadlines.
+* Check that the participants found the authority contacts and the other information that they needed.
+
+#TODO: Record the observations and the lessons learned.#
+
+== Actions
+
+Create a task for each improvement.
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Set the date of the exercise in the *Last reviewed* field. Mark the review as *Passed* when the exercise has been done and the improvements are recorded. Otherwise, mark it as *Failed*.

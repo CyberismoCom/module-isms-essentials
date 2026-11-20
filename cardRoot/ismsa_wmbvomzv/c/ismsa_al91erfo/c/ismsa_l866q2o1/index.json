@@ -1,0 +1,14 @@
+{
+    "rank": "0|e",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T07:41:48.703Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/moduleHome",
+    "title": "Test home L4: the new layout, with the checks of the asset and risk controls",
+    "templateCardKey": "ismsa_xtkwa8qe",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": "ismsa_home",
+    "lastUpdated": "2026-11-20T07:41:48.704Z",
+    "base/fieldTypes/owner": "home-l4@example.com"
+}
