@@ -45,6 +45,8 @@ ismsa_expectLibControl("ismsa_test_lib_home-2", "ismsa_control_notify-about-vuln
 ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_manage-assets", "notOk", "The control has failed policy checks", 2).
 % Missing evidence comes before the checks
 ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_manage-risks", "notOk", "The control is in scope but required evidence has not been linked", 0).
+% The business context analysis in the process register is the evidence of the scope control
+ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_isms-scope-and-context", "notOk", "The control is in scope but the linked evidence is not ready", 1).
 ismsa_expectLibControl("ismsa_test_lib_home-5", "ismsa_control_manage-risks", "notOk", "The control is in scope but required evidence has not been linked", 0).
 
 % ismsa_expectInScope(HomeId, ControlId): a library control is in scope when it is created
@@ -84,6 +86,7 @@ ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_notify-about-vulnerab
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_follow-changes-in-regulation", "ismsa_review_regulation-changes", "ismsa_register_compliance").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_assign-central-security-roles", "ismsa_review_central-role-assignments", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_plan-and-review-isms", "ismsa_review_management-review", "ismsa_register_security-reviews").
+ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_isms-scope-and-context", "ismsa_document_business-context-analysis", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_information-security-policy", "ismsa_document_information-security-policy", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_manage-assets", "ismsa_review_asset-register", "ismsa_register_assets").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_manage-assets", "ismsa_document_asset-management-process", "ismsa_register_processes").

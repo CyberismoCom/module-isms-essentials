@@ -158,6 +158,8 @@ Security objectives of the #add scope# are:
 ====
 
 This section should describe the most important requirements from customers, internal stakeholders, authorities and standards.
+
+For an ISMS, list the interested parties, such as customers, employees, owners, suppliers, and authorities, and their requirements that are relevant to information security. Say which of these requirements the ISMS addresses. Keep the legal and regulatory requirements in the compliance register. See ISO/IEC 27001:2022 clause 4.2.
 ====
 
 The most important requirements for #add scope# are 
@@ -259,6 +261,7 @@ This section should describe
 
 * What kinds of effect climate change could have for company, system or product
 * How company, system or product could affect the climate change (e.g. use of AI)
+* Whether interested parties have requirements related to climate change, for example customers who ask for sustainability information
 
 ====
 
@@ -270,6 +273,22 @@ be interlinked with cybersecurity.
 #Describe how climate change could affect company, system or product#
 
 #Describe what kinds of effect company, product or system could have on climate change#
+
+#Describe whether interested parties have requirements related to climate change#
+
+=== Geopolitical situation
+
+.Review instructions
+[%collapsible]
+====
+This section should describe how the geopolitical situation could affect the company, system, or product, for example:
+
+* dependence on service providers from outside the EU, and the effect of sanctions or policy changes on them
+* state-sponsored threat actors and the threat level in the countries where the organisation operates
+* regulation that changes the demand for the products and services
+====
+
+#Describe the geopolitical factors that could affect the company, system, or product, and which of them need to be considered in the risk assessment#
 
 == Assets
 
@@ -406,6 +425,16 @@ This section should document
 #Describe conclusions from the business context analysis#
 
 == Scope of Information Security Management System
+
+.Review instructions
+[%collapsible]
+====
+This section should define the scope of the information security management system (ISMS). See ISO/IEC 27001:2022 clause 4.3.
+
+* the organisational units, locations, services, and information systems in the scope
+* the exclusions, with a reason for each
+* the interfaces and dependencies between the activities in the scope and the activities of other organisations
+====
 
 #Describe the selected scope for the information security management system#
 

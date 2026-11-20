@@ -1,6 +1,6 @@
 {
     "name": "ismsa/templates/businessContextAnalysis",
     "displayName": "Business context analysis",
-    "description": "A controlled document describing the business context for company, product or service",
+    "description": "A controlled document that describes the business context of a company, product, or service. For an ISMS, it also defines the interested parties and the scope of the ISMS, and it is the planned evidence of the control \"Define the scope and context of the ISMS\"",
     "category": "Cybersecurity management"
 }

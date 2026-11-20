@@ -179,7 +179,7 @@ ismsa_controlInScopeByDefault(Control) :-
 % the home.
 %
 
-ismsa_centralEvidence("ismsa_control_isms-scope-and-context", "ismsa_document_isms-scope-and-context", "Scope and context of the ISMS").
+ismsa_centralEvidence("ismsa_control_isms-scope-and-context", "ismsa_document_business-context-analysis", "Business context analysis").
 ismsa_centralEvidence("ismsa_control_information-security-policy", "ismsa_document_information-security-policy", "Information security policy").
 ismsa_centralEvidence("ismsa_control_training-and-awareness", "ismsa_document_training-and-awareness-plan", "Training and awareness plan").
 ismsa_centralEvidence("ismsa_control_plan-and-review-isms", "ismsa_review_management-review", "Management review").
