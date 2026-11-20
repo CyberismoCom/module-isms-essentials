@@ -18,6 +18,14 @@
         {
             "name": "base/fieldTypes/identifier",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeScope",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeScopeDescription",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [

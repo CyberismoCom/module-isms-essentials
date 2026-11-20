@@ -50,6 +50,8 @@ Each control has planned evidence. The button in the control creates the evidenc
 
 The asset and risk management controls also check their registers. They are not OK while the register is empty, while an asset is not evaluated, or while a risk is not analysed or has no treatment plan. These checks replace the set-up tasks of the old home template.
 
+The whole content of the home card is the report `ismsa/reports/homeContent`, so a new version of the module changes it also in existing homes. The user writes the scope of the home in two fields, "Scope" and "Scope description" (`ismsa/fieldTypes/homeScope` and `ismsa/fieldTypes/homeScopeDescription`). They are not shown in the card metadata. The report shows them, and the user edits them there with the field macro.
+
 The home card shows a "Getting started" checklist (`ismsa/reports/gettingStarted`). It lists the set-up steps of the libraries that have been added, in the order of the old set-up tasks, and ticks each step when its control is OK or out of scope. Before any library is added, it asks the user to choose the libraries first.
 
 This module has five libraries:
