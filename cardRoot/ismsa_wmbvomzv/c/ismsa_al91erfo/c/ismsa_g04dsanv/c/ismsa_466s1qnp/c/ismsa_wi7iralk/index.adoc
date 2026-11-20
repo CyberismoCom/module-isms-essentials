@@ -1,5 +1,4 @@
-This register holds the projects that develop custom software or hardware.
-
 {{#report}}
-  "name": "ismsa/reports/createDevelopmentProject"
+  "name": "ismsa/reports/assetAndRiskRegisterContent",
+  "register": "developmentProjects"
 {{/report}}

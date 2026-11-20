@@ -1,11 +1,4 @@
-== Requirement
-
-The entity takes security into account when it acquires, develops, and maintains network and information systems, including vulnerability handling and disclosure.
-
-This is a summary. See the directive and the national law for the exact text.
-
-== Implementation
-
 {{#report}}
-  "name": "ismsa/reports/plannedImplementation"
+  "name": "ismsa/reports/nis2RequirementContent",
+  "requirement": "art-21-2-e"
 {{/report}}

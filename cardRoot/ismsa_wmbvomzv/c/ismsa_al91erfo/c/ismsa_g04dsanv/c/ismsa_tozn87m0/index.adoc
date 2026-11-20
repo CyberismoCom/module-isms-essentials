@@ -1,10 +1,4 @@
-This register holds the management reviews and the other security reviews. Hold security reviews at least once a quarter, and a management review at least once a year. Create a register for the security reviews of each year.
-
-{{#createCards}}
-  "template": "ismsa/templates/yearlyReviews",
-  "buttonLabel": "Create a register for the reviews of a year"
-{{/createCards}}
-
 {{#report}}
-  "name": "base/reports/childrenList"
+  "name": "ismsa/reports/homeRegisterContent",
+  "register": "securityReviews"
 {{/report}}

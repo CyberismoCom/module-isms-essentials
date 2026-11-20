@@ -1,9 +1,4 @@
-This register holds the requirements of NIS2 (Directive (EU) 2022/2555) for essential and important entities: the governance of Article 20, the cybersecurity risk-management measures of Article 21, and the reporting obligations of Article 23. Check the national law that implements NIS2, because it can add requirements.
-
-Each requirement is assessed from the internal controls that implement it. The planned controls are linked to the requirements automatically, when they are in this home. Most planned controls come from the libraries of the home: the core, information security management, asset and risk management, and security operations. Install these libraries in the home, or link your own internal controls to the requirements with the link type "implements".
-
-If NIS2 does not apply to the organisation, mark the requirements out of scope with a justification, or do not install this library.
-
 {{#report}}
-  "name": "ismsa/reports/subregisters"
+  "name": "ismsa/reports/homeRegisterContent",
+  "register": "nis2Requirements"
 {{/report}}

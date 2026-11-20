@@ -1,11 +1,4 @@
-Record the risks of the suppliers here.
-
-{{#createCards}}
-  "template": "ismsa/templates/risk",
-  "buttonLabel": "Add a risk"
-{{/createCards}}
-
 {{#report}}
-    "name": "ismsa/reports/risksByAssetType",
-    "assetType": "ismsa/cardTypes/assetSupplier"
+  "name": "ismsa/reports/assetAndRiskRegisterContent",
+  "register": "supplierRisks"
 {{/report}}

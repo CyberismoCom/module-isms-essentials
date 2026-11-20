@@ -1,11 +1,4 @@
-Record the risks of the information systems here.
-
-{{#createCards}}
-  "template": "ismsa/templates/risk",
-  "buttonLabel": "Add a risk"
-{{/createCards}}
-
 {{#report}}
-    "name": "ismsa/reports/risksByAssetType",
-    "assetType": "ismsa/cardTypes/assetInformationSystem"
+  "name": "ismsa/reports/assetAndRiskRegisterContent",
+  "register": "informationSystemRisks"
 {{/report}}

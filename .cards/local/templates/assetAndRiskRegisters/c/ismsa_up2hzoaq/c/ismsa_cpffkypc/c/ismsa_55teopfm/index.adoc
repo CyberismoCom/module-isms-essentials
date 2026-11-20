@@ -1,13 +1,4 @@
-Information systems support the primary assets. In addition to the fields that all assets have, such as the owner and the criticality, define these properties for each information system:
-
-* the access control, for example the accounts, the access from public networks, and multi-factor authentication
-* the responsibility for security updates
-* the backups
-* the level of logging and monitoring.
-
-{{#createCards}}
-  "template": "ismsa/templates/assetInformationSystem",
-  "buttonLabel": "Add an information system"
-{{/createCards}}
-
-NOTE: If an information system is already in another asset register, add a link to it here, and make sure that the other register has the necessary information.
+{{#report}}
+  "name": "ismsa/reports/assetAndRiskRegisterContent",
+  "register": "informationSystems"
+{{/report}}

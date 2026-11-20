@@ -1,8 +1,4 @@
-Supporting assets are the hardware, devices, and equipment, the software and applications, the roles, the locations and utilities, and the organisational infrastructure, for example policies, procedures, and supporting ICT services. They are grouped into subregisters.
-
-The protection of a supporting asset is proportionate to its importance for the primary assets.
-
-{{#createCards}}
-  "template": "ismsa/templates/register",
-  "buttonLabel": "Add a register"
-{{/createCards}}
+{{#report}}
+  "name": "ismsa/reports/assetAndRiskRegisterContent",
+  "register": "supportingAssets"
+{{/report}}

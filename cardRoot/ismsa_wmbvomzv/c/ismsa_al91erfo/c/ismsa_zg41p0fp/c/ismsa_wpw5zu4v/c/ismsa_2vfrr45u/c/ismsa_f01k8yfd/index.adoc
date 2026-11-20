@@ -1,11 +1,4 @@
-== Requirement
-
-The entity detects, analyses, contains, and responds to incidents, and recovers from them.
-
-This is a summary. See the directive and the national law for the exact text.
-
-== Implementation
-
 {{#report}}
-  "name": "ismsa/reports/plannedImplementation"
+  "name": "ismsa/reports/nis2RequirementContent",
+  "requirement": "art-21-2-b"
 {{/report}}

@@ -1,6 +1,4 @@
-Devices are the computers, phones, network devices, and other equipment of the organisation.
-
-{{#createCards}}
-  "template": "ismsa/templates/assetDevice",
-  "buttonLabel": "Add a device"
-{{/createCards}}
+{{#report}}
+  "name": "ismsa/reports/assetAndRiskRegisterContent",
+  "register": "devices"
+{{/report}}

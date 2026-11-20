@@ -1,14 +1,4 @@
-This register holds the internal controls of the home. Each control is done once for the scope of the home, and the development projects in the scope rely on it.
-
-Each control has planned evidence. The assessment of a control is calculated from its evidence. When a control does not apply to the organisation, mark it out of scope and give a justification.
-
 {{#report}}
-  "name": "ismsa/reports/centralControls"
+  "name": "ismsa/reports/homeRegisterContent",
+  "register": "centralControls"
 {{/report}}
-
-Add an internal control of your own, if needed. Link its evidence to it with the link type "is evidenced by".
-
-{{#createCards}}
-  "template": "ismsa/templates/internalControl",
-  "buttonLabel": "Add an internal control"
-{{/createCards}}

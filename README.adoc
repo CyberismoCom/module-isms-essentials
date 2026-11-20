@@ -52,6 +52,8 @@ The asset and risk management controls also check their registers. They are not 
 
 The whole content of the home card is the report `ismsa/reports/homeContent`, so a new version of the module changes it also in existing homes. The user writes the scope of the home in two fields, "Scope" and "Scope description" (`ismsa/fieldTypes/homeScope` and `ismsa/fieldTypes/homeScopeDescription`). They are not shown in the card metadata. The report shows them, and the user edits them there with the field macro.
 
+The registers of the home and its libraries, and the NIS2 requirements, use the same pattern. Their content is in three reports: `ismsa/reports/homeRegisterContent`, `ismsa/reports/assetAndRiskRegisterContent`, and `ismsa/reports/nis2RequirementContent`. Each card calls its report with a parameter that names the card, for example `"register": "processes"`. The only text that the user writes in a register is where the supplier agreements are kept, in the hidden field `ismsa/fieldTypes/supplierAgreements` of the suppliers register. The documents, reviews, review tasks, and role assignments stay ordinary cards, because the user writes into them.
+
 The home card shows a "Getting started" checklist (`ismsa/reports/gettingStarted`). It lists the set-up steps of the libraries that have been added, in the order of the old set-up tasks, and ticks each step when its control is OK or out of scope. Before any library is added, it asks the user to choose the libraries first.
 
 This module has five libraries:

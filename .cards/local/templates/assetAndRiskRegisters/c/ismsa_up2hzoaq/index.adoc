@@ -1,22 +1,4 @@
-An asset is anything that has value to the organisation and needs protection. This register holds the assets of the organisation in four subregisters:
-
-* Primary assets: the business processes, functions, and services, and the information that they use.
-* Supporting assets: the hardware, devices, software, roles, locations, and the organisational infrastructure, such as policies, procedures, and supporting ICT services.
-* Suppliers: the external providers of products, processes, or services.
-* Development projects: the projects that develop custom software or hardware.
-
-The subregisters can have more subregisters, if needed.
-
 {{#report}}
-  "name": "ismsa/reports/subregisters"
-{{/report}}
-
-== Control and process
-
-The control "Manage the assets of the organisation" is in the central control register. The asset management process is in the process register. Create the process with the button in the control.
-
-== Assets by owner
-
-{{#report}}
-  "name": "ismsa/reports/assetsByOwner"
+  "name": "ismsa/reports/assetAndRiskRegisterContent",
+  "register": "assets"
 {{/report}}

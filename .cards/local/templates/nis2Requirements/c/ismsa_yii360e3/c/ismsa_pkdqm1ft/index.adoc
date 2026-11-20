@@ -1,11 +1,4 @@
-== Requirement
-
-The entity follows basic cyber hygiene practices and gives cybersecurity training.
-
-This is a summary. See the directive and the national law for the exact text.
-
-== Implementation
-
 {{#report}}
-  "name": "ismsa/reports/plannedImplementation"
+  "name": "ismsa/reports/nis2RequirementContent",
+  "requirement": "art-21-2-g"
 {{/report}}

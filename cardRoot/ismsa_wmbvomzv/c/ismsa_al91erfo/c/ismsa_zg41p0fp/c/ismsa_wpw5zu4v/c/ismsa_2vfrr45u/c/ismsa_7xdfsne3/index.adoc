@@ -1,11 +1,4 @@
-== Requirement
-
-The members of the management bodies follow training, so that they can identify risks and assess the risk-management practices and their effect on the services of the entity. The entity is encouraged to offer similar training to its employees regularly.
-
-This is a summary. See the directive and the national law for the exact text.
-
-== Implementation
-
 {{#report}}
-  "name": "ismsa/reports/plannedImplementation"
+  "name": "ismsa/reports/nis2RequirementContent",
+  "requirement": "art-20-2"
 {{/report}}

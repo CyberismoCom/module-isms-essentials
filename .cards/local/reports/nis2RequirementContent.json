@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/nis2RequirementContent",
+    "displayName": "Content of the NIS2 requirements",
+    "description": "The summary of each NIS2 requirement and its planned implementation. The parameter \"requirement\" selects the requirement",
+    "category": "Central controls"
+}
