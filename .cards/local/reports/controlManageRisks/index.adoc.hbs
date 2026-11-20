@@ -12,7 +12,8 @@ Document the risk management process, and set the acceptable risk level in the r
 {{#report}}
   "name": "ismsa/reports/createEvidence",
   "identifier": "ismsa_document_risk-management-process",
-  "hint": "The risk management process is in the risk register of the asset and risk management library. Add it to the risk register and give it the identifier ismsa_document_risk-management-process."
+  "template": "ismsa/templates/riskManagementProcess",
+  "buttonLabel": "Create the risk management process"
 {{/report}}
 
 {{#report}}
@@ -23,6 +24,8 @@ Document the risk management process, and set the acceptable risk level in the r
 {{/report}}
 
 Check that the process is approved, and that the review of the risk register has passed.
+
+The control also checks the risk register of this home. The control is not OK while the register has no risks, while a risk is still open, or while a risk is analysed but its treatment is not planned.
 
 == Assessment
 

@@ -1,0 +1,13 @@
+Suppliers support the organisation and its primary assets. In addition to the fields that all assets have, such as the owner and the criticality, define these properties for each supplier:
+
+* the services, systems, or products that the supplier provides
+* the contact details.
+
+The agreements with the suppliers are in #TODO: add a link#.
+
+{{#createCards}}
+  "template": "ismsa/templates/assetSupplier",
+  "buttonLabel": "Add a supplier"
+{{/createCards}}
+
+NOTE: If a supplier is already in another asset register, add a link to it here, and make sure that the other register has the necessary information.

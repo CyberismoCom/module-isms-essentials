@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/assetManagementProcess",
+    "displayName": "Asset management process",
+    "description": "Planned evidence of the control \"Manage the assets of the organisation\": the asset management process, with its review task",
+    "category": "Central controls"
+}

@@ -1,0 +1,25 @@
+== Scope
+
+This review covers the asset register of the home: the primary assets, the supporting assets, the suppliers, and the development projects.
+
+== Review
+
+* Check that the new business processes, services, information systems, devices, and suppliers since the last review are in the register.
+* Check that each asset has an owner and an up-to-date classification.
+* Check that the removed assets have been archived, and that their information has been returned or disposed of.
+* Check that the assets that need a risk evaluation have risks in the risk register.
+
+== Findings
+
+#TODO: Record the findings, and create a task for each action.#
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Set the date of the review in the *Last reviewed* field. Mark the review as *Passed* when the register is up to date and the actions are recorded. Otherwise, mark it as *Failed*.

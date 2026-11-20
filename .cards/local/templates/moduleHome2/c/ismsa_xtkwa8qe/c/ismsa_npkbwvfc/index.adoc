@@ -1,6 +1,6 @@
-This register holds the documented information of the home: the policies, processes, and plans of the organisation, and the reviews and other records that show that the controls work.
+This register holds the documented processes of the home, and the policies and plans that go with them. Examples are the incident management process, the coordinated vulnerability disclosure policy, and, with the libraries, the asset management process and the risk management process.
 
-The planned evidence of the controls is created here, unless another register of the home owns its topic. For example, the incident management process is in the incident register. Use the buttons in the controls to create the planned evidence. The evidence is then linked to its control automatically.
+The planned evidence of the controls is created here, unless another register of the home owns its topic. For example, the reviews of the asset register are in the asset register. Use the buttons in the controls to create the planned evidence. The evidence is then linked to its control automatically.
 
 {{#report}}
   "name": "base/reports/childrenTable"

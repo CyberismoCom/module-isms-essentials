@@ -1,0 +1,6 @@
+Record the risks of the primary assets here.
+
+{{#createCards}}
+  "template": "ismsa/templates/risk",
+  "buttonLabel": "Add a risk"
+{{/createCards}}

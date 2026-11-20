@@ -14,12 +14,15 @@
 % identifiers as the ExtensibleCard. Each of these cards renders ismsa/reports/installExtension,
 % which shows a button for each library that has not been installed yet.
 %
-% "ismsa_home"                        The home card. Use it for a library that brings its own
-%                                     registers, for example the information security management
-%                                     library or the CRA programme.
-% "ismsa_register_central-controls"   The central control register. Use it for a library of
-%                                     central internal controls, for example the security
-%                                     operations library.
+% "ismsa_home"                        The home card. Use it for the registers of a library, for
+%                                     example the asset register and the risk register.
+% "ismsa_register_central-controls"   The central control register. Use it for the internal
+%                                     controls of a library. All controls of the home are in this
+%                                     register.
+% "ismsa_register_processes"          The process register. Use it for the processes, policies,
+%                                     and plans of a library that are not planned evidence of a
+%                                     control. Planned evidence is created with the buttons in
+%                                     the controls.
 % "ismsa_register_incidents"          The incident register.
 % "ismsa_register_compliance"         The compliance register. Use it for a library of assessed
 %                                     compliance requirements, for example NIS2 or ISO/IEC 27001.
@@ -31,8 +34,9 @@
 % Use a card type as the ExtensibleCard only if the library also fits the old home template
 % (ismsa/templates/moduleHome), because both templates use the same card types.
 %
-% The four libraries of this module are registered in ismsa/calculations/homeLibraries. For
-% example:
+% A library can have a template for each extension point, for example one for its controls and
+% one for its registers. The libraries of this module are registered in
+% ismsa/calculations/homeLibraries. For example:
 %
 % ismsa_installableExtension(
 %     "ismsa_register_central-controls",

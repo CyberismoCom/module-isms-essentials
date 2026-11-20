@@ -82,29 +82,23 @@ ismsa_internalControlMissingEvidence(Control) :-
 % Where planned evidence is created
 %
 % Planned evidence is not created under its control. It is created in the register of the
-% same home that owns its topic, for example the incident register or the asset register.
+% same home that owns its topic, for example the compliance register or the asset register.
 % ismsa_evidenceLocation(EvidenceIdentifier, RegisterIdentifier) names that register. Evidence
-% without this fact is created in the policies and records register of the home.
+% without this fact is created in the process register of the home. The process register has
+% the same identifier as in the old home template (ismsa/templates/moduleHome).
 %
 % ismsa_evidenceTarget(Control, EvidenceIdentifier, Card) gives the card under which the
 % button of ismsa/reports/createEvidence creates the evidence of the control:
 %
-% 1. the register that owns the evidence, in the same home as the control
-% 2. if the home does not have that register, the policies and records register of the home
+% 1. the register that owns the evidence, in the same home as the control, if the evidence has
+%    an ismsa_evidenceLocation fact
+% 2. otherwise, or if the home does not have that register, the process register of the home
 % 3. if the home does not have that register either (for example an old home), the home card
 %
 % A control that is not in a home has no target, and the report shows no button.
 %
 
-ismsa_evidenceLocation("ismsa_document_incident-management-process", "ismsa_register_incidents").
 ismsa_evidenceLocation("ismsa_review_regulation-changes", "ismsa_register_compliance").
-
-ismsa_evidenceRegister(EvidenceIdentifier, RegisterIdentifier) :-
-    ismsa_evidenceLocation(EvidenceIdentifier, RegisterIdentifier).
-
-ismsa_evidenceRegister(EvidenceIdentifier, "ismsa_register_policies-and-records") :-
-    ismsa_centralEvidence(_, EvidenceIdentifier, _),
-    not ismsa_evidenceLocation(EvidenceIdentifier, _).
 
 ismsa_plannedEvidenceInHome(Control, EvidenceIdentifier, Home) :-
     ismsa_centralEvidence(ControlIdentifier, EvidenceIdentifier, _),
@@ -114,13 +108,13 @@ ismsa_plannedEvidenceInHome(Control, EvidenceIdentifier, Home) :-
 
 ismsa_evidenceTargetCandidate(Control, EvidenceIdentifier, 1, Register) :-
     ismsa_plannedEvidenceInHome(Control, EvidenceIdentifier, Home),
-    ismsa_evidenceRegister(EvidenceIdentifier, RegisterIdentifier),
+    ismsa_evidenceLocation(EvidenceIdentifier, RegisterIdentifier),
     field(Register, "base/fieldTypes/identifier", RegisterIdentifier),
     ismsa_closestHome(Register, Home).
 
 ismsa_evidenceTargetCandidate(Control, EvidenceIdentifier, 2, Register) :-
     ismsa_plannedEvidenceInHome(Control, EvidenceIdentifier, Home),
-    field(Register, "base/fieldTypes/identifier", "ismsa_register_policies-and-records"),
+    field(Register, "base/fieldTypes/identifier", "ismsa_register_processes"),
     ismsa_closestHome(Register, Home).
 
 ismsa_evidenceTargetCandidate(Control, EvidenceIdentifier, 3, Home) :-

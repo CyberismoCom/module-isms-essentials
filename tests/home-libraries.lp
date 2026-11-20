@@ -5,14 +5,23 @@
 % The test homes keep the identifier "ismsa_home" of the template, because it is the extension
 % point of the libraries. So the test names them by card key with ismsa_testHomeKey/2.
 %
-% - Test home L1 (ismsa_test_lib_home-1) has the core and all four libraries. Its access rights
-%   review is passed, its review of the risk register is a draft, the training control has an
-%   overridden assessment, and the business continuity control is out of scope.
+% - Test home L1 (ismsa_test_lib_home-1) has the core and all libraries. All its controls are in
+%   the central control register, and its processes are in the process register. Its access
+%   rights review is passed, its review of the risk register is a draft, the training control
+%   has an overridden assessment, and the business continuity control is out of scope. Its risk
+%   has a treatment plan and its asset is evaluated, so the checks of the asset and risk
+%   controls pass.
 % - Test home L2 (ismsa_test_lib_home-2) has the core without the incident register, and the
 %   NIS2 library.
+% - Test home L4 (ismsa_test_lib_home-4) was created from the templates of this version: the core
+%   and all libraries, each library with its two buttons. Its risk register has an open risk and
+%   an analysed risk without a treatment plan, and its asset register has an asset that is not
+%   evaluated.
+% - Test home L5 (ismsa_test_lib_home-5) has the core and the asset and risk management
+%   controls, without the asset and risk registers.
 %
 % The fallback to the home card is checked with Test home A of the central control tests,
-% which has no policies and records register.
+% which has no process register.
 
 %
 % Expectations
@@ -26,11 +35,30 @@ ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_training-and-awar
 ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_continuity-and-recovery", "notApplicable", "The control has been marked out of scope", 0).
 ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_operate-security-monitoring", "notOk", "The control is in scope but required evidence has not been linked", 0).
 ismsa_expectLibControl("ismsa_test_lib_home-2", "ismsa_control_notify-about-vulnerabilities-and-incidents", "notOk", "The control is in scope but required evidence has not been linked", 0).
+% All planned evidence is linked, but a check of the register fails
+ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_manage-assets", "notOk", "The control has failed policy checks", 2).
+% Missing evidence comes before the checks
+ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_manage-risks", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-5", "ismsa_control_manage-risks", "notOk", "The control is in scope but required evidence has not been linked", 0).
 
 % ismsa_expectInScope(HomeId, ControlId): a library control is in scope when it is created
 ismsa_expectInScope("ismsa_test_lib_home-1", "ismsa_control_isms-scope-and-context").
 ismsa_expectInScope("ismsa_test_lib_home-1", "ismsa_control_manage-assets").
 ismsa_expectInScope("ismsa_test_lib_home-1", "ismsa_control_operate-security-monitoring").
+ismsa_expectInScope("ismsa_test_lib_home-4", "ismsa_control_isms-scope-and-context").
+ismsa_expectInScope("ismsa_test_lib_home-4", "ismsa_control_manage-risks").
+ismsa_expectInScope("ismsa_test_lib_home-4", "ismsa_control_continuity-and-recovery").
+ismsa_expectInScope("ismsa_test_lib_home-5", "ismsa_control_manage-assets").
+
+% ismsa_expectCheck(HomeId, ControlId, Title): the control has a failing check with this title.
+% ismsa_expectNoCheck(HomeId, ControlId): the control has no failing checks of its register.
+ismsa_expectCheck("ismsa_test_lib_home-4", "ismsa_control_manage-assets", "Some assets have not been evaluated").
+ismsa_expectCheck("ismsa_test_lib_home-4", "ismsa_control_manage-risks", "Some risks have not been analysed").
+ismsa_expectCheck("ismsa_test_lib_home-4", "ismsa_control_manage-risks", "Some risks have no treatment plan").
+ismsa_expectCheck("ismsa_test_lib_home-5", "ismsa_control_manage-assets", "No assets have been identified").
+ismsa_expectCheck("ismsa_test_lib_home-5", "ismsa_control_manage-risks", "No risks have been identified").
+ismsa_expectNoCheck("ismsa_test_lib_home-1", "ismsa_control_manage-assets").
+ismsa_expectNoCheck("ismsa_test_lib_home-1", "ismsa_control_manage-risks").
 
 % ismsa_expectRequirement(HomeId, RequirementId, Assessment, Explanation, ImplementsLinks)
 ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-20-2", "ok", "The requirement is in scope and the linked implementation is acceptable", 1).
@@ -45,35 +73,48 @@ ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-h", "open"
 
 % ismsa_expectTarget(HomeId, ControlId, EvidenceId, TargetId): where the button creates the
 % evidence. TargetId is the identifier of a register, or of the home for the fallback.
-ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_receive-security-issue-notifications", "ismsa_document_cvd-policy", "ismsa_register_policies-and-records").
-ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_notify-about-vulnerabilities-and-incidents", "ismsa_document_incident-management-process", "ismsa_register_incidents").
+ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_receive-security-issue-notifications", "ismsa_document_cvd-policy", "ismsa_register_processes").
+ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_notify-about-vulnerabilities-and-incidents", "ismsa_document_incident-management-process", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_follow-changes-in-regulation", "ismsa_review_regulation-changes", "ismsa_register_compliance").
-ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_assign-central-security-roles", "ismsa_review_central-role-assignments", "ismsa_register_policies-and-records").
+ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_assign-central-security-roles", "ismsa_review_central-role-assignments", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_plan-and-review-isms", "ismsa_review_management-review", "ismsa_register_security-reviews").
-ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_information-security-policy", "ismsa_document_information-security-policy", "ismsa_register_policies-and-records").
+ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_information-security-policy", "ismsa_document_information-security-policy", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_manage-assets", "ismsa_review_asset-register", "ismsa_register_assets").
+ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_manage-assets", "ismsa_document_asset-management-process", "ismsa_register_processes").
+ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_manage-risks", "ismsa_document_risk-management-process", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_manage-risks", "ismsa_review_risk-register", "ismsa_register_risks").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_exercise-incident-response", "ismsa_review_incident-response-exercise", "ismsa_register_incidents").
-ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_review-access-rights", "ismsa_review_access-rights", "ismsa_register_policies-and-records").
-% No incident register in home L2: the policies and records register is used
-ismsa_expectTarget("ismsa_test_lib_home-2", "ismsa_control_notify-about-vulnerabilities-and-incidents", "ismsa_document_incident-management-process", "ismsa_register_policies-and-records").
-% No policies and records register in Test home A: the home card is used
+ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_review-access-rights", "ismsa_review_access-rights", "ismsa_register_processes").
+% Home L2 has no incident register. The incident management process is in the process register
+% in every home.
+ismsa_expectTarget("ismsa_test_lib_home-2", "ismsa_control_notify-about-vulnerabilities-and-incidents", "ismsa_document_incident-management-process", "ismsa_register_processes").
+% No process register in Test home A: the home card is used
 ismsa_expectTarget("ismsa_test_cc_home-a", "ismsa_control_receive-security-issue-notifications", "ismsa_document_cvd-policy", "ismsa_test_cc_home-a").
 
 % ismsa_expectLibProgress(HomeId, RegisterId, Progress)
-ismsa_expectLibProgress("ismsa_test_lib_home-1", "ismsa_register_information-security-management", 25).
-ismsa_expectLibProgress("ismsa_test_lib_home-1", "ismsa_register_central-controls", 20).
+% 16 controls: 2 OK and 1 not applicable
+ismsa_expectLibProgress("ismsa_test_lib_home-1", "ismsa_register_central-controls", 18).
 ismsa_expectLibProgress("ismsa_test_lib_home-1", "ismsa_register_nis2", 15).
 
 % ismsa_expectInstalled(HomeId, Template) and ismsa_expectNotInstalled(HomeId, Template)
-ismsa_expectInstalled("ismsa_test_lib_home-1", "ismsa/templates/informationSecurityManagement").
-ismsa_expectInstalled("ismsa_test_lib_home-1", "ismsa/templates/assetAndRiskManagement").
+ismsa_expectInstalled("ismsa_test_lib_home-1", "ismsa/templates/informationSecurityManagementControls").
+ismsa_expectInstalled("ismsa_test_lib_home-1", "ismsa/templates/informationSecurityManagementRegisters").
+ismsa_expectInstalled("ismsa_test_lib_home-1", "ismsa/templates/assetAndRiskManagementControls").
+ismsa_expectInstalled("ismsa_test_lib_home-1", "ismsa/templates/assetAndRiskRegisters").
 ismsa_expectInstalled("ismsa_test_lib_home-1", "ismsa/templates/securityOperations").
 ismsa_expectInstalled("ismsa_test_lib_home-1", "ismsa/templates/nis2Requirements").
 ismsa_expectInstalled("ismsa_test_lib_home-2", "ismsa/templates/nis2Requirements").
-ismsa_expectNotInstalled("ismsa_test_lib_home-2", "ismsa/templates/informationSecurityManagement").
-ismsa_expectNotInstalled("ismsa_test_lib_home-2", "ismsa/templates/assetAndRiskManagement").
+ismsa_expectNotInstalled("ismsa_test_lib_home-2", "ismsa/templates/informationSecurityManagementControls").
+ismsa_expectNotInstalled("ismsa_test_lib_home-2", "ismsa/templates/informationSecurityManagementRegisters").
+ismsa_expectNotInstalled("ismsa_test_lib_home-2", "ismsa/templates/assetAndRiskManagementControls").
+ismsa_expectNotInstalled("ismsa_test_lib_home-2", "ismsa/templates/assetAndRiskRegisters").
 ismsa_expectNotInstalled("ismsa_test_lib_home-2", "ismsa/templates/securityOperations").
+ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/informationSecurityManagementControls").
+ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/informationSecurityManagementRegisters").
+ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetAndRiskManagementControls").
+ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetAndRiskRegisters").
+ismsa_expectInstalled("ismsa_test_lib_home-5", "ismsa/templates/assetAndRiskManagementControls").
+ismsa_expectNotInstalled("ismsa_test_lib_home-5", "ismsa/templates/assetAndRiskRegisters").
 
 %
 % Checks
@@ -81,6 +122,8 @@ ismsa_expectNotInstalled("ismsa_test_lib_home-2", "ismsa/templates/securityOpera
 
 ismsa_testHomeKey("ismsa_test_lib_home-1", ismsa_g04dsanv).
 ismsa_testHomeKey("ismsa_test_lib_home-2", ismsa_zg41p0fp).
+ismsa_testHomeKey("ismsa_test_lib_home-4", ismsa_l866q2o1).
+ismsa_testHomeKey("ismsa_test_lib_home-5", ismsa_qu1v00mj).
 
 ismsa_testHome(HomeId, Home) :-
     ismsa_testHomeKey(HomeId, Home),
@@ -129,6 +172,37 @@ result(("FAIL no in-scope rule for a new control", HomeId, ControlId)) :-
 
 result(("MISSING library control", HomeId, ControlId)) :-
     ismsa_expectInScope(HomeId, ControlId),
+    not ismsa_testCard(HomeId, ControlId, _).
+
+% Checks of the registers
+
+ismsa_testRegisterCheck("No assets have been identified").
+ismsa_testRegisterCheck("Some assets have not been evaluated").
+ismsa_testRegisterCheck("No risks have been identified").
+ismsa_testRegisterCheck("Some risks have not been analysed").
+ismsa_testRegisterCheck("Some risks have no treatment plan").
+
+result(("FAIL check missing", HomeId, ControlId, Title)) :-
+    ismsa_expectCheck(HomeId, ControlId, Title),
+    not policyCheckFailure(Control, _, Title, _) : ismsa_testCard(HomeId, ControlId, Control).
+
+result(("MISSING control of a check", HomeId, ControlId)) :-
+    ismsa_expectCheck(HomeId, ControlId, _),
+    not ismsa_testCard(HomeId, ControlId, _).
+
+result(("FAIL unexpected check", HomeId, ControlId, Title)) :-
+    ismsa_testCard(HomeId, ControlId, Control),
+    ismsa_testRegisterCheck(Title),
+    policyCheckFailure(Control, _, Title, _),
+    not ismsa_expectCheck(HomeId, ControlId, Title).
+
+result(("FAIL check on a control that is not in a home", Control, Title)) :-
+    ismsa_testRegisterCheck(Title),
+    policyCheckFailure(Control, _, Title, _),
+    not ismsa_closestHome(Control, _).
+
+result(("MISSING control without checks", HomeId, ControlId)) :-
+    ismsa_expectNoCheck(HomeId, ControlId),
     not ismsa_testCard(HomeId, ControlId, _).
 
 % Requirements

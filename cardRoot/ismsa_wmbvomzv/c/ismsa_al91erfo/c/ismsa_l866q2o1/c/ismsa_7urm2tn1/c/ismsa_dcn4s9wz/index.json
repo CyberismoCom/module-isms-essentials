@@ -1,0 +1,13 @@
+{
+    "rank": "0|c",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T07:42:20.827Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Asset management process",
+    "templateCardKey": "ismsa_dqfyhzop",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_document_asset-management-process",
+    "lastUpdated": "2026-11-20T07:42:20.828Z"
+}

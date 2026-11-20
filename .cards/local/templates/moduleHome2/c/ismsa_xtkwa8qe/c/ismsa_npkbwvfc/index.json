@@ -1,5 +1,5 @@
 {
-    "title": "Policies and records",
+    "title": "Process register",
     "cardType": "ismsa/cardTypes/register",
     "workflowState": "",
     "links": [],
@@ -8,5 +8,5 @@
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/adoptionStep": "step1",
     "ismsa/fieldTypes/progress": "process-progress",
-    "base/fieldTypes/identifier": "ismsa_register_policies-and-records"
+    "base/fieldTypes/identifier": "ismsa_register_processes"
 }

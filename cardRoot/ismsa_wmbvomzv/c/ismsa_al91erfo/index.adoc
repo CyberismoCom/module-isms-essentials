@@ -1,8 +1,10 @@
-These fixtures test the libraries of the ISMS home (ismsa/templates/moduleHome2): where planned evidence is created, the evidence links of the library controls, the NIS2 requirements and their planned controls, and the installation of the libraries.
+These fixtures test the libraries of the ISMS home (ismsa/templates/moduleHome2): where planned evidence is created, the evidence links of the library controls, the NIS2 requirements and their planned controls, the checks of the asset and risk controls, and the installation of the libraries.
 
-* Test home L1 has the core and all four libraries. Its access rights review is passed, its review of the risk register is a draft, the training control has an overridden assessment, and the business continuity control is out of scope.
+* Test home L1 has the core and all libraries. All its controls are in the central control register, and its processes are in the process register. Its access rights review is passed, its review of the risk register is a draft, the training control has an overridden assessment, and the business continuity control is out of scope. Its risk has a treatment plan, and its asset is evaluated.
 * Test home L2 has the core without the incident register, and the NIS2 library only.
 * Test home L3 is an old-style home with a compliance register and no central control register. The NIS2 library must not be offered there.
+* Test home L4 was created from the templates of this version, with all libraries. Its open risk, its analysed risk without a treatment plan, and its asset that is not evaluated make the checks of the asset and risk controls fail.
+* Test home L5 has the asset and risk management controls without the asset and risk registers. The checks find no assets and no risks.
 
 The executable assertions are in tests/home-libraries.lp. Run this command in the root of the repository:
 

@@ -1,9 +1,4 @@
-This register holds the security incidents and near misses of the organisation. The incident management process describes how they are handled:
-
-{{#report}}
-  "name": "base/reports/childrenTable",
-  "cardType": "base/cardTypes/controlledDocument"
-{{/report}}
+This register holds the security incidents and near misses of the organisation. The incident management process in the process register describes how they are handled.
 
 Record a new incident with the incident template. It creates four cards:
 

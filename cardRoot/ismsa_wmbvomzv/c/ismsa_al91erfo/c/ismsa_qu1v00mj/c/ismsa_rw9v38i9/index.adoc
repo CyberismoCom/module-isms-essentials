@@ -1,0 +1,18 @@
+This register holds the central internal controls. A central team does these controls once for the whole organisation, and the development projects and the other teams rely on them.
+
+Each control has planned evidence. The assessment of a control is calculated from its evidence. When a control does not apply to the organisation, mark it out of scope and give a justification.
+
+{{#report}}
+  "name": "ismsa/reports/centralControls"
+{{/report}}
+
+Add an internal control of your own, if needed. Link its evidence to it with the link type "is evidenced by".
+
+{{#createCards}}
+  "template": "ismsa/templates/internalControl",
+  "buttonLabel": "Add an internal control"
+{{/createCards}}
+
+{{#report}}
+  "name": "ismsa/reports/installExtension"
+{{/report}}

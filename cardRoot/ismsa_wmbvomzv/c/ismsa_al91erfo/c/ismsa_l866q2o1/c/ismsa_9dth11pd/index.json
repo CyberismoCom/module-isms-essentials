@@ -1,0 +1,14 @@
+{
+    "rank": "0|i",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T07:42:03.024Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Tasks",
+    "templateCardKey": "ismsa_vj3wbmbv",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/progress": "task-progress",
+    "base/fieldTypes/identifier": "ismsa_register_isms-tasks",
+    "lastUpdated": "2026-11-20T07:42:03.026Z"
+}

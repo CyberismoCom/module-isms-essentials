@@ -1,0 +1,14 @@
+{
+    "rank": "0|b",
+    "workflowState": "Treatment planned",
+    "createdAt": "2026-11-20T07:42:37.661Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/risk",
+    "title": "L1 risk, treatment planned",
+    "templateCardKey": "ismsa_cu9vhbb0",
+    "lastUpdated": "2026-11-20T07:42:37.663Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/riskInitialLikelihood": "moderate",
+    "ismsa/fieldTypes/riskInitialImpact": "moderate",
+    "ismsa/fieldTypes/riskMitigationStrategy": "mitigate"
+}

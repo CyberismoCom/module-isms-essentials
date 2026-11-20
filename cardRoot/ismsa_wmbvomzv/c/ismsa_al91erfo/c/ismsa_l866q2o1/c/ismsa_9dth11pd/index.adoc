@@ -1,0 +1,25 @@
+This register holds the one-time and repeating tasks of the ISMS. The work of the controls is in the controls and their evidence. Use tasks for other work, for example the actions of a review.
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a one-time task"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "base/templates/monthlyTask",
+  "buttonLabel": "Add a monthly task"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "base/templates/quarterlyTask",
+  "buttonLabel": "Add a quarterly task"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "base/templates/annualTask",
+  "buttonLabel": "Add a yearly task"
+{{/createCards}}
+
+{{#report}}
+  "name": "ismsa/reports/tasksByOwner"
+{{/report}}

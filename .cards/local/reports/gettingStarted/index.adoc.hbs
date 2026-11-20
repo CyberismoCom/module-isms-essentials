@@ -1,0 +1,45 @@
+{{#each results}}
+{{#if this.inHome}}
+These are the steps to set up the home. Each step is done with an internal control, and its box is ticked when the control is OK or out of scope. A step whose control is not in this home names the library that brings it. Skip the libraries that the organisation does not need.
+
+*1. Get started*
+
+{{#each this.start}}
+* {{this.checkbox}} {{this.step}}: {{#if this.controlKey}}xref:{{this.controlKey}}.adoc[{{this.controlTitle}}] ({{this.status}}){{else}}add {{this.library}}{{/if}}
+{{/each}}
+
+*2. Set up the central controls*
+
+{{#each this.central}}
+* {{this.checkbox}} {{this.step}}: {{#if this.controlKey}}xref:{{this.controlKey}}.adoc[{{this.controlTitle}}] ({{this.status}}){{else}}add {{this.library}}{{/if}}
+{{/each}}
+
+*3. Manage the assets that need protection*
+
+{{#each this.assets}}
+* {{this.checkbox}} {{this.step}}: {{#if this.controlKey}}xref:{{this.controlKey}}.adoc[{{this.controlTitle}}] ({{this.status}}){{else}}add {{this.library}}{{/if}}
+{{/each}}
+
+*4. Manage the risks*
+
+{{#each this.risks}}
+* {{this.checkbox}} {{this.step}}: {{#if this.controlKey}}xref:{{this.controlKey}}.adoc[{{this.controlTitle}}] ({{this.status}}){{else}}add {{this.library}}{{/if}}
+{{/each}}
+
+*5. Run security operations and plan business continuity*
+
+{{#each this.operations}}
+* {{this.checkbox}} {{this.step}}: {{#if this.controlKey}}xref:{{this.controlKey}}.adoc[{{this.controlTitle}}] ({{this.status}}){{else}}add {{this.library}}{{/if}}
+{{/each}}
+
+*6. Plan continuous improvement*
+
+{{#each this.improvement}}
+* {{this.checkbox}} {{this.step}}: {{#if this.controlKey}}xref:{{this.controlKey}}.adoc[{{this.controlTitle}}] ({{this.status}}){{else}}add {{this.library}}{{/if}}
+{{/each}}
+
+Then add the compliance requirements that apply to the organisation in the compliance register.
+{{else}}
+This checklist is shown only in an ISMS home that has a central control register.
+{{/if}}
+{{/each}}

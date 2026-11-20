@@ -17,19 +17,40 @@
 % a card with the example identifier exists under that extension point.
 %
 
+% A library brings its controls to the central control register, and its registers to the home
+% card. Until one button can create cards in several places, such a library has two buttons.
+% The planned evidence of the controls, for example the asset management process, is created
+% with the buttons in the controls.
+
+ismsa_installableExtension(
+    "ismsa_register_central-controls",
+    "the information security management library",
+    "ismsa/templates/informationSecurityManagementControls",
+    "Add the information security management controls",
+    "ismsa_control_isms-scope-and-context"
+).
+
 ismsa_installableExtension(
     "ismsa_home",
     "the information security management library",
-    "ismsa/templates/informationSecurityManagement",
-    "Add the information security management library",
-    "ismsa_register_information-security-management"
+    "ismsa/templates/informationSecurityManagementRegisters",
+    "Add the information security management registers",
+    "ismsa_register_security-targets"
+).
+
+ismsa_installableExtension(
+    "ismsa_register_central-controls",
+    "the asset and risk management library",
+    "ismsa/templates/assetAndRiskManagementControls",
+    "Add the asset and risk management controls",
+    "ismsa_control_manage-assets"
 ).
 
 ismsa_installableExtension(
     "ismsa_home",
     "the asset and risk management library",
-    "ismsa/templates/assetAndRiskManagement",
-    "Add the asset and risk management library",
+    "ismsa/templates/assetAndRiskRegisters",
+    "Add the asset and risk registers",
     "ismsa_register_assets"
 ).
 
@@ -102,8 +123,8 @@ ismsa_controlInScopeByDefault(Control) :-
 %
 % Planned evidence of the library controls, and where it is created
 %
-% Without an ismsa_evidenceLocation fact, the evidence is created in the policies and records
-% register of the home.
+% Without an ismsa_evidenceLocation fact, the evidence is created in the process register of
+% the home.
 %
 
 ismsa_centralEvidence("ismsa_control_isms-scope-and-context", "ismsa_document_isms-scope-and-context", "Scope and context of the ISMS").
@@ -114,12 +135,10 @@ ismsa_evidenceLocation("ismsa_review_management-review", "ismsa_register_securit
 
 ismsa_centralEvidence("ismsa_control_manage-assets", "ismsa_document_asset-management-process", "Asset management process").
 ismsa_centralEvidence("ismsa_control_manage-assets", "ismsa_review_asset-register", "Review of the asset register").
-ismsa_evidenceLocation("ismsa_document_asset-management-process", "ismsa_register_assets").
 ismsa_evidenceLocation("ismsa_review_asset-register", "ismsa_register_assets").
 
 ismsa_centralEvidence("ismsa_control_manage-risks", "ismsa_document_risk-management-process", "Risk management process").
 ismsa_centralEvidence("ismsa_control_manage-risks", "ismsa_review_risk-register", "Review of the risk register").
-ismsa_evidenceLocation("ismsa_document_risk-management-process", "ismsa_register_risks").
 ismsa_evidenceLocation("ismsa_review_risk-register", "ismsa_register_risks").
 
 ismsa_centralEvidence("ismsa_control_operate-security-monitoring", "ismsa_document_security-monitoring-plan", "Security monitoring plan").

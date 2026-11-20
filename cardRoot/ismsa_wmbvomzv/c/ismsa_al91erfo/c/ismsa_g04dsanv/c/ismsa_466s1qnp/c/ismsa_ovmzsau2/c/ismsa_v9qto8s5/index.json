@@ -1,0 +1,12 @@
+{
+    "rank": "0|b",
+    "workflowState": "Active",
+    "createdAt": "2026-11-20T07:42:38.586Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/asset",
+    "title": "L1 asset, evaluated",
+    "templateCardKey": "ismsa_eezz5laa",
+    "lastUpdated": "2026-11-20T07:42:38.588Z",
+    "ismsa/fieldTypes/assetCriticalityForOperations": "medium",
+    "ismsa/fieldTypes/assetRiskEvaluationNeeded": "yes"
+}

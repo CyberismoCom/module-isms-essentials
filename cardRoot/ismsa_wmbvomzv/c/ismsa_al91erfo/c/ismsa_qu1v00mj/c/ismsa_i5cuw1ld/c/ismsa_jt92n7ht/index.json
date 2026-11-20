@@ -1,0 +1,13 @@
+{
+    "rank": "0|b",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T07:42:44.930Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Incident management process",
+    "templateCardKey": "ismsa_8z53bfay",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_document_incident-management-process",
+    "lastUpdated": "2026-11-20T07:42:44.934Z"
+}

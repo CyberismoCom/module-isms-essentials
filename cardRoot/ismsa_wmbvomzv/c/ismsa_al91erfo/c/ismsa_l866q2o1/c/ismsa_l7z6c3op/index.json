@@ -1,0 +1,13 @@
+{
+    "rank": "0|g",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T07:42:03.024Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Security targets",
+    "templateCardKey": "ismsa_ukynygxz",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "base/fieldTypes/identifier": "ismsa_register_security-targets",
+    "lastUpdated": "2026-11-20T07:42:03.026Z"
+}

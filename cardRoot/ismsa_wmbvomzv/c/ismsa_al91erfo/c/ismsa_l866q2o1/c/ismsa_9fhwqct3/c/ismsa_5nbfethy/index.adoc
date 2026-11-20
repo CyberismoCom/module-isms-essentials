@@ -1,0 +1,8 @@
+Primary assets are the core business processes, functions, and services, and the information that the business processes and activities of the organisation use.
+
+The main purpose of asset management is to give the primary assets enough protection.
+
+{{#createCards}}
+  "template": "ismsa/templates/asset",
+  "buttonLabel": "Add a primary asset"
+{{/createCards}}
