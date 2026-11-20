@@ -1,0 +1,20 @@
+{{#each results}}
+{{#each this.libraries}}
+*Parts of {{this.name}}*
+
+{{#each this.parts}}
+{{#if this.installed}}
+* [x] {{this.buttonLabel}}: done, in xref:{{this.targetKey}}.adoc[{{this.targetTitle}}]
+{{else}}
+* [ ] {{this.buttonLabel}}: creates the content in xref:{{this.targetKey}}.adoc[{{this.targetTitle}}]
++
+{{#createCards}}
+  "template": "{{this.template}}",
+  "buttonLabel": "{{this.buttonLabel}}",
+  "cardKey": "{{this.targetKey}}"
+{{/createCards}}
+{{/if}}
+{{/each}}
+
+{{/each}}
+{{/each}}

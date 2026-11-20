@@ -48,16 +48,14 @@ Libraries add content to the home. Install only the libraries that the organisat
 | Security operations
 
 | Does NIS2 apply to us?
-| NIS2, in the compliance register. NIS2 also needs the other libraries above
+| NIS2. NIS2 also needs the other libraries above
 
 | Do we only need the central controls for our products, for example for the EU Cyber Resilience Act?
 | No library. The core of the home is enough
 |===
 
-A library adds its controls to the central control register, and its registers to this home card. So the information security management library and the asset and risk management library each have two buttons: one in the central control register, and one here. The planned evidence of the controls, for example the asset management process, is created with the buttons in the controls.
-
-When a library is available for this home, a button to install it is shown here or in the register that the library extends.
+A library has a button for each of its parts. A part can be the controls, which go to the central control register, the registers, which go to this home card, or the processes, which go to the process register. Click the buttons of all parts of a library. A part that has been added is ticked.
 
 {{#report}}
-  "name": "ismsa/reports/installExtension"
+  "name": "ismsa/reports/installLibraries"
 {{/report}}

@@ -17,10 +17,10 @@
 % a card with the example identifier exists under that extension point.
 %
 
-% A library brings its controls to the central control register, and its registers to the home
-% card. Until one button can create cards in several places, such a library has two buttons.
-% The planned evidence of the controls, for example the asset management process, is created
-% with the buttons in the controls.
+% A library brings its controls to the central control register, its registers to the home
+% card, and its processes to the process register. Until one button can create cards in several
+% places, a library has one button for each part. The report ismsa/reports/installLibraries shows
+% all the buttons on the home card, grouped by library.
 
 ismsa_installableExtension(
     "ismsa_register_central-controls",
@@ -54,6 +54,25 @@ ismsa_installableExtension(
     "ismsa_register_assets"
 ).
 
+% The processes of the asset and risk management library are planned evidence of its controls.
+% The buttons in the controls create them too.
+
+ismsa_installableExtension(
+    "ismsa_register_processes",
+    "the asset and risk management library",
+    "ismsa/templates/assetManagementProcess",
+    "Add the asset management process",
+    "ismsa_document_asset-management-process"
+).
+
+ismsa_installableExtension(
+    "ismsa_register_processes",
+    "the asset and risk management library",
+    "ismsa/templates/riskManagementProcess",
+    "Add the risk management process",
+    "ismsa_document_risk-management-process"
+).
+
 ismsa_installableExtension(
     "ismsa_register_central-controls",
     "the security operations library",
@@ -70,11 +89,24 @@ ismsa_installableExtension(
     "ismsa_register_nis2"
 ).
 
+% The order of the libraries on the home card. A library without this fact comes after them.
+
+ismsa_libraryRank("the information security management library", 1).
+ismsa_libraryRank("the asset and risk management library", 2).
+ismsa_libraryRank("the security operations library", 3).
+ismsa_libraryRank("the NIS2 library", 4).
+
 % The compliance register of the old home template has the same identifier as in the new home.
 % A library that needs the controls of the new home is offered only in a home that has a
 % central control register, so that the old homes do not change.
 
 ismsa_libraryForNewHomes("ismsa/templates/nis2Requirements").
+
+% The old home template has a process register with the same identifier, and it renders
+% ismsa/reports/installExtension. The process parts are offered only in new homes.
+
+ismsa_libraryForNewHomes("ismsa/templates/assetManagementProcess").
+ismsa_libraryForNewHomes("ismsa/templates/riskManagementProcess").
 
 ismsa_libraryOfferedInHome(Template, Home) :-
     ismsa_installableExtension(_, _, Template, _, _),

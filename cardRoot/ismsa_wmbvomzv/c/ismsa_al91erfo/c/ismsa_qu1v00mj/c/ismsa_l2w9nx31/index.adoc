@@ -20,7 +20,3 @@ Record a security event that is not an incident as a near miss.
   "template": "ismsa/templates/nearMiss",
   "buttonLabel": "Add new near miss"
 {{/createCards}}
-
-{{#report}}
-  "name": "ismsa/reports/installExtension"
-{{/report}}

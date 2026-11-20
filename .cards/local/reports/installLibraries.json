@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/installLibraries",
+    "displayName": "Install libraries",
+    "description": "On the home card of an ISMS home, the buttons of all libraries that can be installed in the home, grouped by library. Each button creates its content in the right card of the home, for example the controls in the central control register",
+    "category": "Central controls"
+}

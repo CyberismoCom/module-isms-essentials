@@ -17,7 +17,3 @@ Add other documents, as needed:
   "template": "base/templates/controlledDocument",
   "buttonLabel": "Create another controlled document"
 {{/createCards}}
-
-{{#report}}
-  "name": "ismsa/reports/installExtension"
-{{/report}}

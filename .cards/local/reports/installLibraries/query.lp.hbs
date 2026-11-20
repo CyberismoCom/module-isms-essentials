@@ -1,0 +1,88 @@
+% The buttons of all libraries of a home, on the home card. A library is a set of
+% ismsa_installableExtension facts with the same module description. Each fact is one part of
+% the library: a template and the extension point where it is created. The button creates the
+% template under the extension point, which can be the home card or a register of the home.
+
+ismsa_ilHome({{cardKey}}) :-
+    base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome").
+
+% An extension point in the home: the home card itself (by identifier or card type), or a card
+% of the home with the identifier.
+
+ismsa_ilPoint(Point, Home) :-
+    ismsa_ilHome(Home),
+    ismsa_installableExtension(Point, _, _, _, _),
+    field(Home, "base/fieldTypes/identifier", Point).
+
+ismsa_ilPoint(Point, Home) :-
+    ismsa_ilHome(Home),
+    ismsa_installableExtension(Point, _, _, _, _),
+    base_projectCardType(Home, Point).
+
+ismsa_ilPoint(Point, Card) :-
+    ismsa_ilHome(Home),
+    ismsa_installableExtension(Point, _, _, _, _),
+    ismsa_closestHome(Card, Home),
+    field(Card, "base/fieldTypes/identifier", Point).
+
+% If the home has two cards with the identifier, the first card key is used.
+
+ismsa_ilTarget(Point, Card) :-
+    ismsa_ilPoint(Point, _),
+    Card = #min { C : ismsa_ilPoint(Point, C) }.
+
+% A part is installed when a card with its example identifier is in the home.
+
+ismsa_ilInstalled(Template) :-
+    ismsa_ilHome(Home),
+    ismsa_installableExtension(_, _, Template, _, ExampleIdentifier),
+    field(Example, "base/fieldTypes/identifier", ExampleIdentifier),
+    ismsa_closestHome(Example, Home).
+
+ismsa_ilPart(Library, Template, Label, Target) :-
+    ismsa_ilHome(Home),
+    ismsa_installableExtension(Point, Library, Template, Label, _),
+    ismsa_libraryOfferedInHome(Template, Home),
+    ismsa_ilTarget(Point, Target).
+
+result(result).
+
+childResultCollection(result, "libraries").
+
+childResult(result, Library, "libraries") :-
+    ismsa_ilPart(Library, _, _, _).
+
+resultField(Library, "name", Library, "shortText") :-
+    ismsa_ilPart(Library, _, _, _).
+
+resultField(Library, "rank", Rank, "integer") :-
+    ismsa_ilPart(Library, _, _, _),
+    ismsa_libraryRank(Library, Rank).
+
+resultField(Library, "rank", 99, "integer") :-
+    ismsa_ilPart(Library, _, _, _),
+    not ismsa_libraryRank(Library, _).
+
+childResult(Library, Template, "parts") :-
+    ismsa_ilPart(Library, Template, _, _).
+
+resultField(Template, "template", Template, "shortText") :-
+    ismsa_ilPart(_, Template, _, _).
+
+resultField(Template, "buttonLabel", Label, "shortText") :-
+    ismsa_ilPart(_, Template, Label, _).
+
+resultField(Template, "targetKey", Target, "shortText") :-
+    ismsa_ilPart(_, Template, _, Target).
+
+resultField(Template, "targetTitle", Title, "shortText") :-
+    ismsa_ilPart(_, Template, _, Target),
+    field(Target, "title", Title).
+
+resultField(Template, "installed", "yes", "shortText") :-
+    ismsa_ilPart(_, Template, _, _),
+    ismsa_ilInstalled(Template).
+
+order(2, "libraries", 1, "rank", "ASC").
+order(2, "libraries", 2, "name", "ASC").
+order(3, "parts", 1, "buttonLabel", "ASC").

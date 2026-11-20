@@ -12,7 +12,3 @@ Add an internal control of your own, if needed. Link its evidence to it with the
   "template": "ismsa/templates/internalControl",
   "buttonLabel": "Add an internal control"
 {{/createCards}}
-
-{{#report}}
-  "name": "ismsa/reports/installExtension"
-{{/report}}

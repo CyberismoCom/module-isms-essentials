@@ -115,6 +115,8 @@ ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetAndRiskMana
 ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetAndRiskRegisters").
 ismsa_expectInstalled("ismsa_test_lib_home-5", "ismsa/templates/assetAndRiskManagementControls").
 ismsa_expectNotInstalled("ismsa_test_lib_home-5", "ismsa/templates/assetAndRiskRegisters").
+ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetManagementProcess").
+ismsa_expectNotInstalled("ismsa_test_lib_home-4", "ismsa/templates/riskManagementProcess").
 
 %
 % Checks
@@ -313,6 +315,24 @@ result(("FAIL NIS2 library not offered in a new home", HomeId)) :-
 
 result(("FAIL NIS2 library offered in an old home")) :-
     ismsa_libraryOfferedInHome("ismsa/templates/nis2Requirements", ismsa_6c54egay).
+
+% The process parts of the asset and risk management library are offered only in new homes,
+% because the process register of the old home has the same identifier.
+
+result(("FAIL process part offered in an old home", Template)) :-
+    ismsa_installableExtension("ismsa_register_processes", _, Template, _, _),
+    ismsa_libraryOfferedInHome(Template, ismsa_6c54egay).
+
+result(("FAIL process part not offered in a new home", Template)) :-
+    ismsa_installableExtension("ismsa_register_processes", _, Template, _, _),
+    not ismsa_libraryOfferedInHome(Template, ismsa_l866q2o1).
+
+% Every library of this module has a place in the order on the home card.
+
+result(("FAIL library without a rank", Library)) :-
+    ismsa_installableExtension(_, Library, Template, _, _),
+    ismsa_libraryControl(_, _, Library),
+    not ismsa_libraryRank(Library, _).
 
 result(("FAIL other library not offered in an old home")) :-
     not ismsa_libraryOfferedInHome("ismsa/templates/securityOperations", ismsa_6c54egay).

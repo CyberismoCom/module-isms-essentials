@@ -57,12 +57,12 @@ Libraries add more content to the home. This module has four libraries:
 | Library | Installed in | Content
 
 | Information security management
-| The central control register, and the home card
+| The central control register and the home card
 | Controls for the scope and context, the information security policy, training and awareness, and the planning and review of the ISMS. Registers for the security targets, the security reviews, and the tasks
 
 | Asset and risk management
-| The central control register, and the home card
-| Controls for asset management and risk management. The asset register and the risk register. The processes are created with the buttons in the controls
+| The central control register, the home card, and the process register
+| Controls for asset management and risk management. The asset register and the risk register. The asset management process and the risk management process
 
 | Security operations
 | The central control register
@@ -73,7 +73,7 @@ Libraries add more content to the home. This module has four libraries:
 | The requirements of NIS2 Articles 20, 21, and 23 as assessed compliance requirements. The planned controls of the home are linked to them automatically
 |===
 
-A library with controls and registers has a template for each: one for the central control register, and one for the home card. So it has two buttons. A future version of Cyberismo can create cards in several places with one button, and then each library needs only one button.
+A library has a template for each of its parts: its controls go to the central control register, its registers to the home card, and its processes to the process register. The section "Libraries" of the home card (`ismsa/reports/installLibraries`) shows a button for each part, grouped by library, and ticks the parts that have been added. A future version of Cyberismo can create cards in several places with one button, and then each library needs only one button.
 
 A module registers a library with an `ismsa_installableExtension` fact. The extension points are listed in `ismsa/calculations/extensions`. The facts of the libraries of this module are in `ismsa/calculations/homeLibraries`.
 
