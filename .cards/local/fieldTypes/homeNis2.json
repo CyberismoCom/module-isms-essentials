@@ -1,0 +1,18 @@
+{
+    "name": "ismsa/fieldTypes/homeNis2",
+    "displayName": "NIS2 applies",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "yes",
+            "enumDisplayValue": "Yes",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "no",
+            "enumDisplayValue": "No",
+            "enumDescription": ""
+        }
+    ],
+    "description": "Does NIS2 apply to the organisation?"
+}

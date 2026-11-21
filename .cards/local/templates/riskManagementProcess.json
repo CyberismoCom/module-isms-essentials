@@ -2,5 +2,5 @@
     "name": "ismsa/templates/riskManagementProcess",
     "displayName": "Risk management process",
     "description": "Planned evidence of the control \"Manage information security risks\": the risk management process, with its review task",
-    "category": "Central controls"
+    "category": "ISMS home evidence"
 }

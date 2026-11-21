@@ -18,7 +18,7 @@ ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_notify-about-vulnerab
 ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_assign-central-security-roles", "ok", "The control is in scope and there is valid evidence", 1).
 ismsa_expectCentral("ismsa_test_cc_no-home", "ismsa_control_receive-security-issue-notifications", "notOk", "The control is in scope but required evidence has not been linked", 0).
 
-% ismsa_expectProgress(HomeIdentifier, Progress) for the central control register of the home
+% ismsa_expectProgress(HomeIdentifier, Progress) for the control register of the home
 ismsa_expectProgress("ismsa_test_cc_home-a", 50).
 ismsa_expectProgress("ismsa_test_cc_home-b", 33).
 

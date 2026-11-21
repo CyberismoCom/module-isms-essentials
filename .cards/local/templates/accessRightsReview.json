@@ -2,5 +2,5 @@
     "name": "ismsa/templates/accessRightsReview",
     "displayName": "Access rights review",
     "description": "A periodic review of the user accounts and the access rights in the critical systems",
-    "category": "ISMS home libraries"
+    "category": "ISMS home evidence"
 }

@@ -17,10 +17,11 @@
 % and the part is ticked when a card with the example identifier is in the home.
 %
 
-% A library brings its controls to the central control register, its registers to the home
-% card, and its processes to the process register. Until one button can create cards in several
-% places, a library has one button for each part. The report ismsa/reports/installLibraries shows
-% all the buttons on the home card, grouped by library.
+% A library brings its controls to the control register and its registers to the home card.
+% The planned evidence, such as the processes, is created with the buttons in the controls.
+% Until one button can create cards in several places, a library has one button for each part.
+% The report ismsa/reports/installLibraries shows the buttons of the libraries that the answers
+% on the home card require (ismsa/calculations/libraryChoice).
 
 % The security response and compliance basics library has the six basic central controls. A
 % team under an existing ISMS that already does them can leave this library out.
@@ -31,14 +32,6 @@ ismsa_installableExtension(
     "ismsa/templates/securityResponseAndComplianceControls",
     "Add the security response and compliance basics controls",
     "ismsa_control_receive-security-issue-notifications"
-).
-
-ismsa_installableExtension(
-    "ismsa_register_processes",
-    "the security response and compliance basics library",
-    "ismsa/templates/incidentManagementProcess",
-    "Add the incident management process",
-    "ismsa_document_incident-management-process"
 ).
 
 ismsa_installableExtension(
@@ -73,30 +66,11 @@ ismsa_installableExtension(
     "ismsa_register_assets"
 ).
 
-% The processes of the asset and risk management library are planned evidence of its controls.
-% The buttons in the controls create them too.
-
-ismsa_installableExtension(
-    "ismsa_register_processes",
-    "the asset and risk management library",
-    "ismsa/templates/assetManagementProcess",
-    "Add the asset management process",
-    "ismsa_document_asset-management-process"
-).
-
-ismsa_installableExtension(
-    "ismsa_register_processes",
-    "the asset and risk management library",
-    "ismsa/templates/riskManagementProcess",
-    "Add the risk management process",
-    "ismsa_document_risk-management-process"
-).
-
 ismsa_installableExtension(
     "ismsa_register_central-controls",
     "the security operations library",
     "ismsa/templates/securityOperations",
-    "Add the security operations library",
+    "Add the security operations controls",
     "ismsa_control_operate-security-monitoring"
 ).
 
@@ -104,7 +78,7 @@ ismsa_installableExtension(
     "ismsa_register_compliance",
     "the NIS2 library",
     "ismsa/templates/nis2Requirements",
-    "Add the NIS2 library",
+    "Add the NIS2 requirements",
     "ismsa_register_nis2"
 ).
 
@@ -117,17 +91,12 @@ ismsa_libraryRank("the security operations library", 4).
 ismsa_libraryRank("the NIS2 library", 5).
 
 % The compliance register of the old home template has the same identifier as in the new home.
-% A library that needs the controls of the new home is offered only in a home that has a
-% central control register, so that the old homes do not change.
+% A library that needs the controls of the new home is offered only in a home that has the
+% control register of the new home ("ismsa_register_central-controls"), so that the old homes
+% do not change.
 
 ismsa_libraryForNewHomes("ismsa/templates/nis2Requirements").
 
-% The old home template has a process register with the same identifier, and it renders
-% ismsa/reports/installExtension. The process parts are offered only in new homes.
-
-ismsa_libraryForNewHomes("ismsa/templates/incidentManagementProcess").
-ismsa_libraryForNewHomes("ismsa/templates/assetManagementProcess").
-ismsa_libraryForNewHomes("ismsa/templates/riskManagementProcess").
 
 ismsa_libraryOfferedInHome(Template, Home) :-
     ismsa_installableExtension(_, _, Template, _, _),

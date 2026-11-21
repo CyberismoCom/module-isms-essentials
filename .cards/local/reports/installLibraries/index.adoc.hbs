@@ -1,20 +1,63 @@
 {{#each results}}
-{{#each this.libraries}}
-*Parts of {{this.name}}*
+{{#if this.anyRequired}}
+*Libraries that the home needs*
 
-{{#each this.parts}}
-{{#if this.installed}}
-* [x] {{this.buttonLabel}}: done, in xref:{{this.targetKey}}.adoc[{{this.targetTitle}}]
+{{#each this.required}}
+{{#if this.added}}
+* [x] *{{this.title}}*: added. Needed because {{#each this.reasons}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.
 {{else}}
-* [ ] {{this.buttonLabel}}: creates the content in xref:{{this.targetKey}}.adoc[{{this.targetTitle}}]
+* [ ] *{{this.title}}*: {{#if this.partly}}partly added{{else}}not added yet{{/if}}. Needed because {{#each this.reasons}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.
+{{#each this.parts}}
+** {{this.kindText}} the xref:{{this.targetKey}}.adoc[{{this.targetTitle}}].
 +
 {{#createCards}}
   "template": "{{this.template}}",
   "buttonLabel": "{{this.buttonLabel}}",
   "cardKey": "{{this.targetKey}}"
 {{/createCards}}
+{{/each}}
 {{/if}}
 {{/each}}
 
+{{/if}}
+{{#if this.anyNotNeeded}}
+*Libraries that the home does not need*
+
+{{#each this.notNeeded}}
+* *{{this.title}}*: {{this.reason}}{{#if this.inHome}} Some of its content is already in the home. Remove it, or keep it if you need it.{{/if}}
 {{/each}}
+
+{{/if}}
+{{#if this.anyUndecided}}
+*Libraries that the answers do not decide yet*
+
+{{#each this.undecided}}
+* *{{this.title}}*
+{{/each}}
+
+Answer the questions above to decide these libraries.
+
+{{/if}}
+{{#if this.anyOthers}}
+*Libraries of other modules*
+
+These libraries come from other modules. The questions above do not cover them.
+
+{{#each this.others}}
+{{#if this.added}}
+* [x] *{{this.title}}*: added.
+{{else}}
+* [ ] *{{this.title}}*
+{{#each this.parts}}
+** {{this.kindText}} the xref:{{this.targetKey}}.adoc[{{this.targetTitle}}].
++
+{{#createCards}}
+  "template": "{{this.template}}",
+  "buttonLabel": "{{this.buttonLabel}}",
+  "cardKey": "{{this.targetKey}}"
+{{/createCards}}
+{{/each}}
+{{/if}}
+{{/each}}
+{{/if}}
 {{/each}}

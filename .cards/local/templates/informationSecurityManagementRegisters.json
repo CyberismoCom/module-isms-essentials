@@ -1,6 +1,6 @@
 {
     "name": "ismsa/templates/informationSecurityManagementRegisters",
     "displayName": "Information security management registers",
-    "description": "A library of the ISMS home: the registers for the security targets, the security reviews, and the tasks of an information security management system. Install it on the home card.",
+    "description": "A library of the ISMS home: the registers for the security targets, the security reviews, and the tasks of an information security management system. Add it with the buttons in the section \"Libraries\" of the home card",
     "category": "ISMS home libraries"
 }

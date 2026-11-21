@@ -18,7 +18,7 @@
 %
 % "ismsa_home"                        The home card. Use it for the registers of a library, for
 %                                     example the asset register and the risk register.
-% "ismsa_register_central-controls"   The central control register. Use it for the internal
+% "ismsa_register_central-controls"   The control register. Use it for the internal
 %                                     controls of a library. All controls of the home are in this
 %                                     register.
 % "ismsa_register_processes"          The process register. Use it for the processes, policies,

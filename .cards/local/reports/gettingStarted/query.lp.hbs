@@ -129,6 +129,44 @@ resultField(result, Flag, "yes", "shortText") :-
 resultField(result, "anyStep", "yes", "shortText") :-
     ismsa_gsShown(_, _).
 
+% The first steps set up the home itself: its owner, the answers about the libraries, and the
+% libraries that the answers require.
+
+ismsa_gsHomeStep(1, "Set the owner of the home, in the section \"About this home\"").
+ismsa_gsHomeStep(2, "Answer the questions in the section \"Libraries\"").
+ismsa_gsHomeStep(3, "Add the libraries that the answers require").
+
+ismsa_gsHomeStepDone(1) :-
+    ismsa_gsHome(Home),
+    field(Home, "base/fieldTypes/owner", _).
+
+ismsa_gsHomeStepDone(2) :-
+    ismsa_gsHome(Home),
+    ismsa_homeQuestionsAnswered(Home).
+
+ismsa_gsHomeStepDone(3) :-
+    ismsa_gsHome(Home),
+    ismsa_libraryChoiceComplete(Home).
+
+childResultCollection(result, "home").
+
+childResult(result, ("home", Ordinal), "home") :-
+    ismsa_gsHomeStep(Ordinal, _).
+
+resultField(("home", Ordinal), "ordinal", Ordinal, "integer") :-
+    ismsa_gsHomeStep(Ordinal, _).
+
+resultField(("home", Ordinal), "step", Text, "shortText") :-
+    ismsa_gsHomeStep(Ordinal, Text).
+
+resultField(("home", Ordinal), "checkbox", "[x]", "shortText") :-
+    ismsa_gsHomeStep(Ordinal, _),
+    ismsa_gsHomeStepDone(Ordinal).
+
+resultField(("home", Ordinal), "checkbox", "[ ]", "shortText") :-
+    ismsa_gsHomeStep(Ordinal, _),
+    not ismsa_gsHomeStepDone(Ordinal).
+
 % The checklist is for the homes made from ismsa/templates/moduleHome2, which have a central
 % control register.
 
@@ -136,6 +174,7 @@ resultField(result, "inHome", "yes", "shortText") :-
     ismsa_gsHome(Home),
     ismsa_homeWithCentralControls(Home).
 
+order(2, "home", 1, "ordinal", "ASC").
 order(2, "start", 1, "ordinal", "ASC").
 order(2, "central", 1, "ordinal", "ASC").
 order(2, "assets", 1, "ordinal", "ASC").

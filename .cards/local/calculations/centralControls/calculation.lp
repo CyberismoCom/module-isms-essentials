@@ -148,10 +148,11 @@ onTransitionExecuteTransition(Control, "Create", Control, "Mark in scope") :-
 %
 % Owners
 %
-% In an ISMS home that has a central control register, a card whose owner is calculated and
+% In an ISMS home made from ismsa/templates/moduleHome2, a card whose owner is calculated and
 % overridable gets the owner of its parent card. So the owner of the home is the owner of the
-% registers and the central controls, until someone overrides it. The old home template
-% (ismsa/templates/moduleHome) has no central control register, so its cards do not change.
+% registers and the controls, until someone overrides it. Such a home has a control register
+% with the identifier "ismsa_register_central-controls". The control register of the old home
+% template (ismsa/templates/moduleHome) has another identifier, so its cards do not change.
 %
 
 ismsa_homeWithCentralControls(Home) :-

@@ -1,6 +1,6 @@
 {
     "name": "ismsa/templates/securityResponseAndComplianceControls",
     "displayName": "Security response and compliance basics controls",
-    "description": "A library of the ISMS home: the six basic central controls for security response and compliance (central security roles, notifications of security issues, notifying about vulnerabilities and incidents, contact with authorities, records, and changes in regulation). Install it in the central control register.",
+    "description": "A library of the ISMS home: the six basic central controls for security response and compliance (central security roles, notifications of security issues, notifying about vulnerabilities and incidents, contact with authorities, records, and changes in regulation). Add it with the buttons in the section \"Libraries\" of the home card",
     "category": "ISMS home libraries"
 }

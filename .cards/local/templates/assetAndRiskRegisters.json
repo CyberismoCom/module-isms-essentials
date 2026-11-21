@@ -1,6 +1,6 @@
 {
     "name": "ismsa/templates/assetAndRiskRegisters",
     "displayName": "Asset and risk registers",
-    "description": "A library of the ISMS home: the asset register and the risk register. Install it on the home card.",
+    "description": "A library of the ISMS home: the asset register and the risk register. Add it with the buttons in the section \"Libraries\" of the home card",
     "category": "ISMS home libraries"
 }

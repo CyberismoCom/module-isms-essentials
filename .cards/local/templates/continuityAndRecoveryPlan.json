@@ -2,5 +2,5 @@
     "name": "ismsa/templates/continuityAndRecoveryPlan",
     "displayName": "Business continuity and recovery plan",
     "description": "How the organisation continues its critical operations during a disruption, and how it backs up and restores its systems and data",
-    "category": "ISMS home libraries"
+    "category": "ISMS home evidence"
 }

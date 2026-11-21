@@ -1,6 +1,6 @@
 {
     "name": "ismsa/templates/assetAndRiskManagementControls",
     "displayName": "Asset and risk management controls",
-    "description": "A library of the ISMS home: the controls for asset management and risk management. Install it in the central control register.",
+    "description": "A library of the ISMS home: the controls for asset management and risk management. Add it with the buttons in the section \"Libraries\" of the home card",
     "category": "ISMS home libraries"
 }

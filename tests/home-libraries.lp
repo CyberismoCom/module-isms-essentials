@@ -6,7 +6,7 @@
 % point of the libraries. So the test names them by card key with ismsa_testHomeKey/2.
 %
 % - Test home L1 (ismsa_test_lib_home-1) has the core and all libraries. All its controls are in
-%   the central control register, and its processes are in the process register. Its access
+%   the control register, and its processes are in the process register. Its access
 %   rights review is passed, its review of the risk register is a draft, the training control
 %   has an overridden assessment, and the business continuity control is out of scope. Its risk
 %   has a treatment plan and its asset is evaluated, so the checks of the asset and risk
@@ -124,16 +124,61 @@ ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetAndRiskMana
 ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetAndRiskRegisters").
 ismsa_expectInstalled("ismsa_test_lib_home-5", "ismsa/templates/assetAndRiskManagementControls").
 ismsa_expectNotInstalled("ismsa_test_lib_home-5", "ismsa/templates/assetAndRiskRegisters").
-ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/assetManagementProcess").
 ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/securityResponseAndComplianceControls").
-ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/incidentManagementProcess").
 
 % ismsa_expectParts(HomeId, Total, Added): the number of library parts offered in the home, and
 % how many of them have been added. The section "Libraries" of the home card shows these.
-ismsa_expectParts("ismsa_test_lib_home-1", 10, 10).
-ismsa_expectParts("ismsa_test_lib_home-4", 10, 8).
-ismsa_expectParts("ismsa_test_lib_home-5", 10, 3).
-ismsa_expectParts("ismsa_test_lib_home-6", 10, 0).
+ismsa_expectParts("ismsa_test_lib_home-1", 7, 7).
+ismsa_expectParts("ismsa_test_lib_home-4", 7, 6).
+ismsa_expectParts("ismsa_test_lib_home-5", 7, 2).
+ismsa_expectParts("ismsa_test_lib_home-6", 7, 0).
+
+% The library choice from the answers on the home card (ismsa/calculations/libraryChoice)
+%
+% L1: no existing ISMS, full ISMS, own assets, own services, and NIS2. All five libraries are
+%     required and added.
+% L4: no existing ISMS and the CRA, nothing else. Only security response and compliance basics
+%     is required. The other libraries are in the home, but not needed.
+% L5: an existing ISMS, the CRA, own assets, and NIS2. NIS2 and asset and risk management are
+%     required directly. The implied libraries are dropped.
+% L6: no answers. Every library is undecided.
+%
+% ismsa_expectLibrary(HomeId, LibraryTitle, State), where State is "required", "notNeeded", or
+% "undecided". ismsa_expectAdded(HomeId, LibraryTitle, "added" | "partly" | "none").
+% ismsa_expectComplete(HomeId) and ismsa_expectNotComplete(HomeId).
+ismsa_expectLibrary("ismsa_test_lib_home-1", "Security response and compliance basics", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-1", "Information security management", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-1", "Asset and risk management", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-1", "Security operations", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-1", "NIS2", "required").
+ismsa_expectComplete("ismsa_test_lib_home-1").
+
+ismsa_expectLibrary("ismsa_test_lib_home-4", "Security response and compliance basics", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-4", "Information security management", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-4", "Asset and risk management", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-4", "Security operations", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-4", "NIS2", "notNeeded").
+ismsa_expectComplete("ismsa_test_lib_home-4").
+
+ismsa_expectLibrary("ismsa_test_lib_home-5", "Security response and compliance basics", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-5", "Information security management", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-5", "Asset and risk management", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-5", "Security operations", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-5", "NIS2", "required").
+ismsa_expectAdded("ismsa_test_lib_home-5", "Asset and risk management", "partly").
+ismsa_expectAdded("ismsa_test_lib_home-5", "NIS2", "none").
+ismsa_expectAdded("ismsa_test_lib_home-5", "Security response and compliance basics", "added").
+ismsa_expectNotComplete("ismsa_test_lib_home-5").
+
+ismsa_expectLibrary("ismsa_test_lib_home-6", "Security response and compliance basics", "undecided").
+ismsa_expectLibrary("ismsa_test_lib_home-6", "NIS2", "undecided").
+ismsa_expectNotComplete("ismsa_test_lib_home-6").
+
+% ismsa_expectReason(HomeId, LibraryTitle, Reason): a reason why the library is required or
+% not needed
+ismsa_expectReason("ismsa_test_lib_home-4", "Security response and compliance basics", "the products must meet the EU Cyber Resilience Act").
+ismsa_expectReason("ismsa_test_lib_home-1", "Security operations", "NIS2 needs it").
+ismsa_expectReason("ismsa_test_lib_home-5", "Information security management", "The home does not need a full ISMS. The existing ISMS does the work that NIS2 needs.").
 
 % ismsa_expectNoControls(HomeId): the home has no internal controls.
 ismsa_expectNoControls("ismsa_test_lib_home-6").
@@ -228,6 +273,80 @@ result(("FAIL check on a control that is not in a home", Control, Title)) :-
 result(("MISSING control without checks", HomeId, ControlId)) :-
     ismsa_expectNoCheck(HomeId, ControlId),
     not ismsa_testCard(HomeId, ControlId, _).
+
+% Library choice
+
+ismsa_testLibrary(HomeId, Title, Library) :-
+    ismsa_choiceLibrary(Library, Title),
+    ismsa_testHome(HomeId, _).
+
+ismsa_testLibraryState(HomeId, Title, "required") :-
+    ismsa_testLibrary(HomeId, Title, Library), ismsa_testHome(HomeId, Home),
+    ismsa_libraryRequired(Home, Library).
+
+ismsa_testLibraryState(HomeId, Title, "notNeeded") :-
+    ismsa_testLibrary(HomeId, Title, Library), ismsa_testHome(HomeId, Home),
+    ismsa_libraryNotNeeded(Home, Library, _).
+
+ismsa_testLibraryState(HomeId, Title, "undecided") :-
+    ismsa_testLibrary(HomeId, Title, Library), ismsa_testHome(HomeId, Home),
+    ismsa_libraryUndecided(Home, Library).
+
+ismsa_testAdded(HomeId, Title, "added") :-
+    ismsa_testLibrary(HomeId, Title, Library), ismsa_testHome(HomeId, Home),
+    ismsa_libraryAdded(Home, Library).
+
+ismsa_testAdded(HomeId, Title, "partly") :-
+    ismsa_testLibrary(HomeId, Title, Library), ismsa_testHome(HomeId, Home),
+    ismsa_libraryPartlyAdded(Home, Library).
+
+ismsa_testAdded(HomeId, Title, "none") :-
+    ismsa_testLibrary(HomeId, Title, Library), ismsa_testHome(HomeId, Home),
+    not ismsa_libraryAdded(Home, Library),
+    not ismsa_libraryPartlyAdded(Home, Library).
+
+result(("FAIL library state", HomeId, Title, State)) :-
+    ismsa_expectLibrary(HomeId, Title, State),
+    not ismsa_testLibraryState(HomeId, Title, State).
+
+% A library has exactly one state
+
+result(("FAIL library has several states", HomeId, Title)) :-
+    ismsa_testLibrary(HomeId, Title, _),
+    ismsa_testHomeKey(HomeId, _),
+    not 1 = #count { S : ismsa_testLibraryState(HomeId, Title, S) }.
+
+result(("FAIL library added state", HomeId, Title, State)) :-
+    ismsa_expectAdded(HomeId, Title, State),
+    not ismsa_testAdded(HomeId, Title, State).
+
+result(("FAIL choice not complete", HomeId)) :-
+    ismsa_expectComplete(HomeId),
+    ismsa_testHome(HomeId, Home),
+    not ismsa_libraryChoiceComplete(Home).
+
+result(("FAIL choice complete", HomeId)) :-
+    ismsa_expectNotComplete(HomeId),
+    ismsa_testHome(HomeId, Home),
+    ismsa_libraryChoiceComplete(Home).
+
+ismsa_testReason(HomeId, Title, Reason) :-
+    ismsa_testLibrary(HomeId, Title, Library), ismsa_testHome(HomeId, Home),
+    ismsa_libraryRequirement(Home, Library, Reason).
+
+ismsa_testReason(HomeId, Title, Reason) :-
+    ismsa_testLibrary(HomeId, Title, Library), ismsa_testHome(HomeId, Home),
+    ismsa_libraryNotNeeded(Home, Library, Reason).
+
+result(("FAIL reason", HomeId, Title, Reason)) :-
+    ismsa_expectReason(HomeId, Title, Reason),
+    not ismsa_testReason(HomeId, Title, Reason).
+
+% Every library of this module is decided by the questions
+
+result(("FAIL library without a question", Library)) :-
+    ismsa_libraryControl(_, _, Library),
+    not ismsa_choiceLibrary(Library, _).
 
 % Library parts
 
@@ -349,8 +468,8 @@ result(("FAIL implements link between homes", Control, Requirement)) :-
     ismsa_closestHome(Requirement, Home2),
     Home1 != Home2.
 
-% A library for new homes is offered in a new home, and not in an old-style home without a
-% central control register (Test home L3).
+% A library for new homes is offered in a new home, and not in an old-style home without the
+% control register of the new home (Test home L3).
 
 ismsa_testHomeKey("ismsa_test_lib_home-3", ismsa_6c54egay).
 
@@ -361,17 +480,6 @@ result(("FAIL NIS2 library not offered in a new home", HomeId)) :-
 
 result(("FAIL NIS2 library offered in an old home")) :-
     ismsa_libraryOfferedInHome("ismsa/templates/nis2Requirements", ismsa_6c54egay).
-
-% The process parts of the asset and risk management library are offered only in new homes,
-% because the process register of the old home has the same identifier.
-
-result(("FAIL process part offered in an old home", Template)) :-
-    ismsa_installableExtension("ismsa_register_processes", _, Template, _, _),
-    ismsa_libraryOfferedInHome(Template, ismsa_6c54egay).
-
-result(("FAIL process part not offered in a new home", Template)) :-
-    ismsa_installableExtension("ismsa_register_processes", _, Template, _, _),
-    not ismsa_libraryOfferedInHome(Template, ismsa_l866q2o1).
 
 % Every library of this module has a place in the order on the home card.
 

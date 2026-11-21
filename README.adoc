@@ -37,14 +37,14 @@ For a tutorial on how to get started with the Cyberismo ISMS essentials module, 
 
 The template "ISMS home" (`ismsa/templates/moduleHome2`) creates a home for the security work that is done once for a scope: the whole organisation, a business unit, or one team. The core of the home has no controls. It has four registers:
 
-* the central control register, for the internal controls of the home
+* the control register, for the internal controls of the home
 * the process register, for the processes, policies, and plans of the home
 * the incident register, for the incidents and near misses
 * the compliance register.
 
 The libraries add the controls, registers, and processes. So the first step in a new home is to choose its libraries. A team under an existing ISMS that already does the central controls leaves out the libraries that it does not need.
 
-The home keeps one rule: all controls are in the central control register, the processes, policies, and plans are in the process register, and the other registers hold the records of the work. The process register has the same identifier as in the old home template (`ismsa_register_processes`).
+The home keeps one rule: all controls are in the control register, the processes, policies, and plans are in the process register, and the other registers hold the records of the work. The process register has the same identifier as in the old home template (`ismsa_register_processes`).
 
 Each control has planned evidence. The button in the control creates the evidence in the register that owns its topic, by default the process register. The evidence is linked to its control by identifier, only inside the same home. The assessment of a control is calculated from its evidence. When the EU CRA module is installed, the controls also show guidance for the Cyber Resilience Act.
 
@@ -54,7 +54,7 @@ The whole content of the home card is the report `ismsa/reports/homeContent`, so
 
 The registers of the home and its libraries, and the NIS2 requirements, use the same pattern. Their content is in three reports: `ismsa/reports/homeRegisterContent`, `ismsa/reports/assetAndRiskRegisterContent`, and `ismsa/reports/nis2RequirementContent`. Each card calls its report with a parameter that names the card, for example `"register": "processes"`. The only text that the user writes in a register is where the supplier agreements are kept, in the hidden field `ismsa/fieldTypes/supplierAgreements` of the suppliers register. The documents, reviews, review tasks, and role assignments stay ordinary cards, because the user writes into them.
 
-The home card shows a "Getting started" checklist (`ismsa/reports/gettingStarted`). It lists the set-up steps of the libraries that have been added, in the order of the old set-up tasks, and ticks each step when its control is OK or out of scope. Before any library is added, it asks the user to choose the libraries first.
+The home card shows a "Getting started" checklist (`ismsa/reports/gettingStarted`). It starts with three steps for the home itself: set the owner, answer the questions, and add the required libraries. Then it lists the set-up steps of the libraries that have been added, in the order of the old set-up tasks, and ticks each step when its control is OK or out of scope.
 
 This module has five libraries:
 
@@ -63,19 +63,19 @@ This module has five libraries:
 | Library | Installed in | Content
 
 | Security response and compliance basics
-| The central control register and the process register
+| The control register and the process register
 | Six central controls: assign the central security roles, receive notifications of security issues, notify about vulnerabilities and incidents, contact with authorities, protect records, and follow changes in regulation. The incident management process
 
 | Information security management
-| The central control register and the home card
+| The control register and the home card
 | Controls for the scope and context, the information security policy, training and awareness, and the planning and review of the ISMS. Registers for the security targets, the security reviews, and the tasks
 
 | Asset and risk management
-| The central control register, the home card, and the process register
+| The control register, the home card, and the process register
 | Controls for asset management and risk management. The asset register and the risk register. The asset management process and the risk management process
 
 | Security operations
-| The central control register
+| The control register
 | Controls for security monitoring, incident response exercises, business continuity and recovery, and access rights reviews
 
 | NIS2
@@ -83,7 +83,9 @@ This module has five libraries:
 | The requirements of NIS2 Articles 20, 21, and 23 as assessed compliance requirements. The planned controls of the home are linked to them automatically
 |===
 
-A library has a template for each of its parts: its controls go to the central control register, its registers to the home card, and its processes to the process register. The section "Libraries" of the home card shows a button for each part, grouped by library, and ticks the parts that have been added. The section is open until the first part is added, and then it is closed to one line. The whole section is the report `ismsa/reports/homeLibrarySection`, and the buttons are the report `ismsa/reports/installLibraries`. So a new version of the module changes the section also in existing homes. A future version of Cyberismo can create cards in several places with one button, and then each library needs only one button.
+A library has a template for each of its parts: its controls go to the control register, and its registers go to the home card. The planned evidence, such as the processes, is created with the buttons in the controls.
+
+The section "Libraries" of the home card asks six yes or no questions, for example whether an existing ISMS already does the central security work, and whether NIS2 applies. The answers are hidden fields of the home card, and the user answers them in the table with the field macro. The home then shows a button for each missing part of each library that the answers require, and it explains why the other libraries are not needed. A "yes" to a question about the work of the home requires a library directly. The questions about the EU Cyber Resilience Act and NIS2 also imply other libraries, but only when no existing ISMS does the central security work. The rules are in `ismsa/calculations/libraryChoice`. The section is open until every question is answered and every required library is added. A future version of Cyberismo can create cards in several places with one button, and then each library needs only one button.
 
 A module registers a library with an `ismsa_installableExtension` fact. The extension points are listed in `ismsa/calculations/extensions`. The facts of the libraries of this module are in `ismsa/calculations/homeLibraries`.
 

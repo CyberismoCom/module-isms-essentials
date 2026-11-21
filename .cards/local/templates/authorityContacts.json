@@ -2,5 +2,5 @@
     "name": "ismsa/templates/authorityContacts",
     "displayName": "Authority contacts",
     "description": "The authorities that the organisation must or can contact, when to contact them, and how",
-    "category": "Central controls"
+    "category": "ISMS home evidence"
 }

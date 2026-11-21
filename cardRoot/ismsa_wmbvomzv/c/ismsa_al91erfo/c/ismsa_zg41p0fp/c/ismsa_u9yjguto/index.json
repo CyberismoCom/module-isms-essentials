@@ -4,7 +4,7 @@
     "createdAt": "2026-11-19T19:28:09.468Z",
     "links": [],
     "cardType": "ismsa/cardTypes/register",
-    "title": "Central control register",
+    "title": "Control register",
     "templateCardKey": "ismsa_g6wrr31o",
     "base/fieldTypes/informationClassification": "internal",
     "ismsa/fieldTypes/adoptionStep": "step1",

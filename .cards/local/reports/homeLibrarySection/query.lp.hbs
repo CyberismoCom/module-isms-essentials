@@ -1,13 +1,13 @@
-% How many library parts the home has, so that the section can be open until the first part is
-% added, and closed after that. The parts come from ismsa/calculations/extensions.
+% The state of the library choice of the home: open until every question is answered and every
+% required library is added. The rules are in ismsa/calculations/libraryChoice.
 
 result(result).
 
-resultField(result, "total", N, "integer") :-
-    N = #count { Template : ismsa_libraryPart({{cardKey}}, _, Template, _, _) }.
+resultField(result, "complete", "yes", "shortText") :-
+    ismsa_libraryChoiceComplete({{cardKey}}).
 
-resultField(result, "added", N, "integer") :-
-    N = #count { Template : ismsa_libraryPartInstalled({{cardKey}}, Template) }.
+resultField(result, "requiredCount", N, "integer") :-
+    N = #count { Library : ismsa_libraryRequired({{cardKey}}, Library) }.
 
-resultField(result, "noneAdded", "yes", "shortText") :-
-    not ismsa_libraryPartInstalled({{cardKey}}, _).
+resultField(result, "noneRequired", "yes", "shortText") :-
+    not ismsa_libraryRequired({{cardKey}}, _).

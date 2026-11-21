@@ -1,38 +1,46 @@
 {{#each results}}
-{{#if this.noneAdded}}
+{{#if this.complete}}
+{{#if this.noneRequired}}
+.Libraries: the answers require no libraries
+{{else}}
+.Libraries: all {{this.requiredCount}} required libraries added
+{{/if}}
+[%collapsible]
+{{else}}
 .Choose the libraries of the home
 [%collapsible%open]
-{{else}}
-.Libraries of the home: {{this.added}} of {{this.total}} parts added
-[%collapsible]
 {{/if}}
 ====
-Libraries add the controls, registers, and processes to the home. Add only the libraries that the organisation needs:
+Libraries add the controls, registers, and processes to the home. Answer the questions, and the home shows the libraries that it needs. Click an answer to change it.
 
-[cols="3,4"]
+[cols="6,1,5"]
 |===
-| Question | Library
+| Question | Answer | Libraries that the answer "yes" requires
 
-| Do we need a full information security management system, for example for ISO/IEC 27001 or NIS2?
-| Security response and compliance basics, information security management, and asset and risk management
+| Does an existing ISMS outside this home already do the central security work for this home, for example the security roles, the vulnerability reports, and the incident notifications?
+| {{#field}}"field": "ismsa/fieldTypes/homeExistingIsms", "display": "inline", "showLabel": false{{/field}}
+| No: security response and compliance basics. Yes: none, because the existing ISMS does that work
 
-| Do we need to manage the risks of our own assets, also without a full management system?
+| Must the products in the scope of this home meet the EU Cyber Resilience Act?
+| {{#field}}"field": "ismsa/fieldTypes/homeCra", "display": "inline", "showLabel": false{{/field}}
+| Security response and compliance basics, unless an existing ISMS does the central security work
+
+| Does this home manage the risks of the assets of the organisation?
+| {{#field}}"field": "ismsa/fieldTypes/homeAssetRisks", "display": "inline", "showLabel": false{{/field}}
 | Asset and risk management
 
-| Do we run IT or cloud services ourselves?
+| Does the organisation run IT or cloud services itself?
+| {{#field}}"field": "ismsa/fieldTypes/homeOwnServices", "display": "inline", "showLabel": false{{/field}}
 | Security operations
 
-| Does NIS2 apply to us?
-| NIS2. NIS2 also needs the other libraries above
+| Does this home need a full information security management system, for example for ISO/IEC 27001?
+| {{#field}}"field": "ismsa/fieldTypes/homeFullIsms", "display": "inline", "showLabel": false{{/field}}
+| Information security management, and asset and risk management
 
-| Do we need the basic central controls for our products, for example for the EU Cyber Resilience Act?
-| Security response and compliance basics
-
-| Are we a team under an existing ISMS that already does the central controls?
-| Leave out security response and compliance basics. Add only the libraries for the work that the team does itself
+| Does NIS2 apply to the organisation?
+| {{#field}}"field": "ismsa/fieldTypes/homeNis2", "display": "inline", "showLabel": false{{/field}}
+| NIS2. Also the four other libraries, unless an existing ISMS does the central security work
 |===
-
-A library has a button for each of its parts. A part can be the controls, which go to the central control register, the registers, which go to this home card, or the processes, which go to the process register. Click the buttons of all parts of a library. A part that has been added is ticked.
 
 {{#report}}
   "name": "ismsa/reports/installLibraries"

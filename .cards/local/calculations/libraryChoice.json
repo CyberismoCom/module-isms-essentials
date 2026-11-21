@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/calculations/libraryChoice",
+    "displayName": "Choosing the libraries of the home",
+    "calculation": "calculation.lp",
+    "description": "Decides from the answers on the home card which libraries the home needs, and why the other libraries are not needed"
+}

@@ -1,5 +1,5 @@
 {
-    "title": "Central control register",
+    "title": "Control register",
     "cardType": "ismsa/cardTypes/register",
     "workflowState": "Draft",
     "rank": "0|b",

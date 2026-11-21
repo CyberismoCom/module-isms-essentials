@@ -1,7 +1,14 @@
 {{#each results}}
 {{#if this.inHome}}
+These are the steps to set up the home. After the first steps, each step is done with an internal control, and its box is ticked when the control is OK or out of scope. The list has the steps of the libraries that have been added to the home.
+
+*Set up the home*
+
+{{#each this.home}}
+* {{this.checkbox}} {{{this.step}}}
+{{/each}}
+
 {{#if this.anyStep}}
-These are the steps to set up the home. Each step is done with an internal control, and its box is ticked when the control is OK or out of scope. The list has the steps of the libraries that have been added to the home.
 
 {{#if this.showStart}}
 *Get started*
@@ -53,9 +60,9 @@ These are the steps to set up the home. Each step is done with an internal contr
 {{/if}}
 Then add the compliance requirements that apply to the organisation in the compliance register.
 {{else}}
-Choose the libraries of the home first, in the section "Libraries" above. The steps of the libraries are shown here after you add them.
+The steps of the libraries are shown here after you add them.
 {{/if}}
 {{else}}
-This checklist is shown only in an ISMS home that has a central control register.
+This checklist is shown only in an ISMS home made from the template "ISMS home".
 {{/if}}
 {{/each}}

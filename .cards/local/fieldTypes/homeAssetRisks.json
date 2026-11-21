@@ -1,0 +1,18 @@
+{
+    "name": "ismsa/fieldTypes/homeAssetRisks",
+    "displayName": "Risks of own assets managed",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "yes",
+            "enumDisplayValue": "Yes",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "no",
+            "enumDisplayValue": "No",
+            "enumDescription": ""
+        }
+    ],
+    "description": "Does this home manage the risks of the assets of the organisation?"
+}

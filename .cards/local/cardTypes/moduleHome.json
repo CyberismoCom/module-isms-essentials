@@ -26,6 +26,30 @@
         {
             "name": "ismsa/fieldTypes/homeScopeDescription",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeExistingIsms",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeCra",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeFullIsms",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeAssetRisks",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeOwnServices",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeNis2",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [

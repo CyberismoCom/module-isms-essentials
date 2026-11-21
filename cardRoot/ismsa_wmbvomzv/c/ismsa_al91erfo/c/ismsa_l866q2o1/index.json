@@ -10,5 +10,11 @@
     "ismsa/fieldTypes/adoptionStep": "step1",
     "base/fieldTypes/identifier": "ismsa_home",
     "lastUpdated": "2026-11-20T07:41:48.704Z",
-    "base/fieldTypes/owner": "home-l4@example.com"
+    "base/fieldTypes/owner": "home-l4@example.com",
+    "ismsa/fieldTypes/homeExistingIsms": "no",
+    "ismsa/fieldTypes/homeCra": "yes",
+    "ismsa/fieldTypes/homeAssetRisks": "no",
+    "ismsa/fieldTypes/homeOwnServices": "no",
+    "ismsa/fieldTypes/homeFullIsms": "no",
+    "ismsa/fieldTypes/homeNis2": "no"
 }
