@@ -490,3 +490,18 @@ result(("FAIL library without a rank", Library)) :-
 
 result(("FAIL other library not offered in an old home")) :-
     not ismsa_libraryOfferedInHome("ismsa/templates/securityOperations", ismsa_6c54egay).
+
+% The dashboard of the home (ismsa/reports/dashboard) reads the built-in field "progress". Most
+% progress calculations of ismsa still compute the deprecated field "base/fieldTypes/progress",
+% and core maps it to "progress" with a compatibility rule (INTDEV-666). This check fails if the
+% two values differ, for example if core removes the rule before the calculations are moved to
+% "progress".
+
+result(("FAIL progress not mapped to the built-in field", Card, Old)) :-
+    field(Card, "base/fieldTypes/progress", Old),
+    not field(Card, "progress", Old).
+
+result(("FAIL built-in progress differs", Card, Old, New)) :-
+    field(Card, "base/fieldTypes/progress", Old),
+    field(Card, "progress", New),
+    New != Old.
