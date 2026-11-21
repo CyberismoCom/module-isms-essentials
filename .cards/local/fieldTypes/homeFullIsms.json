@@ -1,6 +1,6 @@
 {
     "name": "ismsa/fieldTypes/homeFullIsms",
-    "displayName": "Full ISMS needed",
+    "displayName": "Answer",
     "dataType": "enum",
     "enumValues": [
         {

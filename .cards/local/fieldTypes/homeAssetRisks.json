@@ -1,6 +1,6 @@
 {
     "name": "ismsa/fieldTypes/homeAssetRisks",
-    "displayName": "Risks of own assets managed",
+    "displayName": "Answer",
     "dataType": "enum",
     "enumValues": [
         {

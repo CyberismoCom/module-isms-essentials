@@ -1,6 +1,6 @@
 {
     "name": "ismsa/fieldTypes/homeOwnServices",
-    "displayName": "Own IT or cloud services",
+    "displayName": "Answer",
     "dataType": "enum",
     "enumValues": [
         {

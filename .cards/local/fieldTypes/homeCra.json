@@ -1,6 +1,6 @@
 {
     "name": "ismsa/fieldTypes/homeCra",
-    "displayName": "Products under the EU Cyber Resilience Act",
+    "displayName": "Answer",
     "dataType": "enum",
     "enumValues": [
         {

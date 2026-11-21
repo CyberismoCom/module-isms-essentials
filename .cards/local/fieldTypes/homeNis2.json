@@ -1,6 +1,6 @@
 {
     "name": "ismsa/fieldTypes/homeNis2",
-    "displayName": "NIS2 applies",
+    "displayName": "Answer",
     "dataType": "enum",
     "enumValues": [
         {
