@@ -1,6 +1,6 @@
 {
     "name": "ismsa/templates/moduleHome2",
-    "displayName": "ISMS home (core)",
-    "description": "Start page for the security work that is done once for an organisation, a business unit, or a team, with the central control register, the process register, the incident register, and the compliance register. The libraries add the controls",
+    "displayName": "ISMS home",
+    "description": "Start page for the security work that is done once for an organisation, a business unit, or a team. The libraries add the controls, registers, and processes",
     "category": "Start"
 }

@@ -35,7 +35,7 @@ For a tutorial on how to get started with the Cyberismo ISMS essentials module, 
 
 == The ISMS home
 
-The template "ISMS home (core)" (`ismsa/templates/moduleHome2`) creates a home for the security work that is done once for a scope: the whole organisation, a business unit, or one team. The core of the home has no controls. It has four registers:
+The template "ISMS home" (`ismsa/templates/moduleHome2`) creates a home for the security work that is done once for a scope: the whole organisation, a business unit, or one team. The core of the home has no controls. It has four registers:
 
 * the central control register, for the internal controls of the home
 * the process register, for the processes, policies, and plans of the home
@@ -87,7 +87,7 @@ A library has a template for each of its parts: its controls go to the central c
 
 A module registers a library with an `ismsa_installableExtension` fact. The extension points are listed in `ismsa/calculations/extensions`. The facts of the libraries of this module are in `ismsa/calculations/homeLibraries`.
 
-The older template "ISMS home" (`ismsa/templates/moduleHome`) is still available, and existing homes continue to work.
+The old template "ISMS home (deprecated)" (`ismsa/templates/moduleHome`) is in the category "Deprecated". It still works, and existing homes made from it do not change. Use `ismsa/templates/moduleHome2` for new homes. The old template will be removed in a major version, after a way to move the content of old homes to the new structure is available.
 
 == Tests
 
