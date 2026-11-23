@@ -31,6 +31,18 @@ resultField(result, Field, "yes", "shortText") :-
     ismsa_hlsCollection(Question, _, Field),
     ismsa_answerAgainstRecommendation({{cardKey}}, Question).
 
+% The libraries of other modules that the framework questions add (ismsa_frameworkLibrary/3)
+
+ismsa_hlsFramework("cra", "craLibraries").
+ismsa_hlsFramework("nis2", "nis2Libraries").
+
+childResult(result, ("framework", Library), Collection) :-
+    ismsa_hlsFramework(Framework, Collection),
+    ismsa_frameworkLibrary(Framework, Library, _).
+
+resultField(("framework", Library), "title", Title, "shortText") :-
+    ismsa_frameworkLibrary(_, Library, Title).
+
 % What each library covers
 
 childResult(result, ("coverage", Library), "coverage") :-

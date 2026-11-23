@@ -12,6 +12,8 @@
 %   requirement checklist of the framework. They do not add other libraries. They recommend
 %   answers to the questions about the work, and the user decides. When a recommended library
 %   is left out, the requirements of the framework show the gap.
+% - The checklist of a framework can come from another module. That module declares
+%   ismsa_frameworkLibrary/3 (see below), for example eucra for the CRA.
 %
 
 % ismsa_homeQuestion(Question, Field)
@@ -60,6 +62,29 @@ ismsa_questionAdds("ownServices", "the security operations basics library",
         "you manage the security of your own IT or cloud services in this home").
 ismsa_questionAdds("nis2", "the NIS2 basics library", "NIS2 applies").
 
+%
+% Framework libraries of other modules
+%
+% ismsa_frameworkLibrary(Framework, Library, Title): a "yes" to the framework question adds the
+% library of another module. Framework is "cra" or "nis2". Library is the library name in the
+% ismsa_installableExtension facts of the module, and Title is the name on the home card. The
+% module also declares ismsa_libraryRank/2 and ismsa_libraryCoverage/3 for the library.
+% Example, from eucra:
+%
+% ismsa_frameworkLibrary("cra", "the CRA programme library", "CRA programme").
+%
+% ismsa_frameworkApplies(Framework, Reason, NotNeededReason)
+
+ismsa_frameworkApplies("cra", "the CRA applies", "The CRA does not apply.").
+ismsa_frameworkApplies("nis2", "NIS2 applies", "NIS2 does not apply.").
+
+ismsa_choiceLibrary(Library, Title) :-
+    ismsa_frameworkLibrary(_, Library, Title).
+
+ismsa_questionAdds(Framework, Library, Reason) :-
+    ismsa_frameworkLibrary(Framework, Library, _),
+    ismsa_frameworkApplies(Framework, Reason, _).
+
 % ismsa_libraryRequirement(Home, Library, Reason)
 
 ismsa_libraryRequirement(Home, Library, Reason) :-
@@ -73,8 +98,8 @@ ismsa_libraryRequired(Home, Library) :-
 % Recommendations of the frameworks
 %
 % ismsa_frameworkRecommends(Framework, Question, Reason): when the framework applies, a "yes" to
-% the question is recommended. The CRA question adds no checklist yet: the CRA requirements of
-% the organisation come with the CRA programme library of eucra (E9).
+% the question is recommended. The CRA requirements of the organisation come with the CRA
+% programme library of eucra (E9), through ismsa_frameworkLibrary/3.
 %
 
 ismsa_frameworkRecommends("cra", "centralWork", "the CRA requires a way to receive vulnerability reports and to notify about vulnerabilities and incidents").
@@ -119,6 +144,11 @@ ismsa_libraryNotNeededReason(Home, "the security operations basics library",
 
 ismsa_libraryNotNeededReason(Home, "the NIS2 basics library", "NIS2 does not apply.") :-
     ismsa_homeAnswer(Home, "nis2", "no").
+
+ismsa_libraryNotNeededReason(Home, Library, Reason) :-
+    ismsa_frameworkLibrary(Framework, Library, _),
+    ismsa_frameworkApplies(Framework, _, Reason),
+    ismsa_homeAnswer(Home, Framework, "no").
 
 % A required library is never "not needed", even if a reason above matches.
 

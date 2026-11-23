@@ -21,11 +21,11 @@ Libraries add the controls, registers, and processes to the home. Answer the que
 
 | Must the products in the scope of this home meet the EU Cyber Resilience Act (CRA)?
 | {{#field}}"field": "ismsa/fieldTypes/homeCra", "display": "inline", "showLabel": false{{/field}}
-| No library yet. It recommends the central security work, which covers the CRA duties of the organisation. The duties for each product are in the development projects of the secure development and EU CRA modules.
+| {{#if this.craLibraries}}{{#each this.craLibraries}}{{this.title}}{{#unless @last}}, {{/unless}}{{/each}}: a checklist of the CRA requirements of the organisation, linked to the controls of the home.{{else}}No library without the EU CRA module.{{/if}} It recommends the central security work, which covers the CRA duties of the organisation. The duties for each product are in the development projects of the secure development and EU CRA modules.
 
 | Does NIS2 apply to the organisation?
 | {{#field}}"field": "ismsa/fieldTypes/homeNis2", "display": "inline", "showLabel": false{{/field}}
-| NIS2 basics: a checklist of the NIS2 requirements, linked to the controls of the home. It recommends the four kinds of work below. Check the national law for other duties.
+| NIS2 basics: a checklist of the NIS2 requirements, linked to the controls of the home.{{#each this.nis2Libraries}} It also adds {{this.title}}.{{/each}} It recommends the four kinds of work below. Check the national law for other duties.
 |===
 
 *What do you do in this home?*
