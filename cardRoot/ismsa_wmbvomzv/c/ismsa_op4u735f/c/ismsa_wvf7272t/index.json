@@ -1,0 +1,17 @@
+{
+    "rank": "0|i",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-23T10:37:29.565Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Reviewed, failed test fixed later",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "ok",
+    "ismsa/fieldTypes/testReview": "ok",
+    "ismsa/fieldTypes/securityReview": "ok",
+    "ismsa/fieldTypes/productOwnerReview": "ok",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-23T10:37:29.566Z",
+    "base/fieldTypes/identifier": "ismsa_test_sr_test-fixed",
+    "base/fieldTypes/owner": "owner@example.com"
+}

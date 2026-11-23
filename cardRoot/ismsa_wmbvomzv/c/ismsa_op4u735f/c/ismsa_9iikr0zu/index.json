@@ -1,0 +1,17 @@
+{
+    "rank": "0|e",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-23T10:37:26.271Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Security review asks for changes",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "ok",
+    "ismsa/fieldTypes/testReview": "ok",
+    "ismsa/fieldTypes/securityReview": "deviation",
+    "ismsa/fieldTypes/productOwnerReview": "ok",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-23T10:37:26.273Z",
+    "base/fieldTypes/identifier": "ismsa_test_sr_changes-needed",
+    "base/fieldTypes/owner": "owner@example.com"
+}

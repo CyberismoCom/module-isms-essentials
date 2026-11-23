@@ -1,0 +1,18 @@
+{
+    "rank": "0|n",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-23T10:37:46.288Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Assessment overridden without an explanation",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "open",
+    "ismsa/fieldTypes/testReview": "open",
+    "ismsa/fieldTypes/securityReview": "open",
+    "ismsa/fieldTypes/productOwnerReview": "open",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-23T10:37:46.289Z",
+    "base/fieldTypes/identifier": "ismsa_test_sr_override-without-explanation",
+    "base/fieldTypes/assessment": "ok",
+    "base/fieldTypes/owner": "owner@example.com"
+}

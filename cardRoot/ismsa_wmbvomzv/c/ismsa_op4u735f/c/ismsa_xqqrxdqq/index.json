@@ -1,0 +1,18 @@
+{
+    "rank": "0|l",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-23T10:37:32.034Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/evidences",
+            "cardKey": "ismsa_p7v1bbju"
+        }
+    ],
+    "cardType": "base/cardTypes/review",
+    "title": "Security requirement test: test review in draft",
+    "templateCardKey": "ismsa_hxt7il95",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "lastUpdated": "2026-11-23T10:38:08.369Z",
+    "base/fieldTypes/owner": "owner@example.com"
+}
