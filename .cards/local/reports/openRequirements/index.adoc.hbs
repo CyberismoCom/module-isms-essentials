@@ -1,0 +1,23 @@
+{{#each results}}
+{{#if this.any}}
+[cols="4,1,6"]
+|===
+| Requirement | Assessment | Why it is open
+
+{{#each this.requirements}}
+| xref:{{this.key}}.adoc[{{this.title}}]
+| {{this.assessment}}
+a| {{this.explanation}}.
+{{#each this.missing}}
+
+* {{this.controlTitle}}: not in this home. It comes from {{this.library}}.
+{{/each}}
+
+{{/each}}
+|===
+
+To close a requirement, add the library that brings its missing controls, or link your own control to the requirement with the link type "implements". If a requirement does not apply, mark it out of scope with a justification.
+{{else}}
+No compliance requirement of the home is open.
+{{/if}}
+{{/each}}

@@ -1,0 +1,21 @@
+{
+    "rank": "0|h",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-23T15:56:23.565Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/moduleHome",
+    "title": "Test home L7: created from the templates of 2026-11-23, with all libraries",
+    "templateCardKey": "ismsa_xtkwa8qe",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": "ismsa_home",
+    "lastUpdated": "2026-11-23T15:56:23.567Z",
+    "base/fieldTypes/owner": "home-l7@example.com",
+    "ismsa/fieldTypes/homeScope": "Test organisation L7",
+    "ismsa/fieldTypes/homeCentralWork": "yes",
+    "ismsa/fieldTypes/homeCra": "yes",
+    "ismsa/fieldTypes/homeAssetRisks": "yes",
+    "ismsa/fieldTypes/homeOwnServices": "yes",
+    "ismsa/fieldTypes/homeFullIsms": "yes",
+    "ismsa/fieldTypes/homeNis2": "yes"
+}

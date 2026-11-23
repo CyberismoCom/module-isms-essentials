@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlManageVulnerabilitiesAndUpdates",
+    "displayName": "Control - Manage vulnerabilities and updates",
+    "description": "The content of the internal control 'Manage vulnerabilities and updates'",
+    "category": "ISMS home libraries"
+}

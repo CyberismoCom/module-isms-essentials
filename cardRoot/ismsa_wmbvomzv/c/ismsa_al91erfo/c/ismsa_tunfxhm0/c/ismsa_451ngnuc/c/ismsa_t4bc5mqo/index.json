@@ -1,0 +1,16 @@
+{
+    "rank": "0|e",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-23T15:56:32.045Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Contact with authorities",
+    "templateCardKey": "ismsa_h3ltk6s2",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "march",
+    "base/fieldTypes/identifier": "ismsa_control_contact-with-authorities",
+    "lastUpdated": "2026-11-23T15:56:32.382Z",
+    "lastTransitioned": "2026-11-23T15:56:32.382Z"
+}

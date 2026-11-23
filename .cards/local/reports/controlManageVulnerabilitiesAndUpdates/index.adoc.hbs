@@ -1,0 +1,38 @@
+{{#each results}}
+The organisation finds the vulnerabilities in the IT and the cloud services that it runs, and installs the updates within agreed deadlines.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs IT or cloud services itself, or administers the services that it uses. The vulnerabilities in the products of the organisation are handled in the development projects.
+
+== How to implement
+
+Write down where the information about vulnerabilities comes from, the deadlines for the updates, and how the exceptions are approved. The incident management process refers to this process.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_vulnerability-and-update-management-process",
+  "template": "ismsa/templates/vulnerabilityAndUpdateManagementProcess",
+  "buttonLabel": "Create the process for managing vulnerabilities and updates"
+{{/report}}
+
+Check that the process is approved, and that the updates of the critical systems meet the deadlines.
+
+{{#if this.craGuidance}}
+== EU Cyber Resilience Act
+
+The CRA covers the vulnerabilities of the products. This control covers the IT of the organisation. Use the same sources of information for both, where it is possible.
+{{/if}}
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(e) and (g)
+* ISO/IEC 27001:2022 Annex A 8.8 and 8.19
+
+{{/each}}

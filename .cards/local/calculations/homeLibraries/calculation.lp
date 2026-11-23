@@ -36,7 +36,7 @@ ismsa_installableExtension(
 
 ismsa_installableExtension(
     "ismsa_register_central-controls",
-    "the information security management library",
+    "the information security management basics library",
     "ismsa/templates/informationSecurityManagementControls",
     "Add the information security management controls",
     "ismsa_control_isms-scope-and-context"
@@ -44,7 +44,7 @@ ismsa_installableExtension(
 
 ismsa_installableExtension(
     "ismsa_home",
-    "the information security management library",
+    "the information security management basics library",
     "ismsa/templates/informationSecurityManagementRegisters",
     "Add the information security management registers",
     "ismsa_register_security-targets"
@@ -68,7 +68,7 @@ ismsa_installableExtension(
 
 ismsa_installableExtension(
     "ismsa_register_central-controls",
-    "the security operations library",
+    "the security operations basics library",
     "ismsa/templates/securityOperations",
     "Add the security operations controls",
     "ismsa_control_operate-security-monitoring"
@@ -76,7 +76,7 @@ ismsa_installableExtension(
 
 ismsa_installableExtension(
     "ismsa_register_compliance",
-    "the NIS2 library",
+    "the NIS2 basics library",
     "ismsa/templates/nis2Requirements",
     "Add the NIS2 requirements",
     "ismsa_register_nis2"
@@ -85,10 +85,35 @@ ismsa_installableExtension(
 % The order of the libraries on the home card. A library without this fact comes after them.
 
 ismsa_libraryRank("the security response and compliance basics library", 1).
-ismsa_libraryRank("the information security management library", 2).
+ismsa_libraryRank("the information security management basics library", 2).
 ismsa_libraryRank("the asset and risk management library", 3).
-ismsa_libraryRank("the security operations library", 4).
-ismsa_libraryRank("the NIS2 library", 5).
+ismsa_libraryRank("the security operations basics library", 4).
+ismsa_libraryRank("the NIS2 basics library", 5).
+
+% What each library covers, and where the rest comes from. The home card shows these in the
+% section "Libraries", so that the user knows the limits of the home before choosing.
+%
+% ismsa_libraryCoverage(Library, Covers, NotCovered)
+
+ismsa_libraryCoverage("the security response and compliance basics library",
+    "The security roles, the channel for vulnerability reports, the notifications of vulnerabilities and incidents, the authority contacts, the records, and the changes in regulation. These are the duties of the organisation for the CRA and the reporting of NIS2.",
+    "The duties for each product under the CRA, for example the risk assessment, the SBOM, the technical documentation, and the conformity assessment. Do them in the development projects of the secure development and EU CRA modules.").
+
+ismsa_libraryCoverage("the information security management basics library",
+    "A foundation for an ISMS: the scope and context, the security policy with the cryptography rules, the training, the security targets, the security reviews, and a light management review.",
+    "Certification to ISO/IEC 27001: the Statement of Applicability, the internal audit, the full management review, the corrective actions, the document control, and the full Annex A. Add the ISO/IEC 27001 extension for these.").
+
+ismsa_libraryCoverage("the asset and risk management library",
+    "The asset and risk registers, their processes, the yearly reviews of the registers, and the security of the suppliers.",
+    "The link from the risk treatment to the controls of ISO/IEC 27001 Annex A, and in-depth supplier management. These are in the ISO/IEC 27001 extension.").
+
+ismsa_libraryCoverage("the security operations basics library",
+    "Basic security practices, vulnerabilities and updates, security monitoring, incident response exercises, business continuity and recovery, and access rights reviews.",
+    "The full technical controls of ISO/IEC 27001 Annex A, for example full key management. These are in the ISO/IEC 27001 extension.").
+
+ismsa_libraryCoverage("the NIS2 basics library",
+    "A checklist of the requirements of NIS2 Articles 20, 21(2), and 23, at a basic level, linked to the controls of the home. A requirement stays open until its controls are in the home.",
+    "The extra duties of the national law, for example the sector rules and the details of the registration. Check the national law.").
 
 % The compliance register of the old home template has the same identifier as in the new home.
 % A library that needs the controls of the new home is offered only in a home that has the
@@ -122,18 +147,21 @@ ismsa_libraryControl("ismsa_control_contact-with-authorities", "Contact with aut
 ismsa_libraryControl("ismsa_control_protect-records", "Protect records", "the security response and compliance basics library").
 ismsa_libraryControl("ismsa_control_follow-changes-in-regulation", "Follow changes in regulation", "the security response and compliance basics library").
 
-ismsa_libraryControl("ismsa_control_isms-scope-and-context", "Define the scope and context of the ISMS", "the information security management library").
-ismsa_libraryControl("ismsa_control_information-security-policy", "Set the information security policy", "the information security management library").
-ismsa_libraryControl("ismsa_control_training-and-awareness", "Run security training and awareness", "the information security management library").
-ismsa_libraryControl("ismsa_control_plan-and-review-isms", "Plan and review the ISMS", "the information security management library").
+ismsa_libraryControl("ismsa_control_isms-scope-and-context", "Define the scope and context of the ISMS", "the information security management basics library").
+ismsa_libraryControl("ismsa_control_information-security-policy", "Set the information security policy", "the information security management basics library").
+ismsa_libraryControl("ismsa_control_training-and-awareness", "Run security training and awareness", "the information security management basics library").
+ismsa_libraryControl("ismsa_control_plan-and-review-isms", "Plan and review the ISMS", "the information security management basics library").
 
 ismsa_libraryControl("ismsa_control_manage-assets", "Manage the assets of the organisation", "the asset and risk management library").
 ismsa_libraryControl("ismsa_control_manage-risks", "Manage information security risks", "the asset and risk management library").
+ismsa_libraryControl("ismsa_control_manage-supplier-security", "Manage the security of suppliers", "the asset and risk management library").
 
-ismsa_libraryControl("ismsa_control_operate-security-monitoring", "Operate security monitoring", "the security operations library").
-ismsa_libraryControl("ismsa_control_exercise-incident-response", "Exercise incident response", "the security operations library").
-ismsa_libraryControl("ismsa_control_continuity-and-recovery", "Plan business continuity and recovery", "the security operations library").
-ismsa_libraryControl("ismsa_control_review-access-rights", "Review access rights", "the security operations library").
+ismsa_libraryControl("ismsa_control_operate-security-monitoring", "Operate security monitoring", "the security operations basics library").
+ismsa_libraryControl("ismsa_control_exercise-incident-response", "Exercise incident response", "the security operations basics library").
+ismsa_libraryControl("ismsa_control_continuity-and-recovery", "Plan business continuity and recovery", "the security operations basics library").
+ismsa_libraryControl("ismsa_control_review-access-rights", "Review access rights", "the security operations basics library").
+ismsa_libraryControl("ismsa_control_apply-basic-security-practices", "Apply basic security practices", "the security operations basics library").
+ismsa_libraryControl("ismsa_control_manage-vulnerabilities-and-updates", "Manage vulnerabilities and updates", "the security operations basics library").
 
 % Installing a library is the decision to use its controls, so they are in scope when they are
 % created. A home that does not need one of them marks it out of scope, with a justification.
@@ -162,19 +190,24 @@ ismsa_centralEvidence("ismsa_control_manage-risks", "ismsa_document_risk-managem
 ismsa_centralEvidence("ismsa_control_manage-risks", "ismsa_review_risk-register", "Review of the risk register").
 ismsa_evidenceLocation("ismsa_review_risk-register", "ismsa_register_risks").
 
+ismsa_centralEvidence("ismsa_control_manage-supplier-security", "ismsa_review_supplier-security", "Supplier security review").
+ismsa_evidenceLocation("ismsa_review_supplier-security", "ismsa_register_assets").
+
 ismsa_centralEvidence("ismsa_control_operate-security-monitoring", "ismsa_document_security-monitoring-plan", "Security monitoring plan").
 ismsa_centralEvidence("ismsa_control_exercise-incident-response", "ismsa_review_incident-response-exercise", "Incident response exercise").
 ismsa_evidenceLocation("ismsa_review_incident-response-exercise", "ismsa_register_incidents").
 ismsa_centralEvidence("ismsa_control_continuity-and-recovery", "ismsa_document_continuity-and-recovery-plan", "Business continuity and recovery plan").
 ismsa_centralEvidence("ismsa_control_continuity-and-recovery", "ismsa_review_recovery-test", "Recovery test").
 ismsa_centralEvidence("ismsa_control_review-access-rights", "ismsa_review_access-rights", "Access rights review").
+ismsa_centralEvidence("ismsa_control_apply-basic-security-practices", "ismsa_review_basic-security-practices", "Basic security practices review").
+ismsa_centralEvidence("ismsa_control_manage-vulnerabilities-and-updates", "ismsa_document_vulnerability-and-update-management-process", "Process for managing vulnerabilities and updates").
 
 %
 % Planned implementation of the NIS2 requirements
 %
 % ismsa_plannedImplementation(RequirementIdentifier, ControlIdentifier): the control implements
-% the requirement. A requirement without facts has no planned control (Article 21(2)(d), (h),
-% and (j)), and the organisation links its own controls to it.
+% the requirement. Every NIS2 requirement of the library has a planned control (E10-D12,
+% 2026-11-23). The organisation can also link its own controls to a requirement.
 %
 
 ismsa_plannedImplementation("ismsa_nis2_art-20-1", "ismsa_control_information-security-policy").
@@ -186,10 +219,19 @@ ismsa_plannedImplementation("ismsa_nis2_art-21-2-b", "ismsa_control_notify-about
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-b", "ismsa_control_operate-security-monitoring").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-b", "ismsa_control_exercise-incident-response").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-c", "ismsa_control_continuity-and-recovery").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-d", "ismsa_control_manage-supplier-security").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-e", "ismsa_control_receive-security-issue-notifications").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-e", "ismsa_control_manage-vulnerabilities-and-updates").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-f", "ismsa_control_plan-and-review-isms").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-g", "ismsa_control_training-and-awareness").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-g", "ismsa_control_apply-basic-security-practices").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-g", "ismsa_control_manage-vulnerabilities-and-updates").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-h", "ismsa_control_apply-basic-security-practices").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-h", "ismsa_control_information-security-policy").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-i", "ismsa_control_review-access-rights").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-i", "ismsa_control_manage-assets").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-j", "ismsa_control_apply-basic-security-practices").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-j", "ismsa_control_review-access-rights").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-j", "ismsa_control_continuity-and-recovery").
 ismsa_plannedImplementation("ismsa_nis2_art-23", "ismsa_control_notify-about-vulnerabilities-and-incidents").
 ismsa_plannedImplementation("ismsa_nis2_art-23", "ismsa_control_contact-with-authorities").

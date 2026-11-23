@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/supplierSecurityReview",
+    "displayName": "Supplier security review",
+    "description": "Planned evidence of the control \"Manage the security of suppliers\": a yearly check of the security requirements and the assessments of the critical suppliers",
+    "category": "ISMS home evidence"
+}

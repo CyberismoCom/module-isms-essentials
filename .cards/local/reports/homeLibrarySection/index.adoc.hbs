@@ -11,39 +11,68 @@
 [%collapsible%open]
 {{/if}}
 ====
-Libraries add the controls, registers, and processes to the home. Answer the questions, and the home shows the libraries that it needs. Click an answer to change it.
+Libraries add the controls, registers, and processes to the home. Answer the questions, and the home shows the libraries that it needs. A "yes" adds, and a "no" removes. Click an answer to change it.
 
-[cols="6,2,5"]
+*What must you comply with?*
+
+[cols="5,2,6"]
 |===
-| Question | Answer | Libraries that the answer "yes" requires
+| Question | Answer | A "yes" adds
 
-| Does an existing ISMS outside this home already do the central security work for this home, for example the security roles, the vulnerability reports, and the incident notifications?
-| {{#field}}"field": "ismsa/fieldTypes/homeExistingIsms", "display": "inline", "showLabel": false{{/field}}
-| No: security response and compliance basics. Yes: none, because the existing ISMS does that work
-
-| Must the products in the scope of this home meet the EU Cyber Resilience Act?
+| Must the products in the scope of this home meet the EU Cyber Resilience Act (CRA)?
 | {{#field}}"field": "ismsa/fieldTypes/homeCra", "display": "inline", "showLabel": false{{/field}}
-| Security response and compliance basics, unless an existing ISMS does the central security work
-
-| Does this home manage the risks of the assets of the organisation?
-| {{#field}}"field": "ismsa/fieldTypes/homeAssetRisks", "display": "inline", "showLabel": false{{/field}}
-| Asset and risk management
-
-| Does the organisation run IT or cloud services itself?
-| {{#field}}"field": "ismsa/fieldTypes/homeOwnServices", "display": "inline", "showLabel": false{{/field}}
-| Security operations
-
-| Does this home need a full information security management system, for example for ISO/IEC 27001?
-| {{#field}}"field": "ismsa/fieldTypes/homeFullIsms", "display": "inline", "showLabel": false{{/field}}
-| Information security management, and asset and risk management
+| No library yet. It recommends the central security work, which covers the CRA duties of the organisation. The duties for each product are in the development projects of the secure development and EU CRA modules.
 
 | Does NIS2 apply to the organisation?
 | {{#field}}"field": "ismsa/fieldTypes/homeNis2", "display": "inline", "showLabel": false{{/field}}
-| NIS2. Also the four other libraries, unless an existing ISMS does the central security work
+| NIS2 basics: a checklist of the NIS2 requirements, linked to the controls of the home. It recommends the four kinds of work below. Check the national law for other duties.
+|===
+
+*What do you do in this home?*
+
+[cols="5,2,4,4"]
+|===
+| Question | Answer | A "yes" adds | Recommendation
+
+| Do you want to do the central security work in this home, for example the security roles, the vulnerability reports, and the incident notifications?
+| {{#field}}"field": "ismsa/fieldTypes/homeCentralWork", "display": "inline", "showLabel": false{{/field}}
+| Security response and compliance basics
+| {{#if this.recCentralWork}}Yes, because {{#each this.recCentralWork}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstCentralWork}} If another ISMS does this work, check that it covers these duties.{{/if}}{{else}}-{{/if}}
+
+| Do you want an information security management system (ISMS) in this home, as a foundation for ISO/IEC 27001?
+| {{#field}}"field": "ismsa/fieldTypes/homeFullIsms", "display": "inline", "showLabel": false{{/field}}
+| Information security management basics, and asset and risk management. For certification, also add the ISO/IEC 27001 extension.
+| {{#if this.recFullIsms}}Yes, because {{#each this.recFullIsms}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstFullIsms}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
+
+| Do you want to manage the risks of your assets in this home?
+| {{#field}}"field": "ismsa/fieldTypes/homeAssetRisks", "display": "inline", "showLabel": false{{/field}}
+| Asset and risk management
+| {{#if this.recAssetRisks}}Yes, because {{#each this.recAssetRisks}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstAssetRisks}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
+
+| Do you want to manage the security of your own IT or cloud services in this home?
+| {{#field}}"field": "ismsa/fieldTypes/homeOwnServices", "display": "inline", "showLabel": false{{/field}}
+| Security operations basics
+| {{#if this.recOwnServices}}Yes, because {{#each this.recOwnServices}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstOwnServices}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
 |===
 
 {{#report}}
   "name": "ismsa/reports/installLibraries"
 {{/report}}
+
+*What each library covers*
+
+The libraries set up the work at a basic and proportionate level. "Basic" means that the minimum measures and their evidence are in place. It does not mean ready for certification, and it is not legal advice.
+
+[cols="3,6,6"]
+|===
+| Library | Covers | Does not cover
+
+{{#each this.coverage}}
+| {{this.title}}
+| {{this.covers}}
+| {{this.notCovered}}
+
+{{/each}}
+|===
 ====
 {{/each}}

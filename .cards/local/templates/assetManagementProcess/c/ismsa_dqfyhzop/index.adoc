@@ -1,4 +1,4 @@
-This document describes how assets are managed at #Company#.
+This document describes how the organisation manages its assets in the scope of this home.
 
 == Introduction
 
@@ -20,9 +20,9 @@ locations and utilities, organisational infrastructure (e.g. policies, procedure
 |Business Process Owner
 |Defined in Roles and Responsibilities document
 a|
-* Ensures critical assets with their dependencies are identified and recorded to Asset Inventory
+* Ensures critical assets with their dependencies are identified and recorded in the asset register
 
-|Asset Owner  |Defined per asset in Asset Inventory
+|Asset Owner  |Defined for each asset in the asset register
 a|
 * Determines the value of an asset to the organization.
 
@@ -85,7 +85,7 @@ Additionally, information/Data and Information systems are classified at least a
 
 * *Contains personal information*: Sensitive, Regular, None
 
-Additional attributes can be specified in Asset Inventory per asset type as needed.
+Additional attributes can be specified in the asset register for each asset type as needed.
 
 *Note*: If personal data is involved, related processing activities shall be documented into Records of Processing Activities (ROPA).
 
@@ -101,7 +101,7 @@ When assets are no longer needed, they are disposed-off in a secure manner. More
 
 == Document/Process Maintenance and enforcement
 
-Asset inventory is reviewed at least yearly as part of quartal security reviews.
+The asset owners review the asset register at least once a year, in the review of the asset register.
 
 == Related documents/processes
 

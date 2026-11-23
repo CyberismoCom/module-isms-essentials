@@ -11,10 +11,10 @@
     "base/fieldTypes/identifier": "ismsa_home",
     "lastUpdated": "2026-11-20T07:42:44.931Z",
     "base/fieldTypes/owner": "home-l5@example.com",
-    "ismsa/fieldTypes/homeExistingIsms": "yes",
     "ismsa/fieldTypes/homeCra": "yes",
     "ismsa/fieldTypes/homeAssetRisks": "yes",
     "ismsa/fieldTypes/homeOwnServices": "no",
     "ismsa/fieldTypes/homeFullIsms": "no",
-    "ismsa/fieldTypes/homeNis2": "yes"
+    "ismsa/fieldTypes/homeNis2": "yes",
+    "ismsa/fieldTypes/homeCentralWork": "no"
 }

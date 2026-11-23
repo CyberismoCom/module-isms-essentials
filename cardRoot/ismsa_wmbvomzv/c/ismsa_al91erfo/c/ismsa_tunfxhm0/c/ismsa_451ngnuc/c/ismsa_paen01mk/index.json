@@ -1,0 +1,16 @@
+{
+    "rank": "0|j",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-23T15:56:33.486Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Run security training and awareness",
+    "templateCardKey": "ismsa_zjdiu4wp",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "august",
+    "base/fieldTypes/identifier": "ismsa_control_training-and-awareness",
+    "lastUpdated": "2026-11-23T15:56:33.580Z",
+    "lastTransitioned": "2026-11-23T15:56:33.580Z"
+}

@@ -11,3 +11,44 @@ resultField(result, "requiredCount", N, "integer") :-
 
 resultField(result, "noneRequired", "yes", "shortText") :-
     not ismsa_libraryRequired({{cardKey}}, _).
+
+% The recommendations of the frameworks for the questions about the work of the home, and the
+% answers that go against them. Each collection is named after its question.
+
+ismsa_hlsCollection("centralWork", "recCentralWork", "againstCentralWork").
+ismsa_hlsCollection("fullIsms", "recFullIsms", "againstFullIsms").
+ismsa_hlsCollection("assetRisks", "recAssetRisks", "againstAssetRisks").
+ismsa_hlsCollection("ownServices", "recOwnServices", "againstOwnServices").
+
+childResult(result, ("rec", Question, Reason), Collection) :-
+    ismsa_hlsCollection(Question, Collection, _),
+    ismsa_questionRecommended({{cardKey}}, Question, Reason).
+
+resultField(("rec", Question, Reason), "text", Reason, "shortText") :-
+    ismsa_questionRecommended({{cardKey}}, Question, Reason).
+
+resultField(result, Field, "yes", "shortText") :-
+    ismsa_hlsCollection(Question, _, Field),
+    ismsa_answerAgainstRecommendation({{cardKey}}, Question).
+
+% What each library covers
+
+childResult(result, ("coverage", Library), "coverage") :-
+    ismsa_choiceLibrary(Library, _),
+    ismsa_libraryCoverage(Library, _, _).
+
+resultField(("coverage", Library), "title", Title, "shortText") :-
+    ismsa_choiceLibrary(Library, Title),
+    ismsa_libraryCoverage(Library, _, _).
+
+resultField(("coverage", Library), "covers", Covers, "shortText") :-
+    ismsa_libraryCoverage(Library, Covers, _).
+
+resultField(("coverage", Library), "notCovered", NotCovered, "shortText") :-
+    ismsa_libraryCoverage(Library, _, NotCovered).
+
+resultField(("coverage", Library), "rank", Rank, "integer") :-
+    ismsa_libraryCoverage(Library, _, _),
+    ismsa_libraryRank(Library, Rank).
+
+order(2, "coverage", 1, "rank", "ASC").

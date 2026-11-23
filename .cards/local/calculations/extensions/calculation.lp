@@ -46,9 +46,9 @@
 %
 % ismsa_installableExtension(
 %     "ismsa_register_central-controls",
-%     "the security operations library",
+%     "the security operations basics library",
 %     "ismsa/templates/securityOperations",
-%     "Add the security operations library",
+%     "Add the security operations basics library",
 %     "ismsa_control_operate-security-monitoring"
 % ).
 

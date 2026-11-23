@@ -1,5 +1,5 @@
 {
-    "name": "ismsa/fieldTypes/homeExistingIsms",
+    "name": "ismsa/fieldTypes/homeCentralWork",
     "displayName": "Answer",
     "dataType": "enum",
     "enumValues": [
@@ -14,5 +14,5 @@
             "enumDescription": ""
         }
     ],
-    "description": "Does an existing ISMS outside this home already do the central security work for this home?"
+    "description": "Do you want to do the central security work in this home, for example the security roles, the vulnerability reports, and the incident notifications?"
 }

@@ -1,0 +1,33 @@
+{{#each results}}
+The organisation applies the basic security practices in the IT and the cloud services that it runs: multi-factor authentication, updates, secure configuration, malware protection, network segmentation, separate administrator accounts, logging, backups, encryption, and secured communications.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs IT or cloud services itself, or administers the services that it uses. NIS2 requires these practices (Article 21(2)(g), (h), and (j)). If a supplier runs the services, check the practices from the agreement and the reports of the supplier.
+
+== How to implement
+
+Check the practices once a year with the checklist in the evidence. The checklist follows the basic hygiene practices that Traficom recommends for NIS2 entities. Fix the gaps, or create a task for each gap. The cryptography rules are in the information security policy.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_basic-security-practices",
+  "template": "ismsa/templates/basicSecurityPracticesReview",
+  "buttonLabel": "Create a basic security practices review"
+{{/report}}
+
+Check that the review of the year has passed, and that each gap has a task.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(g), (h), and (j)
+* Traficom, basic hygiene practices for NIS2 entities (11.1 to 11.13)
+* ISO/IEC 27001:2022 Annex A 5.17, 8.5, 8.7, 8.9, 8.13, 8.15, 8.20, 8.22, and 8.24
+
+{{/each}}

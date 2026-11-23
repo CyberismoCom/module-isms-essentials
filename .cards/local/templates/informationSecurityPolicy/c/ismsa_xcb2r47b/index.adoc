@@ -14,6 +14,29 @@ This policy states the commitment of the management to information security, and
 * Incidents and weaknesses are reported at once, according to the incident management process.
 * #TODO: Add the other principles of the organisation.#
 
+== Cryptography rules
+
+These rules say how the organisation uses cryptography and encryption (NIS2 Article 21(2)(h)).
+
+[cols="2,5",options="header"]
+|===
+| Topic | Rule
+
+| What is encrypted
+| #TODO: For example, all data in transit outside the internal network, laptops and phones, backups, and confidential data at rest in the cloud services#
+
+| Approved methods
+| #TODO: For example, TLS 1.2 or later, the full-disk encryption of the operating system, and the encryption of the cloud provider. Do not use your own cryptographic algorithms#
+
+| Keys and certificates
+| #TODO: Who owns the keys and the certificates, where they are stored, and how they are renewed and revoked#
+
+| Exceptions
+| #TODO: Who approves an exception, and where it is recorded#
+|===
+
+The basic security practices review checks once a year that these rules are followed.
+
 == Responsibilities
 
 The management approves this policy and gives the resources for information security. The central security roles are listed in the central security role assignments. Each employee and contractor follows this policy.

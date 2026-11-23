@@ -1,0 +1,16 @@
+{
+    "rank": "0|s",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-23T15:56:35.987Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Apply basic security practices",
+    "templateCardKey": "ismsa_6bctdhno",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "february",
+    "base/fieldTypes/identifier": "ismsa_control_apply-basic-security-practices",
+    "lastUpdated": "2026-11-23T15:56:36.430Z",
+    "lastTransitioned": "2026-11-23T15:56:36.430Z"
+}

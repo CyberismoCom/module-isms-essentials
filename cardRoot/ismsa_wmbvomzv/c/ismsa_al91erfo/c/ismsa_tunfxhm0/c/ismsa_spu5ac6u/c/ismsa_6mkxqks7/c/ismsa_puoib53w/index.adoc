@@ -1,0 +1,4 @@
+{{#report}}
+  "name": "ismsa/reports/nis2RequirementContent",
+  "requirement": "art-21-2-e"
+{{/report}}

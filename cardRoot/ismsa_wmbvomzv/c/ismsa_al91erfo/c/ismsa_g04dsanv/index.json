@@ -13,10 +13,10 @@
     "base/fieldTypes/owner": "home-l1@example.com",
     "ismsa/fieldTypes/homeScope": "Test organisation L1",
     "ismsa/fieldTypes/homeScopeDescription": "All products and services of the test organisation.",
-    "ismsa/fieldTypes/homeExistingIsms": "no",
     "ismsa/fieldTypes/homeCra": "no",
     "ismsa/fieldTypes/homeAssetRisks": "yes",
     "ismsa/fieldTypes/homeOwnServices": "yes",
     "ismsa/fieldTypes/homeFullIsms": "yes",
-    "ismsa/fieldTypes/homeNis2": "yes"
+    "ismsa/fieldTypes/homeNis2": "yes",
+    "ismsa/fieldTypes/homeCentralWork": "yes"
 }

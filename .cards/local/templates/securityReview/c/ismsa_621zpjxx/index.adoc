@@ -8,7 +8,13 @@
 
 * Status of action points from previous meeting 
 
-* Status of ISMS registers
+* Status of the controls: the assessments in the control register
+
+* Incidents and near misses since the previous review
+
+* Status of the risks and the risk treatment
+
+* Status of the other ISMS registers
 
 * What have we achieved during the past period 
 
@@ -24,7 +30,19 @@
 
 * #TODO# Add meeting minutes
 
-=== Status of ISMS registers 
+=== Status of the controls
+
+* #TODO# Add meeting minutes
+
+=== Incidents and near misses
+
+* #TODO# Add meeting minutes
+
+=== Status of the risks
+
+* #TODO# Add meeting minutes
+
+=== Status of the other ISMS registers
 
 * #TODO# Add meeting minutes
 

@@ -21,6 +21,10 @@
 %   controls, without the asset and risk registers.
 % - Test home L6 (ismsa_test_lib_home-6) was created from the core of this version, without
 %   libraries. It has no internal controls.
+% - Test home L7 (ismsa_test_lib_home-7) was created on 2026-11-23 from the templates of that
+%   version, with all libraries, and with "yes" to all six questions. No evidence is created. It
+%   checks that every NIS2 requirement finds all its planned controls in a home with all
+%   libraries.
 %
 % Homes L1 to L5 were made before the six central controls became the security response and
 % compliance basics library. They have those controls and the incident management process, so
@@ -49,7 +53,15 @@ ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_manage-risks", "n
 ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_isms-scope-and-context", "notOk", "The control is in scope but the linked evidence is not ready", 1).
 ismsa_expectLibControl("ismsa_test_lib_home-5", "ismsa_control_manage-risks", "notOk", "The control is in scope but required evidence has not been linked", 0).
 
+% The controls added on 2026-11-23 (E10-D12), without evidence
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_apply-basic-security-practices", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_manage-vulnerabilities-and-updates", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_manage-supplier-security", "notOk", "The control is in scope but required evidence has not been linked", 0).
+
 % ismsa_expectInScope(HomeId, ControlId): a library control is in scope when it is created
+ismsa_expectInScope("ismsa_test_lib_home-7", "ismsa_control_apply-basic-security-practices").
+ismsa_expectInScope("ismsa_test_lib_home-7", "ismsa_control_manage-vulnerabilities-and-updates").
+ismsa_expectInScope("ismsa_test_lib_home-7", "ismsa_control_manage-supplier-security").
 ismsa_expectInScope("ismsa_test_lib_home-1", "ismsa_control_isms-scope-and-context").
 ismsa_expectInScope("ismsa_test_lib_home-1", "ismsa_control_manage-assets").
 ismsa_expectInScope("ismsa_test_lib_home-1", "ismsa_control_operate-security-monitoring").
@@ -65,6 +77,8 @@ ismsa_expectCheck("ismsa_test_lib_home-4", "ismsa_control_manage-risks", "Some r
 ismsa_expectCheck("ismsa_test_lib_home-4", "ismsa_control_manage-risks", "Some risks have no treatment plan").
 ismsa_expectCheck("ismsa_test_lib_home-5", "ismsa_control_manage-assets", "No assets have been identified").
 ismsa_expectCheck("ismsa_test_lib_home-5", "ismsa_control_manage-risks", "No risks have been identified").
+ismsa_expectCheck("ismsa_test_lib_home-7", "ismsa_control_manage-assets", "No assets have been identified").
+ismsa_expectCheck("ismsa_test_lib_home-7", "ismsa_control_manage-risks", "No risks have been identified").
 ismsa_expectNoCheck("ismsa_test_lib_home-1", "ismsa_control_manage-assets").
 ismsa_expectNoCheck("ismsa_test_lib_home-1", "ismsa_control_manage-risks").
 
@@ -72,12 +86,12 @@ ismsa_expectNoCheck("ismsa_test_lib_home-1", "ismsa_control_manage-risks").
 ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-20-2", "ok", "The requirement is in scope and the linked implementation is acceptable", 1).
 ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-b", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 3).
 ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-c", "open", "The requirement is in scope but everything that was linked to it is out of scope", 1).
-ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-d", "open", "The requirement is in scope but nothing has been linked to implement it", 0).
+ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-d", "open", "The requirement is in scope but a planned control is not in this home", 0).
 ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-23", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 2).
 ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-20-2", "open", "The requirement is in scope but a planned control is not in this home", 0).
 ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-b", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 1).
 ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-g", "open", "The requirement is in scope but a planned control is not in this home", 0).
-ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-h", "open", "The requirement is in scope but nothing has been linked to implement it", 0).
+ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-h", "open", "The requirement is in scope but a planned control is not in this home", 0).
 
 % ismsa_expectTarget(HomeId, ControlId, EvidenceId, TargetId): where the button creates the
 % evidence. TargetId is the identifier of a register, or of the home for the fallback.
@@ -100,10 +114,16 @@ ismsa_expectTarget("ismsa_test_lib_home-2", "ismsa_control_notify-about-vulnerab
 % No process register in Test home A: the home card is used
 ismsa_expectTarget("ismsa_test_cc_home-a", "ismsa_control_receive-security-issue-notifications", "ismsa_document_cvd-policy", "ismsa_test_cc_home-a").
 
+ismsa_expectTarget("ismsa_test_lib_home-7", "ismsa_control_manage-supplier-security", "ismsa_review_supplier-security", "ismsa_register_assets").
+ismsa_expectTarget("ismsa_test_lib_home-7", "ismsa_control_apply-basic-security-practices", "ismsa_review_basic-security-practices", "ismsa_register_processes").
+ismsa_expectTarget("ismsa_test_lib_home-7", "ismsa_control_manage-vulnerabilities-and-updates", "ismsa_document_vulnerability-and-update-management-process", "ismsa_register_processes").
+
 % ismsa_expectLibProgress(HomeId, RegisterId, Progress)
 % 16 controls: 2 OK and 1 not applicable
 ismsa_expectLibProgress("ismsa_test_lib_home-1", "ismsa_register_central-controls", 18).
-ismsa_expectLibProgress("ismsa_test_lib_home-1", "ismsa_register_nis2", 15).
+% 13 NIS2 requirements: only Article 20(2) is OK. Article 21(2)(g) is open, because L1 does not
+% have the controls that were added on 2026-11-23.
+ismsa_expectLibProgress("ismsa_test_lib_home-1", "ismsa_register_nis2", 7).
 
 % ismsa_expectInstalled(HomeId, Template) and ismsa_expectNotInstalled(HomeId, Template)
 ismsa_expectInstalled("ismsa_test_lib_home-1", "ismsa/templates/informationSecurityManagementControls").
@@ -147,38 +167,61 @@ ismsa_expectParts("ismsa_test_lib_home-6", 7, 0).
 % "undecided". ismsa_expectAdded(HomeId, LibraryTitle, "added" | "partly" | "none").
 % ismsa_expectComplete(HomeId) and ismsa_expectNotComplete(HomeId).
 ismsa_expectLibrary("ismsa_test_lib_home-1", "Security response and compliance basics", "required").
-ismsa_expectLibrary("ismsa_test_lib_home-1", "Information security management", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-1", "Information security management basics", "required").
 ismsa_expectLibrary("ismsa_test_lib_home-1", "Asset and risk management", "required").
-ismsa_expectLibrary("ismsa_test_lib_home-1", "Security operations", "required").
-ismsa_expectLibrary("ismsa_test_lib_home-1", "NIS2", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-1", "Security operations basics", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-1", "NIS2 basics", "required").
 ismsa_expectComplete("ismsa_test_lib_home-1").
 
 ismsa_expectLibrary("ismsa_test_lib_home-4", "Security response and compliance basics", "required").
-ismsa_expectLibrary("ismsa_test_lib_home-4", "Information security management", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-4", "Information security management basics", "notNeeded").
 ismsa_expectLibrary("ismsa_test_lib_home-4", "Asset and risk management", "notNeeded").
-ismsa_expectLibrary("ismsa_test_lib_home-4", "Security operations", "notNeeded").
-ismsa_expectLibrary("ismsa_test_lib_home-4", "NIS2", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-4", "Security operations basics", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-4", "NIS2 basics", "notNeeded").
 ismsa_expectComplete("ismsa_test_lib_home-4").
 
 ismsa_expectLibrary("ismsa_test_lib_home-5", "Security response and compliance basics", "notNeeded").
-ismsa_expectLibrary("ismsa_test_lib_home-5", "Information security management", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-5", "Information security management basics", "notNeeded").
 ismsa_expectLibrary("ismsa_test_lib_home-5", "Asset and risk management", "required").
-ismsa_expectLibrary("ismsa_test_lib_home-5", "Security operations", "notNeeded").
-ismsa_expectLibrary("ismsa_test_lib_home-5", "NIS2", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-5", "Security operations basics", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-5", "NIS2 basics", "required").
 ismsa_expectAdded("ismsa_test_lib_home-5", "Asset and risk management", "partly").
-ismsa_expectAdded("ismsa_test_lib_home-5", "NIS2", "none").
+ismsa_expectAdded("ismsa_test_lib_home-5", "NIS2 basics", "none").
 ismsa_expectAdded("ismsa_test_lib_home-5", "Security response and compliance basics", "added").
 ismsa_expectNotComplete("ismsa_test_lib_home-5").
 
 ismsa_expectLibrary("ismsa_test_lib_home-6", "Security response and compliance basics", "undecided").
-ismsa_expectLibrary("ismsa_test_lib_home-6", "NIS2", "undecided").
+ismsa_expectLibrary("ismsa_test_lib_home-6", "NIS2 basics", "undecided").
 ismsa_expectNotComplete("ismsa_test_lib_home-6").
+
+ismsa_expectLibrary("ismsa_test_lib_home-7", "Security operations basics", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-7", "NIS2 basics", "required").
+ismsa_expectComplete("ismsa_test_lib_home-7").
 
 % ismsa_expectReason(HomeId, LibraryTitle, Reason): a reason why the library is required or
 % not needed
-ismsa_expectReason("ismsa_test_lib_home-4", "Security response and compliance basics", "the products must meet the EU Cyber Resilience Act").
-ismsa_expectReason("ismsa_test_lib_home-1", "Security operations", "NIS2 needs it").
-ismsa_expectReason("ismsa_test_lib_home-5", "Information security management", "The home does not need a full ISMS. The existing ISMS does the work that NIS2 needs.").
+ismsa_expectReason("ismsa_test_lib_home-4", "Security response and compliance basics", "you do the central security work in this home").
+ismsa_expectReason("ismsa_test_lib_home-1", "Security operations basics", "you manage the security of your own IT or cloud services in this home").
+ismsa_expectReason("ismsa_test_lib_home-5", "Information security management basics", "You do not want an ISMS in this home.").
+ismsa_expectReason("ismsa_test_lib_home-5", "Security response and compliance basics", "You do the central security work outside this home.").
+
+% Recommendations of the frameworks (E10-D11). A framework question adds no other library: in
+% L5, NIS2 and the CRA apply, but the security operations basics library is not needed, because
+% the answer about own IT services is "no".
+%
+% ismsa_expectRecommended(HomeId, Question, Reason), ismsa_expectAgainst(HomeId, Question), and
+% ismsa_expectNotAgainst(HomeId, Question).
+ismsa_expectRecommended("ismsa_test_lib_home-5", "centralWork", "the CRA requires a way to receive vulnerability reports and to notify about vulnerabilities and incidents").
+ismsa_expectRecommended("ismsa_test_lib_home-5", "centralWork", "NIS2 requires incident reporting and contact with authorities").
+ismsa_expectRecommended("ismsa_test_lib_home-5", "ownServices", "NIS2 requires basic security practices, continuity, and access control").
+ismsa_expectAgainst("ismsa_test_lib_home-5", "centralWork").
+ismsa_expectAgainst("ismsa_test_lib_home-5", "ownServices").
+ismsa_expectAgainst("ismsa_test_lib_home-5", "fullIsms").
+ismsa_expectNotAgainst("ismsa_test_lib_home-5", "assetRisks").
+ismsa_expectRecommended("ismsa_test_lib_home-4", "centralWork", "the CRA requires a way to receive vulnerability reports and to notify about vulnerabilities and incidents").
+ismsa_expectNotAgainst("ismsa_test_lib_home-4", "centralWork").
+ismsa_expectNotRecommended("ismsa_test_lib_home-4", "ownServices").
+ismsa_expectNotAgainst("ismsa_test_lib_home-1", "centralWork").
 
 % ismsa_expectNoControls(HomeId): the home has no internal controls.
 ismsa_expectNoControls("ismsa_test_lib_home-6").
@@ -193,6 +236,7 @@ ismsa_testHomeKey("ismsa_test_lib_home-2", ismsa_zg41p0fp).
 ismsa_testHomeKey("ismsa_test_lib_home-4", ismsa_l866q2o1).
 ismsa_testHomeKey("ismsa_test_lib_home-5", ismsa_qu1v00mj).
 ismsa_testHomeKey("ismsa_test_lib_home-6", ismsa_ny30dov7).
+ismsa_testHomeKey("ismsa_test_lib_home-7", ismsa_tunfxhm0).
 
 ismsa_testHome(HomeId, Home) :-
     ismsa_testHomeKey(HomeId, Home),
@@ -341,6 +385,71 @@ ismsa_testReason(HomeId, Title, Reason) :-
 result(("FAIL reason", HomeId, Title, Reason)) :-
     ismsa_expectReason(HomeId, Title, Reason),
     not ismsa_testReason(HomeId, Title, Reason).
+
+% Every NIS2 requirement has a planned control (E10-D12), and in a home with all libraries no
+% planned control is missing.
+
+result(("FAIL NIS2 requirement without a planned control", Identifier)) :-
+    ismsa_testCard(_, Identifier, _),
+    ismsa_assessedRequirement(Requirement),
+    field(Requirement, "base/fieldTypes/identifier", Identifier),
+    not ismsa_plannedImplementation(Identifier, _).
+
+result(("FAIL planned control missing in a home with all libraries", Identifier)) :-
+    ismsa_testHome("ismsa_test_lib_home-7", Home),
+    ismsa_assessedRequirement(Requirement),
+    ismsa_closestHome(Requirement, Home),
+    field(Requirement, "base/fieldTypes/identifier", Identifier),
+    ismsa_assessedRequirementMissingPlannedControl(Requirement).
+
+result(("FAIL NIS2 requirements in home L7", N)) :-
+    ismsa_testHome("ismsa_test_lib_home-7", Home),
+    N = #count { R : ismsa_assessedRequirement(R), ismsa_closestHome(R, Home) },
+    N != 13.
+
+result(("FAIL no answer against a recommendation in home L7", Question)) :-
+    ismsa_testHome("ismsa_test_lib_home-7", Home),
+    ismsa_answerAgainstRecommendation(Home, Question).
+
+% Every library control has planned evidence.
+
+result(("FAIL library control without planned evidence", Control)) :-
+    ismsa_libraryControl(Control, _, _),
+    not ismsa_centralEvidence(Control, _, _).
+
+% Recommendations
+
+result(("FAIL recommendation missing", HomeId, Question, Reason)) :-
+    ismsa_expectRecommended(HomeId, Question, Reason),
+    ismsa_testHome(HomeId, Home),
+    not ismsa_questionRecommended(Home, Question, Reason).
+
+result(("FAIL unexpected recommendation", HomeId, Question)) :-
+    ismsa_expectNotRecommended(HomeId, Question),
+    ismsa_testHome(HomeId, Home),
+    ismsa_questionRecommended(Home, Question, _).
+
+result(("FAIL answer not against the recommendation", HomeId, Question)) :-
+    ismsa_expectAgainst(HomeId, Question),
+    ismsa_testHome(HomeId, Home),
+    not ismsa_answerAgainstRecommendation(Home, Question).
+
+result(("FAIL answer against the recommendation", HomeId, Question)) :-
+    ismsa_expectNotAgainst(HomeId, Question),
+    ismsa_testHome(HomeId, Home),
+    ismsa_answerAgainstRecommendation(Home, Question).
+
+% A "yes" only adds: no library is required unless a question that adds it is answered "yes"
+
+result(("FAIL library required without a yes", Home, Library)) :-
+    ismsa_libraryRequired(Home, Library),
+    not ismsa_homeAnswer(Home, Question, "yes") : ismsa_questionAdds(Question, Library, _).
+
+% Every choice library has a coverage statement
+
+result(("FAIL library without coverage", Library)) :-
+    ismsa_choiceLibrary(Library, _),
+    not ismsa_libraryCoverage(Library, _, _).
 
 % Every library of this module is decided by the questions
 

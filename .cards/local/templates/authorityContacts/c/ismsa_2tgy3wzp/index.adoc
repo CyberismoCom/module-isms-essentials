@@ -39,6 +39,27 @@ This document lists the authorities that the organisation must or can contact, w
 |
 |===
 
+== Registrations
+
+Some regulations require that the organisation registers with an authority before anything happens. For example, an entity under NIS2 gives its information to the competent authority (NIS2 Directive, Article 3(4)). The national law sets the authority and the deadline, for example section 41 of the Cybersecurity Act in Finland.
+
+[width="100%",cols="25%,25%,25%,25%",options="header"]
+|===
+|Regulation |Authority |Date of registration, or "not required" |Who keeps the information up to date
+
+|NIS2 (national law)
+|#TODO#
+|#TODO#
+|#TODO#
+
+|#TODO: Add other registrations, as needed#
+|
+|
+|
+|===
+
+Check the registrations in the review of this document. Update the information when it changes, for example when the contact details or the services change.
+
 == Reporting deadlines
 
 [width="100%",cols="30%,40%,30%",options="header"]

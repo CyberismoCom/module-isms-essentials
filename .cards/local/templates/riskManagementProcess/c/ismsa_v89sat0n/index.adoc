@@ -1,4 +1,4 @@
-This document describes how risks and opportunities are managed at #Company#.
+This document describes how the organisation manages the risks and opportunities in the scope of this home.
 
 == Introduction
 
@@ -24,13 +24,12 @@ a|
 |Security program lead  |Defined in #Roles and Responsibilities document#
 a|
 * Participates to security reviews
-* Creates summary of organisations risk status for top management
-* Creates and update Statement of Applicability
+* Creates a summary of the risk status for the top management
 
 |Business Process Owner  |Defined in #Roles and Responsibilities document#
 a|
 * Ensures risks and opportunities related to their processes are identified and recorded in Risk Register
-* Ensures security reviews are organised at least quarterly
+* Ensures that the risks of their processes are discussed in the security reviews
 
 |Asset Owner  |Defined per asset in Asset Register
 a|
@@ -40,7 +39,7 @@ a|
 a|
 * Approves risk treatment plans and accepts the residual risks
 
-|Control Owner |Documented per risk in Control Register
+|Control Owner |The owner of each control in the control register
 a|
 * Ensures controls are implemented according to treatment plan
 
@@ -248,7 +247,7 @@ Severe
 | Moderate {set:cellbgcolor:yellow}
 |=========================================================
 
-Currently risk is on acceptable level if it is Low or Very Low. Risks above this criterion can be accepted only in exceptional cases with documented management decisions.
+The risk acceptance criteria: a risk is acceptable if its level is #TODO: for example, Low or Very Low#. The top management sets the criteria and approves them with this process. A risk above the criteria can be accepted only in exceptional cases, with a recorded decision of the management.
 
 
 === STEP 3: Plan risk treatment
@@ -267,23 +266,9 @@ More detailed plans can be created as needed.
 
 Risk owner approves treatment plans and residual risks.
 
-=== STEP 4: Create statement of applicability
+=== STEP 4: Monitor risks and controls
 
-Security program lead produces a Statement of Applicability that contains:
-
-* needed controls (both own controls and relevant ISO27001 reference controls),
-
-* justifications for their inclusion,
-
-* their implementation status, and
-
-* justification for excluding any of the ISO27001 reference controls, if applicable.
-
-The first version of Statement of Applicability shall be created within one year of approving this process. After that, the Statement of Applicability is reviewed at least once a year and updated as needed.
-
-=== STEP 5: Monitor risks and controls
-
-The risk register and treatment plans are reviewed at least quarterly by risk owners during quartal security reviews. Top management participates to these reviews. Effectiveness of risk-management measures/controls is evaluated as part of these reviews. Additional reviews shall be arranged, if there are significant incidents or other significant changes that might affect information security.
+The risk owners review the risk register and the treatment plans at least once a year, in the review of the risk register. The top management takes part in the review, or gets a summary of it. The review also evaluates the effectiveness of the controls that treat the risks. Arrange an extra review after a significant incident, or after another significant change that can affect information security.
 
 The effectiveness of controls to mitigate risks should also be evaluated independently as part of internal and external audits. Additional security testing can be arranged as needed and when applicable.
 

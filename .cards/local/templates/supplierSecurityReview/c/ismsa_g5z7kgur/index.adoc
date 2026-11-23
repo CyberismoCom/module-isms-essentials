@@ -1,0 +1,38 @@
+== Scope
+
+The suppliers in the asset register. Check at least the critical suppliers: the suppliers that run, develop, or have access to the critical systems and data.
+
+== Review
+
+[cols="3,2,3,2,3",options="header"]
+|===
+| Supplier | Critical | Security requirements in the agreement | Last assessment | Findings
+
+| #TODO#
+| #TODO: Yes or no#
+| #TODO: For example, incident notification, access control, subcontractors, and the end of the agreement#
+| #TODO: Date, and how it was done#
+| #TODO#
+|===
+
+For each critical supplier, check that:
+
+* the agreement has security requirements, including the notification of incidents and vulnerabilities that affect the organisation
+* the supplier was assessed, for example with a questionnaire, a certificate, or an audit report
+* the access of the supplier to the systems and the data is limited to what it needs
+* the risks of the supplier are in the risk register.
+
+== Findings
+
+#TODO: Record the findings. Create a task for each change.#
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Set the date of the review in the *Last reviewed* field. Mark the review as *Passed* when the critical suppliers have security requirements and a current assessment, or the changes are recorded as tasks. Otherwise, mark it as *Failed*.

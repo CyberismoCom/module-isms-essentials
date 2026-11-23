@@ -13,10 +13,11 @@ Review these inputs:
 * the results of the risk assessment, and the status of the risk treatment
 * the security targets of the year, and how well they were met
 * the opportunities for improvement
+* if NIS2 applies: the status of the cybersecurity risk-management measures of NIS2 Article 21 (see the NIS2 requirements in the compliance register)
 
 == Decisions
 
-#TODO: Record the decisions, and the security targets for the next year.#
+#TODO: Record the decisions, and the security targets for the next year. If NIS2 applies, record that the management approves the risk-management measures (NIS2 Article 20(1)), or the changes that it requires.#
 
 == Actions
 

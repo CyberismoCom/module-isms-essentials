@@ -1,0 +1,32 @@
+{{#each results}}
+The organisation knows its critical suppliers, sets security requirements in the agreements, and checks the suppliers regularly.
+
+== How to decide if this control is required
+
+This control is required when suppliers run, develop, or have access to the critical systems or data of the organisation. NIS2 requires supply chain security (Article 21(2)(d)).
+
+== How to implement
+
+Record the suppliers in the asset register, and mark the critical ones. For each critical supplier, add security requirements to the agreement, for example the notification of incidents, and assess the supplier. Record the risks of the suppliers in the risk register. Check the critical suppliers once a year.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_supplier-security",
+  "template": "ismsa/templates/supplierSecurityReview",
+  "buttonLabel": "Create a supplier security review"
+{{/report}}
+
+Check that the review of the year has passed. In-depth supplier management is in the ISO/IEC 27001 extension.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(d)
+* ISO/IEC 27001:2022 Annex A 5.19 to 5.22
+
+{{/each}}
