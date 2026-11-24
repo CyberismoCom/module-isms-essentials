@@ -101,15 +101,15 @@ ismsa_libraryCoverage("the security response and compliance basics library",
 
 ismsa_libraryCoverage("the information security management basics library",
     "A foundation for an ISMS: the scope and context, the security policy, the cryptography rules, the training, human resources security, the security targets, the security metrics, the security reviews, and a light management review.",
-    "Certification to ISO/IEC 27001: the Statement of Applicability, the internal audit, the full management review, the corrective actions, the document control, and the full Annex A. Add the ISO/IEC 27001 extension for these.").
+    "Certification to ISO/IEC 27001: the Statement of Applicability, the internal audit, the full management review, the corrective actions, and the full Annex A. Also the AI asset register. Add the ISO/IEC 27001 extension for these.").
 
 ismsa_libraryCoverage("the asset and risk management library",
     "The asset and risk registers, their processes, the yearly reviews of the registers, and the security of the suppliers.",
-    "The link from the risk treatment to the controls of ISO/IEC 27001 Annex A, and in-depth supplier management. These are in the ISO/IEC 27001 extension.").
+    "The controls of ISO/IEC 27001 Annex A to choose in the risk treatment, and the supplier agreements and the monitoring of supplier services (Annex A 5.20 and 5.22). These are in the ISO/IEC 27001 extension.").
 
 ismsa_libraryCoverage("the security operations basics library",
     "Basic security practices, vulnerabilities and updates, security monitoring, incident response exercises, business continuity and recovery, and access rights reviews.",
-    "The full technical controls of ISO/IEC 27001 Annex A, for example full key management. These are in the ISO/IEC 27001 extension.").
+    "The full technical controls of ISO/IEC 27001 Annex A. These are in the ISO/IEC 27001 extension.").
 
 ismsa_libraryCoverage("the NIS2 basics library",
     "A checklist of the requirements of NIS2 Articles 20, 21(2), and 23, at a basic level, linked to the controls of the home. A requirement stays open until its controls are in the home.",

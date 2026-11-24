@@ -9,6 +9,7 @@ Review the information security policy.
 * Check that the policy agrees with the scope of the ISMS and the business context analysis.
 * Check that the security targets of the year agree with the high-level objectives.
 * Check that the list of topic-specific policies is complete, and that each policy is approved and up to date.
+* Check that the AI policy agrees with the AI tools in use.
 * Check that the policy has been communicated to the employees and the relevant contractors, and that the confirmations are recorded.
 * Check that each exception has a reason, a risk, and an end date, and that expired exceptions are closed.
 * Check that a public version, if there is one, agrees with this policy.
