@@ -7,7 +7,7 @@ This control is required when the organisation runs an ISMS. NIS2 requires polic
 
 == How to implement
 
-Write the information security policy, with the cryptography rules, and get the approval of the management. Communicate the policy to the employees and to the relevant contractors. Topic-specific policies, for example for access control or for the use of cloud services, can be other documents in the process register.
+Write the information security policy, with the high-level objectives and the commitments, and get the approval of the management. Write the cryptography rules, based on the ECCG Agreed Cryptographic Mechanisms (ACM), and get them approved. List the topic-specific policies in the policy. They can be other documents in the process register, for example for access control or for the use of cloud services. Communicate the policy to the employees and to the relevant contractors, and record their confirmations.
 
 {{#report}}
   "name": "ismsa/reports/createEvidence",
@@ -16,7 +16,14 @@ Write the information security policy, with the cryptography rules, and get the 
   "buttonLabel": "Create the information security policy"
 {{/report}}
 
-Check that the policy is approved, up to date, and communicated.
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_cryptography-rules",
+  "template": "ismsa/templates/cryptographyRules",
+  "buttonLabel": "Create the cryptography rules"
+{{/report}}
+
+Check that the policy is approved, up to date, communicated, and confirmed, and that the cryptography rules are approved and up to date.
 
 == Assessment
 
@@ -26,7 +33,7 @@ Check that the policy is approved, up to date, and communicated.
 
 == References
 
-* ISO/IEC 27001:2022 clause 5.2 and Annex A 5.1
+* ISO/IEC 27001:2022 clause 5.2, Annex A 5.1, and Annex A 8.24 for the cryptography rules
 * NIS2 (Directive (EU) 2022/2555) Articles 20(1), 21(2)(a), and 21(2)(h) for the cryptography rules
 
 {{/each}}

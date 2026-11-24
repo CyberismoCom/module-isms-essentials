@@ -1,0 +1,20 @@
+== Task description
+
+Review the cryptography rules.
+
+[NOTE]
+.Review instructions
+====
+* Check that the rules refer to the newest version of ACM on the EUCC Guidelines on Cryptography page.
+* Check that no legacy mechanism in use has passed its ACM deadline, from the CBOMs.
+* Check that each exception has a reason, a risk, and an end date, and that expired exceptions are closed.
+* Check that the plan for the move to post-quantum cryptography is up to date, if "harvest now, decrypt later" is relevant.
+====
+
+To review the document, set the reviewer in the *Owner* field of this card. If the document is ready to be approved, transition this task to *Closed as done*. If the document needs changes, transition this task to *Changes required*.
+
+NOTE: The reviewer cannot be the same person as the owner or the approver of the document.
+
+== Review notes
+
+#TODO: Add the review notes here.#

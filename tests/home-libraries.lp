@@ -105,6 +105,7 @@ ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_assign-central-securi
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_plan-and-review-isms", "ismsa_review_management-review", "ismsa_register_security-reviews").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_isms-scope-and-context", "ismsa_document_business-context-analysis", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_information-security-policy", "ismsa_document_information-security-policy", "ismsa_register_processes").
+ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_information-security-policy", "ismsa_document_cryptography-rules", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_manage-assets", "ismsa_review_asset-register", "ismsa_register_assets").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_manage-assets", "ismsa_document_asset-management-process", "ismsa_register_processes").
 ismsa_expectTarget("ismsa_test_lib_home-1", "ismsa_control_manage-risks", "ismsa_document_risk-management-process", "ismsa_register_processes").

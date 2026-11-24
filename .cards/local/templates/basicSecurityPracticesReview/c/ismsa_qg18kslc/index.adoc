@@ -56,7 +56,7 @@ The checklist follows the basic hygiene practices that Traficom recommends for N
 | #TODO#
 
 | Encryption (11.8, NIS2 21(2)(h))
-| Data is encrypted in transit and at rest, as the cryptography rules of the information security policy say.
+| Data is encrypted in transit and at rest, as the cryptography rules say.
 | #TODO#
 | #TODO#
 

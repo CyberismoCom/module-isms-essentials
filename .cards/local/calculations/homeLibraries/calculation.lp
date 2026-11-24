@@ -100,7 +100,7 @@ ismsa_libraryCoverage("the security response and compliance basics library",
     "The duties for each product under the CRA, for example risk assessment, SBOM, technical documentation, and conformity assessment. Do them in the development projects of the secure development and EU CRA modules.").
 
 ismsa_libraryCoverage("the information security management basics library",
-    "A foundation for an ISMS: the scope and context, the security policy with the cryptography rules, the training, human resources security, the security targets, the security metrics, the security reviews, and a light management review.",
+    "A foundation for an ISMS: the scope and context, the security policy, the cryptography rules, the training, human resources security, the security targets, the security metrics, the security reviews, and a light management review.",
     "Certification to ISO/IEC 27001: the Statement of Applicability, the internal audit, the full management review, the corrective actions, the document control, and the full Annex A. Add the ISO/IEC 27001 extension for these.").
 
 ismsa_libraryCoverage("the asset and risk management library",
@@ -180,6 +180,7 @@ ismsa_controlInScopeByDefault(Control) :-
 
 ismsa_centralEvidence("ismsa_control_isms-scope-and-context", "ismsa_document_business-context-analysis", "Business context analysis").
 ismsa_centralEvidence("ismsa_control_information-security-policy", "ismsa_document_information-security-policy", "Information security policy").
+ismsa_centralEvidence("ismsa_control_information-security-policy", "ismsa_document_cryptography-rules", "Cryptography rules").
 ismsa_centralEvidence("ismsa_control_training-and-awareness", "ismsa_document_training-and-awareness-plan", "Training and awareness plan").
 ismsa_centralEvidence("ismsa_control_plan-and-review-isms", "ismsa_review_management-review", "Management review").
 ismsa_evidenceLocation("ismsa_review_management-review", "ismsa_register_security-reviews").
