@@ -1,0 +1,47 @@
+== Metrics
+
+Measure three to five metrics that show whether the most important security measures work. Keep the same metrics from year to year, so that the trend shows.
+
+[cols="4,2,2,2,3",options="header"]
+|===
+| Metric | Target | Result | Previous result | Comment
+
+| Share of the internal controls of the home with the assessment "OK"
+| #TODO#
+| #TODO#
+| #TODO#
+| #TODO#
+
+| Share of the critical updates installed within the deadline
+| #TODO#
+| #TODO#
+| #TODO#
+| #TODO#
+
+| Share of the user accounts with multi-factor authentication
+| #TODO#
+| #TODO#
+| #TODO#
+| #TODO#
+
+| #TODO: Your own metric, for example the share of the people who completed the security training#
+| #TODO#
+| #TODO#
+| #TODO#
+| #TODO#
+|===
+
+== Conclusions
+
+#TODO: Which measures work and which do not? What changes? Create a task for each change.#
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Take the results to the management review. Set the date of the report in the *Last reviewed* field. Mark the report as *Passed* when the metrics are measured and the results are in the management review. Otherwise, mark it as *Failed*.

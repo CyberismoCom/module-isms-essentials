@@ -1,6 +1,6 @@
 {
     "name": "ismsa/reports/homeContent",
     "displayName": "Content of the ISMS home",
-    "description": "The whole content of the home card of an ISMS home. The content is a report, so that it changes with the module also in existing homes. The scope that the user writes is in the hidden fields ismsa/fieldTypes/homeScope and ismsa/fieldTypes/homeScopeDescription, which the field macros show and edit",
+    "description": "The whole content of the home card of an ISMS home. The content is a report, so that it changes with the module also in existing homes. The user writes the scope in the title and in the hidden field ismsa/fieldTypes/homeScopeDescription, which the field macros show and edit",
     "category": "Central controls"
 }

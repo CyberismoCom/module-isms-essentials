@@ -1,3 +1,7 @@
 Gives the public statements about incidents, communicates with customers, and reports incidents to authorities when the incident management process requires it.
 
-This card assigns a person to a role. Add the assignee in the *Owner* field.
+*Authority:* Can make statements about incidents for the organisation, and send the notifications to authorities.
+
+*Competence:* Crisis communication, and the reporting duties of NIS2, the CRA, and the GDPR.
+
+Set the person in the role in the *Assignee* field, and the deputy in the *Deputy* field. The deputy does the work of the role when the assignee is away. The 24-hour deadlines of NIS2 and the CRA apply on every day of the year.

@@ -18,6 +18,10 @@ a| {{this.explanation}}.
 
 To close a requirement, add the library that brings its missing controls, or link your own control to the requirement with the link type "implements". If a requirement does not apply, mark it out of scope with a justification.
 {{else}}
-No compliance requirement of the home is open.
+{{#if this.anyRequirement}}
+No compliance requirement of the home is open. Each requirement in scope is OK.
+{{else}}
+The compliance register is empty. Add the requirements that apply to the organisation.
+{{/if}}
 {{/if}}
 {{/each}}

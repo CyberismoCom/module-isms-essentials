@@ -1,6 +1,6 @@
 {
     "name": "ismsa/templates/informationSecurityManagementControls",
     "displayName": "Information security management basics controls",
-    "description": "A library of the ISMS home: the controls for the scope and context, the policy, training and awareness, and the yearly planning and review of an information security management system. Add it with the buttons in the section \"Libraries\" of the home card",
+    "description": "A library of the ISMS home: the controls for the scope and context, the policy, training and awareness, human resources security, security metrics, and the yearly planning and review of an information security management system. Add it with the buttons in the section \"Libraries\" of the home card",
     "category": "ISMS home libraries"
 }

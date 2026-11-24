@@ -1,9 +1,10 @@
 {
     "title": "Incident response lead",
-    "cardType": "base/cardTypes/roleAssignment",
+    "cardType": "ismsa/cardTypes/securityRole",
     "workflowState": "",
     "links": [],
     "rank": "0|d",
     "lastUpdated": "2026-11-17T20:32:50.159Z",
-    "base/fieldTypes/informationClassification": "internal"
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_role_incident-response-lead"
 }

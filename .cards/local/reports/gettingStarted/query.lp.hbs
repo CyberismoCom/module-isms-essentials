@@ -18,7 +18,7 @@ ismsa_gsStep("central", 5, "ismsa_control_follow-changes-in-regulation", "Review
 ismsa_gsStep("assets", 1, "ismsa_control_manage-assets", "Document the asset management process, and identify and evaluate the assets").
 
 ismsa_gsStep("risks", 1, "ismsa_control_manage-risks", "Document the risk management process, and identify, analyse, and treat the risks").
-ismsa_gsStep("risks", 2, "ismsa_control_manage-supplier-security", "Set security requirements for the critical suppliers, and check them").
+ismsa_gsStep("suppliers", 1, "ismsa_control_manage-supplier-security", "Set security requirements for the critical suppliers, and check them").
 
 ismsa_gsStep("operations", 1, "ismsa_control_continuity-and-recovery", "Plan business continuity and recovery, and test the recovery").
 ismsa_gsStep("operations", 2, "ismsa_control_exercise-incident-response", "Exercise incident response").
@@ -28,7 +28,9 @@ ismsa_gsStep("operations", 5, "ismsa_control_apply-basic-security-practices", "C
 ismsa_gsStep("operations", 6, "ismsa_control_manage-vulnerabilities-and-updates", "Document how vulnerabilities are found and updates installed").
 
 ismsa_gsStep("improvement", 1, "ismsa_control_training-and-awareness", "Create the training and awareness plan").
-ismsa_gsStep("improvement", 2, "ismsa_control_plan-and-review-isms", "Set the yearly targets, plan the annual wheel, and hold the management review").
+ismsa_gsStep("improvement", 2, "ismsa_control_human-resources-security", "Agree on security for joiners, role changes, and leavers, and check it").
+ismsa_gsStep("improvement", 3, "ismsa_control_measure-security-effectiveness", "Choose the security metrics, and measure them").
+ismsa_gsStep("improvement", 4, "ismsa_control_plan-and-review-isms", "Set the yearly targets, plan the annual wheel, and hold the management review").
 
 ismsa_gsGroup(Group) :- ismsa_gsStep(Group, _, _, _).
 
@@ -122,6 +124,7 @@ ismsa_gsGroupFlag("start", "showStart").
 ismsa_gsGroupFlag("central", "showCentral").
 ismsa_gsGroupFlag("assets", "showAssets").
 ismsa_gsGroupFlag("risks", "showRisks").
+ismsa_gsGroupFlag("suppliers", "showSuppliers").
 ismsa_gsGroupFlag("operations", "showOperations").
 ismsa_gsGroupFlag("improvement", "showImprovement").
 
@@ -182,5 +185,6 @@ order(2, "start", 1, "ordinal", "ASC").
 order(2, "central", 1, "ordinal", "ASC").
 order(2, "assets", 1, "ordinal", "ASC").
 order(2, "risks", 1, "ordinal", "ASC").
+order(2, "suppliers", 1, "ordinal", "ASC").
 order(2, "operations", 1, "ordinal", "ASC").
 order(2, "improvement", 1, "ordinal", "ASC").

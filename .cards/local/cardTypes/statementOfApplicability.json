@@ -12,7 +12,8 @@
         },
         {
             "name": "base/fieldTypes/owner",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "base/fieldTypes/informationClassification",

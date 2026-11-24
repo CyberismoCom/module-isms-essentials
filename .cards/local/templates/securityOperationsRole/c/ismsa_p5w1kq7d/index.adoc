@@ -1,0 +1,7 @@
+Runs the security operations of the IT and the cloud services of the organisation: security monitoring, access rights reviews, backups and recovery tests, and updates.
+
+*Authority:* Can disable accounts and block network traffic that threatens security. Can require updates within the deadlines of the process for managing vulnerabilities and updates.
+
+*Competence:* System administration and security operations.
+
+Set the person in the role in the *Assignee* field, and the deputy in the *Deputy* field. The deputy does the work of the role when the assignee is away. The 24-hour deadlines of NIS2 and the CRA apply on every day of the year.

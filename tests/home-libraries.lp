@@ -24,7 +24,8 @@
 % - Test home L7 (ismsa_test_lib_home-7) was created on 2026-11-23 from the templates of that
 %   version, with all libraries, and with "yes" to all six questions. No evidence is created. It
 %   checks that every NIS2 requirement finds all its planned controls in a home with all
-%   libraries.
+%   libraries. The controls "Manage human resources security" and "Measure the effectiveness of
+%   security" were added to it by hand on 2026-11-24, as copies of the template cards.
 %
 % Homes L1 to L5 were made before the six central controls became the security response and
 % compliance basics library. They have those controls and the incident management process, so
@@ -57,6 +58,8 @@ ismsa_expectLibControl("ismsa_test_lib_home-5", "ismsa_control_manage-risks", "n
 ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_apply-basic-security-practices", "notOk", "The control is in scope but required evidence has not been linked", 0).
 ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_manage-vulnerabilities-and-updates", "notOk", "The control is in scope but required evidence has not been linked", 0).
 ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_manage-supplier-security", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_human-resources-security", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_measure-security-effectiveness", "notOk", "The control is in scope but required evidence has not been linked", 0).
 
 % ismsa_expectInScope(HomeId, ControlId): a library control is in scope when it is created
 ismsa_expectInScope("ismsa_test_lib_home-7", "ismsa_control_apply-basic-security-practices").
@@ -614,3 +617,111 @@ result(("FAIL built-in progress differs", Card, Old, New)) :-
     field(Card, "base/fieldTypes/progress", Old),
     field(Card, "progress", New),
     New != Old.
+
+%
+% The home card must be filled in before "Content ready" (2026-11-24)
+%
+% ismsa_expectHomeDenial(HomeId, Message): "Content ready" is denied with this message. A home
+% gets no other denial of these rules. L1 is filled in. L6 has no scope description and no
+% answers. L7 has no scope description. The rules for the title and the owner were checked with
+% mutations of L6.
+%
+
+ismsa_homeFillInMessage("Write the scope of the home in the title").
+ismsa_homeFillInMessage("Write the scope description").
+ismsa_homeFillInMessage("Set the owner of the home").
+ismsa_homeFillInMessage("Answer all questions in the section Libraries").
+
+ismsa_expectHomeDenial("ismsa_test_lib_home-6", "Write the scope description").
+ismsa_expectHomeDenial("ismsa_test_lib_home-6", "Answer all questions in the section Libraries").
+ismsa_expectHomeDenial("ismsa_test_lib_home-7", "Write the scope description").
+
+ismsa_testHomeChecked("ismsa_test_lib_home-1").
+ismsa_testHomeChecked("ismsa_test_lib_home-6").
+ismsa_testHomeChecked("ismsa_test_lib_home-7").
+
+result(("FAIL home fill-in denial missing", HomeId, Message)) :-
+    ismsa_expectHomeDenial(HomeId, Message),
+    ismsa_testHomeKey(HomeId, Home),
+    not transitionDenied(Home, "Content ready", Message).
+
+result(("FAIL unexpected home fill-in denial", HomeId, Message)) :-
+    ismsa_testHomeChecked(HomeId),
+    ismsa_testHomeKey(HomeId, Home),
+    ismsa_homeFillInMessage(Message),
+    transitionDenied(Home, "Content ready", Message),
+    not ismsa_expectHomeDenial(HomeId, Message).
+
+%
+% Questions, roles, conflicts of duties, and owners (2026-11-24)
+%
+% A "yes" to the ISMS question includes the asset risk question (L7). Without it, the question
+% needs its own answer (L4, L5).
+% L7 has the controls that need the security operations and the supplier security roles, and no
+% roles. L6 has no controls, so it needs no roles.
+% L6 has a document whose owner is also its approver and its reviewer, and an incident without
+% an owner, which gets the owner of the home through the incident register.
+%
+
+ismsa_expectIncluded("ismsa_test_lib_home-7", "assetRisks").
+ismsa_expectNotIncluded("ismsa_test_lib_home-4", "assetRisks").
+ismsa_expectNotIncluded("ismsa_test_lib_home-5", "assetRisks").
+
+ismsa_expectRoleNeeded("ismsa_test_lib_home-7", "ismsa_role_security-operations").
+ismsa_expectRoleNeeded("ismsa_test_lib_home-7", "ismsa_role_supplier-security").
+ismsa_expectNoRoleNeeded("ismsa_test_lib_home-6").
+
+ismsa_expectConflict("Test document L6: the owner approves and reviews it", "conflict-l6@example.com", "owns the document and also reviews it").
+ismsa_expectConflict("Test document L6: the owner approves and reviews it", "conflict-l6@example.com", "owns the document and also approves it").
+
+ismsa_expectInheritedOwner("Test incident L6: the owner comes from the home", "home-l6@example.com").
+
+result(("FAIL question not included", HomeId, Question)) :-
+    ismsa_expectIncluded(HomeId, Question),
+    ismsa_testHomeKey(HomeId, Home),
+    not ismsa_questionIncluded(Home, Question, _).
+
+result(("FAIL question included", HomeId, Question)) :-
+    ismsa_expectNotIncluded(HomeId, Question),
+    ismsa_testHomeKey(HomeId, Home),
+    ismsa_questionIncluded(Home, Question, _).
+
+result(("FAIL included question still recommended", HomeId, Question)) :-
+    ismsa_expectIncluded(HomeId, Question),
+    ismsa_testHomeKey(HomeId, Home),
+    ismsa_questionRecommended(Home, Question, _).
+
+result(("FAIL role not needed", HomeId, Role)) :-
+    ismsa_expectRoleNeeded(HomeId, Role),
+    ismsa_testHomeKey(HomeId, Home),
+    not ismsa_roleNeeded(Home, Role).
+
+result(("FAIL role needed", HomeId, Role)) :-
+    ismsa_expectNoRoleNeeded(HomeId),
+    ismsa_testHomeKey(HomeId, Home),
+    ismsa_roleNeeded(Home, Role).
+
+result(("FAIL conflict missing", Title, Text)) :-
+    ismsa_expectConflict(Title, Person, Text),
+    not ismsa_testConflictFound(Title, Person, Text).
+
+ismsa_testConflictFound(Title, Person, Text) :-
+    ismsa_expectConflict(Title, Person, Text),
+    field(Document, "title", Title),
+    ismsa_dutyConflict(Document, Person, Text).
+
+result(("FAIL unexpected conflict", Document, Person, Text)) :-
+    ismsa_dutyConflict(Document, Person, Text),
+    ismsa_testHomeKey("ismsa_test_lib_home-6", Home),
+    ismsa_closestHome(Document, Home),
+    field(Document, "title", Title),
+    not ismsa_expectConflict(Title, Person, Text).
+
+result(("FAIL owner not inherited", Title)) :-
+    ismsa_expectInheritedOwner(Title, Owner),
+    not ismsa_testOwnerFound(Title, Owner).
+
+ismsa_testOwnerFound(Title, Owner) :-
+    ismsa_expectInheritedOwner(Title, Owner),
+    field(Card, "title", Title),
+    field(Card, "base/fieldTypes/owner", Owner).

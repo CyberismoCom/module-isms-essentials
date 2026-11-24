@@ -97,10 +97,10 @@ ismsa_libraryRank("the NIS2 basics library", 5).
 
 ismsa_libraryCoverage("the security response and compliance basics library",
     "The security roles, the channel for vulnerability reports, the notifications of vulnerabilities and incidents, the authority contacts, the records, and the changes in regulation. These are the duties of the organisation for the CRA and the reporting of NIS2.",
-    "The duties for each product under the CRA, for example the risk assessment, the SBOM, the technical documentation, and the conformity assessment. Do them in the development projects of the secure development and EU CRA modules.").
+    "The duties for each product under the CRA, for example risk assessment, SBOM, technical documentation, and conformity assessment. Do them in the development projects of the secure development and EU CRA modules.").
 
 ismsa_libraryCoverage("the information security management basics library",
-    "A foundation for an ISMS: the scope and context, the security policy with the cryptography rules, the training, the security targets, the security reviews, and a light management review.",
+    "A foundation for an ISMS: the scope and context, the security policy with the cryptography rules, the training, human resources security, the security targets, the security metrics, the security reviews, and a light management review.",
     "Certification to ISO/IEC 27001: the Statement of Applicability, the internal audit, the full management review, the corrective actions, the document control, and the full Annex A. Add the ISO/IEC 27001 extension for these.").
 
 ismsa_libraryCoverage("the asset and risk management library",
@@ -151,6 +151,8 @@ ismsa_libraryControl("ismsa_control_isms-scope-and-context", "Define the scope a
 ismsa_libraryControl("ismsa_control_information-security-policy", "Set the information security policy", "the information security management basics library").
 ismsa_libraryControl("ismsa_control_training-and-awareness", "Run security training and awareness", "the information security management basics library").
 ismsa_libraryControl("ismsa_control_plan-and-review-isms", "Plan and review the ISMS", "the information security management basics library").
+ismsa_libraryControl("ismsa_control_human-resources-security", "Manage human resources security", "the information security management basics library").
+ismsa_libraryControl("ismsa_control_measure-security-effectiveness", "Measure the effectiveness of security", "the information security management basics library").
 
 ismsa_libraryControl("ismsa_control_manage-assets", "Manage the assets of the organisation", "the asset and risk management library").
 ismsa_libraryControl("ismsa_control_manage-risks", "Manage information security risks", "the asset and risk management library").
@@ -181,6 +183,10 @@ ismsa_centralEvidence("ismsa_control_information-security-policy", "ismsa_docume
 ismsa_centralEvidence("ismsa_control_training-and-awareness", "ismsa_document_training-and-awareness-plan", "Training and awareness plan").
 ismsa_centralEvidence("ismsa_control_plan-and-review-isms", "ismsa_review_management-review", "Management review").
 ismsa_evidenceLocation("ismsa_review_management-review", "ismsa_register_security-reviews").
+ismsa_centralEvidence("ismsa_control_human-resources-security", "ismsa_review_human-resources-security", "Human resources security review").
+ismsa_evidenceLocation("ismsa_review_human-resources-security", "ismsa_register_security-reviews").
+ismsa_centralEvidence("ismsa_control_measure-security-effectiveness", "ismsa_review_security-metrics", "Security metrics report").
+ismsa_evidenceLocation("ismsa_review_security-metrics", "ismsa_register_security-targets").
 
 ismsa_centralEvidence("ismsa_control_manage-assets", "ismsa_document_asset-management-process", "Asset management process").
 ismsa_centralEvidence("ismsa_control_manage-assets", "ismsa_review_asset-register", "Review of the asset register").
@@ -223,6 +229,7 @@ ismsa_plannedImplementation("ismsa_nis2_art-21-2-d", "ismsa_control_manage-suppl
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-e", "ismsa_control_receive-security-issue-notifications").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-e", "ismsa_control_manage-vulnerabilities-and-updates").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-f", "ismsa_control_plan-and-review-isms").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-f", "ismsa_control_measure-security-effectiveness").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-g", "ismsa_control_training-and-awareness").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-g", "ismsa_control_apply-basic-security-practices").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-g", "ismsa_control_manage-vulnerabilities-and-updates").
@@ -230,6 +237,7 @@ ismsa_plannedImplementation("ismsa_nis2_art-21-2-h", "ismsa_control_apply-basic-
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-h", "ismsa_control_information-security-policy").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-i", "ismsa_control_review-access-rights").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-i", "ismsa_control_manage-assets").
+ismsa_plannedImplementation("ismsa_nis2_art-21-2-i", "ismsa_control_human-resources-security").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-j", "ismsa_control_apply-basic-security-practices").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-j", "ismsa_control_review-access-rights").
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-j", "ismsa_control_continuity-and-recovery").

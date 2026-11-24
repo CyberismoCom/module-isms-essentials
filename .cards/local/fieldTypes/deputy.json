@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/fieldTypes/deputy",
+    "displayName": "Deputy",
+    "dataType": "person",
+    "description": "The person who does the work of the role when the assignee is away"
+}

@@ -1,9 +1,10 @@
 {
     "title": "Compliance responsible",
-    "cardType": "base/cardTypes/roleAssignment",
+    "cardType": "ismsa/cardTypes/securityRole",
     "workflowState": "",
     "links": [],
     "rank": "0|f",
     "lastUpdated": "2026-11-17T20:32:51.783Z",
-    "base/fieldTypes/informationClassification": "internal"
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_role_compliance"
 }

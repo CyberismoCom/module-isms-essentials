@@ -1,20 +1,26 @@
-== Role assignments
+== Security roles
 
-Assign people to the central security roles by editing the child cards. Add new role assignments, as needed. The roles of a single development project are assigned in that project.
-
-{{#createCards}}
-  "template": "base/templates/roleAssignment",
-  "buttonLabel": "Add a role assignment"
-{{/createCards}}
+The central security roles of the organisation. Set the assignee and the deputy of each role. The roles of a single development project are assigned in that project.
 
 {{#report}}
-  "name": "base/reports/roleAssignments"
+  "name": "ismsa/reports/securityRoles"
 {{/report}}
+
+To add a role of your own, click the button. Write its responsibilities, its authority, and the competence that it needs.
+
+{{#createCards}}
+  "template": "ismsa/templates/securityRole",
+  "buttonLabel": "Add a security role"
+{{/createCards}}
 
 == Review of the role assignments
 
-* Check that each role has an assignee.
-* Check that the assignments are up to date.
-* If needed, confirm with the assignee that they know about the role.
+* Check that each role has an assignee and a deputy.
+* Check that each assignee and deputy has confirmed the role.
+* Check that the management has approved the assignments. Record who approved them, and when.
+* Check that the assignees have the competence that their roles need.
+* Check the segregation of duties: nobody approves or reviews their own work. For example, a document owner does not review their own document, and an administrator does not review their own access rights. Where the duties cannot be separated, record a compensating measure, for example a review by the management.
 
-Set the date of the review in the *Last reviewed* field. Mark this card as *Passed* if the role assignments are complete and up to date. Otherwise, mark it as *Failed*.
+#TODO: Record the approval of the management, and the compensating measures.#
+
+Set the date of the review in the *Last reviewed* field. Mark this card as *Passed* if the role assignments are complete, approved, and up to date. Otherwise, mark it as *Failed*.

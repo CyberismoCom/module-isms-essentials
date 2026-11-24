@@ -42,6 +42,14 @@ These are the steps to set up the home. After the first steps, each step is done
 {{/each}}
 
 {{/if}}
+{{#if this.showSuppliers}}
+*Manage the suppliers*
+
+{{#each this.suppliers}}
+* {{this.checkbox}} {{this.step}}: xref:{{this.controlKey}}.adoc[{{this.controlTitle}}] ({{this.status}})
+{{/each}}
+
+{{/if}}
 {{#if this.showOperations}}
 *Run security operations and plan business continuity*
 

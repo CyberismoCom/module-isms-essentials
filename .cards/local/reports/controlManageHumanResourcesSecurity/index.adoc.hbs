@@ -1,0 +1,40 @@
+{{#each results}}
+The people who work for the organisation are suitable for their roles and know their security duties. They lose their access when they change roles or leave.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs an ISMS, or when NIS2 applies. NIS2 requires human resources security. This control covers employees, contractors, and trainees. The security of suppliers is in the control "Manage the security of suppliers".
+
+== How to implement
+
+Agree with the people who handle HR how security is part of the employment:
+
+* background checks for critical roles, as far as the law allows them
+* security and confidentiality duties in the employment contracts and contractor agreements
+* security onboarding for new people
+* a checklist for role changes and for leavers: change or remove the access, and return the assets
+* a disciplinary process for security breaches.
+
+Check once a year that this works, for example with a sample of the people who joined, changed roles, or left during the year.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_human-resources-security",
+  "template": "ismsa/templates/humanResourcesSecurityReview",
+  "buttonLabel": "Create a human resources security review"
+{{/report}}
+
+Check that the review of the year has passed, and that the access of the leavers was removed in time.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(i)
+* ISO/IEC 27001:2022 Annex A 5.11, 6.1, 6.2, 6.4, 6.5, and 6.6
+
+{{/each}}

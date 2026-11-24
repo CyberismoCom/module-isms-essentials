@@ -1,0 +1,7 @@
+Keeps the list of the critical suppliers, makes sure that their agreements have security requirements, and assesses them.
+
+*Authority:* Can require security requirements in a new agreement with a critical supplier before it is signed.
+
+*Competence:* Procurement, and the security of suppliers.
+
+Set the person in the role in the *Assignee* field, and the deputy in the *Deputy* field. The deputy does the work of the role when the assignee is away. The 24-hour deadlines of NIS2 and the CRA apply on every day of the year.

@@ -1,0 +1,71 @@
+{{#each results}}
+{{#if this.roles}}
+[cols="4,4,4,2"]
+|===
+| Role | Assignee | Deputy | State
+
+{{#each this.roles}}
+| xref:{{this.key}}.adoc[{{this.title}}]
+| {{#field}}"field": "base/fieldTypes/owner", "cardKey": "{{this.key}}", "display": "inline", "showLabel": false{{/field}}
+| {{#if this.hasDeputyField}}{{#field}}"field": "ismsa/fieldTypes/deputy", "cardKey": "{{this.key}}", "display": "inline", "showLabel": false{{/field}}{{else}}-{{/if}}
+| {{this.state}}
+{{/each}}
+|===
+
+Click an assignee or a deputy to change it. Open a role to read its responsibilities, its authority, and the competence that it needs.
+{{else}}
+There are no role assignments yet.
+{{/if}}
+
+{{#if this.needed}}
+*Roles that the controls of the home need*
+
+The libraries of the home have controls that need these roles:
+
+{{#each this.needed}}
+* {{this.title}}
+{{/each}}
+
+{{#each this.needed}}
+{{#createCards}}
+  "template": "{{this.template}}",
+  "buttonLabel": "Add the role: {{this.title}}",
+  "cardKey": "{{this.targetKey}}"
+{{/createCards}}
+
+{{/each}}
+{{/if}}
+
+*Other people with a security role*
+
+[cols="3,4,5"]
+|===
+| Role | Who | Duties
+
+| Top management
+| The management of the organisation
+| Approves the security policy and the role assignments, accepts the residual risks, and holds the management review.
+
+{{#each this.groups}}
+| {{this.name}}
+| {{#if this.people}}{{#each this.people}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}}{{else}}Nobody yet{{/if}}
+| {{this.duties}}
+
+{{/each}}
+| All employees and contractors
+| Everyone who works for the organisation
+| Follow the security policy, and report security events.
+|===
+
+The owners come from the registers of the home, so this list stays up to date.
+
+{{#if this.conflicts}}
+*Possible conflicts of duties*
+
+{{#each this.conflicts}}
+* {{this.person}} {{this.text}}: xref:{{this.documentKey}}.adoc[{{this.documentTitle}}]
+{{/each}}
+
+Give the review or the approval to another person. If that is not possible, record a compensating measure in the review of the role assignments, for example a review by the management.
+{{/if}}
+{{/each}}

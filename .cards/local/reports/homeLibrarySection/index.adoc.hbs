@@ -11,30 +11,30 @@
 [%collapsible%open]
 {{/if}}
 ====
-Libraries add the controls, registers, and processes to the home. Answer the questions, and the home shows the libraries that it needs. A "yes" adds, and a "no" removes. Click an answer to change it.
+Libraries add the controls, registers, and processes to the home. Answer the questions. A "yes" shows the buttons of the libraries that the home needs, below the questions. Click the buttons to add the libraries. A "no" adds nothing, and it does not delete anything from the home. Click an answer to change it.
 
 *What must you comply with?*
 
 [cols="5,2,6"]
 |===
-| Question | Answer | A "yes" adds
+| Question | Answer | Effect
 
 | Must the products in the scope of this home meet the EU Cyber Resilience Act (CRA)?
 | {{#field}}"field": "ismsa/fieldTypes/homeCra", "display": "inline", "showLabel": false{{/field}}
-| {{#if this.craLibraries}}{{#each this.craLibraries}}{{this.title}}{{#unless @last}}, {{/unless}}{{/each}}: a checklist of the CRA requirements of the organisation, linked to the controls of the home.{{else}}No library without the EU CRA module.{{/if}} It recommends the central security work, which covers the CRA duties of the organisation. The duties for each product are in the development projects of the secure development and EU CRA modules.
+| {{#if this.craLibraries}}Offers {{#each this.craLibraries}}{{this.title}}{{#unless @last}}, {{/unless}}{{/each}}: a checklist of the CRA requirements of the organisation. {{/if}}Recommends the central security work. Product duties are in the secure development and EU CRA modules.
 
-| Does NIS2 apply to the organisation?
+| Does NIS2 apply to the organisation, or do you want to follow NIS2 for another reason, for example because customers require it?
 | {{#field}}"field": "ismsa/fieldTypes/homeNis2", "display": "inline", "showLabel": false{{/field}}
-| NIS2 basics: a checklist of the NIS2 requirements, linked to the controls of the home.{{#each this.nis2Libraries}} It also adds {{this.title}}.{{/each}} It recommends the four kinds of work below. Check the national law for other duties.
+| Offers NIS2 basics: a checklist of the NIS2 requirements, linked to the controls of the home.{{#each this.nis2Libraries}} Also offers {{this.title}}.{{/each}} Recommends the four kinds of work below. Check the national law for other duties.
 |===
 
-*What do you do in this home?*
+*What do you want this home to do?*
 
 [cols="5,2,4,4"]
 |===
-| Question | Answer | A "yes" adds | Recommendation
+| Question | Answer | A "yes" offers | Recommendation
 
-| Do you want to do the central security work in this home, for example the security roles, the vulnerability reports, and the incident notifications?
+| Do you want to do the central security work in this home, for example security roles, vulnerability reports, and incident notifications?
 | {{#field}}"field": "ismsa/fieldTypes/homeCentralWork", "display": "inline", "showLabel": false{{/field}}
 | Security response and compliance basics
 | {{#if this.recCentralWork}}Yes, because {{#each this.recCentralWork}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstCentralWork}} If another ISMS does this work, check that it covers these duties.{{/if}}{{else}}-{{/if}}
@@ -45,7 +45,7 @@ Libraries add the controls, registers, and processes to the home. Answer the que
 | {{#if this.recFullIsms}}Yes, because {{#each this.recFullIsms}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstFullIsms}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
 
 | Do you want to manage the risks of your assets in this home?
-| {{#field}}"field": "ismsa/fieldTypes/homeAssetRisks", "display": "inline", "showLabel": false{{/field}}
+| {{#if this.assetRisksIncluded}}{{this.assetRisksIncluded}}{{else}}{{#field}}"field": "ismsa/fieldTypes/homeAssetRisks", "display": "inline", "showLabel": false{{/field}}{{/if}}
 | Asset and risk management
 | {{#if this.recAssetRisks}}Yes, because {{#each this.recAssetRisks}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstAssetRisks}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
 
@@ -61,7 +61,7 @@ Libraries add the controls, registers, and processes to the home. Answer the que
 
 *What each library covers*
 
-The libraries set up the work at a basic and proportionate level. "Basic" means that the minimum measures and their evidence are in place. It does not mean ready for certification, and it is not legal advice.
+The libraries set up the work at a basic level, as the section "What this home covers" explains.
 
 [cols="3,6,6"]
 |===

@@ -1,0 +1,16 @@
+{
+    "rank": "0|u",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-24T10:00:00.000Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Manage human resources security",
+    "templateCardKey": "ismsa_4shykmyc",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "june",
+    "base/fieldTypes/identifier": "ismsa_control_human-resources-security",
+    "lastUpdated": "2026-11-24T10:00:00.000Z",
+    "lastTransitioned": "2026-11-24T10:00:00.000Z"
+}

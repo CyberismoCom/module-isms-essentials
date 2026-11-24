@@ -50,5 +50,16 @@ resultField(("missing", Requirement, ControlIdentifier), "library", Library, "sh
 resultField(result, "any", "yes", "shortText") :-
     ismsa_orOpen(_, _).
 
+% An empty compliance register and a register with no open requirements show different texts.
+
+ismsa_orRequirementCardType("ismsa/cardTypes/assessedComplianceRequirement").
+ismsa_orRequirementCardType("ismsa/cardTypes/complianceRequirement").
+
+resultField(result, "anyRequirement", "yes", "shortText") :-
+    ismsa_orHome(Home),
+    ismsa_orRequirementCardType(CardType),
+    base_projectCardType(Requirement, CardType),
+    ismsa_closestHome(Requirement, Home).
+
 order(2, "requirements", 1, "title", "ASC").
 order(3, "missing", 1, "controlTitle", "ASC").

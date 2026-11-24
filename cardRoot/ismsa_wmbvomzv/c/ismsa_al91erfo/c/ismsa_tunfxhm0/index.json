@@ -11,7 +11,6 @@
     "base/fieldTypes/identifier": "ismsa_home",
     "lastUpdated": "2026-11-23T15:56:23.567Z",
     "base/fieldTypes/owner": "home-l7@example.com",
-    "ismsa/fieldTypes/homeScope": "Test organisation L7",
     "ismsa/fieldTypes/homeCentralWork": "yes",
     "ismsa/fieldTypes/homeCra": "yes",
     "ismsa/fieldTypes/homeAssetRisks": "yes",

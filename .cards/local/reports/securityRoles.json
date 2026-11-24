@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/securityRoles",
+    "displayName": "Security roles of an ISMS home",
+    "description": "The security roles under a card, with the assignee and the deputy, the roles that the controls of the home need, the other people with a security role in the home, and possible conflicts of duties",
+    "category": "Central controls"
+}

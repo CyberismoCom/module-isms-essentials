@@ -30,9 +30,24 @@ ismsa_homeAnswer(Home, Question, Answer) :-
     ismsa_homeQuestion(Question, Field),
     field(Home, Field, Answer).
 
+% A question is included in another question when a "yes" to the other question already adds
+% its libraries. The home card shows the text in place of the answer, and the question needs no
+% answer. A "yes" to the ISMS question adds the asset and risk management library.
+%
+% ismsa_questionIncluded(Home, Question, Text)
+
+ismsa_questionIncluded(Home, "assetRisks", "Included in the ISMS") :-
+    ismsa_homeAnswer(Home, "fullIsms", "yes").
+
+ismsa_homeQuestionDone(Home, Question) :-
+    ismsa_homeAnswer(Home, Question, _).
+
+ismsa_homeQuestionDone(Home, Question) :-
+    ismsa_questionIncluded(Home, Question, _).
+
 ismsa_homeQuestionsAnswered(Home) :-
     base_projectCardType(Home, "ismsa/cardTypes/moduleHome"),
-    ismsa_homeAnswer(Home, Question, _) : ismsa_homeQuestion(Question, _).
+    ismsa_homeQuestionDone(Home, Question) : ismsa_homeQuestion(Question, _).
 
 % The libraries that the questions decide, with their titles. Libraries of other modules are
 % shown separately on the home card, without questions.
@@ -60,7 +75,7 @@ ismsa_questionAdds("assetRisks", "the asset and risk management library",
         "you manage the risks of your assets in this home").
 ismsa_questionAdds("ownServices", "the security operations basics library",
         "you manage the security of your own IT or cloud services in this home").
-ismsa_questionAdds("nis2", "the NIS2 basics library", "NIS2 applies").
+ismsa_questionAdds("nis2", "the NIS2 basics library", "you follow NIS2").
 
 %
 % Framework libraries of other modules
@@ -76,7 +91,7 @@ ismsa_questionAdds("nis2", "the NIS2 basics library", "NIS2 applies").
 % ismsa_frameworkApplies(Framework, Reason, NotNeededReason)
 
 ismsa_frameworkApplies("cra", "the CRA applies", "The CRA does not apply.").
-ismsa_frameworkApplies("nis2", "NIS2 applies", "NIS2 does not apply.").
+ismsa_frameworkApplies("nis2", "you follow NIS2", "You do not follow NIS2.").
 
 ismsa_choiceLibrary(Library, Title) :-
     ismsa_frameworkLibrary(_, Library, Title).
@@ -110,7 +125,8 @@ ismsa_frameworkRecommends("nis2", "ownServices", "NIS2 requires basic security p
 
 ismsa_questionRecommended(Home, Question, Reason) :-
     ismsa_homeAnswer(Home, Framework, "yes"),
-    ismsa_frameworkRecommends(Framework, Question, Reason).
+    ismsa_frameworkRecommends(Framework, Question, Reason),
+    not ismsa_questionIncluded(Home, Question, _).
 
 % A "no" against a recommendation. The home card shows it, and the requirements show the gap.
 
@@ -142,7 +158,7 @@ ismsa_libraryNotNeededReason(Home, "the security operations basics library",
         "You do not manage the security of your own IT or cloud services in this home.") :-
     ismsa_homeAnswer(Home, "ownServices", "no").
 
-ismsa_libraryNotNeededReason(Home, "the NIS2 basics library", "NIS2 does not apply.") :-
+ismsa_libraryNotNeededReason(Home, "the NIS2 basics library", "You do not follow NIS2.") :-
     ismsa_homeAnswer(Home, "nis2", "no").
 
 ismsa_libraryNotNeededReason(Home, Library, Reason) :-

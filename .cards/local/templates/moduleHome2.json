@@ -1,6 +1,6 @@
 {
     "name": "ismsa/templates/moduleHome2",
     "displayName": "ISMS home",
-    "description": "Start page for the central security work of an organisation, a business unit, or a team, for example for the EU Cyber Resilience Act, NIS2, or ISO/IEC 27001. The home asks a few questions, and then shows the libraries that it needs",
+    "description": "Central security work for NIS2, the CRA, and ISO/IEC 27001",
     "category": "Start"
 }

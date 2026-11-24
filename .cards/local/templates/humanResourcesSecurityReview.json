@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/humanResourcesSecurityReview",
+    "displayName": "Human resources security review",
+    "description": "Planned evidence of the control \"Manage human resources security\": a yearly check of the security practices for joiners, role changes, and leavers",
+    "category": "ISMS home evidence"
+}

@@ -150,7 +150,9 @@ onTransitionExecuteTransition(Control, "Create", Control, "Mark in scope") :-
 %
 % In an ISMS home made from ismsa/templates/moduleHome2, a card whose owner is calculated and
 % overridable gets the owner of its parent card. So the owner of the home is the owner of the
-% registers and the controls, until someone overrides it. Such a home has a control register
+% registers, the controls, the evidence, and the records, until someone overrides it. All card
+% types of this module with an owner work like this (2026-11-24), except the home itself. The
+% owner of a role assignment is the person in the role, so it is not inherited. Such a home has a control register
 % with the identifier "ismsa_register_central-controls". The control register of the old home
 % template (ismsa/templates/moduleHome) has another identifier, so its cards do not change.
 %
@@ -210,3 +212,41 @@ ismsa_euCraTemplate("eucra/templates/supportPeriod").
 ismsa_craGuidance :-
     ismsa_euCraTemplate(Template),
     template(Template).
+
+%
+% Security roles (2026-11-24)
+%
+% ismsa_controlRole(ControlIdentifier, RoleIdentifier, Template, Title): the control needs the
+% role. When the control is in a home and the role is not, the role assignments of the home
+% offer a button for the role (ismsa/reports/securityRoles).
+%
+
+ismsa_controlRole("ismsa_control_operate-security-monitoring", "ismsa_role_security-operations",
+    "ismsa/templates/securityOperationsRole", "Security operations responsible").
+ismsa_controlRole("ismsa_control_manage-supplier-security", "ismsa_role_supplier-security",
+    "ismsa/templates/supplierSecurityRole", "Supplier security responsible").
+
+ismsa_identifierInHome(Home, Identifier) :-
+    base_projectCardType(Home, "ismsa/cardTypes/moduleHome"),
+    field(Card, "base/fieldTypes/identifier", Identifier),
+    ismsa_closestHome(Card, Home).
+
+ismsa_roleNeeded(Home, RoleIdentifier) :-
+    ismsa_controlRole(ControlIdentifier, RoleIdentifier, _, _),
+    ismsa_identifierInHome(Home, ControlIdentifier),
+    not ismsa_identifierInHome(Home, RoleIdentifier).
+
+% ismsa_dutyConflict(Document, Person, Text): a possible conflict of duties. The person reviews
+% or approves their own document. The role assignments show these.
+
+ismsa_dutyConflict(Document, Person, "owns the document and also reviews it") :-
+    base_projectCardType(Document, "base/cardTypes/controlledDocument"),
+    field(Document, "base/fieldTypes/owner", Person),
+    parent(Task, Document),
+    base_projectCardType(Task, "base/cardTypes/reviewTask"),
+    field(Task, "base/fieldTypes/owner", Person).
+
+ismsa_dutyConflict(Document, Person, "owns the document and also approves it") :-
+    base_projectCardType(Document, "base/cardTypes/controlledDocument"),
+    field(Document, "base/fieldTypes/owner", Person),
+    field(Document, "base/fieldTypes/approver", Person).

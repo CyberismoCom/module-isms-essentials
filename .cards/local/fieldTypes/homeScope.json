@@ -1,6 +1,0 @@
-{
-    "name": "ismsa/fieldTypes/homeScope",
-    "displayName": "Scope",
-    "dataType": "shortText",
-    "description": "The organisation, business unit, or team that the home is for"
-}

@@ -1,9 +1,10 @@
 {
     "title": "Product security operations responsible",
-    "cardType": "base/cardTypes/roleAssignment",
+    "cardType": "ismsa/cardTypes/securityRole",
     "workflowState": "",
     "links": [],
     "rank": "0|c",
     "lastUpdated": "2026-11-17T20:32:49.382Z",
-    "base/fieldTypes/informationClassification": "internal"
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_role_product-security-operations"
 }

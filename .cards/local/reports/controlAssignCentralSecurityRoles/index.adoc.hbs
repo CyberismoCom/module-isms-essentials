@@ -7,7 +7,7 @@ This control is always required. The other central controls need people who do t
 
 == How to implement
 
-Create the central security role assignments. The template has the roles that the other central controls need. Set the assignee of each role in its *Owner* field, and add other roles when needed. Then review the assignments, and mark the review as passed.
+Create the central security role assignments. The template has the roles that the other central controls need. Each role says its responsibilities, its authority, and the competence that it needs. Set the assignee and the deputy of each role. When a library needs another role, for example a security operations responsible, the role assignments offer a button for it. Then the management approves the assignments, and you review them.
 
 {{#report}}
   "name": "ismsa/reports/createEvidence",
@@ -16,7 +16,7 @@ Create the central security role assignments. The template has the roles that th
   "buttonLabel": "Create the central security role assignments"
 {{/report}}
 
-Check that each role has an assignee, that each assignment is up to date, and that the assignees know about their roles.
+Check that each role has an assignee and a deputy, that the assignees have confirmed their roles, that the management has approved the assignments, and that nobody approves or reviews their own work.
 
 {{#if this.craGuidance}}
 == EU Cyber Resilience Act
@@ -33,7 +33,7 @@ The deadlines of 24 hours in Article 14 of the CRA (Regulation (EU) 2024/2847) a
 == References
 
 * IEC 62443-4-1 SM-2
-* ISO/IEC 27001:2022 clause 5.3 and Annex A 5.2
+* ISO/IEC 27001:2022 clauses 5.3 and 7.2, and Annex A 5.2 and 5.3
 * NIS2 (Directive (EU) 2022/2555) Article 20
 
 {{/each}}

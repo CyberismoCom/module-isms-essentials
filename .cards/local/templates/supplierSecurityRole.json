@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/supplierSecurityRole",
+    "displayName": "Supplier security responsible",
+    "description": "A role of the control \"Manage the security of suppliers\": the supplier security responsible",
+    "category": "ISMS home evidence"
+}
