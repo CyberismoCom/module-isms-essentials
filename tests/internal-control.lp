@@ -31,12 +31,12 @@ ismsa_test_expectAssessment("Internal control 14: No evidence and policy check f
 ismsa_test_expectAssessment("Internal control 15: Assessment overridden with an explanation", "ok").
 ismsa_test_expectAssessment("Internal control 16: Assessment overridden without an explanation", "ok").
 
-ismsa_test_expectAssessment("Requirement 1: Nothing has been linked", "open").
+ismsa_test_expectAssessment("Requirement 1: Nothing has been linked", "notStarted").
 ismsa_test_expectAssessment("Requirement 2: Implemented by a control with valid evidence", "ok").
-ismsa_test_expectAssessment("Requirement 3: Implemented by a control that has no evidence", "open").
+ismsa_test_expectAssessment("Requirement 3: Implemented by a control that has no evidence", "inProgress").
 ismsa_test_expectAssessment("Requirement 4: Implemented by a control that has a policy check failure", "notOk").
-ismsa_test_expectAssessment("Requirement 5: Implemented by a control that is out of scope", "open").
-ismsa_test_expectAssessment("Requirement 6: Implemented by a control that has not been scoped", "open").
+ismsa_test_expectAssessment("Requirement 5: Implemented by a control that is out of scope", "notStarted").
+ismsa_test_expectAssessment("Requirement 6: Implemented by a control that has not been scoped", "inProgress").
 ismsa_test_expectAssessment("Requirement 7: Evidenced directly by a review", "ok").
 ismsa_test_expectAssessment("Requirement 8: Out of scope with a justification", "notApplicable").
 ismsa_test_expectAssessment("Requirement 9: Manually attested with an explanation", "ok").
@@ -79,6 +79,14 @@ ismsa_test_failure(Title, @concatenate("status indicator is not ", Expected)) :-
     ismsa_test_expectStatus(Title, Expected),
     ismsa_test_fixture(Title, Card),
     not field(Card, "statusIndicator", Expected).
+
+% No assessed compliance requirement is Open: requirements start in scope, so they
+% have no state that is not scoped yet.
+
+ismsa_test_failure(Title, "requirement is open") :-
+    base_projectCardType(Card, "ismsa/cardTypes/assessedComplianceRequirement"),
+    field(Card, "base/fieldTypes/assessment", "open"),
+    field(Card, "title", Title).
 
 % Every internal control fixture has an expected assessment.
 
