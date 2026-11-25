@@ -1,0 +1,13 @@
+{
+    "rank": "0|c",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-25T20:44:08.318Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/aiAsset",
+    "title": "AI tool without assessment",
+    "templateCardKey": "ismsa_imzdy7ei",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-25T20:44:08.322Z",
+    "ismsa/fieldTypes/assetCriticalityForOperations": "low",
+    "ismsa/fieldTypes/assetRiskEvaluationNeeded": "no"
+}

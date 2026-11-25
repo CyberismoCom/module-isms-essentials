@@ -1,0 +1,81 @@
+{
+    "name": "ismsa/cardTypes/aiAsset",
+    "displayName": "AI asset",
+    "description": "An AI tool or service that the organisation uses, or an AI feature in another service. Moved from ismsb/cardTypes/aiAsset",
+    "workflow": "ismsa/workflows/asset",
+    "customFields": [
+        {
+            "name": "base/fieldTypes/owner",
+            "displayName": "",
+            "isCalculated": true,
+            "enableOverride": true
+        },
+        {
+            "name": "base/fieldTypes/informationClassification",
+            "displayName": "Classification of this card",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetPublisher",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetAiAllowedInformation",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetAiTrainingDataUsage",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetAiRiskCategory",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetAiHumanOversight",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetAiSystemRole",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetAiImpactAssessmentNeeded",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetCriticalityForOperations",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetRiskEvaluationNeeded",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/dataCategories",
+            "displayName": "",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/assetContactDetails",
+            "isCalculated": false
+        }
+    ],
+    "alwaysVisibleFields": [
+        "base/fieldTypes/owner",
+        "base/fieldTypes/informationClassification",
+        "ismsa/fieldTypes/assetAiAllowedInformation",
+        "ismsa/fieldTypes/assetAiTrainingDataUsage",
+        "ismsa/fieldTypes/assetAiRiskCategory",
+        "ismsa/fieldTypes/assetAiHumanOversight",
+        "ismsa/fieldTypes/assetCriticalityForOperations",
+        "ismsa/fieldTypes/assetRiskEvaluationNeeded",
+        "ismsa/fieldTypes/dataCategories"
+    ],
+    "optionallyVisibleFields": [
+        "ismsa/fieldTypes/assetPublisher",
+        "ismsa/fieldTypes/assetAiSystemRole",
+        "ismsa/fieldTypes/assetAiImpactAssessmentNeeded",
+        "ismsa/fieldTypes/assetContactDetails"
+    ]
+}

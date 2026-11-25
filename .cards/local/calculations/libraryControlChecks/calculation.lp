@@ -54,6 +54,18 @@ policyCheckFailure(
     not ismsa_disableAssetControl(Asset),
     not field(Asset, "ismsa/fieldTypes/assetCriticalityForOperations", _).
 
+policyCheckFailure(
+    Control,
+    "Internal control",
+    "Some AI assets have not been assessed",
+    "Some AI assets in the asset register have no assessment. Set the information allowed, the training data use, the EU AI Act risk category, and the human oversight of each AI asset."
+) :-
+    ismsa_checkedLibraryControl(Control, "ismsa_control_manage-assets", Home),
+    ismsa_assetInHome(Asset, Home),
+    ismsa_aiAsset(Asset),
+    not ismsa_disableAssetControl(Asset),
+    not ismsa_aiAssetAssessed(Asset).
+
 %
 % Manage information security risks
 %
@@ -86,3 +98,41 @@ policyCheckFailure(
     ismsa_checkedLibraryControl(Control, "ismsa_control_manage-risks", Home),
     ismsa_riskInHome(Risk, Home),
     field(Risk, "workflowState", "Analysed").
+
+%
+% Manage the AI tools in use (2026-11-25)
+%
+
+ismsa_aiAssetInHome(Asset, Home) :-
+    ismsa_assetInHome(Asset, Home),
+    ismsa_aiAsset(Asset).
+
+policyCheckFailure(
+    Control,
+    "Internal control",
+    "No AI tools have been recorded",
+    "The asset register of this home has no AI assets. Record each AI tool in use in the register \"AI tools\", or mark this control out of scope if nobody uses AI."
+) :-
+    ismsa_checkedLibraryControl(Control, "ismsa_control_manage-ai-tools", Home),
+    not ismsa_aiAssetInHome(_, Home).
+
+policyCheckFailure(
+    Control,
+    "Internal control",
+    "Some AI tools have not been assessed",
+    "Some AI assets have no assessment. Set the information allowed, the training data use, the EU AI Act risk category, and the human oversight of each AI asset."
+) :-
+    ismsa_checkedLibraryControl(Control, "ismsa_control_manage-ai-tools", Home),
+    ismsa_aiAssetInHome(Asset, Home),
+    not ismsa_disableAssetControl(Asset),
+    not ismsa_aiAssetAssessed(Asset).
+
+policyCheckFailure(
+    Control,
+    "Internal control",
+    "A prohibited use of AI is active",
+    "An active AI asset has the EU AI Act risk category 'Prohibited'. Stop the use, and deactivate the AI asset."
+) :-
+    ismsa_checkedLibraryControl(Control, "ismsa_control_manage-ai-tools", Home),
+    ismsa_aiAssetInHome(Asset, Home),
+    field(Asset, "ismsa/fieldTypes/assetAiRiskCategory", "unacceptable").

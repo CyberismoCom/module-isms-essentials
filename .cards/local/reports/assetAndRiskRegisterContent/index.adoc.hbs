@@ -1,9 +1,34 @@
 {{#each results}}
+{{#if (eq ../register "aiTools")}}
+This register holds the AI tools and services that the organisation uses, and the AI features in other services. The AI assets in this register are the approved AI tools of the AI policy. A tool that is not here is not approved for work.
+
+Before a new AI tool is used for work, its owner adds it here and assesses it. Set these fields of each AI asset, and justify them on the card:
+
+* the information allowed: the highest classification of information that people can give to the tool
+* the training data use: whether the supplier uses the data of the organisation to train AI models
+* the EU AI Act risk category: a prohibited use is not allowed, and a high-risk use needs the approval of the management
+* the human oversight: how people check the results before they use them.
+
+Then the AI responsible approves the tool, and the owner activates the card. When the tool is no longer used, deactivate the card.
+
+{{#createCards}}
+  "template": "ismsa/templates/aiAsset",
+  "buttonLabel": "Add an AI tool"
+{{/createCards}}
+
+NOTE: If an AI feature is part of a service that is already in another asset register, add the AI asset here too, and link it to the service.
+
+The control "Manage the AI tools in use" is in the control register. The yearly review of the AI tools is in this register. Create it with the button in the control.
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+{{/if}}
 {{#if (eq ../register "assets")}}
 An asset is anything that has value to the organisation and needs protection. This register holds the assets of the organisation in four subregisters:
 
 * Primary assets: the business processes, functions, and services, and the information that they use.
-* Supporting assets: the hardware, devices, software, roles, locations, and the organisational infrastructure, such as policies, procedures, and supporting ICT services.
+* Supporting assets: the hardware, devices, software, roles, locations, and the organisational infrastructure, such as policies, procedures, and supporting ICT services. The AI tools are supporting assets too, when the AI use basics library is added.
 * Suppliers: the external providers of products, processes, or services.
 * Development projects: the projects that develop custom software or hardware.
 

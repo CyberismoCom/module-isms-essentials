@@ -10,7 +10,7 @@ This policy states the commitment of the management to information security, and
 * Information is classified and protected according to its classification, for example with access control and encryption. Access is given only when the work needs it. The cryptography rules give the details of encryption.
 * Information security management is risk based. Risks are assessed and treated according to the risk management process. Security-aware people, documented processes, and suitable security technologies manage the risks.
 * Incidents and weaknesses are reported without undue delay, according to the incident management process.
-* The organisation uses AI systems in a controlled way. Information is given to an AI service only when the service is approved for that classification. People check the results of AI before they use them.
+* The organisation uses AI systems in a controlled way. Information is given to an AI service only when the service is approved for that classification. People check the results of AI before they use them. The AI policy gives the details.
 * #TODO: Add the other high-level objectives of the organisation.#
 
 The management sets the security targets each year, based on these high-level objectives. The targets are measurable where possible, and the management follows them up at least once a year.
@@ -37,7 +37,7 @@ Topic-specific policies give the direction for specific topics. The management a
 |#For example, access control, acceptable use, supplier security, and backup#
 
 |AI policy
-|Approved AI tools, the information allowed in each tool, AI in products and services, and AI competence
+|The safe use of AI tools: the approved tools, the information allowed in each tool, training data, human checks of AI results, AI agents, and AI literacy. AI in the products is in the secure development process
 |===
 
 Rules and procedures give the practical details, for example the cryptography rules. The owner of each document approves it and keeps it up to date.

@@ -1,0 +1,18 @@
+{
+    "name": "ismsa/fieldTypes/homeAiUse",
+    "displayName": "Answer",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "yes",
+            "enumDisplayValue": "Yes",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "no",
+            "enumDisplayValue": "No",
+            "enumDescription": ""
+        }
+    ],
+    "description": "Do the people in the scope of this home use AI tools in their work, or AI features of other services?"
+}

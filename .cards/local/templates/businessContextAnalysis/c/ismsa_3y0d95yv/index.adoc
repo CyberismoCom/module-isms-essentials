@@ -159,7 +159,7 @@ Security objectives of the #add scope# are:
 
 This section should describe the most important requirements from customers, internal stakeholders, authorities and standards.
 
-For an ISMS, list the interested parties, such as customers, employees, owners, suppliers, and authorities, and their requirements that are relevant to information security. Say which of these requirements the ISMS addresses. Keep the legal and regulatory requirements in the compliance register. See ISO/IEC 27001:2022 clause 4.2.
+For an ISMS, list the interested parties, such as customers, employees, owners, suppliers, and authorities, and their requirements that are relevant to information security. Say which of these requirements the ISMS addresses. Include the requirements for the use of AI, for example customer contracts that limit or forbid the use of AI with customer information. Keep the legal and regulatory requirements in the compliance register. See ISO/IEC 27001:2022 clause 4.2.
 ====
 
 The most important requirements for #add scope# are 

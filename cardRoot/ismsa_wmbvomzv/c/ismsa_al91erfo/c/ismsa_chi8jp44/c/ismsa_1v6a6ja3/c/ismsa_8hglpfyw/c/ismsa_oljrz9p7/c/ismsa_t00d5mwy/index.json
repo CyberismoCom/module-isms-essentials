@@ -1,0 +1,20 @@
+{
+    "rank": "0|b",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-25T20:44:06.904Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/aiAsset",
+    "title": "Assessed AI tool",
+    "templateCardKey": "ismsa_imzdy7ei",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-25T20:44:06.908Z",
+    "ismsa/fieldTypes/assetAiAllowedInformation": "internal",
+    "ismsa/fieldTypes/assetAiTrainingDataUsage": "optedOut",
+    "ismsa/fieldTypes/assetAiRiskCategory": "minimalRisk",
+    "ismsa/fieldTypes/assetAiHumanOversight": "required",
+    "ismsa/fieldTypes/assetCriticalityForOperations": "medium",
+    "ismsa/fieldTypes/assetRiskEvaluationNeeded": "no",
+    "ismsa/fieldTypes/dataCategories": [
+        "personalData"
+    ]
+}

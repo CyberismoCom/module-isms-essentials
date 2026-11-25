@@ -81,7 +81,7 @@ Until the incident card has fields for these times, record them in the descripti
 
 === Step 2: Analyse the event
 
-An event is an incident if it compromises the availability, authenticity, integrity, or confidentiality of data or of the services. An actively exploited vulnerability in a product of the organisation is also handled as an incident. A near miss is an event that could have led to an incident, but did not. Other security events are handled in the normal processes, for example in the management of vulnerabilities and updates.
+An event is an incident if it compromises the availability, authenticity, integrity, or confidentiality of data or of the services. An actively exploited vulnerability in a product of the organisation is also handled as an incident. So are problems with AI that compromise information or services, for example confidential information given to an AI tool that is not approved for it, wrong or harmful AI results that were used, and unexpected actions of an AI agent. A near miss is an event that could have led to an incident, but did not. Other security events are handled in the normal processes, for example in the management of vulnerabilities and updates.
 
 The incident response lead assesses the impact with these criteria:
 

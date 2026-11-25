@@ -1,5 +1,5 @@
 {{#each results}}
-The organisation knows its assets that need protection: the business processes, the information, the information systems, the devices, the suppliers, and the development projects. Each asset has an owner and a classification.
+The organisation knows its assets that need protection: the business processes, the information, the information systems, the devices, the AI tools, the suppliers, and the development projects. Each asset has an owner and a classification.
 
 == How to decide if this control is required
 
@@ -7,7 +7,7 @@ This control is required when the organisation runs an ISMS, or when NIS2 applie
 
 == How to implement
 
-Document the asset management process. Identify the assets, and record them in the asset register of this home. Evaluate each asset, and set its criticality. Review the register at least once a year.
+Document the asset management process. Identify the assets, and record them in the asset register of this home. Evaluate each asset, and set its criticality. Record the AI tools as AI assets, and assess them. The AI use basics library adds the register "AI tools" for them. Review the register at least once a year.
 
 {{#report}}
   "name": "ismsa/reports/createEvidence",
@@ -25,7 +25,7 @@ Document the asset management process. Identify the assets, and record them in t
 
 Check that the process is approved, and that the review of the asset register has passed.
 
-The control also checks the asset register of this home. The control is not OK while the register has no assets, or while an asset has no overall asset criticality.
+The control also checks the asset register of this home. The control is not OK while the register has no assets, while an asset has no overall asset criticality, or while an AI asset is not assessed.
 
 == Assessment
 

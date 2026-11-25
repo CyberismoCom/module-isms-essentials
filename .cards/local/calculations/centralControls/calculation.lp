@@ -225,6 +225,8 @@ ismsa_controlRole("ismsa_control_operate-security-monitoring", "ismsa_role_secur
     "ismsa/templates/securityOperationsRole", "Security operations responsible").
 ismsa_controlRole("ismsa_control_manage-supplier-security", "ismsa_role_supplier-security",
     "ismsa/templates/supplierSecurityRole", "Supplier security responsible").
+ismsa_controlRole("ismsa_control_ai-policy", "ismsa_role_ai-responsible",
+    "ismsa/templates/aiResponsibleRole", "AI responsible").
 
 ismsa_identifierInHome(Home, Identifier) :-
     base_projectCardType(Home, "ismsa/cardTypes/moduleHome"),
@@ -235,6 +237,28 @@ ismsa_roleNeeded(Home, RoleIdentifier) :-
     ismsa_controlRole(ControlIdentifier, RoleIdentifier, _, _),
     ismsa_identifierInHome(Home, ControlIdentifier),
     not ismsa_identifierInHome(Home, RoleIdentifier).
+
+% ismsa_roleTarget(Home, Card): where a control creates a role that the home needs, when the home
+% has no central security role assignments, for example a home with only the AI use basics
+% library. The role goes to the process register, or to the home card if there is none. With
+% the role assignments, the button is in the role assignments (ismsa/reports/securityRoles).
+
+ismsa_homeHasRoleAssignments(Home) :-
+    ismsa_identifierInHome(Home, "ismsa_review_central-role-assignments").
+
+ismsa_roleTargetCandidate(Home, 1, Register) :-
+    base_projectCardType(Home, "ismsa/cardTypes/moduleHome"),
+    field(Register, "base/fieldTypes/identifier", "ismsa_register_processes"),
+    ismsa_closestHome(Register, Home).
+
+ismsa_roleTargetCandidate(Home, 2, Home) :-
+    base_projectCardType(Home, "ismsa/cardTypes/moduleHome").
+
+ismsa_roleTarget(Home, Card) :-
+    ismsa_roleTargetCandidate(Home, _, _),
+    not ismsa_homeHasRoleAssignments(Home),
+    Level = #min { L : ismsa_roleTargetCandidate(Home, L, _) },
+    Card = #min { C : ismsa_roleTargetCandidate(Home, Level, C) }.
 
 % ismsa_dutyConflict(Document, Person, Text): a possible conflict of duties. The person reviews
 % or approves their own document. The role assignments show these.

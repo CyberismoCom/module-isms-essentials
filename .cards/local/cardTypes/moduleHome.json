@@ -46,6 +46,10 @@
         {
             "name": "ismsa/fieldTypes/homeNis2",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeAiUse",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [

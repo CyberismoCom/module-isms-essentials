@@ -1,0 +1,28 @@
+{
+    "name": "ismsa/fieldTypes/assetAiTrainingDataUsage",
+    "displayName": "Training data use",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "optedOut",
+            "enumDisplayValue": "Not used for training",
+            "enumDescription": "The terms of use or the settings prevent the use of the data for training"
+        },
+        {
+            "enumValue": "mayBeUsed",
+            "enumDisplayValue": "May be used for training",
+            "enumDescription": "The data can be used for training. The owner of the data must approve this"
+        },
+        {
+            "enumValue": "unknown",
+            "enumDisplayValue": "Unknown",
+            "enumDescription": "Find out from the terms of use or the supplier"
+        },
+        {
+            "enumValue": "notApplicable",
+            "enumDisplayValue": "Not applicable",
+            "enumDescription": "The system does not send data to a supplier, for example a model that runs locally"
+        }
+    ],
+    "description": "Does the supplier use the data of the organisation to train AI models?"
+}

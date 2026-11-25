@@ -1,0 +1,28 @@
+{
+    "name": "ismsa/fieldTypes/assetAiAllowedInformation",
+    "displayName": "Information allowed",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "none",
+            "enumDisplayValue": "None",
+            "enumDescription": "The tool is not approved for the information of the organisation"
+        },
+        {
+            "enumValue": "public",
+            "enumDisplayValue": "Public",
+            "enumDescription": "Only public information"
+        },
+        {
+            "enumValue": "internal",
+            "enumDisplayValue": "Internal",
+            "enumDescription": "Public and internal information"
+        },
+        {
+            "enumValue": "confidential",
+            "enumDisplayValue": "Confidential",
+            "enumDescription": "Also confidential information. Customer information needs the permission of the contract"
+        }
+    ],
+    "description": "The highest classification of information that people can give to this AI system"
+}

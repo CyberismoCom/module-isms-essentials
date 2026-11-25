@@ -18,6 +18,11 @@ This plan defines the security training and the awareness activities of the year
 |#TODO#
 |#TODO#
 
+|People who use AI in their work
+|#TODO: AI literacy: the AI policy, the approved AI tools, the information allowed in each tool, the limits of AI results, and how to report problems. Article 4 of the EU AI Act requires this#
+|#TODO#
+|#TODO#
+
 |Developers and administrators
 |#TODO: For example, secure development training. The training of a development project team is planned in its project#
 |#TODO#

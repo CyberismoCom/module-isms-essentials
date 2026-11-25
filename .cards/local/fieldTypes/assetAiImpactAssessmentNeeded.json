@@ -1,0 +1,18 @@
+{
+    "name": "ismsa/fieldTypes/assetAiImpactAssessmentNeeded",
+    "displayName": "AI impact assessment needed",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "yes",
+            "enumDisplayValue": "Yes",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "no",
+            "enumDisplayValue": "No",
+            "enumDescription": ""
+        }
+    ],
+    "description": "Is an AI system impact assessment needed, for example for ISO/IEC 42001 or Article 27 of the EU AI Act?"
+}

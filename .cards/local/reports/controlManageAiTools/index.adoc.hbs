@@ -1,0 +1,39 @@
+{{#each results}}
+Each AI tool is approved and recorded as an AI asset before it is used for work. The organisation knows what each tool may get, and checks every year that no use of AI is prohibited or high risk without approval.
+
+== How to decide if this control is required
+
+This control is required when the people of the organisation use AI tools in their work. The EU AI Act applies to every organisation that uses AI systems. It prohibits some practices (Article 5) and sets obligations for the deployers of high-risk AI systems (Article 26).
+
+== How to implement
+
+Record each AI tool in the register "AI tools" of the asset register, as an AI asset. The register comes with the AI use basics library. The owner of the tool assesses it: the information allowed, the training data use, the EU AI Act risk category, and the human oversight. The AI responsible approves the tool, and the owner activates the card. A high-risk use needs the approval of the management before it starts.
+
+Give the AI agents and integrations, for example MCP servers, only the access that their task needs. A person approves the actions that cannot be undone.
+
+Review the AI tools once a year. Ask the teams which tools they use, and check the terms of use again.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_ai-tools",
+  "template": "ismsa/templates/aiToolReview",
+  "buttonLabel": "Create a review of the AI tools"
+{{/report}}
+
+Check that the review of the year has passed.
+
+The control also checks the AI tools of this home. The control is not OK while the home has no AI tools, while an AI tool is not assessed, or while a prohibited use is active.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* EU AI Act (Regulation (EU) 2024/1689) Articles 5 and 26
+* ISO/IEC 42001:2023 Annex A.4 and A.9
+* ISO/IEC 27001:2022 Annex A 5.9 and 5.23
+
+{{/each}}

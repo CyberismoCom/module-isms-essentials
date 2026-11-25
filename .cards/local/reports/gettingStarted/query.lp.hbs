@@ -27,6 +27,10 @@ ismsa_gsStep("operations", 4, "ismsa_control_review-access-rights", "Review the 
 ismsa_gsStep("operations", 5, "ismsa_control_apply-basic-security-practices", "Check the basic security practices").
 ismsa_gsStep("operations", 6, "ismsa_control_manage-vulnerabilities-and-updates", "Document how vulnerabilities are found and updates installed").
 
+ismsa_gsStep("ai", 1, "ismsa_control_ai-policy", "Write the AI policy, and name the AI responsible").
+ismsa_gsStep("ai", 2, "ismsa_control_manage-ai-tools", "Record and assess the AI tools in use").
+ismsa_gsStep("ai", 3, "ismsa_control_ai-literacy", "Add AI literacy to the training plan").
+
 ismsa_gsStep("improvement", 1, "ismsa_control_training-and-awareness", "Create the training and awareness plan").
 ismsa_gsStep("improvement", 2, "ismsa_control_human-resources-security", "Agree on security for joiners, role changes, and leavers, and check it").
 ismsa_gsStep("improvement", 3, "ismsa_control_measure-security-effectiveness", "Choose the security metrics, and measure them").
@@ -126,6 +130,7 @@ ismsa_gsGroupFlag("assets", "showAssets").
 ismsa_gsGroupFlag("risks", "showRisks").
 ismsa_gsGroupFlag("suppliers", "showSuppliers").
 ismsa_gsGroupFlag("operations", "showOperations").
+ismsa_gsGroupFlag("ai", "showAi").
 ismsa_gsGroupFlag("improvement", "showImprovement").
 
 resultField(result, Flag, "yes", "shortText") :-

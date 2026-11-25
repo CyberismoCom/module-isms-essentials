@@ -24,6 +24,7 @@ ismsa_homeQuestion("fullIsms", "ismsa/fieldTypes/homeFullIsms").
 ismsa_homeQuestion("assetRisks", "ismsa/fieldTypes/homeAssetRisks").
 ismsa_homeQuestion("ownServices", "ismsa/fieldTypes/homeOwnServices").
 ismsa_homeQuestion("nis2", "ismsa/fieldTypes/homeNis2").
+ismsa_homeQuestion("aiUse", "ismsa/fieldTypes/homeAiUse").
 
 ismsa_homeAnswer(Home, Question, Answer) :-
     base_projectCardType(Home, "ismsa/cardTypes/moduleHome"),
@@ -57,6 +58,7 @@ ismsa_choiceLibrary("the information security management basics library", "Infor
 ismsa_choiceLibrary("the asset and risk management library", "Asset and risk management").
 ismsa_choiceLibrary("the security operations basics library", "Security operations basics").
 ismsa_choiceLibrary("the NIS2 basics library", "NIS2 basics").
+ismsa_choiceLibrary("the AI use basics library", "AI use basics").
 
 %
 % What a "yes" adds
@@ -76,6 +78,9 @@ ismsa_questionAdds("assetRisks", "the asset and risk management library",
 ismsa_questionAdds("ownServices", "the security operations basics library",
         "you manage the security of your own IT or cloud services in this home").
 ismsa_questionAdds("nis2", "the NIS2 basics library", "you follow NIS2").
+ismsa_questionAdds("aiUse", "the AI use basics library", "you use AI tools in your work").
+ismsa_questionAdds("aiUse", "the asset and risk management library",
+        "the AI tools are recorded in the asset register").
 
 %
 % Framework libraries of other modules
@@ -160,6 +165,9 @@ ismsa_libraryNotNeededReason(Home, "the security operations basics library",
 
 ismsa_libraryNotNeededReason(Home, "the NIS2 basics library", "You do not follow NIS2.") :-
     ismsa_homeAnswer(Home, "nis2", "no").
+
+ismsa_libraryNotNeededReason(Home, "the AI use basics library", "You do not use AI tools in your work.") :-
+    ismsa_homeAnswer(Home, "aiUse", "no").
 
 ismsa_libraryNotNeededReason(Home, Library, Reason) :-
     ismsa_frameworkLibrary(Framework, Library, _),

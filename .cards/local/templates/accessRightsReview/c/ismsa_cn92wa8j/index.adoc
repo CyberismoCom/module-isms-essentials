@@ -8,6 +8,7 @@
 * Check that the accounts of the people who have left or changed roles have been removed or changed.
 * Check that the administrator and other privileged rights are given only to the people who need them.
 * Check that multi-factor authentication is on for remote access and for privileged accounts.
+* Check the accounts of the AI tools, the API keys, and the permissions of the AI agents and integrations, for example MCP servers. Each has an owner, and only the access that its task needs.
 
 == Findings
 

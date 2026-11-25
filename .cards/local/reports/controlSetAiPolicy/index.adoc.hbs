@@ -1,0 +1,45 @@
+{{#each results}}
+The management has approved an AI policy, and the people who use AI in their work know it and have confirmed it.
+
+== How to decide if this control is required
+
+This control is required when the people of the organisation use AI tools in their work, or when the services that they use have AI features. Without a policy, people decide themselves which tools they use and which information they give to them.
+
+== How to implement
+
+Write the AI policy, and get the approval of the management. The policy names the approved AI tools, the information allowed in each tool, the rules for training data, the human check of AI results, the limits of AI agents and integrations, and the transparency to customers. Name the AI responsible in the security role assignments. The AI responsible owns the policy and approves new AI tools.
+{{#if this.roleTarget}}
+
+This home has no central security role assignments. The button creates the role in xref:{{this.roleTarget}}.adoc[{{this.roleTargetTitle}}].
+
+{{#createCards}}
+  "template": "ismsa/templates/aiResponsibleRole",
+  "buttonLabel": "Add the AI responsible",
+  "cardKey": "{{this.roleTarget}}"
+{{/createCards}}
+{{/if}}
+
+Add the AI policy to the table of topic-specific policies in the information security policy, if the home has one. Communicate the AI policy to the employees and to the relevant contractors, and record their confirmations.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_ai-policy",
+  "template": "ismsa/templates/aiPolicy",
+  "buttonLabel": "Create the AI policy"
+{{/report}}
+
+Check that the policy is approved, up to date, communicated, and confirmed.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 42001:2023 clause 5.2 and Annex A.2
+* EU AI Act (Regulation (EU) 2024/1689) Articles 5 and 50
+* ISO/IEC 27001:2022 Annex A 5.1
+
+{{/each}}

@@ -28,7 +28,7 @@ The people who work for the organisation: employees, contractors, and trainees. 
 | #TODO#
 | #TODO#
 
-| Access removed and assets returned on the last day of work
+| Access removed and assets returned on the last day of work, including the accounts of the AI tools and the API keys
 | #TODO: Yes or no#
 | #TODO#
 | #TODO#

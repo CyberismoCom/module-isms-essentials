@@ -6,6 +6,7 @@ This review covers the asset register of the home: the primary assets, the suppo
 
 * Check that the new business processes, services, information systems, devices, and suppliers since the last review are in the register.
 * Check that each asset has an owner and an up-to-date classification.
+* Check that each AI tool in use is an AI asset, and that its assessment is up to date.
 * Check that the removed assets have been archived, and that their information has been returned or disposed of.
 * Check that the assets that need a risk evaluation have risks in the risk register.
 

@@ -16,5 +16,6 @@
     "ismsa/fieldTypes/homeAssetRisks": "yes",
     "ismsa/fieldTypes/homeOwnServices": "yes",
     "ismsa/fieldTypes/homeFullIsms": "yes",
-    "ismsa/fieldTypes/homeNis2": "yes"
+    "ismsa/fieldTypes/homeNis2": "yes",
+    "ismsa/fieldTypes/homeAiUse": "no"
 }

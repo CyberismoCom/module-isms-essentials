@@ -58,6 +58,14 @@ These are the steps to set up the home. After the first steps, each step is done
 {{/each}}
 
 {{/if}}
+{{#if this.showAi}}
+*Use AI safely*
+
+{{#each this.ai}}
+* {{this.checkbox}} {{this.step}}: xref:{{this.controlKey}}.adoc[{{this.controlTitle}}] ({{this.status}})
+{{/each}}
+
+{{/if}}
 {{#if this.showImprovement}}
 *Plan continuous improvement*
 

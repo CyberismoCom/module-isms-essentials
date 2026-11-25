@@ -15,6 +15,11 @@ ismsa_asset(Card, "Device") :-
 ismsa_asset(Card, "Supplier") :-
     base_projectCardType(Card, "ismsa/cardTypes/assetSupplier").
 
+% AI assets are in ismsa/calculations/aiAssetControl.
+
+ismsa_asset(Card, "AI asset") :-
+    ismsa_aiAsset(Card).
+
 % Criticality and risk evaluation needed are mandatory for all assets
 % Risk evaluation needed can be a calculated field
 policyCheckFailure(Asset, "ISMS", "'Overall asset criticality' is a required field", "'Overall asset criticality' has not been defined for this asset. Set this field.", "ismsa/fieldTypes/assetCriticalityForOperations") :-

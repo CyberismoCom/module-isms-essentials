@@ -65,6 +65,11 @@ The checklist follows the basic hygiene practices that Traficom recommends for N
 | #TODO#
 | #TODO#
 
+| Use of AI tools
+| Only the approved AI tools of the AI policy are used for work. The AI agents and integrations, for example MCP servers, have only the access that their task needs. Secrets, such as passwords and API keys, are not given in prompts.
+| #TODO#
+| #TODO#
+
 | Training (11.1)
 | The personnel and the relevant partners know the basic security practices. See the training and awareness plan.
 | #TODO#

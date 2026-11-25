@@ -1,0 +1,12 @@
+{
+    "title": "Article 5: Prohibited AI practices",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|c",
+    "lastUpdated": "2026-11-25T10:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_aiact_art-5",
+    "ismsa/fieldTypes/requirementOrigin": "EU AI Act (Regulation (EU) 2024/1689)",
+    "base/fieldTypes/adoptionStep": "step2"
+}

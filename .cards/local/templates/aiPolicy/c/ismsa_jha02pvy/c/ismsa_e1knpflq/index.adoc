@@ -1,0 +1,23 @@
+== Task description
+
+Review the AI policy.
+
+[NOTE]
+.Review instructions
+====
+* Check that the management has approved the policy.
+* Check that the policy agrees with the information security policy and with the AI tools in the asset register.
+* Check that the roles that own the policy, approve new AI tools, and approve exceptions are named.
+* Check that the policy meets the requirements of the customer contracts and of the EU AI Act.
+* Check that the training plan covers AI literacy.
+* Check that the policy has been communicated to the employees and the relevant contractors, and that the confirmations are recorded.
+* Check that each exception has a reason, a risk, and an end date, and that expired exceptions are closed.
+====
+
+To review the document, set the reviewer in the *Owner* field of this card. If the document is ready to be approved, transition this task to *Closed as done*. If the document needs changes, transition this task to *Changes required*.
+
+NOTE: The reviewer cannot be the same person as the owner or the approver of the document.
+
+== Review notes
+
+#TODO: Add the review notes here.#

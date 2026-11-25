@@ -15,6 +15,7 @@
       "description": "The register whose content is shown",
       "type": "string",
       "enum": [
+        "aiTools",
         "assets",
         "dataAssetRisks",
         "dataAssets",

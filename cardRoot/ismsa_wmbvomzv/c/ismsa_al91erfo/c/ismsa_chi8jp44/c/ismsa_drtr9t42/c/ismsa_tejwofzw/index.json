@@ -1,0 +1,14 @@
+{
+    "rank": "0|b",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-25T20:43:59.644Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "EU AI Act requirements",
+    "templateCardKey": "ismsa_cudzb3md",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/progress": "compliance-score",
+    "base/fieldTypes/identifier": "ismsa_register_ai-act",
+    "lastUpdated": "2026-11-25T20:43:59.648Z"
+}

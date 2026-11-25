@@ -16,5 +16,6 @@
     "ismsa/fieldTypes/homeOwnServices": "no",
     "ismsa/fieldTypes/homeFullIsms": "no",
     "ismsa/fieldTypes/homeNis2": "no",
-    "ismsa/fieldTypes/homeCentralWork": "yes"
+    "ismsa/fieldTypes/homeCentralWork": "yes",
+    "ismsa/fieldTypes/homeAiUse": "no"
 }

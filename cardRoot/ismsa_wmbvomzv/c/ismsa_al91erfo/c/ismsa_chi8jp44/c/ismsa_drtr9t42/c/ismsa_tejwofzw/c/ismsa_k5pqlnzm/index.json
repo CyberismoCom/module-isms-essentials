@@ -1,0 +1,14 @@
+{
+    "rank": "0|d",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-25T20:43:59.645Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "title": "Article 26: Obligations of deployers of high-risk AI systems",
+    "templateCardKey": "ismsa_pcpogd8m",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_aiact_art-26",
+    "ismsa/fieldTypes/requirementOrigin": "EU AI Act (Regulation (EU) 2024/1689)",
+    "base/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-25T20:43:59.662Z"
+}

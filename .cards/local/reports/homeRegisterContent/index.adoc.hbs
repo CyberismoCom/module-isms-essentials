@@ -51,6 +51,15 @@ Record a security event that is not an incident as a near miss.
   "buttonLabel": "Add new near miss"
 {{/createCards}}
 {{/if}}
+{{#if (eq ../register "aiActRequirements")}}
+This register holds the obligations of the EU AI Act (Regulation (EU) 2024/1689) for an organisation that uses AI systems in its work: AI literacy (Article 4), the prohibited practices (Article 5), the transparency obligations (Article 50), and the obligations of deployers of high-risk AI systems (Article 26). These obligations apply to every organisation that uses AI, also without an ISMS or NIS2.
+
+Each requirement is assessed from the internal controls that implement it. The planned controls come from the AI use basics library, and they are linked to the requirements automatically. If the organisation develops AI systems or offers them to others, it is a provider, and the obligations of providers apply too. These are not in this register.
+
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
+{{/if}}
 {{#if (eq ../register "nis2Requirements")}}
 This register holds the requirements of NIS2 (Directive (EU) 2022/2555) for essential and important entities: the governance of Article 20, the cybersecurity risk-management measures of Article 21, and the reporting obligations of Article 23. Check the national law that implements NIS2, because it can add requirements.
 

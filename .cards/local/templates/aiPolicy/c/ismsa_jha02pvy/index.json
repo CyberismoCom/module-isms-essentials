@@ -1,0 +1,11 @@
+{
+    "title": "AI policy",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-25T10:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_document_ai-policy"
+}

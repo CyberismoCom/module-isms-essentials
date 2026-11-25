@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/aiPolicy",
+    "displayName": "AI policy",
+    "description": "The AI policy of the organisation: the safe, legal, and responsible use of AI, approved by the management",
+    "category": "ISMS home evidence"
+}

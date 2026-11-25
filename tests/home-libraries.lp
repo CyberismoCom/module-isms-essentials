@@ -25,7 +25,13 @@
 %   version, with all libraries, and with "yes" to all six questions. No evidence is created. It
 %   checks that every NIS2 requirement finds all its planned controls in a home with all
 %   libraries. The controls "Manage human resources security" and "Measure the effectiveness of
-%   security" were added to it by hand on 2026-11-24, as copies of the template cards.
+%   security" were added to it by hand on 2026-11-24, as copies of the template cards. It
+%   answers "no" to the AI question, which was added on 2026-11-25.
+% - Test home L8 (ismsa_test_lib_home-8) was created on 2026-11-25 from the templates of that
+%   version, with "yes" only to the AI question. It has the AI use basics library (all three
+%   parts), the asset and risk registers, and the asset and risk management controls. It has no
+%   AI responsible and no evidence. Its register "AI tools" has three AI assets: one assessed,
+%   one without an assessment, and one with a prohibited use.
 %
 % Homes L1 to L5 were made before the six central controls became the security response and
 % compliance basics library. They have those controls and the incident management process, so
@@ -152,10 +158,13 @@ ismsa_expectInstalled("ismsa_test_lib_home-4", "ismsa/templates/securityResponse
 
 % ismsa_expectParts(HomeId, Total, Added): the number of library parts offered in the home, and
 % how many of them have been added. The section "Libraries" of the home card shows these.
-ismsa_expectParts("ismsa_test_lib_home-1", 7, 7).
-ismsa_expectParts("ismsa_test_lib_home-4", 7, 6).
-ismsa_expectParts("ismsa_test_lib_home-5", 7, 2).
-ismsa_expectParts("ismsa_test_lib_home-6", 7, 0).
+% The AI use basics library adds three parts (2026-11-25). Its register "AI tools" is offered
+% only in a home with the supporting assets of the asset register, so L5 and L6 have nine parts.
+ismsa_expectParts("ismsa_test_lib_home-1", 10, 7).
+ismsa_expectParts("ismsa_test_lib_home-4", 10, 6).
+ismsa_expectParts("ismsa_test_lib_home-5", 9, 2).
+ismsa_expectParts("ismsa_test_lib_home-6", 9, 0).
+ismsa_expectParts("ismsa_test_lib_home-8", 10, 5).
 
 % The library choice from the answers on the home card (ismsa/calculations/libraryChoice)
 %
@@ -241,6 +250,7 @@ ismsa_testHomeKey("ismsa_test_lib_home-4", ismsa_l866q2o1).
 ismsa_testHomeKey("ismsa_test_lib_home-5", ismsa_qu1v00mj).
 ismsa_testHomeKey("ismsa_test_lib_home-6", ismsa_ny30dov7).
 ismsa_testHomeKey("ismsa_test_lib_home-7", ismsa_tunfxhm0).
+ismsa_testHomeKey("ismsa_test_lib_home-8", ismsa_chi8jp44).
 
 ismsa_testHome(HomeId, Home) :-
     ismsa_testHomeKey(HomeId, Home),
@@ -298,6 +308,10 @@ ismsa_testRegisterCheck("Some assets have not been evaluated").
 ismsa_testRegisterCheck("No risks have been identified").
 ismsa_testRegisterCheck("Some risks have not been analysed").
 ismsa_testRegisterCheck("Some risks have no treatment plan").
+ismsa_testRegisterCheck("Some AI assets have not been assessed").
+ismsa_testRegisterCheck("No AI tools have been recorded").
+ismsa_testRegisterCheck("Some AI tools have not been assessed").
+ismsa_testRegisterCheck("A prohibited use of AI is active").
 
 result(("FAIL check missing", HomeId, ControlId, Title)) :-
     ismsa_expectCheck(HomeId, ControlId, Title),
@@ -726,3 +740,106 @@ ismsa_testOwnerFound(Title, Owner) :-
     ismsa_expectInheritedOwner(Title, Owner),
     field(Card, "title", Title),
     field(Card, "base/fieldTypes/owner", Owner).
+
+%
+% The AI use basics library (2026-11-25)
+%
+% L8 answers "yes" only to the AI question. The AI question adds the AI use basics library and
+% the asset and risk management library, because the AI tools are in the asset register.
+%
+
+ismsa_expectLibrary("ismsa_test_lib_home-8", "AI use basics", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-8", "Asset and risk management", "required").
+ismsa_expectLibrary("ismsa_test_lib_home-8", "Security operations basics", "notNeeded").
+ismsa_expectAdded("ismsa_test_lib_home-8", "AI use basics", "added").
+ismsa_expectAdded("ismsa_test_lib_home-8", "Asset and risk management", "added").
+ismsa_expectReason("ismsa_test_lib_home-8", "AI use basics", "you use AI tools in your work").
+ismsa_expectReason("ismsa_test_lib_home-8", "Asset and risk management", "the AI tools are recorded in the asset register").
+ismsa_expectLibrary("ismsa_test_lib_home-1", "AI use basics", "notNeeded").
+ismsa_expectLibrary("ismsa_test_lib_home-6", "AI use basics", "undecided").
+
+ismsa_expectInstalled("ismsa_test_lib_home-8", "ismsa/templates/aiUseControls").
+ismsa_expectInstalled("ismsa_test_lib_home-8", "ismsa/templates/aiToolRegister").
+ismsa_expectInstalled("ismsa_test_lib_home-8", "ismsa/templates/aiActRequirements").
+ismsa_expectInScope("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools").
+
+% The checks of the AI tools. The assessed AI asset passes, the one without an assessment fails
+% in both controls, and the prohibited use fails in "Manage the AI tools in use".
+ismsa_expectCheck("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools", "Some AI tools have not been assessed").
+ismsa_expectCheck("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools", "A prohibited use of AI is active").
+ismsa_expectCheck("ismsa_test_lib_home-8", "ismsa_control_manage-assets", "Some AI assets have not been assessed").
+ismsa_expectCheck("ismsa_test_lib_home-8", "ismsa_control_manage-risks", "No risks have been identified").
+ismsa_expectLibControl("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools", "notOk", "The control is in scope but required evidence has not been linked", 0).
+
+% The evidence of the AI controls, and where it is created. The training and awareness plan is
+% the evidence of the AI literacy control too.
+ismsa_expectTarget("ismsa_test_lib_home-8", "ismsa_control_ai-policy", "ismsa_document_ai-policy", "ismsa_register_processes").
+ismsa_expectTarget("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools", "ismsa_review_ai-tools", "ismsa_register_ai-tools").
+ismsa_expectTarget("ismsa_test_lib_home-8", "ismsa_control_ai-literacy", "ismsa_document_training-and-awareness-plan", "ismsa_register_processes").
+
+% Each EU AI Act requirement finds its planned controls in L8.
+ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-4", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 1).
+ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-5", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 2).
+ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-26", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 1).
+ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-50", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 1).
+
+ismsa_expectRoleNeeded("ismsa_test_lib_home-8", "ismsa_role_ai-responsible").
+% L8 has no central security role assignments, so the AI policy control creates the role in the
+% process register. A home with the role assignments (home ismsa_0yp0y2y5 of the central control
+% tests) gets no target, because the button is in the role assignments.
+ismsa_expectRoleTarget("ismsa_test_lib_home-8", "ismsa_register_processes").
+
+result(("FAIL role target", HomeId, TargetId)) :-
+    ismsa_expectRoleTarget(HomeId, TargetId),
+    ismsa_testHomeKey(HomeId, Home),
+    not ismsa_testRoleTargetIs(Home, TargetId).
+
+ismsa_testRoleTargetIs(Home, TargetId) :-
+    ismsa_roleTarget(Home, Target),
+    field(Target, "base/fieldTypes/identifier", TargetId).
+
+result(("FAIL role target with role assignments", Home)) :-
+    ismsa_homeHasRoleAssignments(Home),
+    ismsa_roleTarget(Home, _).
+
+result(("FAIL fixture home without role assignments")) :-
+    not ismsa_homeHasRoleAssignments(ismsa_0yp0y2y5).
+ismsa_expectComplete("ismsa_test_lib_home-8").
+
+% The checks of an AI asset card
+
+ismsa_expectAiAssetCheck("Assessed AI tool", none).
+ismsa_expectAiAssetCheck("AI tool without assessment", "'Information allowed' is a required field").
+ismsa_expectAiAssetCheck("AI tool without assessment", "'Human oversight' is a required field").
+ismsa_expectAiAssetCheck("AI tool for a prohibited use", "The use is prohibited").
+
+ismsa_testAiAsset(Title, Asset) :-
+    ismsa_expectAiAssetCheck(Title, _),
+    field(Asset, "title", Title),
+    ismsa_aiAsset(Asset).
+
+result(("FAIL AI asset missing", Title)) :-
+    ismsa_expectAiAssetCheck(Title, _),
+    not ismsa_testAiAsset(Title, _).
+
+result(("FAIL AI asset check missing", Title, Check)) :-
+    ismsa_expectAiAssetCheck(Title, Check),
+    Check != none,
+    ismsa_testAiAsset(Title, Asset),
+    not policyCheckFailure(Asset, _, Check, _, _).
+
+result(("FAIL AI asset has a check", Title, Check)) :-
+    ismsa_expectAiAssetCheck(Title, none),
+    ismsa_testAiAsset(Title, Asset),
+    policyCheckFailure(Asset, _, Check, _, _).
+
+result(("FAIL AI asset not assessed", Title)) :-
+    ismsa_expectAiAssetCheck(Title, none),
+    ismsa_testAiAsset(Title, Asset),
+    not ismsa_aiAssetAssessed(Asset).
+
+% An AI asset is an asset, and the old asset checks apply to it.
+
+result(("FAIL AI asset is not an asset", Title)) :-
+    ismsa_testAiAsset(Title, Asset),
+    not ismsa_asset(Asset, "AI asset").

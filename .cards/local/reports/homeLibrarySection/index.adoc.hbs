@@ -53,6 +53,11 @@ Libraries add the controls, registers, and processes to the home. Answer the que
 | {{#field}}"field": "ismsa/fieldTypes/homeOwnServices", "display": "inline", "showLabel": false{{/field}}
 | Security operations basics
 | {{#if this.recOwnServices}}Yes, because {{#each this.recOwnServices}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstOwnServices}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
+
+| Do the people in the scope of this home use AI tools in their work, or AI features of other services?
+| {{#field}}"field": "ismsa/fieldTypes/homeAiUse", "display": "inline", "showLabel": false{{/field}}
+| AI use basics, with a checklist of the EU AI Act. Also asset and risk management, because the AI tools are recorded in the asset register.
+| The EU AI Act applies to every organisation that uses AI.
 |===
 
 {{#report}}

@@ -20,7 +20,8 @@ For each critical supplier, check that:
 * the agreement has security requirements, including the notification of incidents and vulnerabilities that affect the organisation
 * the supplier was assessed, for example with a questionnaire, a certificate, or an audit report
 * the access of the supplier to the systems and the data is limited to what it needs
-* the risks of the supplier are in the risk register.
+* the risks of the supplier are in the risk register
+* for an AI supplier: the data of the organisation is not used for training without approval, the location of the data is known, and the current terms of use agree with the assessment of the AI asset.
 
 == Findings
 

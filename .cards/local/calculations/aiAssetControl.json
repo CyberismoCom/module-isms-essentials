@@ -1,0 +1,5 @@
+{
+    "name": "ismsa/calculations/aiAssetControl",
+    "displayName": "AI asset control",
+    "description": "Defines the AI assets and the required fields of their assessment"
+}

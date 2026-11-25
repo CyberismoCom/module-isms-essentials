@@ -82,6 +82,35 @@ ismsa_installableExtension(
     "ismsa_register_nis2"
 ).
 
+% The AI use basics library (2026-11-25) has its controls, the register "AI tools" under the
+% supporting assets of the asset register, and the EU AI Act requirements. The register needs
+% the asset register, so a "yes" to the AI question also adds the asset and risk management
+% library (ismsa/calculations/libraryChoice).
+
+ismsa_installableExtension(
+    "ismsa_register_central-controls",
+    "the AI use basics library",
+    "ismsa/templates/aiUseControls",
+    "Add the AI use controls",
+    "ismsa_control_manage-ai-tools"
+).
+
+ismsa_installableExtension(
+    "ismsa_register_supporting-assets",
+    "the AI use basics library",
+    "ismsa/templates/aiToolRegister",
+    "Add the AI tools register",
+    "ismsa_register_ai-tools"
+).
+
+ismsa_installableExtension(
+    "ismsa_register_compliance",
+    "the AI use basics library",
+    "ismsa/templates/aiActRequirements",
+    "Add the EU AI Act requirements",
+    "ismsa_register_ai-act"
+).
+
 % The order of the libraries on the home card. A library without this fact comes after them.
 
 ismsa_libraryRank("the security response and compliance basics library", 1).
@@ -89,6 +118,7 @@ ismsa_libraryRank("the information security management basics library", 2).
 ismsa_libraryRank("the asset and risk management library", 3).
 ismsa_libraryRank("the security operations basics library", 4).
 ismsa_libraryRank("the NIS2 basics library", 5).
+ismsa_libraryRank("the AI use basics library", 6).
 
 % What each library covers, and where the rest comes from. The home card shows these in the
 % section "Libraries", so that the user knows the limits of the home before choosing.
@@ -101,7 +131,7 @@ ismsa_libraryCoverage("the security response and compliance basics library",
 
 ismsa_libraryCoverage("the information security management basics library",
     "A foundation for an ISMS: the scope and context, the security policy, the cryptography rules, the training, human resources security, the security targets, the security metrics, the security reviews, and a light management review.",
-    "Certification to ISO/IEC 27001: the Statement of Applicability, the internal audit, the full management review, the corrective actions, and the full Annex A. Also the AI asset register. Add the ISO/IEC 27001 extension for these.").
+    "Certification to ISO/IEC 27001: the Statement of Applicability, the internal audit, the full management review, the corrective actions, and the full Annex A. Add the ISO/IEC 27001 extension for these.").
 
 ismsa_libraryCoverage("the asset and risk management library",
     "The asset and risk registers, their processes, the yearly reviews of the registers, and the security of the suppliers.",
@@ -115,12 +145,19 @@ ismsa_libraryCoverage("the NIS2 basics library",
     "A checklist of the requirements of NIS2 Articles 20, 21(2), and 23, at a basic level, linked to the controls of the home. A requirement stays open until its controls are in the home.",
     "The extra duties of the national law, for example the sector rules and the details of the registration. Check the national law.").
 
+ismsa_libraryCoverage("the AI use basics library",
+    "The safe use of AI tools: the AI policy, the AI tools as AI assets with their assessment, a yearly review, AI literacy, and a checklist of the EU AI Act obligations for an organisation that uses AI (Articles 4, 5, 26, and 50).",
+    "AI in the products of the organisation, and the obligations of the providers of AI systems. Do them in the development projects. The AI management system of ISO/IEC 42001 is not covered.").
+
 % The compliance register of the old home template has the same identifier as in the new home.
 % A library that needs the controls of the new home is offered only in a home that has the
 % control register of the new home ("ismsa_register_central-controls"), so that the old homes
 % do not change.
 
 ismsa_libraryForNewHomes("ismsa/templates/nis2Requirements").
+ismsa_libraryForNewHomes("ismsa/templates/aiUseControls").
+ismsa_libraryForNewHomes("ismsa/templates/aiToolRegister").
+ismsa_libraryForNewHomes("ismsa/templates/aiActRequirements").
 
 
 ismsa_libraryOfferedInHome(Template, Home) :-
@@ -164,6 +201,10 @@ ismsa_libraryControl("ismsa_control_continuity-and-recovery", "Plan business con
 ismsa_libraryControl("ismsa_control_review-access-rights", "Review access rights", "the security operations basics library").
 ismsa_libraryControl("ismsa_control_apply-basic-security-practices", "Apply basic security practices", "the security operations basics library").
 ismsa_libraryControl("ismsa_control_manage-vulnerabilities-and-updates", "Manage vulnerabilities and updates", "the security operations basics library").
+
+ismsa_libraryControl("ismsa_control_ai-policy", "Set the AI policy", "the AI use basics library").
+ismsa_libraryControl("ismsa_control_manage-ai-tools", "Manage the AI tools in use", "the AI use basics library").
+ismsa_libraryControl("ismsa_control_ai-literacy", "Give AI literacy training", "the AI use basics library").
 
 % Installing a library is the decision to use its controls, so they are in scope when they are
 % created. A home that does not need one of them marks it out of scope, with a justification.
@@ -209,6 +250,13 @@ ismsa_centralEvidence("ismsa_control_review-access-rights", "ismsa_review_access
 ismsa_centralEvidence("ismsa_control_apply-basic-security-practices", "ismsa_review_basic-security-practices", "Basic security practices review").
 ismsa_centralEvidence("ismsa_control_manage-vulnerabilities-and-updates", "ismsa_document_vulnerability-and-update-management-process", "Process for managing vulnerabilities and updates").
 
+% The training and awareness plan is the evidence of two controls, so that it is written once.
+
+ismsa_centralEvidence("ismsa_control_ai-policy", "ismsa_document_ai-policy", "AI policy").
+ismsa_centralEvidence("ismsa_control_manage-ai-tools", "ismsa_review_ai-tools", "Review of the AI tools").
+ismsa_evidenceLocation("ismsa_review_ai-tools", "ismsa_register_ai-tools").
+ismsa_centralEvidence("ismsa_control_ai-literacy", "ismsa_document_training-and-awareness-plan", "Training and awareness plan").
+
 %
 % Planned implementation of the NIS2 requirements
 %
@@ -244,3 +292,13 @@ ismsa_plannedImplementation("ismsa_nis2_art-21-2-j", "ismsa_control_review-acces
 ismsa_plannedImplementation("ismsa_nis2_art-21-2-j", "ismsa_control_continuity-and-recovery").
 ismsa_plannedImplementation("ismsa_nis2_art-23", "ismsa_control_notify-about-vulnerabilities-and-incidents").
 ismsa_plannedImplementation("ismsa_nis2_art-23", "ismsa_control_contact-with-authorities").
+
+%
+% Planned implementation of the EU AI Act requirements (2026-11-25)
+%
+
+ismsa_plannedImplementation("ismsa_aiact_art-4", "ismsa_control_ai-literacy").
+ismsa_plannedImplementation("ismsa_aiact_art-5", "ismsa_control_ai-policy").
+ismsa_plannedImplementation("ismsa_aiact_art-5", "ismsa_control_manage-ai-tools").
+ismsa_plannedImplementation("ismsa_aiact_art-26", "ismsa_control_manage-ai-tools").
+ismsa_plannedImplementation("ismsa_aiact_art-50", "ismsa_control_ai-policy").
