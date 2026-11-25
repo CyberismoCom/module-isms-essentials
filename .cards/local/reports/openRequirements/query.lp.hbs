@@ -30,6 +30,12 @@ resultField(Requirement, "explanation", Explanation, "shortText") :-
     ismsa_orOpen(Requirement, _),
     field(Requirement, "base/fieldTypes/assessmentExplanation", Explanation).
 
+resultField(Requirement, "assessment", "Not started", "shortText") :-
+    ismsa_orOpen(Requirement, "notStarted").
+
+resultField(Requirement, "assessment", "In progress", "shortText") :-
+    ismsa_orOpen(Requirement, "inProgress").
+
 resultField(Requirement, "assessment", "Not OK", "shortText") :-
     ismsa_orOpen(Requirement, "notOk").
 

@@ -1,1 +1,1 @@
-Test home B: the evidence of home A must not be linked here, and a control with only part of its planned evidence is not OK.
+Test home B: the evidence of home A must not be linked here, and a control with only part of its planned evidence is "Not started".

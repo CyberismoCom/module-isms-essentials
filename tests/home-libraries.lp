@@ -46,26 +46,26 @@
 
 % ismsa_expectLibControl(HomeId, ControlId, Assessment, Explanation, EvidenceLinks)
 ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_review-access-rights", "ok", "The control is in scope and there is valid evidence", 1).
-ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_manage-risks", "notOk", "The control is in scope but the linked evidence is not ready", 2).
-ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_manage-assets", "notOk", "The control is in scope but required evidence has not been linked", 1).
+ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_manage-risks", "inProgress", "The control is in scope, but the linked evidence is not ready yet", 2).
+ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_manage-assets", "notStarted", "The control is in scope, but no evidence has been linked yet", 1).
 ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_training-and-awareness", "ok", "The training is run by the parent company, and its records were checked on 19 November 2026.", 0).
 ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_continuity-and-recovery", "notApplicable", "The control has been marked out of scope", 0).
-ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_operate-security-monitoring", "notOk", "The control is in scope but required evidence has not been linked", 0).
-ismsa_expectLibControl("ismsa_test_lib_home-2", "ismsa_control_notify-about-vulnerabilities-and-incidents", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-1", "ismsa_control_operate-security-monitoring", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-2", "ismsa_control_notify-about-vulnerabilities-and-incidents", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
 % All planned evidence is linked, but a check of the register fails
 ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_manage-assets", "notOk", "The control has failed policy checks", 2).
 % Missing evidence comes before the checks
-ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_manage-risks", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_manage-risks", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
 % The business context analysis in the process register is the evidence of the scope control
-ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_isms-scope-and-context", "notOk", "The control is in scope but the linked evidence is not ready", 1).
-ismsa_expectLibControl("ismsa_test_lib_home-5", "ismsa_control_manage-risks", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-4", "ismsa_control_isms-scope-and-context", "inProgress", "The control is in scope, but the linked evidence is not ready yet", 1).
+ismsa_expectLibControl("ismsa_test_lib_home-5", "ismsa_control_manage-risks", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
 
 % The controls added on 2026-11-23 (E10-D12), without evidence
-ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_apply-basic-security-practices", "notOk", "The control is in scope but required evidence has not been linked", 0).
-ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_manage-vulnerabilities-and-updates", "notOk", "The control is in scope but required evidence has not been linked", 0).
-ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_manage-supplier-security", "notOk", "The control is in scope but required evidence has not been linked", 0).
-ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_human-resources-security", "notOk", "The control is in scope but required evidence has not been linked", 0).
-ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_measure-security-effectiveness", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_apply-basic-security-practices", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_manage-vulnerabilities-and-updates", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_manage-supplier-security", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_human-resources-security", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-7", "ismsa_control_measure-security-effectiveness", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
 
 % ismsa_expectInScope(HomeId, ControlId): a library control is in scope when it is created
 ismsa_expectInScope("ismsa_test_lib_home-7", "ismsa_control_apply-basic-security-practices").
@@ -93,14 +93,14 @@ ismsa_expectNoCheck("ismsa_test_lib_home-1", "ismsa_control_manage-risks").
 
 % ismsa_expectRequirement(HomeId, RequirementId, Assessment, Explanation, ImplementsLinks)
 ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-20-2", "ok", "The requirement is in scope and the linked implementation is acceptable", 1).
-ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-b", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 3).
-ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-c", "open", "The requirement is in scope but everything that was linked to it is out of scope", 1).
-ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-d", "open", "The requirement is in scope but a planned control is not in this home", 0).
-ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-23", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 2).
-ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-20-2", "open", "The requirement is in scope but a planned control is not in this home", 0).
-ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-b", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 1).
-ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-g", "open", "The requirement is in scope but a planned control is not in this home", 0).
-ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-h", "open", "The requirement is in scope but a planned control is not in this home", 0).
+ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-b", "inProgress", "The requirement is in scope, but the linked implementation is not ready yet", 3).
+ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-c", "notStarted", "The requirement is in scope, but everything that was linked to it is out of scope", 1).
+ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-21-2-d", "notStarted", "The requirement is in scope, but a planned control is not in this home yet", 0).
+ismsa_expectRequirement("ismsa_test_lib_home-1", "ismsa_nis2_art-23", "inProgress", "The requirement is in scope, but the linked implementation is not ready yet", 2).
+ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-20-2", "notStarted", "The requirement is in scope, but a planned control is not in this home yet", 0).
+ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-b", "notStarted", "The requirement is in scope, but a planned control is not in this home yet", 1).
+ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-g", "notStarted", "The requirement is in scope, but a planned control is not in this home yet", 0).
+ismsa_expectRequirement("ismsa_test_lib_home-2", "ismsa_nis2_art-21-2-h", "notStarted", "The requirement is in scope, but a planned control is not in this home yet", 0).
 
 % ismsa_expectTarget(HomeId, ControlId, EvidenceId, TargetId): where the button creates the
 % evidence. TargetId is the identifier of a register, or of the home for the fallback.
@@ -769,7 +769,7 @@ ismsa_expectCheck("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools", "Som
 ismsa_expectCheck("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools", "A prohibited use of AI is active").
 ismsa_expectCheck("ismsa_test_lib_home-8", "ismsa_control_manage-assets", "Some AI assets have not been assessed").
 ismsa_expectCheck("ismsa_test_lib_home-8", "ismsa_control_manage-risks", "No risks have been identified").
-ismsa_expectLibControl("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectLibControl("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
 
 % The evidence of the AI controls, and where it is created. The training and awareness plan is
 % the evidence of the AI literacy control too.
@@ -778,10 +778,10 @@ ismsa_expectTarget("ismsa_test_lib_home-8", "ismsa_control_manage-ai-tools", "is
 ismsa_expectTarget("ismsa_test_lib_home-8", "ismsa_control_ai-literacy", "ismsa_document_training-and-awareness-plan", "ismsa_register_processes").
 
 % Each EU AI Act requirement finds its planned controls in L8.
-ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-4", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 1).
+ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-4", "inProgress", "The requirement is in scope, but the linked implementation is not ready yet", 1).
 ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-5", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 2).
 ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-26", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 1).
-ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-50", "notOk", "The requirement is in scope but the linked implementation is not acceptable", 1).
+ismsa_expectRequirement("ismsa_test_lib_home-8", "ismsa_aiact_art-50", "inProgress", "The requirement is in scope, but the linked implementation is not ready yet", 1).
 
 ismsa_expectRoleNeeded("ismsa_test_lib_home-8", "ismsa_role_ai-responsible").
 % L8 has no central security role assignments, so the AI policy control creates the role in the

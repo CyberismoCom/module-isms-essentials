@@ -1,7 +1,7 @@
 These test cards check the assessment of the central controls of the ISMS home (ismsa/calculations/centralControls).
 
 * Home A has one fixture for each assessment result, and planned evidence that is complete, not ready, or expired. Its central control register must show the progress 50.
-* Home B checks that evidence is not linked from another home, and that a control with only part of its planned evidence is not OK.
+* Home B checks that evidence is not linked from another home, and that a control with only part of its planned evidence is "Not started".
 * The register "Central controls outside a home" checks that evidence is not linked when the control is not in a home.
 
 The assertions below are calculated from the real rules. All tests must pass, and no expected test card can be missing. The same assertions run in the command line with `cyberismo calc run tests/central-controls.lp`.

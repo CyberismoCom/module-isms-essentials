@@ -6,14 +6,14 @@
 
 ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_receive-security-issue-notifications", "ok", "The control is in scope and there is valid evidence", 1).
 ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_notify-about-vulnerabilities-and-incidents", "ok", "The control is in scope and there is valid evidence", 2).
-ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_contact-with-authorities", "notOk", "The control is in scope but the linked evidence is not ready", 1).
+ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_contact-with-authorities", "inProgress", "The control is in scope, but the linked evidence is not ready yet", 1).
 ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_follow-changes-in-regulation", "notOk", "The control has failed policy checks", 1).
 ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_protect-records", "notApplicable", "The control has been marked out of scope", 0).
 ismsa_expectCentral("ismsa_test_cc_home-a", "ismsa_control_assign-central-security-roles", "open", "The control has not been scoped yet", 0).
-ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_receive-security-issue-notifications", "notOk", "The control is in scope but required evidence has not been linked", 0).
-ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_notify-about-vulnerabilities-and-incidents", "notOk", "The control is in scope but required evidence has not been linked", 1).
+ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_receive-security-issue-notifications", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
+ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_notify-about-vulnerabilities-and-incidents", "notStarted", "The control is in scope, but no evidence has been linked yet", 1).
 ismsa_expectCentral("ismsa_test_cc_home-b", "ismsa_control_assign-central-security-roles", "ok", "The control is in scope and there is valid evidence", 1).
-ismsa_expectCentral("ismsa_test_cc_no-home", "ismsa_control_receive-security-issue-notifications", "notOk", "The control is in scope but required evidence has not been linked", 0).
+ismsa_expectCentral("ismsa_test_cc_no-home", "ismsa_control_receive-security-issue-notifications", "notStarted", "The control is in scope, but no evidence has been linked yet", 0).
 
 % ismsa_expectProgress(HomeIdentifier, Progress) for the control register of the home
 ismsa_expectProgress("ismsa_test_cc_home-a", 50).
