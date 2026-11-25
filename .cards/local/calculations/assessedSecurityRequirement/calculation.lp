@@ -11,10 +11,16 @@
 %   1. Out of scope: not applicable.
 %   2. Failed policy checks: not OK.
 %   3. A review asks for changes: not OK.
-%   4. A review has not been done: open.
-%   5. A verification is failing: not OK.
-%   6. There is no verification yet, or a verification is not ready: open.
-%   7. All verifications are OK or not applicable, and at least one is OK: OK.
+%   4. No review role has answered: not started.
+%   5. Some review roles have answered, but not all: in progress.
+%   6. A verification is failing: not OK.
+%   7. There is no verification yet: not started.
+%   8. A verification is not ready: in progress.
+%   9. Every verification is out of scope: not started.
+%  10. All verifications are OK or not applicable, and at least one is OK: OK.
+%
+% "Not started" and "In progress" follow the assessment values that ismsa #48 gave
+% to internal controls and compliance requirements. "Not OK" is for failures only.
 %
 % ismsa_securityRequirementAssessment(Requirement, Assessment, Explanation) pairs an
 % assessment value with its explanation. The bodies of the rules are mutually
@@ -65,6 +71,12 @@ ismsa_securityRequirementReviewOpen(Requirement) :-
   ismsa_securityRequirement(Requirement),
   ismsa_securityRequirementReviewField(Field),
   not ismsa_securityRequirementReviewDone(Requirement, Field).
+
+% A requirement that at least one review role has answered is under review, even
+% when the other roles have not answered yet (E1-D23).
+
+ismsa_securityRequirementReviewStarted(Requirement) :-
+  ismsa_securityRequirementReviewDone(Requirement, _).
 
 ismsa_securityRequirementReviewChangesNeeded(Requirement) :-
   ismsa_securityRequirement(Requirement),
@@ -175,27 +187,35 @@ ismsa_securityRequirementAssessment(Requirement, "notOk", "A review of the requi
   not base_policyCheckFailure(Requirement, _, _, _),
   ismsa_securityRequirementReviewChangesNeeded(Requirement).
 
-ismsa_securityRequirementAssessment(Requirement, "open", "The requirement has not been reviewed by all review roles") :-
+ismsa_securityRequirementAssessment(Requirement, "notStarted", "The requirement is in scope, but no review role has answered yet") :-
   ismsa_securityRequirementInScope(Requirement),
   not base_policyCheckFailure(Requirement, _, _, _),
   not ismsa_securityRequirementReviewChangesNeeded(Requirement),
-  ismsa_securityRequirementReviewOpen(Requirement).
+  ismsa_securityRequirementReviewOpen(Requirement),
+  not ismsa_securityRequirementReviewStarted(Requirement).
 
-ismsa_securityRequirementAssessment(Requirement, "notOk", "The requirement has been reviewed but a verification is failing") :-
+ismsa_securityRequirementAssessment(Requirement, "inProgress", "The requirement is under review, but the review roles have not all answered yet") :-
+  ismsa_securityRequirementInScope(Requirement),
+  not base_policyCheckFailure(Requirement, _, _, _),
+  not ismsa_securityRequirementReviewChangesNeeded(Requirement),
+  ismsa_securityRequirementReviewOpen(Requirement),
+  ismsa_securityRequirementReviewStarted(Requirement).
+
+ismsa_securityRequirementAssessment(Requirement, "notOk", "The requirement has been reviewed, but a verification is failing") :-
   ismsa_securityRequirementReviewed(Requirement),
   ismsa_securityRequirementFailing(Requirement).
 
-ismsa_securityRequirementAssessment(Requirement, "open", "The requirement has been reviewed but it has not been verified yet") :-
+ismsa_securityRequirementAssessment(Requirement, "notStarted", "The requirement has been reviewed, but it has not been verified yet") :-
   ismsa_securityRequirementReviewed(Requirement),
   not ismsa_securityRequirementFailing(Requirement),
   not ismsa_securityRequirementHasVerification(Requirement).
 
-ismsa_securityRequirementAssessment(Requirement, "open", "The requirement has been reviewed but a verification is not ready") :-
+ismsa_securityRequirementAssessment(Requirement, "inProgress", "The requirement has been reviewed, but a verification is not ready yet") :-
   ismsa_securityRequirementReviewed(Requirement),
   not ismsa_securityRequirementFailing(Requirement),
   ismsa_securityRequirementVerificationPending(Requirement, _).
 
-ismsa_securityRequirementAssessment(Requirement, "open", "The requirement has been reviewed but all its verifications are out of scope") :-
+ismsa_securityRequirementAssessment(Requirement, "notStarted", "The requirement has been reviewed, but everything that verifies it is out of scope") :-
   ismsa_securityRequirementReviewed(Requirement),
   not ismsa_securityRequirementFailing(Requirement),
   not ismsa_securityRequirementVerificationPending(Requirement, _),

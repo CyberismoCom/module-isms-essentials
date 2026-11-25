@@ -21,13 +21,14 @@ ismsa_testEvidence("ismsa_test_sr_test-fixed", "run-2", "passed", "2026-11-20", 
 % ismsa_test_expectSr(Identifier, Assessment, Explanation)
 ismsa_test_expectSr("ismsa_test_sr_out-of-scope", "notApplicable", "The requirement has been marked out of scope").
 ismsa_test_expectSr("ismsa_test_sr_out-of-scope-no-justification", "notApplicable", "The requirement has been marked out of scope").
-ismsa_test_expectSr("ismsa_test_sr_not-reviewed", "open", "The requirement has not been reviewed by all review roles").
+ismsa_test_expectSr("ismsa_test_sr_not-reviewed", "notStarted", "The requirement is in scope, but no review role has answered yet").
+ismsa_test_expectSr("ismsa_test_sr_partly-reviewed", "inProgress", "The requirement is under review, but the review roles have not all answered yet").
 ismsa_test_expectSr("ismsa_test_sr_changes-needed", "notOk", "A review of the requirement asks for changes").
-ismsa_test_expectSr("ismsa_test_sr_not-verified", "open", "The requirement has been reviewed but it has not been verified yet").
+ismsa_test_expectSr("ismsa_test_sr_not-verified", "notStarted", "The requirement has been reviewed, but it has not been verified yet").
 ismsa_test_expectSr("ismsa_test_sr_test-passed", "ok", "The requirement has been reviewed and verified").
-ismsa_test_expectSr("ismsa_test_sr_test-failed-latest", "notOk", "The requirement has been reviewed but a verification is failing").
+ismsa_test_expectSr("ismsa_test_sr_test-failed-latest", "notOk", "The requirement has been reviewed, but a verification is failing").
 ismsa_test_expectSr("ismsa_test_sr_test-fixed", "ok", "The requirement has been reviewed and verified").
-ismsa_test_expectSr("ismsa_test_sr_review-pending", "open", "The requirement has been reviewed but a verification is not ready").
+ismsa_test_expectSr("ismsa_test_sr_review-pending", "inProgress", "The requirement has been reviewed, but a verification is not ready yet").
 ismsa_test_expectSr("ismsa_test_sr_review-passed", "ok", "The requirement has been reviewed and verified").
 
 % An overridden assessment keeps its value and has no calculated explanation.
