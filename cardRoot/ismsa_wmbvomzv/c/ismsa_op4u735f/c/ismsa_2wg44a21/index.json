@@ -1,0 +1,21 @@
+{
+    "rank": "0|q",
+    "workflowState": "Archived",
+    "createdAt": "2026-11-26T07:13:24.345Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/evidences",
+            "cardKey": "ismsa_js44q4wp"
+        }
+    ],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Security requirement test: archived document",
+    "templateCardKey": "base_5",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "lastUpdated": "2026-11-26T07:14:19.561Z",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "base/fieldTypes/approvalDate": "2026-07-28",
+    "lastTransitioned": "2026-11-26T07:14:18.700Z"
+}

@@ -1,0 +1,17 @@
+{
+    "rank": "0|c",
+    "workflowState": "Out of scope",
+    "createdAt": "2026-11-23T10:37:24.642Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Out of scope, without a justification",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "open",
+    "ismsa/fieldTypes/testReview": "open",
+    "ismsa/fieldTypes/securityReview": "open",
+    "ismsa/fieldTypes/productOwnerReview": "open",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-23T10:37:24.644Z",
+    "base/fieldTypes/identifier": "ismsa_test_sr_out-of-scope-no-justification",
+    "base/fieldTypes/owner": "owner@example.com"
+}

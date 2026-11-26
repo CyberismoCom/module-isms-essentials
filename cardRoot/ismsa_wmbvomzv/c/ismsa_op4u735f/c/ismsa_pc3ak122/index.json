@@ -1,0 +1,17 @@
+{
+    "rank": "0|d",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-23T10:37:25.449Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Not reviewed",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "open",
+    "ismsa/fieldTypes/testReview": "open",
+    "ismsa/fieldTypes/securityReview": "open",
+    "ismsa/fieldTypes/productOwnerReview": "open",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-23T10:37:25.451Z",
+    "base/fieldTypes/identifier": "ismsa_test_sr_not-reviewed",
+    "base/fieldTypes/owner": "owner@example.com"
+}

@@ -1,0 +1,11 @@
+This fixture gets its input from facts in `tests/security-requirements.lp`, and not from linked cards. The app does not read the test file, so in the app the stage is "Content ready".
+
+Facts: two `ismsa_testEvidence` facts with the same date. One result is "passed" and the other is "failed". Their scope is this card itself.
+
+Expected stage in the test: "Not OK". A failed result of the latest date fails the requirement.
+
+== Reviews
+
+{{#report}}
+  "name": "ismsa/reports/securityRequirementReviews"
+{{/report}}

@@ -1,0 +1,17 @@
+{
+    "rank": "0|zq",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-26T20:08:30.843Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Reviewed, reviewers and dates missing",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "ok",
+    "ismsa/fieldTypes/testReview": "ok",
+    "ismsa/fieldTypes/securityReview": "ok",
+    "ismsa/fieldTypes/productOwnerReview": "ok",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-26T20:08:30.845Z",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/identifier": "ismsa_test_sr_review-record-missing"
+}
