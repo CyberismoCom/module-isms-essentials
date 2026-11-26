@@ -1,5 +1,6 @@
-% The dashboard of a home card (E10-D14 and E10-D15). The steps, the areas of work, and the
-% set-up check are in ismsa/calculations/homeSteps.
+% The dashboard of a home card that is set up (E10-D14 and E10-D15). The set-up is in
+% ismsa/reports/homeSetUp. The steps, the areas of work, and the set-up check are in
+% ismsa/calculations/homeSteps.
 
 ismsa_hdHome({{cardKey}}) :-
     ismsa_newHome({{cardKey}}).
@@ -9,36 +10,6 @@ result(result).
 resultField(result, "setUp", "yes", "shortText") :-
     ismsa_hdHome(Home),
     ismsa_homeSetUp(Home).
-
-% Set-up steps
-
-childResultCollection(result, "setup").
-
-childResult(result, ("setup", N), "setup") :-
-    ismsa_hdHome(_),
-    ismsa_homeSetUpStep(N, _).
-
-resultField(("setup", N), "rank", N, "integer") :-
-    ismsa_hdHome(_),
-    ismsa_homeSetUpStep(N, _).
-
-resultField(("setup", N), "label", Text, "shortText") :-
-    ismsa_hdHome(_),
-    ismsa_homeSetUpStep(N, Text).
-
-resultField(("setup", N), "status", "done", "shortText") :-
-    ismsa_hdHome(Home),
-    ismsa_homeSetUpStepDone(Home, N).
-
-resultField(("setup", N), "status", "next", "shortText") :-
-    ismsa_hdHome(Home),
-    ismsa_homeSetUpStepNext(Home, N).
-
-resultField(("setup", N), "status", "open", "shortText") :-
-    ismsa_hdHome(Home),
-    ismsa_homeSetUpStep(N, _),
-    not ismsa_homeSetUpStepDone(Home, N),
-    not ismsa_homeSetUpStepNext(Home, N).
 
 % One progress tile for each area of work, and one for the NIS2 requirements
 
@@ -128,6 +99,5 @@ resultField(result, "anyStep", "yes", "shortText") :-
     ismsa_hdHome(Home),
     ismsa_homeStepControl(Home, _, _, _).
 
-order(2, "setup", 1, "rank", "ASC").
 order(2, "tiles", 1, "rank", "ASC").
 order(2, "next", 1, "rank", "ASC").

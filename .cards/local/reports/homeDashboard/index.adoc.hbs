@@ -22,12 +22,5 @@ All steps are done. Keep the controls OK: the section "Owners and status" below 
 {{else}}
 The home has no controls yet. Add a library in the section "Libraries" below.
 {{/if}}
-{{else}}
-{{#report}}
-  "name": "base/reports/stepsWidget",
-  "title": "Set up the home",
-  "nextLabel": "next",
-  "steps": [{{#each this.setup}}{"label": "{{{jsonEscape this.label}}}", "status": "{{this.status}}"}{{#unless @last}}, {{/unless}}{{/each}}]
-{{/report}}
 {{/if}}
 {{/each}}

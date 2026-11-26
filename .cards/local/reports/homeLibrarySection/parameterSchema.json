@@ -10,6 +10,10 @@
     "cardKey": {
       "description": "Used to override the default cardKey, which is the cardKey of the card, in which the report macro is used",
       "type": "string"
+    },
+    "collapsed": {
+      "description": "Show the section collapsed, also when the library choice is not complete. The set-up of the home card uses it, because the set-up has the questions and the buttons",
+      "type": "boolean"
     }
   },
   "required": [

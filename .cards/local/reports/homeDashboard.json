@@ -1,6 +1,6 @@
 {
     "name": "ismsa/reports/homeDashboard",
     "displayName": "Dashboard of the ISMS home",
-    "description": "The top of the home card. Until the home is set up, it shows the set-up steps. Then it shows the progress of each area of work, and the next steps. The steps are in ismsa/calculations/homeSteps",
+    "description": "The top of the home card when the home is set up: the progress of each area of work, and the next steps. The steps are in ismsa/calculations/homeSteps",
     "category": "Central controls"
 }

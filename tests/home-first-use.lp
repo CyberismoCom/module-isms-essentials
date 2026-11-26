@@ -277,3 +277,47 @@ result(("FAIL stored answer lost", Id, Question)) :-
     ismsa_homeQuestion(Question, Field),
     fieldOverride(Home, Field, Value),
     not ismsa_homeAnswer(Home, Question, Value).
+
+%
+% The next library part in the set-up (ismsa/reports/homeSetUp)
+%
+
+% L9 needs five libraries and has none. The first part is the controls of the first library,
+% and seven parts are left: one for the security response and compliance basics, two for the
+% information security management basics, two for the asset and risk management, one for the
+% security operations basics, and one for NIS2 basics.
+
+result(("FAIL next library part of L9", Actual)) :-
+    ismsa_fuHome("L9", Home),
+    ismsa_homeNextLibraryPart(Home, Actual, _, _),
+    Actual != "ismsa/templates/securityResponseAndComplianceControls".
+
+result(("FAIL no next library part", "L9")) :-
+    ismsa_fuHome("L9", Home),
+    not ismsa_homeNextLibraryPart(Home, _, _, _).
+
+result(("FAIL next library part goes to the control register", "L9", Target)) :-
+    ismsa_fuHome("L9", Home),
+    ismsa_homeNextLibraryPart(Home, _, _, Target),
+    not field(Target, "base/fieldTypes/identifier", "ismsa_register_central-controls").
+
+result(("FAIL two next library parts", Id)) :-
+    ismsa_fuHome(Id, Home),
+    ismsa_homeNextLibraryPart(Home, T1, _, _),
+    ismsa_homeNextLibraryPart(Home, T2, _, _),
+    T1 < T2.
+
+ismsa_fuExpectPartsLeft("L9", 7).
+ismsa_fuExpectPartsLeft("L1", 0).
+ismsa_fuExpectPartsLeft("L7", 0).
+
+result(("FAIL library parts left", Id, Expected, Actual)) :-
+    ismsa_fuExpectPartsLeft(Id, Expected),
+    ismsa_fuHome(Id, Home),
+    ismsa_homeLibraryPartsLeft(Home, Actual),
+    Actual != Expected.
+
+result(("FAIL a home with all libraries has a next part", Id)) :-
+    ismsa_fuExpectPartsLeft(Id, 0),
+    ismsa_fuHome(Id, Home),
+    ismsa_homeNextLibraryPart(Home, _, _, _).

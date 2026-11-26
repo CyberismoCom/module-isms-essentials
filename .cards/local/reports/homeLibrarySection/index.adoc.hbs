@@ -7,8 +7,13 @@
 {{/if}}
 [%collapsible]
 {{else}}
+{{#if this.collapsed}}
+.Libraries: why the home needs them, and the details of each
+[%collapsible]
+{{else}}
 .Choose the libraries of the home
 [%collapsible%open]
+{{/if}}
 {{/if}}
 ====
 Libraries add the controls, registers, and processes to the home. Answer the questions. A "yes" shows the buttons of the libraries that the home needs, below the questions. Click the buttons to add the libraries. A "no" adds nothing, and it does not delete anything from the home. The answers about the CRA and NIS2 give the questions about the work a recommended answer. Click an answer to change it.

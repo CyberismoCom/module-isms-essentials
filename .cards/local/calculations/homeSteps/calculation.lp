@@ -57,6 +57,76 @@ ismsa_homeSetUpStepNext(Home, N) :-
     N = #min { M : ismsa_homeSetUpStep(M, _), not ismsa_homeSetUpStepDone(Home, M) }.
 
 %
+% The libraries in the set-up
+%
+% The set-up shows one button: the next part of the libraries that the answers need. The parts
+% come in the order of the libraries (ismsa_libraryRank/2), and within a library the controls
+% first, then the registers on the home card, the requirements, and the other parts. Some parts
+% can be added only after an earlier part, because their target is a register of the earlier
+% part.
+%
+% ismsa_libraryPartKind(Home, Template, Kind): 1 controls, 2 registers, 3 requirements, 4 other
+%
+
+ismsa_homeMissingPart(Home, Library, Template, Label, Target) :-
+    ismsa_newHome(Home),
+    ismsa_libraryRequired(Home, Library),
+    ismsa_libraryPart(Home, Library, Template, Label, Target),
+    not ismsa_libraryPartInstalled(Home, Template).
+
+ismsa_libraryPartKind(Home, Template, 1) :-
+    ismsa_homeMissingPart(Home, _, Template, _, Target),
+    field(Target, "base/fieldTypes/identifier", "ismsa_register_central-controls").
+
+ismsa_libraryPartKind(Home, Template, 2) :-
+    ismsa_homeMissingPart(Home, _, Template, _, Home).
+
+ismsa_libraryPartKind(Home, Template, 3) :-
+    ismsa_homeMissingPart(Home, _, Template, _, Target),
+    field(Target, "base/fieldTypes/identifier", "ismsa_register_compliance").
+
+ismsa_libraryPartKind(Home, Template, 4) :-
+    ismsa_homeMissingPart(Home, _, Template, _, _),
+    not ismsa_libraryPartKind(Home, Template, 1),
+    not ismsa_libraryPartKind(Home, Template, 2),
+    not ismsa_libraryPartKind(Home, Template, 3).
+
+ismsa_homeMissingPartOrder(Home, Template, Key) :-
+    ismsa_homeMissingPart(Home, Library, Template, _, _),
+    ismsa_libraryRank(Library, Rank),
+    ismsa_libraryPartKind(Home, Template, Kind),
+    Key = 10 * Rank + Kind.
+
+ismsa_homeNextPartKey(Home, Key) :-
+    ismsa_homeMissingPartOrder(Home, _, _),
+    Key = #min { K : ismsa_homeMissingPartOrder(Home, _, K) }.
+
+ismsa_homeNextPartLabel(Home, Label) :-
+    ismsa_homeNextPartKey(Home, Key),
+    Label = #min { L : ismsa_homeMissingPartOrder(Home, T, Key), ismsa_homeMissingPart(Home, _, T, L, _) }.
+
+% ismsa_homeNextLibraryPart(Home, Template, ButtonLabel, Target)
+
+ismsa_homeNextLibraryPart(Home, Template, Label, Target) :-
+    ismsa_homeNextPartKey(Home, Key),
+    ismsa_homeNextPartLabel(Home, Label),
+    ismsa_homeMissingPartOrder(Home, Template, Key),
+    ismsa_homeMissingPart(Home, _, Template, Label, Target).
+
+% The number of parts that are left, also the parts whose target is not in the home yet
+
+ismsa_homePartLeft(Home, Template) :-
+    ismsa_newHome(Home),
+    ismsa_libraryRequired(Home, Library),
+    ismsa_installableExtension(_, Library, Template, _, _),
+    ismsa_libraryOfferedInHome(Template, Home),
+    not ismsa_libraryPartInstalled(Home, Template).
+
+ismsa_homeLibraryPartsLeft(Home, N) :-
+    ismsa_newHome(Home),
+    N = #count { T : ismsa_homePartLeft(Home, T) }.
+
+%
 % Control steps
 %
 % The steps after the set-up, in the order of the set-up tasks of the old home template

@@ -3,6 +3,10 @@
 
 result(result).
 
+{{#if collapsed}}
+resultField(result, "collapsed", "yes", "shortText").
+{{/if}}
+
 resultField(result, "complete", "yes", "shortText") :-
     ismsa_libraryChoiceComplete({{cardKey}}).
 

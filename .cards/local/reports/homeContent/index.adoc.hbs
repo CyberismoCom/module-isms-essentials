@@ -84,30 +84,15 @@ This home is a starter kit. It sets up the security work that is done once for i
 * To meet the national law, read the law and the guidance of the authority. For example, in Finland, read the Cybersecurity Act (Kyberturvallisuuslaki) and the recommendations of Traficom.
 ======
 {{else}}
-This home holds the security work that is done once for its scope: the whole organisation, a business unit, or one team. Set it up in five steps. The libraries that you add decide the work in the home.
+This home holds the security work that is done once for its scope: the whole organisation, a business unit, or one team. The libraries that you add decide the work in the home.
 
 {{#report}}
-  "name": "ismsa/reports/homeDashboard"
+  "name": "ismsa/reports/homeSetUp"
 {{/report}}
 
-*Name and scope*
-
-Write the scope in the title, for example "ISMS home for Example Ltd" or "ISMS home for the payments team". Click the title or the description to change it.
-
-{{#field}}
-  "field": "title"
-{{/field}}
-
-{{#field}}
-  "field": "ismsa/fieldTypes/homeScopeDescription"
-{{/field}}
-
-*Owner*
-
-The owner of this home is {{#field}}"field": "base/fieldTypes/owner", "display": "inline", "showLabel": false{{/field}}. The registers, controls, and records of the home get this owner.
-
 {{#report}}
-  "name": "ismsa/reports/homeLibrarySection"
+  "name": "ismsa/reports/homeLibrarySection",
+  "collapsed": true
 {{/report}}
 
 .What this home covers
