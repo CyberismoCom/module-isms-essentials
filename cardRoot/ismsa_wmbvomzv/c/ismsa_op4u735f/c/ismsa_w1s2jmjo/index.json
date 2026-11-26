@@ -15,5 +15,13 @@
     "base/fieldTypes/owner": "owner@example.com",
     "base/fieldTypes/identifier": "ismsa_test_sr_override-disagrees",
     "ismsa/fieldTypes/securityRequirementStage": "ok",
-    "base/fieldTypes/assessmentExplanation": "Verified before these rules existed."
+    "base/fieldTypes/assessmentExplanation": "Verified before these rules existed.",
+    "ismsa/fieldTypes/architectureReviewer": "reviewer@example.com",
+    "ismsa/fieldTypes/architectureReviewDate": "2026-11-20",
+    "ismsa/fieldTypes/testReviewer": "reviewer@example.com",
+    "ismsa/fieldTypes/testReviewDate": "2026-11-20",
+    "ismsa/fieldTypes/securityReviewer": "reviewer@example.com",
+    "ismsa/fieldTypes/securityReviewDate": "2026-11-20",
+    "ismsa/fieldTypes/productOwnerReviewer": "reviewer@example.com",
+    "ismsa/fieldTypes/productOwnerReviewDate": "2026-11-20"
 }

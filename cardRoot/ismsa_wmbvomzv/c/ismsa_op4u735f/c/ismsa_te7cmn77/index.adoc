@@ -3,3 +3,9 @@ This fixture gets its input from facts in `tests/security-requirements.lp`, and 
 Facts: two `ismsa_implementationWork` facts with the state "done", as a connector gives them.
 
 Expected stage in the test: "To be verified".
+
+== Reviews
+
+{{#report}}
+  "name": "ismsa/reports/securityRequirementReviews"
+{{/report}}

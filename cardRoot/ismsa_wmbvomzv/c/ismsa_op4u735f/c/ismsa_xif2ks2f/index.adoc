@@ -3,3 +3,9 @@ This fixture gets its input from facts in `tests/security-requirements.lp`, and 
 Facts: one `ismsa_testEvidence` fact with the result "passed". Its scope is "Test content", two levels above this card.
 
 Expected stage in the test: "OK".
+
+== Reviews
+
+{{#report}}
+  "name": "ismsa/reports/securityRequirementReviews"
+{{/report}}

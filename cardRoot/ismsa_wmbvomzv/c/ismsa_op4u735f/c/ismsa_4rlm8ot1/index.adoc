@@ -3,3 +3,9 @@ This fixture gets its input from facts in `tests/security-requirements.lp`, and 
 Facts: a rule in the test file adds a verification with `ismsa_securityRequirementVerification`, as another module does for a refinement. The verifying card is the fixture "Security review asks for changes", which is Not OK.
 
 Expected stage in the test: "Not OK".
+
+== Reviews
+
+{{#report}}
+  "name": "ismsa/reports/securityRequirementReviews"
+{{/report}}

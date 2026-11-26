@@ -3,3 +3,9 @@ This fixture gets its input from facts in `tests/security-requirements.lp`, and 
 Facts: two `ismsa_testEvidence` facts. The earlier result is "failed" and the later result is "passed".
 
 Expected stage in the test: "OK". Only the results of the latest date count.
+
+== Reviews
+
+{{#report}}
+  "name": "ismsa/reports/securityRequirementReviews"
+{{/report}}

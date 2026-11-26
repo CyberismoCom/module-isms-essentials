@@ -68,6 +68,8 @@ ismsa_test_expectSr("ismsa_test_sr_implementation-not-applicable", "contentReady
 ismsa_test_expectSr("ismsa_test_sr_verified-implementation-open", "implementationInProgress", "The requirement has been reviewed, and the implementation work is under way").
 ismsa_test_expectSr("ismsa_test_sr_test-mixed-same-date", "notOk", "The requirement has been reviewed, but a verification is failing").
 ismsa_test_expectSr("ismsa_test_sr_other-scope", "contentReady", "The requirement has been reviewed, but nothing implements or verifies it yet").
+ismsa_test_expectSr("ismsa_test_sr_review-record-missing", "notOk", "The requirement has failed policy checks").
+ismsa_test_expectSr("ismsa_test_sr_review-comment-missing", "notOk", "The requirement has failed policy checks").
 
 % An overridden stage keeps its value and has no calculated explanation.
 % ismsa_test_expectSrOverride(Identifier, Stage)
@@ -80,6 +82,9 @@ ismsa_test_expectSrOverride("ismsa_test_sr_override-disagrees", "ok").
 % unless they are listed here.
 ismsa_test_expectSrPolicy("ismsa_test_sr_out-of-scope-no-justification", "Justification missing").
 ismsa_test_expectSrPolicy("ismsa_test_sr_override-without-explanation", "Explanation not given for overridden stage").
+ismsa_test_expectSrPolicy("ismsa_test_sr_review-record-missing", "Reviewer missing").
+ismsa_test_expectSrPolicy("ismsa_test_sr_review-record-missing", "Review date missing").
+ismsa_test_expectSrPolicy("ismsa_test_sr_review-comment-missing", "Review comment missing").
 
 % ismsa_test_expectSrNotification(Identifier, Title): the fixture has this
 % notification. A fixture that is not listed here has none.

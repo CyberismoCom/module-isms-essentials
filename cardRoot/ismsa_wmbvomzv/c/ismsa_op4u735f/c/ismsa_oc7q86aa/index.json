@@ -13,5 +13,14 @@
     "base/fieldTypes/informationClassification": "internal",
     "lastUpdated": "2026-11-23T10:37:27.086Z",
     "base/fieldTypes/identifier": "ismsa_test_sr_not-verified",
-    "base/fieldTypes/owner": "owner@example.com"
+    "base/fieldTypes/owner": "owner@example.com",
+    "ismsa/fieldTypes/architectureReviewer": "reviewer@example.com",
+    "ismsa/fieldTypes/architectureReviewDate": "2026-11-20",
+    "ismsa/fieldTypes/testReviewer": "reviewer@example.com",
+    "ismsa/fieldTypes/testReviewDate": "2026-11-20",
+    "ismsa/fieldTypes/testReviewComment": "This review role is not needed for this requirement.",
+    "ismsa/fieldTypes/securityReviewer": "reviewer@example.com",
+    "ismsa/fieldTypes/securityReviewDate": "2026-11-20",
+    "ismsa/fieldTypes/productOwnerReviewer": "reviewer@example.com",
+    "ismsa/fieldTypes/productOwnerReviewDate": "2026-11-20"
 }

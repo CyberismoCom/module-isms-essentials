@@ -113,10 +113,25 @@ ismsa_securityRequirementUnder(Requirement, Scope) :-
 % Reviews: one result field for each review role
 %
 
-ismsa_securityRequirementReviewField("ismsa/fieldTypes/architectureReview").
-ismsa_securityRequirementReviewField("ismsa/fieldTypes/testReview").
-ismsa_securityRequirementReviewField("ismsa/fieldTypes/securityReview").
-ismsa_securityRequirementReviewField("ismsa/fieldTypes/productOwnerReview").
+% ismsa_securityRequirementReview(Order, Role, ResultField, ReviewerField, DateField, CommentField)
+% These fields are not in the metadata of the card. The report
+% ismsa/reports/securityRequirementReviews shows them as a table in the content.
+
+ismsa_securityRequirementReview(1, "Architecture",
+  "ismsa/fieldTypes/architectureReview", "ismsa/fieldTypes/architectureReviewer",
+  "ismsa/fieldTypes/architectureReviewDate", "ismsa/fieldTypes/architectureReviewComment").
+ismsa_securityRequirementReview(2, "Testing",
+  "ismsa/fieldTypes/testReview", "ismsa/fieldTypes/testReviewer",
+  "ismsa/fieldTypes/testReviewDate", "ismsa/fieldTypes/testReviewComment").
+ismsa_securityRequirementReview(3, "Security",
+  "ismsa/fieldTypes/securityReview", "ismsa/fieldTypes/securityReviewer",
+  "ismsa/fieldTypes/securityReviewDate", "ismsa/fieldTypes/securityReviewComment").
+ismsa_securityRequirementReview(4, "Product owner",
+  "ismsa/fieldTypes/productOwnerReview", "ismsa/fieldTypes/productOwnerReviewer",
+  "ismsa/fieldTypes/productOwnerReviewDate", "ismsa/fieldTypes/productOwnerReviewComment").
+
+ismsa_securityRequirementReviewField(Field) :-
+  ismsa_securityRequirementReview(_, _, Field, _, _, _).
 
 ismsa_securityRequirementReviewDone(Requirement, Field) :-
   ismsa_securityRequirement(Requirement),
@@ -422,6 +437,61 @@ notification(
   fieldOverride(Requirement, "base/fieldTypes/assessmentExplanation", _),
   ismsa_securityRequirementStage(Requirement, Calculated, Explanation),
   Calculated != Override.
+
+%
+% The record of a review: who reviewed, when, and a comment
+%
+% A review that has a result needs a reviewer and a date. "Changes needed" and
+% "Not applicable" also need a comment, as the checklist of base does.
+
+ismsa_securityRequirementReviewAnswered(Requirement, Order, Result) :-
+  ismsa_securityRequirementInScope(Requirement),
+  ismsa_securityRequirementReview(Order, _, ResultField, _, _, _),
+  field(Requirement, ResultField, Result),
+  Result != "open".
+
+policyCheckFailure(
+  Requirement,
+  "Security requirement",
+  "Reviewer missing",
+  @concatenate("The review has a result, but no reviewer. Role: ", Role),
+  ReviewerField
+) :-
+  ismsa_securityRequirementReviewAnswered(Requirement, Order, _),
+  ismsa_securityRequirementReview(Order, Role, _, ReviewerField, _, _),
+  not field(Requirement, ReviewerField, _).
+
+policyCheckFailure(
+  Requirement,
+  "Security requirement",
+  "Review date missing",
+  @concatenate("The review has a result, but no date. Role: ", Role),
+  DateField
+) :-
+  ismsa_securityRequirementReviewAnswered(Requirement, Order, _),
+  ismsa_securityRequirementReview(Order, Role, _, _, DateField, _),
+  not field(Requirement, DateField, _).
+
+policyCheckFailure(
+  Requirement,
+  "Security requirement",
+  "Review comment missing",
+  @concatenate("A review that asks for changes or is not applicable needs a comment. Role: ", Role),
+  CommentField
+) :-
+  ismsa_securityRequirementReviewAnswered(Requirement, Order, Result),
+  Result = ("deviation"; "notApplicable"),
+  ismsa_securityRequirementReview(Order, Role, _, _, _, CommentField),
+  not field(Requirement, CommentField, _).
+
+% "Reopen reviews" starts a new review round, for example after the text of the
+% requirement has changed. It sets each result back to "Not reviewed". The
+% reviewers, dates, and comments of the earlier round stay until the reviewers
+% answer again.
+
+onTransitionSetField(Requirement, "Reopen reviews", Requirement, ResultField, "open") :-
+  ismsa_securityRequirement(Requirement),
+  ismsa_securityRequirementReviewField(ResultField).
 
 %
 % A justification is required to mark the requirement out of scope
