@@ -25,7 +25,8 @@
         },
         {
             "name": "ismsa/fieldTypes/homeCentralWork",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "ismsa/fieldTypes/homeCra",
@@ -33,15 +34,18 @@
         },
         {
             "name": "ismsa/fieldTypes/homeFullIsms",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "ismsa/fieldTypes/homeAssetRisks",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "ismsa/fieldTypes/homeOwnServices",
-            "isCalculated": false
+            "isCalculated": true,
+            "enableOverride": true
         },
         {
             "name": "ismsa/fieldTypes/homeNis2",

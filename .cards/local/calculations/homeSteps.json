@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/calculations/homeSteps",
+    "displayName": "Steps of the ISMS home",
+    "calculation": "calculation.lp",
+    "description": "The set-up steps and the control steps of an ISMS home, the areas of work, and whether the home is set up. The checklist and the dashboard of the home card use these facts"
+}

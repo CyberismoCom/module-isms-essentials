@@ -1,0 +1,133 @@
+% The dashboard of a home card (E10-D14 and E10-D15). The steps, the areas of work, and the
+% set-up check are in ismsa/calculations/homeSteps.
+
+ismsa_hdHome({{cardKey}}) :-
+    ismsa_newHome({{cardKey}}).
+
+result(result).
+
+resultField(result, "setUp", "yes", "shortText") :-
+    ismsa_hdHome(Home),
+    ismsa_homeSetUp(Home).
+
+% Set-up steps
+
+childResultCollection(result, "setup").
+
+childResult(result, ("setup", N), "setup") :-
+    ismsa_hdHome(_),
+    ismsa_homeSetUpStep(N, _).
+
+resultField(("setup", N), "rank", N, "integer") :-
+    ismsa_hdHome(_),
+    ismsa_homeSetUpStep(N, _).
+
+resultField(("setup", N), "label", Text, "shortText") :-
+    ismsa_hdHome(_),
+    ismsa_homeSetUpStep(N, Text).
+
+resultField(("setup", N), "status", "done", "shortText") :-
+    ismsa_hdHome(Home),
+    ismsa_homeSetUpStepDone(Home, N).
+
+resultField(("setup", N), "status", "next", "shortText") :-
+    ismsa_hdHome(Home),
+    ismsa_homeSetUpStepNext(Home, N).
+
+resultField(("setup", N), "status", "open", "shortText") :-
+    ismsa_hdHome(Home),
+    ismsa_homeSetUpStep(N, _),
+    not ismsa_homeSetUpStepDone(Home, N),
+    not ismsa_homeSetUpStepNext(Home, N).
+
+% One progress tile for each area of work, and one for the NIS2 requirements
+
+childResultCollection(result, "tiles").
+
+childResult(result, ("tile", Area), "tiles") :-
+    ismsa_hdHome(Home),
+    ismsa_homeAreaProgress(Home, Area, _, _, _).
+
+resultField(("tile", Area), "rank", Rank, "integer") :-
+    ismsa_hdHome(Home),
+    ismsa_homeAreaProgress(Home, Area, Rank, _, _).
+
+resultField(("tile", Area), "label", Label, "shortText") :-
+    ismsa_hdHome(Home),
+    ismsa_homeAreaProgress(Home, Area, _, Label, _).
+
+resultField(("tile", Area), "value", Value, "integer") :-
+    ismsa_hdHome(Home),
+    ismsa_homeAreaProgress(Home, Area, _, _, Value).
+
+resultField(("tile", Area), "cardKey", Control, "shortText") :-
+    ismsa_hdHome(Home),
+    ismsa_homeAreaControl(Home, Area, Control).
+
+childResult(result, ("tile", "nis2"), "tiles") :-
+    ismsa_hdHome(Home),
+    ismsa_homeNis2Progress(Home, _).
+
+resultField(("tile", "nis2"), "rank", 9, "integer") :-
+    ismsa_hdHome(Home),
+    ismsa_homeNis2Progress(Home, _).
+
+resultField(("tile", "nis2"), "label", "NIS2 requirements", "shortText") :-
+    ismsa_hdHome(Home),
+    ismsa_homeNis2Progress(Home, _).
+
+resultField(("tile", "nis2"), "value", Value, "integer") :-
+    ismsa_hdHome(Home),
+    ismsa_homeNis2Progress(Home, Value).
+
+resultField(("tile", "nis2"), "cardKey", Register, "shortText") :-
+    ismsa_hdHome(Home),
+    ismsa_homeNis2Progress(Home, _),
+    ismsa_homeNis2Register(Home, Register).
+
+% The next five open steps. The first one is the next step.
+
+ismsa_hdNext(Index, Group, Ordinal) :-
+    ismsa_hdHome(Home),
+    ismsa_homeNextStep(Home, Index, Group, Ordinal),
+    Index <= 5.
+
+childResultCollection(result, "next").
+
+childResult(result, ("next", Index), "next") :-
+    ismsa_hdNext(Index, _, _).
+
+resultField(("next", Index), "rank", Index, "integer") :-
+    ismsa_hdNext(Index, _, _).
+
+resultField(("next", Index), "label", Text, "shortText") :-
+    ismsa_hdNext(Index, Group, Ordinal),
+    ismsa_homeStep(Group, Ordinal, _, Text).
+
+resultField(("next", 1), "status", "next", "shortText") :-
+    ismsa_hdNext(1, _, _).
+
+resultField(("next", Index), "status", "open", "shortText") :-
+    ismsa_hdNext(Index, _, _),
+    Index > 1.
+
+resultField(("next", Index), "cardKey", Control, "shortText") :-
+    ismsa_hdNext(Index, Group, Ordinal),
+    ismsa_hdHome(Home),
+    ismsa_homeStepControl(Home, Group, Ordinal, Control).
+
+resultField(result, "remaining", N, "integer") :-
+    ismsa_hdHome(Home),
+    N = #count { G, O : ismsa_homeStepOpen(Home, G, O) }.
+
+resultField(result, "oneLeft", "yes", "shortText") :-
+    ismsa_hdHome(Home),
+    1 = #count { G, O : ismsa_homeStepOpen(Home, G, O) }.
+
+resultField(result, "anyStep", "yes", "shortText") :-
+    ismsa_hdHome(Home),
+    ismsa_homeStepControl(Home, _, _, _).
+
+order(2, "setup", 1, "rank", "ASC").
+order(2, "tiles", 1, "rank", "ASC").
+order(2, "next", 1, "rank", "ASC").

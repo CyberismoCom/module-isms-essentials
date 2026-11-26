@@ -1,0 +1,14 @@
+{
+    "rank": "0|bn",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-26T08:51:12.790Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Process register",
+    "templateCardKey": "ismsa_npkbwvfc",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/progress": "process-progress",
+    "base/fieldTypes/identifier": "ismsa_register_processes",
+    "lastUpdated": "2026-11-26T08:51:12.794Z"
+}

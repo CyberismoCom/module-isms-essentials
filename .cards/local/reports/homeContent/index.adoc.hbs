@@ -1,23 +1,53 @@
-== About this home
-
-Write the scope of the home in the title, for example "ISMS home for Example Ltd" or "ISMS home for the payments team". Click the title to change it.
-
-{{#field}}
-  "field": "title"
-{{/field}}
-
+{{#each results}}
+{{#if this.setUp}}
 {{#field}}
   "field": "ismsa/fieldTypes/homeScopeDescription"
 {{/field}}
 
-The owner of this home is {{#field}}"field": "base/fieldTypes/owner", "display": "inline", "showLabel": false{{/field}}. The registers, controls, evidence, and records of the home get this owner, until someone changes it. A card under a register gets the owner of the register. Click the owner to change it. To give a register another owner, click its owner in the table of registers in the section "Status". The security roles are not inherited: each role has its own assignee.
+The owner of this home is {{#field}}"field": "base/fieldTypes/owner", "display": "inline", "showLabel": false{{/field}}.
 
-This home holds the security work that is done once for its scope, for example for the whole organisation, a business unit, or one team. The development projects in the scope rely on this work, and they do not repeat it. The libraries decide what work is done here. A team under an existing ISMS adds only the libraries for the work that the team does itself.
+{{#report}}
+  "name": "ismsa/reports/homeDashboard"
+{{/report}}
 
-The controls are in the control register, and the processes, policies, and plans are in the process register. The other registers hold the records of the work, for example incidents, assets, and risks. The section "Status" lists the registers.
+.All steps
+[%collapsible]
+======
+{{#report}}
+  "name": "ismsa/reports/gettingStarted"
+{{/report}}
+======
 
-== What this home covers
+{{#report}}
+  "name": "ismsa/reports/homeLibrarySection"
+{{/report}}
 
+.Owners and status
+[%collapsible]
+======
+The registers, controls, evidence, and records of the home get the owner of the home, until someone changes it. A card under a register gets the owner of the register. To give a register another owner, click its owner in the table below. The security roles are not inherited: each role has its own assignee.
+
+{{#report}}
+  "name": "ismsa/reports/homeRegisters"
+{{/report}}
+
+This table shows the registers that have content. The control register lists all controls of the home with their assessments.
+
+{{#report}}
+  "name": "ismsa/reports/dashboard",
+  "onlyWithContent": true
+{{/report}}
+
+The open compliance requirements of the home, with the reason:
+
+{{#report}}
+  "name": "ismsa/reports/openRequirements"
+{{/report}}
+======
+
+.What this home covers
+[%collapsible]
+======
 This home is a starter kit. It sets up the security work that is done once for its scope, at a basic and proportionate level. "Basic" means that the minimum measures and their evidence are in place. It does not mean ready for certification, and it is not legal advice.
 
 [cols="2,5,5"]
@@ -41,43 +71,82 @@ This home is a starter kit. It sets up the security work that is done once for i
 | The obligations of the providers of AI systems, and AI in the products. The AI management system of ISO/IEC 42001.
 |===
 
-The section "Libraries" shows what each library covers.
+*What each library covers*
 
-== Libraries
+{{#report}}
+  "name": "ismsa/reports/homeLibraryCoverage"
+{{/report}}
+
+*When you need more*
+
+* To get certified to ISO/IEC 27001, add the ISO/IEC 27001 extension.
+* To develop products under the CRA, create development projects with the secure development module, and add the EU CRA module.
+* To meet the national law, read the law and the guidance of the authority. For example, in Finland, read the Cybersecurity Act (Kyberturvallisuuslaki) and the recommendations of Traficom.
+======
+{{else}}
+This home holds the security work that is done once for its scope: the whole organisation, a business unit, or one team. Set it up in five steps. The libraries that you add decide the work in the home.
+
+{{#report}}
+  "name": "ismsa/reports/homeDashboard"
+{{/report}}
+
+*Name and scope*
+
+Write the scope in the title, for example "ISMS home for Example Ltd" or "ISMS home for the payments team". Click the title or the description to change it.
+
+{{#field}}
+  "field": "title"
+{{/field}}
+
+{{#field}}
+  "field": "ismsa/fieldTypes/homeScopeDescription"
+{{/field}}
+
+*Owner*
+
+The owner of this home is {{#field}}"field": "base/fieldTypes/owner", "display": "inline", "showLabel": false{{/field}}. The registers, controls, and records of the home get this owner.
 
 {{#report}}
   "name": "ismsa/reports/homeLibrarySection"
 {{/report}}
 
-== Getting started
+.What this home covers
+[%collapsible]
+======
+This home is a starter kit. It sets up the security work that is done once for its scope, at a basic and proportionate level. "Basic" means that the minimum measures and their evidence are in place. It does not mean ready for certification, and it is not legal advice.
+
+[cols="2,5,5"]
+|===
+| Framework | In this home | Elsewhere
+
+| NIS2
+| Governance (Article 20), the risk-management measures (Article 21(2)), and reporting (Article 23), at a basic level. Each measure has at least one control in the libraries
+| The details of the national law, for example registration and sector rules. Check the national law.
+
+| EU Cyber Resilience Act (CRA)
+| The duties of the organisation: the channel for vulnerability reports, the notifications, and the authority contacts
+| The duties for each product, for example risk assessment, SBOM, technical documentation, and conformity assessment. Do them in the development projects of the secure development and EU CRA modules.
+
+| ISO/IEC 27001
+| A foundation: scope, policy, roles, assets, risks, targets, and reviews. The roles do not meet all requirements of the standard yet, for example the competence records and a formal analysis of the segregation of duties
+| Certification: Statement of Applicability, internal audit, full management review, corrective actions, and the full Annex A. These are in the ISO/IEC 27001 extension.
+
+| EU AI Act
+| The obligations of an organisation that uses AI: AI literacy (Article 4), the prohibited practices (Article 5), transparency (Article 50), and the deployers of high-risk AI systems (Article 26), at a basic level, with the AI use basics library
+| The obligations of the providers of AI systems, and AI in the products. The AI management system of ISO/IEC 42001.
+|===
+
+*What each library covers*
 
 {{#report}}
-  "name": "ismsa/reports/gettingStarted"
+  "name": "ismsa/reports/homeLibraryCoverage"
 {{/report}}
 
-== Status
-
-The registers of the home, with their owners:
-
-{{#report}}
-  "name": "ismsa/reports/homeRegisters"
-{{/report}}
-
-This table shows the registers that have content. The control register lists all controls of the home with their assessments.
-
-{{#report}}
-  "name": "ismsa/reports/dashboard",
-  "onlyWithContent": true
-{{/report}}
-
-The open compliance requirements of the home, with the reason:
-
-{{#report}}
-  "name": "ismsa/reports/openRequirements"
-{{/report}}
-
-== When you need more
+*When you need more*
 
 * To get certified to ISO/IEC 27001, add the ISO/IEC 27001 extension.
 * To develop products under the CRA, create development projects with the secure development module, and add the EU CRA module.
 * To meet the national law, read the law and the guidance of the authority. For example, in Finland, read the Cybersecurity Act (Kyberturvallisuuslaki) and the recommendations of Traficom.
+======
+{{/if}}
+{{/each}}

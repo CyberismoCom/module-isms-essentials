@@ -11,7 +11,7 @@
 [%collapsible%open]
 {{/if}}
 ====
-Libraries add the controls, registers, and processes to the home. Answer the questions. A "yes" shows the buttons of the libraries that the home needs, below the questions. Click the buttons to add the libraries. A "no" adds nothing, and it does not delete anything from the home. Click an answer to change it.
+Libraries add the controls, registers, and processes to the home. Answer the questions. A "yes" shows the buttons of the libraries that the home needs, below the questions. Click the buttons to add the libraries. A "no" adds nothing, and it does not delete anything from the home. The answers about the CRA and NIS2 give the questions about the work a recommended answer. Click an answer to change it.
 
 *What must you comply with?*
 
@@ -35,22 +35,22 @@ Libraries add the controls, registers, and processes to the home. Answer the que
 | Question | Answer | A "yes" offers | Recommendation
 
 | Do you want to do the central security work in this home, for example security roles, vulnerability reports, and incident notifications?
-| {{#field}}"field": "ismsa/fieldTypes/homeCentralWork", "display": "inline", "showLabel": false{{/field}}
+| {{#field}}"field": "ismsa/fieldTypes/homeCentralWork", "display": "inline", "showLabel": false{{/field}}{{#if this.defaultCentralWork}} (recommended){{/if}}
 | Security response and compliance basics
 | {{#if this.recCentralWork}}Yes, because {{#each this.recCentralWork}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstCentralWork}} If another ISMS does this work, check that it covers these duties.{{/if}}{{else}}-{{/if}}
 
 | Do you want an information security management system (ISMS) in this home, as a foundation for ISO/IEC 27001?
-| {{#field}}"field": "ismsa/fieldTypes/homeFullIsms", "display": "inline", "showLabel": false{{/field}}
+| {{#field}}"field": "ismsa/fieldTypes/homeFullIsms", "display": "inline", "showLabel": false{{/field}}{{#if this.defaultFullIsms}} (recommended){{/if}}
 | Information security management basics, and asset and risk management. For certification, also add the ISO/IEC 27001 extension.
 | {{#if this.recFullIsms}}Yes, because {{#each this.recFullIsms}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstFullIsms}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
 
 | Do you want to manage the risks of your assets in this home?
-| {{#if this.assetRisksIncluded}}{{this.assetRisksIncluded}}{{else}}{{#field}}"field": "ismsa/fieldTypes/homeAssetRisks", "display": "inline", "showLabel": false{{/field}}{{/if}}
+| {{#if this.assetRisksIncluded}}{{this.assetRisksIncluded}}{{else}}{{#field}}"field": "ismsa/fieldTypes/homeAssetRisks", "display": "inline", "showLabel": false{{/field}}{{#if this.defaultAssetRisks}} (recommended){{/if}}{{/if}}
 | Asset and risk management
 | {{#if this.recAssetRisks}}Yes, because {{#each this.recAssetRisks}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstAssetRisks}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
 
 | Do you want to manage the security of your own IT or cloud services in this home?
-| {{#field}}"field": "ismsa/fieldTypes/homeOwnServices", "display": "inline", "showLabel": false{{/field}}
+| {{#field}}"field": "ismsa/fieldTypes/homeOwnServices", "display": "inline", "showLabel": false{{/field}}{{#if this.defaultOwnServices}} (recommended){{/if}}
 | Security operations basics
 | {{#if this.recOwnServices}}Yes, because {{#each this.recOwnServices}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstOwnServices}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
 
@@ -63,21 +63,5 @@ Libraries add the controls, registers, and processes to the home. Answer the que
 {{#report}}
   "name": "ismsa/reports/installLibraries"
 {{/report}}
-
-*What each library covers*
-
-The libraries set up the work at a basic level, as the section "What this home covers" explains.
-
-[cols="3,6,6"]
-|===
-| Library | Covers | Does not cover
-
-{{#each this.coverage}}
-| {{this.title}}
-| {{this.covers}}
-| {{this.notCovered}}
-
-{{/each}}
-|===
 ====
 {{/each}}

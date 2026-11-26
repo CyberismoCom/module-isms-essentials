@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/homeLibraryCoverage",
+    "displayName": "What the libraries of the home cover",
+    "description": "A table of the libraries of the ISMS home, with what each library covers and does not cover",
+    "category": "Central controls"
+}

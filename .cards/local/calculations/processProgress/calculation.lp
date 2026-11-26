@@ -29,8 +29,10 @@ field(X, "base/fieldTypes/progress", (100 * Ok + 60 * Reviewed) / (Total-Archive
         not hiddenInTreeView(Process)
     }.
 
+    % A register of a new home with no content shows no percentage (E10 P2, E13 B10).
     field(X, "base/fieldTypes/progress", 0) :-
     field(X, "ismsa/fieldTypes/progress", "process-progress"),
+    not ismsa_inNewHome(X),
     Total = #count {
         card(Process):
         base_projectCardType(Process, "base/cardTypes/controlledDocument"),

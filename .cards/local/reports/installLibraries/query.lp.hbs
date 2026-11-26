@@ -35,11 +35,6 @@ resultField(("required", Library), "added", "yes", "shortText") :-
     ismsa_libraryRequired(Home, Library),
     ismsa_libraryAdded(Home, Library).
 
-resultField(("required", Library), "partly", "yes", "shortText") :-
-    ismsa_ilHome(Home),
-    ismsa_libraryRequired(Home, Library),
-    ismsa_libraryPartlyAdded(Home, Library).
-
 childResult(("required", Library), ("reason", Library, Reason), "reasons") :-
     ismsa_ilHome(Home),
     ismsa_libraryRequirement(Home, Library, Reason).
@@ -64,9 +59,51 @@ ismsa_ilShownLibrary(("other", Library), Library) :-
     ismsa_libraryInHome(Home, Library),
     not ismsa_choiceLibrary(Library, _).
 
+% Only the next missing part of each library has a button (E10 P3), so that the user sees one
+% click at a time. The controls come first, then the registers, the requirements, and the other
+% parts (ismsa_ilKind/3 below). Some parts can be added only after an earlier part, because their
+% target is a register of the earlier part. "Part 2 of 3" tells how many clicks are left.
+
+ismsa_ilNextKind(Library, Kind) :-
+    ismsa_ilMissingPart(Library, _, _, _),
+    Kind = #min { K : ismsa_ilMissingPart(Library, T, _, _), ismsa_ilKind(T, K, _) }.
+
+ismsa_ilNextLabel(Library, Label) :-
+    ismsa_ilNextKind(Library, Kind),
+    Label = #min { L : ismsa_ilMissingPart(Library, T, L, _), ismsa_ilKind(T, Kind, _) }.
+
+ismsa_ilNextPart(Library, Template) :-
+    ismsa_ilNextLabel(Library, Label),
+    ismsa_ilNextKind(Library, Kind),
+    ismsa_ilMissingPart(Library, Template, Label, _),
+    ismsa_ilKind(Template, Kind, _).
+
 childResult(Node, ("part", Template), "parts") :-
     ismsa_ilShownLibrary(Node, Library),
-    ismsa_ilMissingPart(Library, Template, _, _).
+    ismsa_ilNextPart(Library, Template).
+
+% The number of the next part, and the number of parts of the library in this home
+
+ismsa_ilPartCount(Library, N) :-
+    ismsa_ilShownLibrary(_, Library),
+    ismsa_ilHome(Home),
+    N = #count { T : ismsa_installableExtension(_, Library, T, _, _), ismsa_libraryOfferedInHome(T, Home) }.
+
+ismsa_ilPartsInstalled(Library, N) :-
+    ismsa_ilShownLibrary(_, Library),
+    ismsa_ilHome(Home),
+    N = #count { T : ismsa_installableExtension(_, Library, T, _, _), ismsa_libraryPartInstalled(Home, T) }.
+
+resultField(Node, "partNumber", Installed + 1, "integer") :-
+    ismsa_ilShownLibrary(Node, Library),
+    ismsa_ilPartsInstalled(Library, Installed),
+    ismsa_ilPartCount(Library, Count),
+    Count > 1.
+
+resultField(Node, "partCount", Count, "integer") :-
+    ismsa_ilShownLibrary(Node, Library),
+    ismsa_ilPartCount(Library, Count),
+    Count > 1.
 
 resultField(("part", Template), "template", Template, "shortText") :-
     ismsa_ilMissingPart(_, Template, _, _).
@@ -178,5 +215,3 @@ order(2, "required", 1, "rank", "ASC").
 order(2, "notNeeded", 1, "rank", "ASC").
 order(2, "undecided", 1, "rank", "ASC").
 order(2, "others", 1, "title", "ASC").
-order(3, "parts", 1, "kind", "ASC").
-order(3, "parts", 2, "buttonLabel", "ASC").
