@@ -1,0 +1,17 @@
+{
+    "rank": "0|p",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-26T07:13:23.297Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Verified by an archived document",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "ok",
+    "ismsa/fieldTypes/testReview": "ok",
+    "ismsa/fieldTypes/securityReview": "ok",
+    "ismsa/fieldTypes/productOwnerReview": "ok",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-26T07:13:23.299Z",
+    "base/fieldTypes/identifier": "ismsa_test_sr_archived-document",
+    "base/fieldTypes/owner": "owner@example.com"
+}

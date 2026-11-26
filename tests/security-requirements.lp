@@ -30,6 +30,7 @@ ismsa_test_expectSr("ismsa_test_sr_test-failed-latest", "notOk", "The requiremen
 ismsa_test_expectSr("ismsa_test_sr_test-fixed", "ok", "The requirement has been reviewed and verified").
 ismsa_test_expectSr("ismsa_test_sr_review-pending", "inProgress", "The requirement has been reviewed, but a verification is not ready yet").
 ismsa_test_expectSr("ismsa_test_sr_review-passed", "ok", "The requirement has been reviewed and verified").
+ismsa_test_expectSr("ismsa_test_sr_archived-document", "notStarted", "The requirement has been reviewed, but everything that verifies it is not applicable").
 
 % An overridden assessment keeps its value and has no calculated explanation.
 % ismsa_test_expectSrOverride(Identifier, Assessment)

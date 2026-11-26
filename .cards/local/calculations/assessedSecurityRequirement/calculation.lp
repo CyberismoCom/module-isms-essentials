@@ -16,7 +16,7 @@
 %   6. A verification is failing: not OK.
 %   7. There is no verification yet: not started.
 %   8. A verification is not ready: in progress.
-%   9. Every verification is out of scope: not started.
+%   9. Every verification is not applicable: not started.
 %  10. All verifications are OK or not applicable, and at least one is OK: OK.
 %
 % "Not started" and "In progress" follow the assessment values that ismsa #48 gave
@@ -37,8 +37,20 @@
 %   ismsa_testEvidence(Identifier, Run, Result, Date, Version)
 %     A test result, for example from a connector that reads the test runs of CI.
 %     Identifier is the identifier of the requirement. Result is "passed" or
-%     "failed". Date is an ISO 8601 date or time, so that later results sort after
-%     earlier ones. Only the results of the latest date count.
+%     "failed". Only the results of the latest Date count.
+%
+%     These rules compare Date as a string. They do not parse it. Date therefore
+%     has a strict format, and all the facts of one Identifier must use the same
+%     one:
+%
+%       - a date, "YYYY-MM-DD", for example "2026-11-20", or
+%       - a time in UTC to the second, "YYYY-MM-DDThh:mm:ssZ", for example
+%         "2026-11-20T11:00:00Z".
+%
+%     A local offset such as "+02:00" and fractional seconds such as ".500" are
+%     not allowed, and neither is a mixture of the two formats. Such values sort
+%     in the wrong order, and an older passing result then hides a newer failing
+%     one. Convert the timestamps in the connector.
 %
 
 ismsa_securityRequirement(Requirement) :-
@@ -215,7 +227,7 @@ ismsa_securityRequirementAssessment(Requirement, "inProgress", "The requirement 
   not ismsa_securityRequirementFailing(Requirement),
   ismsa_securityRequirementVerificationPending(Requirement, _).
 
-ismsa_securityRequirementAssessment(Requirement, "notStarted", "The requirement has been reviewed, but everything that verifies it is out of scope") :-
+ismsa_securityRequirementAssessment(Requirement, "notStarted", "The requirement has been reviewed, but everything that verifies it is not applicable") :-
   ismsa_securityRequirementReviewed(Requirement),
   not ismsa_securityRequirementFailing(Requirement),
   not ismsa_securityRequirementVerificationPending(Requirement, _),
