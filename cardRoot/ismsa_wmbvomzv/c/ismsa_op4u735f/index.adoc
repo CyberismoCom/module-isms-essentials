@@ -1,3 +1,15 @@
-## <Insert title here>
+Fixtures for `tests/security-requirements.lp`. Each requirement below covers one branch of `ismsa/calculations/assessedSecurityRequirement`. The tests find each fixture by its identifier, which has the form `ismsa_test_sr_<case>`. Do not change the identifiers without changing the tests.
 
-<Insert page content>
+Run the tests from the project root:
+
+----
+cyberismo calc run tests/security-requirements.lp
+----
+
+The tests pass when "results" is empty.
+
+== Fixtures that get their input from the test file
+
+Some fixtures have no linked cards for the case in their title. Their input is facts in the test file: test results and implementation work as a connector gives them, and verifications and implementation work as another module adds them. The app does not read the test file. In the app these fixtures therefore show the stage "Content ready", and not the stage that the test expects. Each of these fixtures says so in its content, and names the facts and the expected stage.
+
+The other fixtures get their input from their own fields and from the cards linked to them. They show the same stage in the app and in the test.

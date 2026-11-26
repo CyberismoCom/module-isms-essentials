@@ -1,0 +1,5 @@
+This fixture gets its input from facts in `tests/security-requirements.lp`, and not from linked cards. The app does not read the test file, so in the app the stage is "Content ready".
+
+Facts: a rule in the test file adds implementation work with `ismsa_securityRequirementImplementation`, as another module can. The implementing card is the fixture "Out of scope, with a justification", which is not applicable.
+
+Expected stage in the test: "Content ready", the same as in the app. Implementation work that is not applicable does not count.

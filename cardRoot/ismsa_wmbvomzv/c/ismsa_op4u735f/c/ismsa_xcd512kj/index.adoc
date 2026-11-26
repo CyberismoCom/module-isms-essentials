@@ -1,0 +1,5 @@
+This fixture gets its input from facts in `tests/security-requirements.lp`, and not from linked cards. The app does not read the test file, so in the app the stage is "Content ready".
+
+Facts: one `ismsa_testEvidence` fact and one `ismsa_implementationWork` fact. Their scope is another fixture, which is not above this card in the card tree.
+
+Expected stage in the test: "Content ready", the same as in the app. The facts of another scope must not count.

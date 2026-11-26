@@ -1,0 +1,5 @@
+This fixture gets its input from facts in `tests/security-requirements.lp`, and not from linked cards. The app does not read the test file, so in the app the stage is "Content ready".
+
+Facts: one `ismsa_testEvidence` fact with the result "passed", and one `ismsa_implementationWork` fact with the state "open".
+
+Expected stage in the test: "Implementation in progress". Open implementation work prevents OK, even when the tests pass.
