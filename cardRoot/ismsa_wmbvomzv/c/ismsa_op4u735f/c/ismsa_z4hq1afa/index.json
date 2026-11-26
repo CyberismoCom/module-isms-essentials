@@ -1,0 +1,17 @@
+{
+    "rank": "0|zn",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-26T19:15:10.282Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Passed and failed tests on the same date",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "ok",
+    "ismsa/fieldTypes/testReview": "ok",
+    "ismsa/fieldTypes/securityReview": "ok",
+    "ismsa/fieldTypes/productOwnerReview": "ok",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-26T19:15:10.285Z",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/identifier": "ismsa_test_sr_test-mixed-same-date"
+}

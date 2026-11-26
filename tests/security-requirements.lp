@@ -10,18 +10,42 @@ The fixtures are under "Test content" > "Security requirement assessment
 tests". Each fixture has an identifier of the form ismsa_test_sr_<case>.
 *%
 
+% The scope of a connector fact is the card key of the requirement or of a card
+% above it. Most facts below use the page that holds the fixtures. One uses
+% "Test content", two levels up, and one uses the requirement itself.
+
 % Test evidence, as a connector would emit it:
-% ismsa_testEvidence(Identifier, Run, Result, Date, Version)
-ismsa_testEvidence("ismsa_test_sr_test-passed", "run-1", "passed", "2026-11-20", "1.0.0").
-ismsa_testEvidence("ismsa_test_sr_test-failed-latest", "run-1", "passed", "2026-11-01", "1.0.0").
-ismsa_testEvidence("ismsa_test_sr_test-failed-latest", "run-2", "failed", "2026-11-20", "1.1.0").
-ismsa_testEvidence("ismsa_test_sr_test-fixed", "run-1", "failed", "2026-11-01", "1.0.0").
-ismsa_testEvidence("ismsa_test_sr_test-fixed", "run-2", "passed", "2026-11-20", "1.0.1").
+% ismsa_testEvidence(Scope, Identifier, Run, Result, Date, Version)
+ismsa_testEvidence(ismsa_wmbvomzv, "ismsa_test_sr_test-passed", "run-1", "passed", "2026-11-20", "1.0.0").
+ismsa_testEvidence(ismsa_op4u735f, "ismsa_test_sr_test-failed-latest", "run-1", "passed", "2026-11-01", "1.0.0").
+ismsa_testEvidence(ismsa_op4u735f, "ismsa_test_sr_test-failed-latest", "run-2", "failed", "2026-11-20", "1.1.0").
+ismsa_testEvidence(ismsa_op4u735f, "ismsa_test_sr_test-fixed", "run-1", "failed", "2026-11-01", "1.0.0").
+ismsa_testEvidence(ismsa_op4u735f, "ismsa_test_sr_test-fixed", "run-2", "passed", "2026-11-20", "1.0.1").
+ismsa_testEvidence(ismsa_z4hq1afa, "ismsa_test_sr_test-mixed-same-date", "run-1", "passed", "2026-11-20", "1.0.0").
+ismsa_testEvidence(ismsa_z4hq1afa, "ismsa_test_sr_test-mixed-same-date", "run-2", "failed", "2026-11-20", "1.0.0").
+ismsa_testEvidence(ismsa_op4u735f, "ismsa_test_sr_verified-implementation-open", "run-1", "passed", "2026-11-20", "1.0.0").
 
 % Implementation work, as a connector would emit it:
-% ismsa_implementationWork(Identifier, Item, State)
-ismsa_implementationWork("ismsa_test_sr_implementation-done", ("test-tracker", "ISSUE-1"), "done").
-ismsa_implementationWork("ismsa_test_sr_implementation-done", ("test-tracker", "ISSUE-2"), "done").
+% ismsa_implementationWork(Scope, Identifier, Item, State)
+ismsa_implementationWork(ismsa_op4u735f, "ismsa_test_sr_implementation-done", ("test-tracker", "ISSUE-1"), "done").
+ismsa_implementationWork(ismsa_op4u735f, "ismsa_test_sr_implementation-done", ("test-tracker", "ISSUE-2"), "done").
+ismsa_implementationWork(ismsa_op4u735f, "ismsa_test_sr_verified-implementation-open", ("test-tracker", "ISSUE-3"), "open").
+
+% Facts of another scope must not count. The scope here is another fixture, which
+% is not above "ismsa_test_sr_other-scope" in the card tree.
+ismsa_testEvidence(ismsa_xif2ks2f, "ismsa_test_sr_other-scope", "run-1", "passed", "2026-11-20", "1.0.0").
+ismsa_implementationWork(ismsa_xif2ks2f, "ismsa_test_sr_other-scope", ("test-tracker", "ISSUE-4"), "open").
+
+% Verifications and implementation work, as another module would add them:
+% a requirement that asks for changes verifies "verification-failing", and a
+% requirement that is out of scope implements "implementation-not-applicable".
+ismsa_securityRequirementVerification(Requirement, Card) :-
+    ismsa_test_srFixture("ismsa_test_sr_verification-failing", Requirement),
+    ismsa_test_srFixture("ismsa_test_sr_changes-needed", Card).
+
+ismsa_securityRequirementImplementation(Requirement, Card) :-
+    ismsa_test_srFixture("ismsa_test_sr_implementation-not-applicable", Requirement),
+    ismsa_test_srFixture("ismsa_test_sr_out-of-scope", Card).
 
 % ismsa_test_expectSr(Identifier, Stage, Explanation)
 ismsa_test_expectSr("ismsa_test_sr_out-of-scope", "notApplicable", "The requirement has been marked out of scope").
@@ -38,6 +62,12 @@ ismsa_test_expectSr("ismsa_test_sr_test-failed-latest", "notOk", "The requiremen
 ismsa_test_expectSr("ismsa_test_sr_test-fixed", "ok", "The requirement has been reviewed and verified").
 ismsa_test_expectSr("ismsa_test_sr_review-pending", "verificationInProgress", "The requirement has been reviewed, but a verification is not ready yet").
 ismsa_test_expectSr("ismsa_test_sr_review-passed", "ok", "The requirement has been reviewed and verified").
+ismsa_test_expectSr("ismsa_test_sr_verification-failing", "notOk", "The requirement has been reviewed, but a verification is failing").
+ismsa_test_expectSr("ismsa_test_sr_implementation-task-done", "toBeVerified", "The implementation work is done, but nothing verifies the requirement yet").
+ismsa_test_expectSr("ismsa_test_sr_implementation-not-applicable", "contentReady", "The requirement has been reviewed, but nothing implements or verifies it yet").
+ismsa_test_expectSr("ismsa_test_sr_verified-implementation-open", "implementationInProgress", "The requirement has been reviewed, and the implementation work is under way").
+ismsa_test_expectSr("ismsa_test_sr_test-mixed-same-date", "notOk", "The requirement has been reviewed, but a verification is failing").
+ismsa_test_expectSr("ismsa_test_sr_other-scope", "contentReady", "The requirement has been reviewed, but nothing implements or verifies it yet").
 
 % An overridden stage keeps its value and has no calculated explanation.
 % ismsa_test_expectSrOverride(Identifier, Stage)

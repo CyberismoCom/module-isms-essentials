@@ -1,0 +1,18 @@
+{
+    "rank": "0|zp",
+    "workflowState": "Closed as done",
+    "createdAt": "2026-11-26T19:15:12.745Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/implements",
+            "cardKey": "ismsa_4pi8ksvw"
+        }
+    ],
+    "cardType": "base/cardTypes/task",
+    "title": "Security requirement test: closed implementation task",
+    "templateCardKey": "base_3",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-26T19:15:39.649Z",
+    "base/fieldTypes/owner": "owner@example.com",
+    "lastTransitioned": "2026-11-26T19:15:39.649Z"
+}

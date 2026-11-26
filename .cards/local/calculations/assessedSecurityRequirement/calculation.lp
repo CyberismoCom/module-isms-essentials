@@ -15,18 +15,21 @@
 %    4. No review role has answered: not started.
 %    5. Some review roles have answered, but not all: review in progress.
 %    6. A verification is failing: not OK.
-%    7. Verified: OK.
-%    8. A verification is not ready: verification in progress.
-%    9. The implementation work is done: to be verified.
-%   10. Implementation work is open: implementation in progress.
+%    7. Implementation work is open: implementation in progress.
+%    8. Verified: OK.
+%    9. A verification is not ready: verification in progress.
+%   10. The implementation work is done: to be verified.
 %   11. Nothing implements or verifies the requirement, or everything that
 %       verifies it is not applicable: content ready.
+%
+% Open implementation work comes before the verifications. A requirement is not OK
+% while work that implements it is still open, even when its tests pass.
 %
 % The stage is the only status that a person overrides. The assessment follows
 % from it through ismsa_stageAssessment, so an overridden stage moves the
 % assessment, the status indicator, and everything that reads the assessment.
-% "Not started" and "In progress" follow the assessment values that ismsa #48 gave
-% to internal controls and compliance requirements. "Not OK" is for failures only.
+% "Not started" and "In progress" are the assessment values of internal controls
+% and compliance requirements. "Not OK" is for failures only.
 %
 % ismsa_securityRequirementStage(Requirement, Stage, Explanation) pairs a stage
 % with its explanation. The bodies of the rules are mutually exclusive, so that
@@ -46,21 +49,22 @@
 %     ismsa_securityRequirementImplementationDone(Requirement, Item) says that the
 %     work is finished, and Item is open until then.
 %
-%   ismsa_implementationWork(Identifier, Item, State)
-%     Implementation work from a connector, keyed by the identifier of the
-%     requirement. State is "open" or "done". Item is the key of the external item,
+%   ismsa_implementationWork(Scope, Identifier, Item, State)
+%     Implementation work from a connector, keyed by the scope and the identifier
+%     of the requirement. See "Scope" below. State is "open" or "done". Item is the key of the external item,
 %     for example ("cyberismo-jira", "ISSUE-123"), so that a report can show its
 %     title and its link. A connector that cannot tell whether the work is finished
 %     emits nothing: a commit alone does not say that a requirement is implemented.
 %
-%   ismsa_testEvidence(Identifier, Run, Result, Date, Version)
+%   ismsa_testEvidence(Scope, Identifier, Run, Result, Date, Version)
 %     A test result, for example from a connector that reads the test runs of CI.
-%     Identifier is the identifier of the requirement. Result is "passed" or
-%     "failed". Only the results of the latest Date count.
+%     Scope and Identifier say which requirement the result is for. See "Scope"
+%     below. Result is "passed" or "failed". Only the results of the latest Date
+%     of a requirement count.
 %
 %     These rules compare Date as a string. They do not parse it. Date therefore
-%     has a strict format, and all the facts of one Identifier must use the same
-%     one:
+%     has a strict format, and all the facts for one requirement must use the
+%     same one:
 %
 %       - a date, "YYYY-MM-DD", for example "2026-11-20", or
 %       - a time in UTC to the second, "YYYY-MM-DDThh:mm:ssZ", for example
@@ -70,6 +74,17 @@
 %     not allowed, and neither is a mixture of the two formats. Such values sort
 %     in the wrong order, and an older passing result then hides a newer failing
 %     one. Convert the timestamps in the connector.
+%
+% Scope
+%
+%   An identifier does not name one card. Each product, solution, or service can
+%   have its own copy of the same requirement, with the same identifier. Scope is
+%   the card key of the requirement, or of a card above it in the card tree, for
+%   example the project of one product. It is a constant such as ismsa_abc123, as
+%   in all other facts, and not a string. A fact applies to the requirements that
+%   have the identifier and that are the scope card or are below it. Work and
+%   test results of one product then do not count for the same requirement of
+%   another product.
 %
 
 ismsa_securityRequirement(Requirement) :-
@@ -82,6 +97,17 @@ ismsa_securityRequirementInScope(Requirement) :-
 ismsa_securityRequirementOutOfScope(Requirement) :-
   ismsa_securityRequirement(Requirement),
   field(Requirement, "workflowState", "Out of scope").
+
+%
+% The scope of connector facts: the requirement itself and the cards above it
+%
+
+ismsa_securityRequirementUnder(Requirement, Requirement) :-
+  ismsa_securityRequirement(Requirement).
+
+ismsa_securityRequirementUnder(Requirement, Scope) :-
+  ismsa_securityRequirement(Requirement),
+  ancestor(Requirement, Scope).
 
 %
 % Reviews: one result field for each review role
@@ -104,7 +130,7 @@ ismsa_securityRequirementReviewOpen(Requirement) :-
   not ismsa_securityRequirementReviewDone(Requirement, Field).
 
 % A requirement that at least one review role has answered is under review, even
-% when the other roles have not answered yet (E1-D23).
+% when the other roles have not answered yet.
 
 ismsa_securityRequirementReviewStarted(Requirement) :-
   ismsa_securityRequirementReviewDone(Requirement, _).
@@ -118,9 +144,10 @@ ismsa_securityRequirementReviewChangesNeeded(Requirement) :-
 % Implementation work: the cards and the external items that implement the
 % requirement
 %
-% A security requirement that implements another one is a refinement, and a
-% refinement verifies the requirement instead. See
-% ismsa_securityRequirementVerification above.
+% A security requirement that is linked to another one with "implements" is not
+% implementation work, and these rules ignore the link. A detailed requirement
+% verifies a general one instead. The module that has the detailed requirements
+% says so with ismsa_securityRequirementVerification, see above.
 
 ismsa_securityRequirementImplementation(Requirement, Card) :-
   ismsa_securityRequirement(Requirement),
@@ -141,14 +168,14 @@ ismsa_securityRequirementImplementationExcluded(Requirement, Card) :-
   field(Card, "base/fieldTypes/assessment", "notApplicable").
 
 ismsa_securityRequirementImplementation(Requirement, Item) :-
-  ismsa_securityRequirement(Requirement),
+  ismsa_securityRequirementUnder(Requirement, Scope),
   field(Requirement, "base/fieldTypes/identifier", Identifier),
-  ismsa_implementationWork(Identifier, Item, _).
+  ismsa_implementationWork(Scope, Identifier, Item, _).
 
 ismsa_securityRequirementImplementationDone(Requirement, Item) :-
-  ismsa_securityRequirement(Requirement),
+  ismsa_securityRequirementUnder(Requirement, Scope),
   field(Requirement, "base/fieldTypes/identifier", Identifier),
-  ismsa_implementationWork(Identifier, Item, "done").
+  ismsa_implementationWork(Scope, Identifier, Item, "done").
 
 ismsa_securityRequirementImplementationOpen(Requirement, Item) :-
   ismsa_securityRequirementImplementation(Requirement, Item),
@@ -191,19 +218,22 @@ ismsa_securityRequirementVerificationPending(Requirement, Card) :-
   not ismsa_securityRequirementVerificationFailing(Requirement, Card).
 
 %
-% Test evidence keyed by the identifier of the requirement
+% Test evidence keyed by the scope and the identifier of the requirement
 %
 
-ismsa_testEvidenceLater(Identifier, Date) :-
-  ismsa_testEvidence(Identifier, _, _, Date, _),
-  ismsa_testEvidence(Identifier, _, _, LaterDate, _),
+ismsa_securityRequirementTest(Requirement, Result, Date) :-
+  ismsa_securityRequirementUnder(Requirement, Scope),
+  field(Requirement, "base/fieldTypes/identifier", Identifier),
+  ismsa_testEvidence(Scope, Identifier, _, Result, Date, _).
+
+ismsa_securityRequirementTestLater(Requirement, Date) :-
+  ismsa_securityRequirementTest(Requirement, _, Date),
+  ismsa_securityRequirementTest(Requirement, _, LaterDate),
   LaterDate > Date.
 
 ismsa_securityRequirementLatestTest(Requirement, Result) :-
-  ismsa_securityRequirement(Requirement),
-  field(Requirement, "base/fieldTypes/identifier", Identifier),
-  ismsa_testEvidence(Identifier, _, Result, Date, _),
-  not ismsa_testEvidenceLater(Identifier, Date).
+  ismsa_securityRequirementTest(Requirement, Result, Date),
+  not ismsa_securityRequirementTestLater(Requirement, Date).
 
 ismsa_securityRequirementTestFailing(Requirement) :-
   ismsa_securityRequirementLatestTest(Requirement, "failed").
@@ -285,15 +315,22 @@ ismsa_securityRequirementStage(Requirement, "notOk", "The requirement has been r
   ismsa_securityRequirementReviewed(Requirement),
   ismsa_securityRequirementFailing(Requirement).
 
+ismsa_securityRequirementStage(Requirement, "implementationInProgress", "The requirement has been reviewed, and the implementation work is under way") :-
+  ismsa_securityRequirementReviewed(Requirement),
+  not ismsa_securityRequirementFailing(Requirement),
+  ismsa_securityRequirementImplementationPending(Requirement).
+
 ismsa_securityRequirementStage(Requirement, "ok", "The requirement has been reviewed and verified") :-
   ismsa_securityRequirementReviewed(Requirement),
   not ismsa_securityRequirementFailing(Requirement),
+  not ismsa_securityRequirementImplementationPending(Requirement),
   not ismsa_securityRequirementVerificationPending(Requirement, _),
   ismsa_securityRequirementVerified(Requirement).
 
 ismsa_securityRequirementStage(Requirement, "verificationInProgress", "The requirement has been reviewed, but a verification is not ready yet") :-
   ismsa_securityRequirementReviewed(Requirement),
   not ismsa_securityRequirementFailing(Requirement),
+  not ismsa_securityRequirementImplementationPending(Requirement),
   ismsa_securityRequirementVerificationPending(Requirement, _).
 
 ismsa_securityRequirementStage(Requirement, "toBeVerified", "The implementation work is done, but nothing verifies the requirement yet") :-
@@ -303,13 +340,6 @@ ismsa_securityRequirementStage(Requirement, "toBeVerified", "The implementation 
   not ismsa_securityRequirementVerified(Requirement),
   ismsa_securityRequirementHasImplementation(Requirement),
   not ismsa_securityRequirementImplementationPending(Requirement).
-
-ismsa_securityRequirementStage(Requirement, "implementationInProgress", "The requirement has been reviewed, and the implementation work is under way") :-
-  ismsa_securityRequirementReviewed(Requirement),
-  not ismsa_securityRequirementFailing(Requirement),
-  not ismsa_securityRequirementVerificationPending(Requirement, _),
-  not ismsa_securityRequirementVerified(Requirement),
-  ismsa_securityRequirementImplementationPending(Requirement).
 
 ismsa_securityRequirementStage(Requirement, "contentReady", "The requirement has been reviewed, but everything that verifies it is not applicable") :-
   ismsa_securityRequirementReviewed(Requirement),

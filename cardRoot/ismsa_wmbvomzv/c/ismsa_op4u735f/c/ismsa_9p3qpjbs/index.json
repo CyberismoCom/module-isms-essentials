@@ -1,0 +1,17 @@
+{
+    "rank": "0|y",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-26T19:15:07.909Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Implementation work not applicable",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "ok",
+    "ismsa/fieldTypes/testReview": "ok",
+    "ismsa/fieldTypes/securityReview": "ok",
+    "ismsa/fieldTypes/productOwnerReview": "ok",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-26T19:15:07.912Z",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/identifier": "ismsa_test_sr_implementation-not-applicable"
+}
