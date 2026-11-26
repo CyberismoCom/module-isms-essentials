@@ -1,0 +1,17 @@
+{
+    "rank": "0|s",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-26T09:13:13.144Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedSecurityRequirement",
+    "title": "Security requirement test: Implementation work done",
+    "templateCardKey": "ismsa_zp2gja5c",
+    "ismsa/fieldTypes/architectureReview": "ok",
+    "ismsa/fieldTypes/testReview": "ok",
+    "ismsa/fieldTypes/securityReview": "ok",
+    "ismsa/fieldTypes/productOwnerReview": "ok",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-26T09:13:13.146Z",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/identifier": "ismsa_test_sr_implementation-done"
+}

@@ -1,0 +1,17 @@
+{
+    "rank": "0|v",
+    "workflowState": "Open",
+    "createdAt": "2026-11-26T09:13:15.899Z",
+    "links": [
+        {
+            "linkType": "ismsa/linkTypes/implements",
+            "cardKey": "ismsa_7m0v7pux"
+        }
+    ],
+    "cardType": "base/cardTypes/task",
+    "title": "Security requirement test: implementation task",
+    "templateCardKey": "base_3",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-26T09:13:29.645Z",
+    "base/fieldTypes/owner": "owner@example.com"
+}

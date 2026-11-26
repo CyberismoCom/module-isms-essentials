@@ -46,10 +46,16 @@
             "enableOverride": false
         },
         {
-            "name": "base/fieldTypes/assessment",
+            "name": "ismsa/fieldTypes/securityRequirementStage",
             "displayName": "",
             "isCalculated": true,
             "enableOverride": true
+        },
+        {
+            "name": "base/fieldTypes/assessment",
+            "displayName": "",
+            "isCalculated": true,
+            "enableOverride": false
         },
         {
             "name": "base/fieldTypes/assessmentExplanation",
@@ -71,6 +77,7 @@
         "ismsa/fieldTypes/testReview",
         "ismsa/fieldTypes/securityReview",
         "ismsa/fieldTypes/productOwnerReview",
+        "ismsa/fieldTypes/securityRequirementStage",
         "base/fieldTypes/assessment",
         "base/fieldTypes/assessmentExplanation"
     ],
@@ -78,5 +85,5 @@
         "base/fieldTypes/identifier",
         "base/fieldTypes/informationClassification"
     ],
-    "description": "A technical security requirement for a product, solution, or service, with automatic assessment from its reviews and verifications"
+    "description": "A technical security requirement for a product, solution, or service, with an automatic life cycle stage and assessment from its reviews, implementation work, and verifications"
 }
