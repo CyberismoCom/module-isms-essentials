@@ -2,6 +2,7 @@
 {{#unless this.setUp}}
 *Set up the home* ({{this.doneCount}} of {{this.stepCount}} done)
 
+[.steps]
 {{#if this.nameDone}}* [x]{{else}}* [ ]{{/if}} *Name:* {{#field}}"field": "title", "display": "inline", "showLabel": false{{/field}}{{#unless this.nameDone}} +
 Click the title and write the scope, for example "ISMS home for Example Ltd" or "ISMS home for the payments team".{{/unless}}
 {{#if this.scopeDone}}* [x]{{else}}* [ ]{{/if}} *Scope:* {{#field}}"field": "ismsa/fieldTypes/homeScopeDescription", "display": "inline", "showLabel": false{{/field}}{{#unless this.scopeDone}} +
