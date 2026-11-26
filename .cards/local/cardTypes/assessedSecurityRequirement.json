@@ -59,7 +59,7 @@
         },
         {
             "name": "base/fieldTypes/assessmentExplanation",
-            "displayName": "",
+            "displayName": "Stage explanation",
             "isCalculated": true,
             "enableOverride": true
         },

@@ -359,7 +359,8 @@ fieldCalculated(Requirement, "base/fieldTypes/assessment", Assessment) :-
 % An overridden stage has no calculated explanation. Overriding is how a team
 % without a connector tracks the stage by hand, and how a requirement that was
 % verified before these rules existed is attested. The policy check below asks for
-% the explanation.
+% the explanation. On this card type the field is displayed as "Stage explanation",
+% because it explains the stage, and the assessment follows from the stage.
 
 fieldCalculated(Requirement, "base/fieldTypes/assessmentExplanation", Explanation) :-
   ismsa_securityRequirementStage(Requirement, _, Explanation),
@@ -417,8 +418,8 @@ policyCheckFailure(
 policyCheckFailure(
   Requirement,
   "Security requirement",
-  "Assessment explanation not given for overridden stage",
-  "The stage field has been overridden, but the assessment explanation has not been updated. Explain the stage by overriding the assessment explanation field.",
+  "Explanation not given for overridden stage",
+  "The stage field has been overridden, but the stage explanation has not been updated. Explain the stage by overriding the stage explanation field.",
   "base/fieldTypes/assessmentExplanation"
 ) :-
   ismsa_securityRequirement(Requirement),

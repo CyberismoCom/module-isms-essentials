@@ -49,7 +49,7 @@ ismsa_test_expectSrOverride("ismsa_test_sr_override-disagrees", "ok").
 % policy check. Fixtures in ismsa_test_expectSr have no failing policy checks,
 % unless they are listed here.
 ismsa_test_expectSrPolicy("ismsa_test_sr_out-of-scope-no-justification", "Justification missing").
-ismsa_test_expectSrPolicy("ismsa_test_sr_override-without-explanation", "Assessment explanation not given for overridden stage").
+ismsa_test_expectSrPolicy("ismsa_test_sr_override-without-explanation", "Explanation not given for overridden stage").
 
 % ismsa_test_expectSrNotification(Identifier, Title): the fixture has this
 % notification. A fixture that is not listed here has none.
