@@ -5,7 +5,7 @@
 
 == Description
 
-#TODO: Describe the AI tool, the models it uses, and how people use it, for example a web interface, an API, an IDE integration, or an AI feature of another service.#
+#TODO: Describe the AI tool, the models it uses, and how people use it, for example a web interface, an API, an IDE integration, or an AI feature of another service. One card can cover all AI features of one service.#
 
 == Purpose
 
@@ -29,14 +29,17 @@ Set the fields of this card. Then justify the answers here:
 * *Training data use:* #TODO: Where the terms of use or the settings say this. If the data can be used for training, name who approved it.#
 * *EU AI Act risk category:* #TODO: Why the use is in this category. A prohibited use is not allowed. A high-risk use needs the approval of the management.#
 * *Human oversight:* #TODO: How people check the results before they use them.#
+* *Data categories:* #TODO: Which data people give to the tool. If the tool gets personal data: where the processing is in the record of processing activities, and whether a data protection impact assessment is needed (GDPR Article 35).#
 
-Activate the card when the tool is approved for use.
+While the card is a draft, the tool is a request and is not approved. Activate the card when the tool is approved for use.
 
 == Related risks
 
+A risk is needed only when "Risk evaluation needed" is "Yes". A high-risk use always needs one. The risk card lists the typical threats of AI tools.
+
 {{#createCards}}
-  "template": "ismsa/templates/risk",
-  "buttonLabel": "Add a risk"
+  "template": "ismsa/templates/aiRisk",
+  "buttonLabel": "Add an AI risk"
 {{/createCards}}
 
 {{#report}}

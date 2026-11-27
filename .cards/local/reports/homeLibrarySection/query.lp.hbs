@@ -13,6 +13,9 @@ resultField(result, "complete", "yes", "shortText") :-
 resultField(result, "requiredCount", N, "integer") :-
     N = #count { Library : ismsa_libraryRequired({{cardKey}}, Library) }.
 
+resultField(result, "oneRequired", "yes", "shortText") :-
+    1 = #count { Library : ismsa_libraryRequired({{cardKey}}, Library) }.
+
 resultField(result, "noneRequired", "yes", "shortText") :-
     not ismsa_libraryRequired({{cardKey}}, _).
 

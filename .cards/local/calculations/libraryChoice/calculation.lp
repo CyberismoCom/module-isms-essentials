@@ -1,7 +1,7 @@
 %
 % Choosing the libraries of an ISMS home
 %
-% The home card asks six yes or no questions. The answers are hidden fields of the home card
+% The home card asks seven yes or no questions. The answers are hidden fields of the home card
 % type, edited with field macros in the section "Libraries" (ismsa/reports/homeLibrarySection).
 % These rules decide which libraries the home needs, and why the other libraries are not needed.
 %
@@ -12,6 +12,9 @@
 %   requirement checklist of the framework. They do not add other libraries. They recommend
 %   answers to the questions about the work, and the user decides. When a recommended library
 %   is left out, the requirements of the framework show the gap.
+% - The question about the use of AI is a question of fact, like the questions about the
+%   frameworks: the EU AI Act applies to every organisation that uses AI. A "yes" adds only the
+%   AI use basics library, which works without the other libraries (2026-11-27).
 % - The checklist of a framework can come from another module. That module declares
 %   ismsa_frameworkLibrary/3 (see below), for example eucra for the CRA.
 %
@@ -79,8 +82,6 @@ ismsa_questionAdds("ownServices", "the security operations basics library",
         "you manage the security of your own IT or cloud services in this home").
 ismsa_questionAdds("nis2", "the NIS2 basics library", "you follow NIS2").
 ismsa_questionAdds("aiUse", "the AI use basics library", "you use AI tools in your work").
-ismsa_questionAdds("aiUse", "the asset and risk management library",
-        "the AI tools are recorded in the asset register").
 
 %
 % Framework libraries of other modules

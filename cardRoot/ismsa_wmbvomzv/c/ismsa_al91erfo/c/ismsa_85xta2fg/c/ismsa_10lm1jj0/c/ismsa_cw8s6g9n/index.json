@@ -1,0 +1,16 @@
+{
+    "rank": "0|b",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-27T10:04:35.414Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Set the AI policy",
+    "templateCardKey": "ismsa_8ys5dqfx",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "march",
+    "base/fieldTypes/identifier": "ismsa_control_ai-policy",
+    "lastUpdated": "2026-11-27T10:04:35.785Z",
+    "lastTransitioned": "2026-11-27T10:04:35.785Z"
+}

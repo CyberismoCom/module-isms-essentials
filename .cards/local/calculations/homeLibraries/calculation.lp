@@ -82,10 +82,10 @@ ismsa_installableExtension(
     "ismsa_register_nis2"
 ).
 
-% The AI use basics library (2026-11-25) has its controls, the register "AI tools" under the
-% supporting assets of the asset register, and the EU AI Act requirements. The register needs
-% the asset register, so a "yes" to the AI question also adds the asset and risk management
-% library (ismsa/calculations/libraryChoice).
+% The AI use basics library (2026-11-25) has its controls, the register "AI tools", and the EU AI
+% Act requirements. The library works without the other libraries (2026-11-27). The register
+% goes under the supporting assets of the asset register when the home has one, and to the home
+% card when it has none (ismsa_libraryFallbackPoint/2 in ismsa/calculations/extensions).
 
 ismsa_installableExtension(
     "ismsa_register_central-controls",
@@ -102,6 +102,8 @@ ismsa_installableExtension(
     "Add the AI tools register",
     "ismsa_register_ai-tools"
 ).
+
+ismsa_libraryFallbackPoint("ismsa/templates/aiToolRegister", "ismsa_home").
 
 ismsa_installableExtension(
     "ismsa_register_compliance",
@@ -146,7 +148,7 @@ ismsa_libraryCoverage("the NIS2 basics library",
     "The extra duties of the national law, for example the sector rules and the details of the registration. Check the national law.").
 
 ismsa_libraryCoverage("the AI use basics library",
-    "The safe use of AI tools: the AI policy, the AI tools as AI assets with their assessment, a yearly review, AI literacy, and a checklist of the EU AI Act obligations for an organisation that uses AI (Articles 4, 5, 26, and 50).",
+    "The safe use of AI tools: the AI policy, a register of the AI tools with their assessment, a yearly review, AI literacy, and a checklist of the EU AI Act obligations for an organisation that uses AI (Articles 4, 5, 26, and 50). The library works without the other libraries.",
     "AI in the products of the organisation, and the obligations of the providers of AI systems. Do them in the development projects. The AI management system of ISO/IEC 42001 is not covered.").
 
 % The compliance register of the old home template has the same identifier as in the new home.

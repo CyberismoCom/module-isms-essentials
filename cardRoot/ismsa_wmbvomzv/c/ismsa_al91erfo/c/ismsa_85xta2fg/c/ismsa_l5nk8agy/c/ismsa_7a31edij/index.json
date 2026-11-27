@@ -1,0 +1,17 @@
+{
+    "rank": "0|c",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-27T10:04:45.780Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/aiAsset",
+    "title": "High-risk AI tool without a risk evaluation",
+    "templateCardKey": "ismsa_imzdy7ei",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-27T10:04:45.783Z",
+    "ismsa/fieldTypes/assetAiAllowedInformation": "internal",
+    "ismsa/fieldTypes/assetAiTrainingDataUsage": "optedOut",
+    "ismsa/fieldTypes/assetAiHumanOversight": "required",
+    "ismsa/fieldTypes/assetCriticalityForOperations": "medium",
+    "ismsa/fieldTypes/assetRiskEvaluationNeeded": "no",
+    "ismsa/fieldTypes/assetAiRiskCategory": "highRisk"
+}

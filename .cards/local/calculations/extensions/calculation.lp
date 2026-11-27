@@ -91,6 +91,18 @@ ismsa_libraryPart(Home, Library, Template, Label, Target) :-
     ismsa_libraryOfferedInHome(Template, Home),
     ismsa_libraryPointTarget(Point, Home, Target).
 
+% ismsa_libraryFallbackPoint(Template, Point): where the part goes when the home does not have
+% its extension point. For example, the register "AI tools" goes under the supporting assets,
+% and to the home card when the home has no asset register. Without this fact, a part is not
+% offered in a home that does not have its extension point.
+
+ismsa_libraryPart(Home, Library, Template, Label, Target) :-
+    ismsa_installableExtension(Point, Library, Template, Label, _),
+    ismsa_libraryOfferedInHome(Template, Home),
+    not ismsa_libraryPointTarget(Point, Home, _),
+    ismsa_libraryFallbackPoint(Template, Fallback),
+    ismsa_libraryPointTarget(Fallback, Home, Target).
+
 ismsa_libraryPartInstalled(Home, Template) :-
     ismsa_libraryPart(Home, _, Template, _, _),
     ismsa_installableExtension(_, _, Template, _, ExampleIdentifier),

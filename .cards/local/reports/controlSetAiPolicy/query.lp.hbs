@@ -13,3 +13,7 @@ resultField(result, "roleTargetTitle", Title, "shortText") :-
     ismsa_roleNeeded(Home, "ismsa_role_ai-responsible"),
     ismsa_roleTarget(Home, Target),
     field(Target, "title", Title).
+
+resultField(result, "hasRoleAssignments", "yes", "shortText") :-
+    ismsa_closestHome({{cardKey}}, Home),
+    ismsa_homeHasRoleAssignments(Home).

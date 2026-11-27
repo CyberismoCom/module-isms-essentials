@@ -1,0 +1,13 @@
+{
+    "rank": "0|e",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-27T10:04:37.494Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "AI tools",
+    "templateCardKey": "ismsa_ovhagryw",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "base/fieldTypes/identifier": "ismsa_register_ai-tools",
+    "lastUpdated": "2026-11-27T10:04:37.496Z"
+}

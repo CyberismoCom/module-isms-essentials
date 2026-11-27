@@ -6,9 +6,10 @@ Review the AI policy.
 .Review instructions
 ====
 * Check that the management has approved the policy.
-* Check that the policy agrees with the information security policy and with the AI tools in the asset register.
+* Check that the policy agrees with the AI tools in the register "AI tools", and with the information security policy if the organisation has one.
 * Check that the roles that own the policy, approve new AI tools, and approve exceptions are named.
 * Check that the policy meets the requirements of the customer contracts and of the EU AI Act.
+* Check that the processing of personal data with AI is in the record of processing activities, and that the need for a data protection impact assessment is checked.
 * Check that the training plan covers AI literacy.
 * Check that the policy has been communicated to the employees and the relevant contractors, and that the confirmations are recorded.
 * Check that each exception has a reason, a risk, and an end date, and that expired exceptions are closed.

@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/aiRisk",
+    "displayName": "AI risk",
+    "description": "A risk of an AI tool, with the typical threats of AI tools to choose from",
+    "category": "Cybersecurity management"
+}

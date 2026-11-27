@@ -73,3 +73,56 @@ notification(Asset, "ISMS", "The data can be used for training",
     ismsa_aiAsset(Asset),
     not ismsa_disableAssetControl(Asset),
     field(Asset, "ismsa/fieldTypes/assetAiTrainingDataUsage", "mayBeUsed").
+
+% A high-risk use always needs a risk evaluation. The other AI assets need a risk only when the
+% owner sets "Risk evaluation needed" to "Yes", so an AI feature of an everyday service does not
+% need a risk card (2026-11-27).
+
+policyCheckFailure(Asset, "ISMS", "A high-risk use needs a risk evaluation",
+        "The EU AI Act risk category is 'High risk', but 'Risk evaluation needed' is 'No'. Set 'Risk evaluation needed' to 'Yes', and add the risks of this use.",
+        "ismsa/fieldTypes/assetRiskEvaluationNeeded") :-
+    ismsa_aiAsset(Asset),
+    not ismsa_disableAssetControl(Asset),
+    field(Asset, "ismsa/fieldTypes/assetAiRiskCategory", "highRisk"),
+    field(Asset, "ismsa/fieldTypes/assetRiskEvaluationNeeded", "no").
+
+% Personal data in an AI tool (2026-11-27). The field "Data categories" tells it.
+
+ismsa_aiAssetWithPersonalData(Asset) :-
+    ismsa_aiAsset(Asset),
+    field(Asset, "ismsa/fieldTypes/dataCategories", "personalData").
+
+ismsa_aiAssetWithPersonalData(Asset) :-
+    ismsa_aiAsset(Asset),
+    field(Asset, "ismsa/fieldTypes/dataCategories", "sensitivePersonalData").
+
+notification(Asset, "ISMS", "The tool processes personal data",
+        "Add the processing to the record of processing activities (GDPR Article 30). Check whether a data protection impact assessment is needed (GDPR Article 35), and whether the supplier needs a data processing agreement.") :-
+    ismsa_aiAssetWithPersonalData(Asset),
+    not ismsa_disableAssetControl(Asset).
+
+% The register "AI tools" is on the home card when the home had no asset register. When the
+% home gets one later, the register belongs under the supporting assets.
+
+notification(Register, "ISMS", "Move this register to the supporting assets",
+        "This home now has an asset register. Move this register under \"Supporting assets\", so that the AI tools are with the other assets. The controls and the reviews work in both places.") :-
+    field(Register, "base/fieldTypes/identifier", "ismsa_register_ai-tools"),
+    parent(Register, Home),
+    base_projectCardType(Home, "ismsa/cardTypes/moduleHome"),
+    field(Assets, "base/fieldTypes/identifier", "ismsa_register_supporting-assets"),
+    ismsa_closestHome(Assets, Home).
+
+% Article 26 of the EU AI Act is for the deployers of high-risk AI systems. A home without a
+% high-risk use marks the requirement out of scope. The check tells when the requirement is out
+% of scope and the home still has a high-risk AI tool that is not deactivated (2026-11-27).
+
+policyCheckFailure(Requirement, "Compliance requirement", "The home has a high-risk AI tool",
+        "This requirement is out of scope, but an AI tool of this home has the EU AI Act risk category 'High risk'. Mark the requirement in scope, or correct the risk category of the tool.") :-
+    field(Requirement, "base/fieldTypes/identifier", "ismsa_aiact_art-26"),
+    field(Requirement, "workflowState", "Out of scope"),
+    ismsa_closestHome(Requirement, Home),
+    ismsa_aiAsset(Asset),
+    ismsa_closestHome(Asset, Home),
+    not ismsa_disableAssetControl(Asset),
+    not field(Asset, "workflowState", "Inactive"),
+    field(Asset, "ismsa/fieldTypes/assetAiRiskCategory", "highRisk").
