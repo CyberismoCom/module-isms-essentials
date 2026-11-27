@@ -22,7 +22,7 @@ ismsa_homeSetUpStep(1, "Write the scope of the home in the title").
 ismsa_homeSetUpStep(2, "Describe the scope").
 ismsa_homeSetUpStep(3, "Set the owner of the home").
 ismsa_homeSetUpStep(4, "Answer the questions about the libraries").
-ismsa_homeSetUpStep(5, "Add the libraries that the answers need").
+ismsa_homeSetUpStep(5, "Add the libraries that you chose").
 
 ismsa_homeSetUpStepDone(Home, 1) :-
     ismsa_newHome(Home),
@@ -48,6 +48,22 @@ ismsa_homeSetUpStepDone(Home, 5) :-
 ismsa_homeSetUp(Home) :-
     ismsa_newHome(Home),
     ismsa_homeSetUpStepDone(Home, N) : ismsa_homeSetUpStep(N, _).
+
+% ismsa_homeShownAnswer(Home, Question, Text): the answer that the set-up shows for a question.
+% A question has one shown answer at most. A question that another "yes" includes shows only
+% that, also when the home still stores an older answer to it. For example, a home answers "no"
+% to the asset risks and later "yes" to the ISMS, which includes the asset risks.
+
+ismsa_homeShownAnswer(Home, Question, "included in the ISMS") :-
+    ismsa_questionIncluded(Home, Question, _).
+
+ismsa_homeShownAnswer(Home, Question, "yes") :-
+    ismsa_homeAnswer(Home, Question, "yes"),
+    not ismsa_questionIncluded(Home, Question, _).
+
+ismsa_homeShownAnswer(Home, Question, "no") :-
+    ismsa_homeAnswer(Home, Question, "no"),
+    not ismsa_questionIncluded(Home, Question, _).
 
 % The next set-up step is the first one that is not done.
 

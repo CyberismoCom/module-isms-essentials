@@ -1,13 +1,15 @@
 {{#each results}}
 {{#if this.setUp}}
-{{#if this.anyStep}}
+{{#if this.tiles}}
 {{#report}}
   "name": "base/reports/progressTilesWidget",
   "title": "Progress",
-  "legend": "Controls that are OK or out of scope, in each area. Click a tile to open the next control.",
+  "legend": "{{#if this.anyStep}}Controls that are OK or out of scope, in each area. Click a tile to open the next control.{{else}}Requirements that are OK, of the requirements in scope. Click the tile to open the requirements.{{/if}}",
   "tiles": [{{#each this.tiles}}{"value": {{this.value}}, "label": "{{{jsonEscape this.label}}}", "cardKey": "{{this.cardKey}}"}{{#unless @last}}, {{/unless}}{{/each}}]
 {{/report}}
 
+{{/if}}
+{{#if this.anyStep}}
 {{#if this.next}}
 {{#report}}
   "name": "base/reports/stepsWidget",

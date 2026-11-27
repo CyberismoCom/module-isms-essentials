@@ -20,19 +20,19 @@ The registers, controls, and records of the home get this owner.{{/unless}}
 {{/each}}
 ======
 {{else}}
-* [ ] *Answer the questions.* The answers decide which libraries the home needs. A "yes" adds nothing by itself. The answers about the CRA and NIS2 give the questions below them a recommended answer.
+* [ ] *Answer the questions.* The answers decide which libraries the home offers. A "yes" adds nothing by itself. The first three questions are about what applies to you. The answers about the CRA and NIS2 give the four questions about the work of the home a recommended answer.
 {{#each this.questions}}
 ** {{this.text}} {{#if this.included}}{{this.included}}{{else}}{{#field}}"field": "{{this.field}}", "display": "inline", "showLabel": false{{/field}}{{#if this.recommended}} (recommended){{/if}}{{/if}}
 {{/each}}
 {{/if}}
 {{#if this.answersDone}}
 {{#if this.noLibraries}}
-* [x] *Libraries:* the answers need no libraries.
+* [x] *Libraries:* you chose no libraries.
 {{else}}
 {{#if this.librariesDone}}
-* [x] *Libraries:* all {{this.libraryCount}} added.
+* [x] *Libraries:* {{#if this.oneLibrary}}added.{{else}}all {{this.libraryCount}} added.{{/if}}
 {{else}}
-* [ ] *Add the libraries.* The answers need {{this.libraryCount}} libraries. {{#if this.onePartLeft}}One click is left.{{else}}{{this.partsLeft}} clicks are left.{{/if}} Each click adds one part of a library.
+* [ ] *Add the libraries.* {{#if this.oneLibrary}}You chose one library.{{else}}You chose {{this.libraryCount}} libraries.{{/if}} {{#if this.onePartLeft}}One click is left.{{else}}{{this.partsLeft}} clicks are left.{{/if}} Each click adds one part of a library.
 {{#if this.nextTemplate}}
 +
 {{#createCards}}

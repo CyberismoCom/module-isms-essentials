@@ -321,3 +321,37 @@ result(("FAIL a home with all libraries has a next part", Id)) :-
     ismsa_fuExpectPartsLeft(Id, 0),
     ismsa_fuHome(Id, Home),
     ismsa_homeNextLibraryPart(Home, _, _, _).
+
+%
+% The answers that the set-up shows (ismsa_homeShownAnswer/3)
+%
+% L1 and L7 answer "yes" to the ISMS, and they also store an answer to the asset risks. The ISMS
+% includes the asset risks, so the set-up shows "included in the ISMS" and not the stored answer.
+% No home shows two answers to one question.
+%
+
+result(("FAIL two shown answers", Home, Question, A1, A2)) :-
+    ismsa_homeShownAnswer(Home, Question, A1),
+    ismsa_homeShownAnswer(Home, Question, A2),
+    A1 < A2.
+
+ismsa_fuExpectShown("L1", "assetRisks", "included in the ISMS").
+ismsa_fuExpectShown("L7", "assetRisks", "included in the ISMS").
+ismsa_fuExpectShown("L1", "fullIsms", "yes").
+ismsa_fuExpectShown("L8", "assetRisks", "no").
+ismsa_fuExpectShown("L8", "aiUse", "yes").
+
+result(("FAIL shown answer", Id, Question, Text)) :-
+    ismsa_fuExpectShown(Id, Question, Text),
+    ismsa_fuHome(Id, Home),
+    not ismsa_homeShownAnswer(Home, Question, Text).
+
+% The fixtures have the case that the rule is for: a stored answer to an included question.
+
+result(("FAIL fixture without a stored answer to an included question")) :-
+    not ismsa_fuStoredAndIncluded.
+
+ismsa_fuStoredAndIncluded :-
+    ismsa_fuHome("L1", Home),
+    ismsa_homeAnswer(Home, "assetRisks", _),
+    ismsa_questionIncluded(Home, "assetRisks", _).
