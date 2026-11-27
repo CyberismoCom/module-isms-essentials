@@ -1,0 +1,77 @@
+{{#graph}}
+  "model": "ismsa/graphModels/assetsRisksControls",
+  "view": "ismsa/graphViews/risk"
+{{/graph}}
+
+== Risk description
+
+=== Related assets
+
+This risk is linked to the AI tool under which it was created. See linked assets.
+
+=== Threat
+
+#TODO# Describe the threat. The list has the typical threats of AI tools. Keep the threats that apply to this tool, and delete the others. One risk card can cover all threats of one tool. Create a separate risk for a threat that needs its own analysis or treatment.
+
+* *Confidential information leaks in prompts.* People give the tool information that it must not get, for example customer information, personal data, source code, or credentials.
+* *The supplier uses the data for training.* The prompts, files, or results are used to train AI models, and the information can show up for other customers.
+* *Wrong results are used.* The tool gives results that are wrong or made up (hallucinations), and people use them without a check, for example in code, in documents, or in decisions.
+* *Prompt injection.* Content that the tool reads, for example a web page, an email, or a document, has instructions that make the tool do something else, for example send out information.
+* *An AI agent has too much access.* An agent or an integration (for example an MCP server) can read, change, or delete more than its task needs, or it does actions that cannot be undone without the approval of a person.
+* *Licences and rights of generated content.* Generated code or content breaks a licence or a copyright, or the organisation does not own the rights to the result.
+* *Dependency on the supplier.* The supplier changes the terms, the price, the model, or the location of the processing, or stops the service, and the work depends on the tool.
+* *Personal data is processed without a legal basis.* The tool gets personal data that the record of processing activities does not cover.
+
+=== Potential vulnerabilities
+
+#TODO# Describe potential vulnerabilities
+
+. #Vulnerability 1#
+. #Vulnerability 2#
+. #Vulnerability 3#
+
+=== Consequences
+
+#TODO# Describe potential consequences.
+
+* #Consequence 1#
+* #Consequence 2#
+* #Consequence 3#
+
+== Risk analysis
+
+=== Existing controls
+
+#TODO# Describe possible existing controls. Add links if applicable.
+
+=== Justification for initial risk level
+
+#TODO# Add justifications for the initial likelihood and the initial impact.
+
+== Risk treatment
+
+=== Risk treatment plan
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add new tasks to treatment plan"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "ismsa/templates/control",
+  "buttonLabel": "Add new controls to treatment plan"
+{{/createCards}}
+
+
+=== Justification for the residual risk
+
+#TODO# Add justifications for the residual likelihood and the residual impact.
+
+== Risk monitoring
+
+When reviewing a risk that needs monitoring, evaluate the effectiveness of current controls.
+Consider the impacts of any significant incidents or other significant changes, and update this section accordingly.

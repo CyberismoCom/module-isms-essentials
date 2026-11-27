@@ -7,6 +7,8 @@ These fixtures test the libraries of the ISMS home (ismsa/templates/moduleHome2)
 * Test home L5 has the asset and risk management controls without the asset and risk registers. The checks find no assets and no risks.
 * Test home L6 was created from the core without libraries. It has no internal controls, and none of the library parts has been added.
 * Test home L7 was created from the templates of 2026-11-23, with all libraries and "yes" to all questions. Every NIS2 requirement has a planned control in it, and no answer is against a recommendation.
+* Test home L8 answers "yes" only to the AI question. It has the AI use basics library, and also the asset and risk registers and controls. Its register "AI tools" is under the supporting assets.
+* Test home L10 answers "yes" only to the AI question, and it has only the AI use basics library. It has no asset register, so its register "AI tools" is on the home card. One AI tool has personal data, and one has a high-risk use without a risk evaluation. Its Article 26 requirement is out of scope.
 
 Homes L1 to L5 were made before the six central controls became the security response and compliance basics library. They already have those controls and the incident management process.
 

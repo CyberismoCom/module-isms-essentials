@@ -1,6 +1,8 @@
 == Purpose
 
-This policy states how the organisation uses artificial intelligence (AI) in a safe, legal, and responsible way. It supports the information security policy, and it applies to all employees and contractors who use AI in their work.
+This policy states how the organisation uses artificial intelligence (AI) in a safe, legal, and responsible way. It applies to all employees and contractors who use AI in their work.
+
+#TODO: If the organisation has an information security policy, state that this policy supports it. If not, remove this line.#
 
 #TODO: Describe in one or two sentences how the organisation uses AI, for example for code generation, documentation, or customer services.#
 
@@ -10,9 +12,10 @@ This policy covers the AI tools and services that the organisation uses, and the
 
 == High-level objectives
 
-* Only approved AI tools are used for work. The AI assets in the asset register are the approved tools.
-* Information is given to an AI tool only when the tool is approved for that classification of information.
+* Only approved AI tools are used for work. The active AI tools in the register "AI tools" are the approved tools.
+* Each approved AI tool has a highest classification of information that it can get. People do not give a tool information above that classification.
 * Customer information is given to an AI tool only when the contract with the customer allows it.
+* Personal data is given to an AI tool only when the tool is approved for it and the processing has a legal basis.
 * The data of the organisation is not used to train AI models, unless the owner of the data approves it.
 * People check the results of AI before they use them. The person who uses AI is responsible for the result.
 * AI agents and integrations get only the access that the task needs. A person approves the actions that cannot be undone, for example sending, deleting, or publishing.
@@ -33,17 +36,23 @@ The management commits to:
 
 Each employee and contractor who uses AI in their work gets the training that they need to use it safely (AI literacy). The training covers at least the approved tools, the information allowed in each tool, the limits of AI results, and how to report problems.
 
-#TODO: Refer to the training plan.#
+#TODO: Refer to the training and awareness plan.#
 
 == New AI tools
 
-A new AI tool is approved before it is used for work. The owner of the tool adds it to the asset register as an AI asset, and assesses it. The assessment covers at least the allowed information, the use of training data, the EU AI Act risk category, and the need for human oversight.
+A new AI tool is approved before it is used for work. This also applies to new AI features of the services in use, and to browser extensions that use AI. To ask for a new AI tool, a person adds it to the register "AI tools" as a draft, or asks #TODO: the AI responsible, or another role# to add it. The owner of the tool assesses it. The assessment covers at least the allowed information, the use of training data, the EU AI Act risk category, the need for human oversight, and the categories of data.
 
-#TODO: Name the role that approves new AI tools, for example the AI responsible in the security role assignments.#
+#TODO: Name the role that approves new AI tools, for example the AI responsible.#
+
+== Personal data
+
+When personal data is processed with an AI tool, the processing is added to the record of processing activities (GDPR Article 30). A data protection impact assessment is made before the processing starts, when the processing is likely to cause a high risk to people (GDPR Article 35). The supplier of the tool has a data processing agreement, when it processes personal data for the organisation.
+
+#TODO: Name the role that decides on the processing of personal data with AI, for example the data protection officer. If the organisation does not process personal data with AI, state it here.#
 
 == Incidents
 
-Problems with AI are reported without undue delay, according to the incident management process. Examples are information given to a wrong tool, harmful or wrong results that were used, and unexpected actions of an AI agent.
+Problems with AI are reported without undue delay to #TODO: the AI responsible, or name the incident management process if the organisation has one#. Examples are information given to a wrong tool, harmful or wrong results that were used, and unexpected actions of an AI agent.
 
 == Responsibilities
 

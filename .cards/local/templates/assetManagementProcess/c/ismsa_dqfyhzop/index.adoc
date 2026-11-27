@@ -2,8 +2,8 @@ This document describes how the organisation manages its assets in the scope of 
 
 == Introduction
 
-An asset in anything that has value to the organisation and therefore requires protection.
-Asset can be divided into two categories:
+An asset is anything that has value to the organisation and therefore requires protection.
+Assets can be divided into two categories:
 
 * *Primary Assets*: Core business processes, functions and services;
 Information and Data servicing business processes and/or activities of the organisation
@@ -32,7 +32,7 @@ a|
 
 == Process description
 
-Asset are recorded to Asset Register. If assets (with relevant details) for some categories are already recorded in some other tool, it is enough to add link for reference.
+Assets are recorded in the asset register. If assets (with relevant details) for some categories are already recorded in some other tool, it is enough to add link for reference.
 
 
 === STEP 1: Identify primary assets, asset owners and locations (incl. backups)
@@ -51,6 +51,8 @@ Asset are recorded to Asset Register. If assets (with relevant details) for some
 . Information/Data (including locations and backups) in all forms (storage, transmission etc) that is of value
 
 . Hardware, devices and equipment
+
+. AI tools and services, and the AI features of other services. They are recorded in the register "AI tools" when the home has the AI use basics library
 
 === STEP 3: Classify assets
 
@@ -140,7 +142,7 @@ Other controls related to asset management, but not directly covered in this doc
 
 * ISO/IEC 27001:2022 Annex A 7.9
 
-* ISO/IEC 27001:2022 Annex A 7.9
+* ISO/IEC 27001:2022 Annex A 7.10
 
 * ISO/IEC 27001:2022 Annex A 8.1
 

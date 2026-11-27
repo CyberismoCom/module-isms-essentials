@@ -111,7 +111,7 @@ policyCheckFailure(
     Control,
     "Internal control",
     "No AI tools have been recorded",
-    "The asset register of this home has no AI assets. Record each AI tool in use in the register \"AI tools\", or mark this control out of scope if nobody uses AI."
+    "The register \"AI tools\" of this home has no AI tools. Record each AI tool in use, or mark this control out of scope if nobody uses AI."
 ) :-
     ismsa_checkedLibraryControl(Control, "ismsa_control_manage-ai-tools", Home),
     not ismsa_aiAssetInHome(_, Home).

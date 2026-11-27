@@ -1,0 +1,14 @@
+{
+    "rank": "0|e",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-27T10:04:39.024Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "title": "Article 50: Transparency obligations",
+    "templateCardKey": "ismsa_kkov86cg",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_aiact_art-50",
+    "ismsa/fieldTypes/requirementOrigin": "EU AI Act (Regulation (EU) 2024/1689)",
+    "base/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-27T10:04:39.032Z"
+}

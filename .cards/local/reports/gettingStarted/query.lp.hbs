@@ -143,11 +143,11 @@ resultField(result, "anyStep", "yes", "shortText") :-
     ismsa_gsShown(_, _).
 
 % The first steps set up the home itself: its owner, the answers about the libraries, and the
-% libraries that the answers require.
+% libraries that the user chose with the answers.
 
 ismsa_gsHomeStep(1, "Set the owner of the home, in the section \"About this home\"").
 ismsa_gsHomeStep(2, "Answer the questions in the section \"Libraries\"").
-ismsa_gsHomeStep(3, "Add the libraries that the answers require").
+ismsa_gsHomeStep(3, "Add the libraries that you chose").
 
 ismsa_gsHomeStepDone(1) :-
     ismsa_gsHome(Home),

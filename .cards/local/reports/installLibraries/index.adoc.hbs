@@ -1,12 +1,12 @@
 {{#each results}}
 {{#if this.anyRequired}}
-*Libraries that the home needs*
+*Libraries that you chose*
 
 {{#each this.required}}
 {{#if this.added}}
-* [x] *{{this.title}}*: added. Needed because {{#each this.reasons}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.
+* [x] *{{this.title}}*: added. Chosen because {{#each this.reasons}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.
 {{else}}
-* [ ] *{{this.title}}*: {{#if this.partly}}partly added{{else}}not added yet{{/if}}. Needed because {{#each this.reasons}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.
+* [ ] *{{this.title}}*: {{#if this.partly}}partly added{{else}}not added yet{{/if}}. Chosen because {{#each this.reasons}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.
 {{#each this.parts}}
 ** {{this.kindText}} the xref:{{this.targetKey}}.adoc[{{this.targetTitle}}].
 +
@@ -21,7 +21,7 @@
 
 {{/if}}
 {{#if this.anyNotNeeded}}
-*Libraries that the home does not need*
+*Libraries that you did not choose*
 
 {{#each this.notNeeded}}
 * *{{this.title}}*: {{this.reason}}{{#if this.inHome}} Some of its content is already in the home. Remove it, or keep it if you need it.{{/if}}
