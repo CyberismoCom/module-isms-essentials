@@ -203,3 +203,14 @@ The organisation exercises the incident response at least once a year, and revie
 * Cyber Resilience Act (Regulation (EU) 2024/2847), Article 14: reporting obligations of manufacturers
 * GDPR (Regulation (EU) 2016/679), Articles 33 and 34
 * ISO/IEC 27001:2022, clause 7.4 and Annex A 5.24 to 5.28, 6.8, and 8.15
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

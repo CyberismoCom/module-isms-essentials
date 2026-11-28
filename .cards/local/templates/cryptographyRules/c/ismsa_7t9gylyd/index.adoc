@@ -62,3 +62,12 @@ The owner reviews these rules at least once a year, and when a new version of AC
 . checks from the CBOMs that no legacy mechanism in use has passed its ACM deadline.
 
 The basic security practices review checks once a year that these rules are followed.
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

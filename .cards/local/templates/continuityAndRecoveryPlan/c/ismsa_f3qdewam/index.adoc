@@ -25,3 +25,14 @@ This plan defines how the organisation continues its critical operations during 
 == Recovery procedures
 
 #TODO: List the recovery procedures, or link to them.#
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

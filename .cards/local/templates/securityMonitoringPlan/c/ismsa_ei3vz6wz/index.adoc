@@ -21,3 +21,14 @@ This plan defines how the organisation detects security events in the services a
 == Protection of logs
 
 #TODO: Describe how the logs are protected against change and unauthorised access, and how the clocks of the systems are synchronised.#
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
