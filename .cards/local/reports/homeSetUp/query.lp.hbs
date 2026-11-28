@@ -1,0 +1,141 @@
+% The set-up of a home card, as one checklist with the action of each step in place (E10, set-up
+% in place, 2026-11-26). The steps and the next library part are in ismsa/calculations/homeSteps,
+% and the answers in ismsa/calculations/libraryChoice.
+
+ismsa_hsHome({{cardKey}}) :-
+    ismsa_newHome({{cardKey}}).
+
+result(result).
+
+resultField(result, "setUp", "yes", "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_homeSetUp(Home).
+
+resultField(result, "doneCount", N, "integer") :-
+    ismsa_hsHome(Home),
+    N = #count { S : ismsa_homeSetUpStepDone(Home, S) }.
+
+resultField(result, "stepCount", N, "integer") :-
+    ismsa_hsHome(_),
+    N = #count { S : ismsa_homeSetUpStep(S, _) }.
+
+% One flag for each step that is done
+
+ismsa_hsDoneFlag(1, "nameDone").
+ismsa_hsDoneFlag(2, "scopeDone").
+ismsa_hsDoneFlag(3, "ownerDone").
+ismsa_hsDoneFlag(4, "answersDone").
+ismsa_hsDoneFlag(5, "librariesDone").
+
+resultField(result, Flag, "yes", "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_hsDoneFlag(Step, Flag),
+    ismsa_homeSetUpStepDone(Home, Step).
+
+% The questions, with short texts. The section "Libraries" of the home card has the long texts
+% and the effect of each answer.
+%
+% ismsa_hsQuestion(Rank, Question, Label, Text)
+
+ismsa_hsQuestion(1, "cra", "CRA", "Must your products meet the EU Cyber Resilience Act (CRA)?").
+ismsa_hsQuestion(2, "nis2", "NIS2", "Does NIS2 apply to you, or do you want to follow it, for example because customers require it?").
+ismsa_hsQuestion(3, "aiUse", "AI", "Do the people in the scope use AI tools or AI features in their work (EU AI Act)?").
+ismsa_hsQuestion(4, "centralWork", "central work", "Do you do the central security work in this home: security roles, vulnerability reports, and incident notifications?").
+ismsa_hsQuestion(5, "fullIsms", "ISMS", "Do you want an ISMS in this home, as a foundation for ISO/IEC 27001?").
+ismsa_hsQuestion(6, "assetRisks", "asset risks", "Do you manage the risks of your assets in this home?").
+ismsa_hsQuestion(7, "ownServices", "own services", "Do you manage the security of your own IT or cloud services in this home?").
+
+childResultCollection(result, "questions").
+
+childResult(result, ("question", Q), "questions") :-
+    ismsa_hsHome(_),
+    ismsa_hsQuestion(_, Q, _, _).
+
+resultField(("question", Q), "rank", N, "integer") :-
+    ismsa_hsHome(_),
+    ismsa_hsQuestion(N, Q, _, _).
+
+resultField(("question", Q), "label", Label, "shortText") :-
+    ismsa_hsHome(_),
+    ismsa_hsQuestion(_, Q, Label, _).
+
+resultField(("question", Q), "text", Text, "shortText") :-
+    ismsa_hsHome(_),
+    ismsa_hsQuestion(_, Q, _, Text).
+
+resultField(("question", Q), "field", Field, "shortText") :-
+    ismsa_hsHome(_),
+    ismsa_hsQuestion(_, Q, _, _),
+    ismsa_homeQuestion(Q, Field).
+
+resultField(("question", Q), "included", Text, "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_questionIncluded(Home, Q, Text).
+
+resultField(("question", Q), "recommended", "yes", "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_answerIsDefault(Home, Q).
+
+% One answer text for each question (ismsa_homeShownAnswer/3 in ismsa/calculations/homeSteps)
+
+resultField(("question", Q), "answer", Text, "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_homeShownAnswer(Home, Q, Text).
+
+% The libraries that the answers need, and the next part to add
+
+childResultCollection(result, "libraries").
+
+childResult(result, ("library", L), "libraries") :-
+    ismsa_hsHome(Home),
+    ismsa_libraryRequired(Home, L).
+
+resultField(("library", L), "title", Title, "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_libraryRequired(Home, L),
+    ismsa_choiceLibrary(L, Title).
+
+resultField(("library", L), "rank", Rank, "integer") :-
+    ismsa_hsHome(Home),
+    ismsa_libraryRequired(Home, L),
+    ismsa_libraryRank(L, Rank).
+
+resultField(("library", L), "added", "yes", "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_libraryRequired(Home, L),
+    ismsa_libraryAdded(Home, L).
+
+resultField(result, "libraryCount", N, "integer") :-
+    ismsa_hsHome(Home),
+    N = #count { L : ismsa_libraryRequired(Home, L) }.
+
+resultField(result, "oneLibrary", "yes", "shortText") :-
+    ismsa_hsHome(Home),
+    1 = #count { L : ismsa_libraryRequired(Home, L) }.
+
+resultField(result, "noLibraries", "yes", "shortText") :-
+    ismsa_hsHome(Home),
+    not ismsa_libraryRequired(Home, _).
+
+resultField(result, "partsLeft", N, "integer") :-
+    ismsa_hsHome(Home),
+    ismsa_homeLibraryPartsLeft(Home, N).
+
+resultField(result, "onePartLeft", "yes", "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_homeLibraryPartsLeft(Home, 1).
+
+resultField(result, "nextTemplate", Template, "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_homeNextLibraryPart(Home, Template, _, _).
+
+resultField(result, "nextLabel", Label, "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_homeNextLibraryPart(Home, _, Label, _).
+
+resultField(result, "nextTarget", Target, "shortText") :-
+    ismsa_hsHome(Home),
+    ismsa_homeNextLibraryPart(Home, _, _, Target).
+
+order(2, "questions", 1, "rank", "ASC").
+order(2, "libraries", 1, "rank", "ASC").

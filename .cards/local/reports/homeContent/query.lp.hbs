@@ -1,0 +1,7 @@
+% The home card has two views (E10-D14): the set-up view until the home is set up, and then the
+% dashboard view. ismsa_homeSetUp/1 is in ismsa/calculations/homeSteps.
+
+result(result).
+
+resultField(result, "setUp", "yes", "shortText") :-
+    ismsa_homeSetUp({{cardKey}}).

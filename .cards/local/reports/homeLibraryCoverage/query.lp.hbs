@@ -1,0 +1,25 @@
+% What each library of the home covers. The facts are in ismsa/calculations/homeLibraries.
+
+result(result).
+
+% What each library covers
+
+childResult(result, ("coverage", Library), "coverage") :-
+    ismsa_choiceLibrary(Library, _),
+    ismsa_libraryCoverage(Library, _, _).
+
+resultField(("coverage", Library), "title", Title, "shortText") :-
+    ismsa_choiceLibrary(Library, Title),
+    ismsa_libraryCoverage(Library, _, _).
+
+resultField(("coverage", Library), "covers", Covers, "shortText") :-
+    ismsa_libraryCoverage(Library, Covers, _).
+
+resultField(("coverage", Library), "notCovered", NotCovered, "shortText") :-
+    ismsa_libraryCoverage(Library, _, NotCovered).
+
+resultField(("coverage", Library), "rank", Rank, "integer") :-
+    ismsa_libraryCoverage(Library, _, _),
+    ismsa_libraryRank(Library, Rank).
+
+order(2, "coverage", 1, "rank", "ASC").

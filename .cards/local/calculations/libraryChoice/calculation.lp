@@ -134,6 +134,30 @@ ismsa_questionRecommended(Home, Question, Reason) :-
     ismsa_frameworkRecommends(Framework, Question, Reason),
     not ismsa_questionIncluded(Home, Question, _).
 
+% A recommended answer is the default answer (E10-D17, 2026-11-25). The four questions about the
+% work of the home are calculated fields that the user can override (enableOverride in
+% ismsa/cardTypes/moduleHome). The answer that the user gives is the override, and it always
+% wins. A question that no framework recommends has no default, and the user answers it. A
+% "yes" only shows the buttons of the libraries, so a wrong default adds nothing by itself.
+
+ismsa_defaultQuestion("centralWork").
+ismsa_defaultQuestion("fullIsms").
+ismsa_defaultQuestion("assetRisks").
+ismsa_defaultQuestion("ownServices").
+
+fieldCalculated(Home, Field, "yes") :-
+    ismsa_defaultQuestion(Question),
+    ismsa_homeQuestion(Question, Field),
+    ismsa_questionRecommended(Home, Question, _).
+
+% The answer is the default when the user has not answered the question.
+
+ismsa_answerIsDefault(Home, Question) :-
+    ismsa_defaultQuestion(Question),
+    ismsa_homeQuestion(Question, Field),
+    ismsa_questionRecommended(Home, Question, _),
+    not fieldOverride(Home, Field, _).
+
 % A "no" against a recommendation. The home card shows it, and the requirements show the gap.
 
 ismsa_answerAgainstRecommendation(Home, Question) :-

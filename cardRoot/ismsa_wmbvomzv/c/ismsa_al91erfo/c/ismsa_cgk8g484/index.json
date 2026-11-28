@@ -1,0 +1,18 @@
+{
+    "rank": "0|j",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-26T08:51:12.790Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/moduleHome",
+    "title": "Test home L9: recommended answers",
+    "templateCardKey": "ismsa_xtkwa8qe",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": "ismsa_home",
+    "lastUpdated": "2026-11-26T08:51:12.791Z",
+    "ismsa/fieldTypes/homeNis2": "yes",
+    "ismsa/fieldTypes/homeCra": "no",
+    "ismsa/fieldTypes/homeAiUse": "no",
+    "base/fieldTypes/owner": "home-l9@example.com",
+    "ismsa/fieldTypes/homeScopeDescription": "A test home for the recommended answers."
+}

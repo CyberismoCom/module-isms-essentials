@@ -1,0 +1,13 @@
+{{#each results}}
+[cols="3,6,6"]
+|===
+| Library | Covers | Does not cover
+
+{{#each this.coverage}}
+| {{this.title}}
+| {{this.covers}}
+| {{this.notCovered}}
+
+{{/each}}
+|===
+{{/each}}

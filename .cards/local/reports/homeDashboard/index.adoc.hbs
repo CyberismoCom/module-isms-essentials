@@ -1,0 +1,28 @@
+{{#each results}}
+{{#if this.setUp}}
+{{#if this.tiles}}
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "title": "Progress",
+  "legend": "{{#if this.anyStep}}Controls that are OK or out of scope, in each area. Click a tile to open the next control.{{else}}Requirements that are OK, of the requirements in scope. Click the tile to open the requirements.{{/if}}",
+  "tiles": [{{#each this.tiles}}{"value": {{this.value}}, "label": "{{{jsonEscape this.label}}}", "cardKey": "{{this.cardKey}}"}{{#unless @last}}, {{/unless}}{{/each}}]
+{{/report}}
+
+{{/if}}
+{{#if this.anyStep}}
+{{#if this.next}}
+{{#report}}
+  "name": "base/reports/stepsWidget",
+  "title": "Your next steps",
+  "legend": "{{#if this.oneLeft}}One step is left.{{else}}{{this.remaining}} steps are left.{{/if}} Click a step to open its control. The section \"All steps\" below lists every step.",
+  "nextLabel": "next",
+  "steps": [{{#each this.next}}{"label": "{{{jsonEscape this.label}}}", "status": "{{this.status}}", "cardKey": "{{this.cardKey}}"}{{#unless @last}}, {{/unless}}{{/each}}]
+{{/report}}
+{{else}}
+All steps are done. Keep the controls OK: the section "Owners and status" below shows what needs attention.
+{{/if}}
+{{else}}
+The home has no controls yet. Add a library in the section "Libraries" below.
+{{/if}}
+{{/if}}
+{{/each}}

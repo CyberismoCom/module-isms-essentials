@@ -43,8 +43,10 @@ field(X, "base/fieldTypes/progress", (100 * (Ok + NotRequired) + 95 * ToBeVerifi
         not hiddenInTreeView(Control)
     }.
 
+    % A register of a new home with no content shows no percentage (E10 P2, E13 B10).
     field(X, "base/fieldTypes/progress", 0) :-
     field(X, "ismsa/fieldTypes/progress", "control-progress"),
+    not ismsa_inNewHome(X),
     Total = #count {
         card(Control):
         base_projectCardType(Control, "ismsa/cardTypes/control"),

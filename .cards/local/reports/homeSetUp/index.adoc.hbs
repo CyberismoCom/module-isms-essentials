@@ -1,0 +1,53 @@
+{{#each results}}
+{{#unless this.setUp}}
+*Set up the home* ({{this.doneCount}} of {{this.stepCount}} done)
+
+[.steps]
+{{#if this.nameDone}}* [x]{{else}}* [ ]{{/if}} *Name:* {{#field}}"field": "title", "display": "inline", "showLabel": false{{/field}}{{#unless this.nameDone}} +
+Click the title and write the scope, for example "ISMS home for Example Ltd" or "ISMS home for the payments team".{{/unless}}
+{{#if this.scopeDone}}* [x]{{else}}* [ ]{{/if}} *Scope:* {{#field}}"field": "ismsa/fieldTypes/homeScopeDescription", "display": "inline", "showLabel": false{{/field}}{{#unless this.scopeDone}} +
+In one or two sentences: what the home covers, and what it does not cover.{{/unless}}
+{{#if this.ownerDone}}* [x]{{else}}* [ ]{{/if}} *Owner:* {{#field}}"field": "base/fieldTypes/owner", "display": "inline", "showLabel": false{{/field}}{{#unless this.ownerDone}} +
+The registers, controls, and records of the home get this owner.{{/unless}}
+{{#if this.answersDone}}
+* [x] *Answers:* {{#each this.questions}}{{this.label}}: {{this.answer}}{{#unless @last}}, {{/unless}}{{/each}}.
++
+.Change the answers
+[%collapsible]
+======
+{{#each this.questions}}
+* {{this.text}} {{#if this.included}}{{this.included}}{{else}}{{#field}}"field": "{{this.field}}", "display": "inline", "showLabel": false{{/field}}{{#if this.recommended}} (recommended){{/if}}{{/if}}
+{{/each}}
+======
+{{else}}
+* [ ] *Answer the questions.* The answers decide which libraries the home offers. A "yes" adds nothing by itself. The first three questions are about what applies to you. The answers about the CRA and NIS2 give the four questions about the work of the home a recommended answer.
+{{#each this.questions}}
+** {{this.text}} {{#if this.included}}{{this.included}}{{else}}{{#field}}"field": "{{this.field}}", "display": "inline", "showLabel": false{{/field}}{{#if this.recommended}} (recommended){{/if}}{{/if}}
+{{/each}}
+{{/if}}
+{{#if this.answersDone}}
+{{#if this.noLibraries}}
+* [x] *Libraries:* you chose no libraries.
+{{else}}
+{{#if this.librariesDone}}
+* [x] *Libraries:* {{#if this.oneLibrary}}added.{{else}}all {{this.libraryCount}} added.{{/if}}
+{{else}}
+* [ ] *Add the libraries.* {{#if this.oneLibrary}}You chose one library.{{else}}You chose {{this.libraryCount}} libraries.{{/if}} {{#if this.onePartLeft}}One click is left.{{else}}{{this.partsLeft}} clicks are left.{{/if}} Each click adds one part of a library.
+{{#if this.nextTemplate}}
++
+{{#createCards}}
+  "template": "{{this.nextTemplate}}",
+  "buttonLabel": "{{this.nextLabel}}",
+  "cardKey": "{{this.nextTarget}}"
+{{/createCards}}
+{{/if}}
+{{#each this.libraries}}
+** {{#if this.added}}[x]{{else}}[ ]{{/if}} {{this.title}}
+{{/each}}
+{{/if}}
+{{/if}}
+{{else}}
+* [ ] *Add the libraries.* This step opens when the questions are answered.
+{{/if}}
+{{/unless}}
+{{/each}}

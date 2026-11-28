@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/homeSetUp",
+    "displayName": "Set-up of the ISMS home",
+    "description": "The set-up of a new ISMS home as one checklist. Each step has its action in place: the title, the scope description, the owner, the questions about the libraries, and a button for the next part of the libraries. The steps are in ismsa/calculations/homeSteps",
+    "category": "Central controls"
+}

@@ -3,6 +3,10 @@
 
 result(result).
 
+{{#if collapsed}}
+resultField(result, "collapsed", "yes", "shortText").
+{{/if}}
+
 resultField(result, "complete", "yes", "shortText") :-
     ismsa_libraryChoiceComplete({{cardKey}}).
 
@@ -34,6 +38,17 @@ resultField(result, Field, "yes", "shortText") :-
     ismsa_hlsCollection(Question, _, Field),
     ismsa_answerAgainstRecommendation({{cardKey}}, Question).
 
+% An answer that the user has not given is the recommended answer (E10-D17)
+
+ismsa_hlsDefaultFlag("centralWork", "defaultCentralWork").
+ismsa_hlsDefaultFlag("fullIsms", "defaultFullIsms").
+ismsa_hlsDefaultFlag("assetRisks", "defaultAssetRisks").
+ismsa_hlsDefaultFlag("ownServices", "defaultOwnServices").
+
+resultField(result, Flag, "yes", "shortText") :-
+    ismsa_hlsDefaultFlag(Question, Flag),
+    ismsa_answerIsDefault({{cardKey}}, Question).
+
 % A question that another "yes" already covers, for example the asset risks in the ISMS
 
 resultField(result, "assetRisksIncluded", Text, "shortText") :-
@@ -50,25 +65,3 @@ childResult(result, ("framework", Library), Collection) :-
 
 resultField(("framework", Library), "title", Title, "shortText") :-
     ismsa_frameworkLibrary(_, Library, Title).
-
-% What each library covers
-
-childResult(result, ("coverage", Library), "coverage") :-
-    ismsa_choiceLibrary(Library, _),
-    ismsa_libraryCoverage(Library, _, _).
-
-resultField(("coverage", Library), "title", Title, "shortText") :-
-    ismsa_choiceLibrary(Library, Title),
-    ismsa_libraryCoverage(Library, _, _).
-
-resultField(("coverage", Library), "covers", Covers, "shortText") :-
-    ismsa_libraryCoverage(Library, Covers, _).
-
-resultField(("coverage", Library), "notCovered", NotCovered, "shortText") :-
-    ismsa_libraryCoverage(Library, _, NotCovered).
-
-resultField(("coverage", Library), "rank", Rank, "integer") :-
-    ismsa_libraryCoverage(Library, _, _),
-    ismsa_libraryRank(Library, Rank).
-
-order(2, "coverage", 1, "rank", "ASC").

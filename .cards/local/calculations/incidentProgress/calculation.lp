@@ -175,8 +175,10 @@ field(X, "base/fieldTypes/progress", ((100 * OkNearMiss) / TotalNearMiss)) :-
         not hiddenInTreeView(NearMiss)
     }.
 
+ % A register of a new home with no content shows no percentage (E10 P2, E13 B10).
  field(X, "base/fieldTypes/progress", 0) :-
      field(X, "ismsa/fieldTypes/progress", "incident-progress"),
+     not ismsa_inNewHome(X),
      Total = #count {
          card(Incident):
          base_projectCardType(Incident, "ismsa/cardTypes/incident"),

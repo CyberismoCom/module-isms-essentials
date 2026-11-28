@@ -79,8 +79,10 @@ field(X, "base/fieldTypes/progress", (100 * (ClosedAsAccepted + ClosedAsTransfer
         not hiddenInTreeView(Risk)
     }.
 
+% A register of a new home with no content shows no percentage (E10 P2, E13 B10).
 field(X, "base/fieldTypes/progress", 0) :-
     field(X, "ismsa/fieldTypes/progress", "risk-progress"),
+    not ismsa_inNewHome(X),
     ismsa_closestHome(X, Home),
     Total = #count {
         card(Risk):
