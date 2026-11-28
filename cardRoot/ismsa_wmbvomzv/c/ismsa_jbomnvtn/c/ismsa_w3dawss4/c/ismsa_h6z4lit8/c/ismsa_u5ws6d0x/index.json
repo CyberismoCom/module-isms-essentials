@@ -1,0 +1,12 @@
+{
+    "title": "A5: Protect records, out of scope",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "Out of scope",
+    "rank": "0|f",
+    "links": [],
+    "lastUpdated": "2026-11-17T12:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_control_protect-records",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/justification": "Test fixture: out of scope with a justification."
+}

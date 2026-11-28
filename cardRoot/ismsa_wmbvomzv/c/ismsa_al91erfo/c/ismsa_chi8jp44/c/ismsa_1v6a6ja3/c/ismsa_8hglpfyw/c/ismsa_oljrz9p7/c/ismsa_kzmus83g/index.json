@@ -1,0 +1,17 @@
+{
+    "rank": "0|d",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-25T20:44:09.748Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/aiAsset",
+    "title": "AI tool for a prohibited use",
+    "templateCardKey": "ismsa_imzdy7ei",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-25T20:44:09.751Z",
+    "ismsa/fieldTypes/assetAiAllowedInformation": "none",
+    "ismsa/fieldTypes/assetAiTrainingDataUsage": "unknown",
+    "ismsa/fieldTypes/assetAiRiskCategory": "unacceptable",
+    "ismsa/fieldTypes/assetAiHumanOversight": "required",
+    "ismsa/fieldTypes/assetCriticalityForOperations": "low",
+    "ismsa/fieldTypes/assetRiskEvaluationNeeded": "no"
+}

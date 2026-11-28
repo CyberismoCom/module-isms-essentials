@@ -1,0 +1,16 @@
+{
+    "rank": "0|c",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-25T20:43:57.756Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Manage the AI tools in use",
+    "templateCardKey": "ismsa_y6eehk5x",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "may",
+    "base/fieldTypes/identifier": "ismsa_control_manage-ai-tools",
+    "lastUpdated": "2026-11-25T20:43:58.097Z",
+    "lastTransitioned": "2026-11-25T20:43:58.096Z"
+}

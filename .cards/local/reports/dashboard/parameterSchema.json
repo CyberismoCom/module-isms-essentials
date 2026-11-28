@@ -11,8 +11,14 @@
     "cardKey": {
       "description": "Used to override the default cardKey, which is the cardKey of the card, in which the report macro is used",
       "type": "string"
+    },
+    "onlyWithContent": {
+      "description": "Show only the registers that have content: a card under them that is not a register",
+      "type": "boolean"
     }
   },
   "additionalProperties": false,
-  "required": ["name"]
+  "required": [
+    "name"
+  ]
 }

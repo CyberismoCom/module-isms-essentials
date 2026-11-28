@@ -14,6 +14,42 @@
         {
             "name": "base/fieldTypes/informationClassification",
             "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/identifier",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeScopeDescription",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeCentralWork",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeCra",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeFullIsms",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeAssetRisks",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeOwnServices",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeNis2",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/homeAiUse",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [
@@ -21,6 +57,8 @@
         "base/fieldTypes/informationClassification"
     ],
     "displayName": "Module home",
-    "optionallyVisibleFields": [],
+    "optionallyVisibleFields": [
+        "base/fieldTypes/identifier"
+    ],
     "description": "Start page for an ISMS project"
 }

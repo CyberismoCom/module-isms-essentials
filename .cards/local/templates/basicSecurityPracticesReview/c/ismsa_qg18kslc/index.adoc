@@ -1,0 +1,92 @@
+== Scope
+
+#TODO: List the systems and services that were checked. Include at least the identity provider, the email, and the critical systems in the asset register.#
+
+== Checklist
+
+The checklist follows the basic hygiene practices that Traficom recommends for NIS2 entities (11.1 to 11.13). For each practice, record if it is in place, the evidence, and the gaps.
+
+[cols="3,5,1,3",options="header"]
+|===
+| Practice | What to check | In place | Evidence or gaps
+
+| Multi-factor authentication (NIS2 21(2)(j))
+| Multi-factor authentication is on for remote access, for administrators, and for the services on the internet.
+| #TODO#
+| #TODO#
+
+| Identity and access management (11.6)
+| Each person has their own account. The accounts of the people who leave are removed. The access rights review covers the critical systems.
+| #TODO#
+| #TODO#
+
+| Administrator accounts (11.7)
+| Administrator rights are in separate accounts, only the people who need them have them, and they are not used for email or browsing.
+| #TODO#
+| #TODO#
+
+| Updates (11.9)
+| Systems and devices get updates regularly. Critical updates are installed within days, as the process for managing vulnerabilities and updates says.
+| #TODO#
+| #TODO#
+
+| Secure configuration (11.10)
+| Services and devices are configured securely. Default passwords are changed, and unused services are off.
+| #TODO#
+| #TODO#
+
+| Malware protection (11.5)
+| Devices and email are protected against malware.
+| #TODO#
+| #TODO#
+
+| Network security and segmentation (11.3, 11.4)
+| The networks are protected. The critical and vulnerable systems are separated from the other networks.
+| #TODO#
+| #TODO#
+
+| Logging (11.13)
+| Logging is on for the critical activities, and the logs are protected. See the security monitoring plan.
+| #TODO#
+| #TODO#
+
+| Backups (11.11)
+| The critical services and information are backed up, and at least one copy cannot be changed or deleted by an attacker. See the business continuity and recovery plan.
+| #TODO#
+| #TODO#
+
+| Encryption (11.8, NIS2 21(2)(h))
+| Data is encrypted in transit and at rest, as the cryptography rules say.
+| #TODO#
+| #TODO#
+
+| Secured communications (NIS2 21(2)(j))
+| Voice, video, and text communications use secured services. The emergency communications of the business continuity plan work when the normal systems are down.
+| #TODO#
+| #TODO#
+
+| Use of AI tools
+| Only the approved AI tools of the AI policy are used for work. The AI agents and integrations, for example MCP servers, have only the access that their task needs. Secrets, such as passwords and API keys, are not given in prompts.
+| #TODO#
+| #TODO#
+
+| Training (11.1)
+| The personnel and the relevant partners know the basic security practices. See the training and awareness plan.
+| #TODO#
+| #TODO#
+|===
+
+== Findings
+
+#TODO: Record the gaps. Create a task for each gap that was not fixed during the review.#
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Set the date of the review in the *Last reviewed* field. Mark the review as *Passed* when the practices are in place or each gap has a task. Otherwise, mark it as *Failed*.

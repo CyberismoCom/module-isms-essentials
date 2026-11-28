@@ -1,0 +1,45 @@
+{{#each results}}
+The organisation knows which authorities it must contact, when, and how. It keeps the contact details up to date, so that it can report in time and answer the requests of authorities.
+
+== How to decide if this control is required
+
+This control is always required. Every organisation must be able to contact authorities, for example the data protection authority about a personal data breach, or the police about a crime.
+
+== How to implement
+
+. List the authorities that the organisation must or can contact. For example: the national CSIRT, the competent authority for NIS2, the data protection authority, the market surveillance authorities of the products, and the police.
+. For each authority, record when to contact it, the reporting channel or the contact details, and who in the organisation contacts it.
+. Record the reporting deadlines that apply. For example, the GDPR (Regulation (EU) 2016/679, Article 33) requires that a personal data breach is notified to the supervisory authority without undue delay and, where feasible, within 72 hours.
+. Make sure that the people in the incident management process can find the list during an incident, also when the normal systems are not available.
+. Check the contact details at least once a year.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_authority-contacts",
+  "template": "ismsa/templates/authorityContacts",
+  "buttonLabel": "Create the authority contacts"
+{{/report}}
+
+Check that the list covers the regulations in the compliance register, that the contact details are up to date, and that the people who contact authorities know where the list is.
+
+{{#if this.craGuidance}}
+== EU Cyber Resilience Act
+
+Under the CRA (Regulation (EU) 2024/2847), the manufacturer of a product with digital elements sends its notifications through the single reporting platform to ENISA and to the CSIRT designated as coordinator in the Member State where it has its main establishment in the EU (Articles 14 and 16). Add the single reporting platform and this CSIRT to the list.
+
+Also add the market surveillance authorities of the Member States where the products are placed on the market. On a reasoned request, the manufacturer must give them the information and the documentation that show the conformity of the product (Article 13).
+{{/if}}
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 Annex A 5.5
+* NIS2 (Directive (EU) 2022/2555) Article 23
+* GDPR (Regulation (EU) 2016/679) Article 33
+
+{{/each}}

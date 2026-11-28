@@ -1,0 +1,44 @@
+{{#each results}}
+Each AI tool is approved and recorded as an AI asset before it is used for work. The organisation knows what each tool may get, and checks every year that no use of AI is prohibited or high risk without approval.
+
+== How to decide if this control is required
+
+This control is required when the people of the organisation use AI tools in their work. The EU AI Act applies to every organisation that uses AI systems. It prohibits some practices (Article 5) and sets obligations for the deployers of high-risk AI systems (Article 26).
+
+== How to implement
+
+Record each AI tool in the register "AI tools", as an AI asset. The register comes with the AI use basics library. It is under the supporting assets when the home has an asset register, and on the home card when it has none. The owner of the tool assesses it: the information allowed, the training data use, the EU AI Act risk category, the human oversight, and the data categories. The AI responsible approves the tool, and the owner activates the card. A high-risk use needs the approval of the management before it starts.
+
+Keep the register light. Record the AI features of one service as one AI asset, for example one card for the AI features of the office suite. Make a separate card only when a feature gets other information or has another risk category. An AI asset needs a risk card only when its "Risk evaluation needed" is "Yes". A high-risk use always needs one. The risk card of an AI asset lists the typical threats of AI tools.
+
+A person who wants a new AI tool adds it to the register as a draft, or asks the AI responsible to add it. The tool is approved when its card is active.
+
+Give the AI agents and integrations, for example MCP servers, only the access that their task needs. A person approves the actions that cannot be undone.
+
+Review the AI tools once a year. Find the tools that are not in the register: ask the teams, and check the admin consoles of the main services and the browser extensions. Check the terms of use again.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_ai-tools",
+  "template": "ismsa/templates/aiToolReview",
+  "buttonLabel": "Create a review of the AI tools"
+{{/report}}
+
+Check that the review of the year has passed.
+
+The control also checks the AI tools of this home. The control is not OK while the home has no AI tools, while an AI tool is not assessed, or while a prohibited use is active.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* EU AI Act (Regulation (EU) 2024/1689) Articles 5 and 26
+* ISO/IEC 42001:2023 Annex A.4 and A.9
+* ISO/IEC 27001:2022 Annex A 5.9 and 5.23
+* GDPR (Regulation (EU) 2016/679) Articles 30 and 35
+
+{{/each}}

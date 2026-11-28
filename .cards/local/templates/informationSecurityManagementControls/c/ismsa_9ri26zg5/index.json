@@ -1,0 +1,13 @@
+{
+    "title": "Measure the effectiveness of security",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|g",
+    "lastUpdated": "2026-11-24T10:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "november",
+    "base/fieldTypes/identifier": "ismsa_control_measure-security-effectiveness"
+}

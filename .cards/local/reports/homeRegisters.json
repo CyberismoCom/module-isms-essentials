@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/homeRegisters",
+    "displayName": "Registers of an ISMS home",
+    "description": "Table of the cards directly under an ISMS home, with an owner that the user can change in the table",
+    "category": "Central controls"
+}

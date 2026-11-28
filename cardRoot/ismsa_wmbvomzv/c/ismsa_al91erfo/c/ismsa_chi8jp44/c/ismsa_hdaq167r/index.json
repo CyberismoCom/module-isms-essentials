@@ -1,0 +1,15 @@
+{
+    "rank": "0|f",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-25T20:43:56.279Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/riskRegister",
+    "title": "Risk register",
+    "templateCardKey": "ismsa_jfkltbkn",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/acceptableRiskLevel": "low",
+    "ismsa/fieldTypes/progress": "risk-progress",
+    "base/fieldTypes/identifier": "ismsa_register_risks",
+    "lastUpdated": "2026-11-25T20:43:56.282Z"
+}

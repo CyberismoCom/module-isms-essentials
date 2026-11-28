@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/securityOperationsRole",
+    "displayName": "Security operations responsible",
+    "description": "A role of the security operations basics library: the security operations responsible",
+    "category": "ISMS home evidence"
+}

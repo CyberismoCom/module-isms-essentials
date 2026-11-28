@@ -1,0 +1,4 @@
+{{#report}}
+  "name": "ismsa/reports/homeRegisterContent",
+  "register": "centralControls"
+{{/report}}

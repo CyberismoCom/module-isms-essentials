@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/openRequirements",
+    "displayName": "Open compliance requirements",
+    "description": "The assessed compliance requirements of a home that are open or not OK, with the reason and the libraries that bring the missing controls",
+    "category": "ISMS home libraries"
+}

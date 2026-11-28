@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/basicSecurityPracticesReview",
+    "displayName": "Basic security practices review",
+    "description": "Planned evidence of the control \"Apply basic security practices\": a yearly check of the basic security practices, based on the basic hygiene practices of Traficom",
+    "category": "ISMS home evidence"
+}

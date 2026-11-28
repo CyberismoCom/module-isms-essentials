@@ -1,0 +1,11 @@
+{
+    "title": "Development projects",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|g",
+    "lastUpdated": "2026-11-19T19:24:24.256Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "base/fieldTypes/identifier": "ismsa_register_development-projects"
+}

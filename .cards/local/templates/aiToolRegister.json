@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/aiToolRegister",
+    "displayName": "AI use basics library: AI tools",
+    "description": "A library of the ISMS home: the register of the AI tools in the supporting assets. Add it with the buttons in the section \"Libraries\" of the home card",
+    "category": "ISMS home libraries"
+}

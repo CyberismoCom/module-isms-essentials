@@ -1,0 +1,22 @@
+{
+    "rank": "0|j",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-27T10:04:21.978Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/moduleHome",
+    "title": "Test home L10 (AI use basics only)",
+    "templateCardKey": "ismsa_xtkwa8qe",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": "ismsa_home",
+    "lastUpdated": "2026-11-27T10:04:21.980Z",
+    "ismsa/fieldTypes/homeAiUse": "yes",
+    "ismsa/fieldTypes/homeCentralWork": "no",
+    "ismsa/fieldTypes/homeCra": "no",
+    "ismsa/fieldTypes/homeFullIsms": "no",
+    "ismsa/fieldTypes/homeAssetRisks": "no",
+    "ismsa/fieldTypes/homeOwnServices": "no",
+    "ismsa/fieldTypes/homeNis2": "no",
+    "ismsa/fieldTypes/homeScopeDescription": "A test home with only the AI use basics library, without the asset and risk registers.",
+    "base/fieldTypes/owner": "home-l10@example.com"
+}

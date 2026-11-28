@@ -1,0 +1,19 @@
+== Task description
+
+Review the authority contacts.
+
+[NOTE]
+.Review instructions
+====
+* Check that the list covers the regulations in the compliance register.
+* Check that the contact details and the reporting channels are up to date.
+* Check that the people who contact authorities know where the list is.
+====
+
+To review the document, set the reviewer in the *Owner* field of this card. If the document is ready to be approved, transition this task to *Closed as done*. If the document needs changes, transition this task to *Changes required*.
+
+NOTE: The reviewer cannot be the same person as the owner or the approver of the document.
+
+== Review notes
+
+#TODO: Add the review notes here.#

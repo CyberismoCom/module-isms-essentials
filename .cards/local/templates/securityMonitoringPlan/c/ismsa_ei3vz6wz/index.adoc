@@ -1,0 +1,34 @@
+== Purpose
+
+This plan defines how the organisation detects security events in the services and the IT that it runs.
+
+== Monitored systems and events
+
+[width="100%",cols="25%,35%,20%,20%",options="header"]
+|===
+|System or service |Logged and monitored events |Log retention |Monitored by
+
+|#TODO: For example, the identity provider#
+|#TODO: For example, failed and unusual sign-ins, and changes to administrator rights#
+|#TODO#
+|#TODO#
+|===
+
+== Alerts
+
+#TODO: Describe how alerts are raised, who handles them, and when an alert becomes a security event or an incident in the incident register.#
+
+== Protection of logs
+
+#TODO: Describe how the logs are protected against change and unauthorised access, and how the clocks of the systems are synchronised.#
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

@@ -1,0 +1,12 @@
+{
+    "rank": "0|e",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-25T20:43:56.280Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Supporting asset risks",
+    "templateCardKey": "ismsa_8cjyelqf",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-25T20:43:56.309Z"
+}

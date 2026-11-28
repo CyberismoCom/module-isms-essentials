@@ -1,0 +1,10 @@
+{
+    "title": "Document review - Authority contacts",
+    "cardType": "base/cardTypes/reviewTask",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-17T20:32:44.542Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365
+}

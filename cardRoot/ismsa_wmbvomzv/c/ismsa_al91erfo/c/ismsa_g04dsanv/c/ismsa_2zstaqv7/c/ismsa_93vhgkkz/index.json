@@ -1,0 +1,13 @@
+{
+    "rank": "0|g",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-19T19:28:49.325Z",
+    "links": [],
+    "cardType": "base/cardTypes/review",
+    "title": "L1 review of the risk register, draft",
+    "templateCardKey": "ismsa_dxjc8n6d",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_review_risk-register",
+    "lastUpdated": "2026-11-19T19:28:49.327Z"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "ismsa/fieldTypes/assetAiHumanOversight",
+    "displayName": "Human oversight",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "required",
+            "enumDisplayValue": "Required",
+            "enumDescription": "A person checks each result before it is used"
+        },
+        {
+            "enumValue": "recommended",
+            "enumDisplayValue": "Recommended",
+            "enumDescription": "People check the results as needed, for example by sampling"
+        },
+        {
+            "enumValue": "notRequired",
+            "enumDisplayValue": "Not required",
+            "enumDescription": "The results need no check, for example because they have no effect on decisions"
+        }
+    ],
+    "description": "How people check the results of the AI system before they use them"
+}

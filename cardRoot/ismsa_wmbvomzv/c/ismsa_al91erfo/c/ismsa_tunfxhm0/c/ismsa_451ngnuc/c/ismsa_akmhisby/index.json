@@ -1,0 +1,16 @@
+{
+    "rank": "0|q",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-23T15:56:35.986Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Plan business continuity and recovery",
+    "templateCardKey": "ismsa_28j0nsou",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "september",
+    "base/fieldTypes/identifier": "ismsa_control_continuity-and-recovery",
+    "lastUpdated": "2026-11-23T15:56:36.177Z",
+    "lastTransitioned": "2026-11-23T15:56:36.177Z"
+}

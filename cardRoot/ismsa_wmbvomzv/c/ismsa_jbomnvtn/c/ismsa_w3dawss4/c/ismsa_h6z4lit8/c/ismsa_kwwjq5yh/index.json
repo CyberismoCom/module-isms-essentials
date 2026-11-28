@@ -1,0 +1,11 @@
+{
+    "title": "A2: Notify, both pieces of planned evidence valid (one in another register)",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "In scope",
+    "rank": "0|c",
+    "links": [],
+    "lastUpdated": "2026-11-17T12:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_control_notify-about-vulnerabilities-and-incidents",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months"
+}

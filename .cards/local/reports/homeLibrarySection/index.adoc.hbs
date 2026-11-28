@@ -1,0 +1,86 @@
+{{#each results}}
+{{#if this.complete}}
+{{#if this.noneRequired}}
+.Libraries: you chose no libraries
+{{else}}
+{{#if this.oneRequired}}
+.Libraries: the library that you chose is added
+{{else}}
+.Libraries: all {{this.requiredCount}} libraries that you chose are added
+{{/if}}
+{{/if}}
+[%collapsible]
+{{else}}
+.Choose the libraries of the home
+[%collapsible%open]
+{{/if}}
+====
+Libraries add the controls, registers, and processes to the home. Answer the questions. A "yes" shows the buttons of the libraries that you chose, below the questions. Click the buttons to add the libraries. A "no" adds nothing, and it does not delete anything from the home. Click an answer to change it.
+
+*What must you comply with?*
+
+[cols="5,2,6"]
+|===
+| Question | Answer | Effect
+
+| Must the products in the scope of this home meet the EU Cyber Resilience Act (CRA)?
+| {{#field}}"field": "ismsa/fieldTypes/homeCra", "display": "inline", "showLabel": false{{/field}}
+| {{#if this.craLibraries}}Offers {{#each this.craLibraries}}{{this.title}}{{#unless @last}}, {{/unless}}{{/each}}: a checklist of the CRA requirements of the organisation. {{/if}}Recommends the central security work. Product duties are in the secure development and EU CRA modules.
+
+| Does NIS2 apply to the organisation, or do you want to follow NIS2 for another reason, for example because customers require it?
+| {{#field}}"field": "ismsa/fieldTypes/homeNis2", "display": "inline", "showLabel": false{{/field}}
+| Offers NIS2 basics: a checklist of the NIS2 requirements, linked to the controls of the home.{{#each this.nis2Libraries}} Also offers {{this.title}}.{{/each}} Recommends the four kinds of work below. Check the national law for other duties.
+
+| Do the people in the scope of this home use AI tools or AI features in their work (EU AI Act)?
+| {{#field}}"field": "ismsa/fieldTypes/homeAiUse", "display": "inline", "showLabel": false{{/field}}
+| Offers AI use basics: the AI policy, a register of the AI tools, AI literacy, and a checklist of the EU AI Act. The EU AI Act applies to every organisation that uses AI. The library works without the other libraries. Recommends asset and risk management, if you want the AI tools in an asset register with the other assets.
+|===
+
+*What do you want this home to do?*
+
+[cols="5,2,4,4"]
+|===
+| Question | Answer | A "yes" offers | Recommendation
+
+| Do you want to do the central security work in this home, for example security roles, vulnerability reports, and incident notifications?
+| {{#field}}"field": "ismsa/fieldTypes/homeCentralWork", "display": "inline", "showLabel": false{{/field}}
+| Security response and compliance basics
+| {{#if this.recCentralWork}}Yes, because {{#each this.recCentralWork}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstCentralWork}} If another ISMS does this work, check that it covers these duties.{{/if}}{{else}}-{{/if}}
+
+| Do you want an information security management system (ISMS) in this home, as a foundation for ISO/IEC 27001?
+| {{#field}}"field": "ismsa/fieldTypes/homeFullIsms", "display": "inline", "showLabel": false{{/field}}
+| Information security management basics, and asset and risk management. For certification, also add the ISO/IEC 27001 extension.
+| {{#if this.recFullIsms}}Yes, because {{#each this.recFullIsms}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstFullIsms}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
+
+| Do you want to manage the risks of your assets in this home?
+| {{#if this.assetRisksIncluded}}{{this.assetRisksIncluded}}{{else}}{{#field}}"field": "ismsa/fieldTypes/homeAssetRisks", "display": "inline", "showLabel": false{{/field}}{{/if}}
+| Asset and risk management
+| {{#if this.recAssetRisks}}Yes, because {{#each this.recAssetRisks}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstAssetRisks}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
+
+| Do you want to manage the security of your own IT or cloud services in this home?
+| {{#field}}"field": "ismsa/fieldTypes/homeOwnServices", "display": "inline", "showLabel": false{{/field}}
+| Security operations basics
+| {{#if this.recOwnServices}}Yes, because {{#each this.recOwnServices}}{{this.text}}{{#unless @last}}, and {{/unless}}{{/each}}.{{#if this.againstOwnServices}} The NIS2 requirements show what is missing.{{/if}}{{else}}-{{/if}}
+|===
+
+{{#report}}
+  "name": "ismsa/reports/installLibraries"
+{{/report}}
+
+*What each library covers*
+
+The libraries set up the work at a basic level, as the section "What this home covers" explains.
+
+[cols="3,6,6"]
+|===
+| Library | Covers | Does not cover
+
+{{#each this.coverage}}
+| {{this.title}}
+| {{this.covers}}
+| {{this.notCovered}}
+
+{{/each}}
+|===
+====
+{{/each}}

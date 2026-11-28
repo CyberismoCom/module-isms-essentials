@@ -1,0 +1,83 @@
+== Purpose
+
+This policy states how the organisation uses artificial intelligence (AI) in a safe, legal, and responsible way. It applies to all employees and contractors who use AI in their work.
+
+#TODO: If the organisation has an information security policy, state that this policy supports it. If not, remove this line.#
+
+#TODO: Describe in one or two sentences how the organisation uses AI, for example for code generation, documentation, or customer services.#
+
+== Scope
+
+This policy covers the AI tools and services that the organisation uses, and the AI features in other services. AI in the products of the organisation is covered in the secure development process.
+
+== High-level objectives
+
+* Only approved AI tools are used for work. The active AI tools in the register "AI tools" are the approved tools.
+* Each approved AI tool has a highest classification of information that it can get. People do not give a tool information above that classification.
+* Customer information is given to an AI tool only when the contract with the customer allows it.
+* Personal data is given to an AI tool only when the tool is approved for it and the processing has a legal basis.
+* The data of the organisation is not used to train AI models, unless the owner of the data approves it.
+* People check the results of AI before they use them. The person who uses AI is responsible for the result.
+* AI agents and integrations get only the access that the task needs. A person approves the actions that cannot be undone, for example sending, deleting, or publishing.
+* The organisation tells customers and other interested parties when AI has a significant role in its work or its content, and when the law or a contract requires it.
+* The organisation does not use AI for prohibited practices of the EU AI Act. High-risk use of AI needs the approval of the management before it starts.
+* #TODO: Add the other high-level objectives of the organisation.#
+
+The management takes these high-level objectives into account when it sets the security targets each year.
+
+== Commitments
+
+The management commits to:
+
+* meet the requirements that apply to the use of AI: laws, regulations, contracts, and the requirements of customers and other interested parties
+* improve the management of AI continually.
+
+== Competence
+
+Each employee and contractor who uses AI in their work gets the training that they need to use it safely (AI literacy). The training covers at least the approved tools, the information allowed in each tool, the limits of AI results, and how to report problems.
+
+#TODO: Refer to the training and awareness plan.#
+
+== New AI tools
+
+A new AI tool is approved before it is used for work. This also applies to new AI features of the services in use, and to browser extensions that use AI. To ask for a new AI tool, a person adds it to the register "AI tools" as a draft, or asks #TODO: the AI responsible, or another role# to add it. The owner of the tool assesses it. The assessment covers at least the allowed information, the use of training data, the EU AI Act risk category, the need for human oversight, and the categories of data.
+
+#TODO: Name the role that approves new AI tools, for example the AI responsible.#
+
+== Personal data
+
+When personal data is processed with an AI tool, the processing is added to the record of processing activities (GDPR Article 30). A data protection impact assessment is made before the processing starts, when the processing is likely to cause a high risk to people (GDPR Article 35). The supplier of the tool has a data processing agreement, when it processes personal data for the organisation.
+
+#TODO: Name the role that decides on the processing of personal data with AI, for example the data protection officer. If the organisation does not process personal data with AI, state it here.#
+
+== Incidents
+
+Problems with AI are reported without undue delay to #TODO: the AI responsible, or name the incident management process if the organisation has one#. Examples are information given to a wrong tool, harmful or wrong results that were used, and unexpected actions of an AI agent.
+
+== Responsibilities
+
+The management approves this policy and gives the resources for the safe use of AI. #TODO: Name the role that owns this policy and the AI assets.# Each employee and contractor follows this policy.
+
+== Communication and acknowledgement
+
+* The policy is available to all personnel in #TODO: location#.
+* Each employee and contractor reads this policy and confirms it when they start, and again after each significant change.
+
+== Compliance and exceptions
+
+#TODO: Describe how compliance is checked, for example in the yearly review of the AI tools and in audits.#
+
+#TODO: Name the role that approves exceptions.# The approver records each exception with its reason, risk, and end date.
+
+== Review
+
+The management reviews the policy at least once a year, and when the AI tools, the threats, or the regulation change significantly. After a change, personnel are informed and confirm the policy again.
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

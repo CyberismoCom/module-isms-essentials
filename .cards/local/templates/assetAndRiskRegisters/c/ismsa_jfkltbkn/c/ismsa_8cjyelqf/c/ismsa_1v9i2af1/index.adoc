@@ -1,0 +1,4 @@
+{{#report}}
+  "name": "ismsa/reports/assetAndRiskRegisterContent",
+  "register": "informationSystemRisks"
+{{/report}}

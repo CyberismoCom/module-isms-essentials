@@ -1,0 +1,12 @@
+{
+    "title": "Article 21(2)(g): Cyber hygiene and training",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|j",
+    "lastUpdated": "2026-11-19T19:26:35.329Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_nis2_art-21-2-g",
+    "ismsa/fieldTypes/requirementOrigin": "NIS2 (Directive (EU) 2022/2555)",
+    "base/fieldTypes/adoptionStep": "step2"
+}

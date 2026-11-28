@@ -1,0 +1,71 @@
+select("title").
+
+% The assessed compliance requirements of the home that are in scope and not OK yet. For each
+% one, the planned controls that are not in the home, and the library that brings each of them
+% (ismsa_plannedImplementation and ismsa_libraryControl in ismsa/calculations/homeLibraries).
+
+ismsa_orHome({{cardKey}}) :-
+    base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome").
+
+ismsa_orOpen(Requirement, Assessment) :-
+    ismsa_orHome(Home),
+    ismsa_assessedRequirementInScope(Requirement),
+    ismsa_closestHome(Requirement, Home),
+    field(Requirement, "base/fieldTypes/assessment", Assessment),
+    Assessment != "ok",
+    Assessment != "notApplicable".
+
+ismsa_orMissing(Requirement, ControlIdentifier) :-
+    ismsa_orOpen(Requirement, _),
+    field(Requirement, "base/fieldTypes/identifier", RequirementIdentifier),
+    ismsa_plannedImplementation(RequirementIdentifier, ControlIdentifier),
+    not ismsa_plannedControlInHome(Requirement, ControlIdentifier, _).
+
+result(result).
+
+childResult(result, Requirement, "requirements") :-
+    ismsa_orOpen(Requirement, _).
+
+resultField(Requirement, "explanation", Explanation, "shortText") :-
+    ismsa_orOpen(Requirement, _),
+    field(Requirement, "base/fieldTypes/assessmentExplanation", Explanation).
+
+resultField(Requirement, "assessment", "Not started", "shortText") :-
+    ismsa_orOpen(Requirement, "notStarted").
+
+resultField(Requirement, "assessment", "In progress", "shortText") :-
+    ismsa_orOpen(Requirement, "inProgress").
+
+resultField(Requirement, "assessment", "Not OK", "shortText") :-
+    ismsa_orOpen(Requirement, "notOk").
+
+resultField(Requirement, "assessment", "Open", "shortText") :-
+    ismsa_orOpen(Requirement, "open").
+
+childResult(Requirement, ("missing", Requirement, ControlIdentifier), "missing") :-
+    ismsa_orMissing(Requirement, ControlIdentifier).
+
+resultField(("missing", Requirement, ControlIdentifier), "controlTitle", Title, "shortText") :-
+    ismsa_orMissing(Requirement, ControlIdentifier),
+    ismsa_libraryControl(ControlIdentifier, Title, _).
+
+resultField(("missing", Requirement, ControlIdentifier), "library", Library, "shortText") :-
+    ismsa_orMissing(Requirement, ControlIdentifier),
+    ismsa_libraryControl(ControlIdentifier, _, Library).
+
+resultField(result, "any", "yes", "shortText") :-
+    ismsa_orOpen(_, _).
+
+% An empty compliance register and a register with no open requirements show different texts.
+
+ismsa_orRequirementCardType("ismsa/cardTypes/assessedComplianceRequirement").
+ismsa_orRequirementCardType("ismsa/cardTypes/complianceRequirement").
+
+resultField(result, "anyRequirement", "yes", "shortText") :-
+    ismsa_orHome(Home),
+    ismsa_orRequirementCardType(CardType),
+    base_projectCardType(Requirement, CardType),
+    ismsa_closestHome(Requirement, Home).
+
+order(2, "requirements", 1, "title", "ASC").
+order(3, "missing", 1, "controlTitle", "ASC").

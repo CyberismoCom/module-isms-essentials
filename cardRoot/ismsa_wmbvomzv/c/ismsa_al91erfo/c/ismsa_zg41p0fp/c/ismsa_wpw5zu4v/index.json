@@ -1,0 +1,14 @@
+{
+    "rank": "0|d",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-19T19:28:09.468Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Compliance register",
+    "templateCardKey": "ismsa_iyjq0lof",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/progress": "compliance-score",
+    "base/fieldTypes/identifier": "ismsa_register_compliance",
+    "lastUpdated": "2026-11-19T19:28:09.472Z"
+}

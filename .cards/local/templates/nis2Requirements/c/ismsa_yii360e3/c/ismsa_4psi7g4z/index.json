@@ -1,0 +1,12 @@
+{
+    "title": "Article 21(2)(j): Multi-factor authentication and secured communications",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|m",
+    "lastUpdated": "2026-11-19T19:26:37.965Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_nis2_art-21-2-j",
+    "ismsa/fieldTypes/requirementOrigin": "NIS2 (Directive (EU) 2022/2555)",
+    "base/fieldTypes/adoptionStep": "step2"
+}

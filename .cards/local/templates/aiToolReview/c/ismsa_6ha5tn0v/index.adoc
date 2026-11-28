@@ -1,0 +1,31 @@
+== Scope
+
+This review covers the AI tools in the register "AI tools" of the home, and the AI features of the other services in use.
+
+== Review
+
+* Check that each AI tool in use is in the register as an AI asset, and that the tools that are no longer used are deactivated.
+* Find the AI tools that are not in the register. Do not only ask the teams. Check the admin consoles of the main services for AI features that are turned on and for connected AI apps, for example in the identity provider and the office suite. Check the browser extensions, the invoices, and the expense claims. Add the missing tools to the register, or stop their use.
+* Check that each AI asset is assessed: the information allowed, the training data use, the EU AI Act risk category, and the human oversight.
+* Check that each AI asset that needs a risk evaluation has its risks, and that each high-risk use has one.
+* Check that each AI asset has its data categories. Check that the processing of personal data is in the record of processing activities, and that the need for a data protection impact assessment is checked (GDPR Article 35).
+* Check that no use is prohibited by Article 5 of the EU AI Act.
+* Check that each high-risk use is approved by the management, and that the deployer obligations of Article 26 are met.
+* Check the terms of use of each tool again. Check that the data of the organisation is not used for training, unless the owner of the data approved it.
+* Check that the AI agents and integrations have only the access that their task needs, and that a person approves the actions that cannot be undone.
+* Check that the AI incidents of the year are handled, and that the lessons are in the AI policy or the training.
+
+== Findings
+
+#TODO: Record the findings, and create a task for each action.#
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Set the date of the review in the *Last reviewed* field. Mark the review as *Passed* when the register is up to date and the actions are recorded. Otherwise, mark it as *Failed*.

@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlOperateSecurityMonitoring",
+    "displayName": "Control - Operate security monitoring",
+    "description": "The content of the internal control 'Operate security monitoring'",
+    "category": "ISMS home libraries"
+}

@@ -1,0 +1,9 @@
+{
+    "title": "Name of the role",
+    "cardType": "ismsa/cardTypes/securityRole",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-24T10:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal"
+}

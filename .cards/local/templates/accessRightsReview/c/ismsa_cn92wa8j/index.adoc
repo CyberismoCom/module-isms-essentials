@@ -1,0 +1,26 @@
+== Scope
+
+#TODO: List the systems that were reviewed. Include at least the identity provider and the critical systems in the asset register.#
+
+== Review
+
+* Check that each account belongs to a current employee, contractor, or approved service.
+* Check that the accounts of the people who have left or changed roles have been removed or changed.
+* Check that the administrator and other privileged rights are given only to the people who need them.
+* Check that multi-factor authentication is on for remote access and for privileged accounts.
+* Check the accounts of the AI tools, the API keys, and the permissions of the AI agents and integrations, for example MCP servers. Each has an owner, and only the access that its task needs.
+
+== Findings
+
+#TODO: Record the findings. Create a task for each change that was not made during the review.#
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Set the date of the review in the *Last reviewed* field. Mark the review as *Passed* when the access rights are correct or the changes are recorded. Otherwise, mark it as *Failed*.

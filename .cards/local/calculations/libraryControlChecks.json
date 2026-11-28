@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/calculations/libraryControlChecks",
+    "displayName": "Checks of the library controls",
+    "calculation": "calculation.lp",
+    "description": "Policy checks that make the asset and risk management controls check the content of their registers"
+}

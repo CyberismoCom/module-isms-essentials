@@ -1,0 +1,34 @@
+{{#each results}}
+The people who use AI in their work have the AI literacy that their role needs: they know the approved tools, the information allowed in each tool, the limits of AI results, and how to report problems.
+
+== How to decide if this control is required
+
+This control is required when the people of the organisation use AI tools in their work. Article 4 of the EU AI Act requires AI literacy from every organisation that uses AI systems, also without an ISMS or NIS2. So this control is separate from the control "Run security training and awareness", which is required only with an ISMS or NIS2.
+
+== How to implement
+
+Add AI literacy to the training and awareness plan of the year. Name the target groups and the training that each role needs. For example, everyone learns the AI policy and the approved tools, the developers learn the safe use of coding assistants and agents, and the AI responsible follows the regulation. Keep records of who took part.
+
+The training and awareness plan is the evidence of this control and of the control "Run security training and awareness", so the plan is written only once.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_training-and-awareness-plan",
+  "template": "ismsa/templates/trainingAndAwarenessPlan",
+  "buttonLabel": "Create the training and awareness plan"
+{{/report}}
+
+Check that the plan of the year covers AI literacy, and that the people who use AI took part in the training.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* EU AI Act (Regulation (EU) 2024/1689) Article 4
+* ISO/IEC 42001:2023 clause 7.2
+
+{{/each}}

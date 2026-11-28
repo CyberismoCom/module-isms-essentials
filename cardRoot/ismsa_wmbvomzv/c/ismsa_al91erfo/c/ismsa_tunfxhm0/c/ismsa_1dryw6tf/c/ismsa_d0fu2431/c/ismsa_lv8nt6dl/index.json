@@ -1,0 +1,12 @@
+{
+    "rank": "0|b",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-23T15:56:38.501Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Information systems",
+    "templateCardKey": "ismsa_55teopfm",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-23T15:56:38.509Z"
+}

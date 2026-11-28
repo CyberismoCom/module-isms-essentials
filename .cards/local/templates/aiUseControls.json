@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/aiUseControls",
+    "displayName": "AI use basics library: controls",
+    "description": "A library of the ISMS home: the internal controls for the safe use of AI. Add it with the buttons in the section \"Libraries\" of the home card",
+    "category": "ISMS home libraries"
+}

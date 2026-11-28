@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/cryptographyRules",
+    "displayName": "Cryptography rules",
+    "description": "How the organisation uses cryptography and encryption, based on the ECCG Agreed Cryptographic Mechanisms",
+    "category": "ISMS home evidence"
+}

@@ -1,0 +1,7 @@
+Follows the changes in regulation, and keeps the compliance register, the authority contacts, and the records retention plan up to date.
+
+*Authority:* Can ask the owners of controls and records for the information that compliance needs, and set the deadlines for it.
+
+*Competence:* The laws and the standards that apply to the organisation.
+
+Set the person in the role in the *Assignee* field, and the deputy in the *Deputy* field. The deputy does the work of the role when the assignee is away. The 24-hour deadlines of NIS2 and the CRA apply on every day of the year.

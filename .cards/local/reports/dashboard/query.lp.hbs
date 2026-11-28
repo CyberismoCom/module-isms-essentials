@@ -1,16 +1,30 @@
-select("title";"base/fieldTypes/progress";"ismsa/fieldTypes/failureCount";"rank").
+select("title";"progress";"ismsa/fieldTypes/failureCount";"rank").
 
 result(Card) :-
    parent(Card, {{cardKey}}),
    field(Card, "cardType", "ismsa/cardTypes/riskRegister"),
-   not hiddenInTreeView(Card).
+   not hiddenInTreeView(Card),
+   {{#if onlyWithContent}}ismsa_dashboardHasContent(Card),{{/if}}
+   #true.
 
 result(Card) :-
    parent(Card, {{cardKey}}),
    field(Card, "cardType", "ismsa/cardTypes/register"),
-   not hiddenInTreeView(Card).
+   not hiddenInTreeView(Card),
+   {{#if onlyWithContent}}ismsa_dashboardHasContent(Card),{{/if}}
+   #true.
 
 orderBy("rank", "ASC").
+
+% With the parameter onlyWithContent, a register is shown only when it has a card under it that
+% is not a register.
+
+ismsa_dashboardHasContent(Register) :-
+    parent(Register, {{cardKey}}),
+    ancestor(Card, Register),
+    not base_projectCardType(Card, "ismsa/cardTypes/register"),
+    not base_projectCardType(Card, "ismsa/cardTypes/riskRegister"),
+    not hiddenInTreeView(Card).
 
 field(Register, "ismsa/fieldTypes/failureCount", Count + Count2) :-
     field(Register, "cardType", "ismsa/cardTypes/register"),

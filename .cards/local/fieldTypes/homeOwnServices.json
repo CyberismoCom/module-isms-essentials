@@ -1,0 +1,18 @@
+{
+    "name": "ismsa/fieldTypes/homeOwnServices",
+    "displayName": "Answer",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "yes",
+            "enumDisplayValue": "Yes",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "no",
+            "enumDisplayValue": "No",
+            "enumDescription": ""
+        }
+    ],
+    "description": "Do you want to manage the security of your own IT or cloud services in this home?"
+}

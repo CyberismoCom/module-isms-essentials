@@ -1,0 +1,7 @@
+Owns the coordinated vulnerability disclosure policy and the reporting channels. Makes sure that each report gets to the right team, and prepares the notifications about vulnerabilities.
+
+*Authority:* Can decide the severity of a vulnerability report and the time of its disclosure, within the coordinated vulnerability disclosure policy.
+
+*Competence:* Vulnerability handling, and the products of the organisation.
+
+Set the person in the role in the *Assignee* field, and the deputy in the *Deputy* field. The deputy does the work of the role when the assignee is away. The 24-hour deadlines of NIS2 and the CRA apply on every day of the year.

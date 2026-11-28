@@ -1,0 +1,7 @@
+Leads the incident management process: analyses the reported security events, records the incidents, and organises the response.
+
+*Authority:* Can isolate systems, revoke access, and call in external help during an incident.
+
+*Competence:* Incident handling, and the IT and the products of the organisation.
+
+Set the person in the role in the *Assignee* field, and the deputy in the *Deputy* field. The deputy does the work of the role when the assignee is away. The 24-hour deadlines of NIS2 and the CRA apply on every day of the year.

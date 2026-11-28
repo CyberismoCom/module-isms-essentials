@@ -1,0 +1,12 @@
+{
+    "title": "Article 23: Reporting obligations",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|n",
+    "lastUpdated": "2026-11-19T19:26:38.853Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_nis2_art-23",
+    "ismsa/fieldTypes/requirementOrigin": "NIS2 (Directive (EU) 2022/2555)",
+    "base/fieldTypes/adoptionStep": "step2"
+}

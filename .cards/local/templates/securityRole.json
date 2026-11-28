@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/securityRole",
+    "displayName": "Security role",
+    "description": "A security role with an assignee and a deputy",
+    "category": "ISMS home evidence"
+}

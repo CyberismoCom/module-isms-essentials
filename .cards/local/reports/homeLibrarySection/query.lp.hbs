@@ -1,0 +1,74 @@
+% The state of the library choice of the home: open until every question is answered and every
+% required library is added. The rules are in ismsa/calculations/libraryChoice.
+
+result(result).
+
+resultField(result, "complete", "yes", "shortText") :-
+    ismsa_libraryChoiceComplete({{cardKey}}).
+
+resultField(result, "requiredCount", N, "integer") :-
+    N = #count { Library : ismsa_libraryRequired({{cardKey}}, Library) }.
+
+resultField(result, "oneRequired", "yes", "shortText") :-
+    1 = #count { Library : ismsa_libraryRequired({{cardKey}}, Library) }.
+
+resultField(result, "noneRequired", "yes", "shortText") :-
+    not ismsa_libraryRequired({{cardKey}}, _).
+
+% The recommendations of the frameworks for the questions about the work of the home, and the
+% answers that go against them. Each collection is named after its question.
+
+ismsa_hlsCollection("centralWork", "recCentralWork", "againstCentralWork").
+ismsa_hlsCollection("fullIsms", "recFullIsms", "againstFullIsms").
+ismsa_hlsCollection("assetRisks", "recAssetRisks", "againstAssetRisks").
+ismsa_hlsCollection("ownServices", "recOwnServices", "againstOwnServices").
+
+childResult(result, ("rec", Question, Reason), Collection) :-
+    ismsa_hlsCollection(Question, Collection, _),
+    ismsa_questionRecommended({{cardKey}}, Question, Reason).
+
+resultField(("rec", Question, Reason), "text", Reason, "shortText") :-
+    ismsa_questionRecommended({{cardKey}}, Question, Reason).
+
+resultField(result, Field, "yes", "shortText") :-
+    ismsa_hlsCollection(Question, _, Field),
+    ismsa_answerAgainstRecommendation({{cardKey}}, Question).
+
+% A question that another "yes" already covers, for example the asset risks in the ISMS
+
+resultField(result, "assetRisksIncluded", Text, "shortText") :-
+    ismsa_questionIncluded({{cardKey}}, "assetRisks", Text).
+
+% The libraries of other modules that the framework questions add (ismsa_frameworkLibrary/3)
+
+ismsa_hlsFramework("cra", "craLibraries").
+ismsa_hlsFramework("nis2", "nis2Libraries").
+
+childResult(result, ("framework", Library), Collection) :-
+    ismsa_hlsFramework(Framework, Collection),
+    ismsa_frameworkLibrary(Framework, Library, _).
+
+resultField(("framework", Library), "title", Title, "shortText") :-
+    ismsa_frameworkLibrary(_, Library, Title).
+
+% What each library covers
+
+childResult(result, ("coverage", Library), "coverage") :-
+    ismsa_choiceLibrary(Library, _),
+    ismsa_libraryCoverage(Library, _, _).
+
+resultField(("coverage", Library), "title", Title, "shortText") :-
+    ismsa_choiceLibrary(Library, Title),
+    ismsa_libraryCoverage(Library, _, _).
+
+resultField(("coverage", Library), "covers", Covers, "shortText") :-
+    ismsa_libraryCoverage(Library, Covers, _).
+
+resultField(("coverage", Library), "notCovered", NotCovered, "shortText") :-
+    ismsa_libraryCoverage(Library, _, NotCovered).
+
+resultField(("coverage", Library), "rank", Rank, "integer") :-
+    ismsa_libraryCoverage(Library, _, _),
+    ismsa_libraryRank(Library, Rank).
+
+order(2, "coverage", 1, "rank", "ASC").

@@ -1,0 +1,22 @@
+{
+    "rank": "0|i",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-25T20:43:47.701Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/moduleHome",
+    "title": "Test home L8 (AI use basics)",
+    "templateCardKey": "ismsa_xtkwa8qe",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": "ismsa_home",
+    "lastUpdated": "2026-11-25T20:43:47.704Z",
+    "ismsa/fieldTypes/homeAiUse": "yes",
+    "ismsa/fieldTypes/homeCentralWork": "no",
+    "ismsa/fieldTypes/homeCra": "no",
+    "ismsa/fieldTypes/homeFullIsms": "no",
+    "ismsa/fieldTypes/homeAssetRisks": "no",
+    "ismsa/fieldTypes/homeOwnServices": "no",
+    "ismsa/fieldTypes/homeNis2": "no",
+    "ismsa/fieldTypes/homeScopeDescription": "A test home for the AI use basics library.",
+    "base/fieldTypes/owner": "home-l8@example.com"
+}

@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlManageHumanResourcesSecurity",
+    "displayName": "Control - Manage human resources security",
+    "description": "The content of the internal control 'Manage human resources security'",
+    "category": "ISMS home libraries"
+}

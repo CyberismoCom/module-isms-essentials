@@ -5,5 +5,6 @@
     "rank": "0|b",
     "base/fieldTypes/informationClassification": "internal",
     "links": [],
-    "lastUpdated": "2026-08-16T20:13:38.645Z"
+    "lastUpdated": "2026-08-16T20:13:38.645Z",
+    "base/fieldTypes/identifier": "ismsa_document_business-context-analysis"
 }

@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/centralControls",
+    "displayName": "Central controls",
+    "description": "A table of the internal controls in the control register, with their assessment. On a register, the table shows the internal controls under the register",
+    "category": "Central controls"
+}

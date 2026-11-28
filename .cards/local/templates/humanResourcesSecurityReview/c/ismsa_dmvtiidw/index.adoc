@@ -1,0 +1,70 @@
+== Scope
+
+The people who work for the organisation: employees, contractors, and trainees. The period is the last 12 months.
+
+== Practices
+
+[cols="4,1,3,3",options="header"]
+|===
+| Practice | In place | Evidence | Findings
+
+| Background checks for critical roles, as far as the law allows them
+| #TODO: Yes or no#
+| #TODO#
+| #TODO#
+
+| Security and confidentiality duties in the employment contracts and contractor agreements
+| #TODO: Yes or no#
+| #TODO#
+| #TODO#
+
+| Security onboarding for new people
+| #TODO: Yes or no#
+| #TODO#
+| #TODO#
+
+| Access changes when a person changes roles
+| #TODO: Yes or no#
+| #TODO#
+| #TODO#
+
+| Access removed and assets returned on the last day of work, including the accounts of the AI tools and the API keys
+| #TODO: Yes or no#
+| #TODO#
+| #TODO#
+
+| A disciplinary process for security breaches, known to the people
+| #TODO: Yes or no#
+| #TODO#
+| #TODO#
+|===
+
+== Sample
+
+Choose a few people who joined, changed roles, or left during the period. For each, check that the access and the assets were handled on time.
+
+[cols="3,2,2,3,3",options="header"]
+|===
+| Person or role | Joined, changed, or left | Date | Access changed or removed | Assets returned
+
+| #TODO#
+| #TODO#
+| #TODO#
+| #TODO: Date#
+| #TODO: Yes or no#
+|===
+
+== Findings
+
+#TODO: Record the findings. Create a task for each change.#
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a new task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Set the date of the review in the *Last reviewed* field. Mark the review as *Passed* when the practices are in place and the sample shows no late access removals, or the changes are recorded as tasks. Otherwise, mark it as *Failed*.

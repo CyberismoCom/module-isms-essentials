@@ -1,0 +1,47 @@
+{{#graph}}
+  "model": "ismsa/graphModels/assetsRisksControls",
+  "view": "ismsa/graphViews/asset"
+{{/graph}}
+
+== Description
+
+#TODO: Describe the AI tool, the models it uses, and how people use it, for example a web interface, an API, an IDE integration, or an AI feature of another service. One card can cover all AI features of one service.#
+
+== Purpose
+
+#TODO: Describe what the tool is used for, for example code generation, documentation, or customer services.#
+
+== Users and access
+
+#TODO: Name who can use the tool, and how the accounts are managed, for example individual accounts in a team plan with single sign-on.#
+
+#TODO: List what the tool or its agents can access, for example code repositories, documents, or other services through integrations (MCP). Give only the access that the work needs.#
+
+== Data and location
+
+#TODO: Describe where the data is processed and stored, how long the supplier keeps the prompts and results, and which terms of use apply.#
+
+== Assessment
+
+Set the fields of this card. Then justify the answers here:
+
+* *Information allowed:* #TODO: Why the tool is approved for this classification. Customer information needs the permission of the contract.#
+* *Training data use:* #TODO: Where the terms of use or the settings say this. If the data can be used for training, name who approved it.#
+* *EU AI Act risk category:* #TODO: Why the use is in this category. A prohibited use is not allowed. A high-risk use needs the approval of the management.#
+* *Human oversight:* #TODO: How people check the results before they use them.#
+* *Data categories:* #TODO: Which data people give to the tool. If the tool gets personal data: where the processing is in the record of processing activities, and whether a data protection impact assessment is needed (GDPR Article 35).#
+
+While the card is a draft, the tool is a request and is not approved. Activate the card when the tool is approved for use.
+
+== Related risks
+
+A risk is needed only when "Risk evaluation needed" is "Yes". A high-risk use always needs one. The risk card lists the typical threats of AI tools.
+
+{{#createCards}}
+  "template": "ismsa/templates/aiRisk",
+  "buttonLabel": "Add an AI risk"
+{{/createCards}}
+
+{{#report}}
+  "name": "ismsa/reports/relatedRisks"
+{{/report}}

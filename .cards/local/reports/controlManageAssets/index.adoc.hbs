@@ -1,0 +1,41 @@
+{{#each results}}
+The organisation knows its assets that need protection: the business processes, the information, the information systems, the devices, the AI tools, the suppliers, and the development projects. Each asset has an owner and a classification.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs an ISMS, or when NIS2 applies. A team that only needs the central controls for its products manages the components of each product in its development project.
+
+== How to implement
+
+Document the asset management process. Identify the assets, and record them in the asset register of this home. Evaluate each asset, and set its criticality. Record the AI tools as AI assets, and assess them. The AI use basics library adds the register "AI tools" for them. Review the register at least once a year.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_asset-management-process",
+  "template": "ismsa/templates/assetManagementProcess",
+  "buttonLabel": "Create the asset management process"
+{{/report}}
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_asset-register",
+  "template": "ismsa/templates/assetRegisterReview",
+  "buttonLabel": "Create a review of the asset register"
+{{/report}}
+
+Check that the process is approved, and that the review of the asset register has passed.
+
+The control also checks the asset register of this home. The control is not OK while the register has no assets, while an asset has no overall asset criticality, or while an AI asset is not assessed.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 Annex A 5.9 to 5.14
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(i)
+
+{{/each}}

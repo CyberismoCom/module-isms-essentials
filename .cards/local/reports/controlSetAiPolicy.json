@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlSetAiPolicy",
+    "displayName": "Control - Set the AI policy",
+    "description": "The content of the internal control 'Set the AI policy'",
+    "category": "ISMS home libraries"
+}

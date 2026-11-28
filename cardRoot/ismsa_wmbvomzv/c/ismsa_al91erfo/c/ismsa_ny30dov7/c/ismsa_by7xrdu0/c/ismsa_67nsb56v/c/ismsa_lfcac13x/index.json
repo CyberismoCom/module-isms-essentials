@@ -1,0 +1,11 @@
+{
+    "links": [],
+    "lastUpdated": "2026-11-24T10:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "title": "Document review - Test document L6",
+    "cardType": "base/cardTypes/reviewTask",
+    "workflowState": "Open",
+    "rank": "0|b",
+    "base/fieldTypes/owner": "conflict-l6@example.com",
+    "base/fieldTypes/reviewPeriod": 365
+}

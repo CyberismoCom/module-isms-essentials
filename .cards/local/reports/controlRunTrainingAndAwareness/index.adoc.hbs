@@ -1,0 +1,34 @@
+{{#each results}}
+The people in the organisation, including the management, have the security competence that their work needs, and they know their responsibilities.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs an ISMS, or when NIS2 applies. NIS2 requires training for the management bodies, and basic cyber hygiene practices and training for the employees. The competence of a development project team is managed in its project.
+
+== How to implement
+
+Make a training and awareness plan for the year. Name the target groups, the training, and the awareness activities, for example phishing exercises. Include AI literacy for the people who use AI in their work. Keep records of who took part.
+
+The EU AI Act requires AI literacy from every organisation that uses AI, also without an ISMS. So AI literacy has its own control, "Give AI literacy training", in the AI use basics library. The same plan is the evidence of both controls.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_training-and-awareness-plan",
+  "template": "ismsa/templates/trainingAndAwarenessPlan",
+  "buttonLabel": "Create the training and awareness plan"
+{{/report}}
+
+Check that the plan of the year is approved, and that the training of the previous year was done.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 clauses 7.2 and 7.3, and Annex A 6.3
+* NIS2 (Directive (EU) 2022/2555) Articles 20(2) and 21(2)(g)
+
+{{/each}}

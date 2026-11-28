@@ -1,0 +1,48 @@
+{{#each results}}
+The organisation identifies, analyses, and treats the information security risks of its assets with a documented process, and the risk owners accept the residual risks.
+
+== How to decide if this control is required
+
+This control is required when the organisation runs an ISMS, or when NIS2 applies. The risks of a single product are assessed in its development project.
+
+== How to implement
+
+Document the risk management process, and set the acceptable risk level in the risk register. Identify and analyse the risks of the assets, and plan the treatment of each risk.
+
+Include the risks of the use of AI, for example:
+
+* information given to a wrong AI tool, or to a tool that uses it for training
+* wrong or harmful AI results that are used without a check
+* prompt injection: instructions hidden in documents, web pages, or emails that an AI tool reads
+* actions of AI agents and integrations that nobody approved, for example sending, deleting, or publishing. Review the risk register at least once a year, and after significant changes or incidents.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_document_risk-management-process",
+  "template": "ismsa/templates/riskManagementProcess",
+  "buttonLabel": "Create the risk management process"
+{{/report}}
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_risk-register",
+  "template": "ismsa/templates/riskRegisterReview",
+  "buttonLabel": "Create a review of the risk register"
+{{/report}}
+
+Check that the process is approved, and that the review of the risk register has passed.
+
+The control also checks the risk register of this home. The control is not OK while the register has no risks, while a risk is still open, or while a risk is analysed but its treatment is not planned.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* ISO/IEC 27001:2022 clauses 6.1, 8.2, and 8.3
+* NIS2 (Directive (EU) 2022/2555) Article 21(1) and 21(2)(a)
+
+{{/each}}

@@ -1,0 +1,7 @@
+Owns the AI policy and the register "AI tools" of the organisation. Approves new AI tools, after the owner of the tool has assessed it. Follows the AI regulation. If another person follows the changes in regulation, they do it together.
+
+*Authority:* Can approve or refuse a new AI tool, and can stop the use of an AI tool that breaks the AI policy. A high-risk use of AI needs the approval of the management.
+
+*Competence:* The AI tools in use, their terms of use, the EU AI Act, and the security rules of the organisation.
+
+Set the person in the role in the *Assignee* field, and the deputy in the *Deputy* field. The deputy does the work of the role when the assignee is away.

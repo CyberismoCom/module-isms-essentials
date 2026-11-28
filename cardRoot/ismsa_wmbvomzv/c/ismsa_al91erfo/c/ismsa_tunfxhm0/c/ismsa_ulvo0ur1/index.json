@@ -1,0 +1,13 @@
+{
+    "rank": "0|f",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-23T15:56:37.493Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Security reviews",
+    "templateCardKey": "ismsa_gb0qoubh",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "base/fieldTypes/identifier": "ismsa_register_security-reviews",
+    "lastUpdated": "2026-11-23T15:56:37.495Z"
+}

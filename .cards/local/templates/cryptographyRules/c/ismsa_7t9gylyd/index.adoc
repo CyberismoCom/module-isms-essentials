@@ -1,0 +1,73 @@
+== Purpose
+
+These rules say how the organisation uses cryptography and encryption (ISO/IEC 27001 A 8.24, NIS2 Article 21(2)(h)). They follow the ECCG Agreed Cryptographic Mechanisms (ACM), the cryptography guideline of the EU cybersecurity certification scheme (EUCC).
+
+These rules are based on ACM version 2.0 (April 2025). The ECCG revises ACM every two years. New versions are published on the https://certification.enisa.europa.eu/publications/eucc-guidelines-cryptography_en[EUCC Guidelines on Cryptography] page. If a new version is published, update these rules and the version reference.
+
+== Basic rules
+
+* Use only mechanisms that ACM lists as agreed.
+* Use "recommended" mechanisms in all new systems and products.
+* Use "legacy" mechanisms only when an older system needs them. Record each one as an exception with a phase-out date.
+* Stop using a legacy mechanism when its ACM deadline passes.
+* Do not create your own cryptographic algorithms or implementations. Use maintained libraries and the built-in features of the platforms.
+* Create a cryptographic bill of materials (CBOM) for each product and critical system. The CBOM lists the cryptographic mechanisms, protocols, keys, and certificates in use. It helps to find legacy mechanisms and to plan the move to post-quantum cryptography. #TODO: Name the CBOM format and where the CBOMs are kept, for example CycloneDX with the SBOM.#
+* Prepare for post-quantum cryptography (PQC). An attacker can store encrypted data now and decrypt it later with a quantum computer ("harvest now, decrypt later"). If this threat is relevant, for example for data that must stay confidential for many years, plan the move to PQC. ACM recommends PQC in hybrid mode, together with classical cryptography.
+* Design systems and products for crypto agility. It must be possible to change algorithms, key sizes, and certificates without major changes to the system, for example with configuration or library updates.
+
+== Rules by topic
+
+[cols="1,3",options="header"]
+|===
+|Topic
+|Rule
+
+|What is encrypted
+|#TODO: For example, all data in transit outside the internal network, laptops and phones, backups, and confidential data at rest in the cloud services.#
+
+|Data in transit
+|Use TLS 1.3. Use TLS 1.2 only when a system cannot use TLS 1.3, and then only with ECDHE key exchange and GCM or CCM cipher suites. Do not allow SSL.
+
+|Data at rest
+|Use AES. Use the full-disk encryption of the operating system on laptops and phones, and the encryption of the cloud provider for cloud data. #TODO: List the tools in use.#
+
+|Hashes and signatures
+|Use SHA-256 or stronger, or SHA-3. Do not use SHA-1 or MD5. For signatures and certificates, use elliptic curve keys (P-256, P-384) or RSA keys of at least 3072 bits.
+
+|Passwords
+|Systems that we build store passwords only as salted hashes. #TODO: Name the approved password hashing method.#
+
+|Keys and certificates
+|#TODO: Name the owner.# Keys are stored in #TODO: key vault or password manager#, never in code or repositories. Each key has one purpose. Keys are renewed before they expire, revoked when compromised, and deleted at the end of their life.
+
+|Long-term confidentiality
+|For data that must stay confidential for many years, use AES-256. #TODO: List the data and systems where "harvest now, decrypt later" is relevant, and the plan and schedule for the move to PQC.#
+
+|Product development
+|Products follow ACM in full. The secure development process gives the detailed rules.
+
+|Legal requirements
+|#TODO: Restrictions on the use, import, or export of cryptography that apply to the organisation.#
+
+|Exceptions
+|#TODO: Name the role that approves exceptions.# The approver records the reason, the risk, and the end date.
+|===
+
+== Review
+
+The owner reviews these rules at least once a year, and when a new version of ACM is published. In each review, the owner:
+
+. checks the EUCC Guidelines on Cryptography page for a new version of ACM
+. updates the rules and the version reference if needed
+. checks from the CBOMs that no legacy mechanism in use has passed its ACM deadline.
+
+The basic security practices review checks once a year that these rules are followed.
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

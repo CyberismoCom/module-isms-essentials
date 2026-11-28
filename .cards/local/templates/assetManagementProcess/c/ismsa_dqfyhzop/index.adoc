@@ -1,0 +1,180 @@
+This document describes how the organisation manages its assets in the scope of this home.
+
+== Introduction
+
+An asset is anything that has value to the organisation and therefore requires protection.
+Assets can be divided into two categories:
+
+* *Primary Assets*: Core business processes, functions and services;
+Information and Data servicing business processes and/or activities of the organisation
+
+* *Supporting Assets*: Hardware, devices and equipment, software and applications, roles,
+locations and utilities, organisational infrastructure (e.g. policies, procedures and supporting ICT services)
+
+== Roles and responsibilities
+
+[width="100%",cols="5,7,15",options="header"]
+|=========================================================
+|Role |Person |Responsibilities
+
+|Business Process Owner
+|Defined in Roles and Responsibilities document
+a|
+* Ensures critical assets with their dependencies are identified and recorded in the asset register
+
+|Asset Owner  |Defined for each asset in the asset register
+a|
+* Determines the value of an asset to the organization.
+
+* Ensures assets are sufficiently protected regardless of their location by identifying and mitigating information security risks related to asset
+
+|=========================================================
+
+== Process description
+
+Assets are recorded in the asset register. If assets (with relevant details) for some categories are already recorded in some other tool, it is enough to add link for reference.
+
+
+=== STEP 1: Identify primary assets, asset owners and locations (incl. backups)
+
+. Core Business Processes, Functions and Services
+
+. Critical Information/Data (including locations and backups) in all forms (storage, transmission etc) that is of value
+
+
+=== STEP 2: Identify supporting assets, asset owners and locations
+
+. Information systems
+
+. Suppliers
+
+. Information/Data (including locations and backups) in all forms (storage, transmission etc) that is of value
+
+. Hardware, devices and equipment
+
+. AI tools and services, and the AI features of other services. They are recorded in the register "AI tools" when the home has the AI use basics library
+
+=== STEP 3: Classify assets
+
+Each asset category has their own classification/valuation scheme. All assets are classified at least from the following perspectives:
+
+* *Overall asset criticality*: High, Medium, Low
+
+* *Criticality of confidentiality*: High (disclosure would have significant business impacts), Medium (disclosure would be undesirable but tolerable), Low (the asset is public, or disclosure would be harmless), Not Applicable
+
+* *Criticality of integrity*: High (unauthorised changes have significant business impacts), Medium (some changes are tolerable), Low (integrity not relevant for decisions/business), Not Applicable
+
+* *Criticality of availability*: High (days), Medium (weeks), Low (months), Not Applicable
+
+* *Criticality for health, safety and environment (HSE)*: High, Medium, Low, Not Applicable
+
+* *Risk evaluation needed*: Yes, No
+
+Overall asset criticality summarises the four criticality dimensions above, and it should usually be at least as high as the highest of them.
+
+Risk evaluation is mandatory for assets that are critical for operations (Overall asset criticality: High), but can also be conducted for non-critical assets, if justifiable (e.g. from brand-protection perspective).
+
+[NOTE]
+====
+*Criticality of confidentiality is not the same thing as information classification.*
+
+The *Classification of this card* field (public, internal, confidential) states how sensitive the asset *card* is, i.e. who is allowed to read this description of the asset. It says nothing about how sensitive the asset itself is.
+
+How sensitive the *asset* is, is recorded in *Criticality of confidentiality*.
+====
+
+Additionally, information/Data and Information systems are classified at least against the following aspect:
+
+* *Contains personal information*: Sensitive, Regular, None
+
+Additional attributes can be specified in the asset register for each asset type as needed.
+
+*Note*: If personal data is involved, related processing activities shall be documented into Records of Processing Activities (ROPA).
+
+=== STEP 4: Protect and maintain assets
+
+Asset owner is responsible for ensuring that risks related to their asset are identified as needed and their assets are sufficiently protected and maintained.
+
+Risks related to most important assets are managed in accordance with the Risk Management process.
+
+=== STEP 5: Asset disposal
+
+When assets are no longer needed, they are disposed-off in a secure manner. More detailed device asset disposal principles are covered in IT documentation.
+
+== Document/Process Maintenance and enforcement
+
+The asset owners review the asset register at least once a year, in the review of the asset register.
+
+== Related documents/processes
+
+* Risk management process
+
+== Relevant requirements/controls
+
+The most relevant references in ISO/IEC 27001:2022 are:
+
+* ISO/IEC 27001:2022 Annex A 5.9
+
+* ISO/IEC 27001:2022 Annex A 7.13
+
+* ISO/IEC 27001:2022 Annex A 7.14
+
+
+Other controls related to asset management, but not directly covered in this document:
+
+* ISO/IEC 27001:2022 Annex A 5.10
+
+* ISO/IEC 27001:2022 Annex A 5.11
+
+* ISO/IEC 27001:2022 Annex A 5.14
+
+* ISO/IEC 27001:2022 Annex A 5.33
+
+* ISO/IEC 27001:2022 Annex A 5.37
+
+* ISO/IEC 27001:2022 Annex A 6.5
+
+* ISO/IEC 27001:2022 Annex A 6.7
+
+* ISO/IEC 27001:2022 Annex A 7.3
+
+* ISO/IEC 27001:2022 Annex A 7.8
+
+* ISO/IEC 27001:2022 Annex A 7.9
+
+* ISO/IEC 27001:2022 Annex A 7.10
+
+* ISO/IEC 27001:2022 Annex A 8.1
+
+* ISO/IEC 27001:2022 Annex A 8.14
+
+
+== References
+
+* link:https://www.enisa.europa.eu/publications/interoperable-eu-risk-management-toolbox[https://www.enisa.europa.eu/publications/interoperable-eu-risk-management-toolbox]
+
+* link:https://www.enisa.europa.eu/publications/2023-interoperable-eu-rm-toolbox/eu-rm-toolbox-library-02-assets-mappings.xlsx[https://www.enisa.europa.eu/publications/2023-interoperable-eu-rm-toolbox/eu-rm-toolbox-library-02-assets-mappings.xlsx]
+
+
+== Version history
+
+[cols="1,1,3"]
+|===============
+|Version | Date | Changes/Author
+
+| 1.0
+| #TODO <add date>#
+| First version created by #N.N#
+
+|===============
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

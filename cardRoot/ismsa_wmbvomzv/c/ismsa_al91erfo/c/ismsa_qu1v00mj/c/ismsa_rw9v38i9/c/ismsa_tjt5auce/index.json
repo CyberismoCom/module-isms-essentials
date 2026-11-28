@@ -1,0 +1,16 @@
+{
+    "rank": "0|f",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-20T07:42:44.930Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Protect records",
+    "templateCardKey": "ismsa_pksxekir",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "september",
+    "base/fieldTypes/identifier": "ismsa_control_protect-records",
+    "lastUpdated": "2026-11-20T07:42:45.094Z",
+    "lastTransitioned": "2026-11-20T07:42:45.094Z"
+}

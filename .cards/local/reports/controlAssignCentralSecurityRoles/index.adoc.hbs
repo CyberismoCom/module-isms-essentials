@@ -1,0 +1,39 @@
+{{#each results}}
+People are assigned to the central security roles of the organisation, and they know their responsibilities. The roles of a single development project are assigned in that project.
+
+== How to decide if this control is required
+
+This control is always required. The other central controls need people who do the work.
+
+== How to implement
+
+Create the central security role assignments. The template has the roles that the other central controls need. Each role says its responsibilities, its authority, and the competence that it needs. Set the assignee and the deputy of each role. When a library needs another role, the role assignments offer a button for it. For example, the AI use basics library needs an AI responsible, who owns the AI policy and approves new AI tools. Then the management approves the assignments, and you review them.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_central-role-assignments",
+  "template": "ismsa/templates/centralRoleAssignments",
+  "buttonLabel": "Create the central security role assignments"
+{{/report}}
+
+Check that each role has an assignee and a deputy, that the assignees have confirmed their roles, that the management has approved the assignments, and that nobody approves or reviews their own work.
+
+{{#if this.craGuidance}}
+== EU Cyber Resilience Act
+
+The deadlines of 24 hours in Article 14 of the CRA (Regulation (EU) 2024/2847) apply on every day of the year. Name a deputy for the product security operations responsible and for the incident response lead.
+{{/if}}
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* IEC 62443-4-1 SM-2
+* ISO/IEC 27001:2022 clauses 5.3 and 7.2, and Annex A 5.2 and 5.3
+* NIS2 (Directive (EU) 2022/2555) Article 20
+
+{{/each}}

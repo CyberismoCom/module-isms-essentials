@@ -1,0 +1,11 @@
+{
+    "title": "Recovery test (date)",
+    "cardType": "base/cardTypes/review",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-19T19:25:27.530Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_review_recovery-test"
+}

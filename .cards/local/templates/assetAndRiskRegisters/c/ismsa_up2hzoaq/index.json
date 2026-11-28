@@ -1,0 +1,12 @@
+{
+    "title": "Asset register",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-19T19:24:15.536Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/progress": "asset-progress",
+    "base/fieldTypes/identifier": "ismsa_register_assets"
+}

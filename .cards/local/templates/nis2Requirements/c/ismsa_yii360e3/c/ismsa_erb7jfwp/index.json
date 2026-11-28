@@ -1,0 +1,12 @@
+{
+    "title": "Article 20(1): Management approves and oversees the measures",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-19T19:26:28.407Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_nis2_art-20-1",
+    "ismsa/fieldTypes/requirementOrigin": "NIS2 (Directive (EU) 2022/2555)",
+    "base/fieldTypes/adoptionStep": "step2"
+}

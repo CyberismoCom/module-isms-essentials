@@ -1,0 +1,12 @@
+{
+    "links": [],
+    "lastUpdated": "2026-11-24T10:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "title": "Test document L6: the owner approves and reviews it",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "Draft",
+    "rank": "0|z",
+    "base/fieldTypes/owner": "conflict-l6@example.com",
+    "base/fieldTypes/approver": "conflict-l6@example.com",
+    "base/fieldTypes/reviewPeriod": 365
+}

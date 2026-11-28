@@ -1,0 +1,28 @@
+{
+    "name": "ismsa/fieldTypes/assetAiRiskCategory",
+    "displayName": "EU AI Act risk category",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "unacceptable",
+            "enumDisplayValue": "Prohibited",
+            "enumDescription": "A prohibited practice of Article 5. Do not use the system for it"
+        },
+        {
+            "enumValue": "highRisk",
+            "enumDisplayValue": "High risk",
+            "enumDescription": "A high-risk use of Article 6 and Annex III. The use needs the approval of the management, and the deployer obligations of Article 26 apply"
+        },
+        {
+            "enumValue": "limitedRisk",
+            "enumDisplayValue": "Limited risk",
+            "enumDescription": "Transparency obligations of Article 50 apply, for example for chatbots and generated content"
+        },
+        {
+            "enumValue": "minimalRisk",
+            "enumDisplayValue": "Minimal risk",
+            "enumDescription": "No specific obligations under the EU AI Act"
+        }
+    ],
+    "description": "The risk category of the use of this AI system under the EU AI Act"
+}

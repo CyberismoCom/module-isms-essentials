@@ -23,6 +23,10 @@
         {
             "name": "base/fieldTypes/identifier",
             "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/supplierAgreements",
+            "isCalculated": false
         }
     ],
     "alwaysVisibleFields": [

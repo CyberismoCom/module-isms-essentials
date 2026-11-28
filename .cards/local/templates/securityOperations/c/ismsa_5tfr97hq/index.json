@@ -1,0 +1,13 @@
+{
+    "title": "Manage vulnerabilities and updates",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|g",
+    "lastUpdated": "2026-11-23T15:54:01.438Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "august",
+    "base/fieldTypes/identifier": "ismsa_control_manage-vulnerabilities-and-updates"
+}

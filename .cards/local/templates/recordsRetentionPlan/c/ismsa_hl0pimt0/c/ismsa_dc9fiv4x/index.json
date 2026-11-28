@@ -1,0 +1,10 @@
+{
+    "title": "Document review - Records retention plan",
+    "cardType": "base/cardTypes/reviewTask",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-17T20:32:46.127Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365
+}

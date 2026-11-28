@@ -1,0 +1,12 @@
+{
+    "rank": "0|c",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-23T15:56:38.501Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Risks related to data assets",
+    "templateCardKey": "ismsa_m8ehx1pm",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-23T15:56:38.516Z"
+}

@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/recoveryTest",
+    "displayName": "Recovery test",
+    "description": "A record of a test of the backups and the recovery procedures",
+    "category": "ISMS home evidence"
+}

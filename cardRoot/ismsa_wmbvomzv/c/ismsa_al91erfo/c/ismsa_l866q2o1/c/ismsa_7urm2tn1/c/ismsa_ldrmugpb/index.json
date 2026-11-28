@@ -1,0 +1,12 @@
+{
+    "rank": "0|d",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T18:40:34.242Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Business Context Analysis for <add scope>",
+    "templateCardKey": "ismsa_3y0d95yv",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_document_business-context-analysis",
+    "lastUpdated": "2026-11-20T18:40:34.244Z"
+}

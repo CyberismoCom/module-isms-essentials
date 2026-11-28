@@ -1,0 +1,22 @@
+{{#each results}}
+{{#if this.planned}}
+These internal controls are planned to implement this requirement. A planned control is linked to the requirement automatically when it is in this home.
+
+[cols="4,4,2"]
+|===
+| Planned control | Status in this home | Assessment
+
+{{#each this.planned}}
+|{{this.controlTitle}}
+|{{#if this.controlKey}}xref:{{this.controlKey}}.adoc[In this home]{{else}}Not in this home. It comes from {{this.library}}{{/if}}
+|{{this.assessment}}
+{{/each}}
+|===
+
+{{#if this.missing}}
+NOTE: The requirement cannot be assessed as OK until all the planned controls are in this home. If a planned control does not apply, install its library and mark the control out of scope with a justification.
+{{/if}}
+{{else}}
+No internal control of the ISMS home libraries is planned for this requirement. Link your own internal control to this requirement with the link type "implements".
+{{/if}}
+{{/each}}

@@ -1,0 +1,14 @@
+{
+    "title": "A1 coordinated vulnerability disclosure policy",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "Approved",
+    "rank": "0|b",
+    "links": [],
+    "lastUpdated": "2026-11-17T12:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/owner": "doc-owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "base/fieldTypes/approvalDate": "2026-11-17",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "base/fieldTypes/identifier": "ismsa_document_cvd-policy"
+}

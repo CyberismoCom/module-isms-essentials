@@ -1,0 +1,16 @@
+{
+    "rank": "0|b",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-20T07:41:48.703Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Assign the central security roles",
+    "templateCardKey": "ismsa_8l7j5h1b",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "january",
+    "base/fieldTypes/identifier": "ismsa_control_assign-central-security-roles",
+    "lastUpdated": "2026-11-20T07:41:48.787Z",
+    "lastTransitioned": "2026-11-20T07:41:48.786Z"
+}

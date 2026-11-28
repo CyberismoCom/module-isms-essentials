@@ -1,0 +1,120 @@
+% The security roles of the home. Use it on the card that holds the role assignments, for
+% example the central security role assignments.
+
+ismsa_srCardType("ismsa/cardTypes/securityRole").
+ismsa_srCardType("base/cardTypes/roleAssignment").
+
+ismsa_srHome(Home) :-
+    ismsa_closestHome({{cardKey}}, Home).
+
+ismsa_srRole(Role) :-
+    ancestor(Role, {{cardKey}}),
+    ismsa_srCardType(CardType),
+    base_projectCardType(Role, CardType),
+    not field(Role, "workflowState", "Archived").
+
+result(result).
+
+% The roles, with the assignee and the deputy
+
+childResult(result, Role, "roles") :-
+    ismsa_srRole(Role).
+
+resultField(Role, "title", Title, "shortText") :-
+    ismsa_srRole(Role),
+    field(Role, "title", Title).
+
+resultField(Role, "state", State, "shortText") :-
+    ismsa_srRole(Role),
+    field(Role, "workflowState", State).
+
+resultField(Role, "hasDeputyField", "yes", "shortText") :-
+    ismsa_srRole(Role),
+    base_projectCardType(Role, "ismsa/cardTypes/securityRole").
+
+% The roles that the controls of the home need, and that are not in the home yet
+% (ismsa_roleNeeded/2 in ismsa/calculations/centralControls)
+
+ismsa_srNeeded(RoleIdentifier, Template, Title) :-
+    ismsa_srHome(Home),
+    ismsa_roleNeeded(Home, RoleIdentifier),
+    ismsa_controlRole(_, RoleIdentifier, Template, Title).
+
+childResult(result, ("needed", RoleIdentifier), "needed") :-
+    ismsa_srNeeded(RoleIdentifier, _, _).
+
+resultField(("needed", RoleIdentifier), "template", Template, "shortText") :-
+    ismsa_srNeeded(RoleIdentifier, Template, _).
+
+resultField(("needed", RoleIdentifier), "title", Title, "shortText") :-
+    ismsa_srNeeded(RoleIdentifier, _, Title).
+
+resultField(("needed", RoleIdentifier), "targetKey", "{{cardKey}}", "shortText") :-
+    ismsa_srNeeded(RoleIdentifier, _, _).
+
+% The other people with a security role in the home, taken from the registers
+%
+% ismsa_srGroup(Group, Rank, Name, Duties, CardType, Field)
+
+ismsa_srGroup("assets", 2, "Asset owners", "Keep their assets in the asset register up to date, and evaluate them.", "ismsa/cardTypes/asset", "base/fieldTypes/owner").
+ismsa_srGroup("assets", 2, "Asset owners", "Keep their assets in the asset register up to date, and evaluate them.", "ismsa/cardTypes/assetData", "base/fieldTypes/owner").
+ismsa_srGroup("assets", 2, "Asset owners", "Keep their assets in the asset register up to date, and evaluate them.", "ismsa/cardTypes/assetDevice", "base/fieldTypes/owner").
+ismsa_srGroup("assets", 2, "Asset owners", "Keep their assets in the asset register up to date, and evaluate them.", "ismsa/cardTypes/assetInformationSystem", "base/fieldTypes/owner").
+ismsa_srGroup("assets", 2, "Asset owners", "Keep their assets in the asset register up to date, and evaluate them.", "ismsa/cardTypes/assetSupplier", "base/fieldTypes/owner").
+ismsa_srGroup("risks", 3, "Risk owners", "Decide the treatment of their risks, and accept the residual risks within the limits that the management sets.", "ismsa/cardTypes/risk", "base/fieldTypes/owner").
+ismsa_srGroup("controls", 4, "Control owners", "Run their controls, keep the evidence up to date, and review the controls in their review month.", "ismsa/cardTypes/internalControl", "base/fieldTypes/owner").
+ismsa_srGroup("documents", 5, "Document owners", "Keep their documents up to date, and ask for the reviews.", "base/cardTypes/controlledDocument", "base/fieldTypes/owner").
+ismsa_srGroup("approvers", 6, "Document approvers", "Approve the documents.", "base/cardTypes/controlledDocument", "base/fieldTypes/approver").
+
+ismsa_srPerson(Group, Person) :-
+    ismsa_srHome(Home),
+    ismsa_srGroup(Group, _, _, _, CardType, Field),
+    base_projectCardType(Card, CardType),
+    ismsa_closestHome(Card, Home),
+    field(Card, Field, Person).
+
+childResult(result, ("group", Group), "groups") :-
+    ismsa_srGroup(Group, _, _, _, _, _).
+
+resultField(("group", Group), "name", Name, "shortText") :-
+    ismsa_srGroup(Group, _, Name, _, _, _).
+
+resultField(("group", Group), "duties", Duties, "shortText") :-
+    ismsa_srGroup(Group, _, _, Duties, _, _).
+
+resultField(("group", Group), "rank", Rank, "integer") :-
+    ismsa_srGroup(Group, Rank, _, _, _, _).
+
+childResult(("group", Group), ("person", Group, Person), "people") :-
+    ismsa_srPerson(Group, Person).
+
+resultField(("person", Group, Person), "name", Person, "shortText") :-
+    ismsa_srPerson(Group, Person).
+
+% Possible conflicts of duties (ismsa_dutyConflict/3 in ismsa/calculations/centralControls)
+
+ismsa_srConflict(Document, Person, Text) :-
+    ismsa_srHome(Home),
+    ismsa_dutyConflict(Document, Person, Text),
+    ismsa_closestHome(Document, Home).
+
+childResult(result, ("conflict", Document, Person, Text), "conflicts") :-
+    ismsa_srConflict(Document, Person, Text).
+
+resultField(("conflict", Document, Person, Text), "documentKey", Document, "shortText") :-
+    ismsa_srConflict(Document, Person, Text).
+
+resultField(("conflict", Document, Person, Text), "documentTitle", Title, "shortText") :-
+    ismsa_srConflict(Document, Person, Text),
+    field(Document, "title", Title).
+
+resultField(("conflict", Document, Person, Text), "person", Person, "shortText") :-
+    ismsa_srConflict(Document, Person, Text).
+
+resultField(("conflict", Document, Person, Text), "text", Text, "shortText") :-
+    ismsa_srConflict(Document, Person, Text).
+
+order(2, "roles", 1, "title", "ASC").
+order(2, "groups", 1, "rank", "ASC").
+order(3, "people", 1, "name", "ASC").
+order(2, "conflicts", 1, "documentTitle", "ASC").

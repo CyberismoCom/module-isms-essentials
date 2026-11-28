@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlReceiveNotificationsOfSecurityIssues",
+    "displayName": "Control - Receive notifications of security issues",
+    "description": "The content of the internal control 'Receive notifications of security issues'",
+    "category": "Central controls"
+}

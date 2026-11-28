@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/homeLibrarySection",
+    "displayName": "Libraries of the home",
+    "description": "The section \"Libraries\" of the home card of an ISMS home: which libraries the organisation needs, and the buttons to install them. The section is a report, so that it changes with the module also in existing homes",
+    "category": "Central controls"
+}

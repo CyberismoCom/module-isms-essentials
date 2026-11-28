@@ -1,0 +1,87 @@
+== Introduction
+
+This document lists the authorities that the organisation must or can contact, when to contact them, and how. Keep a copy where the people in the incident management process can find it, also when the normal systems are not available.
+
+== Authorities
+
+[width="100%",cols="20%,30%,30%,20%",options="header"]
+|===
+|Authority |When to contact |Reporting channel or contact details |Who contacts
+
+|National CSIRT
+|#TODO: For example, significant incidents and actively exploited vulnerabilities#
+|#TODO#
+|#TODO#
+
+|Competent authority for NIS2
+|#TODO: Delete this row if NIS2 does not apply#
+|#TODO#
+|#TODO#
+
+|Data protection authority
+|A personal data breach
+|#TODO#
+|#TODO#
+
+|Market surveillance authorities
+|#TODO: Requests about the conformity of the products#
+|#TODO#
+|#TODO#
+
+|Police
+|A suspected crime
+|#TODO#
+|#TODO#
+
+|#TODO: Add other authorities, as needed#
+|
+|
+|
+|===
+
+== Registrations
+
+Some regulations require that the organisation registers with an authority before anything happens. For example, an entity under NIS2 gives its information to the competent authority (NIS2 Directive, Article 3(4)). The national law sets the authority and the deadline, for example section 41 of the Cybersecurity Act in Finland.
+
+[width="100%",cols="25%,25%,25%,25%",options="header"]
+|===
+|Regulation |Authority |Date of registration, or "not required" |Who keeps the information up to date
+
+|NIS2 (national law)
+|#TODO#
+|#TODO#
+|#TODO#
+
+|#TODO: Add other registrations, as needed#
+|
+|
+|
+|===
+
+Check the registrations in the review of this document. Update the information when it changes, for example when the contact details or the services change.
+
+== Reporting deadlines
+
+[width="100%",cols="30%,40%,30%",options="header"]
+|===
+|Regulation |Event |Deadline
+
+|GDPR (Regulation (EU) 2016/679), Article 33
+|A personal data breach
+|Without undue delay and, where feasible, within 72 hours
+
+|#TODO: Add the other regulations in the compliance register#
+|
+|
+|===
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

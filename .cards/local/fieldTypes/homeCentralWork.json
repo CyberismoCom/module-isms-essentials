@@ -1,0 +1,18 @@
+{
+    "name": "ismsa/fieldTypes/homeCentralWork",
+    "displayName": "Answer",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "yes",
+            "enumDisplayValue": "Yes",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "no",
+            "enumDisplayValue": "No",
+            "enumDescription": ""
+        }
+    ],
+    "description": "Do you want to do the central security work in this home, for example the security roles, the vulnerability reports, and the incident notifications?"
+}

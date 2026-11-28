@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/aiActRequirements",
+    "displayName": "AI use basics library: EU AI Act requirements",
+    "description": "A library of the ISMS home: the obligations of the EU AI Act for an organisation that uses AI, as assessed compliance requirements, mapped to the internal controls of the home. Add it with the buttons in the section \"Libraries\" of the home card",
+    "category": "ISMS home libraries"
+}

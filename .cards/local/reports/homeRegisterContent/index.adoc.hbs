@@ -1,0 +1,146 @@
+{{#each results}}
+{{#if (eq ../register "centralControls")}}
+This register holds the internal controls of the home. Each control is done once for the scope of the home, and the development projects in the scope rely on it.
+
+Each control has planned evidence. The assessment of a control is calculated from its evidence. When a control does not apply to the organisation, mark it out of scope and give a justification.
+
+{{#report}}
+  "name": "ismsa/reports/centralControls"
+{{/report}}
+
+Add an internal control of your own, if needed. Link its evidence to it with the link type "is evidenced by".
+
+{{#createCards}}
+  "template": "ismsa/templates/internalControl",
+  "buttonLabel": "Add an internal control"
+{{/createCards}}
+{{/if}}
+{{#if (eq ../register "compliance")}}
+This register holds the compliance requirements of the organisation: the requirements of the regulations, standards, and contracts that apply to it. An assessed compliance requirement gets its assessment from the internal controls that implement it.
+
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
+
+{{#createCards}}
+  "template": "ismsa/templates/assessedComplianceRequirement",
+  "buttonLabel": "Add a compliance requirement"
+{{/createCards}}
+{{/if}}
+{{#if (eq ../register "incidents")}}
+This register holds the security incidents and near misses of the organisation. The incident management process in the process register describes how they are handled.
+
+Record a new incident with the incident template. It creates four cards:
+
+* Incident: the description and the analysis of the incident
+* Incident response: the containment, eradication, and recovery actions
+* Incident communication: the communication to authorities, customers, other external parties, and inside the organisation
+* Post-incident actions: the lessons learned and the other actions after the incident.
+
+NOTE: If an incident has confidential information, store that information in a separate location with limited access, and add a link to it in the incident.
+
+Record a security event that is not an incident as a near miss.
+
+{{#createCards}}
+  "template": "ismsa/templates/incident",
+  "buttonLabel": "Add new incident"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "ismsa/templates/nearMiss",
+  "buttonLabel": "Add new near miss"
+{{/createCards}}
+{{/if}}
+{{#if (eq ../register "aiActRequirements")}}
+This register holds the obligations of the EU AI Act (Regulation (EU) 2024/1689) for an organisation that uses AI systems in its work: AI literacy (Article 4), the prohibited practices (Article 5), the transparency obligations (Article 50), and the obligations of deployers of high-risk AI systems (Article 26). These obligations apply to every organisation that uses AI, also without an ISMS or NIS2.
+
+Each requirement is assessed from the internal controls that implement it. The planned controls come from the AI use basics library, and they are linked to the requirements automatically. If the organisation develops AI systems or offers them to others, it is a provider, and the obligations of providers apply too. These are not in this register.
+
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "nis2Requirements")}}
+This register holds the requirements of NIS2 (Directive (EU) 2022/2555) for essential and important entities: the governance of Article 20, the cybersecurity risk-management measures of Article 21, and the reporting obligations of Article 23. Check the national law that implements NIS2, because it can add requirements.
+
+Each requirement is assessed from the internal controls that implement it. The planned controls are linked to the requirements automatically, when they are in this home. Most planned controls come from the libraries of the home: security response and compliance basics, information security management, asset and risk management, and security operations. Install these libraries in the home, or link your own internal controls to the requirements with the link type "implements".
+
+If the organisation does not follow NIS2, mark the requirements out of scope with a justification, or do not install this library.
+
+{{#report}}
+  "name": "ismsa/reports/subregisters"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "processes")}}
+This register holds the documented processes of the home, and the policies and plans that go with them. The libraries add them here, for example the incident management process, the coordinated vulnerability disclosure policy, the asset management process, and the risk management process.
+
+The planned evidence of the controls is created here, unless another register of the home owns its topic. For example, the reviews of the asset register are in the asset register. Use the buttons in the controls to create the planned evidence. The evidence is then linked to its control automatically.
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
+
+Add other documents, as needed:
+
+{{#createCards}}
+  "template": "base/templates/processDescription",
+  "buttonLabel": "Create a process document"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "base/templates/controlledDocument",
+  "buttonLabel": "Create another controlled document"
+{{/createCards}}
+{{/if}}
+{{#if (eq ../register "securityReviews")}}
+This register holds the management reviews and the other security reviews. Hold security reviews at least once a quarter, and a management review at least once a year. Create a register for the security reviews of each year.
+
+{{#createCards}}
+  "template": "ismsa/templates/yearlyReviews",
+  "buttonLabel": "Create a register for the reviews of a year"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenList"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "securityTargets")}}
+The security targets are set once a year. Create a register for the targets of each year.
+
+{{#createCards}}
+  "template": "ismsa/templates/yearlyTargets",
+  "buttonLabel": "Create a register for the targets of a year"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenList"
+{{/report}}
+{{/if}}
+{{#if (eq ../register "tasks")}}
+This register holds the one-time and repeating tasks of the ISMS. The work of the controls is in the controls and their evidence. Use tasks for other work, for example the actions of a review.
+
+{{#createCards}}
+  "template": "base/templates/oneTimeTask",
+  "buttonLabel": "Add a one-time task"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "base/templates/monthlyTask",
+  "buttonLabel": "Add a monthly task"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "base/templates/quarterlyTask",
+  "buttonLabel": "Add a quarterly task"
+{{/createCards}}
+
+{{#createCards}}
+  "template": "base/templates/annualTask",
+  "buttonLabel": "Add a yearly task"
+{{/createCards}}
+
+{{#report}}
+  "name": "ismsa/reports/tasksByOwner"
+{{/report}}
+{{/if}}
+{{/each}}

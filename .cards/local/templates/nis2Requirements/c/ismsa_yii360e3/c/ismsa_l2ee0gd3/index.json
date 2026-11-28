@@ -1,0 +1,12 @@
+{
+    "title": "Article 21(2)(f): Assessment of effectiveness",
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|i",
+    "lastUpdated": "2026-11-19T19:26:34.477Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_nis2_art-21-2-f",
+    "ismsa/fieldTypes/requirementOrigin": "NIS2 (Directive (EU) 2022/2555)",
+    "base/fieldTypes/adoptionStep": "step2"
+}

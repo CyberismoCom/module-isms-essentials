@@ -1,0 +1,33 @@
+{
+    "name": "ismsa/cardTypes/securityRole",
+    "workflow": "base/workflows/roleAssignment",
+    "customFields": [
+        {
+            "name": "base/fieldTypes/owner",
+            "displayName": "Assignee",
+            "isCalculated": false
+        },
+        {
+            "name": "ismsa/fieldTypes/deputy",
+            "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/informationClassification",
+            "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/identifier",
+            "isCalculated": false
+        }
+    ],
+    "alwaysVisibleFields": [
+        "base/fieldTypes/owner",
+        "ismsa/fieldTypes/deputy"
+    ],
+    "optionallyVisibleFields": [
+        "base/fieldTypes/informationClassification",
+        "base/fieldTypes/identifier"
+    ],
+    "displayName": "Security role",
+    "description": "Assigns a person and a deputy to a security role, with the responsibilities, the authority, and the competence of the role"
+}

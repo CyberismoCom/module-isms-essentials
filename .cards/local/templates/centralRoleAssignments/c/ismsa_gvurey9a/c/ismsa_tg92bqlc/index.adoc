@@ -1,0 +1,7 @@
+Owns the ISMS home and the central controls. Makes sure that the ISMS meets the requirements of the standards that the organisation follows, for example ISO/IEC 27001. Reports the performance of the ISMS to the management.
+
+*Authority:* Can approve exceptions to the security policies within the limits that the management sets. Can stop a change that is against the security policy until the management decides.
+
+*Competence:* Information security management, and the standards and laws that the organisation follows.
+
+Set the person in the role in the *Assignee* field, and the deputy in the *Deputy* field. The deputy does the work of the role when the assignee is away. The 24-hour deadlines of NIS2 and the CRA apply on every day of the year.

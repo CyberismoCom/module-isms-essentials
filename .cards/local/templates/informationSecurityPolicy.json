@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/informationSecurityPolicy",
+    "displayName": "Information security policy",
+    "description": "The information security policy of the organisation, approved by the management",
+    "category": "ISMS home evidence"
+}

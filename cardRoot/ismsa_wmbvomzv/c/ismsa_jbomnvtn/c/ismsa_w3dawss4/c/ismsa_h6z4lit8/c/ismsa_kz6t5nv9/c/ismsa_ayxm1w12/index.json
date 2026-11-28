@@ -1,0 +1,11 @@
+{
+    "title": "A3 authority contacts (draft)",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "Draft",
+    "rank": "0|b",
+    "links": [],
+    "lastUpdated": "2026-11-17T12:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_document_authority-contacts"
+}

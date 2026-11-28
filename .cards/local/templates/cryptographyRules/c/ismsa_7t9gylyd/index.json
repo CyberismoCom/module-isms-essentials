@@ -1,0 +1,11 @@
+{
+    "title": "Cryptography rules",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-24T10:50:08.166Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_document_cryptography-rules"
+}

@@ -1,0 +1,14 @@
+{
+    "rank": "0|g",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-19T19:28:25.532Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "title": "Article 21(2)(d): Supply chain security",
+    "templateCardKey": "ismsa_4r2v7ogi",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_nis2_art-21-2-d",
+    "ismsa/fieldTypes/requirementOrigin": "NIS2 (Directive (EU) 2022/2555)",
+    "base/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-19T19:28:25.536Z"
+}

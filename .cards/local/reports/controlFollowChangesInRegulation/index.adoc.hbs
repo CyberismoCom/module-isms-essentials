@@ -1,0 +1,41 @@
+{{#each results}}
+The security team follows the changes in the regulations and standards that apply to the organisation. It updates the compliance register, the internal controls, the process descriptions, and the templates when needed.
+
+== How to decide if this control is required
+
+This control is required when the organisation is in the scope of security regulation, for example NIS2, the CRA, or the GDPR, or when its customers require compliance with standards.
+
+== How to implement
+
+. Name the sources to follow. For example: the regulation of the EU and of the other countries where the organisation operates or sells its products, the guidance of the authorities, and the standards that the customers require. If people use AI, also follow the EU AI Act (Regulation (EU) 2024/1689) and its amendments, the guidelines of the European Commission, and ISO/IEC 42001.
+. Name the person who follows each source. Use the central security role assignments of this home.
+. Review the changes at least once a year. Record the changes that affect the organisation, and the actions.
+. Update the compliance register, the internal controls, the process descriptions, and the templates. Create a task for each larger change.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_regulation-changes",
+  "template": "ismsa/templates/regulationReview",
+  "buttonLabel": "Create a review of changes in regulation"
+{{/report}}
+
+Check that the review was done within the review period, that its results are recorded, and that the compliance register shows the results.
+
+{{#if this.craGuidance}}
+== EU Cyber Resilience Act
+
+Follow the delegated and implementing acts of the CRA (Regulation (EU) 2024/2847), the harmonised standards, and the guidance of the European Commission and ENISA. The reporting obligations apply from 11 September 2026, and the other obligations of manufacturers apply from 11 December 2027.
+{{/if}}
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* IEC 62443-4-1 SM-13
+* ISO/IEC 27001:2022 Annex A 5.31
+
+{{/each}}

@@ -1,6 +1,6 @@
 {
-    "displayName": "ISMS home",
-    "description": "Start page for a new ISMS project",
-    "category": "Start",
+    "displayName": "ISMS home (deprecated)",
+    "description": "Start page for an ISMS project. This template creates the old, deprecated structure with set-up tasks. Use the template \"ISMS home\" (ismsa/templates/moduleHome2) for new homes.",
+    "category": "Deprecated",
     "name": "ismsa/templates/moduleHome"
 }

@@ -1,0 +1,13 @@
+{
+    "title": "Manage the security of suppliers",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|d",
+    "lastUpdated": "2026-11-23T15:54:02.346Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step2",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "november",
+    "base/fieldTypes/identifier": "ismsa_control_manage-supplier-security"
+}

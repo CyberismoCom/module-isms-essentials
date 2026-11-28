@@ -1,0 +1,14 @@
+{
+    "rank": "0|b",
+    "workflowState": "Analysed",
+    "createdAt": "2026-11-20T07:42:18.970Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/risk",
+    "title": "L4 risk, analysed without a treatment plan",
+    "templateCardKey": "ismsa_cu9vhbb0",
+    "lastUpdated": "2026-11-20T07:42:18.971Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/riskInitialLikelihood": "moderate",
+    "ismsa/fieldTypes/riskInitialImpact": "moderate",
+    "ismsa/fieldTypes/riskMitigationStrategy": "mitigate"
+}

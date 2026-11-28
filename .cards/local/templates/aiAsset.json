@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/aiAsset",
+    "displayName": "AI asset",
+    "description": "An AI tool or service that the organisation uses, or an AI feature in another service",
+    "category": "Asset management"
+}

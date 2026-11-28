@@ -1,0 +1,19 @@
+result(result).
+
+% A button for the AI responsible, when the home needs the role and has no central security role
+% assignments (see ismsa_roleTarget/2 in ismsa/calculations/centralControls).
+
+resultField(result, "roleTarget", Target, "shortText") :-
+    ismsa_closestHome({{cardKey}}, Home),
+    ismsa_roleNeeded(Home, "ismsa_role_ai-responsible"),
+    ismsa_roleTarget(Home, Target).
+
+resultField(result, "roleTargetTitle", Title, "shortText") :-
+    ismsa_closestHome({{cardKey}}, Home),
+    ismsa_roleNeeded(Home, "ismsa_role_ai-responsible"),
+    ismsa_roleTarget(Home, Target),
+    field(Target, "title", Title).
+
+resultField(result, "hasRoleAssignments", "yes", "shortText") :-
+    ismsa_closestHome({{cardKey}}, Home),
+    ismsa_homeHasRoleAssignments(Home).

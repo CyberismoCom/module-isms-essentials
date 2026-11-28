@@ -1,0 +1,11 @@
+{
+    "title": "AI tools",
+    "cardType": "ismsa/cardTypes/register",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|z",
+    "lastUpdated": "2026-11-25T10:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "base/fieldTypes/identifier": "ismsa_register_ai-tools"
+}

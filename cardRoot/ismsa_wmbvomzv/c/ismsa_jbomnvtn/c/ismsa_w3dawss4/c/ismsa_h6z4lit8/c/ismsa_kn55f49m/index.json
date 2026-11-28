@@ -1,0 +1,11 @@
+{
+    "title": "A6: Assign roles, not scoped",
+    "cardType": "ismsa/cardTypes/internalControl",
+    "workflowState": "Open",
+    "rank": "0|g",
+    "links": [],
+    "lastUpdated": "2026-11-17T12:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_control_assign-central-security-roles",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months"
+}

@@ -1,0 +1,182 @@
+% The libraries of a home, on the home card. The rules are in ismsa/calculations/libraryChoice
+% (which libraries the answers require, and why the others are not needed) and in
+% ismsa/calculations/extensions (the parts of the libraries).
+%
+% Each collection key is tagged, so that the keys of different collections never collide.
+
+ismsa_ilHome({{cardKey}}) :-
+    base_projectCardType({{cardKey}}, "ismsa/cardTypes/moduleHome").
+
+result(result).
+
+childResultCollection(result, "required").
+childResultCollection(result, "notNeeded").
+childResultCollection(result, "undecided").
+childResultCollection(result, "others").
+
+% Libraries that the home needs
+
+childResult(result, ("required", Library), "required") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryRequired(Home, Library).
+
+resultField(("required", Library), "title", Title, "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryRequired(Home, Library),
+    ismsa_choiceLibrary(Library, Title).
+
+resultField(("required", Library), "rank", Rank, "integer") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryRequired(Home, Library),
+    ismsa_libraryRank(Library, Rank).
+
+resultField(("required", Library), "added", "yes", "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryRequired(Home, Library),
+    ismsa_libraryAdded(Home, Library).
+
+resultField(("required", Library), "partly", "yes", "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryRequired(Home, Library),
+    ismsa_libraryPartlyAdded(Home, Library).
+
+childResult(("required", Library), ("reason", Library, Reason), "reasons") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryRequirement(Home, Library, Reason).
+
+resultField(("reason", Library, Reason), "text", Reason, "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryRequirement(Home, Library, Reason).
+
+% The parts that are still missing, with their buttons
+
+ismsa_ilMissingPart(Library, Template, Label, Target) :-
+    ismsa_ilHome(Home),
+    ismsa_libraryPart(Home, Library, Template, Label, Target),
+    not ismsa_libraryPartInstalled(Home, Template).
+
+ismsa_ilShownLibrary(("required", Library), Library) :-
+    ismsa_ilHome(Home),
+    ismsa_libraryRequired(Home, Library).
+
+ismsa_ilShownLibrary(("other", Library), Library) :-
+    ismsa_ilHome(Home),
+    ismsa_libraryInHome(Home, Library),
+    not ismsa_choiceLibrary(Library, _).
+
+childResult(Node, ("part", Template), "parts") :-
+    ismsa_ilShownLibrary(Node, Library),
+    ismsa_ilMissingPart(Library, Template, _, _).
+
+resultField(("part", Template), "template", Template, "shortText") :-
+    ismsa_ilMissingPart(_, Template, _, _).
+
+resultField(("part", Template), "buttonLabel", Label, "shortText") :-
+    ismsa_ilMissingPart(_, Template, Label, _).
+
+resultField(("part", Template), "targetKey", Target, "shortText") :-
+    ismsa_ilMissingPart(_, Template, _, Target).
+
+resultField(("part", Template), "targetTitle", Title, "shortText") :-
+    ismsa_ilMissingPart(_, Template, _, Target),
+    field(Target, "title", Title).
+
+% The controls come first, then the registers on the home card, then the other parts.
+
+ismsa_ilKind(Template, 1, "The controls go to") :-
+    ismsa_ilMissingPart(_, Template, _, Target),
+    field(Target, "base/fieldTypes/identifier", "ismsa_register_central-controls").
+
+ismsa_ilKind(Template, 2, "The registers go to") :-
+    ismsa_ilMissingPart(_, Template, _, {{cardKey}}).
+
+ismsa_ilKind(Template, 3, "The requirements go to") :-
+    ismsa_ilMissingPart(_, Template, _, Target),
+    field(Target, "base/fieldTypes/identifier", "ismsa_register_compliance").
+
+ismsa_ilKind(Template, 4, "The content goes to") :-
+    ismsa_ilMissingPart(_, Template, _, Target),
+    Target != {{cardKey}},
+    not field(Target, "base/fieldTypes/identifier", "ismsa_register_central-controls"),
+    not field(Target, "base/fieldTypes/identifier", "ismsa_register_compliance").
+
+resultField(("part", Template), "kind", Kind, "integer") :-
+    ismsa_ilKind(Template, Kind, _).
+
+resultField(("part", Template), "kindText", Text, "shortText") :-
+    ismsa_ilKind(Template, _, Text).
+
+% Libraries that the home does not need, and libraries that the answers do not decide yet
+
+childResult(result, ("not", Library), "notNeeded") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryNotNeeded(Home, Library, _).
+
+resultField(("not", Library), "title", Title, "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryNotNeeded(Home, Library, _),
+    ismsa_choiceLibrary(Library, Title).
+
+resultField(("not", Library), "reason", Reason, "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryNotNeeded(Home, Library, Reason).
+
+resultField(("not", Library), "rank", Rank, "integer") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryNotNeeded(Home, Library, _),
+    ismsa_libraryRank(Library, Rank).
+
+resultField(("not", Library), "inHome", "yes", "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryNotNeeded(Home, Library, _),
+    ismsa_libraryPartInstalled(Home, Template),
+    ismsa_libraryPart(Home, Library, Template, _, _).
+
+childResult(result, ("undecided", Library), "undecided") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryUndecided(Home, Library).
+
+resultField(("undecided", Library), "title", Title, "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryUndecided(Home, Library),
+    ismsa_choiceLibrary(Library, Title).
+
+resultField(("undecided", Library), "rank", Rank, "integer") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryUndecided(Home, Library),
+    ismsa_libraryRank(Library, Rank).
+
+% Libraries of other modules, which the questions do not cover
+
+childResult(result, ("other", Library), "others") :-
+    ismsa_ilShownLibrary(("other", Library), Library).
+
+resultField(("other", Library), "title", Library, "shortText") :-
+    ismsa_ilShownLibrary(("other", Library), Library).
+
+resultField(("other", Library), "added", "yes", "shortText") :-
+    ismsa_ilShownLibrary(("other", Library), Library),
+    ismsa_ilHome(Home),
+    ismsa_libraryAdded(Home, Library).
+
+resultField(result, "anyRequired", "yes", "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryRequired(Home, _).
+
+resultField(result, "anyNotNeeded", "yes", "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryNotNeeded(Home, _, _).
+
+resultField(result, "anyUndecided", "yes", "shortText") :-
+    ismsa_ilHome(Home),
+    ismsa_libraryUndecided(Home, _).
+
+resultField(result, "anyOthers", "yes", "shortText") :-
+    ismsa_ilShownLibrary(("other", _), _).
+
+order(2, "required", 1, "rank", "ASC").
+order(2, "notNeeded", 1, "rank", "ASC").
+order(2, "undecided", 1, "rank", "ASC").
+order(2, "others", 1, "title", "ASC").
+order(3, "parts", 1, "kind", "ASC").
+order(3, "parts", 2, "buttonLabel", "ASC").

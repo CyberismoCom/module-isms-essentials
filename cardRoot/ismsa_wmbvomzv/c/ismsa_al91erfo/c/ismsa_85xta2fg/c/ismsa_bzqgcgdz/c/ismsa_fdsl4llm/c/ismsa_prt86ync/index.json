@@ -1,0 +1,14 @@
+{
+    "rank": "0|b",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-27T10:04:39.024Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "title": "Article 4: AI literacy",
+    "templateCardKey": "ismsa_uh28539c",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_aiact_art-4",
+    "ismsa/fieldTypes/requirementOrigin": "EU AI Act (Regulation (EU) 2024/1689)",
+    "base/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-27T10:04:39.037Z"
+}

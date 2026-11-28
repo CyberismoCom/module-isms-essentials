@@ -1,0 +1,12 @@
+{
+    "rank": "0|b",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-25T20:43:56.280Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Risks related to information systems",
+    "templateCardKey": "ismsa_1v9i2af1",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-25T20:43:56.314Z"
+}

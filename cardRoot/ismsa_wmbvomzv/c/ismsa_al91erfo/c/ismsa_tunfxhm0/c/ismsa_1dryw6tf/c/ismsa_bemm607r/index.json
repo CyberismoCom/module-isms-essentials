@@ -1,0 +1,13 @@
+{
+    "rank": "0|d",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-23T15:56:38.501Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Primary assets",
+    "templateCardKey": "ismsa_yg93nzsd",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "base/fieldTypes/identifier": "ismsa_register_primary-assets",
+    "lastUpdated": "2026-11-23T15:56:38.506Z"
+}

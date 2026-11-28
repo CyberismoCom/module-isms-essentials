@@ -1,0 +1,38 @@
+{{#each results}}
+The organisation measures whether its security measures work, and the management uses the results to improve them.
+
+== How to decide if this control is required
+
+This control is required when NIS2 applies, or when the organisation runs an ISMS. NIS2 requires policies and procedures to assess the effectiveness of the cybersecurity risk-management measures.
+
+== How to implement
+
+Choose three to five metrics that show whether the most important measures work. Set a target for each metric. Measure them at least once a year, before the management review. For example:
+
+* the share of the internal controls of this home with the assessment "OK", from the section "Status" of the home card
+* the share of the critical updates that were installed within the deadline
+* the share of the user accounts with multi-factor authentication
+* the share of the people who completed the security training
+* the time from the detection of a significant incident to the first notification.
+
+{{#report}}
+  "name": "ismsa/reports/createEvidence",
+  "identifier": "ismsa_review_security-metrics",
+  "template": "ismsa/templates/securityMetricsReport",
+  "buttonLabel": "Create a security metrics report"
+{{/report}}
+
+Check that the report of the year is done, and that the management review handled the results.
+
+== Assessment
+
+{{#report}}
+  "name": "ismsa/reports/internalControlAssessment"
+{{/report}}
+
+== References
+
+* NIS2 (Directive (EU) 2022/2555) Article 21(2)(f)
+* ISO/IEC 27001:2022 clause 9.1
+
+{{/each}}

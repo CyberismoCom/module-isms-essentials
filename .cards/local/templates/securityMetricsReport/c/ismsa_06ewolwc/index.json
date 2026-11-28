@@ -1,0 +1,11 @@
+{
+    "title": "Security metrics report (year)",
+    "cardType": "base/cardTypes/review",
+    "workflowState": "",
+    "links": [],
+    "rank": "0|b",
+    "lastUpdated": "2026-11-24T10:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/identifier": "ismsa_review_security-metrics"
+}

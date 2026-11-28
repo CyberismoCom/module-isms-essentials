@@ -1,0 +1,18 @@
+{
+    "name": "ismsa/fieldTypes/homeFullIsms",
+    "displayName": "Answer",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "yes",
+            "enumDisplayValue": "Yes",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "no",
+            "enumDisplayValue": "No",
+            "enumDescription": ""
+        }
+    ],
+    "description": "Do you want an information security management system (ISMS) in this home, as a foundation for ISO/IEC 27001?"
+}

@@ -1,0 +1,12 @@
+{
+    "rank": "0|c",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-25T20:43:56.280Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Data assets",
+    "templateCardKey": "ismsa_cal4zg6o",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-25T20:43:56.306Z"
+}

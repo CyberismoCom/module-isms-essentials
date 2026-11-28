@@ -1,0 +1,11 @@
+selectAll.
+result(Card) :- card(Card), parent(Card, {{cardKey}}).
+
+% The field macro fails on a card type without the owner field, so the table shows the
+% editable owner only when the card type has the field.
+resultField(Card, "hasOwnerField", "yes", "shortText") :-
+    result(Card),
+    field(Card, "cardType", CardType),
+    customField(CardType, "base/fieldTypes/owner").
+
+orderBy("rank", "ASC").

@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/centralRoleAssignments",
+    "displayName": "Central security role assignments",
+    "description": "Planned evidence of the control \"Assign the central security roles\": the security roles with their assignees, deputies, authority, and competence, and a review of the assignments",
+    "category": "ISMS home evidence"
+}

@@ -1,0 +1,9 @@
+{
+    "links": [],
+    "lastUpdated": "2026-11-24T10:00:00.000Z",
+    "base/fieldTypes/informationClassification": "internal",
+    "title": "Test incident L6: the owner comes from the home",
+    "cardType": "ismsa/cardTypes/incident",
+    "workflowState": "Open",
+    "rank": "0|b"
+}

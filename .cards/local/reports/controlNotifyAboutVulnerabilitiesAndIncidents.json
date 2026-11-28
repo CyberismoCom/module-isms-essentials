@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlNotifyAboutVulnerabilitiesAndIncidents",
+    "displayName": "Control - Notify about vulnerabilities and incidents",
+    "description": "The content of the internal control 'Notify about vulnerabilities and incidents'",
+    "category": "Central controls"
+}

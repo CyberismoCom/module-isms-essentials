@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/fieldTypes/supplierAgreements",
+    "displayName": "Supplier agreements",
+    "dataType": "shortText",
+    "description": "Where the agreements with the suppliers are kept, for example a link to a folder"
+}

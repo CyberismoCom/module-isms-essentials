@@ -1,0 +1,45 @@
+== Purpose
+
+This plan defines the security training and the awareness activities of the year, and who takes part in them.
+
+== Target groups and training
+
+[width="100%",cols="25%,35%,20%,20%",options="header"]
+|===
+|Target group |Training or activity |When |Responsible
+
+|All employees and contractors
+|#TODO: For example, basic security training and phishing exercises#
+|#TODO#
+|#TODO#
+
+|Management
+|#TODO: NIS2 requires training for the management bodies of essential and important entities#
+|#TODO#
+|#TODO#
+
+|People who use AI in their work
+|#TODO: AI literacy: the AI policy, the approved AI tools, the information allowed in each tool, the limits of AI results, and how to report problems. Article 4 of the EU AI Act requires this#
+|#TODO#
+|#TODO#
+
+|Developers and administrators
+|#TODO: For example, secure development training. The training of a development project team is planned in its project#
+|#TODO#
+|#TODO#
+|===
+
+== Records
+
+#TODO: Describe where the participation records are kept.#
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

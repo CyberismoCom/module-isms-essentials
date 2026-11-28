@@ -1,0 +1,14 @@
+{
+    "rank": "0|k",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-23T15:56:39.770Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "title": "Article 21(2)(h): Cryptography",
+    "templateCardKey": "ismsa_v8k7asz9",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_nis2_art-21-2-h",
+    "ismsa/fieldTypes/requirementOrigin": "NIS2 (Directive (EU) 2022/2555)",
+    "base/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-23T15:56:39.780Z"
+}

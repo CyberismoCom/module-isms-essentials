@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/calculations/homeLibraries",
+    "displayName": "Libraries of the ISMS home",
+    "description": "The libraries of the ISMS home: their installation, the planned evidence of their controls, and the planned implementation of their compliance requirements",
+    "calculation": "calculation.lp"
+}

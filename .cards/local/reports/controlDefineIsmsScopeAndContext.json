@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlDefineIsmsScopeAndContext",
+    "displayName": "Control - Define the scope and context of the ISMS",
+    "description": "The content of the internal control 'Define the scope and context of the ISMS'",
+    "category": "ISMS home libraries"
+}

@@ -1,0 +1,12 @@
+{
+    "rank": "0|b",
+    "workflowState": "Open",
+    "createdAt": "2026-11-19T19:28:23.280Z",
+    "links": [],
+    "cardType": "base/cardTypes/reviewTask",
+    "title": "Document review",
+    "templateCardKey": "ismsa_ogopgj40",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "lastUpdated": "2026-11-19T19:28:23.295Z"
+}

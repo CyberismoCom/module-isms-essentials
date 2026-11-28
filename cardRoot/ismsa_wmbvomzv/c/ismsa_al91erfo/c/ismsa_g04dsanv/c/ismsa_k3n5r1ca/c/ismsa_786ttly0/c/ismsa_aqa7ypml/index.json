@@ -1,0 +1,14 @@
+{
+    "rank": "0|h",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-19T19:28:25.532Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/assessedComplianceRequirement",
+    "title": "Article 21(2)(e): Security in acquisition, development, and maintenance",
+    "templateCardKey": "ismsa_46nfh3gn",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "ismsa_nis2_art-21-2-e",
+    "ismsa/fieldTypes/requirementOrigin": "NIS2 (Directive (EU) 2022/2555)",
+    "base/fieldTypes/adoptionStep": "step2",
+    "lastUpdated": "2026-11-19T19:28:25.535Z"
+}

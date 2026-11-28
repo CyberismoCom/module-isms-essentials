@@ -1,0 +1,23 @@
+{
+    "name": "ismsa/fieldTypes/assetAiSystemRole",
+    "displayName": "AI system role",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "provider",
+            "enumDisplayValue": "Provider",
+            "enumDescription": "The organisation develops the AI system, or has it developed, and places it on the market or puts it into service under its own name"
+        },
+        {
+            "enumValue": "deployer",
+            "enumDisplayValue": "Deployer",
+            "enumDescription": "The organisation uses the AI system in its work"
+        },
+        {
+            "enumValue": "providerAndDeployer",
+            "enumDisplayValue": "Provider and deployer",
+            "enumDescription": "The organisation develops the AI system and also uses it"
+        }
+    ],
+    "description": "The role of the organisation for this AI system under the EU AI Act"
+}

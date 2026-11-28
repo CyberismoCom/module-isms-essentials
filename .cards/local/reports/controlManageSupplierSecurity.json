@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/reports/controlManageSupplierSecurity",
+    "displayName": "Control - Manage the security of suppliers",
+    "description": "The content of the internal control 'Manage the security of suppliers'",
+    "category": "ISMS home libraries"
+}

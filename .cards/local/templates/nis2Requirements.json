@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/nis2Requirements",
+    "displayName": "NIS2 basics library",
+    "description": "A library of the ISMS home: the cybersecurity risk-management measures and the reporting obligations of NIS2 as assessed compliance requirements, mapped to the internal controls of the home. Add it with the buttons in the section \"Libraries\" of the home card",
+    "category": "ISMS home libraries"
+}

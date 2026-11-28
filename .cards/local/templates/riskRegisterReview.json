@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/riskRegisterReview",
+    "displayName": "Review of the risk register",
+    "description": "A periodic review of the risk register of the ISMS home",
+    "category": "ISMS home evidence"
+}

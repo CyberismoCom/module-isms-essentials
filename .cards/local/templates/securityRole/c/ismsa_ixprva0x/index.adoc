@@ -1,0 +1,7 @@
+#TODO: Write the responsibilities of the role.#
+
+*Authority:* #TODO: What the person in the role can decide, for example approve exceptions or stop a change.#
+
+*Competence:* #TODO: The knowledge and skills that the role needs.#
+
+Set the person in the role in the *Assignee* field, and the deputy in the *Deputy* field. The deputy does the work of the role when the assignee is away.

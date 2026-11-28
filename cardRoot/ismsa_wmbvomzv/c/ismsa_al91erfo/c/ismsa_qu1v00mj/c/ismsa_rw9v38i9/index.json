@@ -1,0 +1,14 @@
+{
+    "rank": "0|b",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T07:42:44.930Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Control register",
+    "templateCardKey": "ismsa_g6wrr31o",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/progress": "internal-control-progress",
+    "base/fieldTypes/identifier": "ismsa_register_central-controls",
+    "lastUpdated": "2026-11-20T07:42:44.933Z"
+}

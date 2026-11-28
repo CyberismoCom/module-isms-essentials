@@ -1,0 +1,16 @@
+{
+    "rank": "0|c",
+    "workflowState": "In scope",
+    "createdAt": "2026-11-20T07:42:44.930Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/internalControl",
+    "title": "Receive notifications of security issues",
+    "templateCardKey": "ismsa_bhxysukq",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/adoptionStep": "step1",
+    "ismsa/fieldTypes/internalControlReviewPeriod": "12months",
+    "base/fieldTypes/reviewMonth": "may",
+    "base/fieldTypes/identifier": "ismsa_control_receive-security-issue-notifications",
+    "lastUpdated": "2026-11-20T07:42:45.242Z",
+    "lastTransitioned": "2026-11-20T07:42:45.242Z"
+}

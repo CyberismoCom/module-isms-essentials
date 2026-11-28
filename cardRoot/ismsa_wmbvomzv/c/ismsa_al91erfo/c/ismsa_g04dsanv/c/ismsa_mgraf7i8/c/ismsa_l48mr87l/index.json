@@ -1,0 +1,16 @@
+{
+    "rank": "0|b",
+    "workflowState": "Passed",
+    "createdAt": "2026-11-19T19:28:47.494Z",
+    "links": [],
+    "cardType": "base/cardTypes/review",
+    "title": "L1 access rights review, passed",
+    "templateCardKey": "ismsa_cn92wa8j",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "base/fieldTypes/identifier": "ismsa_review_access-rights",
+    "lastUpdated": "2026-11-19T19:28:48.467Z",
+    "base/fieldTypes/owner": "reviewer@example.com",
+    "base/fieldTypes/lastReviewed": "2026-11-19",
+    "lastTransitioned": "2026-11-19T19:28:48.434Z"
+}

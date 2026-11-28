@@ -1,0 +1,13 @@
+{
+    "rank": "0|e",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-19T19:28:23.280Z",
+    "links": [],
+    "cardType": "ismsa/cardTypes/register",
+    "title": "Supporting assets",
+    "templateCardKey": "ismsa_cpffkypc",
+    "base/fieldTypes/informationClassification": "internal",
+    "ismsa/fieldTypes/adoptionStep": "step2",
+    "base/fieldTypes/identifier": "ismsa_register_supporting-assets",
+    "lastUpdated": "2026-11-19T19:28:23.283Z"
+}

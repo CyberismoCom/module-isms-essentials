@@ -1,0 +1,6 @@
+{
+    "name": "ismsa/templates/securityMetricsReport",
+    "displayName": "Security metrics report",
+    "description": "Planned evidence of the control \"Measure the effectiveness of security\": three to five metrics with targets, measured once a year before the management review",
+    "category": "ISMS home evidence"
+}

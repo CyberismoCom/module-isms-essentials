@@ -1,0 +1,4 @@
+{{#report}}
+  "name": "ismsa/reports/aiActRequirementContent",
+  "requirement": "art-4"
+{{/report}}
