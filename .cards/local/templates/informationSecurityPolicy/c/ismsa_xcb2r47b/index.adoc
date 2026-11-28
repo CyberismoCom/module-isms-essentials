@@ -64,3 +64,12 @@ The management approves this policy and gives the resources for information secu
 == Review
 
 The management reviews the policy at least once a year, and when the business, the threats, or the regulation change significantly. After a change, personnel are informed and confirm the policy again.
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

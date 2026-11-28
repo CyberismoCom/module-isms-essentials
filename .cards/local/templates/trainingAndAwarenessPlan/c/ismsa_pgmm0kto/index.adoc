@@ -32,3 +32,14 @@ This plan defines the security training and the awareness activities of the year
 == Records
 
 #TODO: Describe where the participation records are kept.#
+
+== Reviews
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}

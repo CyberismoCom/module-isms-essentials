@@ -72,3 +72,12 @@ The management approves this policy and gives the resources for the safe use of 
 == Review
 
 The management reviews the policy at least once a year, and when the AI tools, the threats, or the regulation change significantly. After a change, personnel are informed and confirm the policy again.
+
+{{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#report}}
+  "name": "base/reports/childrenTable"
+{{/report}}
